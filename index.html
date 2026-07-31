@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>날마다 조식 — 매일 아침의 기록</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="lang-bar">
+    <div class="channel-links">
+      <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+    </div>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" class="active">한국어</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
+  </div>
+
+  <header class="masthead">
+    <p class="eyebrow">daily breakfast journal</p>
+    <div class="kicker">
+      <span id="kickerVol">Vol. —</span>
+      <span id="kickerSince">—</span>
+    </div>
+    <h1 data-i18n="home_title">날마다, 조식</h1>
+    <p class="tagline" data-i18n="home_tagline">별일이 없으면 날마다 어제와 다른 아침을 만들어 먹는 사람의 기록. 매일 다른 조식을 통째로 모아둔 아카이브입니다.</p>
+    <div class="masthead-icons" id="mastheadIcons"></div>
+    <div class="streak" id="streakText"><b>—</b></div>
+  </header>
+
+  <section class="mag-section">
+    <div class="section-head">
+      <div>
+        <p class="label">Consistency</p>
+        <h2 data-i18n="ledger_title">하루도 빼지 않은 기록</h2>
+        <p class="desc" data-i18n="ledger_desc">칸 하나가 하루예요. 진한 초록은 조식을 만든 날, 주황은 실패한 날, 빈 칸은 건너뛴 날입니다.</p>
+      </div>
+    </div>
+    <div class="ledger" id="ledgerWrap">
+      <div class="ledger-months" id="ledgerYearLabels" style="display:flex;"></div>
+      <div class="ledger-grid" id="ledgerGrid"></div>
+      <div class="ledger-legend">
+        <span><span class="sw" style="background:var(--teal)"></span><span data-i18n="legend_posted">기록함</span></span>
+        <span><span class="sw" style="background:var(--clay)"></span><span data-i18n="legend_failed">실패기</span></span>
+        <span><span class="sw" style="background:rgba(43,42,37,0.07)"></span><span data-i18n="legend_skipped">건너뜀</span></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="mag-section" id="otdSection">
+    <div class="section-head">
+      <div>
+        <p class="label">On this day</p>
+        <h2 data-i18n="otd_title">오늘 같은 날, 지난 조식들</h2>
+        <p class="desc" data-i18n="otd_desc">해마다 이맘때 만들었던 아침을 나란히 모아봤어요.</p>
+      </div>
+    </div>
+    <div class="otd-row" id="otdRow"></div>
+  </section>
+
+  <section class="mag-section">
+    <div class="section-head">
+      <div>
+        <p class="label">Collections</p>
+        <h2 data-i18n="col_title">소재로 골라 먹기</h2>
+        <p class="desc" data-i18n="col_desc">가장 자주 등장한 재료들로 모은 테마별 아카이브예요.</p>
+      </div>
+      <a class="more-link" href="archive.html" data-i18n="col_more">전체 검색으로 보기 →</a>
+    </div>
+    <div class="collection-grid" id="collectionGrid"></div>
+  </section>
+
+  <section class="mag-section">
+    <div class="section-head">
+      <div>
+        <p class="label">Surprise me</p>
+        <h2 data-i18n="shuffle_title">오늘 뭐 먹지?</h2>
+      </div>
+    </div>
+    <div class="shuffle-box">
+      <p data-i18n="shuffle_desc">1,800개가 넘는 기록 중에서 무작위로 하나를 꺼내드려요.</p>
+      <button class="btn-primary" id="shuffleBtn" data-i18n="shuffle_btn">무작위로 하나 꺼내기</button>
+      <div class="shuffle-result hidden" id="shuffleResult"></div>
+    </div>
+  </section>
+
+  <section class="mag-section">
+    <div class="cta-archive">
+      <div>
+        <h3 data-i18n="cta_title">전체 아카이브 검색하기</h3>
+        <p data-i18n="cta_desc">재료, 칼로리, 키워드로 1,831개의 기록을 직접 뒤져보세요.</p>
+      </div>
+      <a class="btn-primary" href="archive.html" data-i18n="cta_btn">아카이브 열기 →</a>
+    </div>
+  </section>
+
+  <footer class="foot" data-i18n="footer">Since 2020.7.13 · how.about.breakfast</footer>
+</div>
+
+<div class="overlay hidden" id="overlay">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="shared.js"></script>
+<script src="home.js"></script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전체 아카이브 — 날마다 조식</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="nav-bar">
+    <a href="index.html" data-i18n="nav_home">← 홈으로</a>
+    <div class="nav-right">
+      <div class="channel-links">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+      </div>
+      <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+        <button type="button" data-lang="ko" class="active">한국어</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="top">
+    <p class="eyebrow">how.about.breakfast</p>
+    <h1 class="title" data-i18n="archive_title">전체 레시피 아카이브</h1>
+    <p class="subtitle" data-i18n="archive_subtitle">2020년 7월부터 매일 아침 기록해 온 조식 다이어리, 그 안에 쌓인 레시피를 검색합니다.</p>
+    <div class="stats-row" id="statsRow"></div>
+  </header>
+
+  <div class="controls">
+    <div class="search-row">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="searchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)">
+      </div>
+      <select id="sortSel">
+        <option value="new" data-i18n="sort_new">최신순</option>
+        <option value="old" data-i18n="sort_old">오래된순</option>
+        <option value="kcal_asc" data-i18n="sort_kcal_asc">칼로리 낮은순</option>
+        <option value="kcal_desc" data-i18n="sort_kcal_desc">칼로리 높은순</option>
+      </select>
+    </div>
+    <div class="filter-row">
+      <div class="tag-cloud" id="tagCloud"></div>
+      <label class="cal-filter">
+        <input type="checkbox" id="calToggle"> <span id="calLabel">≤ 600kcal</span>
+        <input type="range" id="calRange" min="100" max="900" step="50" value="600">
+      </label>
+    </div>
+    <div class="result-count" id="resultCount" aria-live="polite"></div>
+  </div>
+
+  <div class="grid" id="grid"></div>
+  <div class="empty hidden" id="emptyState">
+    <b data-i18n="empty_title">일치하는 조식이 없어요</b>
+    <span data-i18n="empty_desc">검색어나 필터를 조정해보세요.</span>
+  </div>
+  <div class="load-more-wrap">
+    <button class="loadmore hidden" id="loadMoreBtn" data-i18n="load_more">더 불러오기</button>
+  </div>
+
+  <footer class="foot" data-i18n="footer">Since 2020.7.13 · how.about.breakfast</footer>
+</div>
+
+<div class="overlay hidden" id="overlay">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="shared.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

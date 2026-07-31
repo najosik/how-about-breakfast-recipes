@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+
+# raw Instagram export archives and extracted folders (multi-GB, not needed in the deployed site)
+instagram-how.about.breakfast-*/
+instagram-how.about.breakfast-*.zip
+
+# redundant local artifacts
+files.zip
+recipes.backup.json
+
+# photos: storage strategy not decided yet, keep out of git for now
+images/
+
+# local preview config
+.claude/
