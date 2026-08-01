@@ -14,3 +14,7 @@ images/
 
 # local preview config
 .claude/
+
+# local-only content review tool (not part of the deployed site)
+review.html
+review.js

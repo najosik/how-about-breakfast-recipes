@@ -97,6 +97,8 @@ var Shared = (function () {
     return fetch('recipes.json').then(function (r) {
       if (!r.ok) throw new Error('recipes.json load failed');
       return r.json();
+    }).then(function (all) {
+      return all.filter(function (r) { return !r.deleted; });
     });
   }
 
