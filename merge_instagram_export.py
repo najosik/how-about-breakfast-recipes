@@ -127,6 +127,9 @@ def load_reels(path):
     return flattened
 
 
+KST = datetime.timezone(datetime.timedelta(hours=9))
+
+
 def extract_date_str(post, title=''):
     m = re.match(r'\s*(\d{8})', title)
     if m:
@@ -134,8 +137,10 @@ def extract_date_str(post, title=''):
     ts = post.get('creation_timestamp')
     if not ts:
         return None
-    import datetime
-    return datetime.datetime.fromtimestamp(ts, datetime.timezone.utc).strftime('%Y%m%d')
+    # Instagram's export timestamp is UTC; posts made late at night KST
+    # (e.g. 1am KST = 4pm UTC the previous day) need to be converted to KST
+    # before taking the date, or they land on the wrong calendar day.
+    return datetime.datetime.fromtimestamp(ts, KST).strftime('%Y%m%d')
 
 
 def save_image(src_path, dest_path, max_width=1000, quality=82):
