@@ -218,6 +218,7 @@ def main():
     print(f'Total posts in export: {len(all_posts)}')
 
     matched, added, no_diary_no, image_missing, pre_added, pre_skipped = 0, 0, 0, 0, 0, 0
+    pre_posts_by_date = {}  # date_iso -> list of (date_str, title, post), filled in below
 
     for post in all_posts:
         title = fix_mojibake(post.get('title', ''))
@@ -265,29 +266,58 @@ def main():
             continue  # outside the pre-numbering window, or a typo'd date
 
         date_iso = post_date.isoformat()
-        days_before = (anchor_date - post_date).days
+        pre_posts_by_date.setdefault(date_iso, []).append((date_str, title, post))
+
+    # --- process pre-numbering posts, one calendar day at a time. Most early
+    # days have exactly one Instagram post. Some days have more than one
+    # (posted more than once before the #조식다이어리 numbering habit started),
+    # and matching purely by date can't tell which photo belongs to that
+    # day's diary text - so for those we keep every candidate on the record
+    # and let review.html surface them for a manual pick, instead of silently
+    # guessing and possibly attaching the wrong photo. ---
+    ambiguous_dates = 0
+    for date_iso, entries in pre_posts_by_date.items():
+        days_before = (anchor_date - datetime.date.fromisoformat(date_iso)).days
         pre_label = f'D-{days_before}'
-        name_base = f'pre-{days_before}'
 
-        image_no_jpg, gallery_rel_paths = copy_post_images(post, name_base, export_dir, images_dir)
-
-        if date_iso in pre_by_date:
-            rec = pre_by_date[date_iso]
-            if gallery_rel_paths:
-                rec['image'] = gallery_rel_paths[0]
-                if len(gallery_rel_paths) > 1:
-                    rec['gallery'] = gallery_rel_paths
+        rec = pre_by_date.get(date_iso)
+        if rec is not None and rec.get('photo_review_resolved'):
+            # a human already picked the right photo for this ambiguous day
+            # during review; leave it alone on re-runs.
             pre_skipped += 1
-        else:
-            new_rec = parse_entry(date_str, False, title)
-            new_rec['pre_label'] = pre_label
+            continue
+
+        candidates = []
+        for i, (date_str, title, post) in enumerate(entries):
+            suffix = '' if i == 0 else f'-alt{i + 1}'
+            image_no_jpg, gallery_rel_paths = copy_post_images(post, f'pre-{days_before}{suffix}', export_dir, images_dir)
             if gallery_rel_paths:
-                new_rec['image'] = gallery_rel_paths[0]
-                if len(gallery_rel_paths) > 1:
-                    new_rec['gallery'] = gallery_rel_paths
-            recipes.append(new_rec)
-            pre_by_date[date_iso] = new_rec
+                candidates.append(gallery_rel_paths)
+            elif image_no_jpg:
+                image_missing += 1
+
+        if rec is None:
+            date_str, title, _post = entries[0]
+            rec = parse_entry(date_str, False, title)
+            rec['pre_label'] = pre_label
+            recipes.append(rec)
+            pre_by_date[date_iso] = rec
             pre_added += 1
+        else:
+            pre_skipped += 1
+
+        if len(candidates) > 1:
+            rec['photo_candidates'] = candidates
+            if not rec.get('image'):
+                rec['image'] = candidates[0][0]
+                if len(candidates[0]) > 1:
+                    rec['gallery'] = candidates[0]
+            ambiguous_dates += 1
+        elif len(candidates) == 1:
+            rec['image'] = candidates[0][0]
+            if len(candidates[0]) > 1:
+                rec['gallery'] = candidates[0]
+            rec.pop('photo_candidates', None)
 
     def sort_key(r):
         return (r.get('date') or '0000-00-00', r.get('diary_no') or 0)
@@ -355,6 +385,7 @@ def main():
     print(f'새로 추가된 항목(예전 텍스트에 없던 글): {added}')
     print(f'#조식다이어리 번호를 못 찾은 게시물: {no_diary_no}')
     print(f'  → 이 중 초창기(D-N) 글로 새로 추가: {pre_added}, 이미 있어서 사진만 갱신: {pre_skipped}')
+    print(f'  → 하루에 게시물이 여러 개라 사진 후보를 review.html에서 골라야 하는 날: {ambiguous_dates}')
     print(f'사진이 없는 게시물(영상만 있는 릴스 등으로 추정): {image_missing}')
     if reels_files:
         print(f'릴스 매칭되어 영상 추가: {reel_matched}')

@@ -63200,6 +63200,21 @@
    "images/pre-33.jpg",
    "images/pre-33_2.jpg",
    "images/pre-33_3.jpg"
+  ],
+  "photo_candidates": [
+   [
+    "images/pre-33.jpg",
+    "images/pre-33_2.jpg",
+    "images/pre-33_3.jpg",
+    "images/pre-33_4.jpg",
+    "images/pre-33_5.jpg",
+    "images/pre-33_6.jpg"
+   ],
+   [
+    "images/pre-33-alt2.jpg",
+    "images/pre-33-alt2_2.jpg",
+    "images/pre-33-alt2_3.jpg"
+   ]
   ]
  },
  {
@@ -63237,6 +63252,16 @@
   "gallery": [
    "images/pre-35.jpg",
    "images/pre-35_2.jpg"
+  ],
+  "photo_candidates": [
+   [
+    "images/pre-35.jpg",
+    "images/pre-35_2.jpg"
+   ],
+   [
+    "images/pre-35-alt2.jpg",
+    "images/pre-35-alt2_2.jpg"
+   ]
   ]
  },
  {
@@ -64259,6 +64284,18 @@
   "gallery": [
    "images/pre-69.jpg",
    "images/pre-69_2.jpg"
+  ],
+  "photo_candidates": [
+   [
+    "images/pre-69.jpg",
+    "images/pre-69_2.jpg",
+    "images/pre-69_3.jpg",
+    "images/pre-69_4.jpg"
+   ],
+   [
+    "images/pre-69-alt2.jpg",
+    "images/pre-69-alt2_2.jpg"
+   ]
   ]
  },
  {
@@ -64777,6 +64814,17 @@
   "gallery": [
    "images/pre-104.jpg",
    "images/pre-104_2.jpg"
+  ],
+  "photo_candidates": [
+   [
+    "images/pre-104.jpg",
+    "images/pre-104_2.jpg",
+    "images/pre-104_3.jpg"
+   ],
+   [
+    "images/pre-104-alt2.jpg",
+    "images/pre-104-alt2_2.jpg"
+   ]
   ]
  },
  {
@@ -64904,6 +64952,17 @@
    "images/pre-114.jpg",
    "images/pre-114_2.jpg",
    "images/pre-114_3.jpg"
+  ],
+  "photo_candidates": [
+   [
+    "images/pre-114.jpg",
+    "images/pre-114_2.jpg"
+   ],
+   [
+    "images/pre-114-alt2.jpg",
+    "images/pre-114-alt2_2.jpg",
+    "images/pre-114-alt2_3.jpg"
+   ]
   ]
  },
  {
@@ -65039,6 +65098,19 @@
    "images/pre-142.jpg",
    "images/pre-142_2.jpg",
    "images/pre-142_3.jpg"
+  ],
+  "photo_candidates": [
+   [
+    "images/pre-142.jpg",
+    "images/pre-142_2.jpg",
+    "images/pre-142_3.jpg",
+    "images/pre-142_4.jpg"
+   ],
+   [
+    "images/pre-142-alt2.jpg",
+    "images/pre-142-alt2_2.jpg",
+    "images/pre-142-alt2_3.jpg"
+   ]
   ]
  },
  {
@@ -65048,7 +65120,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 조식 조식스타그램",
+  "title": "샤인머스캣 샐러드",
   "credit": null,
   "hashtags": [
    "오늘의조식",
@@ -65074,7 +65146,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 조식스타그램",
+  "title": "애호박 샐러드",
   "credit": null,
   "hashtags": [
    "오늘의조식",
@@ -65090,6 +65162,22 @@
   "gallery": [
    "images/pre-145.jpg",
    "images/pre-145_2.jpg"
+  ],
+  "photo_candidates": [
+   [
+    "images/pre-145.jpg",
+    "images/pre-145_2.jpg"
+   ],
+   [
+    "images/pre-145-alt2.jpg",
+    "images/pre-145-alt2_2.jpg",
+    "images/pre-145-alt2_3.jpg",
+    "images/pre-145-alt2_4.jpg"
+   ],
+   [
+    "images/pre-145-alt3.jpg",
+    "images/pre-145-alt3_2.jpg"
+   ]
   ]
  },
  {
@@ -65099,7 +65187,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "산시엔미펀 우리의계절은",
+  "title": "산시엔미펀",
   "credit": null,
   "hashtags": [
    "산시엔미펀",
@@ -65125,7 +65213,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "루꼴라 오늘의조식 시금치",
+  "title": "시금치 아보카도 샐러드",
   "credit": null,
   "hashtags": [
    "그래놀라",
@@ -65157,7 +65245,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 꼬마곰젤리 새우깡",
+  "title": "아보카도 샐러드",
   "credit": null,
   "hashtags": [
    "꼬마곰젤리",
@@ -65187,7 +65275,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "산시엔_미펀",
+  "title": "미펀",
   "credit": null,
   "hashtags": [
    "산시엔_미펀"
@@ -65215,7 +65303,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 아보카도 조식스타그램",
+  "title": "아보카도 샐러드",
   "credit": null,
   "hashtags": [
    "나의프랑스식샐러드",
@@ -65242,7 +65330,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "당근 내년에만나 오늘의조식",
+  "title": "당근 샐러드",
   "credit": null,
   "hashtags": [
    "내년에만나",
@@ -65270,7 +65358,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "아침을먹다가생각한것들 길거리토스트",
+  "title": "아침을먹다가생각한것들",
   "credit": null,
   "hashtags": [
    "길거리토스트",
@@ -65287,6 +65375,18 @@
    "images/pre-160.jpg",
    "images/pre-160_2.jpg",
    "images/pre-160_3.jpg"
+  ],
+  "photo_candidates": [
+   [
+    "images/pre-160.jpg",
+    "images/pre-160_2.jpg",
+    "images/pre-160_3.jpg"
+   ],
+   [
+    "images/pre-160-alt2.jpg",
+    "images/pre-160-alt2_2.jpg",
+    "images/pre-160-alt2_3.jpg"
+   ]
   ]
  },
  {
@@ -65296,7 +65396,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 연어 클로티드크림",
+  "title": "연어 샐러드",
   "credit": null,
   "hashtags": [
    "연어",
@@ -65323,7 +65423,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "렌틸콩 오늘의조식 조식스타그램",
+  "title": "렌틸콩 샐러드",
   "credit": null,
   "hashtags": [
    "나의프랑스식샐러드",
@@ -65350,7 +65450,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 매쉬포테이토 페타치즈",
+  "title": "매쉬포테이토",
   "credit": null,
   "hashtags": [
    "나의프랑스식샐러드",
@@ -65379,7 +65479,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "조식플렉스 당근샐러드 빨간맛",
+  "title": "당근샐러드",
   "credit": null,
   "hashtags": [
    "나의프랑스식샐러드",
@@ -65411,7 +65511,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 가지구이 그레잇데이",
+  "title": "가지구이",
   "credit": null,
   "hashtags": [
    "가지구이",
@@ -65437,7 +65537,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 래디쉬 마무리는",
+  "title": "래디쉬 샐러드",
   "credit": null,
   "hashtags": [
    "그래놀라",
@@ -65466,7 +65566,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "토마토팍시 연어샐러드 오늘의조식",
+  "title": "토마토팍시",
   "credit": null,
   "hashtags": [
    "연어샐러드",
@@ -65484,6 +65584,16 @@
   "gallery": [
    "images/pre-181.jpg",
    "images/pre-181_2.jpg"
+  ],
+  "photo_candidates": [
+   [
+    "images/pre-181.jpg",
+    "images/pre-181_2.jpg"
+   ],
+   [
+    "images/pre-181-alt2.jpg",
+    "images/pre-181-alt2_2.jpg"
+   ]
   ]
  },
  {
@@ -65493,7 +65603,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "소시지 그레잇데이 그래놀라",
+  "title": "소시지 대파구이",
   "credit": null,
   "hashtags": [
    "그래놀라",
@@ -65521,7 +65631,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "조식플렉스 가지 쌩",
+  "title": "가지 샐러드",
   "credit": null,
   "hashtags": [
    "가지",
@@ -65553,7 +65663,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "양송이 양송이샐러드 그레잇데이",
+  "title": "양송이 샐러드",
   "credit": null,
   "hashtags": [
    "그래놀라",
@@ -65572,9 +65682,9 @@
   "image": "images/pre-194.jpg",
   "gallery": [
    "images/pre-194.jpg",
-   "images/pre-194_2.jpg",
-   "images/pre-194_3.jpg"
-  ]
+   "images/pre-194_2.jpg"
+  ],
+  "photo_review_resolved": true
  },
  {
   "date": "2020-08-01",
@@ -65583,7 +65693,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "플렉스 오늘의조식은 양배추샐러드",
+  "title": "양배추 샐러드",
   "credit": null,
   "hashtags": [
    "양배추샐러드",
@@ -65639,7 +65749,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "주키니구이",
+  "title": "주키니 구이",
   "credit": null,
   "hashtags": [
    "시금치페스토를",
@@ -65722,7 +65832,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "단호박 리코타치즈 토마토샐러드",
+  "title": "단호박 샐러드",
   "credit": null,
   "hashtags": [
    "단호박",
@@ -65749,7 +65859,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "바나나 오늘의조식 그래잇데이",
+  "title": "바나나 샐러드",
   "credit": null,
   "hashtags": [
    "그래놀라",
@@ -65776,7 +65886,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "바나나 요거트 천도복숭아",
+  "title": "야채 샐러드",
   "credit": null,
   "hashtags": [
    "바나나",
@@ -65796,8 +65906,11 @@
   "gallery": [
    "images/pre-208.jpg",
    "images/pre-208_2.jpg",
-   "images/pre-208_3.jpg"
-  ]
+   "images/pre-208_3.jpg",
+   "images/pre-208_4.jpg",
+   "images/pre-208_5.jpg"
+  ],
+  "photo_review_resolved": true
  },
  {
   "date": "2020-07-16",
@@ -65806,7 +65919,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "크랜베리 그래잇데이 그래놀라",
+  "title": "그래놀라를 곁들인 요거트",
   "credit": null,
   "hashtags": [
    "havanaclub",
@@ -65840,7 +65953,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 무가당요거트 블루베리",
+  "title": "무가당요거트",
   "credit": null,
   "hashtags": [
    "무가당요거트",
