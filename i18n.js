@@ -29,7 +29,7 @@ var I18N = (function () {
       empty_desc: '검색어나 필터를 조정해보세요.',
       load_more: '더 불러오기',
       result_count: '개의 조식',
-      footer: 'Since 2020.7.13 · how.about.breakfast',
+      footer_copyright: '© how.about.breakfast 2020-2026. All rights reserved.',
 
       home_title: '날마다, 조식',
       home_tagline: '별일이 없으면 날마다 어제와 다른 아침을 만들어 먹는 사람의 기록. 매일 다른 조식을 통째로 모아둔 아카이브입니다.',
@@ -82,7 +82,7 @@ var I18N = (function () {
       empty_desc: 'Try adjusting your search or filters.',
       load_more: 'Load more',
       result_count: ' breakfasts',
-      footer: 'Since 2020.7.13 · how.about.breakfast',
+      footer_copyright: '© how.about.breakfast 2020-2026. All rights reserved.',
 
       home_title: 'Breakfast, Every Day',
       home_tagline: 'A record of someone who makes a different breakfast every morning, unless something comes up. This is the whole archive, gathered in one place.',

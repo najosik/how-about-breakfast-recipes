@@ -15,6 +15,9 @@ images/
 # local preview config
 .claude/
 
+# R2 credentials — never commit
+.r2-credentials.json
+
 # local-only content review tool (not part of the deployed site)
 review.html
 review.js

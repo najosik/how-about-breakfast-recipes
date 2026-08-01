@@ -87,7 +87,7 @@ var Shared = (function () {
 
   function thumbHTML(r, size) {
     if (r.image) {
-      return '<div class="card-photo"><img src="' + escapeHtml(r.image) + '" alt="" loading="lazy"></div>';
+      return '<div class="card-photo"><img src="' + escapeHtml(r.image) + '" alt="' + escapeHtml(r.title || '(제목 미상)') + '" loading="lazy"></div>';
     }
     return iconSVG(r, size);
   }
@@ -141,10 +141,11 @@ var Shared = (function () {
     if (items.length === 0) return thumbHTML(r, 40);
     if (items.length === 1 && items[0].type === 'image') return thumbHTML(r, 40);
 
+    var altText = escapeHtml(r.title || '(제목 미상)');
     var mainItem = items[0];
     var mainHTML = mainItem.type === 'video'
       ? '<video src="' + escapeHtml(mainItem.src) + '" controls playsinline></video>'
-      : '<img src="' + escapeHtml(mainItem.src) + '" alt="">';
+      : '<img src="' + escapeHtml(mainItem.src) + '" alt="' + altText + '">';
 
     var thumbs = items.map(function (item, i) {
       var thumbImg = item.type === 'video'
@@ -152,7 +153,7 @@ var Shared = (function () {
         : item.src;
       return (
         '<button type="button" class="gallery-thumb' + (i === 0 ? ' active' : '') + '" data-idx="' + i + '">' +
-        '<img src="' + escapeHtml(thumbImg) + '" alt="">' +
+        '<img src="' + escapeHtml(thumbImg) + '" alt="' + altText + ' ' + (i + 1) + '">' +
         (item.type === 'video' ? '<span class="play-badge">▶</span>' : '') +
         '</button>'
       );
@@ -169,6 +170,7 @@ var Shared = (function () {
   function bindGallery(container, r) {
     var items = mediaItemsFor(r);
     if (items.length < 2) return;
+    var altText = escapeHtml(r.title || '(제목 미상)');
     var mainEl = container.querySelector('.gallery-main');
     var thumbBtns = container.querySelectorAll('.gallery-thumb');
     Array.prototype.forEach.call(thumbBtns, function (btn) {
@@ -177,7 +179,7 @@ var Shared = (function () {
         var item = items[idx];
         mainEl.innerHTML = item.type === 'video'
           ? '<video src="' + escapeHtml(item.src) + '" controls playsinline autoplay></video>'
-          : '<img src="' + escapeHtml(item.src) + '" alt="">';
+          : '<img src="' + escapeHtml(item.src) + '" alt="' + altText + '">';
         Array.prototype.forEach.call(thumbBtns, function (b) { b.classList.toggle('active', b === btn); });
       });
     });
