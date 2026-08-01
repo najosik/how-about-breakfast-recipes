@@ -280,6 +280,13 @@ section.mag-section{margin:60px 0;}
 .ledger-legend .sw{display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:5px; vertical-align:-1px;}
 
 /* On-this-day row */
+.otd-full-bleed{
+  background:var(--teal-pale);
+  border-top:2px solid var(--ink);
+  border-bottom:2px solid var(--ink);
+  padding:40px 0;
+}
+.otd-inner{max-width:1080px; margin:0 auto; padding:0 20px;}
 .otd-row{display:flex; gap:16px; overflow-x:auto; padding-bottom:8px; scroll-snap-type:x proximity;}
 .otd-card{
   min-width:180px; scroll-snap-align:start; background:transparent; border:none;
