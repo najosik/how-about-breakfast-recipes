@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://najosik.github.io/how-about-breakfast-recipes/sitemap.xml
+Sitemap: https://how-about-breakfast.com/sitemap.xml

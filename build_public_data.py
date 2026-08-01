@@ -33,7 +33,7 @@ INDEX_PATH = os.path.join(HERE, 'recipes-index.json')
 PAGES_DIR = os.path.join(HERE, 'recipes')
 SITEMAP_PATH = os.path.join(HERE, 'sitemap.xml')
 
-SITE_BASE = 'https://najosik.github.io/how-about-breakfast-recipes'
+SITE_BASE = 'https://how-about-breakfast.com'
 
 INDEX_FIELDS = [
     'date', 'diary_no', 'pre_label', 'weather', 'failed', 'calories',
