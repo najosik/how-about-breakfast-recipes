@@ -143,10 +143,12 @@ var Shared = (function () {
     return items;
   }
 
-  function galleryHTML(r) {
+  function galleryHTML(r, shareBtnHtml) {
+    shareBtnHtml = shareBtnHtml || '';
     var items = mediaItemsFor(r);
-    if (items.length === 0) return thumbHTML(r, 40);
-    if (items.length === 1 && items[0].type === 'image') return thumbHTML(r, 40);
+    if (items.length === 0 || (items.length === 1 && items[0].type === 'image')) {
+      return thumbHTML(r, 40) + (shareBtnHtml ? '<div class="modal-share-row">' + shareBtnHtml + '</div>' : '');
+    }
 
     var altText = escapeHtml(r.title || '(제목 미상)');
     var mainItem = items[0];
@@ -169,7 +171,7 @@ var Shared = (function () {
     return (
       '<div class="modal-gallery">' +
       '<div class="gallery-main">' + mainHTML + '</div>' +
-      '<div class="gallery-thumbs">' + thumbs + '</div>' +
+      '<div class="gallery-thumbs">' + thumbs + shareBtnHtml + '</div>' +
       '</div>'
     );
   }
@@ -222,11 +224,12 @@ var Shared = (function () {
     var creditSection = r.credit
       ? '<section><h4>' + L('modal_credit') + '</h4><div class="credit">Inspired by ' + escapeHtml(r.credit) + '</div></section>' : '';
 
+    var shareBtnHtml = '<button class="modal-share-btn" type="button" aria-label="링크 복사">' + LINK_ICON_SVG + '<span class="modal-share-label">' + L('modal_copy_link') + '</span></button>';
+
     modalContent.innerHTML =
       '<button class="modal-close" aria-label="닫기">✕</button>' +
-      '<button class="modal-share-btn" type="button" aria-label="링크 복사">' + LINK_ICON_SVG + '<span class="modal-share-label">' + L('modal_copy_link') + '</span></button>' +
       navHTML +
-      galleryHTML(r) +
+      galleryHTML(r, shareBtnHtml) +
       '<span class="stamp">' + stampLabel(r) + '</span>' +
       (r.failed ? '<span class="fail-badge">' + L('badge_failed') + '</span>' : '') +
       '<h2 class="i18n-dyn" data-ko="' + escapeHtml(r.title || '(제목 미상)') + '">' + escapeHtml(r.title || '(제목 미상)') + '</h2>' +

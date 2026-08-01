@@ -38,9 +38,10 @@
   .recipe-nav{display:flex; justify-content:space-between; gap:10px; margin:32px 0 0; padding-top:18px; border-top:1px solid var(--line); font-size:13px;}
   .recipe-nav a{color:var(--ink-soft); text-decoration:none;}
   .recipe-nav a:hover{color:var(--teal-deep); text-decoration:underline;}
-  .recipe-share-btn{display:inline-flex; align-items:center; gap:6px; float:right; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:6px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}
+  .recipe-share-btn{display:inline-flex; align-items:center; gap:6px; margin-left:auto; align-self:center; flex:0 0 auto; white-space:nowrap; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:6px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}
   .recipe-share-btn:hover{border-color:var(--teal); color:var(--teal-deep);}
   .recipe-share-btn.copied{border-color:var(--teal); color:var(--teal-deep); background:var(--teal-pale);}
+  .recipe-share-row{display:flex; justify-content:flex-end; margin-bottom:16px;}
 </style>
 </head>
 <body>
@@ -49,11 +50,7 @@
     <a href="../archive.html">← 전체 아카이브</a>
   </div>
   <div class="recipe-page">
-    <button type="button" class="recipe-share-btn" id="shareBtn" aria-label="링크 복사">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span id="shareLabel">링크 복사</span>
-    </button>
-    <div class="recipe-photo"><img src="https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/347.jpg" alt="남해초 시금치토마토샐러드 기형도"></div><div class="recipe-thumbs"><img src="https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/347_2.jpg" alt="남해초 시금치토마토샐러드 기형도 2" loading="lazy"></div>
+    <div class="recipe-photo"><img src="https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/347.jpg" alt="남해초 시금치토마토샐러드 기형도"></div><div class="recipe-thumbs"><img src="https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/347_2.jpg" alt="남해초 시금치토마토샐러드 기형도 2" loading="lazy"><button type="button" class="recipe-share-btn" id="shareBtn" aria-label="링크 복사"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span id="shareLabel">링크 복사</span></button></div>
     <span class="stamp">#347</span>
     
     <h1>남해초 시금치토마토샐러드 기형도</h1>

@@ -123,17 +123,27 @@ def stamp_label(r):
     return r.get('pre_label') or '#?'
 
 
+SHARE_BTN_HTML = (
+    '<button type="button" class="recipe-share-btn" id="shareBtn" aria-label="링크 복사">'
+    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
+    '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>'
+    '<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>'
+    '<span id="shareLabel">링크 복사</span></button>'
+)
+
+
 def media_html(r):
     imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
     if not imgs:
-        return ''
-    thumbs = ''
+        return f'<div class="recipe-share-row">{SHARE_BTN_HTML}</div>'
+    video_html = f'<video src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
     if len(imgs) > 1:
         thumbs = '<div class="recipe-thumbs">' + ''.join(
             f'<img src="{esc(u)}" alt="{esc(r.get("title") or "")} {i+1}" loading="lazy">'
             for i, u in enumerate(imgs[1:], start=1)
-        ) + '</div>'
-    video_html = f'<video src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
+        ) + SHARE_BTN_HTML + '</div>'
+    else:
+        thumbs = f'<div class="recipe-share-row">{SHARE_BTN_HTML}</div>'
     return (
         f'<div class="recipe-photo"><img src="{esc(imgs[0])}" alt="{esc(r.get("title") or "")}"></div>'
         + video_html + thumbs
@@ -207,9 +217,10 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-nav{{display:flex; justify-content:space-between; gap:10px; margin:32px 0 0; padding-top:18px; border-top:1px solid var(--line); font-size:13px;}}
   .recipe-nav a{{color:var(--ink-soft); text-decoration:none;}}
   .recipe-nav a:hover{{color:var(--teal-deep); text-decoration:underline;}}
-  .recipe-share-btn{{display:inline-flex; align-items:center; gap:6px; float:right; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:6px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}}
+  .recipe-share-btn{{display:inline-flex; align-items:center; gap:6px; margin-left:auto; align-self:center; flex:0 0 auto; white-space:nowrap; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:6px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}}
   .recipe-share-btn:hover{{border-color:var(--teal); color:var(--teal-deep);}}
   .recipe-share-btn.copied{{border-color:var(--teal); color:var(--teal-deep); background:var(--teal-pale);}}
+  .recipe-share-row{{display:flex; justify-content:flex-end; margin-bottom:16px;}}
 </style>
 </head>
 <body>
@@ -218,10 +229,6 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <a href="../archive.html">← 전체 아카이브</a>
   </div>
   <div class="recipe-page">
-    <button type="button" class="recipe-share-btn" id="shareBtn" aria-label="링크 복사">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-      <span id="shareLabel">링크 복사</span>
-    </button>
     {media}
     <span class="stamp">{stamp}</span>
     {fail_badge}
