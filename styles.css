@@ -282,8 +282,6 @@ section.mag-section{margin:60px 0;}
 /* On-this-day row */
 .otd-full-bleed{
   background:var(--teal-pale);
-  border-top:2px solid var(--ink);
-  border-bottom:2px solid var(--ink);
   padding:40px 0;
 }
 .otd-inner{max-width:1080px; margin:0 auto; padding:0 20px;}
