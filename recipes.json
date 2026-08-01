@@ -65338,7 +65338,8 @@
   "gallery": [
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-149.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-149_2.jpg"
-  ]
+  ],
+  "deleted": true
  },
  {
   "date": "2020-09-13",
@@ -65450,7 +65451,8 @@
   "gallery": [
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-157.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-157_2.jpg"
-  ]
+  ],
+  "deleted": true
  },
  {
   "date": "2020-09-06",
@@ -65628,7 +65630,8 @@
   "gallery": [
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-171.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-171_2.jpg"
-  ]
+  ],
+  "deleted": true
  },
  {
   "date": "2020-08-23",
@@ -65712,7 +65715,8 @@
   "gallery": [
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-176.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-176_2.jpg"
-  ]
+  ],
+  "deleted": true
  },
  {
   "date": "2020-08-18",
@@ -65770,7 +65774,8 @@
   "gallery": [
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-179.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-179_2.jpg"
-  ]
+  ],
+  "deleted": true
  },
  {
   "date": "2020-08-16",
@@ -65881,7 +65886,8 @@
   "gallery": [
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-186.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-186_2.jpg"
-  ]
+  ],
+  "deleted": true
  },
  {
   "date": "2020-08-08",
@@ -66113,7 +66119,8 @@
   "gallery": [
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-201.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-201_2.jpg"
-  ]
+  ],
+  "deleted": true
  },
  {
   "date": "2020-07-25",
@@ -66221,7 +66228,8 @@
   "gallery": [
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-205.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-205_2.jpg"
-  ]
+  ],
+  "deleted": true
  },
  {
   "date": "2020-07-20",
@@ -66354,7 +66362,8 @@
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-211_3.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-211_4.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-211_5.jpg"
-  ]
+  ],
+  "deleted": true
  },
  {
   "date": "2020-07-15",
@@ -66410,6 +66419,23 @@
   "gallery": [
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-213.jpg",
    "https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-213_2.jpg"
-  ]
+  ],
+  "deleted": true
+ },
+ {
+  "date": "2020-07-13",
+  "date_raw": "20200713",
+  "diary_no": null,
+  "pre_label": null,
+  "weather": null,
+  "failed": false,
+  "calories": null,
+  "title": null,
+  "credit": null,
+  "hashtags": [],
+  "intro": "",
+  "ingredients": null,
+  "steps": null,
+  "raw": ""
  }
 ]
