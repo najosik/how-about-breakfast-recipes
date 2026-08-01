@@ -15,7 +15,10 @@
 - `shared.js` — 데이터 로딩 · 카테고리 아이콘 · 상세 팝업 로직 (공유)
 - `home.js` — 홈페이지 전용 로직
 - `app.js` — 검색 페이지 전용 로직
-- `recipes.json` — 파싱된 레시피 데이터 (1,831건)
+- `recipes.json` — 원본 레시피 데이터 전체(수정용 원본). `review.html`로 검토·수정할 때 이 파일을 직접 엽니다.
+- `recipes-index.json` — `recipes.json`에서 자동 생성되는, 사이트가 실제로 불러오는 가벼운 버전(용량 절감용)
+- `recipes/` — 레시피 한 건당 정적 페이지 하나(고유 URL, 검색엔진용 메타태그·구조화 데이터 포함), 전부 자동 생성됨
+- `build_public_data.py` — `recipes.json` → `recipes-index.json` + `recipes/*.html` + `sitemap.xml` 생성 스크립트. **`recipes.json`을 고칠 때마다(직접 또는 `review.html`로) 배포 전에 꼭 다시 실행**
 - `parse.py` — 원본 텍스트 → `recipes.json` 변환 스크립트 (데이터 갱신 시 재사용)
 - `merge_instagram_export.py` — 인스타그램 공식 내보내기(사진 포함)를 병합하는 스크립트
 
@@ -24,8 +27,17 @@
 `archive.html?tag=토마토` 처럼 해당 조건이 미리 적용된 검색 페이지로 이동합니다.
 "실패기 아카이브" 카드는 `archive.html?failed=1`로 연결됩니다.
 
+## recipes.json을 고친 뒤 (중요)
+`recipes.json`을 직접 편집하거나 `review.html`로 수정했다면, 커밋·배포 전에 반드시
+아래 스크립트를 한 번 실행해주세요. 사이트는 `recipes.json`을 직접 읽지 않고, 이
+스크립트가 생성하는 `recipes-index.json` / `recipes/*.html` / `sitemap.xml`을 읽습니다.
+
+```bash
+python build_public_data.py
+```
+
 ## 로컬에서 확인하기
-`index.html`을 더블클릭해서 바로 열면 `recipes.json`을 못 불러와요(브라우저 보안
+`index.html`을 더블클릭해서 바로 열면 `recipes-index.json`을 못 불러와요(브라우저 보안
 정책 때문). 아래처럼 간단한 로컬 서버를 띄운 뒤 열어주세요.
 
 ```bash

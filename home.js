@@ -19,7 +19,7 @@
     bindLangToggle(all);
   }).catch(function (err) {
     document.getElementById('ledgerWrap').innerHTML =
-      '<div class="empty"><b>데이터를 불러오지 못했어요</b>recipes.json이 같은 폴더에 있는지, 로컬 서버로 열었는지 확인해주세요.</div>';
+      '<div class="empty"><b>데이터를 불러오지 못했어요</b>recipes-index.json이 같은 폴더에 있는지, 로컬 서버로 열었는지 확인해주세요.</div>';
     console.error(err);
   });
 
@@ -246,17 +246,21 @@
       var titleText = Shared.escapeHtml(r.title || '(제목 미상)');
       var yearLabel = lang === 'en' ? y : (y + '년');
       return (
-        '<div class="otd-card" data-year="' + y + '">' +
+        '<a class="otd-card" href="' + Shared.escapeHtml(Shared.recipeUrl(r)) + '" data-year="' + y + '">' +
         Shared.thumbHTML(r, 24) +
         '<div class="otd-year">' + yearLabel + '</div>' +
         '<h4 class="otd-title i18n-dyn" data-ko="' + titleText + '">' + titleText + '</h4>' +
         '<div class="otd-meta">' + r.date + (r.calories ? ' · ' + r.calories + 'kcal' : '') + '</div>' +
-        '</div>'
+        '</a>'
       );
     }).join('');
 
     Array.prototype.forEach.call(row.querySelectorAll('.otd-card'), function (el, i) {
-      el.addEventListener('click', function () { Shared.openModal(byYear[years[i]]); });
+      el.addEventListener('click', function (e) {
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        Shared.openModal(byYear[years[i]]);
+      });
     });
     I18N.applyDynamicTranslations(row);
   }

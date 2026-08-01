@@ -9,6 +9,11 @@ var Shared = (function () {
     '모닝루틴', '모닝리추얼', '나의로컬푸드샐러드'
   ]);
 
+  var LINK_ICON_SVG = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">' +
+    '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>' +
+    '<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>' +
+    '</svg>';
+
   function escapeHtml(s) {
     return String(s || '').replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -94,12 +99,14 @@ var Shared = (function () {
 
 
   function loadData() {
-    return fetch('recipes.json').then(function (r) {
-      if (!r.ok) throw new Error('recipes.json load failed');
+    return fetch('recipes-index.json').then(function (r) {
+      if (!r.ok) throw new Error('recipes-index.json load failed');
       return r.json();
-    }).then(function (all) {
-      return all.filter(function (r) { return !r.deleted; });
     });
+  }
+
+  function recipeUrl(r) {
+    return 'recipes/' + r.page_id + '.html';
   }
 
   function tagFrequency(all, limit) {
@@ -217,6 +224,7 @@ var Shared = (function () {
 
     modalContent.innerHTML =
       '<button class="modal-close" aria-label="닫기">✕</button>' +
+      '<button class="modal-share-btn" type="button" aria-label="링크 복사">' + LINK_ICON_SVG + '<span class="modal-share-label">' + L('modal_copy_link') + '</span></button>' +
       navHTML +
       galleryHTML(r) +
       '<span class="stamp">' + stampLabel(r) + '</span>' +
@@ -227,6 +235,7 @@ var Shared = (function () {
       (tagsHtml ? '<section><h4>' + L('modal_tags') + '</h4><div class="tag-list">' + tagsHtml + '</div></section>' : '');
 
     modalContent.querySelector('.modal-close').addEventListener('click', closeModal);
+    bindShareButton(modalContent.querySelector('.modal-share-btn'), r, L);
     if (nav) {
       var prevBtn = modalContent.querySelector('.modal-nav-prev');
       var nextBtn = modalContent.querySelector('.modal-nav-next');
@@ -246,6 +255,39 @@ var Shared = (function () {
     document.body.style.overflow = '';
   }
 
+  function bindShareButton(btn, r, L) {
+    if (!btn) return;
+    var label = btn.querySelector('.modal-share-label');
+    btn.addEventListener('click', function () {
+      var url = new URL(recipeUrl(r), location.href).href;
+      var done = function () {
+        label.textContent = L('modal_copied');
+        btn.classList.add('copied');
+        setTimeout(function () {
+          label.textContent = L('modal_copy_link');
+          btn.classList.remove('copied');
+        }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(done).catch(function () { fallbackCopy(url); done(); });
+      } else {
+        fallbackCopy(url);
+        done();
+      }
+    });
+  }
+
+  function fallbackCopy(text) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
   function cardHTML(r) {
     var L = (typeof I18N !== 'undefined') ? I18N.t : function (k) { return k; };
     var tagsHtml = foodTags(r).slice(0, 4).map(function (h) {
@@ -258,22 +300,26 @@ var Shared = (function () {
     var kcal = r.calories ? '<span class="kcal">' + r.calories + 'kcal</span>' : '';
     var titleText = escapeHtml(r.title || '(제목 미상)');
     return (
-      '<div class="card" data-no="' + r.diary_no + '" data-date="' + r.date + '" tabindex="0" role="button">' +
+      '<a class="card" href="' + escapeHtml(recipeUrl(r)) + '" data-no="' + r.diary_no + '" data-date="' + r.date + '">' +
       thumbHTML(r, 30) +
       '<span class="stamp">' + stampLabel(r) + '</span>' +
       (r.failed ? '<span class="fail-badge">' + L('badge_failed') + '</span>' : '') +
       '<h3 class="card-title i18n-dyn" data-ko="' + titleText + '">' + titleText + '</h3>' +
       '<div class="card-meta"><span>' + metaBits.join(' · ') + '</span>' + kcal + '</div>' +
       '<div class="card-tags">' + tagsHtml + '</div>' +
-      '</div>'
+      '</a>'
     );
   }
 
   function bindCardClicks(container, records) {
     Array.prototype.forEach.call(container.querySelectorAll('.card'), function (el, i) {
-      el.addEventListener('click', function () { openModal(records[i]); });
-      el.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(records[i]); }
+      // cards are real <a href="recipes/...html"> links (crawlable, shareable,
+      // work with no JS). Intercept plain clicks to open the modal instead;
+      // let ctrl/cmd/middle-click etc. through so "open in new tab" still works.
+      el.addEventListener('click', function (e) {
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        openModal(records[i]);
       });
     });
     if (typeof I18N !== 'undefined') I18N.applyDynamicTranslations(container);
@@ -284,6 +330,7 @@ var Shared = (function () {
     escapeHtml: escapeHtml,
     foodTags: foodTags,
     loadData: loadData,
+    recipeUrl: recipeUrl,
     tagFrequency: tagFrequency,
     categorize: categorize,
     iconSVG: iconSVG,

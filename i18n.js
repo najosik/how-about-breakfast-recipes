@@ -62,7 +62,9 @@ var I18N = (function () {
       modal_tags: '태그',
       badge_failed: '실패기',
       modal_prev_day: '이전 날짜',
-      modal_next_day: '다음 날짜'
+      modal_next_day: '다음 날짜',
+      modal_copy_link: '링크 복사',
+      modal_copied: '복사됨!'
     },
     en: {
       nav_home: '← Home',
@@ -115,7 +117,9 @@ var I18N = (function () {
       modal_tags: 'Tags',
       badge_failed: 'Failed attempt',
       modal_prev_day: 'Previous',
-      modal_next_day: 'Next'
+      modal_next_day: 'Next',
+      modal_copy_link: 'Copy link',
+      modal_copied: 'Copied!'
     }
   };
 
