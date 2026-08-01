@@ -38,10 +38,11 @@
   .recipe-nav{display:flex; justify-content:space-between; gap:10px; margin:32px 0 0; padding-top:18px; border-top:1px solid var(--line); font-size:13px;}
   .recipe-nav a{color:var(--ink-soft); text-decoration:none;}
   .recipe-nav a:hover{color:var(--teal-deep); text-decoration:underline;}
-  .recipe-share-btn{display:inline-flex; align-items:center; gap:6px; margin-left:auto; align-self:center; flex:0 0 auto; white-space:nowrap; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:6px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}
+  .recipe-stamp-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;}
+  .recipe-stamp-row .stamp, .recipe-stamp-row .fail-badge{margin-bottom:0;}
+  .recipe-share-btn{display:inline-flex; align-items:center; gap:6px; flex:0 0 auto; white-space:nowrap; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:5px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}
   .recipe-share-btn:hover{border-color:var(--teal); color:var(--teal-deep);}
   .recipe-share-btn.copied{border-color:var(--teal); color:var(--teal-deep); background:var(--teal-pale);}
-  .recipe-share-row{display:flex; justify-content:flex-end; margin-bottom:16px;}
 </style>
 </head>
 <body>
@@ -50,9 +51,12 @@
     <a href="../archive.html">← 전체 아카이브</a>
   </div>
   <div class="recipe-page">
-    <div class="recipe-photo"><img src="https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-16.jpg" alt="김보라 태양아래의기쁨 벌새"></div><div class="recipe-thumbs"><img src="https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-16_2.jpg" alt="김보라 태양아래의기쁨 벌새 2" loading="lazy"><button type="button" class="recipe-share-btn" id="shareBtn" aria-label="링크 복사"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span id="shareLabel">링크 복사</span></button></div>
-    <span class="stamp">D-16</span>
-    
+    <div class="recipe-photo"><img src="https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-16.jpg" alt="김보라 태양아래의기쁨 벌새"></div><div class="recipe-thumbs"><img src="https://pub-e758b897d13a484a8dc2cf534ab3b64a.r2.dev/images/pre-16_2.jpg" alt="김보라 태양아래의기쁨 벌새 2" loading="lazy"></div>
+    <div class="recipe-stamp-row">
+      <span class="stamp">D-16</span>
+      
+      <button type="button" class="recipe-share-btn" id="shareBtn" aria-label="링크 복사"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span id="shareLabel">링크 복사</span></button>
+    </div>
     <h1>김보라 태양아래의기쁨 벌새</h1>
     <div class="recipe-meta">2021-01-27</div>
     <section><h2>메모</h2><div class="recipe-body">20210127, 우리는 고통과 슬픔에서 달아난다고 생각하지만, 많은 경우 아름다움과 기쁨으로부터 달아난다. 아름다운 것보단 스트레스와 고통이 더 익숙한 옷이기 때문이다. 나이가 들수록 원하는 것은, 자신의 우스꽝스러운 모습에 편안해지는 것이다. 아무것도 알지 못한다는 사실에, 멋있다고 생각하는 모습과는 전혀 다른 행동을 하는 내 모습에 관대해지고 싶다. 그리고 깨어지는 것은 없다는 것을 알아간다. 누군가가 떠나도, 누군가가 죽어도, 모임이 깨어져도 나눴던 사랑, 에너지 그리고 기억은 우리의 마음에 남는다. 

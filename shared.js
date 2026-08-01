@@ -143,11 +143,10 @@ var Shared = (function () {
     return items;
   }
 
-  function galleryHTML(r, shareBtnHtml) {
-    shareBtnHtml = shareBtnHtml || '';
+  function galleryHTML(r) {
     var items = mediaItemsFor(r);
     if (items.length === 0 || (items.length === 1 && items[0].type === 'image')) {
-      return thumbHTML(r, 40) + (shareBtnHtml ? '<div class="modal-share-row">' + shareBtnHtml + '</div>' : '');
+      return thumbHTML(r, 40);
     }
 
     var altText = escapeHtml(r.title || '(제목 미상)');
@@ -171,7 +170,7 @@ var Shared = (function () {
     return (
       '<div class="modal-gallery">' +
       '<div class="gallery-main">' + mainHTML + '</div>' +
-      '<div class="gallery-thumbs">' + thumbs + shareBtnHtml + '</div>' +
+      '<div class="gallery-thumbs">' + thumbs + '</div>' +
       '</div>'
     );
   }
@@ -229,9 +228,12 @@ var Shared = (function () {
     modalContent.innerHTML =
       '<button class="modal-close" aria-label="닫기">✕</button>' +
       navHTML +
-      galleryHTML(r, shareBtnHtml) +
+      galleryHTML(r) +
+      '<div class="modal-stamp-row">' +
       '<span class="stamp">' + stampLabel(r) + '</span>' +
       (r.failed ? '<span class="fail-badge">' + L('badge_failed') + '</span>' : '') +
+      shareBtnHtml +
+      '</div>' +
       '<h2 class="i18n-dyn" data-ko="' + escapeHtml(r.title || '(제목 미상)') + '">' + escapeHtml(r.title || '(제목 미상)') + '</h2>' +
       '<div class="modal-meta">' + [r.date, r.weather, r.calories ? r.calories + 'kcal' : null].filter(Boolean).map(escapeHtml).join(' · ') + '</div>' +
       introSection + ingSection + stepSection + creditSection +

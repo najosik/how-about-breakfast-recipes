@@ -135,15 +135,14 @@ SHARE_BTN_HTML = (
 def media_html(r):
     imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
     if not imgs:
-        return f'<div class="recipe-share-row">{SHARE_BTN_HTML}</div>'
+        return ''
     video_html = f'<video src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
+    thumbs = ''
     if len(imgs) > 1:
         thumbs = '<div class="recipe-thumbs">' + ''.join(
             f'<img src="{esc(u)}" alt="{esc(r.get("title") or "")} {i+1}" loading="lazy">'
             for i, u in enumerate(imgs[1:], start=1)
-        ) + SHARE_BTN_HTML + '</div>'
-    else:
-        thumbs = f'<div class="recipe-share-row">{SHARE_BTN_HTML}</div>'
+        ) + '</div>'
     return (
         f'<div class="recipe-photo"><img src="{esc(imgs[0])}" alt="{esc(r.get("title") or "")}"></div>'
         + video_html + thumbs
@@ -217,10 +216,11 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-nav{{display:flex; justify-content:space-between; gap:10px; margin:32px 0 0; padding-top:18px; border-top:1px solid var(--line); font-size:13px;}}
   .recipe-nav a{{color:var(--ink-soft); text-decoration:none;}}
   .recipe-nav a:hover{{color:var(--teal-deep); text-decoration:underline;}}
-  .recipe-share-btn{{display:inline-flex; align-items:center; gap:6px; margin-left:auto; align-self:center; flex:0 0 auto; white-space:nowrap; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:6px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}}
+  .recipe-stamp-row{{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;}}
+  .recipe-stamp-row .stamp, .recipe-stamp-row .fail-badge{{margin-bottom:0;}}
+  .recipe-share-btn{{display:inline-flex; align-items:center; gap:6px; flex:0 0 auto; white-space:nowrap; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:5px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}}
   .recipe-share-btn:hover{{border-color:var(--teal); color:var(--teal-deep);}}
   .recipe-share-btn.copied{{border-color:var(--teal); color:var(--teal-deep); background:var(--teal-pale);}}
-  .recipe-share-row{{display:flex; justify-content:flex-end; margin-bottom:16px;}}
 </style>
 </head>
 <body>
@@ -230,8 +230,11 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   </div>
   <div class="recipe-page">
     {media}
-    <span class="stamp">{stamp}</span>
-    {fail_badge}
+    <div class="recipe-stamp-row">
+      <span class="stamp">{stamp}</span>
+      {fail_badge}
+      {share_btn}
+    </div>
     <h1>{title}</h1>
     <div class="recipe-meta">{meta_line}</div>
     {intro_section}
@@ -363,6 +366,7 @@ def build_pages(live, ids):
             og_image=og_image, twitter_image=twitter_image,
             media=media_html(r), stamp=esc(stamp_label(r)),
             fail_badge='<span class="fail-badge">실패기</span>' if r.get('failed') else '',
+            share_btn=SHARE_BTN_HTML,
             meta_line=meta_line,
             intro_section=intro_section, ingredients_section=ingredients_section,
             steps_section=steps_section, credit_section=credit_section, tags_section=tags_section,

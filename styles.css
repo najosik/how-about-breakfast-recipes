@@ -183,15 +183,16 @@ button.loadmore:hover{border-color:var(--teal); color:var(--teal);}
 .modal{background:var(--paper); max-width:640px; width:100%; border-radius:3px; padding:32px 32px 36px; position:relative; margin-bottom:40px; box-shadow:0 20px 60px rgba(0,0,0,0.22);}
 .modal-close{position:absolute; top:18px; right:18px; width:32px; height:32px; border-radius:50%; border:1px solid var(--line-strong); background:var(--paper); cursor:pointer; font-size:16px; color:var(--ink-soft); line-height:1;}
 .modal-close:hover{border-color:var(--teal); color:var(--teal);}
+.modal-stamp-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;}
+.modal-stamp-row .stamp, .modal-stamp-row .fail-badge{margin-bottom:0;}
 .modal-share-btn{
-  display:inline-flex; align-items:center; gap:6px; margin-left:auto; align-self:center;
+  display:inline-flex; align-items:center; gap:6px;
   border:1px solid var(--line-strong); background:var(--paper); border-radius:20px;
-  padding:6px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;
+  padding:5px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;
   flex:0 0 auto; white-space:nowrap;
 }
 .modal-share-btn:hover{border-color:var(--teal); color:var(--teal-deep);}
 .modal-share-btn.copied{border-color:var(--teal); color:var(--teal-deep); background:var(--teal-pale);}
-.modal-share-row{display:flex; justify-content:flex-end; margin:-8px 0 12px;}
 .modal h2{font-family:'Nanum Myeongjo',serif; font-size:25px; margin:12px 0 6px; padding-right:30px; color:var(--teal-deep);}
 .modal .modal-meta{font-size:13px; color:var(--ink-faint); margin-bottom:20px;}
 .modal section{margin-bottom:20px;}
