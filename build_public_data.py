@@ -42,7 +42,21 @@ INDEX_FIELDS = [
 ]
 
 
+def slugify(text):
+    text = (text or '').strip()
+    text = re.sub(r'[^\w\-]+', '-', text)
+    text = re.sub(r'-{2,}', '-', text).strip('-')
+    if len(text) > 60:
+        text = text[:60]
+        if '-' in text:
+            text = text.rsplit('-', 1)[0]
+    return text
+
+
 def base_page_id(r):
+    slug = slugify(display_title(r))
+    if slug:
+        return slug
     if r.get('diary_no') is not None:
         return str(r['diary_no'])
     if r.get('pre_label'):
