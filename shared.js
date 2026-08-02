@@ -190,9 +190,16 @@ var Shared = (function () {
       btn.addEventListener('click', function () {
         var idx = parseInt(btn.getAttribute('data-idx'), 10);
         var item = items[idx];
-        mainEl.innerHTML = item.type === 'video'
-          ? '<video src="' + escapeHtml(item.src) + '" controls playsinline autoplay></video>'
-          : '<img src="' + escapeHtml(item.src) + '" alt="' + altText + '">';
+        if (item.type === 'video') {
+          mainEl.innerHTML = '<video src="' + escapeHtml(item.src) + '" controls playsinline></video>';
+          // call play() directly in this click handler (rather than the
+          // declarative `autoplay` attribute) so the browser reliably
+          // attributes it to the click and doesn't fall back to muted
+          // autoplay, which happened intermittently with `autoplay`.
+          mainEl.querySelector('video').play().catch(function () {});
+        } else {
+          mainEl.innerHTML = '<img src="' + escapeHtml(item.src) + '" alt="' + altText + '">';
+        }
         Array.prototype.forEach.call(thumbBtns, function (b) { b.classList.toggle('active', b === btn); });
       });
     });
