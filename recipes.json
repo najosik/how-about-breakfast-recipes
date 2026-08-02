@@ -66415,7 +66415,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "바나나 요거트 천도복숭아",
+  "title": "야채 샐러드",
   "credit": null,
   "hashtags": [
    "바나나",
@@ -66471,7 +66471,8 @@
    "https://images.how-about-breakfast.com/images/pre-208_4.jpg",
    "https://images.how-about-breakfast.com/images/pre-208_5.jpg"
   ],
-  "photo_review_resolved": true
+  "photo_review_resolved": true,
+  "deleted": false
  },
  {
   "date": "2020-07-17",
@@ -66480,7 +66481,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "크랜베리 그래잇데이 그래놀라",
+  "title": "크랜베리 요거트",
   "credit": null,
   "hashtags": [
    "havanaclub",
@@ -66549,7 +66550,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 무가당요거트 블루베리",
+  "title": "무가당 블루베리 요거트",
   "credit": null,
   "hashtags": [
    "무가당요거트",
@@ -66615,5 +66616,22 @@
   "steps": null,
   "raw": "",
   "image": "https://images.how-about-breakfast.com/images/20200713.jpg"
+ },
+ {
+  "date": "2020-07-14",
+  "date_raw": "20200714",
+  "diary_no": null,
+  "pre_label": null,
+  "weather": null,
+  "failed": false,
+  "calories": null,
+  "title": "파프리카 샐러드",
+  "credit": null,
+  "hashtags": [],
+  "intro": "냉장고 털어 만든 #오늘의조식 #파프리 카 #방울토마토 #호두 마지막으로 박하향 나는 #참나물 인지 #신 선초 인지 모를 것 feat.올리브오일, 발사믹",
+  "ingredients": null,
+  "steps": null,
+  "raw": "",
+  "image": "images/20200714.jpg"
  }
 ]
