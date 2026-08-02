@@ -217,6 +217,11 @@
     var mm = today.getMonth() + 1;
     var dd = today.getDate();
 
+    var datePrefixEl = document.getElementById('otdDatePrefix');
+    if (datePrefixEl) {
+      datePrefixEl.textContent = (lang === 'en' ? (mm + '/' + dd) : (mm + '.' + dd + '.')) + ' ';
+    }
+
     function dist(r) {
       if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return 999;
       var parts = r.date.split('-');

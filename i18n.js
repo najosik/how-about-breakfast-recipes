@@ -39,7 +39,7 @@ var I18N = (function () {
       ledger_desc: '칸 하나가 하루예요. 진한 초록은 조식을 만든 날, 빈 칸은 별일이 있어서 조식을 건너뛴 날입니다.',
       legend_posted: '기록함',
       legend_skipped: '건너뜀',
-      otd_title: '그 날의 조식들',
+      otd_title: '오늘의 조식들',
       otd_desc: '해마다 오늘 만들었던 조식을 모아봤어요.',
       col_title: '소재로 골라 먹기',
       col_desc: '가장 자주 등장한 재료들로 모은 테마별 아카이브예요.',
