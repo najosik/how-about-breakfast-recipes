@@ -1,5 +1,32 @@
 [
  {
+  "date": "2026-08-01",
+  "date_raw": "20260801",
+  "diary_no": 1797,
+  "weather": "28도/흐림",
+  "failed": false,
+  "calories": 650,
+  "title": "가지 파스타(절망편)",
+  "credit": null,
+  "hashtags": [
+   "가지",
+   "레시피",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20260801 #조식다이어리 1797, 28도/흐림\n그래도팜 @farm_nevertheless 에서 가지를 주문했다. 밀키한 화이트 껍질의 Japanese White로 파스타를 만들었는데 간장 소스에 덮여서 그만 🥲 \n약 650kcal 가지 파스타(절망편)",
+  "ingredients": "스파게티 0.5인분, 가지 1개, 마늘 7개, 크래시드 레드페퍼 한 꼬집, 쪽파와 그라나파다노치즈 조금, (소스) 간장 1T, 참치액 1T",
+  "steps": "1. 가지는 깨끗하게 씻은 뒤 물기를 닦아내고 숭덩숭덩 썬다. 믹싱볼에 넣어 소금 뿌리고 10분 정도 수분이 빠질때까지 둔다. \n2. 마늘은 채칼로 얇게 썰고 쪽파는 잘게 다져서 준비한다. \n3. 끓는 물에 소금 1t, 스파게티를 삶는다. \n4. 팬에 올리브오일 두르고 마늘 볶다가 크래시드 레드페퍼와 가지 넣고. 간장 1T, 참치액 1T 넣고 볶는다. \n5. 4에 3의 스파게티 넣고 볶다가 불 끄고 만테까레 후 접시에 담고 준비한 쪽파, 올리브오일, 그라나파다노치즈 넣는다.",
+  "raw": "20260801 #조식다이어리 1797, 28도/흐림\n\n그래도팜 @farm_nevertheless 에서 가지를 주문했다. 밀키한 화이트 껍질의 Japanese White로 파스타를 만들었는데 간장 소스에 덮여서 그만 🥲 \n\n약 650kcal 가지 파스타(절망편) \n\n👉재료\n스파게티 0.5인분, 가지 1개, 마늘 7개, 크래시드 레드페퍼 한 꼬집, 쪽파와 그라나파다노치즈 조금, (소스) 간장 1T, 참치액 1T\n\n👉조리\n1. 가지는 깨끗하게 씻은 뒤 물기를 닦아내고 숭덩숭덩 썬다. 믹싱볼에 넣어 소금 뿌리고 10분 정도 수분이 빠질때까지 둔다. \n2. 마늘은 채칼로 얇게 썰고 쪽파는 잘게 다져서 준비한다. \n3. 끓는 물에 소금 1t, 스파게티를 삶는다. \n4. 팬에 올리브오일 두르고 마늘 볶다가 크래시드 레드페퍼와 가지 넣고. 간장 1T, 참치액 1T 넣고 볶는다. \n5. 4에 3의 스파게티 넣고 볶다가 불 끄고 만테까레 후 접시에 담고 준비한 쪽파, 올리브오일, 그라나파다노치즈 넣는다. \n\n#조식 #레시피 #가지\n\n🤔이런 가지 먹어 보셨어요?🍆",
+  "image": "https://images.how-about-breakfast.com/images/1797.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1797.jpg",
+   "https://images.how-about-breakfast.com/images/1797_2.jpg",
+   "https://images.how-about-breakfast.com/images/1797_3.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1797.mp4"
+ },
+ {
   "date": "2026-07-31",
   "date_raw": "20260731",
   "diary_no": 1796,
@@ -66602,23 +66629,6 @@
   "deleted": true
  },
  {
-  "date": "2020-07-13",
-  "date_raw": "20200713",
-  "diary_no": null,
-  "pre_label": null,
-  "weather": null,
-  "failed": false,
-  "calories": null,
-  "title": "토마토 샐러드",
-  "credit": null,
-  "hashtags": [],
-  "intro": "오늘의조식 #마늘 상하기 직전의 #새송이 #방울토마토 #아스파라거스 feat.올리브오일과 #시금치페스토",
-  "ingredients": null,
-  "steps": null,
-  "raw": "",
-  "image": "https://images.how-about-breakfast.com/images/20200713.jpg"
- },
- {
   "date": "2020-07-14",
   "date_raw": "20200714",
   "diary_no": null,
@@ -66634,5 +66644,22 @@
   "steps": null,
   "raw": "",
   "image": "https://images.how-about-breakfast.com/images/20200714.jpg"
+ },
+ {
+  "date": "2020-07-13",
+  "date_raw": "20200713",
+  "diary_no": null,
+  "pre_label": null,
+  "weather": null,
+  "failed": false,
+  "calories": null,
+  "title": "토마토 샐러드",
+  "credit": null,
+  "hashtags": [],
+  "intro": "오늘의조식 #마늘 상하기 직전의 #새송이 #방울토마토 #아스파라거스 feat.올리브오일과 #시금치페스토",
+  "ingredients": null,
+  "steps": null,
+  "raw": "",
+  "image": "https://images.how-about-breakfast.com/images/20200713.jpg"
  }
 ]
