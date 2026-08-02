@@ -35,6 +35,15 @@ SITEMAP_PATH = os.path.join(HERE, 'sitemap.xml')
 
 SITE_BASE = 'https://how-about-breakfast.com'
 
+# AdSense: 계정 승인 후 아래 두 값을 실제 발급받은 ID로 교체하면 광고가 노출됩니다.
+# 그 전까지는 빈 placeholder div만 렌더링되어 아무 광고도 뜨지 않습니다.
+AD_CLIENT = ''  # 예: 'ca-pub-1234567890123456'
+AD_SLOT_RECIPE_BOTTOM = ''  # 예: '1234567890'
+
+# 사진+한두 줄뿐인 초기 게시물처럼 콘텐츠가 지나치게 적은 페이지는
+# 애드센스 정책(광고 대비 콘텐츠 부족) 위반 소지가 있어 광고를 아예 넣지 않는다.
+MIN_AD_CONTENT_CHARS = 60
+
 INDEX_FIELDS = [
     'date', 'diary_no', 'pre_label', 'weather', 'failed', 'calories',
     'title', 'credit', 'hashtags', 'intro', 'ingredients', 'steps',
@@ -146,6 +155,23 @@ SHARE_BTN_HTML = (
 )
 
 
+def ad_eligible(r):
+    text = (r.get('intro') or '') + (r.get('ingredients') or '') + (r.get('steps') or '')
+    return len(text.strip()) >= MIN_AD_CONTENT_CHARS
+
+
+def ad_slot_html(position):
+    if not AD_CLIENT:
+        return f'<!-- AdSense: 계정 승인 후 이 자리에 실제 광고 코드가 채워집니다 ({position}) -->'
+    return (
+        f'<div class="ad-slot ad-slot-{position}">'
+        f'<ins class="adsbygoogle" style="display:block" data-ad-client="{AD_CLIENT}" '
+        f'data-ad-slot="{AD_SLOT_RECIPE_BOTTOM}" data-ad-format="auto" data-full-width-responsive="true"></ins>'
+        f'<script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>'
+        f'</div>'
+    )
+
+
 def media_html(r):
     imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
     if not imgs:
@@ -235,6 +261,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-share-btn{{display:inline-flex; align-items:center; gap:6px; flex:0 0 auto; white-space:nowrap; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:5px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}}
   .recipe-share-btn:hover{{border-color:var(--teal); color:var(--teal-deep);}}
   .recipe-share-btn.copied{{border-color:var(--teal); color:var(--teal-deep); background:var(--teal-pale);}}
+  .ad-slot{{margin:22px 0 0;}}
 </style>
 </head>
 <body>
@@ -260,6 +287,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
       <a href="{prev_href}">{prev_label}</a>
       <a href="{next_href}">{next_label}</a>
     </div>
+    {ad_slot}
   </div>
 </div>
 
@@ -386,6 +414,7 @@ def build_pages(live, ids):
             steps_section=steps_section, credit_section=credit_section, tags_section=tags_section,
             prev_href=prev_href, prev_label=prev_label, next_href=next_href, next_label=next_label,
             json_ld=json_ld(r, url, title),
+            ad_slot=ad_slot_html('recipe-bottom') if ad_eligible(r) else '',
         )
         with open(os.path.join(PAGES_DIR, f'{pid}.html'), 'w', encoding='utf-8') as f:
             f.write(html_out)
