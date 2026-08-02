@@ -140,10 +140,11 @@
     labelsEl.innerHTML = '';
 
     var labelFor = {
-      posted: lang === 'en' ? 'Made it' : '기록함',
+      posted: lang === 'en' ? 'Made it' : '조식',
       failed: lang === 'en' ? 'Failed attempt' : '실패기',
       missed: lang === 'en' ? 'No entry' : '기록 없음'
     };
+    var missedLabelFor2020 = lang === 'en' ? 'Restoring' : '복원 중';
 
     var tooltip = document.getElementById('ledgerTooltip');
     if (!tooltip) {
@@ -155,7 +156,8 @@
 
     function showTooltip(cell, day) {
       if (day.status === 'pad' || !day.key) return;
-      tooltip.textContent = day.key + ' · ' + (labelFor[day.status] || '');
+      var label = (day.status === 'missed' && day.year === 2020) ? missedLabelFor2020 : (labelFor[day.status] || '');
+      tooltip.textContent = day.key + ' · ' + label;
       tooltip.classList.remove('hidden');
       var wrapRect = document.getElementById('ledgerWrap').getBoundingClientRect();
       var cellRect = cell.getBoundingClientRect();
