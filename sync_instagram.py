@@ -25,6 +25,7 @@ import json
 import os
 import re
 import sys
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -130,7 +131,11 @@ def main():
 
     added, video_attached = 0, 0
     for media in media_list:
-        caption = media.get('caption') or ''
+        # Instagram's API returns some captions Unicode-decomposed (NFD) rather
+        # than precomposed (NFC) - notably from posts authored on iOS. Left
+        # as-is, this produces filenames/URLs that look identical but don't
+        # byte-match the rest of the site's NFC text, breaking page lookups.
+        caption = unicodedata.normalize('NFC', media.get('caption') or '')
         m = re.search(r'#조식다이어리\s*(\d+)', caption)
         if not m:
             print(f'  skip (no #조식다이어리 N in caption): {media.get("permalink")}')
