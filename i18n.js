@@ -32,9 +32,9 @@ var I18N = (function () {
       footer_copyright: '© how.about.breakfast 2020-2026. All rights reserved.',
 
       home_title: '날마다 조식(Beta)',
-      home_tagline: '매일 어제와 다른 조식을 만들어 먹고, 그 조식들을 기록하는 아카이브입니다.',
+      home_tagline: '매일 어제와 다른 조식을 만들어 먹고, 그 조식들을 기록한 아카이브입니다.',
       home_since_suffix: ' 창간',
-      ledger_title: '하루도 빼지 않은 기록(은 아니지만)',
+      ledger_title: '한눈에 보는 조식 아카이브',
       ledger_desc: '칸 하나가 하루예요. 진한 초록은 조식을 만든 날, 빈 칸은 별일이 있어서 조식을 건너뛴 날입니다.',
       legend_posted: '기록함',
       legend_skipped: '건너뜀',
