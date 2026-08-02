@@ -35,10 +35,11 @@ SITEMAP_PATH = os.path.join(HERE, 'sitemap.xml')
 
 SITE_BASE = 'https://how-about-breakfast.com'
 
-# AdSense: 계정 승인 후 아래 두 값을 실제 발급받은 ID로 교체하면 광고가 노출됩니다.
-# 그 전까지는 빈 placeholder div만 렌더링되어 아무 광고도 뜨지 않습니다.
-AD_CLIENT = ''  # 예: 'ca-pub-1234567890123456'
-AD_SLOT_RECIPE_BOTTOM = ''  # 예: '1234567890'
+# AdSense: 사이트 소유권 확인용 퍼블리셔 ID. 광고 단위(ad-slot)는 심사 통과 후
+# 발급되며, AD_SLOT_RECIPE_BOTTOM을 채우기 전까지는 로더 스크립트만 로드되고
+# 실제 광고 <ins> 태그는 렌더링되지 않습니다.
+AD_CLIENT = 'ca-pub-2329784289008303'
+AD_SLOT_RECIPE_BOTTOM = ''  # 예: '1234567890' — 심사 통과 후 광고 단위 생성 시 발급
 
 # 사진+한두 줄뿐인 초기 게시물처럼 콘텐츠가 지나치게 적은 페이지는
 # 애드센스 정책(광고 대비 콘텐츠 부족) 위반 소지가 있어 광고를 아예 넣지 않는다.
@@ -160,9 +161,15 @@ def ad_eligible(r):
     return len(text.strip()) >= MIN_AD_CONTENT_CHARS
 
 
+AD_VERIFY_SCRIPT = (
+    f'<!-- Google AdSense (site verification) -->\n'
+    f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={AD_CLIENT}" crossorigin="anonymous"></script>'
+) if AD_CLIENT else ''
+
+
 def ad_slot_html(position):
-    if not AD_CLIENT:
-        return f'<!-- AdSense: 계정 승인 후 이 자리에 실제 광고 코드가 채워집니다 ({position}) -->'
+    if not (AD_CLIENT and AD_SLOT_RECIPE_BOTTOM):
+        return f'<!-- AdSense: 광고 단위(ad-slot) 발급 후 이 자리에 실제 광고 코드가 채워집니다 ({position}) -->'
     return (
         f'<div class="ad-slot ad-slot-{position}">'
         f'<ins class="adsbygoogle" style="display:block" data-ad-client="{AD_CLIENT}" '
@@ -235,6 +242,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
 {twitter_image}
+{ad_verify_script}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
@@ -405,7 +413,7 @@ def build_pages(live, ids):
 
         html_out = PAGE_TEMPLATE.format(
             title=esc(title), description=esc(description), url=url,
-            og_image=og_image, twitter_image=twitter_image,
+            og_image=og_image, twitter_image=twitter_image, ad_verify_script=AD_VERIFY_SCRIPT,
             media=media_html(r), stamp=esc(stamp_label(r)),
             fail_badge='<span class="fail-badge">실패기</span>' if r.get('failed') else '',
             share_btn=SHARE_BTN_HTML,
