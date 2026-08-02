@@ -232,11 +232,16 @@
       return Math.abs(rd - dd);
     }
 
+    var currentYear = String(today.getFullYear());
     var byYear = {};
     all.forEach(function (r) {
       var d = dist(r);
       if (d > 3) return;
       var y = r.date.slice(0, 4);
+      // the current year only counts as "on this day" for an exact match -
+      // a fuzzy nearby-day fallback would surface yesterday's brand-new
+      // post as if it were a past-years memory, which isn't the intent.
+      if (y === currentYear && d !== 0) return;
       if (!byYear[y] || dist(byYear[y]) > d) byYear[y] = r;
     });
 
