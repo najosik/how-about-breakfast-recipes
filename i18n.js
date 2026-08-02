@@ -9,6 +9,7 @@ var I18N = (function () {
   'use strict';
 
   var LANG_KEY = 'hab_lang';
+  var postCount = 0;
 
   var STRINGS = {
     ko: {
@@ -33,7 +34,7 @@ var I18N = (function () {
 
       home_title: '날마다 조식(Beta)',
       home_tagline: '매일 어제와 다른 조식을 만들어 먹고, 그 조식들을 기록한 아카이브입니다.',
-      home_beta_note: '과거에 인스타그램에 올렸던 데이터를 몽땅 소환했는데 제대로 소환이 안됐고, 게다가 손발이 오그라드는 부끄러운 게시물이 많습니다. 천천히 다듬어 보겠습니다. 그래서 Beta인데, 과연 Beta를 언제 뗄 수 있을지는 모르겠습니다.',
+      home_beta_note: '인스타그램에 올렸던 게시물을 몽땅 불러왔는데 생각처럼 한 번에 되지 않았습니다. 게다가 초창기 게시물들은 포맷이 달라서 넣을까 말까 한참 고민을 했는데 개인의 기록으로는 가치가 있을 것 같아서 가능한 한 원본대로 남겨두기로 했습니다. 전반적으로 들쭉날쭉한 것들이 많은데 천천히 다듬어 보겠습니다. 그래서 양심상 Beta라고 명시했는데, 과연 Beta를 언제 뗄 수 있을지는 모르겠습니다.',
       home_since_suffix: ' 창간',
       ledger_title: '한눈에 보는 조식 아카이브',
       ledger_desc: '칸 하나가 하루예요. 진한 초록은 조식을 만든 날, 빈 칸은 별일이 있어서 조식을 건너뛴 날입니다.',
@@ -48,10 +49,10 @@ var I18N = (function () {
       col_failed_label: '실패기 아카이브',
       col_failed_suffix: '건의 솔직한 실패담',
       shuffle_title: '오늘 뭐 먹지?',
-      shuffle_desc: '1,800개가 넘는 기록 중에서 무작위로 하나를 꺼내드려요.',
-      shuffle_btn: '무작위로 하나 꺼내기',
+      shuffle_desc: '{count}개가 넘는 기록 중에서 랜덤으로 꺼내먹어요.',
+      shuffle_btn: '랜덤으로 꺼내 먹기',
       cta_title: '전체 아카이브 검색하기',
-      cta_desc: '재료, 칼로리, 키워드로 1,831개의 기록을 직접 뒤져보세요.',
+      cta_desc: '재료, 칼로리, 키워드로 {count}개의 기록을 직접 뒤져보세요.',
       cta_btn: '아카이브 열기 →',
 
       modal_ingredients: '재료',
@@ -102,10 +103,10 @@ var I18N = (function () {
       col_failed_label: 'The Failure Files',
       col_failed_suffix: ' honest failures',
       shuffle_title: 'What should I eat today?',
-      shuffle_desc: 'Pull a random entry from over 1,800 recorded breakfasts.',
+      shuffle_desc: 'Pull a random entry from over {count} recorded breakfasts.',
       shuffle_btn: 'Surprise me',
       cta_title: 'Search the full archive',
-      cta_desc: 'Dig through 1,831 entries by ingredient, calories, or keyword.',
+      cta_desc: 'Dig through {count} entries by ingredient, calories, or keyword.',
       cta_btn: 'Open the archive →',
 
       modal_ingredients: 'Ingredients',
@@ -155,7 +156,11 @@ var I18N = (function () {
   }
   function t(key) {
     var lang = getLang();
-    return (STRINGS[lang] && STRINGS[lang][key]) || STRINGS.ko[key] || key;
+    var raw = (STRINGS[lang] && STRINGS[lang][key]) || STRINGS.ko[key] || key;
+    return raw.indexOf('{count}') === -1 ? raw : raw.replace('{count}', postCount.toLocaleString());
+  }
+  function setCount(n) {
+    postCount = n;
   }
   function tagLabel(koTag) {
     if (getLang() !== 'en') return koTag;
@@ -257,6 +262,7 @@ var I18N = (function () {
     STRINGS: STRINGS,
     getLang: getLang,
     setLang: setLang,
+    setCount: setCount,
     t: t,
     tagLabel: tagLabel,
     collectionLabel: collectionLabel,

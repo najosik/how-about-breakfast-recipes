@@ -14,6 +14,7 @@
 
   Shared.loadData().then(function (all) {
     allData = all;
+    I18N.setCount(all.length);
     renderAll(all);
     bindShuffle(all);
     bindLangToggle(all);
