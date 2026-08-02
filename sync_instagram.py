@@ -111,10 +111,23 @@ def download_post_media(media, name_base):
 
     video_rel_path = None
     if video_first:
-        dest_name = f'{name_base}.mp4'
-        dest = os.path.join(IMAGES_DIR, dest_name)
-        download_to_file(items[0]['media_url'], dest)
-        video_rel_path = f'images/{dest_name}'
+        video_item = items[0]
+        if video_item.get('media_url'):
+            dest_name = f'{name_base}.mp4'
+            dest = os.path.join(IMAGES_DIR, dest_name)
+            download_to_file(video_item['media_url'], dest)
+            video_rel_path = f'images/{dest_name}'
+        elif video_item.get('thumbnail_url') and not gallery_rel_paths:
+            # Reels don't expose media_url via this API - fall back to the
+            # thumbnail as a still image so the post isn't lost entirely.
+            dest_name = f'{name_base}.jpg'
+            dest = os.path.join(IMAGES_DIR, dest_name)
+            tmp = dest + '.download'
+            download_to_file(video_item['thumbnail_url'], tmp)
+            save_image(tmp, dest)
+            if os.path.exists(tmp):
+                os.remove(tmp)
+            gallery_rel_paths.append(f'images/{dest_name}')
 
     return (not gallery_rel_paths and not video_rel_path), gallery_rel_paths, video_rel_path
 
