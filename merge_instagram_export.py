@@ -161,22 +161,50 @@ def save_image(src_path, dest_path, max_width=1000, quality=82):
 
 def copy_post_images(post, name_base, export_dir, images_dir):
     """Copy all jpg/png media for a post into images_dir, named name_base.jpg,
-    name_base_2.jpg, ... Returns (image_missing: bool, gallery: list[str])."""
+    name_base_2.jpg, ... Also copies a native video within the post's own
+    media, if present - a regular feed post (matched via #조식다이어리 N in
+    its caption, not a separate Reel) can itself contain a video as one of
+    its media items, e.g. when the video is posted first. Only the very
+    first media item is considered for this - some posts end with an
+    unrelated follow-me/outro clip as their last item, which should not be
+    picked up as the recipe's video. Returns
+    (image_missing: bool, gallery: list[str], video: str|None)."""
     media_items = post.get('media', [])
     jpg_uris = [md['uri'] for md in media_items if md.get('uri', '').lower().endswith(('.jpg', '.jpeg', '.png'))]
+    mp4_uris = []
+    if media_items and media_items[0].get('uri', '').lower().endswith('.mp4'):
+        mp4_uris = [media_items[0]['uri']]
+
+    def resolve_src(uri):
+        src = os.path.join(export_dir, uri)
+        if os.path.isfile(src):
+            return src
+        alt = os.path.join(export_dir, 'your_instagram_activity', uri)
+        return alt if os.path.isfile(alt) else None
+
     gallery_rel_paths = []
     for i, uri in enumerate(jpg_uris):
-        src = os.path.join(export_dir, uri)
-        if not os.path.isfile(src):
-            alt = os.path.join(export_dir, 'your_instagram_activity', uri)
-            src = alt if os.path.isfile(alt) else src
-        if not os.path.isfile(src):
+        src = resolve_src(uri)
+        if not src:
             continue
         dest_name = f'{name_base}.jpg' if i == 0 else f'{name_base}_{i+1}.jpg'
         dest = os.path.join(images_dir, dest_name)
         save_image(src, dest)
         gallery_rel_paths.append(f'images/{dest_name}')
-    return (not jpg_uris), gallery_rel_paths
+
+    video_rel_path = None
+    for uri in mp4_uris:
+        src = resolve_src(uri)
+        if not src:
+            continue
+        dest_name = f'{name_base}.mp4'
+        dest = os.path.join(images_dir, dest_name)
+        os.makedirs(os.path.dirname(dest), exist_ok=True)
+        shutil.copyfile(src, dest)
+        video_rel_path = f'images/{dest_name}'
+        break  # one video per post is enough
+
+    return (not jpg_uris and not video_rel_path), gallery_rel_paths, video_rel_path
 
 
 def main():
@@ -231,7 +259,7 @@ def main():
 
         if m:
             diary_no = int(m.group(1))
-            image_no_jpg, gallery_rel_paths = copy_post_images(post, str(diary_no), export_dir, images_dir)
+            image_no_jpg, gallery_rel_paths, video_rel_path = copy_post_images(post, str(diary_no), export_dir, images_dir)
             if image_no_jpg:
                 image_missing += 1
 
@@ -241,6 +269,8 @@ def main():
                     rec['image'] = gallery_rel_paths[0]
                     if len(gallery_rel_paths) > 1:
                         rec['gallery'] = gallery_rel_paths
+                if video_rel_path:
+                    rec['video'] = video_rel_path
                 matched += 1
             else:
                 date_str = extract_date_str(post, title) or ''
@@ -249,6 +279,8 @@ def main():
                     new_rec['image'] = gallery_rel_paths[0]
                     if len(gallery_rel_paths) > 1:
                         new_rec['gallery'] = gallery_rel_paths
+                if video_rel_path:
+                    new_rec['video'] = video_rel_path
                 recipes.append(new_rec)
                 recipe_by_no[diary_no] = new_rec
                 added += 1
@@ -295,7 +327,7 @@ def main():
         candidates = []
         for i, (date_str, title, post) in enumerate(entries):
             suffix = '' if i == 0 else f'-alt{i + 1}'
-            image_no_jpg, gallery_rel_paths = copy_post_images(post, f'pre-{days_before}{suffix}', export_dir, images_dir)
+            image_no_jpg, gallery_rel_paths, _video_rel_path = copy_post_images(post, f'pre-{days_before}{suffix}', export_dir, images_dir)
             if gallery_rel_paths:
                 candidates.append(gallery_rel_paths)
             elif image_no_jpg:
