@@ -48,7 +48,7 @@ MIN_AD_CONTENT_CHARS = 60
 INDEX_FIELDS = [
     'date', 'diary_no', 'pre_label', 'weather', 'failed', 'calories',
     'title', 'credit', 'hashtags', 'intro', 'ingredients', 'steps',
-    'image', 'gallery', 'video',
+    'image', 'gallery', 'video', 'permalink',
 ]
 
 
@@ -184,6 +184,10 @@ def media_html(r):
     if not imgs:
         return ''
     video_html = f'<video src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
+    ig_link_html = (
+        f'<a class="recipe-ig-link" href="{esc(r["permalink"])}" target="_blank" rel="noopener">인스타그램에서 크게 보기 →</a>'
+        if r.get('video') and r.get('permalink') else ''
+    )
     thumbs = ''
     if len(imgs) > 1:
         thumbs = '<div class="recipe-thumbs">' + ''.join(
@@ -192,7 +196,7 @@ def media_html(r):
         ) + '</div>'
     return (
         f'<div class="recipe-photo"><img src="{esc(imgs[0])}" alt="{esc(r.get("title") or "")}"></div>'
-        + video_html + thumbs
+        + video_html + ig_link_html + thumbs
     )
 
 
@@ -252,6 +256,8 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-photo{{width:100%; aspect-ratio:3/4; max-width:360px; border-radius:2px; overflow:hidden; margin-bottom:14px; background:var(--line);}}
   .recipe-photo img{{width:100%; height:100%; object-fit:cover; display:block;}}
   .recipe-photo video{{width:100%; max-width:360px; display:block; border-radius:2px; margin-bottom:10px;}}
+  .recipe-ig-link{{display:inline-block; font-size:12.5px; color:var(--teal-deep); text-decoration:none; margin:-6px 0 12px;}}
+  .recipe-ig-link:hover{{text-decoration:underline;}}
   .recipe-thumbs{{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;}}
   .recipe-thumbs img{{width:64px; height:64px; object-fit:cover; border-radius:2px;}}
   .recipe-page h1{{font-family:'Nanum Myeongjo',serif; font-size:26px; color:var(--teal-deep); margin:10px 0 6px;}}

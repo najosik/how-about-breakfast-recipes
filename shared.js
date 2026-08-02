@@ -167,10 +167,15 @@ var Shared = (function () {
       );
     }).join('');
 
+    var igLinkHTML = (r.video && r.permalink)
+      ? '<a class="modal-ig-link" href="' + escapeHtml(r.permalink) + '" target="_blank" rel="noopener">인스타그램에서 크게 보기 →</a>'
+      : '';
+
     return (
       '<div class="modal-gallery">' +
       '<div class="gallery-main">' + mainHTML + '</div>' +
       '<div class="gallery-thumbs">' + thumbs + '</div>' +
+      igLinkHTML +
       '</div>'
     );
   }

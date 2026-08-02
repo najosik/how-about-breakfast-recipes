@@ -164,6 +164,7 @@ def main():
                 _missing, _gallery, video = download_post_media(media, str(diary_no))
                 if video:
                     existing['video'] = video
+                    existing['permalink'] = media.get('permalink')
                     video_attached += 1
                     print(f'  ~ attached video to existing #{diary_no}')
             continue
@@ -181,6 +182,7 @@ def main():
                 rec['gallery'] = gallery
         if video:
             rec['video'] = video
+            rec['permalink'] = media.get('permalink')
         recipes.append(rec)
         recipe_by_no[diary_no] = rec
         added += 1
