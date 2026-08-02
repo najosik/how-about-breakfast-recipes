@@ -1,0 +1,67 @@
+name: Instagram sync
+
+on:
+  schedule:
+    # 21:30 UTC = 06:30 KST daily
+    - cron: '30 21 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install boto3 pillow
+
+      - name: Write credentials
+        run: |
+          cat > .ig-credentials.json <<EOF
+          {"access_token": "${{ secrets.IG_ACCESS_TOKEN }}", "ig_user_id": "${{ secrets.IG_USER_ID }}"}
+          EOF
+          cat > .r2-credentials.json <<EOF
+          {
+            "account_id": "${{ secrets.R2_ACCOUNT_ID }}",
+            "endpoint": "${{ secrets.R2_ENDPOINT }}",
+            "access_key_id": "${{ secrets.R2_ACCESS_KEY_ID }}",
+            "secret_access_key": "${{ secrets.R2_SECRET_ACCESS_KEY }}",
+            "bucket": "${{ secrets.R2_BUCKET }}",
+            "public_base_url": "${{ secrets.R2_PUBLIC_BASE_URL }}"
+          }
+          EOF
+
+      - name: Sync new Instagram posts
+        run: python sync_instagram.py
+
+      - name: Upload new media to R2
+        run: python upload_to_r2.py
+
+      - name: Rewrite image paths to R2 URLs
+        run: python rewrite_image_paths_to_r2.py
+
+      - name: Rebuild site data
+        run: python build_public_data.py
+
+      - name: Remove credential files
+        if: always()
+        run: rm -f .ig-credentials.json .r2-credentials.json
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add recipes.json recipes-index.json sitemap.xml recipes/
+          if git diff --cached --quiet; then
+            echo "No new posts, nothing to commit."
+          else
+            git commit -m "Auto-sync: new Instagram post(s)"
+            git push
+          fi
