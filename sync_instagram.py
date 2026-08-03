@@ -132,17 +132,42 @@ def download_post_media(media, name_base):
     return (not gallery_rel_paths and not video_rel_path), gallery_rel_paths, video_rel_path
 
 
+def date_str_to_iso(date_str):
+    if date_str and len(date_str) == 8 and date_str.isdigit():
+        return f'{date_str[0:4]}-{date_str[4:6]}-{date_str[6:8]}'
+    return None
+
+
 def main():
     cred = load_credentials()
     with open(RECIPES_PATH, encoding='utf-8') as f:
         recipes = json.load(f)
 
-    recipe_by_no = {r['diary_no']: r for r in recipes if r.get('diary_no') is not None}
+    # NOTE on matching strategy: the caption's own "#조식다이어리 N" counter is
+    # NOT the same thing as this site's `diary_no` field - a past backfill
+    # inserted extra historical records and renumbered `diary_no` to stay
+    # gapless, which permanently shifted `diary_no` away from the number the
+    # user keeps typing in real Instagram captions (immutable once posted).
+    # Matching on that drifted number silently treated brand-new posts as
+    # already-synced duplicates (and could have mis-attached a future video
+    # onto an unrelated old record). Match on the entry's own calendar date
+    # instead - reliable regardless of any `diary_no` drift - and use the
+    # post's permalink only to disambiguate the rare day with two posts.
+    live = [r for r in recipes if not r.get('deleted')]
+    recipe_by_date = {}
+    for r in live:
+        if r.get('date'):
+            recipe_by_date.setdefault(r['date'], []).append(r)
+
+    latest_dated = max(live, key=lambda r: (r.get('date') or '0000-00-00', r.get('diary_no') or 0))
+    next_diary_no = (latest_dated.get('diary_no') or 0) + 1
 
     media_list = fetch_recent_media(cred['ig_user_id'], cred['access_token'])
     print(f'Checked {len(media_list)} recent Instagram post(s).')
 
+    pending_new = []  # (date_iso, media, caption, caption_diary_no)
     added, video_attached = 0, 0
+
     for media in media_list:
         # Instagram's API returns some captions Unicode-decomposed (NFD) rather
         # than precomposed (NFC) - notably from posts authored on iOS. Left
@@ -153,40 +178,78 @@ def main():
         if not m:
             print(f'  skip (no #조식다이어리 N in caption): {media.get("permalink")}')
             continue
+        caption_diary_no = int(m.group(1))
 
-        diary_no = int(m.group(1))
-        existing = recipe_by_no.get(diary_no)
+        date_str = extract_date_str(media, caption)
+        date_iso = date_str_to_iso(date_str)
+        if not date_iso:
+            print(f'  ! caption #{caption_diary_no}: could not determine a date, skipping (review manually)')
+            continue
+
+        candidates = recipe_by_date.get(date_iso, [])
+        permalink = media.get('permalink')
+        same_post = next((r for r in candidates if r.get('permalink') and r['permalink'] == permalink), None)
+        # a legacy/backfilled record for this date with no permalink on file
+        # is assumed to be this same post (permalink tracking only started
+        # once this script existed) unless a permalink-tagged match above
+        # already ruled it out.
+        untracked = next((r for r in candidates if not r.get('permalink')), None)
+        existing = same_post or untracked
 
         if existing is not None:
+            if existing.get('diary_no') != caption_diary_no:
+                print(f'  (note: caption #{caption_diary_no} maps to existing diary_no '
+                      f'{existing.get("diary_no")} for {date_iso} - drifted numbering, matched by date instead)')
             # A later Reels re-edit of an already-known post: attach its video
             # to the existing record instead of creating a duplicate entry.
             if media.get('media_type') == 'VIDEO' and not existing.get('video'):
-                _missing, _gallery, video = download_post_media(media, str(diary_no))
+                _missing, _gallery, video = download_post_media(media, str(existing.get('diary_no') or caption_diary_no))
                 if video:
                     existing['video'] = video
-                    existing['permalink'] = media.get('permalink')
+                    existing['permalink'] = permalink
                     video_attached += 1
-                    print(f'  ~ attached video to existing #{diary_no}')
+                    print(f'  ~ attached video to existing {date_iso} (diary_no {existing.get("diary_no")})')
+            elif not existing.get('permalink'):
+                existing['permalink'] = permalink
             continue
 
-        date_str = extract_date_str(media, caption)
+        if candidates:
+            # every candidate for this date already has a *different*
+            # permalink on file - a genuine second post the same day.
+            # Don't guess; flag for a manual look via review.html.
+            print(f'  ! {date_iso}: another post already recorded for this date with a different '
+                  f'permalink (caption #{caption_diary_no}) - skipping auto-add, review manually: {permalink}')
+            continue
+
+        pending_new.append((date_iso, media, caption, caption_diary_no, date_str))
+
+    # assign diary_no in true chronological order so a run that picks up
+    # several missed days in one go stays gapless and collision-free,
+    # regardless of what order the API returned them in.
+    pending_new.sort(key=lambda t: t[0])
+    for date_iso, media, caption, caption_diary_no, date_str in pending_new:
+        diary_no = next_diary_no
         image_missing, gallery, video = download_post_media(media, str(diary_no))
         if image_missing:
-            print(f'  ! #{diary_no}: no downloadable photo/video found, skipping auto-add (review manually)')
+            print(f'  ! caption #{caption_diary_no} ({date_iso}): no downloadable photo/video found, '
+                  f'skipping auto-add (review manually)')
             continue
 
         rec = parse_entry(date_str, False, caption)
+        rec['diary_no'] = diary_no
+        rec['permalink'] = media.get('permalink')
         if gallery:
             rec['image'] = gallery[0]
             if len(gallery) > 1:
                 rec['gallery'] = gallery
         if video:
             rec['video'] = video
-            rec['permalink'] = media.get('permalink')
         recipes.append(rec)
-        recipe_by_no[diary_no] = rec
+        recipe_by_date.setdefault(date_iso, []).append(rec)
+        next_diary_no += 1
         added += 1
-        print(f'  + added #{diary_no} ({rec.get("date")}): {rec.get("title")}')
+        note = '' if diary_no == caption_diary_no else f' (caption said #{caption_diary_no})'
+        print(f'  + added diary_no {diary_no}{note} ({rec.get("date")}): {rec.get("title")}')
 
     if added or video_attached:
         recipes.sort(key=lambda r: (r.get('date') or '0000-00-00', r.get('diary_no') or 0), reverse=True)
