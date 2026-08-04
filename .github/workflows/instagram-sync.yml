@@ -2,8 +2,10 @@ name: Instagram sync
 
 on:
   schedule:
-    # 21:30 UTC = 06:30 KST daily
-    - cron: '30 21 * * *'
+    # every 6 hours - GitHub only runs scheduled cron on a best-effort basis
+    # (can slip by hours on a low-activity repo), so checking more often
+    # keeps the worst-case delay small instead of missing a whole day
+    - cron: '0 */6 * * *'
   workflow_dispatch: {}
 
 permissions:
