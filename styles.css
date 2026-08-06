@@ -243,7 +243,7 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
   color:var(--teal-deep); letter-spacing:-0.01em;
 }
 .masthead .tagline{font-size:15.5px; color:var(--ink-soft); max-width:520px; margin:0 auto 24px;}
-.masthead .beta-note{font-size:13px; color:var(--ink-faint); max-width:480px; margin:-14px auto 24px; line-height:1.6;}
+.masthead .beta-note{font-size:13px; color:var(--ink-faint); max-width:480px; margin:-14px auto 24px; line-height:1.6; white-space:pre-line;}
 .masthead-icons{display:flex; justify-content:center; gap:10px; margin-bottom:24px;}
 .masthead-icons .card-thumb{width:44px; height:44px; margin-bottom:0;}
 .masthead .streak{
