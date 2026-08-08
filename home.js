@@ -15,9 +15,12 @@
   Shared.loadData().then(function (all) {
     allData = all;
     I18N.setCount(all.length);
-    renderAll(all);
-    bindShuffle(all);
-    bindLangToggle(all);
+    var ready = I18N.getLang() === 'en' ? Shared.ensureEnMerged(all) : Promise.resolve(all);
+    ready.then(function () {
+      renderAll(all);
+      bindShuffle(all);
+      bindLangToggle(all);
+    });
   }).catch(function (err) {
     document.getElementById('ledgerWrap').innerHTML =
       '<div class="empty"><b>데이터를 불러오지 못했어요</b>recipes-index.json이 같은 폴더에 있는지, 로컬 서버로 열었는지 확인해주세요.</div>';
@@ -44,8 +47,10 @@
         Array.prototype.forEach.call(box.querySelectorAll('button'), function (b) {
           b.classList.toggle('active', b === btn);
         });
-        if (allData) renderAll(allData);
         document.getElementById('shuffleResult').classList.add('hidden');
+        if (!allData) return;
+        var ready = newLang === 'en' ? Shared.ensureEnMerged(allData) : Promise.resolve(allData);
+        ready.then(renderAll);
       });
     });
   }
@@ -255,13 +260,16 @@
     section.classList.remove('hidden');
     row.innerHTML = years.map(function (y) {
       var r = byYear[y];
-      var titleText = Shared.escapeHtml(r.title || '(제목 미상)');
+      var koTitle = r.title || '(제목 미상)';
       var yearLabel = lang === 'en' ? y : (y + '년');
+      var titleHtml = Shared.hasStaticEn(r, 'title')
+        ? '<h4 class="otd-title">' + Shared.escapeHtml(Shared.localizedText(r, 'title')) + '</h4>'
+        : '<h4 class="otd-title i18n-dyn" data-ko="' + Shared.escapeHtml(koTitle) + '">' + Shared.escapeHtml(koTitle) + '</h4>';
       return (
         '<a class="otd-card" href="' + Shared.escapeHtml(Shared.recipeUrl(r)) + '" data-year="' + y + '">' +
         Shared.thumbHTML(r, 24) +
         '<div class="otd-year">' + yearLabel + '</div>' +
-        '<h4 class="otd-title i18n-dyn" data-ko="' + titleText + '">' + titleText + '</h4>' +
+        titleHtml +
         '<div class="otd-meta">' + r.date + (r.calories ? ' · ' + r.calories + 'kcal' : '') + '</div>' +
         '</a>'
       );

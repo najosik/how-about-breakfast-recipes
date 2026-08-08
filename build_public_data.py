@@ -39,6 +39,7 @@ import html
 HERE = os.path.dirname(os.path.abspath(__file__))
 RECIPES_PATH = os.path.join(HERE, 'recipes.json')
 INDEX_PATH = os.path.join(HERE, 'recipes-index.json')
+INDEX_EN_PATH = os.path.join(HERE, 'recipes-index-en.json')
 PAGES_DIR = os.path.join(HERE, 'recipes')
 PAGES_DIR_EN = os.path.join(HERE, 'en', 'recipes')
 SITEMAP_PATH = os.path.join(HERE, 'sitemap.xml')
@@ -212,6 +213,30 @@ def build_index(live, ids):
     with open(INDEX_PATH, 'w', encoding='utf-8') as f:
         json.dump(slim, f, ensure_ascii=False, separators=(',', ':'))
     return slim
+
+
+def build_index_en(live, ids):
+    """Keyed by page_id (not a parallel array) so the client can fetch this
+    lazily, only once someone actually switches to English, and merge it
+    into records it already has by simple lookup. Left out of
+    recipes-index.json itself so the default (Korean) page load doesn't
+    pay for text most visitors never see — English text alone runs longer
+    than the Korean it's translated from, so inlining it would roughly
+    double that file's size for everyone."""
+    en_map = {}
+    for r, pid in zip(live, ids):
+        en = r.get('_en')
+        if not en:
+            continue
+        en_map[pid] = {
+            'title': en.get('title') or '',
+            'intro': en.get('intro') or '',
+            'ingredients': en.get('ingredients') or '',
+            'steps': en.get('steps') or '',
+        }
+    with open(INDEX_EN_PATH, 'w', encoding='utf-8') as f:
+        json.dump(en_map, f, ensure_ascii=False, separators=(',', ':'))
+    return en_map
 
 
 def stamp_label(r):
@@ -580,6 +605,9 @@ def main():
 
     slim = build_index(live, ids)
     print(f'recipes-index.json: {len(slim)} records')
+
+    en_map = build_index_en(live, ids)
+    print(f'recipes-index-en.json: {len(en_map)} records')
 
     urls = build_pages(live, ids, lang='ko')
     print(f'recipe pages generated (ko): {len(urls)}')

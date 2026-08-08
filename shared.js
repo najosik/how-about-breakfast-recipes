@@ -105,6 +105,47 @@ var Shared = (function () {
     });
   }
 
+  /* ---- static English text (pre-translated, no live API call) ----
+     recipes-index-en.json is fetched lazily — only once someone actually
+     switches to English — and merged onto the records the page already
+     has, keyed by page_id. Records still missing a translation fall back
+     to the old on-demand i18n-dyn/MyMemory path further below. */
+  var enIndexPromise = null;
+  function loadEnIndex() {
+    if (!enIndexPromise) {
+      enIndexPromise = fetch('recipes-index-en.json')
+        .then(function (r) { if (!r.ok) throw new Error('recipes-index-en.json load failed'); return r.json(); })
+        .catch(function (err) { console.error(err); return {}; });
+    }
+    return enIndexPromise;
+  }
+  function ensureEnMerged(all) {
+    return loadEnIndex().then(function (enMap) {
+      all.forEach(function (r) {
+        if (!r._en && enMap[r.page_id]) r._en = enMap[r.page_id];
+      });
+      return all;
+    });
+  }
+  function localizedText(r, field) {
+    var lang = (typeof I18N !== 'undefined') ? I18N.getLang() : 'ko';
+    if (lang === 'en' && r._en && r._en[field]) return r._en[field];
+    return r[field];
+  }
+  function hasStaticEn(r, field) {
+    return !!(r._en && r._en[field]);
+  }
+  /* pre-translated text renders as plain static markup (no flash, no API
+     call); untranslated fields still fall back to the old i18n-dyn path. */
+  function bodyTextHtml(r, field) {
+    var koText = r[field];
+    if (!koText) return '';
+    if (hasStaticEn(r, field)) {
+      return '<div class="body-text">' + escapeHtml(localizedText(r, field)) + '</div>';
+    }
+    return '<div class="body-text i18n-dyn" data-ko="' + escapeHtml(koText) + '">' + escapeHtml(koText) + '</div>';
+  }
+
   function recipeUrl(r) {
     return 'recipes/' + r.page_id + '.html';
   }
@@ -227,15 +268,20 @@ var Shared = (function () {
       return '<span>#' + escapeHtml(label) + '</span>';
     }).join('');
     var ingSection = r.ingredients
-      ? '<section><h4>' + L('modal_ingredients') + '</h4><div class="body-text i18n-dyn" data-ko="' + escapeHtml(r.ingredients) + '">' + escapeHtml(r.ingredients) + '</div></section>' : '';
+      ? '<section><h4>' + L('modal_ingredients') + '</h4>' + bodyTextHtml(r, 'ingredients') + '</section>' : '';
     var stepSection = r.steps
-      ? '<section><h4>' + L('modal_steps') + '</h4><div class="body-text i18n-dyn" data-ko="' + escapeHtml(r.steps) + '">' + escapeHtml(r.steps) + '</div></section>' : '';
+      ? '<section><h4>' + L('modal_steps') + '</h4>' + bodyTextHtml(r, 'steps') + '</section>' : '';
     var introSection = r.intro
-      ? '<section><h4>' + (r.ingredients ? L('modal_notes') : L('modal_fulltext')) + '</h4><div class="body-text i18n-dyn" data-ko="' + escapeHtml(r.intro) + '">' + escapeHtml(r.intro) + '</div></section>' : '';
+      ? '<section><h4>' + (r.ingredients ? L('modal_notes') : L('modal_fulltext')) + '</h4>' + bodyTextHtml(r, 'intro') + '</section>' : '';
     var creditSection = r.credit
       ? '<section><h4>' + L('modal_credit') + '</h4><div class="credit">Inspired by ' + escapeHtml(r.credit) + '</div></section>' : '';
 
     var shareBtnHtml = '<button class="modal-share-btn" type="button" aria-label="링크 복사">' + LINK_ICON_SVG + '<span class="modal-share-label">' + L('modal_copy_link') + '</span></button>';
+
+    var koTitle = r.title || '(제목 미상)';
+    var titleHtml = hasStaticEn(r, 'title')
+      ? '<h2>' + escapeHtml(localizedText(r, 'title')) + '</h2>'
+      : '<h2 class="i18n-dyn" data-ko="' + escapeHtml(koTitle) + '">' + escapeHtml(koTitle) + '</h2>';
 
     modalContent.innerHTML =
       '<button class="modal-close" aria-label="닫기">✕</button>' +
@@ -246,7 +292,7 @@ var Shared = (function () {
       (r.failed ? '<span class="fail-badge">' + L('badge_failed') + '</span>' : '') +
       shareBtnHtml +
       '</div>' +
-      '<h2 class="i18n-dyn" data-ko="' + escapeHtml(r.title || '(제목 미상)') + '">' + escapeHtml(r.title || '(제목 미상)') + '</h2>' +
+      titleHtml +
       '<div class="modal-meta">' + [r.date, r.weather, r.calories ? r.calories + 'kcal' : null].filter(Boolean).map(escapeHtml).join(' · ') + '</div>' +
       introSection + ingSection + stepSection + creditSection +
       (tagsHtml ? '<section><h4>' + L('modal_tags') + '</h4><div class="tag-list">' + tagsHtml + '</div></section>' : '');
@@ -315,13 +361,16 @@ var Shared = (function () {
     if (r.date) metaBits.push(r.date);
     if (r.weather) metaBits.push(escapeHtml(r.weather));
     var kcal = r.calories ? '<span class="kcal">' + r.calories + 'kcal</span>' : '';
-    var titleText = escapeHtml(r.title || '(제목 미상)');
+    var koTitle = r.title || '(제목 미상)';
+    var titleHtml = hasStaticEn(r, 'title')
+      ? '<h3 class="card-title">' + escapeHtml(localizedText(r, 'title')) + '</h3>'
+      : '<h3 class="card-title i18n-dyn" data-ko="' + escapeHtml(koTitle) + '">' + escapeHtml(koTitle) + '</h3>';
     return (
       '<a class="card" href="' + escapeHtml(recipeUrl(r)) + '" data-no="' + r.diary_no + '" data-date="' + r.date + '">' +
       thumbHTML(r, 30) +
       '<span class="stamp">' + stampLabel(r) + '</span>' +
       (r.failed ? '<span class="fail-badge">' + L('badge_failed') + '</span>' : '') +
-      '<h3 class="card-title i18n-dyn" data-ko="' + titleText + '">' + titleText + '</h3>' +
+      titleHtml +
       '<div class="card-meta"><span>' + metaBits.join(' · ') + '</span>' + kcal + '</div>' +
       '<div class="card-tags">' + tagsHtml + '</div>' +
       '</a>'
@@ -347,6 +396,9 @@ var Shared = (function () {
     escapeHtml: escapeHtml,
     foodTags: foodTags,
     loadData: loadData,
+    ensureEnMerged: ensureEnMerged,
+    localizedText: localizedText,
+    hasStaticEn: hasStaticEn,
     recipeUrl: recipeUrl,
     tagFrequency: tagFrequency,
     categorize: categorize,

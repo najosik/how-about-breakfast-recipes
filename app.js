@@ -32,6 +32,9 @@
   Shared.loadData()
     .then(function (data) {
       state.all = data;
+      return I18N.getLang() === 'en' ? Shared.ensureEnMerged(data) : data;
+    })
+    .then(function () {
       init();
     })
     .catch(function (err) {
@@ -65,7 +68,8 @@
     Array.prototype.forEach.call(langToggle.querySelectorAll('button'), function (btn) {
       btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
       btn.addEventListener('click', function () {
-        I18N.setLang(btn.getAttribute('data-lang'));
+        var newLang = btn.getAttribute('data-lang');
+        I18N.setLang(newLang);
         Array.prototype.forEach.call(langToggle.querySelectorAll('button'), function (b) {
           b.classList.toggle('active', b === btn);
         });
@@ -78,7 +82,8 @@
           var chip = tagCloud.querySelector('.tag-chip[data-tag="' + tag + '"]');
           if (chip) { chip.classList.add('active'); chip.setAttribute('aria-pressed', 'true'); }
         });
-        renderGrid();
+        var ready = newLang === 'en' ? Shared.ensureEnMerged(state.all) : Promise.resolve(state.all);
+        ready.then(renderGrid);
       });
     });
   }
