@@ -147,6 +147,15 @@ var I18N = (function () {
      2025-08 translation batch. New tags on future posts fall back to
      showing the Korean text (see tagLabel below) until added here. */
   var TAG_EN = {
+    /* GENERIC_TAGS in shared.js — filtered off card chips but shown
+       in full in the modal's "Tags" section, so they still need labels. */
+    '조식': 'Breakfast', '레시피': 'Recipe', '직장인': 'Office Worker',
+    '아침밥': 'Morning Meal', '아침밥상': 'Breakfast Table', '먹스타그램': 'Foodstagram',
+    '요리스타그램': 'Cookstagram', '홈쿡': 'Home Cook', '집밥': 'Home Cooking',
+    '혼밥': 'Eating Alone', 'breakfast': 'Breakfast', '조식다이어리': 'Breakfast Diary',
+    '나의프랑스식샐러드': 'My French-Style Salad', '나의프랑스식오븐요리': 'My French-Style Oven Dish',
+    '트위터레시피': 'Twitter Recipe', '초간단레시피': 'Super Simple Recipe', '미라클모닝': 'Miracle Morning',
+    '모닝루틴': 'Morning Routine', '모닝리추얼': 'Morning Ritual', '나의로컬푸드샐러드': 'My Local-Food Salad',
     '007노타임투다이감상기': 'No Time to Die Review', '1398:': '1398', '1402:': '1402',
     '15분완성': '15-Min Recipe', '2008레시피': '2008 Recipe', '2008시금치샐러드': '2008 Spinach Salad',
     '2020연말정산': '2020 Tax Settlement', '2021CES': '2021 CES', '2021팬톤컬러': '2021 Pantone Color',
