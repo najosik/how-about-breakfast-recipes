@@ -151,6 +151,8 @@ var Shared = (function () {
   }
 
   function recipeUrl(r) {
+    var lang = (typeof I18N !== 'undefined') ? I18N.getLang() : 'ko';
+    if (lang === 'en' && hasStaticEn(r, 'title')) return 'en/recipes/' + r.page_id + '.html';
     return 'recipes/' + r.page_id + '.html';
   }
 
