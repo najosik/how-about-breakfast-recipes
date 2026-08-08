@@ -89,6 +89,7 @@ var I18N = (function () {
 
       home_title: 'Breakfast, Every Day',
       home_tagline: 'A record of someone who makes a different breakfast every morning, unless something comes up. This is the whole archive, gathered in one place.',
+      home_beta_note: 'Hi, I\'m Na-Josik. I\'ve archived my Instagram posts (@how.about.breakfast) here so they\'re easy to browse on the web. Use it whenever you have ingredients on hand but need a recipe idea, when you can\'t think of anything good to eat, or when you just want to peek at what other people are having for breakfast.\n\nA note: some posts from 2020-2022 drift back and forth between personal musings and actual recipes, pretty unevenly. I\'ll smooth them out over time. (That\'s actually why this is still Beta - though I honestly don\'t know when I\'ll be able to drop the label.)',
       home_since_suffix: ' · established',
       ledger_title: 'Not a single day missed',
       ledger_desc: 'Each square is a day. Deep green means breakfast was made, orange means a failed attempt, and empty means the day was skipped.',
