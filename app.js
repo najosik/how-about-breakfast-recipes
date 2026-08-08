@@ -38,7 +38,7 @@
       init();
     })
     .catch(function (err) {
-      grid.innerHTML = '<div class="empty"><b>데이터를 불러오지 못했어요</b>recipes-index.json 파일이 이 페이지와 같은 폴더에 있는지 확인해주세요. (로컬에서 열었다면 <code>python3 -m http.server</code>로 실행해야 fetch가 동작합니다)</div>';
+      grid.innerHTML = '<div class="empty">' + I18N.t('load_error_archive') + '</div>';
       console.error(err);
     });
 

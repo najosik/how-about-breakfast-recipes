@@ -20,6 +20,10 @@ var Shared = (function () {
     });
   }
 
+  function L(key) {
+    return (typeof I18N !== 'undefined') ? I18N.t(key) : key;
+  }
+
   function foodTags(r) {
     return (r.hashtags || []).filter(function (h) {
       return !GENERIC_TAGS.has(h) && !/^[a-zA-Z]+$/.test(h);
@@ -92,7 +96,7 @@ var Shared = (function () {
 
   function thumbHTML(r, size) {
     if (r.image) {
-      return '<div class="card-photo"><img src="' + escapeHtml(r.image) + '" alt="' + escapeHtml(r.title || '(제목 미상)') + '" loading="lazy"></div>';
+      return '<div class="card-photo"><img src="' + escapeHtml(r.image) + '" alt="' + escapeHtml(r.title || L('untitled_fallback')) + '" loading="lazy"></div>';
     }
     return iconSVG(r, size);
   }
@@ -190,7 +194,7 @@ var Shared = (function () {
       return thumbHTML(r, 40);
     }
 
-    var altText = escapeHtml(r.title || '(제목 미상)');
+    var altText = escapeHtml(r.title || L('untitled_fallback'));
     var mainItem = items[0];
     var mainHTML = mainItem.type === 'video'
       ? '<video src="' + escapeHtml(mainItem.src) + '" controls playsinline></video>'
@@ -209,7 +213,7 @@ var Shared = (function () {
     }).join('');
 
     var igLinkHTML = (r.video && r.permalink)
-      ? '<a class="modal-ig-link" href="' + escapeHtml(r.permalink) + '" target="_blank" rel="noopener">인스타그램에서 크게 보기 →</a>'
+      ? '<a class="modal-ig-link" href="' + escapeHtml(r.permalink) + '" target="_blank" rel="noopener">' + L('modal_ig_link') + '</a>'
       : '';
 
     return (
@@ -224,7 +228,7 @@ var Shared = (function () {
   function bindGallery(container, r) {
     var items = mediaItemsFor(r);
     if (items.length < 2) return;
-    var altText = escapeHtml(r.title || '(제목 미상)');
+    var altText = escapeHtml(r.title || L('untitled_fallback'));
     var mainEl = container.querySelector('.gallery-main');
     var thumbBtns = container.querySelectorAll('.gallery-thumb');
     Array.prototype.forEach.call(thumbBtns, function (btn) {
@@ -250,7 +254,6 @@ var Shared = (function () {
     ensureModalDom();
     var overlay = document.getElementById('overlay');
     var modalContent = document.getElementById('modalContent');
-    var L = (typeof I18N !== 'undefined') ? I18N.t : function (k) { return k; };
     var prevRec = (nav && nav.index > 0) ? nav.list[nav.index - 1] : null;
     var nextRec = (nav && nav.index < nav.list.length - 1) ? nav.list[nav.index + 1] : null;
     var navHTML = nav ? (
@@ -276,15 +279,15 @@ var Shared = (function () {
     var creditSection = r.credit
       ? '<section><h4>' + L('modal_credit') + '</h4><div class="credit">Inspired by ' + escapeHtml(r.credit) + '</div></section>' : '';
 
-    var shareBtnHtml = '<button class="modal-share-btn" type="button" aria-label="링크 복사">' + LINK_ICON_SVG + '<span class="modal-share-label">' + L('modal_copy_link') + '</span></button>';
+    var shareBtnHtml = '<button class="modal-share-btn" type="button" aria-label="' + escapeHtml(L('modal_copy_link')) + '">' + LINK_ICON_SVG + '<span class="modal-share-label">' + L('modal_copy_link') + '</span></button>';
 
-    var koTitle = r.title || '(제목 미상)';
+    var koTitle = r.title || L('untitled_fallback');
     var titleHtml = hasStaticEn(r, 'title')
       ? '<h2>' + escapeHtml(localizedText(r, 'title')) + '</h2>'
       : '<h2 class="i18n-dyn" data-ko="' + escapeHtml(koTitle) + '">' + escapeHtml(koTitle) + '</h2>';
 
     modalContent.innerHTML =
-      '<button class="modal-close" aria-label="닫기">✕</button>' +
+      '<button class="modal-close" aria-label="' + escapeHtml(L('modal_close')) + '">✕</button>' +
       navHTML +
       galleryHTML(r) +
       '<div class="modal-stamp-row">' +
@@ -352,7 +355,6 @@ var Shared = (function () {
   }
 
   function cardHTML(r) {
-    var L = (typeof I18N !== 'undefined') ? I18N.t : function (k) { return k; };
     var tagsHtml = foodTags(r).slice(0, 4).map(function (h) {
       var label = (typeof I18N !== 'undefined') ? I18N.tagLabel(h) : h;
       return '<span>#' + escapeHtml(label) + '</span>';
@@ -361,7 +363,7 @@ var Shared = (function () {
     if (r.date) metaBits.push(r.date);
     if (r.weather) metaBits.push(escapeHtml(r.weather));
     var kcal = r.calories ? '<span class="kcal">' + r.calories + 'kcal</span>' : '';
-    var koTitle = r.title || '(제목 미상)';
+    var koTitle = r.title || L('untitled_fallback');
     var titleHtml = hasStaticEn(r, 'title')
       ? '<h3 class="card-title">' + escapeHtml(localizedText(r, 'title')) + '</h3>'
       : '<h3 class="card-title i18n-dyn" data-ko="' + escapeHtml(koTitle) + '">' + escapeHtml(koTitle) + '</h3>';

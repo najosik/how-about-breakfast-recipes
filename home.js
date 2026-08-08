@@ -23,7 +23,7 @@
     });
   }).catch(function (err) {
     document.getElementById('ledgerWrap').innerHTML =
-      '<div class="empty"><b>데이터를 불러오지 못했어요</b>recipes-index.json이 같은 폴더에 있는지, 로컬 서버로 열었는지 확인해주세요.</div>';
+      '<div class="empty">' + I18N.t('load_error_home') + '</div>';
     console.error(err);
   });
 
@@ -260,7 +260,7 @@
     section.classList.remove('hidden');
     row.innerHTML = years.map(function (y) {
       var r = byYear[y];
-      var koTitle = r.title || '(제목 미상)';
+      var koTitle = r.title || I18N.t('untitled_fallback');
       var yearLabel = lang === 'en' ? y : (y + '년');
       var titleHtml = Shared.hasStaticEn(r, 'title')
         ? '<h4 class="otd-title">' + Shared.escapeHtml(Shared.localizedText(r, 'title')) + '</h4>'

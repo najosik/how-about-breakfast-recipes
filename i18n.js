@@ -65,7 +65,12 @@ var I18N = (function () {
       modal_prev_day: '이전 날짜',
       modal_next_day: '다음 날짜',
       modal_copy_link: '링크 복사',
-      modal_copied: '복사됨!'
+      modal_copied: '복사됨!',
+      modal_close: '닫기',
+      modal_ig_link: '인스타그램에서 크게 보기 →',
+      untitled_fallback: '(제목 미상)',
+      load_error_archive: '<b>데이터를 불러오지 못했어요</b>recipes-index.json 파일이 이 페이지와 같은 폴더에 있는지 확인해주세요. (로컬에서 열었다면 <code>python3 -m http.server</code>로 실행해야 fetch가 동작합니다)',
+      load_error_home: '<b>데이터를 불러오지 못했어요</b>recipes-index.json이 같은 폴더에 있는지, 로컬 서버로 열었는지 확인해주세요.'
     },
     en: {
       nav_home: '← Home',
@@ -120,7 +125,12 @@ var I18N = (function () {
       modal_prev_day: 'Previous',
       modal_next_day: 'Next',
       modal_copy_link: 'Copy link',
-      modal_copied: 'Copied!'
+      modal_copied: 'Copied!',
+      modal_close: 'Close',
+      modal_ig_link: 'View larger on Instagram →',
+      untitled_fallback: '(untitled)',
+      load_error_archive: '<b>Couldn\'t load the data</b>Make sure recipes-index.json is in the same folder as this page. (If you opened this locally, run it via <code>python3 -m http.server</code> so fetch works.)',
+      load_error_home: '<b>Couldn\'t load the data</b>Make sure recipes-index.json is in the same folder, and that you opened this via a local server.'
     }
   };
 
