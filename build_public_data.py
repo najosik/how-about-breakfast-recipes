@@ -2,19 +2,28 @@
 build_public_data.py
 
 Derives everything the deployed site needs from recipes.json (the full,
-hand-edited source of truth used by review.html) without ever modifying
-recipes.json itself:
+hand-edited source of truth used by review.html):
 
   1. recipes-index.json — a slimmed, minified copy of recipes.json that
      home.js/app.js actually fetch. Drops fields no client-side code reads
      (`raw`, `date_raw`, `photo_candidates`, `photo_review_resolved`) and
      drops deleted:true records entirely. This is what cuts the payload
      down (raw alone is ~32% of the file and is unused at runtime).
-  2. recipes/<id>.html — one static page per recipe, with real meta tags,
-     Open Graph/Twitter previews using that recipe's own photo, and
+  2. recipes/<id>.html — one static Korean page per recipe, with real meta
+     tags, Open Graph/Twitter previews using that recipe's own photo, and
      Recipe JSON-LD structured data when ingredients+steps are both
      present. Gives every recipe a crawlable, shareable URL.
-  3. sitemap.xml — regenerated to include every recipe page.
+  3. en/recipes/<id>.html — the matching English page, pre-rendered from
+     the record's `_en` translation (title/intro/ingredients/steps),
+     skipped for any record that hasn't been translated yet. Korean and
+     English pages carry reciprocal hreflang alternates.
+  4. sitemap.xml — regenerated to include every recipe page, both languages.
+
+The one field this script DOES write back into recipes.json is `page_id`:
+once a record gets a page id, it's frozen there permanently, so editing a
+post's title later can't silently change its URL and orphan whatever was
+already indexed or shared under the old one. Every other field is only
+ever read, never written, by this script.
 
 Run this after editing recipes.json (by hand or via review.html) and
 before committing/deploying.
@@ -126,15 +135,28 @@ def base_page_id(r):
 
 
 def assign_unique_page_ids(records):
-    """Some diary_no values repeat on purpose (a failed attempt retried later
-    the same day keeps the same #조식다이어리 N). Give every record its own
-    page id by suffixing -2, -3, ... on all but the first occurrence."""
-    seen = {}
-    ids = []
-    for r in records:
+    """A record that already has a `page_id` keeps it forever, regardless
+    of what its title becomes later — that id is what search engines and
+    shared links point at, and changing it out from under them orphans
+    the old URL. Only records with no page_id yet (brand-new posts) get
+    one newly minted here, deduped against every id already in use.
+
+    (Some diary_no values repeat on purpose — a failed attempt retried
+    later the same day keeps the same #조식다이어리 N — so newly minted ids
+    still suffix -2, -3, ... on repeat base slugs.)"""
+    ids = [r.get('page_id') for r in records]
+    taken = {pid for pid in ids if pid}
+    for i, r in enumerate(records):
+        if ids[i]:
+            continue
         base = base_page_id(r)
-        seen[base] = seen.get(base, 0) + 1
-        ids.append(base if seen[base] == 1 else f'{base}-{seen[base]}')
+        candidate = base
+        n = 1
+        while candidate in taken:
+            n += 1
+            candidate = f'{base}-{n}'
+        ids[i] = candidate
+        taken.add(candidate)
     return ids
 
 
@@ -545,6 +567,16 @@ def main():
 
     live = [r for r in records if not r.get('deleted')]
     ids = assign_unique_page_ids(live)
+
+    newly_assigned = 0
+    for r, pid in zip(live, ids):
+        if r.get('page_id') != pid:
+            r['page_id'] = pid
+            newly_assigned += 1
+    if newly_assigned:
+        with open(RECIPES_PATH, 'w', encoding='utf-8') as f:
+            json.dump(records, f, ensure_ascii=False, indent=1)
+        print(f'recipes.json: froze {newly_assigned} new page_id(s)')
 
     slim = build_index(live, ids)
     print(f'recipes-index.json: {len(slim)} records')
