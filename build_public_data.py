@@ -31,9 +31,60 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 RECIPES_PATH = os.path.join(HERE, 'recipes.json')
 INDEX_PATH = os.path.join(HERE, 'recipes-index.json')
 PAGES_DIR = os.path.join(HERE, 'recipes')
+PAGES_DIR_EN = os.path.join(HERE, 'en', 'recipes')
 SITEMAP_PATH = os.path.join(HERE, 'sitemap.xml')
 
 SITE_BASE = 'https://how-about-breakfast.com'
+
+# Static per-language labels for the recipe page chrome (headers, nav,
+# share button). Free-text recipe content itself comes from r['_en'].
+LABELS = {
+    'ko': {
+        'site_name': '날마다, 조식',
+        'title_suffix': '날마다 조식',
+        'archive_back': '← 전체 아카이브',
+        'notes': '메모', 'ingredients': '재료', 'steps': '조리',
+        'credit': '원본 크레딧', 'tags': '태그',
+        'failed_badge': '실패기',
+        'share_label': '링크 복사', 'share_copied': '복사됨!',
+        'ig_link': '인스타그램에서 크게 보기 →',
+        'switch_label': 'EN',
+        'recipe_word': '레시피',
+        'prev_fallback': '이전', 'next_fallback': '다음',
+    },
+    'en': {
+        'site_name': 'Breakfast, Every Day',
+        'title_suffix': 'Breakfast, Every Day',
+        'archive_back': '← Full Archive',
+        'notes': 'Notes', 'ingredients': 'Ingredients', 'steps': 'Steps',
+        'credit': 'Original Credit', 'tags': 'Tags',
+        'failed_badge': 'Failed attempt',
+        'share_label': 'Copy link', 'share_copied': 'Copied!',
+        'ig_link': 'View larger on Instagram →',
+        'switch_label': 'KO',
+        'recipe_word': 'recipe',
+        'prev_fallback': 'Previous', 'next_fallback': 'Next',
+    },
+}
+
+# Best-effort translation for the standalone `weather` field (e.g. "31도/맑음")
+# shown in the meta line. The _en data only covers title/intro/ingredients/
+# steps, not this field, so unmatched terms are left in Korean rather than
+# guessed at.
+WEATHER_EN = {
+    '맑음': 'clear', '대체로맑음': 'mostly clear', '흐림': 'cloudy', '후림': 'cloudy',
+    '대체로흐림': 'mostly cloudy', '비': 'rainy', '눈': 'snowy', '한때흐림': 'briefly cloudy',
+}
+
+
+def weather_en(weather):
+    if not weather:
+        return weather
+    m = re.match(r'^(-?\d+)\s*도\s*/\s*(.+)$', weather)
+    if not m:
+        return weather
+    temp, cond = m.group(1), m.group(2).strip()
+    return f'{temp}°C/{WEATHER_EN.get(cond, cond)}'
 
 # AdSense: 사이트 소유권 확인용 퍼블리셔 ID. 광고 단위(ad-slot)는 심사 통과 후
 # 발급되며, AD_SLOT_RECIPE_BOTTOM을 채우기 전까지는 로더 스크립트만 로드되고
@@ -147,13 +198,14 @@ def stamp_label(r):
     return r.get('pre_label') or '#?'
 
 
-SHARE_BTN_HTML = (
-    '<button type="button" class="recipe-share-btn" id="shareBtn" aria-label="링크 복사">'
-    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
-    '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>'
-    '<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>'
-    '<span id="shareLabel">링크 복사</span></button>'
-)
+def share_btn_html(lang='ko'):
+    return (
+        f'<button type="button" class="recipe-share-btn" id="shareBtn" aria-label="{LABELS[lang]["share_label"]}">'
+        '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">'
+        '<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>'
+        '<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>'
+        f'<span id="shareLabel">{LABELS[lang]["share_label"]}</span></button>'
+    )
 
 
 def ad_eligible(r):
@@ -179,32 +231,35 @@ def ad_slot_html(position):
     )
 
 
-def media_html(r):
+def media_html(r, title, lang='ko'):
     imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
     if not imgs:
         return ''
     video_html = f'<video src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
     ig_link_html = (
-        f'<a class="recipe-ig-link" href="{esc(r["permalink"])}" target="_blank" rel="noopener">인스타그램에서 크게 보기 →</a>'
+        f'<a class="recipe-ig-link" href="{esc(r["permalink"])}" target="_blank" rel="noopener">{LABELS[lang]["ig_link"]}</a>'
         if r.get('video') and r.get('permalink') else ''
     )
     thumbs = ''
     if len(imgs) > 1:
         thumbs = '<div class="recipe-thumbs">' + ''.join(
-            f'<img src="{esc(u)}" alt="{esc(r.get("title") or "")} {i+1}" loading="lazy">'
+            f'<img src="{esc(u)}" alt="{esc(title)} {i+1}" loading="lazy">'
             for i, u in enumerate(imgs[1:], start=1)
         ) + '</div>'
     return (
-        f'<div class="recipe-photo"><img src="{esc(imgs[0])}" alt="{esc(r.get("title") or "")}"></div>'
+        f'<div class="recipe-photo"><img src="{esc(imgs[0])}" alt="{esc(title)}"></div>'
         + video_html + ig_link_html + thumbs
     )
 
 
-def json_ld(r, url, title):
-    if not (r.get('ingredients') and r.get('steps')):
+def json_ld(r, url, title, intro=None, ingredients=None, steps=None):
+    intro = r.get('intro') if intro is None else intro
+    ingredients = r.get('ingredients') if ingredients is None else ingredients
+    steps = r.get('steps') if steps is None else steps
+    if not (ingredients and steps):
         return ''
-    ingredients = [s.strip() for s in re.split(r',\s*', r['ingredients']) if s.strip()]
-    steps = [re.sub(r'^\d+\.\s*', '', s.strip()) for s in r['steps'].split('\n') if s.strip()]
+    ingredient_list = [s.strip() for s in re.split(r',\s*', ingredients) if s.strip()]
+    step_list = [re.sub(r'^\d+\.\s*', '', s.strip()) for s in steps.split('\n') if s.strip()]
     imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
     data = {
         '@context': 'https://schema.org/',
@@ -216,10 +271,10 @@ def json_ld(r, url, title):
         data['image'] = imgs
     if r.get('date'):
         data['datePublished'] = r['date']
-    if r.get('intro'):
-        data['description'] = clean_description(r['intro'], r.get('title') or '')[:300]
-    data['recipeIngredient'] = ingredients
-    data['recipeInstructions'] = [{'@type': 'HowToStep', 'text': s} for s in steps]
+    if intro:
+        data['description'] = clean_description(intro, title)[:300]
+    data['recipeIngredient'] = ingredient_list
+    data['recipeInstructions'] = [{'@type': 'HowToStep', 'text': s} for s in step_list]
     if r.get('hashtags'):
         data['keywords'] = ', '.join(r['hashtags'])
     if r.get('calories'):
@@ -228,16 +283,17 @@ def json_ld(r, url, title):
 
 
 PAGE_TEMPLATE = """<!DOCTYPE html>
-<html lang="ko">
+<html lang="{html_lang}">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>{title} — 날마다 조식</title>
+<title>{title} — {title_suffix}</title>
 <meta name="description" content="{description}">
 <link rel="canonical" href="{url}">
-<link rel="icon" type="image/svg+xml" href="../favicon.svg">
+{hreflang_tags}
+<link rel="icon" type="image/svg+xml" href="{rel}/favicon.svg">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="날마다, 조식">
+<meta property="og:site_name" content="{site_name}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:url" content="{url}">
@@ -250,7 +306,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="{rel}/styles.css">
 <style>
   .recipe-page{{max-width:640px; margin:0 auto; padding:40px 0 20px;}}
   .recipe-photo{{width:100%; aspect-ratio:3/4; max-width:360px; border-radius:2px; overflow:hidden; margin-bottom:14px; background:var(--line);}}
@@ -276,12 +332,14 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-share-btn:hover{{border-color:var(--teal); color:var(--teal-deep);}}
   .recipe-share-btn.copied{{border-color:var(--teal); color:var(--teal-deep); background:var(--teal-pale);}}
   .ad-slot{{margin:22px 0 0;}}
+  .lang-switch{{font-size:12px; font-weight:600; border:1px solid var(--line-strong); border-radius:20px; padding:3px 10px;}}
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="nav-bar">
-    <a href="../archive.html">← 전체 아카이브</a>
+    <a href="{rel}/archive.html">{archive_back_label}</a>
+    {lang_switch_html}
   </div>
   <div class="recipe-page">
     {media}
@@ -335,7 +393,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   btn.addEventListener('click', function () {{
     var url = location.href;
     var done = function () {{
-      label.textContent = '복사됨!';
+      label.textContent = '{share_copied_label}';
       btn.classList.add('copied');
       setTimeout(function () {{ label.textContent = original; btn.classList.remove('copied'); }}, 1600);
     }};
@@ -360,88 +418,122 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 """
 
 
-def build_pages(live, ids):
-    os.makedirs(PAGES_DIR, exist_ok=True)
+def build_pages(live, ids, lang='ko'):
+    labels = LABELS[lang]
+    pages_dir = PAGES_DIR if lang == 'ko' else PAGES_DIR_EN
+    url_prefix = 'recipes' if lang == 'ko' else 'en/recipes'
+    rel = '..' if lang == 'ko' else '../..'
+    os.makedirs(pages_dir, exist_ok=True)
     ordered = sorted(range(len(live)), key=lambda i: (sort_key(live[i]), i))
 
+    # Only records with a completed _en translation get an English page;
+    # the Korean page is generated for every live record regardless.
+    include = [i for i in ordered if lang == 'ko' or live[i].get('_en')]
+
     urls = []
-    for pos, idx in enumerate(ordered):
+    for pos, idx in enumerate(include):
         r = live[idx]
         pid = ids[idx]
-        url = f'{SITE_BASE}/recipes/{pid}.html'
+        en = r.get('_en') or {}
+        url = f'{SITE_BASE}/{url_prefix}/{pid}.html'
+        ko_url = f'{SITE_BASE}/recipes/{pid}.html'
+        en_url = f'{SITE_BASE}/en/recipes/{pid}.html'
         urls.append(url)
 
-        title = display_title(r)
-        description = clean_description(r.get('intro'), title)
+        if lang == 'ko':
+            title = display_title(r)
+            intro, ingredients, steps = r.get('intro'), r.get('ingredients'), r.get('steps')
+            weather = r.get('weather')
+        else:
+            title = en.get('title') or display_title(r)
+            intro, ingredients, steps = en.get('intro'), en.get('ingredients'), en.get('steps')
+            weather = weather_en(r.get('weather'))
+
+        description = clean_description(intro, title, fallback_suffix=labels['recipe_word'])
         imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
         og_image = f'<meta property="og:image" content="{esc(imgs[0])}">' if imgs else ''
         twitter_image = f'<meta name="twitter:image" content="{esc(imgs[0])}">' if imgs else ''
 
-        meta_bits = [b for b in [r.get('date'), r.get('weather'), f'{r["calories"]}kcal' if r.get('calories') else None] if b]
+        meta_bits = [b for b in [r.get('date'), weather, f'{r["calories"]}kcal' if r.get('calories') else None] if b]
         meta_line = ' · '.join(esc(b) for b in meta_bits)
 
         intro_section = (
-            f'<section><h2>메모</h2><div class="recipe-body">{esc(r["intro"])}</div></section>'
-            if r.get('intro') else ''
+            f'<section><h2>{labels["notes"]}</h2><div class="recipe-body">{esc(intro)}</div></section>'
+            if intro else ''
         )
         ingredients_section = (
-            f'<section><h2>재료</h2><div class="recipe-body">{esc(r["ingredients"])}</div></section>'
-            if r.get('ingredients') else ''
+            f'<section><h2>{labels["ingredients"]}</h2><div class="recipe-body">{esc(ingredients)}</div></section>'
+            if ingredients else ''
         )
         steps_section = (
-            f'<section><h2>조리</h2><div class="recipe-body">{esc(r["steps"])}</div></section>'
-            if r.get('steps') else ''
+            f'<section><h2>{labels["steps"]}</h2><div class="recipe-body">{esc(steps)}</div></section>'
+            if steps else ''
         )
         credit_section = (
-            f'<section><h2>원본 크레딧</h2><div class="recipe-body">Inspired by {esc(r["credit"])}</div></section>'
+            f'<section><h2>{labels["credit"]}</h2><div class="recipe-body">Inspired by {esc(r["credit"])}</div></section>'
             if r.get('credit') else ''
         )
         tags_section = ''
         if r.get('hashtags'):
-            tags_section = '<section><h2>태그</h2><div class="recipe-tags">' + ''.join(
+            tags_section = f'<section><h2>{labels["tags"]}</h2><div class="recipe-tags">' + ''.join(
                 f'<span>#{esc(h)}</span>' for h in r['hashtags']
             ) + '</div></section>'
 
         if pos > 0:
-            prev_idx = ordered[pos - 1]
+            prev_idx = include[pos - 1]
             prev_r = live[prev_idx]
             prev_href = f'{ids[prev_idx]}.html'
-            prev_label = '← ' + (prev_r.get('date') or '이전')
+            prev_label = '← ' + (prev_r.get('date') or labels['prev_fallback'])
         else:
             prev_href, prev_label = '#', ''
-        if pos < len(ordered) - 1:
-            next_idx = ordered[pos + 1]
+        if pos < len(include) - 1:
+            next_idx = include[pos + 1]
             next_r = live[next_idx]
             next_href = f'{ids[next_idx]}.html'
-            next_label = (next_r.get('date') or '다음') + ' →'
+            next_label = (next_r.get('date') or labels['next_fallback']) + ' →'
         else:
             next_href, next_label = '#', ''
 
+        hreflang_tags = f'<link rel="alternate" hreflang="ko" href="{ko_url}">'
+        if en:
+            hreflang_tags += f'\n<link rel="alternate" hreflang="en" href="{en_url}">'
+        hreflang_tags += f'\n<link rel="alternate" hreflang="x-default" href="{ko_url}">'
+
+        switch_url = en_url if lang == 'ko' else ko_url
+        lang_switch_html = (
+            f'<a href="{switch_url}" class="lang-switch">{labels["switch_label"]}</a>' if en else ''
+        )
+
         html_out = PAGE_TEMPLATE.format(
-            title=esc(title), description=esc(description), url=url,
+            html_lang=lang, title_suffix=labels['title_suffix'], site_name=labels['site_name'],
+            title=esc(title), description=esc(description), url=url, rel=rel,
+            hreflang_tags=hreflang_tags, lang_switch_html=lang_switch_html,
+            archive_back_label=labels['archive_back'],
             og_image=og_image, twitter_image=twitter_image, ad_verify_script=AD_VERIFY_SCRIPT,
-            media=media_html(r), stamp=esc(stamp_label(r)),
-            fail_badge='<span class="fail-badge">실패기</span>' if r.get('failed') else '',
-            share_btn=SHARE_BTN_HTML,
+            media=media_html(r, title, lang), stamp=esc(stamp_label(r)),
+            fail_badge=f'<span class="fail-badge">{labels["failed_badge"]}</span>' if r.get('failed') else '',
+            share_btn=share_btn_html(lang), share_copied_label=labels['share_copied'],
             meta_line=meta_line,
             intro_section=intro_section, ingredients_section=ingredients_section,
             steps_section=steps_section, credit_section=credit_section, tags_section=tags_section,
             prev_href=prev_href, prev_label=prev_label, next_href=next_href, next_label=next_label,
-            json_ld=json_ld(r, url, title),
+            json_ld=json_ld(r, url, title, intro=intro, ingredients=ingredients, steps=steps),
             ad_slot=ad_slot_html('recipe-bottom') if ad_eligible(r) else '',
         )
-        with open(os.path.join(PAGES_DIR, f'{pid}.html'), 'w', encoding='utf-8') as f:
+        with open(os.path.join(pages_dir, f'{pid}.html'), 'w', encoding='utf-8') as f:
             f.write(html_out)
 
     return urls
 
 
-def build_sitemap(recipe_urls):
+def build_sitemap(recipe_urls, recipe_urls_en):
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     lines.append(f'  <url><loc>{SITE_BASE}/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>')
     lines.append(f'  <url><loc>{SITE_BASE}/archive.html</loc><changefreq>daily</changefreq><priority>0.9</priority></url>')
     for u in recipe_urls:
         lines.append(f'  <url><loc>{u}</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>')
+    for u in recipe_urls_en:
+        lines.append(f'  <url><loc>{u}</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>')
     lines.append('</urlset>')
     with open(SITEMAP_PATH, 'w', encoding='utf-8') as f:
         f.write('\n'.join(lines) + '\n')
@@ -457,11 +549,14 @@ def main():
     slim = build_index(live, ids)
     print(f'recipes-index.json: {len(slim)} records')
 
-    urls = build_pages(live, ids)
-    print(f'recipe pages generated: {len(urls)}')
+    urls = build_pages(live, ids, lang='ko')
+    print(f'recipe pages generated (ko): {len(urls)}')
 
-    build_sitemap(urls)
-    print(f'sitemap.xml: {len(urls) + 2} URLs')
+    urls_en = build_pages(live, ids, lang='en')
+    print(f'recipe pages generated (en): {len(urls_en)}')
+
+    build_sitemap(urls, urls_en)
+    print(f'sitemap.xml: {len(urls) + len(urls_en) + 2} URLs')
 
 
 if __name__ == '__main__':
