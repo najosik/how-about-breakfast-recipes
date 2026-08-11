@@ -68896,7 +68896,12 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "브로콜리샐러드-모닝리추얼-모닝루틴-3"
+  "page_id": "브로콜리샐러드-모닝리추얼-모닝루틴-3",
+  "image": "https://images.how-about-breakfast.com/images/176.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/176.jpg",
+   "https://images.how-about-breakfast.com/images/176_2.jpg"
+  ]
  },
  {
   "date": "2021-08-10",
