@@ -37562,7 +37562,13 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "명란오차즈케"
+  "page_id": "명란오차즈케",
+  "image": "https://images.how-about-breakfast.com/images/816.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/816.jpg",
+   "https://images.how-about-breakfast.com/images/816_2.jpg",
+   "https://images.how-about-breakfast.com/images/816_3.jpg"
+  ]
  },
  {
   "date": "2023-08-12",
