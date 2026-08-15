@@ -333,6 +333,7 @@ def json_ld(r, url, title, intro=None, ingredients=None, steps=None):
     }
     if imgs:
         data['image'] = imgs
+    data['author'] = {'@type': 'Person', 'name': '나조식'}
     if r.get('date'):
         data['datePublished'] = r['date']
     if intro:
