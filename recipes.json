@@ -50719,7 +50719,12 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "오늘의커피-스모크드소시시브레드-오리엔탈리즘"
+  "page_id": "오늘의커피-스모크드소시시브레드-오리엔탈리즘",
+  "image": "https://images.how-about-breakfast.com/images/9996.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/9996.jpg",
+   "https://images.how-about-breakfast.com/images/9996_2.jpg"
+  ]
  },
  {
   "date": "2022-08-16",
