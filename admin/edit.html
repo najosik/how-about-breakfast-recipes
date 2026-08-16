@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>게시물 편집 (관리자 전용)</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 16px; color: #222; }
+  h1 { font-size: 1.1rem; }
+  input, textarea, button { font-size: 16px; font-family: inherit; }
+  input[type="text"], input[type="password"], textarea {
+    width: 100%; box-sizing: border-box; padding: 8px; margin: 4px 0 12px;
+    border: 1px solid #ccc; border-radius: 6px;
+  }
+  textarea { min-height: 80px; }
+  label { font-weight: 600; font-size: 0.9rem; }
+  button {
+    padding: 10px 16px; border-radius: 6px; border: none;
+    background: #222; color: #fff; cursor: pointer;
+  }
+  button:disabled { background: #999; cursor: default; }
+  #results { list-style: none; padding: 0; margin: 8px 0; max-height: 240px; overflow-y: auto; border: 1px solid #eee; border-radius: 6px; }
+  #results li { padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; }
+  #results li:hover { background: #f5f5f5; }
+  #status { margin-top: 12px; padding: 10px; border-radius: 6px; }
+  #status.ok { background: #e6f7e6; }
+  #status.err { background: #fde8e8; }
+  #editForm { display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #eee; }
+  .hint { color: #777; font-size: 0.85rem; }
+</style>
+</head>
+<body>
+<h1>게시물 편집 (관리자 전용)</h1>
+<p class="hint">이 페이지는 검색엔진에 노출되지 않고, 저장 시 비밀번호로 서버 측 확인을 거칩니다. 저장 후 실제 사이트 반영까지 1~2분 정도 걸립니다.</p>
+
+<div id="lockScreen">
+  <label for="pwInput">편집 비밀번호</label>
+  <input type="password" id="pwInput" autocomplete="off">
+  <button id="unlockBtn">잠금 해제</button>
+</div>
+
+<div id="app" style="display:none">
+  <label for="searchInput">게시물 검색 (제목/날짜)</label>
+  <input type="text" id="searchInput" placeholder="예: 판 콘 토마테, 2026-08-13">
+  <ul id="results"></ul>
+
+  <form id="editForm">
+    <h2 id="editingTitle" style="font-size:1rem"></h2>
+    <label for="fTitle">제목</label>
+    <input type="text" id="fTitle">
+    <label for="fIntro">본문(intro)</label>
+    <textarea id="fIntro"></textarea>
+    <label for="fIngredients">재료</label>
+    <textarea id="fIngredients"></textarea>
+    <label for="fSteps">조리 순서</label>
+    <textarea id="fSteps"></textarea>
+    <label for="fHashtags">해시태그 (쉼표로 구분)</label>
+    <input type="text" id="fHashtags">
+    <label for="fCredit">출처(credit)</label>
+    <input type="text" id="fCredit">
+    <button type="submit" id="saveBtn">저장</button>
+  </form>
+
+  <div id="status" style="display:none"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // Fill in after deploying the Cloudflare Worker.
+  var WORKER_URL = 'https://REPLACE-WITH-WORKER-URL.workers.dev';
+
+  var lockScreen = document.getElementById('lockScreen');
+  var app = document.getElementById('app');
+  var pwInput = document.getElementById('pwInput');
+  var unlockBtn = document.getElementById('unlockBtn');
+  var searchInput = document.getElementById('searchInput');
+  var results = document.getElementById('results');
+  var editForm = document.getElementById('editForm');
+  var editingTitle = document.getElementById('editingTitle');
+  var saveBtn = document.getElementById('saveBtn');
+  var statusEl = document.getElementById('status');
+
+  var fTitle = document.getElementById('fTitle');
+  var fIntro = document.getElementById('fIntro');
+  var fIngredients = document.getElementById('fIngredients');
+  var fSteps = document.getElementById('fSteps');
+  var fHashtags = document.getElementById('fHashtags');
+  var fCredit = document.getElementById('fCredit');
+
+  var allRecords = [];
+  var current = null; // the record currently loaded into the form
+
+  var savedPw = sessionStorage.getItem('editorPassword');
+  if (savedPw) {
+    pwInput.value = savedPw;
+    unlock();
+  }
+
+  unlockBtn.addEventListener('click', unlock);
+
+  function unlock() {
+    var pw = pwInput.value;
+    if (!pw) return;
+    sessionStorage.setItem('editorPassword', pw);
+    lockScreen.style.display = 'none';
+    app.style.display = 'block';
+    loadIndex();
+  }
+
+  function loadIndex() {
+    fetch('../recipes-index.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        allRecords = data;
+      })
+      .catch(function (err) {
+        showStatus('err', '게시물 목록을 불러오지 못했습니다: ' + err);
+      });
+  }
+
+  searchInput.addEventListener('input', function () {
+    var q = searchInput.value.trim().toLowerCase();
+    results.innerHTML = '';
+    if (!q) return;
+    var matches = allRecords.filter(function (r) {
+      return (r.title || '').toLowerCase().indexOf(q) !== -1 ||
+             (r.date || '').indexOf(q) !== -1;
+    }).slice(0, 30);
+    matches.forEach(function (r) {
+      var li = document.createElement('li');
+      li.textContent = (r.date || '') + ' — ' + (r.title || '(제목 없음)');
+      li.addEventListener('click', function () { loadRecord(r); });
+      results.appendChild(li);
+    });
+  });
+
+  function loadRecord(r) {
+    current = r;
+    editingTitle.textContent = (r.date || '') + ' — ' + (r.title || '');
+    fTitle.value = r.title || '';
+    fIntro.value = r.intro || '';
+    fIngredients.value = r.ingredients || '';
+    fSteps.value = r.steps || '';
+    fHashtags.value = (r.hashtags || []).join(', ');
+    fCredit.value = r.credit || '';
+    editForm.style.display = 'block';
+    statusEl.style.display = 'none';
+  }
+
+  editForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!current) return;
+
+    var newHashtags = fHashtags.value.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    var candidates = {
+      title: fTitle.value,
+      intro: fIntro.value,
+      ingredients: fIngredients.value,
+      steps: fSteps.value,
+      hashtags: newHashtags,
+      credit: fCredit.value,
+    };
+
+    var fields = {};
+    Object.keys(candidates).forEach(function (key) {
+      var oldVal = key === 'hashtags' ? (current.hashtags || []) : (current[key] || '');
+      var newVal = candidates[key];
+      if (JSON.stringify(newVal) !== JSON.stringify(oldVal)) {
+        fields[key] = newVal;
+      }
+    });
+
+    if (Object.keys(fields).length === 0) {
+      showStatus('err', '변경된 내용이 없습니다.');
+      return;
+    }
+
+    saveBtn.disabled = true;
+    saveBtn.textContent = '저장 중...';
+
+    fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        password: sessionStorage.getItem('editorPassword'),
+        page_id: current.page_id,
+        fields: fields,
+      }),
+    })
+      .then(function (r) { return r.json().then(function (body) { return { ok: r.ok, body: body }; }); })
+      .then(function (res) {
+        if (res.ok) {
+          showStatus('ok', '저장 요청 완료. 1~2분 후 사이트에 반영됩니다.');
+        } else {
+          if (res.body && res.body.error === 'unauthorized') {
+            sessionStorage.removeItem('editorPassword');
+            showStatus('err', '비밀번호가 틀렸습니다. 새로고침 후 다시 시도해주세요.');
+          } else {
+            showStatus('err', '저장 실패: ' + (res.body && res.body.error));
+          }
+        }
+      })
+      .catch(function (err) {
+        showStatus('err', '요청 중 오류: ' + err);
+      })
+      .finally(function () {
+        saveBtn.disabled = false;
+        saveBtn.textContent = '저장';
+      });
+  });
+
+  function showStatus(kind, msg) {
+    statusEl.className = kind;
+    statusEl.textContent = msg;
+    statusEl.style.display = 'block';
+  }
+})();
+</script>
+</body>
+</html>
