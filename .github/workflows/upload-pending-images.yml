@@ -1,0 +1,56 @@
+name: Upload pending images
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.pending-uploads/**'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install boto3
+
+      - name: Write credentials
+        run: |
+          cat > .r2-credentials.json <<EOF
+          {
+            "account_id": "${{ secrets.R2_ACCOUNT_ID }}",
+            "endpoint": "${{ secrets.R2_ENDPOINT }}",
+            "access_key_id": "${{ secrets.R2_ACCESS_KEY_ID }}",
+            "secret_access_key": "${{ secrets.R2_SECRET_ACCESS_KEY }}",
+            "bucket": "${{ secrets.R2_BUCKET }}",
+            "public_base_url": "${{ secrets.R2_PUBLIC_BASE_URL }}"
+          }
+          EOF
+
+      - name: Upload pending images to R2
+        run: python upload_pending_images.py
+
+      - name: Remove credential file
+        if: always()
+        run: rm -f .r2-credentials.json
+
+      - name: Commit cleanup if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .pending-uploads/
+          if git diff --cached --quiet; then
+            echo "Nothing to clean up."
+          else
+            git commit -m "Auto: uploaded pending image(s) to R2"
+            git push
+          fi
