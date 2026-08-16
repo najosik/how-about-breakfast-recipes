@@ -29,6 +29,7 @@ from botocore.config import Config
 HERE = os.path.dirname(os.path.abspath(__file__))
 CRED_PATH = os.path.join(HERE, '.r2-credentials.json')
 PENDING_DIR = os.path.join(HERE, '.pending-uploads')
+MEDIA_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.webp', '.mp4', '.mov'}
 
 
 def load_credentials():
@@ -62,7 +63,8 @@ def main():
 
     files = [
         name for name in sorted(os.listdir(PENDING_DIR))
-        if os.path.isfile(os.path.join(PENDING_DIR, name)) and not name.startswith('.')
+        if os.path.isfile(os.path.join(PENDING_DIR, name))
+        and os.path.splitext(name)[1].lower() in MEDIA_EXTENSIONS
     ]
     if not files:
         print('No pending files, nothing to do.')
