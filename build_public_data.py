@@ -316,7 +316,7 @@ def media_html(r, title, lang='ko'):
     )
 
 
-def json_ld(r, url, title, intro=None, ingredients=None, steps=None):
+def json_ld(r, url, title, intro=None, ingredients=None, steps=None, lang='ko'):
     intro = r.get('intro') if intro is None else intro
     ingredients = r.get('ingredients') if ingredients is None else ingredients
     steps = r.get('steps') if steps is None else steps
@@ -334,6 +334,7 @@ def json_ld(r, url, title, intro=None, ingredients=None, steps=None):
     if imgs:
         data['image'] = imgs
     data['author'] = {'@type': 'Person', 'name': '나조식'}
+    data['recipeYield'] = '1인분' if lang == 'ko' else '1 serving'
     if r.get('date'):
         data['datePublished'] = r['date']
     if intro:
@@ -587,7 +588,7 @@ def build_pages(live, ids, lang='ko'):
             intro_section=intro_section, ingredients_section=ingredients_section,
             steps_section=steps_section, credit_section=credit_section, tags_section=tags_section,
             prev_href=prev_href, prev_label=prev_label, next_href=next_href, next_label=next_label,
-            json_ld=json_ld(r, url, title, intro=intro, ingredients=ingredients, steps=steps),
+            json_ld=json_ld(r, url, title, intro=intro, ingredients=ingredients, steps=steps, lang=lang),
             ad_slot=ad_slot_html('recipe-bottom') if ad_eligible(r) else '',
         )
         with open(os.path.join(pages_dir, f'{pid}.html'), 'w', encoding='utf-8') as f:
