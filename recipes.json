@@ -79824,7 +79824,8 @@
   "intro": "__pipeline_test__",
   "ingredients": null,
   "steps": null,
-  "page_id": "__pipeline_test__"
+  "page_id": "__pipeline_test__",
+  "deleted": true
  },
  {
   "date": "2021-01-08",
