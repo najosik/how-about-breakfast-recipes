@@ -85511,7 +85511,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 래디쉬 마무리는",
+  "title": "래디시 샐러드",
   "credit": null,
   "hashtags": [
    "그래놀라",
@@ -85522,9 +85522,9 @@
    "조식",
    "조식스타그램"
   ],
-  "intro": "월요일 같은 화요일, #오늘의조식 은 Radis à la croque au sel 라고 버터와 소금에 찍어 먹는 #래디쉬 #마무리는 #그레잇데이 #그래놀라 #조식 #조식스타그램",
-  "ingredients": null,
-  "steps": null,
+  "intro": "월요일 같은 화요일, #오늘의조식 은 Radis à la croque au sel, 버터와 소금에 찍어 먹는 프랑스식 샐러드다.  ",
+  "ingredients": "래디시 5~6개, 버터 5g, 소금 1t",
+  "steps": "1. 래디시는 흐르는 물에 깨끗하게 씻는다. \n2. 래디시를 버터와 소금에 찍어 먹는다.  ",
   "raw": "월요일 같은 화요일, #오늘의조식 은 Radis à la croque au sel 라고 버터와 소금에 찍어 먹는 #래디쉬 #마무리는 #그레잇데이 #그래놀라 #조식 #조식스타그램",
   "pre_label": "D-178",
   "image": "https://images.how-about-breakfast.com/images/pre-178.jpg",
@@ -85532,13 +85532,6 @@
    "https://images.how-about-breakfast.com/images/pre-178.jpg",
    "https://images.how-about-breakfast.com/images/pre-178_2.jpg"
   ],
-  "_en": {
-   "hash": "884b912929fde36c5c8b44f793b61268b6a0f410edecafa190b2f5924ebbf99c",
-   "title": "Radis à la Croque au Sel",
-   "intro": "A Tuesday that feels like a Monday. Today's breakfast is Radis à la croque au sel — French-style #radishes dipped in butter and salt — finished off with #greatday granola. #breakfast #breakfaststagram",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-래디쉬-마무리는"
  },
  {
