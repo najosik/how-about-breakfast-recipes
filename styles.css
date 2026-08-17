@@ -307,8 +307,10 @@ section.mag-section + section.mag-section{margin-top:0; border-top:1px solid var
 .otd-title{font-family:'Nanum Myeongjo',serif; font-size:15px; margin:0 0 6px; line-height:1.3; color:var(--teal-deep);}
 .otd-meta{font-size:11.5px; color:var(--ink-faint);}
 .otd-empty-msg{
+  display:flex; align-items:center; justify-content:center; text-align:center;
+  width:100%; aspect-ratio:4/5; box-sizing:border-box;
   font-family:'Nanum Myeongjo',serif; font-size:14px; line-height:1.5; color:var(--ink-faint);
-  padding:20px 12px; margin-bottom:10px; border:1px solid var(--teal); border-radius:8px;
+  padding:16px; margin-bottom:10px; border:1px solid var(--teal); border-radius:2px;
 }
 
 /* Collections */
