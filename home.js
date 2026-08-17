@@ -83,7 +83,11 @@
     var dated = all.filter(function (r) { return r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date); });
     var sorted = dated.slice().sort(function (a, b) { return a.date.localeCompare(b.date); });
     var first = sorted[0].date;
-    var latestNo = sorted[sorted.length - 1].diary_no || 0;
+    // Vol. N reflects the actual number of live posts, not the latest
+    // diary_no - past backfills/deletions have drifted diary_no away from
+    // a true running count, same reason build_public_data.py's stats and
+    // the archive page's "stat_total" both count records instead.
+    var postCount = all.length;
 
     var firstDate = new Date(first + 'T00:00:00');
     var today = new Date();
@@ -92,7 +96,7 @@
     var remMonths = months % 12;
 
     var lang = I18N.getLang();
-    document.getElementById('kickerVol').textContent = 'Vol. ' + latestNo;
+    document.getElementById('kickerVol').textContent = 'Vol. ' + postCount;
     document.getElementById('kickerSince').textContent = first + I18N.t('home_since_suffix');
 
     var streakHTML = lang === 'en'
