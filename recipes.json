@@ -37544,7 +37544,7 @@
   "weather": "25도/대체로맑음",
   "failed": false,
   "calories": null,
-  "title": "아보카도토마토토스트 토스트 아보카도",
+  "title": "아보카도 토마토 토스트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37555,22 +37555,15 @@
    "조식다이어리",
    "토스트"
   ],
-  "intro": "20230818, #조식다이어리 821, 25도/대체로맑음\n오늘도 무사히, \n1. 빵에 올리브오일 두르고 앞뒤로 굽는다. 바삭하게, \n2. 빵 위에 아보카도를 올리고 포크로 으깬다. 소금 약간, 라임주스 약간, \n3. 에어룸 토마토를 올리고 파마산치즈, 후추후추후추",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20230818, #조식다이어리 821, 25도/대체로맑음\n오늘도 무사히, \n",
+  "ingredients": "빵 1개, 아보카도 1/2개, 에어룸 토마토, 파마산치즈, 소금, 후추, 라임주스 약간",
+  "steps": "1. 빵에 올리브오일 두르고 앞뒤로 바삭하게 굽는다. \n2. 빵 위에 아보카도를 올리고 포크로 으깬다. 소금 약간, 라임주스 약간 얹는다. \n3. 에어룸 토마토를 올리고 파마산치즈, 후추후추후추",
   "raw": "20230818, #조식다이어리 821, 25도/대체로맑음\n\n오늘도 무사히, \n\n#아보카도토마토토스트\n\n1. 빵에 올리브오일 두르고 앞뒤로 굽는다. 바삭하게, \n2. 빵 위에 아보카도를 올리고 포크로 으깬다. 소금 약간, 라임주스 약간, \n3. 에어룸 토마토를 올리고 파마산치즈, 후추후추후추\n\n#조식 #레시피 #미라클모닝 #토스트 #아보카도",
   "image": "https://images.how-about-breakfast.com/images/821.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/821.jpg",
    "https://images.how-about-breakfast.com/images/821_2.jpg"
   ],
-  "_en": {
-   "hash": "10b8251e74c06cfbc894d2a5590f710108253f35d43b22a3b3363f02a5c877a0",
-   "title": "Avocado Tomato Toast",
-   "intro": "20230818, #breakfastdiary 821, 25°C/mostly clear\nSafe and sound again today, \n1. Drizzle bread with olive oil and toast both sides until crisp. \n2. Place avocado on the bread and mash with a fork. A pinch of salt, a splash of lime juice. \n3. Top with heirloom tomato, Parmesan cheese, and pepper, pepper, pepper.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "아보카도토마토토스트-토스트-아보카도"
  },
  {
