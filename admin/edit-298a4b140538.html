@@ -172,6 +172,7 @@
   var aImages = document.getElementById('aImages');
 
   var allRecords = [];
+  var igIndex = null; // {date: {caption, images, ...}} from ig_index.json, or null if not built yet
   var current = null; // the record currently loaded into the form
   var currentAddDate = null; // the date currently loaded into the add-post form
 
@@ -225,6 +226,16 @@
       .catch(function (err) {
         showStatus('err', '게시물 목록을 불러오지 못했습니다: ' + err);
       });
+
+    // Pre-built by build_ig_index.py (workflow_dispatch, run manually as
+    // needed) - lets "미리보기" answer instantly for anything indexed,
+    // instead of paginating Instagram live on every click. Fine if this
+    // 404s (not built yet, or repo just doesn't have it) - preview falls
+    // back to the slower live Worker lookup.
+    fetch('../ig_index.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) { igIndex = data; })
+      .catch(function () { igIndex = null; });
   }
 
   // Same definition of "missing" as the homepage's consistency heatmap
@@ -293,9 +304,20 @@
   }
 
   function previewDate(date, btn, box) {
-    btn.disabled = true;
     box.style.display = 'block';
-    box.textContent = '인스타그램에서 찾는 중... (오래된 날짜는 시간이 걸릴 수 있습니다)';
+
+    // Instant path: build_ig_index.py's pre-built map, already loaded.
+    if (igIndex && igIndex[date]) {
+      renderPreviewFound(box, date, igIndex[date]);
+      return;
+    }
+
+    // Fallback: not in the index (not built yet, or posted since the last
+    // build) - ask the Worker to page through Instagram live, which can
+    // take a while for an old date.
+    btn.disabled = true;
+    box.innerHTML = '';
+    box.textContent = '색인에 없어서 인스타그램에서 직접 찾는 중... (오래된 날짜는 시간이 걸릴 수 있습니다)';
 
     fetch(WORKER_URL, {
       method: 'POST',
@@ -325,32 +347,7 @@
             : '인스타그램에서 이 날짜의 게시물을 찾지 못했습니다 (' + data.checked + '개 확인).';
           return;
         }
-        box.dataset.caption = data.caption || '';
-        box.dataset.images = JSON.stringify(data.images || []);
-        var captionEl = document.createElement('div');
-        captionEl.className = 'preview-caption';
-        captionEl.textContent = data.caption || '(캡션 없음)';
-        box.appendChild(captionEl);
-        (data.images || []).slice(0, 1).forEach(function (src) {
-          var img = document.createElement('img');
-          img.src = src;
-          box.appendChild(img);
-        });
-        if (data.permalink) {
-          var link = document.createElement('a');
-          link.href = data.permalink;
-          link.target = '_blank';
-          link.rel = 'noopener';
-          link.textContent = '인스타그램에서 보기 ↗';
-          box.appendChild(link);
-        }
-        var fillBtn = document.createElement('button');
-        fillBtn.type = 'button';
-        fillBtn.textContent = '이 내용으로 채우기';
-        fillBtn.style.marginTop = '8px';
-        fillBtn.addEventListener('click', function () { openAddForm(date, box); });
-        box.appendChild(document.createElement('br'));
-        box.appendChild(fillBtn);
+        renderPreviewFound(box, date, data);
       })
       .catch(function (err) {
         box.textContent = '요청 중 오류: ' + err;
@@ -358,6 +355,36 @@
       .finally(function () {
         btn.disabled = false;
       });
+  }
+
+  function renderPreviewFound(box, date, data) {
+    box.innerHTML = '';
+    box.dataset.caption = data.caption || '';
+    box.dataset.images = JSON.stringify(data.images || []);
+    var captionEl = document.createElement('div');
+    captionEl.className = 'preview-caption';
+    captionEl.textContent = data.caption || '(캡션 없음)';
+    box.appendChild(captionEl);
+    (data.images || []).slice(0, 1).forEach(function (src) {
+      var img = document.createElement('img');
+      img.src = src;
+      box.appendChild(img);
+    });
+    if (data.permalink) {
+      var link = document.createElement('a');
+      link.href = data.permalink;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = '인스타그램에서 보기 ↗';
+      box.appendChild(link);
+    }
+    var fillBtn = document.createElement('button');
+    fillBtn.type = 'button';
+    fillBtn.textContent = '이 내용으로 채우기';
+    fillBtn.style.marginTop = '8px';
+    fillBtn.addEventListener('click', function () { openAddForm(date, box); });
+    box.appendChild(document.createElement('br'));
+    box.appendChild(fillBtn);
   }
 
   function openAddForm(date, previewBox) {
