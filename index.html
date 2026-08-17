@@ -59,9 +59,12 @@
   </div>
 
   <header class="masthead">
-    <form class="search-box home-search" id="homeSearchForm" role="search">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input id="homeSearchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)">
+    <form class="home-search" id="homeSearchForm" role="search">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="homeSearchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)">
+      </div>
+      <button type="submit" class="btn-primary home-search-btn" data-i18n="home_search_btn">검색</button>
     </form>
     <p class="eyebrow">daily breakfast journal</p>
     <div class="kicker">
