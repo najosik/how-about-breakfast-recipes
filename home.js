@@ -229,30 +229,43 @@
       datePrefixEl.textContent = (lang === 'en' ? (mm + '/' + dd) : (mm + '.' + dd + '.')) + ' ';
     }
 
-    function dist(r) {
-      if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return 999;
+    function isExactMatch(r) {
+      if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return false;
       var parts = r.date.split('-');
-      var rm = parseInt(parts[1], 10), rd = parseInt(parts[2], 10);
-      if (rm !== mm) return 999;
-      return Math.abs(rd - dd);
+      return parseInt(parts[1], 10) === mm && parseInt(parts[2], 10) === dd;
     }
 
-    var currentYear = String(today.getFullYear());
     var byYear = {};
     all.forEach(function (r) {
-      var d = dist(r);
-      if (d > 3) return;
-      var y = r.date.slice(0, 4);
-      // the current year only counts as "on this day" for an exact match -
-      // a fuzzy nearby-day fallback would surface yesterday's brand-new
-      // post as if it were a past-years memory, which isn't the intent.
-      if (y === currentYear && d !== 0) return;
-      if (!byYear[y] || dist(byYear[y]) > d) byYear[y] = r;
+      if (!isExactMatch(r)) return;
+      byYear[r.date.slice(0, 4)] = r;
     });
 
-    var years = Object.keys(byYear).sort();
+    // Years the archive actually spans, so a year with no exact-day post
+    // still gets a card (with the "no breakfast that day" placeholder)
+    // instead of just vanishing from the row. The very first (partial)
+    // year only counts once the diary had actually started.
+    var allDates = all.map(function (r) { return r.date; })
+      .filter(function (d) { return d && /^\d{4}-\d{2}-\d{2}$/.test(d); })
+      .sort();
     var row = document.getElementById('otdRow');
     var section = document.getElementById('otdSection');
+    if (!allDates.length) {
+      section.classList.add('hidden');
+      return;
+    }
+    var minDate = allDates[0];
+    var startYear = parseInt(minDate.slice(0, 4), 10);
+    var startMM = parseInt(minDate.slice(5, 7), 10);
+    var startDD = parseInt(minDate.slice(8, 10), 10);
+    var currentYear = today.getFullYear();
+
+    var years = [];
+    for (var y = startYear; y <= currentYear; y++) {
+      if (y === startYear && (mm < startMM || (mm === startMM && dd < startDD))) continue;
+      years.push(String(y));
+    }
+
     if (years.length === 0) {
       section.classList.add('hidden');
       return;
@@ -260,8 +273,16 @@
     section.classList.remove('hidden');
     row.innerHTML = years.map(function (y) {
       var r = byYear[y];
-      var koTitle = r.title || I18N.t('untitled_fallback');
       var yearLabel = lang === 'en' ? y : (y + '년');
+      if (!r) {
+        return (
+          '<div class="otd-card otd-empty" data-year="' + y + '">' +
+          '<div class="otd-year">' + yearLabel + '</div>' +
+          '<div class="otd-empty-msg">' + Shared.escapeHtml(I18N.t('otd_empty')) + '</div>' +
+          '</div>'
+        );
+      }
+      var koTitle = r.title || I18N.t('untitled_fallback');
       var titleHtml = Shared.hasStaticEn(r, 'title')
         ? '<h4 class="otd-title">' + Shared.escapeHtml(Shared.localizedText(r, 'title')) + '</h4>'
         : '<h4 class="otd-title i18n-dyn" data-ko="' + Shared.escapeHtml(koTitle) + '">' + Shared.escapeHtml(koTitle) + '</h4>';
@@ -275,11 +296,12 @@
       );
     }).join('');
 
-    Array.prototype.forEach.call(row.querySelectorAll('.otd-card'), function (el, i) {
+    Array.prototype.forEach.call(row.querySelectorAll('.otd-card:not(.otd-empty)'), function (el) {
+      var y = el.getAttribute('data-year');
       el.addEventListener('click', function (e) {
         if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault();
-        Shared.openModal(byYear[years[i]]);
+        Shared.openModal(byYear[y]);
       });
     });
     I18N.applyDynamicTranslations(row);
