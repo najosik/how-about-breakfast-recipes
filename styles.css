@@ -307,11 +307,12 @@ section.mag-section + section.mag-section{margin-top:0; border-top:1px solid var
 .otd-title{font-family:'Nanum Myeongjo',serif; font-size:15px; margin:0 0 6px; line-height:1.3; color:var(--teal-deep);}
 .otd-meta{font-size:11.5px; color:var(--ink-faint);}
 .otd-empty-msg{
-  display:flex; align-items:center; justify-content:center; text-align:center;
-  width:100%; aspect-ratio:4/5; box-sizing:border-box;
-  font-family:'Nanum Myeongjo',serif; font-size:14px; line-height:1.5; color:var(--ink-faint);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  width:100%; aspect-ratio:4/5; box-sizing:border-box; color:var(--ink-faint);
   padding:16px; margin-bottom:10px; border:1px solid var(--teal); border-radius:2px;
 }
+.otd-empty-bang{font-family:'Nanum Myeongjo',serif; font-size:42px; line-height:1; margin-bottom:8px;}
+.otd-empty-sub{font-size:14px;}
 
 /* Collections */
 .collection-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px;}

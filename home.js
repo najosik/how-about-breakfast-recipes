@@ -281,10 +281,17 @@
       var r = byYear[y];
       var yearLabel = lang === 'en' ? y : (y + '년');
       if (!r) {
+        var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+        var emptyDate = y + '-' + pad(mm) + '-' + pad(dd);
         return (
           '<div class="otd-card otd-empty" data-year="' + y + '">' +
+          '<div class="otd-empty-msg">' +
+          '<span class="otd-empty-bang">' + Shared.escapeHtml(I18N.t('otd_empty_bang')) + '</span>' +
+          '<span class="otd-empty-sub">' + Shared.escapeHtml(I18N.t('otd_empty_sub')) + '</span>' +
+          '</div>' +
           '<div class="otd-year">' + yearLabel + '</div>' +
-          '<div class="otd-empty-msg">' + Shared.escapeHtml(I18N.t('otd_empty')) + '</div>' +
+          '<h4 class="otd-title">' + Shared.escapeHtml(I18N.t('otd_empty_title')) + '</h4>' +
+          '<div class="otd-meta">' + emptyDate + '</div>' +
           '</div>'
         );
       }
