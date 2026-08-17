@@ -28,11 +28,22 @@
   #status.err { background: #fde8e8; }
   #editForm { display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #eee; }
   .hint { color: #777; font-size: 0.85rem; }
+  .quicklinks { display: flex; gap: 8px; margin: 12px 0 16px; flex-wrap: wrap; }
+  .quicklinks a {
+    display: inline-block; padding: 6px 12px; border: 1px solid #ccc; border-radius: 6px;
+    color: #222; text-decoration: none; font-size: 0.85rem;
+  }
+  .quicklinks a:hover { border-color: #222; }
 </style>
 </head>
 <body>
 <h1>게시물 편집 (관리자 전용)</h1>
 <p class="hint">이 페이지는 검색엔진에 노출되지 않고, 저장 시 비밀번호로 서버 측 확인을 거칩니다. 저장 후 실제 사이트 반영까지 1~2분 정도 걸립니다.</p>
+<div class="quicklinks">
+  <a href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener">애널리틱스</a>
+  <a href="https://search.google.com/search-console?resource_id=sc-domain%3Ahow-about-breakfast.com" target="_blank" rel="noopener">서치 콘솔</a>
+  <a href="https://clarity.microsoft.com/projects/view/y3orfq5syr/dashboard" target="_blank" rel="noopener">히트맵</a>
+</div>
 
 <div id="lockScreen">
   <label for="pwInput">편집 비밀번호</label>
