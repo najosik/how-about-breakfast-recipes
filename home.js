@@ -144,9 +144,10 @@
       var key = cur.getFullYear() + '-' + String(cur.getMonth() + 1).padStart(2, '0') + '-' + String(cur.getDate()).padStart(2, '0');
       var status = 'empty';
       if (cur >= start && cur <= end) {
-        if (postedDates.has(key)) status = 'posted';
-        else if (failedDates.has(key)) status = 'failed';
-        else status = 'missed';
+        // A day marked "건너뜀" via the admin tool has a real record but no
+        // actual content - visually it should read the same as a day with
+        // no record at all, not stand out as a distinct "실패기" color.
+        status = postedDates.has(key) ? 'posted' : 'missed';
       } else {
         status = 'pad';
       }
@@ -166,7 +167,6 @@
 
     var labelFor = {
       posted: lang === 'en' ? 'Made it' : '조식',
-      failed: lang === 'en' ? 'Failed attempt' : '실패기',
       missed: lang === 'en' ? 'Breakfast skipped' : '조식 건너뜀'
     };
 
@@ -197,12 +197,12 @@
       col.className = 'ledger-col';
       w.forEach(function (day) {
         var cell = document.createElement('div');
-        cell.className = 'ledger-cell' + (day.status === 'posted' ? ' posted' : day.status === 'failed' ? ' failed' : '');
+        cell.className = 'ledger-cell' + (day.status === 'posted' ? ' posted' : '');
         if (day.status !== 'pad' && day.key) {
           cell.addEventListener('mouseenter', function () { showTooltip(cell, day); });
           cell.addEventListener('mouseleave', hideTooltip);
           var rec = recordByDate[day.key];
-          if (rec && (day.status === 'posted' || day.status === 'failed')) {
+          if (rec && day.status === 'posted') {
             cell.classList.add('clickable');
             cell.addEventListener('click', function () {
               hideTooltip();
