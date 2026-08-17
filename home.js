@@ -249,6 +249,10 @@
     }
 
     function isExactMatch(r) {
+      // A "건너뜀" skip marker (failed:true, no real content) is a record
+      // but not a post - it should read the same as no record at all here,
+      // not surface as a broken-looking untitled card.
+      if (r.failed) return false;
       if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return false;
       var parts = r.date.split('-');
       return parseInt(parts[1], 10) === mm && parseInt(parts[2], 10) === dd;
