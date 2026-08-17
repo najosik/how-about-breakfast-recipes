@@ -37587,7 +37587,7 @@
   "weather": "24도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "에어룸토마토",
+  "title": "에어룸 토마토 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37596,22 +37596,15 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20230817, #조식다이어리 820, 24도/대체로흐림\n스테비아 토마토, 설탕보다 200~300배 단 스테비아를 밭이나 토마토에 직접 주입해서 만들어 채소가 아닌 가공식품으로 분류된다고. \n에어룸 토마토 Heirloom Tomato 는 스테비아 토마토처럼 인위적인 유전자 조작을 거치지 않은 원형 그대로의 순종 토마토를 일컫는다. 단맛도 덜하고 껍질도 얇지만 토마토 본연의 맛을 느낄 수 있다. \n1. 에어룸 토마토를 깨끗하게 씻어 가로로 자르고 접시에 놓는다. \n2. 접시에 부라타치즈, 비네그레트 드레싱",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20230817, #조식다이어리 820, 24도/대체로흐림\n스테비아 토마토, 설탕보다 200~300배 단 스테비아를 밭이나 토마토에 직접 주입해서 만들어 채소가 아닌 가공식품으로 분류된다고. \n에어룸 토마토 Heirloom Tomato 는 스테비아 토마토처럼 인위적인 유전자 조작을 거치지 않은 원형 그대로의 순종 토마토를 일컫는다. 단맛도 덜하고 껍질도 얇지만 토마토 본연의 맛을 느낄 수 있다. ",
+  "ingredients": "에어룸 토마토, 부라타치즈 1개, 비네그레트 드레싱(올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스타드 1t)",
+  "steps": "1. 에어룸 토마토를 깨끗하게 씻어 가로로 자르고 접시에 놓는다. \n2. 그 위에 부라타치즈 얹고 비네그레트 드레싱 뿌린다 ",
   "raw": "20230817, #조식다이어리 820, 24도/대체로흐림\n\n스테비아 토마토, 설탕보다 200~300배 단 스테비아를 밭이나 토마토에 직접 주입해서 만들어 채소가 아닌 가공식품으로 분류된다고. \n에어룸 토마토 Heirloom Tomato 는 스테비아 토마토처럼 인위적인 유전자 조작을 거치지 않은 원형 그대로의 순종 토마토를 일컫는다. 단맛도 덜하고 껍질도 얇지만 토마토 본연의 맛을 느낄 수 있다. \n\n1. 에어룸 토마토를 깨끗하게 씻어 가로로 자르고 접시에 놓는다. \n2. 접시에 부라타치즈, 비네그레트 드레싱\n\n#조식 #레시피 #미라클모닝 #에어룸토마토",
   "image": "https://images.how-about-breakfast.com/images/820.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/820.jpg",
    "https://images.how-about-breakfast.com/images/820_2.jpg"
   ],
-  "_en": {
-   "hash": "2098d54113d76f2eafbe326f8ba749139c4e484ba7dd4421f2434d2582a2914d",
-   "title": "Heirloom Tomatoes",
-   "intro": "20230817, #breakfastdiary 820, 24°C/mostly cloudy\nStevia tomatoes are apparently made by injecting stevia — 200 to 300 times sweeter than sugar — directly into the field or the tomato itself, which is why they're classified as a processed food rather than a vegetable. \nHeirloom tomatoes, unlike stevia tomatoes, aren't genetically manipulated at all — they're pure, original-variety tomatoes. They're less sweet and thinner-skinned, but you can really taste what a tomato is supposed to taste like. \n1. Wash the heirloom tomatoes thoroughly, slice crosswise, and arrange on a plate. \n2. Add burrata cheese and vinaigrette dressing.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "에어룸토마토"
  },
  {
