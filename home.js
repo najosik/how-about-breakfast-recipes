@@ -290,7 +290,8 @@
           '<span class="otd-empty-sub">' + Shared.escapeHtml(I18N.t('otd_empty_sub')) + '</span>' +
           '</div>' +
           '<div class="otd-year">' + yearLabel + '</div>' +
-          '<h4 class="otd-title">' + Shared.escapeHtml(I18N.t('otd_empty_title')) + '</h4>' +
+          '<h4 class="otd-title"><a href="https://brunch.co.kr/@howaboutbfast/4" target="_blank" rel="noopener noreferrer">' +
+          Shared.escapeHtml(I18N.t('otd_empty_title')) + '</a></h4>' +
           '<div class="otd-meta">' + emptyDate + '</div>' +
           '</div>'
         );
