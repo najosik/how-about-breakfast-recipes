@@ -10,17 +10,28 @@ Invoked by the "Add missing post" GitHub Actions workflow (workflow_dispatch),
 itself only triggered by the password-gated Cloudflare Worker. Reads DATE
 and PATCH_JSON from the environment.
 
-diary_no is assigned as (current max live diary_no) + 1, regardless of
-where DATE actually falls chronologically. This site already tolerates
+For a date on or after the diary's numbering start (the date of diary_no
+1), diary_no is assigned as (current max live diary_no) + 1, regardless
+of where DATE actually falls chronologically. This site already tolerates
 diary_no drift from past backfills (see build_public_data.py's docstring),
 so a simple monotonic counter here is far safer than renumbering every
-later record on every manual insert. page_id is intentionally left unset;
-the next build_public_data.py run mints and persists one automatically
-(see assign_unique_page_ids there).
+later record on every manual insert.
+
+For a date before that (the account's pre-numbering era), diary_no stays
+unset and pre_label gets the same "D-N" format merge_instagram_export.py
+uses for that era (N = days before diary_no 1) - giving it a diary_no
+there would be meaningless (there's no way to slot an arbitrary early
+date into the 1..N sequence) and would corrupt anchor-date math for
+anything that looks for "the earliest date with a diary_no" as a proxy
+for when numbering started.
+
+page_id is intentionally left unset; the next build_public_data.py run
+mints and persists one automatically (see assign_unique_page_ids there).
 
 Usage (set by the workflow, not run manually):
     DATE=2023-05-04 PATCH_JSON='{"title": "..."}' python add_post.py
 """
+import datetime
 import json
 import os
 import re
@@ -60,12 +71,11 @@ def main():
         print(f'A live record for {date} already exists - refusing to create a duplicate.', file=sys.stderr)
         sys.exit(1)
 
-    next_diary_no = max((r.get('diary_no') or 0) for r in live) + 1 if live else 1
+    numbering_start = next((r['date'] for r in live if r.get('diary_no') == 1 and r.get('date')), None)
 
     record = {
         'date': date,
         'date_raw': date.replace('-', ''),
-        'diary_no': next_diary_no,
         'weather': None,
         'failed': False,
         'calories': None,
@@ -76,6 +86,16 @@ def main():
         'ingredients': None,
         'steps': None,
     }
+
+    if numbering_start and date < numbering_start:
+        days_before = (datetime.date.fromisoformat(numbering_start) - datetime.date.fromisoformat(date)).days
+        record['diary_no'] = None
+        record['pre_label'] = f'D-{days_before}'
+        assigned_label = record['pre_label']
+    else:
+        next_diary_no = max((r.get('diary_no') or 0) for r in live) + 1 if live else 1
+        record['diary_no'] = next_diary_no
+        assigned_label = f'diary_no {next_diary_no}'
 
     for key in ALLOWED_FIELDS:
         if key not in patch:
@@ -108,7 +128,7 @@ def main():
         json.dump(data, f, ensure_ascii=False, indent=1)
         f.write('\n')
 
-    print(f'Added new record for {date} (diary_no {next_diary_no}).')
+    print(f'Added new record for {date} ({assigned_label}).')
 
 
 if __name__ == '__main__':
