@@ -13,7 +13,7 @@
     width: 100%; box-sizing: border-box; padding: 8px; margin: 4px 0 12px;
     border: 1px solid #ccc; border-radius: 6px;
   }
-  textarea { min-height: 80px; }
+  textarea { min-height: 80px; resize: vertical; overflow: hidden; }
   label { font-weight: 600; font-size: 0.9rem; }
   button {
     padding: 10px 16px; border-radius: 6px; border: none;
@@ -93,6 +93,20 @@
   var allRecords = [];
   var current = null; // the record currently loaded into the form
 
+  // Mobile Safari (iPad included) doesn't render a draggable resize handle
+  // on textareas, so long intro/steps text gets stuck in an 80px box with
+  // no way to make it bigger. Auto-grow to fit content instead — this also
+  // benefits desktop, which additionally keeps the CSS `resize: vertical`
+  // handle for manual override.
+  var growTargets = [fIntro, fIngredients, fSteps];
+  function autoGrow(el) {
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  growTargets.forEach(function (el) {
+    el.addEventListener('input', function () { autoGrow(el); });
+  });
+
   var savedPw = sessionStorage.getItem('editorPassword');
   if (savedPw) {
     pwInput.value = savedPw;
@@ -147,6 +161,7 @@
     fHashtags.value = (r.hashtags || []).join(', ');
     fCredit.value = r.credit || '';
     editForm.style.display = 'block';
+    growTargets.forEach(autoGrow);
     statusEl.style.display = 'none';
   }
 
