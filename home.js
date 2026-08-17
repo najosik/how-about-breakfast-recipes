@@ -14,6 +14,19 @@
 
   var allData = null;
 
+  bindHomeSearch();
+
+  function bindHomeSearch() {
+    var form = document.getElementById('homeSearchForm');
+    var input = document.getElementById('homeSearchInput');
+    if (!form || !input) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var q = input.value.trim();
+      window.location.href = 'archive.html' + (q ? '?q=' + encodeURIComponent(q) : '');
+    });
+  }
+
   Shared.loadData().then(function (all) {
     allData = all;
     I18N.setCount(all.length);
