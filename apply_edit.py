@@ -3,7 +3,7 @@ apply_edit.py
 
 Applies a content edit to recipes.json. Invoked by the "Apply content edit"
 GitHub Actions workflow (workflow_dispatch), which itself is only triggered
-by the password-gated Cloudflare Worker behind admin/edit.html — this
+by the password-gated Cloudflare Worker behind the admin editor page — this
 script trusts the workflow's inputs, but still validates shape/whitelists
 fields defensively (never eval()'d, never passed through a shell).
 
