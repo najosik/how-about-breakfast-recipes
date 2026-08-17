@@ -9363,6 +9363,21 @@
   "page_id": "대파국수"
  },
  {
+  "date": "2025-11-20",
+  "date_raw": "20251120",
+  "weather": null,
+  "failed": true,
+  "calories": null,
+  "title": null,
+  "credit": null,
+  "hashtags": [],
+  "intro": null,
+  "ingredients": null,
+  "steps": null,
+  "diary_no": 1824,
+  "page_id": "2025-11-20"
+ },
+ {
   "date": "2025-11-19",
   "date_raw": "20251119",
   "diary_no": 1577,
