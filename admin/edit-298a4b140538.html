@@ -173,6 +173,7 @@
 
   var allRecords = [];
   var igIndex = null; // {date: {caption, images, ...}} from ig_index.json, or null if not built yet
+  var igIndexMaxDate = null; // latest date key in igIndex - anything at/before this and absent genuinely isn't on Instagram
   var current = null; // the record currently loaded into the form
   var currentAddDate = null; // the date currently loaded into the add-post form
 
@@ -234,8 +235,11 @@
     // back to the slower live Worker lookup.
     fetch('../ig_index.json')
       .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (data) { igIndex = data; })
-      .catch(function () { igIndex = null; });
+      .then(function (data) {
+        igIndex = data;
+        igIndexMaxDate = data ? Object.keys(data).sort().pop() || null : null;
+      })
+      .catch(function () { igIndex = null; igIndexMaxDate = null; });
   }
 
   // Same definition of "missing" as the homepage's consistency heatmap
@@ -312,9 +316,21 @@
       return;
     }
 
-    // Fallback: not in the index (not built yet, or posted since the last
-    // build) - ask the Worker to page through Instagram live, which can
-    // take a while for an old date.
+    // The index is a full rebuild of the whole account through
+    // igIndexMaxDate. A date at or before that with no entry has already
+    // been checked and genuinely isn't on Instagram - re-searching live
+    // would just re-walk the same history (and can time out for old
+    // dates). Only fall back to a live check for dates after the last
+    // build (posted since), or when the index failed to load at all.
+    if (igIndex && igIndexMaxDate && date <= igIndexMaxDate) {
+      box.innerHTML = '';
+      box.textContent = '인스타그램에서 이 날짜의 게시물을 찾지 못했습니다.';
+      return;
+    }
+
+    // Fallback: after the index's coverage, or the index didn't load -
+    // ask the Worker to page through Instagram live, which can take a
+    // while for an old date.
     btn.disabled = true;
     box.innerHTML = '';
     box.textContent = '색인에 없어서 인스타그램에서 직접 찾는 중... (오래된 날짜는 시간이 걸릴 수 있습니다)';
