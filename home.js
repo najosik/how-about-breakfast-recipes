@@ -263,6 +263,12 @@
     var years = [];
     for (var y = startYear; y <= currentYear; y++) {
       if (y === startYear && (mm < startMM || (mm === startMM && dd < startDD))) continue;
+      // Today's own post typically goes up in the morning and only reaches
+      // recipes-index.json once the overnight sync runs - a missing exact
+      // match for the current year almost always just means "not synced
+      // yet", not an actual skipped day, so skip the placeholder for it
+      // entirely rather than falsely implying no breakfast was made today.
+      if (y === currentYear && !byYear[String(y)]) continue;
       years.push(String(y));
     }
 
