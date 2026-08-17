@@ -7,7 +7,9 @@
     { label: '파스타 & 누들', tag: '파스타', cls: 'c-teal' },
     { label: '감자 요리 모음', tag: '감자', cls: 'c-ink' },
     { label: '계란 한 알의 힘', tag: '계란', cls: 'c-teal' },
-    { label: '오픈샌드위치 특집', tag: '샌드위치', cls: 'c-ink' }
+    { label: '오픈샌드위치 특집', tag: '샌드위치', cls: 'c-ink' },
+    { label: '샐러드 특집', tag: '샐러드', cls: 'c-teal' },
+    { label: '가지 요리 모음', tag: '가지', cls: 'c-ink' }
   ];
 
   var allData = null;
@@ -324,7 +326,6 @@
   function renderCollections(all) {
     var counts = {};
     all.forEach(function (r) { (r.hashtags || []).forEach(function (h) { counts[h] = (counts[h] || 0) + 1; }); });
-    var failedCount = all.filter(function (r) { return r.failed; }).length;
 
     var grid = document.getElementById('collectionGrid');
     var cards = COLLECTIONS.map(function (c) {
@@ -337,13 +338,6 @@
         '</a>'
       );
     });
-    cards.push(
-      '<a class="collection-card c-clay" href="archive.html?failed=1">' +
-      '<span class="collection-icon">' + Shared.iconSVG({ hashtags: [], title: '' }, 26) + '</span>' +
-      '<div class="big">' + I18N.t('col_failed_label') + '</div>' +
-      '<div class="count">' + failedCount + I18N.t('col_failed_suffix') + '</div>' +
-      '</a>'
-    );
     grid.innerHTML = cards.join('');
   }
 

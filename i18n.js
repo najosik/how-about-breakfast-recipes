@@ -49,8 +49,6 @@ var I18N = (function () {
       col_desc: '가장 자주 등장한 재료들로 모은 테마별 아카이브예요.',
       col_more: '전체 검색으로 보기 →',
       col_records_suffix: '건의 기록',
-      col_failed_label: '실패기 아카이브',
-      col_failed_suffix: '건의 솔직한 실패담',
       shuffle_title: '오늘 뭐 먹지?',
       shuffle_desc: '{count}개가 넘는 기록 중에서 랜덤으로 꺼내먹어요.',
       shuffle_btn: '랜덤으로 꺼내 먹기',
@@ -112,8 +110,6 @@ var I18N = (function () {
       col_desc: 'Themed collections built from the most frequent ingredients.',
       col_more: 'See the full archive →',
       col_records_suffix: ' entries',
-      col_failed_label: 'The Failure Files',
-      col_failed_suffix: ' honest failures',
       shuffle_title: 'What should I eat today?',
       shuffle_desc: 'Pull a random entry from over {count} recorded breakfasts.',
       shuffle_btn: 'Surprise me',
@@ -146,7 +142,9 @@ var I18N = (function () {
     '파스타 & 누들': 'Pasta & Noodles',
     '감자 요리 모음': 'Potato Dishes',
     '계란 한 알의 힘': 'The Power of One Egg',
-    '오픈샌드위치 특집': 'Open-Sandwich Special'
+    '오픈샌드위치 특집': 'Open-Sandwich Special',
+    '샐러드 특집': 'Salad Special',
+    '가지 요리 모음': 'Eggplant Dishes'
   };
 
   /* auto-generated: covers every hashtag seen in the dataset as of the
