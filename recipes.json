@@ -50658,7 +50658,7 @@
   "weather": "25도/대체로흐림, 50분/운동",
   "failed": false,
   "calories": null,
-  "title": "광장시장 우뭇가사리 모닝리추얼",
+  "title": "우뭇가사리 냉국",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -50679,9 +50679,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220818, #조식다이어리 526, 25도/대체로흐림, 50분/운동\n#광장시장 모녀네집 #우뭇가사리 냉국\n이런저런 일로 마음이 어지러운 가운데, 광장시장의 아침 풍경",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220818, #조식다이어리 526, 25도/대체로흐림, 50분/운동\n이런저런 일로 마음이 어지러운 가운데, 광장시장의 아침 풍경",
+  "ingredients": "광장시장 우뭇가사리 냉국",
+  "steps": "광장시장 모녀네집 가서 우뭇가사리 냉국 주세요, 하면 된다. ",
   "raw": "20220818, #조식다이어리 526, 25도/대체로흐림, 50분/운동\n\n#광장시장 모녀네집 #우뭇가사리 냉국\n\n이런저런 일로 마음이 어지러운 가운데, 광장시장의 아침 풍경\n\n#직장인 #조식 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #우무 #한천 #우뭇가사리냉국\n#breakfast #salad  ",
   "image": "https://images.how-about-breakfast.com/images/526.jpg",
   "gallery": [
@@ -50689,13 +50689,6 @@
    "https://images.how-about-breakfast.com/images/526_2.jpg",
    "https://images.how-about-breakfast.com/images/526_3.jpg"
   ],
-  "_en": {
-   "hash": "7aba9c627bb6c8168ac173b087adf54ae1e483dfbc61ce8db22b8dc2b5031972",
-   "title": "Gwangjang Market Cold Agar Noodles",
-   "intro": "20220818 #breakfastdiary 526, 25°C/mostly cloudy, 50min/exercise\n#GwangjangMarket 's Mother-Daughter House, cold #agarnoodle soup\nAmid all sorts of things weighing on my mind, the morning scene at Gwangjang Market",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "광장시장-우뭇가사리-모닝리추얼"
  },
  {
