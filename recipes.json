@@ -25187,7 +25187,7 @@
   "weather": "25도/대체로 흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "연어덮밥 연어",
+  "title": "연어덮밥",
   "credit": "@katsu_food",
   "hashtags": [
    "레시피",
@@ -25197,9 +25197,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20240818 #조식다이어리 1151, 25도/대체로 흐림, 20분/운동(M) \n생연어 필레 200g 준비한다. 개인차가 있겠지만 아주 약간 모자른 2인분이다. 대파가 조금 필요하다. 그밖에 맛술, 참기름, 치킨스톡, 맛소금, 후추 준비한다. 한두 개 빠져도 상관 없다. 어차피 연어만 맛있으면 된다. \n연어는 길게 잘라서 볼에 넣고 대파(흰부분), 맛술 2, 참기름 2 TSP, 이하 tsp 치킨스톡 1/2, 맛소금 1/2, 후추조금 넣고 골고루 섞는다. \n밥에 단촛물을 사용하지 않을 것이므로 입맛에 따라 연어에 (무적의) 맛소금으로 간을 한다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240818 #조식다이어리 1151, 25도/대체로 흐림, 20분/운동(M) \n생연어 필레 200g 준비한다. 개인차가 있겠지만 아주 약간 모자른 2인분이다. 대파가 조금 필요하다. 그밖에 맛술, 참기름, 치킨스톡, 맛소금, 후추 준비한다. 한두 개 빠져도 상관 없다. 어차피 연어만 맛있으면 된다. ",
+  "ingredients": "연어 200g, 대파 1T, 맛술 2T, 참기름 2T, 치킨스톡 1/2t, 맛소금 1/2t, 후추",
+  "steps": "1. 연어는 길게 잘라서 볼에 넣고 대파(흰부분), 맛술 2T, 참기름 2T, 치킨스톡 1/2t, 맛소금 1/2t, 후추 조금 넣고 골고루 섞는다. \n2. 오늘은 단촛물을 사용하지 않을 것이므로 입맛에 따라 연어에 (무적의) 맛소금으로 간을 한다.",
   "raw": "20240818 #조식다이어리 1151, 25도/대체로 흐림, 20분/운동(M) \n\n#연어덮밥\n\n생연어 필레 200g 준비한다. 개인차가 있겠지만 아주 약간 모자른 2인분이다. 대파가 조금 필요하다. 그밖에 맛술, 참기름, 치킨스톡, 맛소금, 후추 준비한다. 한두 개 빠져도 상관 없다. 어차피 연어만 맛있으면 된다. \n\n연어는 길게 잘라서 볼에 넣고 대파(흰부분), 맛술 2, 참기름 2 TSP, 이하 tsp 치킨스톡 1/2, 맛소금 1/2, 후추조금 넣고 골고루 섞는다. \n밥에 단촛물을 사용하지 않을 것이므로 입맛에 따라 연어에 (무적의) 맛소금으로 간을 한다. \n\nInspired by @katsu_food\n \n#조식 #레시피 #미라클모닝 #연어",
   "image": "https://images.how-about-breakfast.com/images/1151.jpg",
   "gallery": [
@@ -25209,13 +25209,6 @@
    "https://images.how-about-breakfast.com/images/1151_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1151.mp4",
-  "_en": {
-   "hash": "4ee6e111e6ba6fe7b00bc754b384d11786d1df49efa2a501f067af67ea1a425a",
-   "title": "Salmon Rice Bowl Salmon",
-   "intro": "20240818 #breakfastdiary 1151, 25°C/mostly cloudy, 20min/exercise(M)\nPrepare 200g raw salmon fillet. It may vary by appetite, but it's just a touch short of two servings. A little scallion needed. Beyond that, prepare mirin, sesame oil, chicken stock, seasoned salt, and pepper. It's fine even if you're missing one or two of these. As long as the salmon itself is delicious, that's what matters.\nCut the salmon into long strips, put in a bowl with scallion (white part), 2 mirin, 2 tsp sesame oil, hereafter tsp, 1/2 chicken stock, 1/2 seasoned salt, a little pepper, and mix thoroughly.\nSince I won't be using sushi vinegar on the rice, season the salmon to taste with (the almighty) seasoned salt.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "연어덮밥-연어"
  },
  {
