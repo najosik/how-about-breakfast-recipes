@@ -43,11 +43,13 @@
   .tabpage { display: none; }
   .tabpage.active { display: block; }
   #missingList { list-style: none; padding: 0; margin: 8px 0; }
-  #missingList li {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 10px 8px; border-bottom: 1px solid #eee; gap: 8px;
-  }
+  #missingList li { padding: 10px 8px; border-bottom: 1px solid #eee; }
+  #missingList .missing-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
   #missingList .missing-actions { display: flex; gap: 6px; flex-shrink: 0; }
+  .preview-box { margin-top: 10px; padding: 10px; background: #f7f7f7; border-radius: 6px; font-size: 0.85rem; display: none; }
+  .preview-box img { max-width: 120px; border-radius: 6px; margin: 6px 0; display: block; }
+  .preview-box .preview-caption { white-space: pre-wrap; color: #444; max-height: 160px; overflow-y: auto; margin: 6px 0; }
+  .preview-box .preview-meta { color: #888; }
   #missingList button { padding: 6px 10px; font-size: 0.85rem; }
   #missingList .skip-btn { background: #999; }
   #missingCount { color: #777; font-size: 0.85rem; margin: 8px 0; }
@@ -253,39 +255,124 @@
     missing.forEach(function (date) {
       var li = document.createElement('li');
       li.setAttribute('data-date', date);
+
+      var row = document.createElement('div');
+      row.className = 'missing-row';
       var span = document.createElement('span');
       span.textContent = date;
       var actions = document.createElement('div');
       actions.className = 'missing-actions';
+
+      var previewBtn = document.createElement('button');
+      previewBtn.type = 'button';
+      previewBtn.textContent = '미리보기';
+      var previewBox = document.createElement('div');
+      previewBox.className = 'preview-box';
+      previewBtn.addEventListener('click', function () { previewDate(date, previewBtn, previewBox); });
+
       var addBtn = document.createElement('button');
       addBtn.type = 'button';
       addBtn.textContent = '추가';
-      addBtn.addEventListener('click', function () { openAddForm(date); });
+      addBtn.addEventListener('click', function () { openAddForm(date, previewBox); });
+
       var skipBtn = document.createElement('button');
       skipBtn.type = 'button';
       skipBtn.className = 'skip-btn';
       skipBtn.textContent = '건너뜀으로 표시';
       skipBtn.addEventListener('click', function () { skipDate(date, li); });
+
+      actions.appendChild(previewBtn);
       actions.appendChild(addBtn);
       actions.appendChild(skipBtn);
-      li.appendChild(span);
-      li.appendChild(actions);
+      row.appendChild(span);
+      row.appendChild(actions);
+      li.appendChild(row);
+      li.appendChild(previewBox);
       missingList.appendChild(li);
     });
   }
 
-  function openAddForm(date) {
+  function previewDate(date, btn, box) {
+    btn.disabled = true;
+    box.style.display = 'block';
+    box.textContent = '인스타그램에서 찾는 중... (오래된 날짜는 시간이 걸릴 수 있습니다)';
+
+    fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        password: sessionStorage.getItem('editorPassword'),
+        action: 'preview',
+        date: date,
+      }),
+    })
+      .then(function (r) { return r.json().then(function (body) { return { ok: r.ok, body: body }; }); })
+      .then(function (res) {
+        box.innerHTML = '';
+        if (!res.ok) {
+          if (res.body && res.body.error === 'unauthorized') {
+            sessionStorage.removeItem('editorPassword');
+            box.textContent = '비밀번호가 틀렸습니다. 새로고침 후 다시 시도해주세요.';
+            return;
+          }
+          box.textContent = '조회 실패: ' + ((res.body && (res.body.detail || res.body.error)) || '알 수 없는 오류');
+          return;
+        }
+        var data = res.body;
+        if (!data.found) {
+          box.textContent = data.truncated
+            ? '너무 오래된 날짜라 다 못 찾았습니다 (' + data.checked + '개 확인). 직접 인스타그램에서 확인해주세요.'
+            : '인스타그램에서 이 날짜의 게시물을 찾지 못했습니다 (' + data.checked + '개 확인).';
+          return;
+        }
+        box.dataset.caption = data.caption || '';
+        box.dataset.images = JSON.stringify(data.images || []);
+        var captionEl = document.createElement('div');
+        captionEl.className = 'preview-caption';
+        captionEl.textContent = data.caption || '(캡션 없음)';
+        box.appendChild(captionEl);
+        (data.images || []).slice(0, 1).forEach(function (src) {
+          var img = document.createElement('img');
+          img.src = src;
+          box.appendChild(img);
+        });
+        if (data.permalink) {
+          var link = document.createElement('a');
+          link.href = data.permalink;
+          link.target = '_blank';
+          link.rel = 'noopener';
+          link.textContent = '인스타그램에서 보기 ↗';
+          box.appendChild(link);
+        }
+        var fillBtn = document.createElement('button');
+        fillBtn.type = 'button';
+        fillBtn.textContent = '이 내용으로 채우기';
+        fillBtn.style.marginTop = '8px';
+        fillBtn.addEventListener('click', function () { openAddForm(date, box); });
+        box.appendChild(document.createElement('br'));
+        box.appendChild(fillBtn);
+      })
+      .catch(function (err) {
+        box.textContent = '요청 중 오류: ' + err;
+      })
+      .finally(function () {
+        btn.disabled = false;
+      });
+  }
+
+  function openAddForm(date, previewBox) {
     currentAddDate = date;
     addingTitle.textContent = date + ' 새 게시물 추가';
     aTitle.value = '';
-    aIntro.value = '';
+    aIntro.value = (previewBox && previewBox.dataset.caption) || '';
     aIngredients.value = '';
     aSteps.value = '';
     aHashtags.value = '';
     aCredit.value = '';
     aWeather.value = '';
     aCalories.value = '';
-    aImages.value = '';
+    var previewImages = (previewBox && previewBox.dataset.images) ? JSON.parse(previewBox.dataset.images) : [];
+    aImages.value = previewImages.join('\n');
     addForm.style.display = 'block';
     growTargets.forEach(autoGrow);
     statusEl.style.display = 'none';

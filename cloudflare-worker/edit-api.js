@@ -2,14 +2,18 @@
  * edit-api Worker
  *
  * The only piece of this feature that holds any secret. Verifies the editor
- * password server-side (never trust the browser), then triggers one of two
- * GitHub Actions workflows via workflow_dispatch, depending on `action`:
- *   - 'edit' (default): "Apply content edit" - patches an existing record
- *   - 'add': "Add missing post" - creates a brand-new record for a date
- *     that has no entry at all (the admin editor's "빠진 날짜" tool)
- * The GitHub token never reaches the browser — it lives only as a Worker
- * secret, set via the Cloudflare dashboard (Settings > Variables and
- * Secrets), never committed to the repo.
+ * password server-side (never trust the browser), then does one of three
+ * things depending on `action`:
+ *   - 'edit' (default): triggers "Apply content edit" - patches an
+ *     existing record
+ *   - 'add': triggers "Add missing post" - creates a brand-new record for
+ *     a date that has no entry at all (the admin editor's "빠진 날짜" tool)
+ *   - 'preview': looks up Instagram's own post for a given date (read-only,
+ *     no GitHub Actions involved) so the admin page can show what was
+ *     actually posted before deciding whether to add or skip that date
+ * The GitHub token and Instagram access token never reach the browser —
+ * they live only as Worker secrets, set via the Cloudflare dashboard
+ * (Settings > Variables and Secrets), never committed to the repo.
  *
  * Required secrets/vars (set in the Cloudflare dashboard, not in this file):
  *   EDITOR_PASSWORD  - long random shared secret the admin page prompts for
@@ -18,12 +22,24 @@
  *   GITHUB_OWNER     - e.g. "najosik"
  *   GITHUB_REPO      - e.g. "how-about-breakfast-recipes"
  *   ALLOWED_ORIGIN   - e.g. "https://how-about-breakfast.com"
+ *   IG_ACCESS_TOKEN  - same Instagram Graph API token instagram-sync.yml uses
+ *                      (only needed for the 'preview' action)
+ *   IG_USER_ID       - same Instagram user id instagram-sync.yml uses
+ *                      (only needed for the 'preview' action)
  */
 
 const ALLOWED_FIELDS = {
   edit: ['title', 'intro', 'ingredients', 'steps', 'hashtags', 'credit'],
   add: ['title', 'intro', 'ingredients', 'steps', 'hashtags', 'credit', 'weather', 'calories', 'image', 'gallery', 'failed'],
 };
+
+// Instagram's media feed has no date filter - to find a specific day we
+// have to page through newest-first and stop once we've scanned past it.
+// A recent missing date is found in one page; an old one near the start
+// of the account needs many. This cap keeps a single lookup from running
+// away (and from tripping Cloudflare's per-request subrequest limit).
+const IG_PAGE_LIMIT = 100;
+const IG_MAX_PAGES = 30;
 
 export default {
   async fetch(request, env) {
@@ -52,6 +68,17 @@ export default {
       // and random, held only in this Worker's secrets).
       await sleep(500);
       return json({ error: 'unauthorized' }, 401, cors);
+    }
+
+    if (action === 'preview') {
+      if (!date || typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
+        return json({ error: 'invalid payload' }, 400, cors);
+      }
+      if (!env.IG_ACCESS_TOKEN || !env.IG_USER_ID) {
+        return json({ error: 'instagram credentials not configured' }, 500, cors);
+      }
+      const result = await searchInstagramForDate(date, env);
+      return json(result, 200, cors);
     }
 
     const act = action === 'add' ? 'add' : 'edit';
@@ -102,6 +129,77 @@ export default {
     return json({ ok: true }, 200, cors);
   },
 };
+
+async function searchInstagramForDate(targetDate, env) {
+  const fields = 'id,caption,media_type,media_url,thumbnail_url,timestamp,permalink,children{media_type,media_url,thumbnail_url}';
+  let url =
+    `https://graph.instagram.com/v21.0/${env.IG_USER_ID}/media` +
+    `?fields=${encodeURIComponent(fields)}&limit=${IG_PAGE_LIMIT}&access_token=${encodeURIComponent(env.IG_ACCESS_TOKEN)}`;
+
+  let checked = 0;
+  for (let page = 0; page < IG_MAX_PAGES && url; page++) {
+    let res;
+    try {
+      res = await fetch(url);
+    } catch (e) {
+      return { found: false, error: 'instagram api request failed', detail: String(e), checked };
+    }
+    if (!res.ok) {
+      const detail = await res.text();
+      return { found: false, error: 'instagram api error', detail, checked };
+    }
+    const data = await res.json();
+    const items = data.data || [];
+
+    for (const item of items) {
+      checked++;
+      const itemDate = extractItemDate(item);
+      if (!itemDate) continue;
+      if (itemDate === targetDate) {
+        return Object.assign({ found: true, checked }, summarizeItem(item));
+      }
+      if (itemDate < targetDate) {
+        // Feed is newest-first; once we're past the target date
+        // chronologically without a match, it isn't there.
+        return { found: false, checked };
+      }
+    }
+
+    url = data.paging && data.paging.next;
+  }
+
+  return { found: false, checked, truncated: true };
+}
+
+// Mirrors extract_date_str() in sync_instagram.py: prefer the caption's own
+// leading YYYYMMDD (immutable once posted), fall back to the post's
+// timestamp converted to KST.
+function extractItemDate(item) {
+  const caption = item.caption || '';
+  const m = caption.match(/^\s*(\d{4})(\d{2})(\d{2})/);
+  if (m) return `${m[1]}-${m[2]}-${m[3]}`;
+  if (!item.timestamp) return null;
+  const d = new Date(item.timestamp);
+  if (isNaN(d.getTime())) return null;
+  const kst = new Date(d.getTime() + 9 * 3600 * 1000);
+  const y = kst.getUTCFullYear();
+  const mo = String(kst.getUTCMonth() + 1).padStart(2, '0');
+  const da = String(kst.getUTCDate()).padStart(2, '0');
+  return `${y}-${mo}-${da}`;
+}
+
+function summarizeItem(item) {
+  const parts = item.media_type === 'CAROUSEL_ALBUM' ? ((item.children && item.children.data) || []) : [item];
+  const images = parts.filter((it) => it.media_type === 'IMAGE').map((it) => it.media_url).filter(Boolean);
+  const video = parts.find((it) => it.media_type === 'VIDEO');
+  return {
+    caption: item.caption || '',
+    images,
+    video_thumbnail: video ? (video.thumbnail_url || null) : null,
+    permalink: item.permalink || null,
+    timestamp: item.timestamp || null,
+  };
+}
 
 function corsHeaders(env) {
   return {
