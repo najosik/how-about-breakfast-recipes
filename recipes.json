@@ -68963,7 +68963,7 @@
   "weather": "23도/맑음",
   "failed": false,
   "calories": null,
-  "title": "단호박스프 모닝리추얼 모닝루틴",
+  "title": "단호박 수프",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68986,21 +68986,14 @@
    "홈쿡"
   ],
   "intro": "20210819, #조식다이어리 184, 23도/맑음\n세상에서 제일 예쁜 단호박, 껍질을 벗기고 적당한 크기로 썬다. 팬에 양파를 넣고 볶다가 썰어 놓은 단호박과 생크림, 우유를 적당히 넣고 10분 끓인다. 소금, 메이플 시럽 약간. 불을 끄고 믹서나 도깨비 방망이로 건더기가 남지 않도록 곱게 간다. \n올리브 오일에 소금, 후추를 넣고 가지를 볶아 곁들인 #단호박스프 \n기획부터 따지면 3월, 퍼블리싱을 기준으로 하면 5월에 시작했던 퍼블리 @publy.co 연재가 끝났다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "단호박 1/2개, 양파 1/2개, 생크림과 우유 1/2컵, 메이플시럽 1t, 가지 1/2개, 올리브오일, 소금, 후추",
+  "steps": "1. 단호박 1/2개 껍질 벗기고 적당한 크기로 썬다. \n2. 올리브오일 두른 팬에 다진 양파 넣고 볶다가 준비한 단호박과 생크림, 우유 넣고 10분 정도 끓인다. 소금 한두 꼬집, 메이플시럽 1t로 간을 한다. 불을 끄고 핸드블렌더로 곱게 간다. \n3. 팬에 올리브오일 두르고 가지를 숭덩숭덩 잘라서 굽는다. \n4. 2의 수프를 그릇에 담고 3의 가지와 다진 파슬리 조금 얹는다. ",
   "raw": "20210819, #조식다이어리 184, 23도/맑음\n\n세상에서 제일 예쁜 단호박, 껍질을 벗기고 적당한 크기로 썬다. 팬에 양파를 넣고 볶다가 썰어 놓은 단호박과 생크림, 우유를 적당히 넣고 10분 끓인다. 소금, 메이플 시럽 약간. 불을 끄고 믹서나 도깨비 방망이로 건더기가 남지 않도록 곱게 간다. \n올리브 오일에 소금, 후추를 넣고 가지를 볶아 곁들인 #단호박스프 \n\n기획부터 따지면 3월, 퍼블리싱을 기준으로 하면 5월에 시작했던 퍼블리 @publy.co 연재가 끝났다.\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #단호박 #가지\n#breakfast #soup #eggplant #sweetpumpkinsoup ",
   "image": "https://images.how-about-breakfast.com/images/184.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/184.jpg",
    "https://images.how-about-breakfast.com/images/184_2.jpg"
   ],
-  "_en": {
-   "hash": "9bf14e1e39958345274c1b18f4d7ed0e5fb56e134a790e6c25e1739b61b301d7",
-   "title": "Sweet Pumpkin Soup Morning Ritual",
-   "intro": "20210819, #breakfastdiary 184, 23°C/clear\nTake the prettiest sweet pumpkin in the world, peel it, and cut it into bite-sized pieces. Sauté onion in a pan, add the diced pumpkin along with a good amount of heavy cream and milk, and simmer for 10 minutes. Season with salt and a little maple syrup. Turn off the heat and blend until smooth with a blender or immersion blender, leaving no lumps. \nSauté eggplant in olive oil with salt and pepper and serve alongside. #sweetpumpkinsoup \nCounting from when it was first planned, it started in March; counting from when it was actually published, my column series for Publy @publy.co that began in May has now come to an end.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "단호박스프-모닝리추얼-모닝루틴"
  },
  {
