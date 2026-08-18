@@ -277,7 +277,7 @@ var Shared = (function () {
     ) : '';
     var tagsHtml = (r.hashtags || []).map(function (h) {
       var label = (typeof I18N !== 'undefined') ? I18N.tagLabel(h) : h;
-      return '<span>#' + escapeHtml(label) + '</span>';
+      return '<a href="archive.html?tag=' + encodeURIComponent(h) + '">#' + escapeHtml(label) + '</a>';
     }).join('');
     var ingSection = r.ingredients
       ? '<section><h4>' + L('modal_ingredients') + '</h4>' + bodyTextHtml(r, 'ingredients') + '</section>' : '';
