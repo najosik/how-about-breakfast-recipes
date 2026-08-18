@@ -85720,7 +85720,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 단호박 조식스타그램",
+  "title": "단호박 샐러드",
   "credit": null,
   "hashtags": [
    "나의프랑스식샐러드",
@@ -85730,18 +85730,11 @@
    "조식스타그램"
   ],
   "intro": "#오늘의조식 은 페타치즈와 올리브를 곁들인 (냉장고에 마지막 남았던) #단호박 구이 #조식 #조식스타그램 #나의프랑스식샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "단호박 1/2개, 페타치즈 20g, 올리브, 비네그레트 드레싱(올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t), 올리브오일, 소금, 후추",
+  "steps": "1. 단호박 1/2개 웻지모양으로 썰어서 올리브오일 두른 팬에 굽는다. \n2. 접시에 구운 단호박 담고 반으로 자른 올리브와 페타치즈 조금 얹고 드레싱 끼얹는다. ",
   "raw": "#오늘의조식 은 페타치즈와 올리브를 곁들인 (냉장고에 마지막 남았던) #단호박 구이 #조식 #조식스타그램 #나의프랑스식샐러드",
   "pre_label": "D-177",
   "image": "https://images.how-about-breakfast.com/images/pre-177.jpg",
-  "_en": {
-   "hash": "04aa549155e8b771153c1b427a3217d400701a89578fb730c631c2888e45499a",
-   "title": "Grilled Kabocha Squash, the Last One in the Fridge",
-   "intro": "Today's breakfast: grilled #kabochasquash — the very last one left in the fridge — with feta cheese and olives on the side. #breakfast #breakfaststagram #myfrenchstylesalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-단호박-조식스타그램"
  },
  {
