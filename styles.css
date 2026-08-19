@@ -333,6 +333,7 @@ section.mag-section + section.mag-section{margin-top:0; border-top:1px solid var
 }
 .collection-card:hover{transform:translateY(-3px);}
 .collection-card .big{font-family:'Nanum Myeongjo',serif; font-size:22px; color:var(--paper); margin-bottom:4px;}
+.collection-card .sub{font-size:14px; color:rgba(255,255,255,0.9); margin-bottom:6px;}
 .collection-card .count{font-size:12px; color:rgba(255,255,255,0.85);}
 .collection-icon{display:inline-block; margin-bottom:10px;}
 .collection-icon .card-thumb{
