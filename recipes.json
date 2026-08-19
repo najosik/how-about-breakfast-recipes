@@ -85640,7 +85640,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 가지구이 그레잇데이",
+  "title": "가지구이",
   "credit": null,
   "hashtags": [
    "가지구이",
@@ -85648,9 +85648,9 @@
    "그레잇데이",
    "오늘의조식"
   ],
-  "intro": "나른한 금요일 #오늘의조식 페타치즈와 올리브를 곁들인 #가지구이 #그레잇데이 #그래놀라 그리고",
-  "ingredients": null,
-  "steps": null,
+  "intro": "나른한 금요일 #오늘의조식 페타치즈와 올리브를 곁들인 #가지구이 #그레잇데이 #그래놀라",
+  "ingredients": "가지 1개, 올리브오일, 올리브, 페타치즈 조금, (드레싱) 올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t",
+  "steps": "1. 가지는 가로로 썬 뒤 단면부터 올리브오일 두른 팬에 노릇하게 굽는다. 반대면도 굽는다. \n2. 접시에 가지 담고 드레싱과 페타치즈, 올리브 얹는다. ",
   "raw": "나른한 금요일 #오늘의조식 페타치즈와 올리브를 곁들인 #가지구이 #그레잇데이 #그래놀라 그리고",
   "pre_label": "D-175",
   "image": "https://images.how-about-breakfast.com/images/pre-175.jpg",
@@ -85658,13 +85658,6 @@
    "https://images.how-about-breakfast.com/images/pre-175.jpg",
    "https://images.how-about-breakfast.com/images/pre-175_2.jpg"
   ],
-  "_en": {
-   "hash": "b419fe196c5ec64779d95d1c0e707157163cfaee43727c8a81a83f3a7776e9c7",
-   "title": "Grilled Eggplant for a Sleepy Friday",
-   "intro": "A drowsy Friday's #todaysbreakfast: #grilledeggplant with feta cheese and olives, plus #greatday granola, and...",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-가지구이-그레잇데이"
  },
  {
