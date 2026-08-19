@@ -37786,7 +37786,7 @@
   "weather": "27도/대체로맑음",
   "failed": false,
   "calories": null,
-  "title": "토마토냉국수",
+  "title": "토마토 냉국수",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37795,22 +37795,15 @@
    "조식다이어리",
    "토마토냉국수"
   ],
-  "intro": "20230820, #조식다이어리 822, 27도/대체로맑음\n가까스로, \n1. 끓는 물에 메밀면 넣고 세 번 정도 찬물 부어가며 면을 삶는다. \n2. 시판 국수장국 3, 매실청 1, 물 1컵 부어 육수를 만든다. \n3. 그릇에 면을 담고 육수 붓고 토마토, 대파를 얹는다. \n@felicejeong 님 레시피입니다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20230820, #조식다이어리 822, 27도/대체로맑음\n가까스로, \n\n@felicejeong 님 레시피입니다.",
+  "ingredients": "메밀면 1인분, 토마토 1/2개, 대파 조금, (국물) 국수장국 3, 매실청 1, 물 1컵",
+  "steps": "1. 끓는 물에 메밀면 넣고 세 번 정도 찬물을 부어가며 면을 삶는다. \n2. 시판 국수장국 3, 매실청 1, 물 1컵 부어 육수를 만든다. \n3. 그릇에 메밀면 담고 2의 육수 붓고 가지런히 썬 토마토, 대파 조금 얹는다. ",
   "raw": "20230820, #조식다이어리 822, 27도/대체로맑음\n\n가까스로, \n\n1. 끓는 물에 메밀면 넣고 세 번 정도 찬물 부어가며 면을 삶는다. \n2. 시판 국수장국 3, 매실청 1, 물 1컵 부어 육수를 만든다. \n3. 그릇에 면을 담고 육수 붓고 토마토, 대파를 얹는다. \n\n@felicejeong 님 레시피입니다. \n\n#조식 #레시피 #미라클모닝 #토마토냉국수",
   "image": "https://images.how-about-breakfast.com/images/822.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/822.jpg",
    "https://images.how-about-breakfast.com/images/822_2.jpg"
   ],
-  "_en": {
-   "hash": "0479851f1a7a40efc8bbb6a424113c4ce538e35de75adb5c05bdffe4255160a8",
-   "title": "Cold Tomato Noodles",
-   "intro": "20230820, #breakfastdiary 822, 27°C/mostly clear\nBarely made it, \n1. Boil buckwheat noodles, adding cold water about three times while cooking. \n2. Make the broth with 3 parts store-bought noodle soup base, 1 part plum extract syrup, and 1 cup water. \n3. Place the noodles in a bowl, pour over the broth, and top with tomato and green onion. \nRecipe by @felicejeong.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "토마토냉국수"
  },
  {
