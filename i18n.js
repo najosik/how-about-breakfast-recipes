@@ -52,7 +52,7 @@ var I18N = (function () {
       col_title: '소재로 골라 먹기',
       col_desc: '가장 자주 등장한 재료들로 모은 테마별 아카이브예요.',
       col_more: '전체 검색으로 보기 →',
-      col_records_suffix: '건의 기록',
+      col_records_suffix: '건의 조식',
       shuffle_title: '오늘 뭐 먹지?',
       shuffle_desc: '{count}개가 넘는 기록 중에서 랜덤으로 꺼내먹어요.',
       shuffle_btn: '랜덤으로 꺼내 먹기',
@@ -117,7 +117,7 @@ var I18N = (function () {
       col_title: 'Browse by ingredient',
       col_desc: 'Themed collections built from the most frequent ingredients.',
       col_more: 'See the full archive →',
-      col_records_suffix: ' entries',
+      col_records_suffix: ' breakfasts',
       shuffle_title: 'What should I eat today?',
       shuffle_desc: 'Pull a random entry from over {count} recorded breakfasts.',
       shuffle_btn: 'Surprise me',
@@ -145,14 +145,25 @@ var I18N = (function () {
   };
 
   var COLLECTION_LABELS_EN = {
-    '토마토 특집': 'Tomato Special',
-    '아보카도 아카이브': 'Avocado Archive',
-    '파스타 & 누들': 'Pasta & Noodles',
-    '감자 요리 모음': 'Potato Dishes',
-    '계란 한 알의 힘': 'The Power of One Egg',
-    '오픈샌드위치 특집': 'Open-Sandwich Special',
-    '샐러드 특집': 'Salad Special',
-    '가지 요리 모음': 'Eggplant Dishes'
+    '토마토 앓이': 'Tomato Obsession',
+    '아보카도 중독': 'Avocado Addiction',
+    '면치기의 정석': 'Noodle Mastery',
+    '감자, 무한변신': 'Potato, Endless Forms',
+    '계란이면 다 돼': 'Eggs Fix Everything',
+    '샌드위치 아카이브': 'Sandwich Archive',
+    '샐러드 동호회': 'Salad Club',
+    '가지의 재발견': 'Eggplant Rediscovered'
+  };
+
+  var COLLECTION_SUBS_EN = {
+    '토마토를 사용한 조식': 'Breakfasts with tomato',
+    '아보카도를 사용한 조식': 'Breakfasts with avocado',
+    '파스타와 면 조식': 'Pasta & noodle breakfasts',
+    '감자를 사용한 조식': 'Breakfasts with potato',
+    '계란을 사용한 조식': 'Breakfasts with egg',
+    '샌드위치 조식': 'Sandwich breakfasts',
+    '샐러드 조식': 'Salad breakfasts',
+    '가지를 사용한 조식': 'Breakfasts with eggplant'
   };
 
   /* auto-generated: covers every hashtag seen in the dataset as of the
@@ -1057,6 +1068,10 @@ var I18N = (function () {
     if (getLang() !== 'en') return koLabel;
     return COLLECTION_LABELS_EN[koLabel] || koLabel;
   }
+  function collectionSub(koSub) {
+    if (getLang() !== 'en') return koSub;
+    return COLLECTION_SUBS_EN[koSub] || koSub;
+  }
 
   function applyStaticI18n(root) {
     var scope = root || document;
@@ -1153,6 +1168,7 @@ var I18N = (function () {
     t: t,
     tagLabel: tagLabel,
     collectionLabel: collectionLabel,
+    collectionSub: collectionSub,
     applyStaticI18n: applyStaticI18n,
     applyDynamicTranslations: applyDynamicTranslations,
     translateText: translateText

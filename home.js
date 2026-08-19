@@ -2,14 +2,14 @@
   'use strict';
 
   var COLLECTIONS = [
-    { label: '토마토 특집', tag: '토마토', cls: 'c-teal' },
-    { label: '아보카도 아카이브', tag: '아보카도', cls: 'c-ink' },
-    { label: '파스타 & 누들', tag: '파스타', cls: 'c-teal' },
-    { label: '감자 요리 모음', tag: '감자', cls: 'c-ink' },
-    { label: '계란 한 알의 힘', tag: '계란', cls: 'c-teal' },
-    { label: '오픈샌드위치 특집', tag: '샌드위치', cls: 'c-ink' },
-    { label: '샐러드 특집', tag: '샐러드', cls: 'c-teal' },
-    { label: '가지 요리 모음', tag: '가지', cls: 'c-ink' }
+    { label: '토마토 앓이', sub: '토마토를 사용한 조식', tag: '토마토', cls: 'c-teal' },
+    { label: '아보카도 중독', sub: '아보카도를 사용한 조식', tag: '아보카도', cls: 'c-ink' },
+    { label: '면치기의 정석', sub: '파스타와 면 조식', tag: '파스타', cls: 'c-teal' },
+    { label: '감자, 무한변신', sub: '감자를 사용한 조식', tag: '감자', cls: 'c-ink' },
+    { label: '계란이면 다 돼', sub: '계란을 사용한 조식', tag: '계란', cls: 'c-teal' },
+    { label: '샌드위치 아카이브', sub: '샌드위치 조식', tag: '샌드위치', cls: 'c-ink' },
+    { label: '샐러드 동호회', sub: '샐러드 조식', tag: '샐러드', cls: 'c-teal' },
+    { label: '가지의 재발견', sub: '가지를 사용한 조식', tag: '가지', cls: 'c-ink' }
   ];
 
   var SEARCH_PROMPTS = [
@@ -412,6 +412,7 @@
         '<a class="collection-card ' + c.cls + '" href="archive.html?tag=' + encodeURIComponent(c.tag) + '">' +
         '<span class="collection-icon">' + Shared.iconSVG({ hashtags: [c.tag] }, 26) + '</span>' +
         '<div class="big">' + Shared.escapeHtml(I18N.collectionLabel(c.label)) + '</div>' +
+        '<div class="sub">' + Shared.escapeHtml(I18N.collectionSub(c.sub)) + '</div>' +
         '<div class="count">' + n + I18N.t('col_records_suffix') + '</div>' +
         '</a>'
       );
