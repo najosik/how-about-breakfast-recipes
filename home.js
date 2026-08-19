@@ -12,6 +12,17 @@
     { label: '가지 요리 모음', tag: '가지', cls: 'c-ink' }
   ];
 
+  var SEARCH_PROMPTS = [
+    '토마토 땡기는 아침이죠?',
+    '오늘 아보카도 어때요?',
+    '아침부터 파스타, 괜찮아요',
+    '감자 없인 서운한 아침',
+    '계란 하나쯤은 필수죠',
+    '샌드위치, 오늘의 정답',
+    '초록초록 샐러드 어때요',
+    '가지, 오늘 주인공 해볼까?'
+  ];
+
   var allData = null;
 
   bindHomeSearch();
@@ -44,10 +55,28 @@
 
   function renderAll(all) {
     I18N.applyStaticI18n();
+    randomizeSearchPlaceholder();
     renderMasthead(all);
     renderLedger(all);
     renderOnThisDay(all);
     renderCollections(all);
+  }
+
+  // Rotates the empty search box's placeholder through a pool of short,
+  // search-inviting prompts instead of the same static hint every time -
+  // random, but never the same one twice in a row (tracked per tab via
+  // sessionStorage). English mode keeps the plain static placeholder
+  // (search_placeholder) since these prompts are Korean copy only.
+  function randomizeSearchPlaceholder() {
+    var input = document.getElementById('homeSearchInput');
+    if (!input || I18N.getLang() !== 'ko') return;
+    var lastIdx = -1;
+    try { lastIdx = parseInt(sessionStorage.getItem('homeSearchPromptIdx'), 10); } catch (e) {}
+    var idx;
+    do { idx = Math.floor(Math.random() * SEARCH_PROMPTS.length); }
+    while (SEARCH_PROMPTS.length > 1 && idx === lastIdx);
+    input.placeholder = SEARCH_PROMPTS[idx];
+    try { sessionStorage.setItem('homeSearchPromptIdx', String(idx)); } catch (e) {}
   }
 
   function bindLangToggle() {
