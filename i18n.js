@@ -35,7 +35,10 @@ var I18N = (function () {
 
       home_title: '날마다 조식(Beta)',
       home_tagline: '2020년 7월 13일부터 매일 어제와 다른 조식을 만들어 먹고 기록한 아카이브입니다.',
-      home_beta_note: '안녕하세요? 나조식입니다. 인스타그램(@how.about.breakfast)의 게시물을 웹에서 손쉽게 찾아볼 수 있도록 아카이빙 했습니다. 재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 좋은 생각이 떠오르지 않을 때, 이도저도 아니면 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때 이용해 주시면 좋겠습니다.\n\n주의! 20년~22년 게시물 가운데 일부분은 개인의 생각과 레시피 사이에서 왔다갔다, 들쭉날쭉합니다. 천천히 다듬어 보겠습니다. (사실 그래서 Beta인데, Beta를 언제 뗄 수 있을지는 모르겠습니다.)',
+      home_beta_note: '안녕하세요? 나조식입니다. 인스타그램(@how.about.breakfast)의 게시물을 웹에서 손쉽게 찾아볼 수 있도록 아카이빙 했습니다. 재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 좋은 생각이 떠오르지 않을 때, 이도저도 아니면 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때 이용해 주시면 좋겠습니다.',
+      home_beta_caveat: '주의! 20년~22년 게시물 가운데 일부분은 개인의 생각과 레시피 사이에서 왔다갔다, 들쭉날쭉합니다. 천천히 다듬어 보겠습니다. (사실 그래서 Beta인데, Beta를 언제 뗄 수 있을지는 모르겠습니다.)',
+      home_beta_more: '더보기',
+      home_beta_less: '접기',
       home_since_suffix: ' 창간',
       ledger_title: '한눈에 보는 조식 아카이브',
       ledger_desc: '칸 하나가 하루예요. 진한 초록은 조식을 만든 날, 빈 칸은 별일이 있어서 조식을 건너뛴 날입니다.',
@@ -97,7 +100,10 @@ var I18N = (function () {
 
       home_title: 'Breakfast, Every Day',
       home_tagline: 'A record of someone who makes a different breakfast every morning, unless something comes up. This is the whole archive, gathered in one place.',
-      home_beta_note: 'Hi, I\'m Na-Josik. I\'ve archived my Instagram posts (@how.about.breakfast) here so they\'re easy to browse on the web. Use it whenever you have ingredients on hand but need a recipe idea, when you can\'t think of anything good to eat, or when you just want to peek at what other people are having for breakfast.\n\nA note: some posts from 2020-2022 drift back and forth between personal musings and actual recipes, pretty unevenly. I\'ll smooth them out over time. (That\'s actually why this is still Beta - though I honestly don\'t know when I\'ll be able to drop the label.)',
+      home_beta_note: 'Hi, I\'m Na-Josik. I\'ve archived my Instagram posts (@how.about.breakfast) here so they\'re easy to browse on the web. Use it whenever you have ingredients on hand but need a recipe idea, when you can\'t think of anything good to eat, or when you just want to peek at what other people are having for breakfast.',
+      home_beta_caveat: 'A note: some posts from 2020-2022 drift back and forth between personal musings and actual recipes, pretty unevenly. I\'ll smooth them out over time. (That\'s actually why this is still Beta - though I honestly don\'t know when I\'ll be able to drop the label.)',
+      home_beta_more: 'Read more',
+      home_beta_less: 'Show less',
       home_since_suffix: ' · established',
       ledger_title: 'Not a single day missed',
       ledger_desc: 'Each square is a day. Deep green means breakfast was made, orange means a failed attempt, and empty means the day was skipped.',

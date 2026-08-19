@@ -26,6 +26,7 @@
   var allData = null;
 
   bindHomeSearch();
+  bindBetaToggle();
 
   function bindHomeSearch() {
     var form = document.getElementById('homeSearchForm');
@@ -55,6 +56,7 @@
 
   function renderAll(all) {
     I18N.applyStaticI18n();
+    syncBetaToggleLabel();
     randomizeSearchPlaceholder();
     renderMasthead(all);
     renderLedger(all);
@@ -77,6 +79,32 @@
     while (SEARCH_PROMPTS.length > 1 && idx === lastIdx);
     input.placeholder = SEARCH_PROMPTS[idx];
     try { sessionStorage.setItem('homeSearchPromptIdx', String(idx)); } catch (e) {}
+  }
+
+  // The Beta caveat paragraph is secondary - collapsed by default so the
+  // intro above it doesn't push everything else down the page on load.
+  function bindBetaToggle() {
+    var btn = document.getElementById('betaMoreToggle');
+    var caveat = document.getElementById('betaCaveat');
+    if (!btn || !caveat) return;
+    btn.addEventListener('click', function () {
+      var expanded = caveat.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      btn.textContent = I18N.t(expanded ? 'home_beta_less' : 'home_beta_more');
+    });
+  }
+
+  // applyStaticI18n() resets the toggle button's label from its
+  // data-i18n attribute (always "more") on every re-render (e.g. a
+  // language switch) - re-sync it to whatever the caveat's actual
+  // expanded/collapsed state is so a switch mid-expansion doesn't
+  // show a mismatched label.
+  function syncBetaToggleLabel() {
+    var btn = document.getElementById('betaMoreToggle');
+    var caveat = document.getElementById('betaCaveat');
+    if (!btn || !caveat) return;
+    var expanded = !caveat.classList.contains('hidden');
+    btn.textContent = I18N.t(expanded ? 'home_beta_less' : 'home_beta_more');
   }
 
   function bindLangToggle() {
