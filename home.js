@@ -424,6 +424,9 @@
     var btn = document.getElementById('shuffleBtn');
     var resultEl = document.getElementById('shuffleResult');
     var spinning = false;
+    // Same reasoning as the archive grid: a 건너뜀 skip marker isn't a
+    // real post, so the shuffle shouldn't ever land on it.
+    var pickable = all.filter(function (r) { return !r.failed; });
 
     btn.addEventListener('click', function () {
       if (spinning) return;
@@ -436,7 +439,7 @@
       resultEl.classList.remove('hidden');
       resultEl.classList.remove('shuffle-land');
 
-      var finalPick = all[Math.floor(Math.random() * all.length)];
+      var finalPick = pickable[Math.floor(Math.random() * pickable.length)];
 
       // decelerating cycle: fast flickers at first, slowing down toward the end
       var delays = [60, 60, 70, 80, 90, 110, 130, 160, 200, 260, 340];
@@ -454,7 +457,7 @@
           spinning = false;
           return;
         }
-        var r = all[Math.floor(Math.random() * all.length)];
+        var r = pickable[Math.floor(Math.random() * pickable.length)];
         resultEl.innerHTML = Shared.cardHTML(r);
         resultEl.classList.add('shuffle-flicker');
         btn.textContent = spinLabel;
