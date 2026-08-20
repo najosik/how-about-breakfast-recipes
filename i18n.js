@@ -151,7 +151,7 @@ var I18N = (function () {
     '감자, 무한변신': 'Potato, Endless Forms',
     '계란이면 다 돼': 'Eggs Fix Everything',
     '샌드위치 아카이브': 'Sandwich Archive',
-    '샐러드 동호회': 'Salad Club',
+    '샐러드 탐구생활': 'Salad Exploration',
     '가지의 재발견': 'Eggplant Rediscovered'
   };
 

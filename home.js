@@ -8,7 +8,7 @@
     { label: '감자, 무한변신', sub: '감자를 사용한 조식', tag: '감자', cls: 'c-ink' },
     { label: '계란이면 다 돼', sub: '계란을 사용한 조식', tag: '계란', cls: 'c-teal' },
     { label: '샌드위치 아카이브', sub: '샌드위치 조식', tag: '샌드위치', cls: 'c-ink' },
-    { label: '샐러드 동호회', sub: '샐러드 조식', tag: '샐러드', cls: 'c-teal' },
+    { label: '샐러드 탐구생활', sub: '샐러드 조식', tag: '샐러드', cls: 'c-teal' },
     { label: '가지의 재발견', sub: '가지를 사용한 조식', tag: '가지', cls: 'c-ink' }
   ];
 
