@@ -1938,11 +1938,17 @@
   <url><loc>https://how-about-breakfast.com/en/recipes/크랜베리-요거트.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/야채-샐러드-2.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/야채-샐러드.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/토마토-샐러드-2.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/구운-채소-샐러드.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/양배추-샐러드.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/양송이-샐러드.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/양송이-양송이샐러드-그레잇데이.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/터키-오늘의조식-조식스타그램.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/스크램블에그-두부샐러드-오늘의조식.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/오늘의조식-래디쉬-마무리는.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/오늘의조식-단호박-조식스타그램.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/무-샐러드.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/오늘의조식-가지구이-그레잇데이.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/당근샐러드-3.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/태풍바비-아스파라거스-조식플렉스.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/렌틸콩-샐러드.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
@@ -2271,6 +2277,11 @@
   <url><loc>https://how-about-breakfast.com/en/recipes/아스파라거스구이-품바-이날치.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/풀무원-묵사발-모닝리추얼.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/복숭아타르트-김하나-말하기를말하기.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/모닝리추얼-모닝루틴-로메인.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/아보카도낫또덮밥-모닝리추얼-모닝루틴-2.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/단호박스프-모닝리추얼-모닝루틴.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/가지토마토카레-박권일-혼돈의이유.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/리코타치즈복숭아샐러드-모닝리추얼-모닝루틴.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/퀴노아치커리샐러드-모닝리추얼-모닝루틴.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/시금치샐러드-모닝리추얼-모닝루틴.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/복숭아브라타치즈샐러드-모닝리추얼-모닝루틴.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
@@ -2595,6 +2606,9 @@
   <url><loc>https://how-about-breakfast.com/en/recipes/줄기콩샐러드-모닝리추얼-모닝루틴.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/청어소바-가쓰오부시-청어.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/토르텔로니인브로도-김초엽-모닝리추얼.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/오늘의커피-스모크드소시시브레드-오리엔탈리즘.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/광장시장-우뭇가사리-모닝리추얼.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/포비-아메리카노-플레인베이글.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/두부면-매콤꼬막무침-모닝리추얼.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/두부-낫또-무순.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/복숭아샐러드-모닝리추얼-모닝루틴.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
@@ -2875,6 +2889,9 @@
   <url><loc>https://how-about-breakfast.com/en/recipes/푸실리파스타.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/에릭리퍼트-에어룸토마토.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/한끼일기챌린지-깻잎과김자반을곁들인들기름카펠리니-들기름.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/에어룸토마토.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/아보카도토마토토스트-토스트-아보카도.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/토마토냉국수.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/파인애플민트샐러드-파인애플.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/모짜렐라계란프라이-계란.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/토스트-3.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
@@ -3192,6 +3209,10 @@
   <url><loc>https://how-about-breakfast.com/en/recipes/스낵당근-당근.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/파스타-2.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/아보카도버섯샐러드-아보카도.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/애호박타르트-애호박.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/연어덮밥-연어.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/메밀면-2.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/오렌지토스트-오렌지-아무튼피트니스.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/썬키친-브로콜리구이-브로콜리.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/라임우동-라임메밀-라임.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/아스파라거스그리비슈토스트-아스파라거스-아무튼피트니스.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
@@ -3519,6 +3540,7 @@
   <url><loc>https://how-about-breakfast.com/en/recipes/썬드라이드-토마토를-곁들인-바질페스토-뇨끼.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/전두부-명란-아보카도-샐러드.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/라임-곤약면.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/또띠아.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/푸실리-애호박-주키니.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/아호블랑코.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/바나나토스트.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
@@ -3843,4 +3865,7 @@
   <url><loc>https://how-about-breakfast.com/en/recipes/판-콘-토마테.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/바질-폴렌타-Tomato-Basil-Ricotta-Polenta.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://how-about-breakfast.com/en/recipes/구운-복숭아-샐러드-Grilled-Peach-Salad-with-Avocado-Feta-Dip.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/감자-아보카도-스택.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/머쉬룸-스매시드-포테이포-Mushroom-Smashed-Potato.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://how-about-breakfast.com/en/recipes/페타치즈.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>
