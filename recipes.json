@@ -37781,7 +37781,7 @@
   "weather": "25도/한때흐림",
   "failed": false,
   "calories": null,
-  "title": "파인애플민트샐러드 파인애플",
+  "title": "파인애플 민트 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37792,22 +37792,15 @@
    "파인애플",
    "파인애플민트샐러드"
   ],
-  "intro": "20230821, #조식다이어리 823, 25도/한때흐림\n생긴 모양이 솔방울 Pine을 닮아서 파인애플 #파인애플민트샐러드 \n1. 다진 민트잎, 파인애플, 메이플 시럽을 넣고 섞는다. \n2. 1을 볼에 담고 그릭요거트를 소복하게 담는다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20230821, #조식다이어리 823, 25도/한때흐림\n생긴 모양이 솔방울 Pine을 닮아서 파인애플 #파인애플민트샐러드 \n",
+  "ingredients": "(먹기 좋게 썬) 파인애플 2컵, 민트잎 조금, 메이플시럽 2t, 그릭요거트 2T",
+  "steps": "1. 다진 민트잎, 파인애플 과육, 메이플 시럽을 넣고 섞는다. \n2. 1을 볼에 담고 그릭요거트를 소복하게 담는다.",
   "raw": "20230821, #조식다이어리 823, 25도/한때흐림\n\n생긴 모양이 솔방울 Pine을 닮아서 파인애플 #파인애플민트샐러드 \n\n1. 다진 민트잎, 파인애플, 메이플 시럽을 넣고 섞는다. \n2. 1을 볼에 담고 그릭요거트를 소복하게 담는다. \n\n#조식 #레시피 #미라클모닝 #파인애플 #샐러드",
   "image": "https://images.how-about-breakfast.com/images/823.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/823.jpg",
    "https://images.how-about-breakfast.com/images/823_2.jpg"
   ],
-  "_en": {
-   "hash": "1ef950c72405be96bcd4dd2a040b2d46357cff3805edc3b0678f52ef4280f53b",
-   "title": "Pineapple Mint Salad",
-   "intro": "20230821, #breakfastdiary 823, 25°C/occasionally cloudy\nIts shape resembles a pinecone — hence \"pineapple.\" #pineapplemintsalad \n1. Mix chopped mint leaves, pineapple, and maple syrup together. \n2. Spoon step 1 into a bowl and top generously with Greek yogurt.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "파인애플민트샐러드-파인애플"
  },
  {
