@@ -226,6 +226,9 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
 .site-footer-social{display:flex; gap:20px;}
 .site-footer-social a{color:rgba(255,255,255,0.72); display:inline-flex; transition:color .12s;}
 .site-footer-social a:hover{color:#fff;}
+.site-footer-links{font-size:12.5px;}
+.site-footer-links a{color:rgba(255,255,255,0.6); text-decoration:none;}
+.site-footer-links a:hover{color:#fff; text-decoration:underline;}
 .site-footer-bottom{
   border-top:1px solid rgba(255,255,255,0.12); width:100%; padding-top:16px;
   text-align:center; font-size:12px; color:rgba(255,255,255,0.45);

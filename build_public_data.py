@@ -61,6 +61,7 @@ LABELS = {
         'switch_label': 'EN',
         'recipe_word': '레시피',
         'prev_fallback': '이전', 'next_fallback': '다음',
+        'footer_privacy': '개인정보처리방침',
     },
     'en': {
         'site_name': 'Breakfast, Every Day',
@@ -74,6 +75,7 @@ LABELS = {
         'switch_label': 'KO',
         'recipe_word': 'recipe',
         'prev_fallback': 'Previous', 'next_fallback': 'Next',
+        'footer_privacy': 'Privacy Policy',
     },
 }
 
@@ -440,6 +442,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg>
       </a>
     </div>
+    <div class="site-footer-links"><a href="{privacy_href}">{footer_privacy_label}</a></div>
     <div class="site-footer-bottom">© how.about.breakfast 2020-2026. All rights reserved.</div>
   </div>
 </footer>
@@ -498,6 +501,7 @@ def build_pages(live, ids, lang='ko'):
     pages_dir = PAGES_DIR if lang == 'ko' else PAGES_DIR_EN
     url_prefix = 'recipes' if lang == 'ko' else 'en/recipes'
     rel = '..' if lang == 'ko' else '../..'
+    privacy_href = f'{rel}/privacy.html' if lang == 'ko' else f'{rel}/en/privacy.html'
     os.makedirs(pages_dir, exist_ok=True)
     ordered = sorted(range(len(live)), key=lambda i: (sort_key(live[i]), i))
 
@@ -588,6 +592,7 @@ def build_pages(live, ids, lang='ko'):
             title=esc(title), description=esc(description), url=url, rel=rel,
             hreflang_tags=hreflang_tags, robots_meta=robots_meta, lang_switch_html=lang_switch_html,
             archive_back_label=labels['archive_back'],
+            privacy_href=privacy_href, footer_privacy_label=labels['footer_privacy'],
             og_image=og_image, twitter_image=twitter_image, ad_verify_script=AD_VERIFY_SCRIPT,
             media=media_html(r, title, lang), stamp=esc(stamp_label(r)),
             fail_badge=f'<span class="fail-badge">{labels["failed_badge"]}</span>' if r.get('failed') else '',
@@ -609,6 +614,8 @@ def build_sitemap(recipe_urls, recipe_urls_en):
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     lines.append(f'  <url><loc>{SITE_BASE}/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>')
     lines.append(f'  <url><loc>{SITE_BASE}/archive.html</loc><changefreq>daily</changefreq><priority>0.9</priority></url>')
+    lines.append(f'  <url><loc>{SITE_BASE}/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>')
+    lines.append(f'  <url><loc>{SITE_BASE}/en/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>')
     for u in recipe_urls:
         lines.append(f'  <url><loc>{u}</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>')
     for u in recipe_urls_en:
