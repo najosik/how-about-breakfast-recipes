@@ -1,0 +1,49 @@
+name: Build Instagram index
+
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+# Shared with every other workflow that commits to main - see add-post.yml
+# for why (queues concurrent runs instead of letting them race to push and
+# silently drop the loser's otherwise-successful commit).
+concurrency:
+  group: main-branch-writer
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Write credentials
+        run: |
+          cat > .ig-credentials.json <<EOF
+          {"access_token": "${{ secrets.IG_ACCESS_TOKEN }}", "ig_user_id": "${{ secrets.IG_USER_ID }}"}
+          EOF
+
+      - name: Build Instagram index
+        run: python build_ig_index.py
+
+      - name: Remove credential file
+        if: always()
+        run: rm -f .ig-credentials.json
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ig_index.json
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Rebuild Instagram post index"
+            git push
+          fi

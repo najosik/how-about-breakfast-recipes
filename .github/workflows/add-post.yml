@@ -1,0 +1,65 @@
+name: Add missing post
+
+on:
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Date (YYYY-MM-DD) for the new record'
+        required: true
+        type: string
+      patch:
+        description: 'JSON object of fields for the new record'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+# Every workflow that commits to main shares this group so GitHub queues
+# them instead of running them concurrently. Without this, admin-tool
+# clicks fired back-to-back (or one landing mid-instagram-sync) each
+# check out main, commit locally, then race to push - only the first
+# wins, and every other run's otherwise-successful commit is silently
+# discarded when its push is rejected and the job fails.
+concurrency:
+  group: main-branch-writer
+  cancel-in-progress: false
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Add new record, rebuild, and commit (retry on push race)
+        env:
+          DATE: ${{ inputs.date }}
+          PATCH_JSON: ${{ inputs.patch }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            python add_post.py
+            python build_public_data.py
+            git add -A
+            if git diff --cached --quiet; then
+              echo "No changes."
+              exit 0
+            fi
+            git commit -m "Add missing post via admin tool: ${DATE}"
+            if git push; then
+              echo "Pushed successfully."
+              exit 0
+            fi
+            echo "Push rejected (attempt $i) - resyncing to latest main and retrying."
+            git reset --hard HEAD~1
+            git fetch origin main
+            git reset --hard origin/main
+            sleep $((RANDOM % 3 + 1))
+          done
+          echo "::error::Failed to push after retries - ${DATE} was NOT added."
+          exit 1

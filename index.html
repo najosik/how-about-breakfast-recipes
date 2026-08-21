@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>날마다 조식 — 매일 아침의 기록</title>
-<meta name="description" content="2020년 7월부터 매일 아침 다른 조식을 만들어 기록해 온 다이어리 아카이브. 하루도 빠짐없이 쌓아온 1,900개가 넘는 아침 기록을 만나보세요.">
+<title>날마다 조식 — 나조식의 매일 아침 기록</title>
+<meta name="description" content="나조식이 2020년 7월부터 매일 아침 다른 조식을 만들어 기록해 온 다이어리 아카이브. 하루도 빠짐없이 쌓아온 1,900개가 넘는 아침 기록을 만나보세요.">
 <link rel="canonical" href="https://how-about-breakfast.com/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="날마다, 조식">
-<meta property="og:title" content="날마다 조식 — 매일 아침의 기록">
-<meta property="og:description" content="2020년 7월부터 매일 아침 다른 조식을 만들어 기록해 온 다이어리 아카이브. 하루도 빠짐없이 쌓아온 1,900개가 넘는 아침 기록을 만나보세요.">
+<meta property="og:title" content="날마다 조식 — 나조식의 매일 아침 기록">
+<meta property="og:description" content="나조식이 2020년 7월부터 매일 아침 다른 조식을 만들어 기록해 온 다이어리 아카이브. 하루도 빠짐없이 쌓아온 1,900개가 넘는 아침 기록을 만나보세요.">
 <meta property="og:url" content="https://how-about-breakfast.com/">
 <meta property="og:image" content="https://images.how-about-breakfast.com/images/1796.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="날마다 조식 — 매일 아침의 기록">
-<meta name="twitter:description" content="2020년 7월부터 매일 아침 다른 조식을 만들어 기록해 온 다이어리 아카이브.">
+<meta name="twitter:title" content="날마다 조식 — 나조식의 매일 아침 기록">
+<meta name="twitter:description" content="나조식이 매일 아침 다른 조식을 만들어 기록해 온 다이어리 아카이브.">
 <meta name="twitter:image" content="https://images.how-about-breakfast.com/images/1796.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org/","@type":"WebSite","name":"날마다 조식","alternateName":"나조식","url":"https://how-about-breakfast.com/","author":{"@type":"Person","name":"나조식"}}</script>
 
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-64KS503K5Y"></script>
@@ -26,6 +27,14 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-64KS503K5Y');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y3orfq5syr");
 </script>
 <!-- Google AdSense (site verification) -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2329784289008303" crossorigin="anonymous"></script>
@@ -41,6 +50,7 @@
     <div class="channel-links">
       <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
     </div>
     <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
       <button type="button" data-lang="ko" class="active">한국어</button>
@@ -49,6 +59,13 @@
   </div>
 
   <header class="masthead">
+    <form class="home-search" id="homeSearchForm" role="search">
+      <div class="search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input id="homeSearchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)">
+      </div>
+      <button type="submit" class="btn-primary home-search-btn" data-i18n="home_search_btn">검색</button>
+    </form>
     <p class="eyebrow">daily breakfast journal</p>
     <div class="kicker">
       <span id="kickerVol">Vol. —</span>
@@ -56,9 +73,9 @@
     </div>
     <h1 data-i18n="home_title">날마다 조식(Beta)</h1>
     <p class="tagline" data-i18n="home_tagline">2020년 7월 13일부터 매일 어제와 다른 조식을 만들어 먹고 기록한 아카이브입니다.</p>
-    <p class="beta-note" data-i18n="home_beta_note">안녕하세요? 나조식입니다. 인스타그램(@how.about.breakfast)의 게시물을 웹에서 손쉽게 찾아볼 수 있도록 아카이빙 했습니다. 재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 좋은 생각이 떠오르지 않을 때, 이도저도 아니면 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때 이용해 주시면 좋겠습니다.
-
-주의! 20년~22년 게시물 가운데 일부분은 개인의 생각과 레시피 사이에서 왔다갔다, 들쭉날쭉합니다. 천천히 다듬어 보겠습니다. (사실 그래서 Beta인데, Beta를 언제 뗄 수 있을지는 모르겠습니다.)</p>
+    <p class="beta-note" data-i18n="home_beta_note">안녕하세요? 나조식입니다. 인스타그램(@how.about.breakfast)의 게시물을 웹에서 손쉽게 찾아볼 수 있도록 아카이빙 했습니다. 재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 좋은 생각이 떠오르지 않을 때, 이도저도 아니면 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때 이용해 주시면 좋겠습니다.</p>
+    <button type="button" class="beta-more-toggle" id="betaMoreToggle" data-i18n="home_beta_more" aria-expanded="false">더보기</button>
+    <p class="beta-note beta-caveat hidden" id="betaCaveat" data-i18n="home_beta_caveat">주의! 20년~22년 게시물 가운데 일부분은 개인의 생각과 레시피 사이에서 왔다갔다, 들쭉날쭉합니다. 천천히 다듬어 보겠습니다. (사실 그래서 Beta인데, Beta를 언제 뗄 수 있을지는 모르겠습니다.)</p>
     <div class="masthead-icons" id="mastheadIcons"></div>
     <div class="streak" id="streakText"><b>—</b></div>
   </header>

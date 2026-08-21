@@ -2,15 +2,42 @@
   'use strict';
 
   var COLLECTIONS = [
-    { label: '토마토 특집', tag: '토마토', cls: 'c-teal' },
-    { label: '아보카도 아카이브', tag: '아보카도', cls: 'c-ink' },
-    { label: '파스타 & 누들', tag: '파스타', cls: 'c-teal' },
-    { label: '감자 요리 모음', tag: '감자', cls: 'c-ink' },
-    { label: '계란 한 알의 힘', tag: '계란', cls: 'c-teal' },
-    { label: '오픈샌드위치 특집', tag: '샌드위치', cls: 'c-ink' }
+    { label: '토마토 앓이', sub: '토마토를 사용한 조식', tag: '토마토', cls: 'c-teal' },
+    { label: '아보카도 중독', sub: '아보카도를 사용한 조식', tag: '아보카도', cls: 'c-ink' },
+    { label: '면치기의 정석', sub: '파스타와 면 조식', tag: '파스타', cls: 'c-teal' },
+    { label: '감자, 무한변신', sub: '감자를 사용한 조식', tag: '감자', cls: 'c-ink' },
+    { label: '계란이면 다 돼', sub: '계란을 사용한 조식', tag: '계란', cls: 'c-teal' },
+    { label: '샌드위치 아카이브', sub: '샌드위치 조식', tag: '샌드위치', cls: 'c-ink' },
+    { label: '샐러드 탐구생활', sub: '샐러드 조식', tag: '샐러드', cls: 'c-teal' },
+    { label: '가지의 재발견', sub: '가지를 사용한 조식', tag: '가지', cls: 'c-ink' }
+  ];
+
+  var SEARCH_PROMPTS = [
+    '토마토 땡기는 아침이죠?',
+    '오늘 아보카도 어때요?',
+    '아침부터 파스타, 괜찮아요',
+    '감자 없인 서운한 아침',
+    '계란 하나쯤은 필수죠',
+    '샌드위치, 오늘의 정답',
+    '초록초록 샐러드 어때요',
+    '가지, 오늘 주인공 해볼까?'
   ];
 
   var allData = null;
+
+  bindHomeSearch();
+  bindBetaToggle();
+
+  function bindHomeSearch() {
+    var form = document.getElementById('homeSearchForm');
+    var input = document.getElementById('homeSearchInput');
+    if (!form || !input) return;
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var q = input.value.trim();
+      window.location.href = 'archive.html' + (q ? '?q=' + encodeURIComponent(q) : '');
+    });
+  }
 
   Shared.loadData().then(function (all) {
     allData = all;
@@ -29,10 +56,55 @@
 
   function renderAll(all) {
     I18N.applyStaticI18n();
+    syncBetaToggleLabel();
+    randomizeSearchPlaceholder();
     renderMasthead(all);
     renderLedger(all);
     renderOnThisDay(all);
     renderCollections(all);
+  }
+
+  // Rotates the empty search box's placeholder through a pool of short,
+  // search-inviting prompts instead of the same static hint every time -
+  // random, but never the same one twice in a row (tracked per tab via
+  // sessionStorage). English mode keeps the plain static placeholder
+  // (search_placeholder) since these prompts are Korean copy only.
+  function randomizeSearchPlaceholder() {
+    var input = document.getElementById('homeSearchInput');
+    if (!input || I18N.getLang() !== 'ko') return;
+    var lastIdx = -1;
+    try { lastIdx = parseInt(sessionStorage.getItem('homeSearchPromptIdx'), 10); } catch (e) {}
+    var idx;
+    do { idx = Math.floor(Math.random() * SEARCH_PROMPTS.length); }
+    while (SEARCH_PROMPTS.length > 1 && idx === lastIdx);
+    input.placeholder = SEARCH_PROMPTS[idx];
+    try { sessionStorage.setItem('homeSearchPromptIdx', String(idx)); } catch (e) {}
+  }
+
+  // The Beta caveat paragraph is secondary - collapsed by default so the
+  // intro above it doesn't push everything else down the page on load.
+  function bindBetaToggle() {
+    var btn = document.getElementById('betaMoreToggle');
+    var caveat = document.getElementById('betaCaveat');
+    if (!btn || !caveat) return;
+    btn.addEventListener('click', function () {
+      var expanded = caveat.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      btn.textContent = I18N.t(expanded ? 'home_beta_less' : 'home_beta_more');
+    });
+  }
+
+  // applyStaticI18n() resets the toggle button's label from its
+  // data-i18n attribute (always "more") on every re-render (e.g. a
+  // language switch) - re-sync it to whatever the caveat's actual
+  // expanded/collapsed state is so a switch mid-expansion doesn't
+  // show a mismatched label.
+  function syncBetaToggleLabel() {
+    var btn = document.getElementById('betaMoreToggle');
+    var caveat = document.getElementById('betaCaveat');
+    if (!btn || !caveat) return;
+    var expanded = !caveat.classList.contains('hidden');
+    btn.textContent = I18N.t(expanded ? 'home_beta_less' : 'home_beta_more');
   }
 
   function bindLangToggle() {
@@ -68,7 +140,11 @@
     var dated = all.filter(function (r) { return r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date); });
     var sorted = dated.slice().sort(function (a, b) { return a.date.localeCompare(b.date); });
     var first = sorted[0].date;
-    var latestNo = sorted[sorted.length - 1].diary_no || 0;
+    // Vol. N reflects the actual number of live posts, not the latest
+    // diary_no - past backfills/deletions have drifted diary_no away from
+    // a true running count, same reason build_public_data.py's stats and
+    // the archive page's "stat_total" both count records instead.
+    var postCount = all.length;
 
     var firstDate = new Date(first + 'T00:00:00');
     var today = new Date();
@@ -77,7 +153,7 @@
     var remMonths = months % 12;
 
     var lang = I18N.getLang();
-    document.getElementById('kickerVol').textContent = 'Vol. ' + latestNo;
+    document.getElementById('kickerVol').textContent = 'Vol. ' + postCount;
     document.getElementById('kickerSince').textContent = first + I18N.t('home_since_suffix');
 
     var streakHTML = lang === 'en'
@@ -125,9 +201,10 @@
       var key = cur.getFullYear() + '-' + String(cur.getMonth() + 1).padStart(2, '0') + '-' + String(cur.getDate()).padStart(2, '0');
       var status = 'empty';
       if (cur >= start && cur <= end) {
-        if (postedDates.has(key)) status = 'posted';
-        else if (failedDates.has(key)) status = 'failed';
-        else status = 'missed';
+        // A day marked "건너뜀" via the admin tool has a real record but no
+        // actual content - visually it should read the same as a day with
+        // no record at all, not stand out as a distinct "실패기" color.
+        status = postedDates.has(key) ? 'posted' : 'missed';
       } else {
         status = 'pad';
       }
@@ -147,7 +224,6 @@
 
     var labelFor = {
       posted: lang === 'en' ? 'Made it' : '조식',
-      failed: lang === 'en' ? 'Failed attempt' : '실패기',
       missed: lang === 'en' ? 'Breakfast skipped' : '조식 건너뜀'
     };
 
@@ -178,12 +254,12 @@
       col.className = 'ledger-col';
       w.forEach(function (day) {
         var cell = document.createElement('div');
-        cell.className = 'ledger-cell' + (day.status === 'posted' ? ' posted' : day.status === 'failed' ? ' failed' : '');
+        cell.className = 'ledger-cell' + (day.status === 'posted' ? ' posted' : '');
         if (day.status !== 'pad' && day.key) {
           cell.addEventListener('mouseenter', function () { showTooltip(cell, day); });
           cell.addEventListener('mouseleave', hideTooltip);
           var rec = recordByDate[day.key];
-          if (rec && (day.status === 'posted' || day.status === 'failed')) {
+          if (rec && day.status === 'posted') {
             cell.classList.add('clickable');
             cell.addEventListener('click', function () {
               hideTooltip();
@@ -229,30 +305,53 @@
       datePrefixEl.textContent = (lang === 'en' ? (mm + '/' + dd) : (mm + '.' + dd + '.')) + ' ';
     }
 
-    function dist(r) {
-      if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return 999;
+    function isExactMatch(r) {
+      // A "건너뜀" skip marker (failed:true, no real content) is a record
+      // but not a post - it should read the same as no record at all here,
+      // not surface as a broken-looking untitled card.
+      if (r.failed) return false;
+      if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return false;
       var parts = r.date.split('-');
-      var rm = parseInt(parts[1], 10), rd = parseInt(parts[2], 10);
-      if (rm !== mm) return 999;
-      return Math.abs(rd - dd);
+      return parseInt(parts[1], 10) === mm && parseInt(parts[2], 10) === dd;
     }
 
-    var currentYear = String(today.getFullYear());
     var byYear = {};
     all.forEach(function (r) {
-      var d = dist(r);
-      if (d > 3) return;
-      var y = r.date.slice(0, 4);
-      // the current year only counts as "on this day" for an exact match -
-      // a fuzzy nearby-day fallback would surface yesterday's brand-new
-      // post as if it were a past-years memory, which isn't the intent.
-      if (y === currentYear && d !== 0) return;
-      if (!byYear[y] || dist(byYear[y]) > d) byYear[y] = r;
+      if (!isExactMatch(r)) return;
+      byYear[r.date.slice(0, 4)] = r;
     });
 
-    var years = Object.keys(byYear).sort();
+    // Years the archive actually spans, so a year with no exact-day post
+    // still gets a card (with the "no breakfast that day" placeholder)
+    // instead of just vanishing from the row. The very first (partial)
+    // year only counts once the diary had actually started.
+    var allDates = all.map(function (r) { return r.date; })
+      .filter(function (d) { return d && /^\d{4}-\d{2}-\d{2}$/.test(d); })
+      .sort();
     var row = document.getElementById('otdRow');
     var section = document.getElementById('otdSection');
+    if (!allDates.length) {
+      section.classList.add('hidden');
+      return;
+    }
+    var minDate = allDates[0];
+    var startYear = parseInt(minDate.slice(0, 4), 10);
+    var startMM = parseInt(minDate.slice(5, 7), 10);
+    var startDD = parseInt(minDate.slice(8, 10), 10);
+    var currentYear = today.getFullYear();
+
+    var years = [];
+    for (var y = startYear; y <= currentYear; y++) {
+      if (y === startYear && (mm < startMM || (mm === startMM && dd < startDD))) continue;
+      // Today's own post typically goes up in the morning and only reaches
+      // recipes-index.json once the overnight sync runs - a missing exact
+      // match for the current year almost always just means "not synced
+      // yet", not an actual skipped day, so skip the placeholder for it
+      // entirely rather than falsely implying no breakfast was made today.
+      if (y === currentYear && !byYear[String(y)]) continue;
+      years.push(String(y));
+    }
+
     if (years.length === 0) {
       section.classList.add('hidden');
       return;
@@ -260,8 +359,24 @@
     section.classList.remove('hidden');
     row.innerHTML = years.map(function (y) {
       var r = byYear[y];
-      var koTitle = r.title || I18N.t('untitled_fallback');
       var yearLabel = lang === 'en' ? y : (y + '년');
+      if (!r) {
+        var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+        var emptyDate = y + '-' + pad(mm) + '-' + pad(dd);
+        return (
+          '<div class="otd-card otd-empty" data-year="' + y + '">' +
+          '<div class="otd-empty-msg">' +
+          '<span class="otd-empty-bang">' + Shared.escapeHtml(I18N.t('otd_empty_bang')) + '</span>' +
+          '<span class="otd-empty-sub">' + Shared.escapeHtml(I18N.t('otd_empty_sub')) + '</span>' +
+          '</div>' +
+          '<div class="otd-year">' + yearLabel + '</div>' +
+          '<h4 class="otd-title"><a href="https://brunch.co.kr/@howaboutbfast/4" target="_blank" rel="noopener noreferrer">' +
+          Shared.escapeHtml(I18N.t('otd_empty_title')) + '</a></h4>' +
+          '<div class="otd-meta">' + emptyDate + '</div>' +
+          '</div>'
+        );
+      }
+      var koTitle = r.title || I18N.t('untitled_fallback');
       var titleHtml = Shared.hasStaticEn(r, 'title')
         ? '<h4 class="otd-title">' + Shared.escapeHtml(Shared.localizedText(r, 'title')) + '</h4>'
         : '<h4 class="otd-title i18n-dyn" data-ko="' + Shared.escapeHtml(koTitle) + '">' + Shared.escapeHtml(koTitle) + '</h4>';
@@ -275,11 +390,12 @@
       );
     }).join('');
 
-    Array.prototype.forEach.call(row.querySelectorAll('.otd-card'), function (el, i) {
+    Array.prototype.forEach.call(row.querySelectorAll('.otd-card:not(.otd-empty)'), function (el) {
+      var y = el.getAttribute('data-year');
       el.addEventListener('click', function (e) {
         if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault();
-        Shared.openModal(byYear[years[i]]);
+        Shared.openModal(byYear[y]);
       });
     });
     I18N.applyDynamicTranslations(row);
@@ -288,7 +404,6 @@
   function renderCollections(all) {
     var counts = {};
     all.forEach(function (r) { (r.hashtags || []).forEach(function (h) { counts[h] = (counts[h] || 0) + 1; }); });
-    var failedCount = all.filter(function (r) { return r.failed; }).length;
 
     var grid = document.getElementById('collectionGrid');
     var cards = COLLECTIONS.map(function (c) {
@@ -297,17 +412,11 @@
         '<a class="collection-card ' + c.cls + '" href="archive.html?tag=' + encodeURIComponent(c.tag) + '">' +
         '<span class="collection-icon">' + Shared.iconSVG({ hashtags: [c.tag] }, 26) + '</span>' +
         '<div class="big">' + Shared.escapeHtml(I18N.collectionLabel(c.label)) + '</div>' +
+        '<div class="sub">' + Shared.escapeHtml(I18N.collectionSub(c.sub)) + '</div>' +
         '<div class="count">' + n + I18N.t('col_records_suffix') + '</div>' +
         '</a>'
       );
     });
-    cards.push(
-      '<a class="collection-card c-clay" href="archive.html?failed=1">' +
-      '<span class="collection-icon">' + Shared.iconSVG({ hashtags: [], title: '' }, 26) + '</span>' +
-      '<div class="big">' + I18N.t('col_failed_label') + '</div>' +
-      '<div class="count">' + failedCount + I18N.t('col_failed_suffix') + '</div>' +
-      '</a>'
-    );
     grid.innerHTML = cards.join('');
   }
 
@@ -315,6 +424,9 @@
     var btn = document.getElementById('shuffleBtn');
     var resultEl = document.getElementById('shuffleResult');
     var spinning = false;
+    // Same reasoning as the archive grid: a 건너뜀 skip marker isn't a
+    // real post, so the shuffle shouldn't ever land on it.
+    var pickable = all.filter(function (r) { return !r.failed; });
 
     btn.addEventListener('click', function () {
       if (spinning) return;
@@ -327,7 +439,7 @@
       resultEl.classList.remove('hidden');
       resultEl.classList.remove('shuffle-land');
 
-      var finalPick = all[Math.floor(Math.random() * all.length)];
+      var finalPick = pickable[Math.floor(Math.random() * pickable.length)];
 
       // decelerating cycle: fast flickers at first, slowing down toward the end
       var delays = [60, 60, 70, 80, 90, 110, 130, 160, 200, 260, 340];
@@ -345,7 +457,7 @@
           spinning = false;
           return;
         }
-        var r = all[Math.floor(Math.random() * all.length)];
+        var r = pickable[Math.floor(Math.random() * pickable.length)];
         resultEl.innerHTML = Shared.cardHTML(r);
         resultEl.classList.add('shuffle-flicker');
         btn.textContent = spinLabel;

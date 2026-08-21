@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<title>게시물 편집 (관리자 전용)</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 16px; color: #222; }
+  h1 { font-size: 1.1rem; }
+  input, textarea, button { font-size: 16px; font-family: inherit; }
+  input[type="text"], input[type="password"], textarea {
+    width: 100%; box-sizing: border-box; padding: 8px; margin: 4px 0 12px;
+    border: 1px solid #ccc; border-radius: 6px;
+  }
+  textarea { min-height: 80px; resize: vertical; overflow: hidden; }
+  label { font-weight: 600; font-size: 0.9rem; }
+  button {
+    padding: 10px 16px; border-radius: 6px; border: none;
+    background: #222; color: #fff; cursor: pointer;
+  }
+  button:disabled { background: #999; cursor: default; }
+  #results { list-style: none; padding: 0; margin: 8px 0; max-height: 240px; overflow-y: auto; border: 1px solid #eee; border-radius: 6px; }
+  #results li { padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; }
+  #results li:hover { background: #f5f5f5; }
+  #status { margin-top: 12px; padding: 10px; border-radius: 6px; }
+  #status.ok { background: #e6f7e6; }
+  #status.err { background: #fde8e8; }
+  #editForm { display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #eee; }
+  .hint { color: #777; font-size: 0.85rem; }
+  .quicklinks { display: flex; gap: 8px; margin: 12px 0 16px; flex-wrap: wrap; }
+  .quicklinks a {
+    display: inline-block; padding: 6px 12px; border: 1px solid #ccc; border-radius: 6px;
+    color: #222; text-decoration: none; font-size: 0.85rem;
+  }
+  .quicklinks a:hover { border-color: #222; }
+  .tabs { display: flex; gap: 8px; margin: 16px 0; border-bottom: 1px solid #ddd; }
+  .tabs button {
+    background: none; color: #777; border-radius: 0; padding: 8px 4px; margin-right: 16px;
+    border-bottom: 2px solid transparent;
+  }
+  .tabs button.active { color: #222; border-bottom-color: #222; font-weight: 600; }
+  .tabpage { display: none; }
+  .tabpage.active { display: block; }
+  #missingList { list-style: none; padding: 0; margin: 8px 0; }
+  #missingList li { padding: 10px 8px; border-bottom: 1px solid #eee; }
+  #missingList .missing-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+  #missingList .missing-actions { display: flex; gap: 6px; flex-shrink: 0; }
+  .preview-box { margin-top: 10px; padding: 10px; background: #f7f7f7; border-radius: 6px; font-size: 0.85rem; display: none; }
+  .preview-box img { max-width: 120px; border-radius: 6px; margin: 6px 0; display: block; }
+  .preview-box .preview-caption { white-space: pre-wrap; color: #444; max-height: 160px; overflow-y: auto; margin: 6px 0; }
+  .preview-box .preview-meta { color: #888; }
+  #missingList button { padding: 6px 10px; font-size: 0.85rem; }
+  #missingList .skip-btn { background: #999; }
+  #missingCount { color: #777; font-size: 0.85rem; margin: 8px 0; }
+</style>
+</head>
+<body>
+<h1>게시물 편집 (관리자 전용)</h1>
+<p class="hint">이 페이지는 검색엔진에 노출되지 않고, 저장 시 비밀번호로 서버 측 확인을 거칩니다. 저장 후 실제 사이트 반영까지 1~2분 정도 걸립니다.</p>
+<div class="quicklinks">
+  <a href="https://analytics.google.com/analytics/web/" target="_blank" rel="noopener">애널리틱스</a>
+  <a href="https://search.google.com/search-console?resource_id=sc-domain%3Ahow-about-breakfast.com" target="_blank" rel="noopener">서치 콘솔</a>
+  <a href="https://clarity.microsoft.com/projects/view/y3orfq5syr/dashboard" target="_blank" rel="noopener">히트맵</a>
+</div>
+
+<div id="lockScreen">
+  <label for="pwInput">편집 비밀번호</label>
+  <input type="password" id="pwInput" autocomplete="off">
+  <button id="unlockBtn">잠금 해제</button>
+</div>
+
+<div id="app" style="display:none">
+  <div class="tabs">
+    <button type="button" class="tab-btn active" data-tab="editTab">게시물 수정</button>
+    <button type="button" class="tab-btn" data-tab="missingTab">빠진 날짜</button>
+  </div>
+
+  <div id="editTab" class="tabpage active">
+    <label for="searchInput">게시물 검색 (제목/날짜)</label>
+    <input type="text" id="searchInput" placeholder="예: 판 콘 토마테, 2026-08-13">
+    <ul id="results"></ul>
+
+    <form id="editForm">
+      <h2 id="editingTitle" style="font-size:1rem"></h2>
+      <label for="fTitle">제목</label>
+      <input type="text" id="fTitle">
+      <label for="fIntro">본문(intro)</label>
+      <textarea id="fIntro"></textarea>
+      <label for="fIngredients">재료</label>
+      <textarea id="fIngredients"></textarea>
+      <label for="fSteps">조리 순서</label>
+      <textarea id="fSteps"></textarea>
+      <label for="fHashtags">해시태그 (쉼표로 구분)</label>
+      <input type="text" id="fHashtags">
+      <label for="fCredit">출처(credit)</label>
+      <input type="text" id="fCredit">
+      <button type="submit" id="saveBtn">저장</button>
+    </form>
+  </div>
+
+  <div id="missingTab" class="tabpage">
+    <p class="hint">인스타그램에는 있는데 이 사이트에는 없는 날짜만 자동으로 골라 보여줍니다. 하나 채우면 목록에서 저절로 사라집니다.</p>
+    <div id="missingCount"></div>
+    <ul id="missingList"></ul>
+
+    <form id="addForm" style="display:none">
+      <h2 id="addingTitle" style="font-size:1rem"></h2>
+      <label for="aTitle">제목</label>
+      <input type="text" id="aTitle">
+      <label for="aIntro">본문(intro)</label>
+      <textarea id="aIntro"></textarea>
+      <label for="aIngredients">재료</label>
+      <textarea id="aIngredients"></textarea>
+      <label for="aSteps">조리 순서</label>
+      <textarea id="aSteps"></textarea>
+      <label for="aHashtags">해시태그 (쉼표로 구분)</label>
+      <input type="text" id="aHashtags">
+      <label for="aCredit">출처(credit)</label>
+      <input type="text" id="aCredit">
+      <label for="aWeather">날씨 (선택, 예: 24도/흐림)</label>
+      <input type="text" id="aWeather">
+      <label for="aCalories">칼로리 (선택, 숫자만)</label>
+      <input type="text" id="aCalories">
+      <label for="aImages">이미지 URL (한 줄에 하나씩, 선택)</label>
+      <textarea id="aImages" placeholder="https://images.how-about-breakfast.com/images/1234.jpg"></textarea>
+      <button type="submit" id="addSaveBtn">이 날짜로 추가</button>
+    </form>
+  </div>
+
+  <div id="status" style="display:none"></div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  // Fill in after deploying the Cloudflare Worker.
+  var WORKER_URL = 'https://how-about-breakfast-edit-api.howaboutbreakfast2020.workers.dev';
+
+  var lockScreen = document.getElementById('lockScreen');
+  var app = document.getElementById('app');
+  var pwInput = document.getElementById('pwInput');
+  var unlockBtn = document.getElementById('unlockBtn');
+  var searchInput = document.getElementById('searchInput');
+  var results = document.getElementById('results');
+  var editForm = document.getElementById('editForm');
+  var editingTitle = document.getElementById('editingTitle');
+  var saveBtn = document.getElementById('saveBtn');
+  var statusEl = document.getElementById('status');
+
+  var fTitle = document.getElementById('fTitle');
+  var fIntro = document.getElementById('fIntro');
+  var fIngredients = document.getElementById('fIngredients');
+  var fSteps = document.getElementById('fSteps');
+  var fHashtags = document.getElementById('fHashtags');
+  var fCredit = document.getElementById('fCredit');
+
+  var missingList = document.getElementById('missingList');
+  var missingCount = document.getElementById('missingCount');
+  var addForm = document.getElementById('addForm');
+  var addingTitle = document.getElementById('addingTitle');
+  var addSaveBtn = document.getElementById('addSaveBtn');
+  var aTitle = document.getElementById('aTitle');
+  var aIntro = document.getElementById('aIntro');
+  var aIngredients = document.getElementById('aIngredients');
+  var aSteps = document.getElementById('aSteps');
+  var aHashtags = document.getElementById('aHashtags');
+  var aCredit = document.getElementById('aCredit');
+  var aWeather = document.getElementById('aWeather');
+  var aCalories = document.getElementById('aCalories');
+  var aImages = document.getElementById('aImages');
+
+  var allRecords = [];
+  var igIndex = null; // {date: {caption, images, ...}} from ig_index.json, or null if not built yet
+  var igIndexMaxDate = null; // latest date key in igIndex - anything at/before this and absent genuinely isn't on Instagram
+  var current = null; // the record currently loaded into the form
+  var currentAddDate = null; // the date currently loaded into the add-post form
+
+  // Mobile Safari (iPad included) doesn't render a draggable resize handle
+  // on textareas, so long intro/steps text gets stuck in an 80px box with
+  // no way to make it bigger. Auto-grow to fit content instead — this also
+  // benefits desktop, which additionally keeps the CSS `resize: vertical`
+  // handle for manual override.
+  var growTargets = [fIntro, fIngredients, fSteps, aIntro, aIngredients, aSteps, aImages];
+  function autoGrow(el) {
+    el.style.height = 'auto';
+    el.style.height = el.scrollHeight + 'px';
+  }
+  growTargets.forEach(function (el) {
+    el.addEventListener('input', function () { autoGrow(el); });
+  });
+
+  Array.prototype.forEach.call(document.querySelectorAll('.tab-btn'), function (btn) {
+    btn.addEventListener('click', function () {
+      Array.prototype.forEach.call(document.querySelectorAll('.tab-btn'), function (b) { b.classList.remove('active'); });
+      Array.prototype.forEach.call(document.querySelectorAll('.tabpage'), function (p) { p.classList.remove('active'); });
+      btn.classList.add('active');
+      document.getElementById(btn.getAttribute('data-tab')).classList.add('active');
+    });
+  });
+
+  var savedPw = sessionStorage.getItem('editorPassword');
+  if (savedPw) {
+    pwInput.value = savedPw;
+    unlock();
+  }
+
+  unlockBtn.addEventListener('click', unlock);
+
+  function unlock() {
+    var pw = pwInput.value;
+    if (!pw) return;
+    sessionStorage.setItem('editorPassword', pw);
+    lockScreen.style.display = 'none';
+    app.style.display = 'block';
+    loadIndex();
+  }
+
+  function loadIndex() {
+    fetch('../recipes-index.json')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        allRecords = data;
+        renderMissing();
+      })
+      .catch(function (err) {
+        showStatus('err', '게시물 목록을 불러오지 못했습니다: ' + err);
+      });
+
+    // Pre-built by build_ig_index.py (workflow_dispatch, run manually as
+    // needed) - lets "미리보기" answer instantly for anything indexed,
+    // instead of paginating Instagram live on every click. Fine if this
+    // 404s (not built yet, or repo just doesn't have it) - preview falls
+    // back to the slower live Worker lookup.
+    fetch('../ig_index.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (data) {
+        igIndex = data;
+        igIndexMaxDate = data ? Object.keys(data).sort().pop() || null : null;
+      })
+      .catch(function () { igIndex = null; igIndexMaxDate = null; });
+  }
+
+  // Same definition of "missing" as the homepage's consistency heatmap
+  // (home.js renderLedger): any calendar day from the diary's first post
+  // through today with no record at all - regardless of failed/posted.
+  function computeMissingDates() {
+    var known = new Set();
+    allRecords.forEach(function (r) { if (r.date) known.add(r.date); });
+    var dates = Array.from(known).sort();
+    if (!dates.length) return [];
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    var cur = new Date(dates[0] + 'T00:00:00');
+    var end = new Date();
+    end.setHours(0, 0, 0, 0);
+    var missing = [];
+    while (cur <= end) {
+      var key = cur.getFullYear() + '-' + pad(cur.getMonth() + 1) + '-' + pad(cur.getDate());
+      if (!known.has(key)) missing.push(key);
+      cur.setDate(cur.getDate() + 1);
+    }
+    return missing;
+  }
+
+  function renderMissing() {
+    var missing = computeMissingDates();
+    missingCount.textContent = missing.length + '개 빠짐';
+    missingList.innerHTML = '';
+    missing.forEach(function (date) {
+      var li = document.createElement('li');
+      li.setAttribute('data-date', date);
+
+      var row = document.createElement('div');
+      row.className = 'missing-row';
+      var span = document.createElement('span');
+      span.textContent = date;
+      var actions = document.createElement('div');
+      actions.className = 'missing-actions';
+
+      var previewBtn = document.createElement('button');
+      previewBtn.type = 'button';
+      previewBtn.textContent = '미리보기';
+      var previewBox = document.createElement('div');
+      previewBox.className = 'preview-box';
+      previewBtn.addEventListener('click', function () { previewDate(date, previewBtn, previewBox); });
+
+      var addBtn = document.createElement('button');
+      addBtn.type = 'button';
+      addBtn.textContent = '추가';
+      addBtn.addEventListener('click', function () { openAddForm(date, previewBox); });
+
+      var skipBtn = document.createElement('button');
+      skipBtn.type = 'button';
+      skipBtn.className = 'skip-btn';
+      skipBtn.textContent = '건너뜀으로 표시';
+      skipBtn.addEventListener('click', function () { skipDate(date, li); });
+
+      actions.appendChild(previewBtn);
+      actions.appendChild(addBtn);
+      actions.appendChild(skipBtn);
+      row.appendChild(span);
+      row.appendChild(actions);
+      li.appendChild(row);
+      li.appendChild(previewBox);
+      missingList.appendChild(li);
+    });
+  }
+
+  function previewDate(date, btn, box) {
+    box.style.display = 'block';
+
+    // Instant path: build_ig_index.py's pre-built map, already loaded.
+    if (igIndex && igIndex[date]) {
+      renderPreviewFound(box, date, igIndex[date]);
+      return;
+    }
+
+    // The index is a full rebuild of the whole account through
+    // igIndexMaxDate. A date at or before that with no entry has already
+    // been checked and genuinely isn't on Instagram - re-searching live
+    // would just re-walk the same history (and can time out for old
+    // dates). Only fall back to a live check for dates after the last
+    // build (posted since), or when the index failed to load at all.
+    if (igIndex && igIndexMaxDate && date <= igIndexMaxDate) {
+      box.innerHTML = '';
+      box.textContent = '인스타그램에서 이 날짜의 게시물을 찾지 못했습니다.';
+      return;
+    }
+
+    // Fallback: after the index's coverage, or the index didn't load -
+    // ask the Worker to page through Instagram live, which can take a
+    // while for an old date.
+    btn.disabled = true;
+    box.innerHTML = '';
+    box.textContent = '색인에 없어서 인스타그램에서 직접 찾는 중... (오래된 날짜는 시간이 걸릴 수 있습니다)';
+
+    fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        password: sessionStorage.getItem('editorPassword'),
+        action: 'preview',
+        date: date,
+      }),
+    })
+      .then(function (r) { return r.json().then(function (body) { return { ok: r.ok, body: body }; }); })
+      .then(function (res) {
+        box.innerHTML = '';
+        if (!res.ok) {
+          if (res.body && res.body.error === 'unauthorized') {
+            sessionStorage.removeItem('editorPassword');
+            box.textContent = '비밀번호가 틀렸습니다. 새로고침 후 다시 시도해주세요.';
+            return;
+          }
+          box.textContent = '조회 실패: ' + ((res.body && (res.body.detail || res.body.error)) || '알 수 없는 오류');
+          return;
+        }
+        var data = res.body;
+        if (!data.found) {
+          box.textContent = data.truncated
+            ? '너무 오래된 날짜라 다 못 찾았습니다 (' + data.checked + '개 확인). 직접 인스타그램에서 확인해주세요.'
+            : '인스타그램에서 이 날짜의 게시물을 찾지 못했습니다 (' + data.checked + '개 확인).';
+          return;
+        }
+        renderPreviewFound(box, date, data);
+      })
+      .catch(function (err) {
+        box.textContent = '요청 중 오류: ' + err;
+      })
+      .finally(function () {
+        btn.disabled = false;
+      });
+  }
+
+  function renderPreviewFound(box, date, data) {
+    box.innerHTML = '';
+    box.dataset.caption = data.caption || '';
+    box.dataset.images = JSON.stringify(data.images || []);
+    var captionEl = document.createElement('div');
+    captionEl.className = 'preview-caption';
+    captionEl.textContent = data.caption || '(캡션 없음)';
+    box.appendChild(captionEl);
+    (data.images || []).slice(0, 1).forEach(function (src) {
+      var img = document.createElement('img');
+      img.src = src;
+      box.appendChild(img);
+    });
+    if (data.permalink) {
+      var link = document.createElement('a');
+      link.href = data.permalink;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = '인스타그램에서 보기 ↗';
+      box.appendChild(link);
+    }
+    var fillBtn = document.createElement('button');
+    fillBtn.type = 'button';
+    fillBtn.textContent = '이 내용으로 채우기';
+    fillBtn.style.marginTop = '8px';
+    fillBtn.addEventListener('click', function () { openAddForm(date, box); });
+    box.appendChild(document.createElement('br'));
+    box.appendChild(fillBtn);
+  }
+
+  function openAddForm(date, previewBox) {
+    currentAddDate = date;
+    addingTitle.textContent = date + ' 새 게시물 추가';
+    aTitle.value = '';
+    aIntro.value = (previewBox && previewBox.dataset.caption) || '';
+    aIngredients.value = '';
+    aSteps.value = '';
+    aHashtags.value = '';
+    aCredit.value = '';
+    aWeather.value = '';
+    aCalories.value = '';
+    var previewImages = (previewBox && previewBox.dataset.images) ? JSON.parse(previewBox.dataset.images) : [];
+    aImages.value = previewImages.join('\n');
+    addForm.style.display = 'block';
+    growTargets.forEach(autoGrow);
+    statusEl.style.display = 'none';
+    addForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  addForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!currentAddDate) return;
+
+    var hashtags = aHashtags.value.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    var images = aImages.value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+
+    var fields = {
+      title: aTitle.value,
+      intro: aIntro.value,
+      ingredients: aIngredients.value,
+      steps: aSteps.value,
+      hashtags: hashtags,
+      credit: aCredit.value,
+      weather: aWeather.value,
+      calories: aCalories.value,
+    };
+    if (images.length) fields.gallery = images;
+
+    addSaveBtn.disabled = true;
+    addSaveBtn.textContent = '저장 중...';
+
+    submitToWorker({ action: 'add', date: currentAddDate, fields: fields })
+      .then(function (res) {
+        if (res.ok) {
+          showStatus('ok', currentAddDate + ' 추가 요청 완료. 1~2분 후 사이트에 반영됩니다.');
+          var li = missingList.querySelector('li[data-date="' + currentAddDate + '"]');
+          if (li) li.remove();
+          addForm.style.display = 'none';
+        } else {
+          showStatus('err', '저장 실패: ' + res.detail);
+        }
+      })
+      .finally(function () {
+        addSaveBtn.disabled = false;
+        addSaveBtn.textContent = '이 날짜로 추가';
+      });
+  });
+
+  function skipDate(date, li) {
+    if (!window.confirm(date + '을 "건너뜀"으로 표시할까요? (그날 진짜 조식이 없었던 경우에만)')) return;
+    submitToWorker({ action: 'add', date: date, fields: { failed: true } })
+      .then(function (res) {
+        if (res.ok) {
+          showStatus('ok', date + ' 건너뜀 처리 완료. 1~2분 후 반영됩니다.');
+          li.remove();
+        } else {
+          showStatus('err', '저장 실패: ' + res.detail);
+        }
+      });
+  }
+
+  function submitToWorker(payload) {
+    payload.password = sessionStorage.getItem('editorPassword');
+    return fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    })
+      .then(function (r) { return r.json().then(function (body) { return { ok: r.ok, body: body }; }); })
+      .then(function (res) {
+        if (res.ok) return { ok: true };
+        if (res.body && res.body.error === 'unauthorized') {
+          sessionStorage.removeItem('editorPassword');
+          return { ok: false, detail: '비밀번호가 틀렸습니다. 새로고침 후 다시 시도해주세요.' };
+        }
+        return { ok: false, detail: (res.body && (res.body.detail || res.body.error)) || '알 수 없는 오류' };
+      })
+      .catch(function (err) {
+        return { ok: false, detail: String(err) };
+      });
+  }
+
+  searchInput.addEventListener('input', function () {
+    var q = searchInput.value.trim().toLowerCase();
+    results.innerHTML = '';
+    if (!q) return;
+    var matches = allRecords.filter(function (r) {
+      return (r.title || '').toLowerCase().indexOf(q) !== -1 ||
+             (r.date || '').indexOf(q) !== -1;
+    }).slice(0, 30);
+    matches.forEach(function (r) {
+      var li = document.createElement('li');
+      li.textContent = (r.date || '') + ' — ' + (r.title || '(제목 없음)');
+      li.addEventListener('click', function () { loadRecord(r); });
+      results.appendChild(li);
+    });
+  });
+
+  function loadRecord(r) {
+    current = r;
+    editingTitle.textContent = (r.date || '') + ' — ' + (r.title || '');
+    fTitle.value = r.title || '';
+    fIntro.value = r.intro || '';
+    fIngredients.value = r.ingredients || '';
+    fSteps.value = r.steps || '';
+    fHashtags.value = (r.hashtags || []).join(', ');
+    fCredit.value = r.credit || '';
+    editForm.style.display = 'block';
+    growTargets.forEach(autoGrow);
+    statusEl.style.display = 'none';
+  }
+
+  editForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!current) return;
+
+    var newHashtags = fHashtags.value.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    var candidates = {
+      title: fTitle.value,
+      intro: fIntro.value,
+      ingredients: fIngredients.value,
+      steps: fSteps.value,
+      hashtags: newHashtags,
+      credit: fCredit.value,
+    };
+
+    var fields = {};
+    Object.keys(candidates).forEach(function (key) {
+      var oldVal = key === 'hashtags' ? (current.hashtags || []) : (current[key] || '');
+      var newVal = candidates[key];
+      if (JSON.stringify(newVal) !== JSON.stringify(oldVal)) {
+        fields[key] = newVal;
+      }
+    });
+
+    if (Object.keys(fields).length === 0) {
+      showStatus('err', '변경된 내용이 없습니다.');
+      return;
+    }
+
+    saveBtn.disabled = true;
+    saveBtn.textContent = '저장 중...';
+
+    submitToWorker({ action: 'edit', page_id: current.page_id, fields: fields })
+      .then(function (res) {
+        if (res.ok) {
+          showStatus('ok', '저장 요청 완료. 1~2분 후 사이트에 반영됩니다.');
+        } else {
+          showStatus('err', '저장 실패: ' + res.detail);
+        }
+      })
+      .finally(function () {
+        saveBtn.disabled = false;
+        saveBtn.textContent = '저장';
+      });
+  });
+
+  function showStatus(kind, msg) {
+    statusEl.className = kind;
+    statusEl.textContent = msg;
+    statusEl.style.display = 'block';
+  }
+})();
+</script>
+</body>
+</html>

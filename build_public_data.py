@@ -176,10 +176,12 @@ RAW_HEADER_RE = re.compile(r'^\d{8}\s*#조식다이어리')
 
 def display_title(r):
     """A handful of essay-era records never got a real title extracted and
-    fell back to the raw '20250926 #조식다이어리 1519, 20도/흐림' diary header -
-    unusable as a page <title>/<h1>. Derive something readable instead."""
+    fell back to either the raw '20250926 #조식다이어리 1519, 20도/흐림' diary
+    header, or a stray punctuation fragment like ')' - neither is usable as
+    a page <title>/<h1>. Derive something readable instead."""
     title = r.get('title') or ''
-    if not RAW_HEADER_RE.match(title):
+    looks_broken = RAW_HEADER_RE.match(title) or not re.search(r'[가-힣a-zA-Z0-9]', title)
+    if not looks_broken:
         return title or '(제목 미상)'
     cleaned = clean_description(r.get('intro'), '', fallback_suffix='').strip()
     if cleaned:
@@ -260,6 +262,21 @@ def ad_eligible(r):
     return len(text.strip()) >= MIN_AD_CONTENT_CHARS
 
 
+# AdSense flagged the site for "low value content": ~10% of pages have
+# neither a photo/video nor much text - a picture-and-one-line diary note.
+# That's legitimate as a page for a direct visitor, but not something we
+# want Google crawling and weighing as part of the site's overall content
+# quality. noindex (not delete) keeps the page reachable while asking
+# Google to leave it out of its index and out of the site-quality review.
+MIN_INDEXABLE_CONTENT_CHARS = 100
+
+
+def is_thin_content(r):
+    has_media = bool(r.get('image') or r.get('gallery') or r.get('video'))
+    text = (r.get('intro') or '') + (r.get('ingredients') or '') + (r.get('steps') or '')
+    return not has_media or len(text.strip()) < MIN_INDEXABLE_CONTENT_CHARS
+
+
 AD_VERIFY_SCRIPT = (
     f'<!-- Google AdSense (site verification) -->\n'
     f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={AD_CLIENT}" crossorigin="anonymous"></script>'
@@ -299,7 +316,7 @@ def media_html(r, title, lang='ko'):
     )
 
 
-def json_ld(r, url, title, intro=None, ingredients=None, steps=None):
+def json_ld(r, url, title, intro=None, ingredients=None, steps=None, lang='ko'):
     intro = r.get('intro') if intro is None else intro
     ingredients = r.get('ingredients') if ingredients is None else ingredients
     steps = r.get('steps') if steps is None else steps
@@ -316,6 +333,8 @@ def json_ld(r, url, title, intro=None, ingredients=None, steps=None):
     }
     if imgs:
         data['image'] = imgs
+    data['author'] = {'@type': 'Person', 'name': '나조식'}
+    data['recipeYield'] = '1인분' if lang == 'ko' else '1 serving'
     if r.get('date'):
         data['datePublished'] = r['date']
     if intro:
@@ -338,6 +357,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <meta name="description" content="{description}">
 <link rel="canonical" href="{url}">
 {hreflang_tags}
+{robots_meta}
 <link rel="icon" type="image/svg+xml" href="{rel}/favicon.svg">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="{site_name}">
@@ -460,6 +480,14 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   gtag('js', new Date());
   gtag('config', 'G-64KS503K5Y');
 </script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){{
+        c[a]=c[a]||function(){{(c[a].q=c[a].q||[]).push(arguments)}};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    }})(window, document, "clarity", "script", "y3orfq5syr");
+</script>
 </body>
 </html>
 """
@@ -485,7 +513,9 @@ def build_pages(live, ids, lang='ko'):
         url = f'{SITE_BASE}/{url_prefix}/{pid}.html'
         ko_url = f'{SITE_BASE}/recipes/{pid}.html'
         en_url = f'{SITE_BASE}/en/recipes/{pid}.html'
-        urls.append(url)
+        thin = is_thin_content(r)
+        if not thin:
+            urls.append(url)
 
         if lang == 'ko':
             title = display_title(r)
@@ -551,10 +581,12 @@ def build_pages(live, ids, lang='ko'):
             f'<a href="{switch_url}" class="lang-switch">{labels["switch_label"]}</a>' if en else ''
         )
 
+        robots_meta = '<meta name="robots" content="noindex,follow">' if thin else ''
+
         html_out = PAGE_TEMPLATE.format(
             html_lang=lang, title_suffix=labels['title_suffix'], site_name=labels['site_name'],
             title=esc(title), description=esc(description), url=url, rel=rel,
-            hreflang_tags=hreflang_tags, lang_switch_html=lang_switch_html,
+            hreflang_tags=hreflang_tags, robots_meta=robots_meta, lang_switch_html=lang_switch_html,
             archive_back_label=labels['archive_back'],
             og_image=og_image, twitter_image=twitter_image, ad_verify_script=AD_VERIFY_SCRIPT,
             media=media_html(r, title, lang), stamp=esc(stamp_label(r)),
@@ -564,7 +596,7 @@ def build_pages(live, ids, lang='ko'):
             intro_section=intro_section, ingredients_section=ingredients_section,
             steps_section=steps_section, credit_section=credit_section, tags_section=tags_section,
             prev_href=prev_href, prev_label=prev_label, next_href=next_href, next_label=next_label,
-            json_ld=json_ld(r, url, title, intro=intro, ingredients=ingredients, steps=steps),
+            json_ld=json_ld(r, url, title, intro=intro, ingredients=ingredients, steps=steps, lang=lang),
             ad_slot=ad_slot_html('recipe-bottom') if ad_eligible(r) else '',
         )
         with open(os.path.join(pages_dir, f'{pid}.html'), 'w', encoding='utf-8') as f:

@@ -169,12 +169,19 @@ var Shared = (function () {
 
   /* ---- modal (requires <div id="overlay" class="overlay hidden"><div class="modal" id="modalContent"></div></div> in the page) ---- */
   function ensureModalDom() {
-    if (document.getElementById('overlay')) return;
-    var overlay = document.createElement('div');
-    overlay.className = 'overlay hidden';
-    overlay.id = 'overlay';
-    overlay.innerHTML = '<div class="modal" id="modalContent"></div>';
-    document.body.appendChild(overlay);
+    var overlay = document.getElementById('overlay');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.className = 'overlay hidden';
+      overlay.id = 'overlay';
+      overlay.innerHTML = '<div class="modal" id="modalContent"></div>';
+      document.body.appendChild(overlay);
+    }
+    // index.html/archive.html already ship a static #overlay, so this runs
+    // every time openModal() is called; only bind the outside-click/Escape
+    // handlers once regardless of whether the element was just created.
+    if (overlay.dataset.bound) return;
+    overlay.dataset.bound = '1';
     overlay.addEventListener('click', function (e) { if (e.target === overlay) closeModal(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
   }
@@ -270,7 +277,7 @@ var Shared = (function () {
     ) : '';
     var tagsHtml = (r.hashtags || []).map(function (h) {
       var label = (typeof I18N !== 'undefined') ? I18N.tagLabel(h) : h;
-      return '<span>#' + escapeHtml(label) + '</span>';
+      return '<a href="archive.html?tag=' + encodeURIComponent(h) + '">#' + escapeHtml(label) + '</a>';
     }).join('');
     var ingSection = r.ingredients
       ? '<section><h4>' + L('modal_ingredients') + '</h4>' + bodyTextHtml(r, 'ingredients') + '</section>' : '';

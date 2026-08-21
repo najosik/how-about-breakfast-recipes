@@ -11,6 +11,13 @@ on:
 permissions:
   contents: write
 
+# Shared with every other workflow that commits to main - see add-post.yml
+# for why (queues concurrent runs instead of letting them race to push and
+# silently drop the loser's otherwise-successful commit).
+concurrency:
+  group: main-branch-writer
+  cancel-in-progress: false
+
 jobs:
   sync:
     runs-on: ubuntu-latest

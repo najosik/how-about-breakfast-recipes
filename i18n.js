@@ -20,6 +20,7 @@ var I18N = (function () {
       stat_structured: '레시피 구조화',
       stat_range: '기록 기간',
       search_placeholder: '재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)',
+      home_search_btn: '검색',
       sort_new: '최신순',
       sort_old: '오래된순',
       sort_kcal_asc: '칼로리 낮은순',
@@ -34,7 +35,10 @@ var I18N = (function () {
 
       home_title: '날마다 조식(Beta)',
       home_tagline: '2020년 7월 13일부터 매일 어제와 다른 조식을 만들어 먹고 기록한 아카이브입니다.',
-      home_beta_note: '안녕하세요? 나조식입니다. 인스타그램(@how.about.breakfast)의 게시물을 웹에서 손쉽게 찾아볼 수 있도록 아카이빙 했습니다. 재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 좋은 생각이 떠오르지 않을 때, 이도저도 아니면 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때 이용해 주시면 좋겠습니다.\n\n주의! 20년~22년 게시물 가운데 일부분은 개인의 생각과 레시피 사이에서 왔다갔다, 들쭉날쭉합니다. 천천히 다듬어 보겠습니다. (사실 그래서 Beta인데, Beta를 언제 뗄 수 있을지는 모르겠습니다.)',
+      home_beta_note: '안녕하세요? 나조식입니다. 인스타그램(@how.about.breakfast)의 게시물을 웹에서 손쉽게 찾아볼 수 있도록 아카이빙 했습니다. 재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 좋은 생각이 떠오르지 않을 때, 이도저도 아니면 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때 이용해 주시면 좋겠습니다.',
+      home_beta_caveat: '주의! 20년~22년 게시물 가운데 일부분은 개인의 생각과 레시피 사이에서 왔다갔다, 들쭉날쭉합니다. 천천히 다듬어 보겠습니다. (사실 그래서 Beta인데, Beta를 언제 뗄 수 있을지는 모르겠습니다.)',
+      home_beta_more: '더보기',
+      home_beta_less: '접기',
       home_since_suffix: ' 창간',
       ledger_title: '한눈에 보는 조식 아카이브',
       ledger_desc: '칸 하나가 하루예요. 진한 초록은 조식을 만든 날, 빈 칸은 별일이 있어서 조식을 건너뛴 날입니다.',
@@ -42,12 +46,13 @@ var I18N = (function () {
       legend_skipped: '건너뜀',
       otd_title: '오늘의 조식들',
       otd_desc: '해마다 오늘 만들었던 조식을 모아봤어요.',
+      otd_empty_bang: '앗!',
+      otd_empty_sub: '조식이 없네요',
+      otd_empty_title: '별일이 있었나봐요',
       col_title: '소재로 골라 먹기',
       col_desc: '가장 자주 등장한 재료들로 모은 테마별 아카이브예요.',
       col_more: '전체 검색으로 보기 →',
-      col_records_suffix: '건의 기록',
-      col_failed_label: '실패기 아카이브',
-      col_failed_suffix: '건의 솔직한 실패담',
+      col_records_suffix: '건의 조식',
       shuffle_title: '오늘 뭐 먹지?',
       shuffle_desc: '{count}개가 넘는 기록 중에서 랜덤으로 꺼내먹어요.',
       shuffle_btn: '랜덤으로 꺼내 먹기',
@@ -80,6 +85,7 @@ var I18N = (function () {
       stat_structured: 'Structured recipes',
       stat_range: 'Date range',
       search_placeholder: 'Search by ingredient, dish, or keyword (e.g. tomato, sourdough, coconut)',
+      home_search_btn: 'Search',
       sort_new: 'Newest',
       sort_old: 'Oldest',
       sort_kcal_asc: 'Lowest calories',
@@ -94,7 +100,10 @@ var I18N = (function () {
 
       home_title: 'Breakfast, Every Day',
       home_tagline: 'A record of someone who makes a different breakfast every morning, unless something comes up. This is the whole archive, gathered in one place.',
-      home_beta_note: 'Hi, I\'m Na-Josik. I\'ve archived my Instagram posts (@how.about.breakfast) here so they\'re easy to browse on the web. Use it whenever you have ingredients on hand but need a recipe idea, when you can\'t think of anything good to eat, or when you just want to peek at what other people are having for breakfast.\n\nA note: some posts from 2020-2022 drift back and forth between personal musings and actual recipes, pretty unevenly. I\'ll smooth them out over time. (That\'s actually why this is still Beta - though I honestly don\'t know when I\'ll be able to drop the label.)',
+      home_beta_note: 'Hi, I\'m Na-Josik. I\'ve archived my Instagram posts (@how.about.breakfast) here so they\'re easy to browse on the web. Use it whenever you have ingredients on hand but need a recipe idea, when you can\'t think of anything good to eat, or when you just want to peek at what other people are having for breakfast.',
+      home_beta_caveat: 'A note: some posts from 2020-2022 drift back and forth between personal musings and actual recipes, pretty unevenly. I\'ll smooth them out over time. (That\'s actually why this is still Beta - though I honestly don\'t know when I\'ll be able to drop the label.)',
+      home_beta_more: 'Read more',
+      home_beta_less: 'Show less',
       home_since_suffix: ' · established',
       ledger_title: 'Not a single day missed',
       ledger_desc: 'Each square is a day. Deep green means breakfast was made, orange means a failed attempt, and empty means the day was skipped.',
@@ -102,12 +111,13 @@ var I18N = (function () {
       legend_skipped: 'Skipped',
       otd_title: 'On this day, in years past',
       otd_desc: 'Breakfasts made around this exact date, across the years.',
+      otd_empty_bang: 'Oh!',
+      otd_empty_sub: 'no breakfast',
+      otd_empty_title: 'Guess something came up',
       col_title: 'Browse by ingredient',
       col_desc: 'Themed collections built from the most frequent ingredients.',
       col_more: 'See the full archive →',
-      col_records_suffix: ' entries',
-      col_failed_label: 'The Failure Files',
-      col_failed_suffix: ' honest failures',
+      col_records_suffix: ' breakfasts',
       shuffle_title: 'What should I eat today?',
       shuffle_desc: 'Pull a random entry from over {count} recorded breakfasts.',
       shuffle_btn: 'Surprise me',
@@ -135,12 +145,25 @@ var I18N = (function () {
   };
 
   var COLLECTION_LABELS_EN = {
-    '토마토 특집': 'Tomato Special',
-    '아보카도 아카이브': 'Avocado Archive',
-    '파스타 & 누들': 'Pasta & Noodles',
-    '감자 요리 모음': 'Potato Dishes',
-    '계란 한 알의 힘': 'The Power of One Egg',
-    '오픈샌드위치 특집': 'Open-Sandwich Special'
+    '토마토 앓이': 'Tomato Obsession',
+    '아보카도 중독': 'Avocado Addiction',
+    '면치기의 정석': 'Noodle Mastery',
+    '감자, 무한변신': 'Potato, Endless Forms',
+    '계란이면 다 돼': 'Eggs Fix Everything',
+    '샌드위치 아카이브': 'Sandwich Archive',
+    '샐러드 탐구생활': 'Salad Exploration',
+    '가지의 재발견': 'Eggplant Rediscovered'
+  };
+
+  var COLLECTION_SUBS_EN = {
+    '토마토를 사용한 조식': 'Breakfasts with tomato',
+    '아보카도를 사용한 조식': 'Breakfasts with avocado',
+    '파스타와 면 조식': 'Pasta & noodle breakfasts',
+    '감자를 사용한 조식': 'Breakfasts with potato',
+    '계란을 사용한 조식': 'Breakfasts with egg',
+    '샌드위치 조식': 'Sandwich breakfasts',
+    '샐러드 조식': 'Salad breakfasts',
+    '가지를 사용한 조식': 'Breakfasts with eggplant'
   };
 
   /* auto-generated: covers every hashtag seen in the dataset as of the
@@ -1045,6 +1068,10 @@ var I18N = (function () {
     if (getLang() !== 'en') return koLabel;
     return COLLECTION_LABELS_EN[koLabel] || koLabel;
   }
+  function collectionSub(koSub) {
+    if (getLang() !== 'en') return koSub;
+    return COLLECTION_SUBS_EN[koSub] || koSub;
+  }
 
   function applyStaticI18n(root) {
     var scope = root || document;
@@ -1141,6 +1168,7 @@ var I18N = (function () {
     t: t,
     tagLabel: tagLabel,
     collectionLabel: collectionLabel,
+    collectionSub: collectionSub,
     applyStaticI18n: applyStaticI18n,
     applyDynamicTranslations: applyDynamicTranslations,
     translateText: translateText

@@ -31,6 +31,11 @@
 
   Shared.loadData()
     .then(function (data) {
+      // A "건너뜀" skip marker (failed:true, no real content - added via
+      // the admin tool's "빠진 날짜" skip action) records that a day was
+      // skipped; it isn't a post, so it shouldn't appear in the archive
+      // grid at all.
+      data = data.filter(function (r) { return !r.failed; });
       state.all = data;
       return I18N.getLang() === 'en' ? Shared.ensureEnMerged(data) : data;
     })
