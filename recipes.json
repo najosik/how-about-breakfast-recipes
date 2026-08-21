@@ -85788,7 +85788,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "브로콜리 아스파라거스 오늘의조식",
+  "title": "브로콜리 아스파라거스 샐러드",
   "credit": null,
   "hashtags": [
    "브로콜리",
@@ -85798,18 +85798,11 @@
    "조식스타그램"
   ],
   "intro": "#브로콜리 와 #아스파라거스 를 프라이팬에 데친 후 올리브와 페타치즈를 곁들여 #오늘의조식 #조식 #조식스타그램",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "브로콜리 1/2개, 아스파라거스 2~3개, 올리브 1T, 발사믹 비니거 2t",
+  "steps": "1. 브로콜리와 아스파라거스를 먹기 좋은 크기로 썬 뒤 올리브오일 두르고 팬에 볶는다. \n2. 올리브 반으로 썰고 페타치즈 부셔서 얹는다. \n3. 올리브오일과 발사믹 비니거로 마무리한다. ",
   "raw": "#브로콜리 와 #아스파라거스 를 프라이팬에 데친 후 올리브와 페타치즈를 곁들여 #오늘의조식 #조식 #조식스타그램",
   "pre_label": "D-174",
   "image": "https://images.how-about-breakfast.com/images/pre-174.jpg",
-  "_en": {
-   "hash": "edaec82028ee42a6c31e15bc919b2381117567be6671c0b78207cf855e687c86",
-   "title": "Broccoli and Asparagus with Olives and Feta",
-   "intro": "#Broccoli and #asparagus blanched in the pan, served with olives and feta cheese on the side. #todaysbreakfast #breakfast #breakfaststagram",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "브로콜리-아스파라거스-오늘의조식"
  },
  {
