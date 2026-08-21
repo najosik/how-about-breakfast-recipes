@@ -355,7 +355,7 @@ section.mag-section + section.mag-section{margin-top:0; border-top:1px solid var
   cursor:pointer; transition:background .12s;
 }
 .btn-primary:hover{background:var(--teal-deep);}
-.shuffle-result{margin-top:24px; max-width:320px; margin-left:auto; margin-right:auto; text-align:left;}
+.shuffle-result{margin-top:24px; max-width:280px; margin-left:auto; margin-right:auto; text-align:left;}
 .shuffle-result .card{pointer-events:none;}
 .shuffle-result.shuffle-flicker .card{opacity:0.85; filter:blur(0.3px);}
 .shuffle-result.shuffle-land .card{
