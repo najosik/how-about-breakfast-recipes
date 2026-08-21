@@ -37802,7 +37802,7 @@
   "weather": "24도/이슬비",
   "failed": false,
   "calories": null,
-  "title": "모짜렐라계란프라이 계란",
+  "title": "치즈크러스트 카프레제 에그",
   "credit": null,
   "hashtags": [
    "계란",
@@ -37812,22 +37812,15 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20230822, #조식다이어리 824, 24도/이슬비\n피드백과 평가를 헷갈리는 사람들이 많다. \n1. 팬에 모짜렐라 치즈를 깐다. 치즈가 녹으면 계란 한 개, 두 개, 아, 터졌으니 한 개 더\n2. 바질 조금, 소금, 후추, 올리브오일",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20230822, #조식다이어리 824, 24도/이슬비\n피드백과 평가를 헷갈리는 사람들이 많다. ",
+  "ingredients": "계란 2개, 모짜렐라 치즈 3~4T(팬을 덮을만큼), 방울토마토 4~5개, 바질잎 조금, 올리브오일, 소금, 후추",
+  "steps": "1. 팬에 모짜렐라 치즈를 얹는다. \n2. 치즈가 녹으면 계란 2개 얹고 방울토마토도 반으로 잘라서 얹는다. \n3. 바질잎 얹고 올리브오일과 소금, 후추 넣는다. ",
   "raw": "20230822, #조식다이어리 824, 24도/이슬비\n\n피드백과 평가를 헷갈리는 사람들이 많다. \n\n1. 팬에 모짜렐라 치즈를 깐다. 치즈가 녹으면 계란 한 개, 두 개, 아, 터졌으니 한 개 더\n2. 바질 조금, 소금, 후추, 올리브오일\n\n#모짜렐라계란프라이\n\n#조식 #레시피 #미라클모닝 #계란",
   "image": "https://images.how-about-breakfast.com/images/824.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/824.jpg",
    "https://images.how-about-breakfast.com/images/824_2.jpg"
   ],
-  "_en": {
-   "hash": "47f18aa352f2f704d46db088bdd722e062ddcccd0568db3c0a4ae57604792ad1",
-   "title": "Mozzarella Fried Eggs",
-   "intro": "20230822, #breakfastdiary 824, 24°C/drizzle\nA lot of people confuse feedback with judgment. \n1. Lay mozzarella cheese in the pan. Once it melts, crack in one egg, then two — oh, that one broke, so one more.\n2. A little basil, salt, pepper, olive oil.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "모짜렐라계란프라이-계란"
  },
  {
