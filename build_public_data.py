@@ -301,7 +301,7 @@ def media_html(r, title, lang='ko'):
     imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
     if not imgs:
         return ''
-    video_html = f'<video src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
+    video_html = f'<video class="recipe-video" src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
     ig_link_html = (
         f'<a class="recipe-ig-link" href="{esc(r["permalink"])}" target="_blank" rel="noopener">{LABELS[lang]["ig_link"]}</a>'
         if r.get('video') and r.get('permalink') else ''
@@ -380,7 +380,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-page{{max-width:640px; margin:0 auto; padding:40px 0 20px;}}
   .recipe-photo{{width:100%; aspect-ratio:3/4; max-width:360px; border-radius:2px; overflow:hidden; margin-bottom:14px; background:var(--line);}}
   .recipe-photo img{{width:100%; height:100%; object-fit:cover; display:block;}}
-  .recipe-photo video{{width:100%; max-width:360px; display:block; border-radius:2px; margin-bottom:10px;}}
+  .recipe-video{{width:100%; max-width:360px; display:block; border-radius:2px; margin-bottom:10px;}}
   .recipe-ig-link{{display:inline-block; font-size:12.5px; color:var(--teal-deep); text-decoration:none; margin:-6px 0 12px;}}
   .recipe-ig-link:hover{{text-decoration:underline;}}
   .recipe-thumbs{{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;}}
