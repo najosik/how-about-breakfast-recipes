@@ -85755,8 +85755,8 @@
    "조식플렉스"
   ],
   "intro": "#조식 은 단식(Fast)을 끝(Break)내는 것, 어젯 밤부터 시작한 간헐적 단식은 #조식플렉스 로 마무리. 올리브 오일과 식초, 홀그레인 머스타드로 버무린 후, 페타치즈를 곁들여 #당근샐러드 와 토마토, 파프리카가 어우러진 #빨간맛 매쉬포테이토 를 얹은 #비스킷 그리고 커피까지 #오늘의조식 #나의프랑스식샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "당근 1개, 페타치즈와 파슬리 조금, (드레싱) 올리브오일 2T, 와인 비니거 1T, 홀그레인 머스터드 1t ",
+  "steps": "1. 당근은 채칼로 썰고 믹싱볼에 담은 뒤 올리브오일 2T, 와인 비니거 1T, 홀그레인 머스터드 1t 넣고 버무린다. \n2. 접시에 1의 당근 샐러드 얹고 페타치즈와 잣, 다진 파슬리 조금 얹는다. ",
   "raw": "#조식 은 단식(Fast)을 끝(Break)내는 것, 어젯 밤부터 시작한 간헐적 단식은 #조식플렉스 로 마무리. 올리브 오일과 식초, 홀그레인 머스타드로 버무린 후, 페타치즈를 곁들여 #당근샐러드 와 토마토, 파프리카가 어우러진 #빨간맛 매쉬포테이토 를 얹은 #비스킷 그리고 커피까지 #오늘의조식 #나의프랑스식샐러드",
   "pre_label": "D-173",
   "image": "https://images.how-about-breakfast.com/images/pre-173.jpg",
@@ -85767,13 +85767,6 @@
    "https://images.how-about-breakfast.com/images/pre-173_4.jpg",
    "https://images.how-about-breakfast.com/images/pre-173_5.jpg"
   ],
-  "_en": {
-   "hash": "600be275e246c33b753549ce6117354d3fba623fdea0907458e3522e14e301b4",
-   "title": "Carrot Salad and Biscuits to Break the Fast",
-   "intro": "Breakfast is, quite literally, about breaking a fast — the intermittent fast I started last night wrapped up with a full #breakfastflex. A #carrotsalad tossed in olive oil, vinegar, and wholegrain mustard, topped with feta cheese, alongside a #biscuit piled with mashed potatoes swirled with tomato and paprika for a #redflavor kick, and coffee to finish it all off. #todaysbreakfast #myfrenchstylesalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "당근샐러드-3"
  },
  {
