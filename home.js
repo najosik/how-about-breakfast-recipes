@@ -450,6 +450,7 @@
           // land on the real pick
           resultEl.innerHTML = Shared.cardHTML(finalPick);
           Shared.bindCardClicks(resultEl, [finalPick]);
+          resultEl.classList.remove('shuffle-flicker');
           resultEl.classList.add('shuffle-land');
           btn.disabled = false;
           btn.classList.remove('spinning');
