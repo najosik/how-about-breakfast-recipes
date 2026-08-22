@@ -183,7 +183,11 @@
     var dated = Array.from(postedDates).concat(Array.from(failedDates)).sort();
     if (dated.length === 0) return;
 
-    var sortedDates = Object.keys(recordByDate).sort();
+    // Excludes 건너뜀 skip-marker days - prev/next modal navigation should
+    // jump straight to the nearest real post, not land on a bare marker.
+    var sortedDates = Object.keys(recordByDate)
+      .filter(function (d) { return !recordByDate[d].failed; })
+      .sort();
     var sortedRecords = sortedDates.map(function (d) { return recordByDate[d]; });
     var dateIndex = {};
     sortedDates.forEach(function (d, i) { dateIndex[d] = i; });
