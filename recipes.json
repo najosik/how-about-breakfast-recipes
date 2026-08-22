@@ -37784,7 +37784,7 @@
   "weather": "24도/비",
   "failed": false,
   "calories": null,
-  "title": "토스트",
+  "title": "토마토 토스트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37793,22 +37793,15 @@
    "조식다이어리",
    "토스트"
   ],
-  "intro": "20230823, #조식다이어리 825, 24도/비\n찍는 것이지요.\n그리는 게 아니구요.\n질질 끄는 게 아니어요.\n(황인숙, 마침표)\n1. 빵에 올리브오일 바르고 앞뒤로 굽는다. \n2. 빵에 바질페스토 바르고 부라타치즈, 마지막 님은 에어룸 토마토, 후추후추, 올리브오일, 바질페스토",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20230823, #조식다이어리 825, 24도/비\n찍는 것이지요.\n그리는 게 아니구요.\n질질 끄는 게 아니어요.\n(황인숙, 마침표)\n",
+  "ingredients": "- 빵 1조각 \n- 바질페스토 1T \n- 부라타치즈 1개 \n- 에어룸 토마토 1개 \n- 올리브오일 \n- 후추",
+  "steps": "1. 빵에 올리브오일 바르고 앞뒤로 굽는다. \n2. 빵에 바질페스토 바르고 부라타치즈, 마지막 님은 에어룸 토마토, 후추후추, 올리브오일, 바질페스토 조금 얹는다. ",
   "raw": "20230823, #조식다이어리 825, 24도/비\n\n찍는 것이지요.\n그리는 게 아니구요.\n질질 끄는 게 아니어요.\n\n(황인숙, 마침표)\n\n1. 빵에 올리브오일 바르고 앞뒤로 굽는다. \n2. 빵에 바질페스토 바르고 부라타치즈, 마지막 님은 에어룸 토마토, 후추후추, 올리브오일, 바질페스토\n\n#조식 #레시피 #미라클모닝 #토스트",
   "image": "https://images.how-about-breakfast.com/images/825.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/825.jpg",
    "https://images.how-about-breakfast.com/images/825_2.jpg"
   ],
-  "_en": {
-   "hash": "5e5f22646a41c6757173f3bc2a41dab7ea87ee2bc216ccca6163cd17fce294ec",
-   "title": "Toast",
-   "intro": "20230823, #breakfastdiary 825, 24°C/rain\nYou plant it down.\nYou don't draw it out.\nYou don't drag your feet.\n(Hwang In-sook, \"Full Stop\")\n1. Brush the bread with olive oil and toast both sides. \n2. Spread basil pesto on the bread, top with burrata cheese, and finish with heirloom tomato, pepper, olive oil, and more basil pesto.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "토스트-3"
  },
  {
