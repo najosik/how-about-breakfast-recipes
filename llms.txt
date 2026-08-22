@@ -1,0 +1,24 @@
+# 날마다 조식 (Breakfast, Every Day)
+
+> A personal diary archiving one home-cooked breakfast per day since July 13, 2020, run by 나조식 (Na-Josik). Originally posted to Instagram (@how.about.breakfast), each entry is archived here with that day's photo or video, a short journal note, and — for most entries — a structured recipe (ingredients and steps).
+
+This is not a professional recipe blog. Many entries mix personal essays, quoted poetry, or daily musings together with the recipe itself. Content is bilingual: Korean is the primary language, with English translations available for most posts (toggle via the site's language switch, or visit the /en/ path directly). Each recipe post carries standard Schema.org Recipe structured data (ingredients, instructions, nutrition, keywords).
+
+## Key pages
+
+- [Home](https://how-about-breakfast.com/): overview, a day-by-day consistency heatmap, ingredient-based collections, and a random-pick feature
+- [Archive](https://how-about-breakfast.com/archive.html): the full searchable, filterable list of every post, by date, ingredient tag, or free-text keyword
+- [Privacy policy](https://how-about-breakfast.com/privacy.html) / [English](https://how-about-breakfast.com/en/privacy.html)
+
+## Content structure
+
+- Each breakfast post lives at `/recipes/{slug}.html` in Korean and, where translated, at `/en/recipes/{slug}.html` in English
+- A post typically includes a title, date, weather/exercise note, ingredients list, numbered steps, and hashtags
+- The archive can be filtered by ingredient via `/archive.html?tag={ingredient}` (e.g. 토마토/tomato, 아보카도/avocado, 파스타/pasta, 감자/potato, 계란/egg, 샌드위치/sandwich, 샐러드/salad, 가지/eggplant) or by free-text search via `/archive.html?q={keyword}`
+- `sitemap.xml` lists every live post in both languages
+
+## About
+
+- Source material: the personal Instagram account [@how.about.breakfast](https://www.instagram.com/how.about.breakfast/), archived here from its first post onward
+- Also on [YouTube](https://www.youtube.com/@How.about.breakfast)
+- Contact: Instagram DM (@how.about.breakfast)

@@ -335,7 +335,13 @@ def json_ld(r, url, title, intro=None, ingredients=None, steps=None, lang='ko'):
     }
     if imgs:
         data['image'] = imgs
-    data['author'] = {'@type': 'Person', 'name': '나조식'}
+    data['author'] = {
+        '@type': 'Person', 'name': '나조식',
+        'sameAs': [
+            'https://www.instagram.com/how.about.breakfast/',
+            'https://www.youtube.com/@How.about.breakfast',
+        ],
+    }
     data['recipeYield'] = '1인분' if lang == 'ko' else '1 serving'
     if r.get('date'):
         data['datePublished'] = r['date']
