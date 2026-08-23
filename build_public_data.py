@@ -513,7 +513,14 @@ def build_pages(live, ids, lang='ko'):
 
     # Only records with a completed _en translation get an English page;
     # the Korean page is generated for every live record regardless.
-    include = [i for i in ordered if lang == 'ko' or live[i].get('_en')]
+    # A 건너뜀 skip marker (failed:true, no title/intro/etc - added by the
+    # admin tool's "빠진 날짜" skip action) has nothing to show, so it gets
+    # no page at all rather than a blank one that still carries live
+    # AdSense script - those blank pages were flagged by AdSense's policy
+    # review as "low value content" even though noindex kept them out of
+    # Google's own index (noindex doesn't stop AdSense's own crawler, and
+    # the adjacent real pages' prev/next links still made them reachable).
+    include = [i for i in ordered if not live[i].get('failed') and (lang == 'ko' or live[i].get('_en'))]
 
     urls = []
     for pos, idx in enumerate(include):
