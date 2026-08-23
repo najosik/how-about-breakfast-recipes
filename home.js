@@ -266,6 +266,38 @@
         if (day.status !== 'pad' && day.key) {
           cell.addEventListener('mouseenter', function () { showTooltip(cell, day); });
           cell.addEventListener('mouseleave', hideTooltip);
+
+          // Touch devices have no hover, so a long-press previews the date
+          // tooltip instead; a quick tap still falls through to the click
+          // handler below and opens the modal as usual.
+          var longPressTimer = null;
+          var longPressFired = false;
+          cell.addEventListener('touchstart', function () {
+            longPressFired = false;
+            longPressTimer = setTimeout(function () {
+              longPressFired = true;
+              showTooltip(cell, day);
+            }, 450);
+          });
+          cell.addEventListener('touchend', function (e) {
+            clearTimeout(longPressTimer);
+            if (longPressFired) {
+              e.preventDefault();
+              hideTooltip();
+              longPressFired = false;
+            }
+          });
+          cell.addEventListener('touchmove', function () {
+            clearTimeout(longPressTimer);
+            longPressFired = false;
+            hideTooltip();
+          });
+          cell.addEventListener('touchcancel', function () {
+            clearTimeout(longPressTimer);
+            longPressFired = false;
+            hideTooltip();
+          });
+
           var rec = recordByDate[day.key];
           if (rec && day.status === 'posted') {
             cell.classList.add('clickable');
