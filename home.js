@@ -239,10 +239,14 @@
       document.getElementById('ledgerWrap').appendChild(tooltip);
     }
 
+    function formatDate(key) {
+      var parts = key.split('-');
+      return parts[0] + '.' + Number(parts[1]) + '.' + Number(parts[2]) + '.';
+    }
     function showTooltip(cell, day) {
-      if (day.status === 'pad' || !day.key) return;
+      if (day.status !== 'posted' || !day.key) return;
       var label = labelFor[day.status] || '';
-      tooltip.textContent = day.key + ' · ' + label;
+      tooltip.textContent = formatDate(day.key) + ' · ' + label;
       tooltip.classList.remove('hidden');
       var wrapRect = document.getElementById('ledgerWrap').getBoundingClientRect();
       var cellRect = cell.getBoundingClientRect();
