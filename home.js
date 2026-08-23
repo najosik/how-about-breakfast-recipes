@@ -23,6 +23,18 @@
     '가지, 오늘 주인공 해볼까?'
   ];
 
+  var OTD_EMPTY_BANGS = ['앗!', '엇!', '이런!'];
+  var OTD_EMPTY_SUBS = ['조식이 없네요', '조식을 못 먹었어요', '조식을 건너 뛰었죠'];
+
+  // Randomly recombines the On-This-Day empty-year card's copy each render
+  // so a row of several empty years doesn't repeat the same line. English
+  // mode keeps the plain static i18n strings, same as the search placeholder.
+  function randomOtdEmptyMessage() {
+    var bang = OTD_EMPTY_BANGS[Math.floor(Math.random() * OTD_EMPTY_BANGS.length)];
+    var sub = OTD_EMPTY_SUBS[Math.floor(Math.random() * OTD_EMPTY_SUBS.length)];
+    return { bang: bang, sub: sub };
+  }
+
   var allData = null;
 
   bindHomeSearch();
@@ -403,11 +415,12 @@
       if (!r) {
         var pad = function (n) { return (n < 10 ? '0' : '') + n; };
         var emptyDate = y + '-' + pad(mm) + '-' + pad(dd);
+        var emptyMsg = lang === 'ko' ? randomOtdEmptyMessage() : { bang: I18N.t('otd_empty_bang'), sub: I18N.t('otd_empty_sub') };
         return (
           '<div class="otd-card otd-empty" data-year="' + y + '">' +
           '<div class="otd-empty-msg">' +
-          '<span class="otd-empty-bang">' + Shared.escapeHtml(I18N.t('otd_empty_bang')) + '</span>' +
-          '<span class="otd-empty-sub">' + Shared.escapeHtml(I18N.t('otd_empty_sub')) + '</span>' +
+          '<span class="otd-empty-bang">' + Shared.escapeHtml(emptyMsg.bang) + '</span>' +
+          '<span class="otd-empty-sub">' + Shared.escapeHtml(emptyMsg.sub) + '</span>' +
           '</div>' +
           '<div class="otd-year">' + yearLabel + '</div>' +
           '<h4 class="otd-title"><a href="https://brunch.co.kr/@howaboutbfast/4" target="_blank" rel="noopener noreferrer">' +
