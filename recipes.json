@@ -37812,7 +37812,7 @@
   "weather": "23도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "감자",
+  "title": "감자 샐러드",
   "credit": null,
   "hashtags": [
    "감자",
@@ -37822,21 +37822,14 @@
    "조식다이어리"
   ],
   "intro": "20230825, #조식다이어리 827, 23도/대체로흐림\n삶은 감자는 반나절만 지나도 퍽퍽해진다. 아니, 퍽퍽해진다는 표현만으론 한계가 있어서, 뭔가, 삶은지 시간이 좀 지나 맛이 없어진 감자를 표현하는 단어가 있어야 할 것만 같다. 가령 삶아서 한두 개 먹고 냉장고에 보관해둔 감자를 다시 꺼내서 한 입 베어물곤 이렇게 자조적으로 읊조리 듯 말할 수 있도록 말이다. 그렇지, 역시 헐감자스러워졌네, \n아무튼 그래서 오늘은 헐감자스러워진 감자의 이른바 맛갱생 프로젝트, 우선 감자를 웻지 모양으로 썰어 팬에 올리브오일 두르고 데친다. 볶는다. 굽는다. 그리고 소금, 후추, 허브 무앗보다 쌩 로즈마리를 넣어 듬뿍 향을 입힌다. (킁킁킁) 아, 그린올리브를 잊지 말 것, 그는 마치 건빵에 들어 있는 별사탕같은 존재다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 감자 2개\n- 그린올리브 1/2컵\n- 올리브오일 1T\n- 소금 2t\n- 후추 1t\n- 믹스 허브 1t\n- 로즈마리 1~2줄기 잎\n- 파마산치즈 조금",
+  "steps": "1. 감자는 껍질 째 웻지 모양으로 썬다. \n2. 팬에 올리브오일 두르고 1의 감자를 굽는다. 소금, 후추, 믹스 허브와 로즈마치 잎을 넣어 간을 하고 향을 입힌다. \n3. 2의 감자를 그릇에 담고 그린올리브 넣고 파마산치즈 갈아서 얹는다. ",
   "raw": "20230825, #조식다이어리 827, 23도/대체로흐림\n\n삶은 감자는 반나절만 지나도 퍽퍽해진다. 아니, 퍽퍽해진다는 표현만으론 한계가 있어서, 뭔가, 삶은지 시간이 좀 지나 맛이 없어진 감자를 표현하는 단어가 있어야 할 것만 같다. 가령 삶아서 한두 개 먹고 냉장고에 보관해둔 감자를 다시 꺼내서 한 입 베어물곤 이렇게 자조적으로 읊조리 듯 말할 수 있도록 말이다. 그렇지, 역시 헐감자스러워졌네, \n\n아무튼 그래서 오늘은 헐감자스러워진 감자의 이른바 맛갱생 프로젝트, 우선 감자를 웻지 모양으로 썰어 팬에 올리브오일 두르고 데친다. 볶는다. 굽는다. 그리고 소금, 후추, 허브 무앗보다 쌩 로즈마리를 넣어 듬뿍 향을 입힌다. (킁킁킁) 아, 그린올리브를 잊지 말 것, 그는 마치 건빵에 들어 있는 별사탕같은 존재다. \n\n#조식 #레시피 #미라클모닝 #감자",
   "image": "https://images.how-about-breakfast.com/images/827.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/827.jpg",
    "https://images.how-about-breakfast.com/images/827_2.jpg"
   ],
-  "_en": {
-   "hash": "7d41803101c849d3fa91cb952a7eadc392b284246f61dfa97945508249627bc0",
-   "title": "Potatoes",
-   "intro": "20230825, #breakfastdiary 827, 23°C/mostly cloudy\nBoiled potatoes turn dry and mealy after just half a day. No, actually \"dry and mealy\" doesn't quite capture it — there really should be a special word for that particular sad staleness a potato develops once it's been sitting around after boiling. The kind where you pull one out of the fridge, take a bite, and mutter to yourself, self-deprecatingly, \"yep, gone full sad-potato.\" \nAnyway, so today's mission was a flavor-rescue project for my sad, stale potatoes. First I cut them into wedges, then blanch them in a pan with olive oil. Sauté. Roast. Then season generously with salt, pepper, and — better than any dried herb — fresh rosemary, for a really deep aroma. (sniff sniff sniff) Oh, and don't forget the green olives — they're like the little star-shaped candies hidden in a pack of hardtack biscuits.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "감자-2"
  },
  {
