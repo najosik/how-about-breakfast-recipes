@@ -364,10 +364,6 @@ var Shared = (function () {
   }
 
   function cardHTML(r) {
-    var tagsHtml = foodTags(r).slice(0, 4).map(function (h) {
-      var label = (typeof I18N !== 'undefined') ? I18N.tagLabel(h) : h;
-      return '<span>#' + escapeHtml(label) + '</span>';
-    }).join('');
     var metaBits = [];
     if (r.date) metaBits.push(r.date);
     if (r.weather) metaBits.push(escapeHtml(r.weather));
@@ -383,7 +379,6 @@ var Shared = (function () {
       (r.failed ? '<span class="fail-badge">' + L('badge_failed') + '</span>' : '') +
       titleHtml +
       '<div class="card-meta"><span>' + metaBits.join(' · ') + '</span>' + kcal + '</div>' +
-      '<div class="card-tags">' + tagsHtml + '</div>' +
       '</a>'
     );
   }
