@@ -68972,7 +68972,7 @@
   "weather": "23도/흐림, 34분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "오이토마토샐러드 모닝리추얼 모닝루틴",
+  "title": "오이 토마토 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -69000,21 +69000,14 @@
    "홈쿡"
   ],
   "intro": "20210825, #조식다이어리 190, 23도/흐림, 34분/운동하기\n세상에서 제일 예쁜 오이, 방울토마토, 자색양파를 썰어  (아직은) 여름에 어울리는 상큼한 레몬즙 베이스 드레싱을 더한다. 딜과 후추도 조금 #오이토마토샐러드\n“The flight crew has the final authority, always”\n“All humans make mistakes”\n전자는 보잉, 후자는 에어버스의 철학. 이는 양사의 비행기에도 고스란히 녹아있는데 가령, 보잉의 비행기에는 정상적인 상황이라면 90도 이상 꺾을 필요가 없는 날개의 각도 조정이 파일럿의 판단 하에 가능하도록 설계되어 있다. 반면, 에어버스는 파일럿이 명령을 하더라도 컴퓨터가 이를 분석한 뒤 역학적으로 문제가 없는 한도 내에서 가동된다. \n조직이든 개인이든 이런 철학 혹은 원칙을 바탕으로 운영되고 행동한다. 다만 철학과 원칙은 오랜 시간과 시행착오의 결과다. 마치 무수히 많은 사고와 희생을 바탕으로 오늘날 엄격한 항공규정이 생긴 것처럼 말이다. 오죽하면 모든 항공규정은 피로 쓰였다는 말이 있지 않은가. \n“All aviation regulations are written in blood\"",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 오이 1/2개\n- 방울토마토 10개\n- 자색양파 1/4개\n- 드레싱(올리브오일 2T, 레몬주스 1T)\n- 딜 조금\n- 후추 한 꼬집",
+  "steps": "1. 오이는 반달 모양으로 썬다. \n2. 방울토마토는 반으로 썬다.  \n3. 자색양파는 얇게 썬 뒤 물에 담가 놓는다. \n4. 믹싱볼에 오이, 방울토마토, 자색양파 담고 드레싱 붓고 골고루 섞는다. 먹기 전에 딜과 후추도 조금 넣는다. ",
   "raw": "20210825, #조식다이어리 190, 23도/흐림, 34분/운동하기\n\n세상에서 제일 예쁜 오이, 방울토마토, 자색양파를 썰어  (아직은) 여름에 어울리는 상큼한 레몬즙 베이스 드레싱을 더한다. 딜과 후추도 조금 #오이토마토샐러드\n\n“The flight crew has the final authority, always”\n“All humans make mistakes”\n\n전자는 보잉, 후자는 에어버스의 철학. 이는 양사의 비행기에도 고스란히 녹아있는데 가령, 보잉의 비행기에는 정상적인 상황이라면 90도 이상 꺾을 필요가 없는 날개의 각도 조정이 파일럿의 판단 하에 가능하도록 설계되어 있다. 반면, 에어버스는 파일럿이 명령을 하더라도 컴퓨터가 이를 분석한 뒤 역학적으로 문제가 없는 한도 내에서 가동된다. \n\n조직이든 개인이든 이런 철학 혹은 원칙을 바탕으로 운영되고 행동한다. 다만 철학과 원칙은 오랜 시간과 시행착오의 결과다. 마치 무수히 많은 사고와 희생을 바탕으로 오늘날 엄격한 항공규정이 생긴 것처럼 말이다. 오죽하면 모든 항공규정은 피로 쓰였다는 말이 있지 않은가. \n\n“All aviation regulations are written in blood\"\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #오이 #토마토 #양파 #딜\n#breakfast #salad #cucumber #tomato #dill #redonion",
   "image": "https://images.how-about-breakfast.com/images/190.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/190.jpg",
    "https://images.how-about-breakfast.com/images/190_2.jpg"
   ],
-  "_en": {
-   "hash": "60dd6a3373aaf615cdf7694ba785ac0d705b3e4b92c3f7b770c2ce17028ccfbe",
-   "title": "Cucumber Tomato Salad, Morning Ritual, Morning Routine",
-   "intro": "20210825 #breakfastdiary 190, 23°C/cloudy, 34 min/workout\nSlice the prettiest cucumber, cherry tomatoes, and red onion in the world, and add a bright lemon-based dressing that still suits the (fading) summer. A little dill and pepper too. #cucumbertomatosalad\n“The flight crew has the final authority, always”\n“All humans make mistakes”\nThe first is Boeing’s philosophy, the second is Airbus’s. Both are baked right into their planes — for instance, a Boeing aircraft is designed so a pilot can, at their own judgment, adjust a wing angle beyond 90 degrees, something that’s never needed under normal conditions. Airbus, on the other hand, runs a pilot’s commands through the computer first, which only carries them out within limits it has determined are aerodynamically safe. \nOrganizations and individuals alike operate and act on some such philosophy or principle. But philosophies and principles are the product of a long history of trial and error — much like today’s strict aviation regulations, built on the back of countless accidents and lost lives. There’s even a saying for it: \n“All aviation regulations are written in blood”",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오이토마토샐러드-모닝리추얼-모닝루틴"
  },
  {
