@@ -359,6 +359,7 @@ def json_ld(r, url, title, intro=None, ingredients=None, steps=None, lang='ko'):
 PAGE_TEMPLATE = """<!DOCTYPE html>
 <html lang="{html_lang}">
 <head>
+<script>if(location.hostname==='najosik.github.io'){{location.replace('https://how-about-breakfast.com'+location.pathname.replace(/^\/how-about-breakfast-recipes/,'')+location.search+location.hash);}}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{title} — {title_suffix}</title>
