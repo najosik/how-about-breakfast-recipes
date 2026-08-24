@@ -91,7 +91,7 @@ select#sortSel{
 .tag-chip{
   padding:6px 13px; border:1px solid var(--line-strong); border-radius:4px;
   background:var(--paper-raised); font-size:13px; cursor:pointer; color:var(--ink-soft);
-  transition:all .12s ease; user-select:none;
+  transition:all .12s ease; user-select:none; white-space:nowrap; flex:0 0 auto;
 }
 .tag-chip:hover{border-color:var(--teal);}
 .tag-chip.active{background:var(--teal); border-color:var(--teal); color:#fff;}
@@ -169,6 +169,8 @@ h3.card-title{
 }
 .card-meta{font-size:12.5px; color:var(--ink-faint); margin-bottom:10px; display:flex; gap:8px; flex-wrap:wrap;}
 .card-meta .kcal{color:var(--clay); font-weight:600;}
+.card-tags{display:flex; gap:6px; flex-wrap:wrap;}
+.card-tags span{font-size:11.5px; color:var(--teal-deep); background:var(--teal-pale); padding:2px 8px; border-radius:4px;}
 
 .load-more-wrap{text-align:center; margin-top:36px;}
 button.loadmore{
@@ -392,4 +394,5 @@ section.mag-section + section.mag-section{margin-top:0; border-top:1px solid var
   select#sortSel{width:100%;}
   .cta-archive{flex-direction:column; align-items:flex-start;}
   .nav-right{flex-wrap:wrap; justify-content:flex-end;}
+  .tag-cloud{flex-basis:100%;}
 }
