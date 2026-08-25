@@ -37864,7 +37864,7 @@
   "weather": "25도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "빠바 토스트",
+  "title": "파바 에그 토스트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37875,21 +37875,14 @@
    "토스트"
   ],
   "intro": "20230826, #조식다이어리 828, 25도/대체로흐림\n120초 완성 토스트\n빵 위에 #빠바 고소한에그샐러드, 다진 피스타치오",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 사워도우 1장\n- 올리브오일 조금\n- 파리바게트 고소한에그샐러드\n- 피스타치오 1t",
+  "steps": "1. 사워도우에 올리브오일 바르고 바삭하게 굽는다. \n2. 접시에 사워도우 얹고 파리바게트 고소한에그샐러드 얹는다. 다진 피스타치오 조금 얹는다. ",
   "raw": "20230826, #조식다이어리 828, 25도/대체로흐림\n\n120초 완성 토스트\n\n빵 위에 #빠바 고소한에그샐러드, 다진 피스타치오 \n\n#조식 #레시피 #미라클모닝 #토스트 ",
   "image": "https://images.how-about-breakfast.com/images/828.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/828.jpg",
    "https://images.how-about-breakfast.com/images/828_2.jpg"
   ],
-  "_en": {
-   "hash": "6ed069c0b7a4e8040aadd4f9498e8032e49e156e817a5fb3579143afbc6ff21d",
-   "title": "Paris Baguette Toast",
-   "intro": "20230826 #breakfastdiary 828, 25°C/mostly cloudy\n120-second toast.\nBread topped with #parisbaguette's savory egg salad and chopped pistachios.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "빠바-토스트"
  },
  {
