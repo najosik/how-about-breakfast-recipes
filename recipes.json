@@ -12605,7 +12605,14 @@
    "https://images.how-about-breakfast.com/images/1490_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1490.mp4",
-  "page_id": "스파이시-허니-에그-아보카도-사워도우-토스트"
+  "page_id": "스파이시-허니-에그-아보카도-사워도우-토스트",
+  "_en": {
+   "hash": "28741c673c24ff14e916aeac711f4c36094bccc46429b9ac9da8e5d1d341d7ff",
+   "title": "Spicy Honey Egg Avocado Sourdough Toast",
+   "intro": "20250827 #breakfastdiary 1490, 27°C/mostly cloudy, 20min/workout (M)\nSo, over the past few years of doing this breakfast thing, here are a few naming methods I've come to realize and currently use. (skipping ahead) Second, the ingredient-listing type. This is where you just list out the main ingredients that went into the breakfast - it's pretty intuitive. Things like pistachio mushroom sourdough, cucumber mango feta toast, red cabbage orange mint salad. Of course, the downside is that the name gets long, and since only the main ingredients get top billing, the supporting ones end up left out and overlooked.\n(Na-Josik, Breakfast, What's Your Name.)\nWhen it comes to eating a different breakfast every day, naming that different breakfast turns out to be even trickier than making it. It's no small thing. And so, today's breakfast is the so-called ingredient-listing type: approx. 530kcal spicy honey egg avocado sourdough toast",
+   "ingredients": "1 slice sourdough, 1/2 avocado, 1 egg, 2t chili oil, olive oil, Maldon salt, 1T honey, 1 egg, 2T chili oil",
+   "steps": "1. Brush the sourdough with olive oil and toast until crisp. \n2. Peel a ripe avocado and slice it thinly. \n3. Add chili oil to a pan, crack in 1 egg, and fry it. \n4. Top the sourdough with the avocado, Maldon salt, and the fried egg from step 3, and finish with a little honey."
+  }
  },
  {
   "date": "2025-08-26",
@@ -25413,7 +25420,14 @@
    "https://images.how-about-breakfast.com/images/1160_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1160.mp4",
-  "page_id": "아스파라거스-3"
+  "page_id": "아스파라거스-3",
+  "_en": {
+   "hash": "80afd8902517260459e0592841657c696b1165db2df54ee4a4fd2fa38799e054",
+   "title": "Tomato Asparagus Salad",
+   "intro": "20240827 #breakfastdiary 1160, 22°C/cloudy, 25min/workout (S, M) \nA breakfast with balsamic dressing and feta cheese. Drizzle the balsamic on right before serving. Once dark balsamic hits the feta crumbles, there's a good chance it stops looking like a breakfast you just made. Everything has its moment. \nYou'll need asparagus, tomato, olives, and feta cheese. \nAn honestly-named asparagus salad with tomato, olives, and feta cheese.\nTrim the asparagus stems with a grater and cut into bite-sized pieces. \nCut the tomato into bite-sized pieces. \nPlate the tomato and asparagus, filling in the gaps with olives. Crumble in a block of feta cheese by hand, and just before eating, drizzle lightly with a mix of balsamic and olive oil. ",
+   "ingredients": "2 tomatoes, 5 asparagus spears, 10 olives, 20g feta cheese, olive oil, salt, pepper, herbs",
+   "steps": "1. Cut the tomato into bite-sized pieces. \n2. Peel the asparagus with a grater, then sauté in a pan with olive oil, salt, pepper, and 1t mixed herbs. \n3. Plate the tomato from step 1, the asparagus from step 2, and the olives. Crumble in the feta cheese, and pour over a mix of 2T olive oil and 1t balsamic. "
+  }
  },
  {
   "date": "2024-08-26",
@@ -25445,7 +25459,14 @@
    "https://images.how-about-breakfast.com/images/1159_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1159.mp4",
-  "page_id": "새우오이메밀국수샐러드-새우"
+  "page_id": "새우오이메밀국수샐러드-새우",
+  "_en": {
+   "hash": "844e1e1bd469c47ba2e02656e2bd7060a152128284aedfee88196c0f0e063b12",
+   "title": "Buckwheat Noodle Salad with Shrimp and Cucumber",
+   "intro": "20240826 #breakfastdiary 1159, 25°C/cloudy, 25min/workout (S, M) \nUnlike in Korea, it seems like the word 'salad' gets used much more broadly abroad. #shrimpcucumberbuckwheatnoodlesalad\nYou'll need buckwheat noodles, shrimp, cucumber, and nuts. \nBoil the buckwheat noodles, adding cold water to the pot a few times as it boils. \nHeat olive oil in a pan and pan-fry the shrimp with plenty of salt, pepper, and herbs. (Frying in butter instead of olive oil gives even better flavor.) \nThinly slice the cucumber with a grater and set aside. \nPlate the buckwheat noodles and wrap each shrimp in a slice of cucumber, then arrange on top. \nFinish with vinaigrette dressing and nuts. ",
+   "ingredients": "1 serving buckwheat noodles, 5 shrimp, 1 cucumber, dressing (3T olive oil, 1T vinegar, 1t whole grain mustard), olive oil, 1T almonds, salt, pepper, herbs",
+   "steps": "1. Boil the noodles, adding cold water to the pot about 3 times as it boils.\n2. Heat olive oil in a pan and pan-fry the shrimp, seasoned with salt, pepper, and herbs.\n3. Thinly slice the cucumber with a grater and wrap it around the shrimp.\n4. Arrange the buckwheat noodles neatly on a plate, top with the cucumber-wrapped shrimp from step 3, and finish with the vinaigrette dressing and chopped almonds."
+  }
  },
  {
   "date": "2024-08-25",
@@ -37834,7 +37855,14 @@
    "https://images.how-about-breakfast.com/images/829.jpg",
    "https://images.how-about-breakfast.com/images/829_2.jpg"
   ],
-  "page_id": "토스트-연어"
+  "page_id": "토스트-연어",
+  "_en": {
+   "hash": "907c4d9373fa3b896192d67c2645977d4637028a41e35117591a77725ddee45a",
+   "title": "Salmon Asparagus Toast",
+   "intro": "20230827, #breakfastdiary 829, 21°C/drizzle\n'Jeorinda' (to pickle/cure) - jeorim is basically a preservation technique, so it doesn't quite work as a substitute for 'marinate.' 'Jaeunda' (to let it rest/marinate) seems like the better word.\nThe moment I woke up, I sprinkled the salmon with salt, pepper, lemon juice, and herbs and let it marinate for about 30 minutes.\nOn bread brushed with olive oil and pan-toasted until crisp, spread ricotta cheese (cream cheese would be even better, but), then top with the marinated salmon and asparagus sautéed with salt, pepper, and herbs.",
+   "ingredients": "2 slices sourdough, 50g raw salmon, 4-5 asparagus spears, 1T ricotta cheese, olive oil, salt, pepper, herbs, lemon juice",
+   "steps": "1. Sprinkle both sides of the salmon with salt, pepper, a pinch of herbs, and 2t lemon juice, then let it marinate for about 30 minutes. \n2. Brush the sourdough with olive oil and toast until crisp. \n3. Heat olive oil in a pan and sauté the asparagus, seasoned with salt, pepper, and 1t herbs. \n4. Spread ricotta cheese on the sourdough from step 2, then top with the marinated salmon from step 1 and the asparagus from step 3."
+  }
  },
  {
   "date": "2023-08-26",
@@ -37862,7 +37890,14 @@
    "https://images.how-about-breakfast.com/images/828.jpg",
    "https://images.how-about-breakfast.com/images/828_2.jpg"
   ],
-  "page_id": "빠바-토스트"
+  "page_id": "빠바-토스트",
+  "_en": {
+   "hash": "0bbffedb27885b1901c7a2e37f890b525da9d671aa4d75b38b44b30800f9c7a0",
+   "title": "Paris Baguette Egg Toast",
+   "intro": "20230826, #breakfastdiary 828, 25°C/mostly cloudy\n120-second toast\nSavory Paris Baguette egg salad on bread, topped with chopped pistachios",
+   "ingredients": "1 slice sourdough, a little olive oil, Paris Baguette savory egg salad, 1t pistachios",
+   "steps": "1. Brush the sourdough with olive oil and toast until crisp. \n2. Plate the sourdough and top with Paris Baguette savory egg salad. Sprinkle with a little chopped pistachio."
+  }
  },
  {
   "date": "2023-08-25",
@@ -68961,7 +68996,14 @@
    "https://images.how-about-breakfast.com/images/192_3.jpg",
    "https://images.how-about-breakfast.com/images/192_4.jpg"
   ],
-  "page_id": "시금치블루베리샐러드-모닝리추얼-모닝루틴"
+  "page_id": "시금치블루베리샐러드-모닝리추얼-모닝루틴",
+  "_en": {
+   "hash": "27ab7dbc79ba1f98b985e434958566cbe8a3dbc84a5b9ec8e766293638c7563f",
+   "title": "Spinach Blueberry Salad",
+   "intro": "20210827, #breakfastdiary 192, 23°C/showers, 34min/workout\nWash the spinach and blueberries well and plate them (didn't have time to make candied walnuts, so) add walnuts tossed in honey and feta cheese instead. A vinaigrette with a little honey and whole grain mustard mixed in. #spinachblueberrysalad\nJunior-level employees always seem to have a stuffed animal or two on their desk. I've never asked why, but I have a guess. Come to think of it, I think I have one on my desk too.\n*Source: Mojo's journal",
+   "ingredients": "2 bunches spinach, 1/2 cup blueberries, 1/2 cup walnuts, 2T honey, a pinch of salt, 1T feta cheese, dressing (2T olive oil, 1T vinegar, 1t whole grain mustard, 1t honey)",
+   "steps": "1. Wash the spinach and blueberries thoroughly under running water and arrange on a plate. \n2. Toast the walnuts in a pan, then toss with 2T honey and a pinch of salt. \n3. Top with the walnuts from step 2, feta cheese, and the dressing."
+  }
  },
  {
   "date": "2021-08-26",
@@ -69008,7 +69050,14 @@
    "https://images.how-about-breakfast.com/images/191_3.jpg",
    "https://images.how-about-breakfast.com/images/191_4.jpg"
   ],
-  "page_id": "프렌치토스트-퍼블리-모닝리추얼"
+  "page_id": "프렌치토스트-퍼블리-모닝리추얼",
+  "_en": {
+   "hash": "a709aa0b5f50cf2778cb783aaf66b19bf1e2ec0774d8bfeb37a87508d8b1c305",
+   "title": "French Toast with Jamón and Burrata Cheese",
+   "intro": "20210826, #breakfastdiary 191, 23°C/mostly cloudy\nBeat two eggs, add milk and a little sugar and salt, and soak the bread thoroughly. In a lightly heated pan with a little butter, fry the soaked bread on both sides. Move it to a plate and top with a piece of the prettiest, most luscious burrata cheese in the world, and some jamón. A little maple syrup before eating - #frenchtoast with burrata cheese and jamón, which, ironically, isn't really a thing in France itself.\nSteve Jobs's line about not selling products, but selling experience and value,\nand Terao Gen's line that the experience is the customer's joy, and providing that joy is the manufacturer's contribution to society.\n*The second text screenshot is from #Publy @publy.co",
+   "ingredients": "2 slices white bread, 2 eggs, 1/2 cup milk, 1t sugar, 1t salt, 10g butter, a few slices of jamón, 1 burrata cheese, 2t maple syrup",
+   "steps": "1. Beat 2 eggs on a plate, add 1/2 cup milk, 1t sugar, and 1t salt, and mix well. Soak the bread thoroughly. \n2. Melt butter in a pan and slowly fry the bread from step 1 on both sides. \n3. Plate the French toast and top with burrata cheese, jamón, and a little maple syrup."
+  }
  },
  {
   "date": "2021-08-25",
@@ -85845,7 +85894,14 @@
   "raw": "#태풍바비 로 전기가 나간 오늘 아침, 찬물샤워로 깨달음을 얻고, 팬에 구운 #아스파라거스 에 올리브, 페타치즈, 반숙 계란을 곁들여 #조식 #조식플렉스 #조식스타그램 #나의프랑스식샐러드 #양초조명",
   "pre_label": "D-169",
   "image": "https://images.how-about-breakfast.com/images/pre-169.jpg",
-  "page_id": "태풍바비-아스파라거스-조식플렉스"
+  "page_id": "태풍바비-아스파라거스-조식플렉스",
+  "_en": {
+   "hash": "f139ad303929120f0f819f2e6903c7a28271ba7c37bc7a1291425b6ccddc88d7",
+   "title": "Asparagus Salad",
+   "intro": "This morning the power went out because of #TyphoonBavi, and a cold shower gave me a moment of enlightenment - pan-seared #asparagus with olives, feta cheese, and a soft-boiled egg. #breakfast #breakfastflex #breakfaststagram #myfrenchstylesalad #candlelight",
+   "ingredients": "4-5 asparagus spears, 1 egg, 1T olives, 1T feta cheese, parsley, olive oil, salt, pepper",
+   "steps": "1. Trim the asparagus and pan-sear in olive oil, seasoned with salt and pepper. \n2. Plate the asparagus from step 1 and top with olives, feta cheese, and a soft-boiled egg. Sprinkle with a little parsley."
+  }
  },
  {
   "date": "2020-08-26",
@@ -85875,7 +85931,14 @@
    "https://images.how-about-breakfast.com/images/pre-170.jpg",
    "https://images.how-about-breakfast.com/images/pre-170_2.jpg"
   ],
-  "page_id": "오늘의조식-매쉬포테이토-페타치즈"
+  "page_id": "오늘의조식-매쉬포테이토-페타치즈",
+  "_en": {
+   "hash": "69b1641795a5918b6808283b4119518002c0b9621f73f3fa770661fbfcccc3eb",
+   "title": "Biscuit with Mashed Potato",
+   "intro": "Today's breakfast: a few days' worth of leftover biscuits with #mashedpotato and #fetacheese, plus blueberries. #breakfast #breakfaststagram #myfrenchstylesalad",
+   "ingredients": "2 potatoes, 2T mayonnaise, 1/2 cup milk, 1 cup imitation crab sticks, 1t salt, 1t pepper, a little parsley, 2 biscuits",
+   "steps": "1. Boil the 2 potatoes in water. \n2. While still hot, peel and put them in a mixing bowl, then add 2T mayonnaise, 1/2 cup milk, crab sticks, salt, and pepper, and mix well. \n3. Top the biscuit with the mashed potato from step 2 and sprinkle with parsley. \n\nAlso eat with blueberries and feta cheese drizzled with balsamic on the side."
+  }
  },
  {
   "date": "2020-08-25",
