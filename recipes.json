@@ -37840,21 +37840,14 @@
    "토스트"
   ],
   "intro": "20230827, #조식다이어리 829, 21도/이슬비\n절인다, 절임은 기본적으로 보존을 위한 조리법이니까 마리네이드를 대체할 말로는 적합치 않다. 오히려 재운다,는 말이 더 좋아 보인다. \n기상과 동시에 연어에 소금, 후추, 레몬주스, 허브를 뿌려서 30분 정도 재운다. \n올리브오일 발라 바삭하게 팬에 구운 빵에 (크림치즈라면 더 좋겠지만,) 리코타치즈 바르고, 절인 연어, 소금, 후추, 허브를 넣어 데친 아스파라거스를 올린다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 사워도우 2장\n- 생연어 50g\n- 아스파라거스 4~5개\n- 리코타치즈 1T\n- 올리브오일\n- 소금\n- 후추\n- 허브\n- 레몬주스 ",
+  "steps": "1. 연어는 앞뒤로 소금과 후추, 허브 한 꼬집, 레몬주스 2t 뿌린 후 30분 정도 재운다. \n2. 사워도우에 올리브오일 발라서 바삭하게 굽는다. \n3. 팬에 올리브오일 두르고 소금과 후추, 허브 1t로 간해서 아스파라거스를 볶는다. \n4. 2의 사워도우에 리코타치즈 바르고 1에 재운 연어와 3의 아스파라거스 얹는다. ",
   "raw": "20230827, #조식다이어리 829, 21도/이슬비\n\n절인다, 절임은 기본적으로 보존을 위한 조리법이니까 마리네이드를 대체할 말로는 적합치 않다. 오히려 재운다,는 말이 더 좋아 보인다. \n기상과 동시에 연어에 소금, 후추, 레몬주스, 허브를 뿌려서 30분 정도 재운다. \n올리브오일 발라 바삭하게 팬에 구운 빵에 (크림치즈라면 더 좋겠지만,) 리코타치즈 바르고, 절인 연어, 소금, 후추, 허브를 넣어 데친 아스파라거스를 올린다. \n\n#조식 #레시피 #미라클모닝 #토스트 #연어",
   "image": "https://images.how-about-breakfast.com/images/829.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/829.jpg",
    "https://images.how-about-breakfast.com/images/829_2.jpg"
   ],
-  "_en": {
-   "hash": "c8c43e88e0190a663bc70471c8fdc94ba7e7a8c4b8c8dbb29fb131e5f6d929a8",
-   "title": "Salmon Toast",
-   "intro": "20230827 #breakfastdiary 829, 21°C/light drizzle\n'Cure' — curing is basically a preservation method, so it's not quite the right word to stand in for marinating. 'Let it rest,' actually sounds better.\nThe moment I wake up, I sprinkle salt, pepper, lemon juice, and herbs over the salmon and let it rest for about 30 minutes.\nOn bread toasted crisp in a pan with olive oil, spread ricotta cheese (cream cheese would be even better), then top with the marinated salmon and asparagus blanched with salt, pepper, and herbs.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "토스트-연어"
  },
  {
