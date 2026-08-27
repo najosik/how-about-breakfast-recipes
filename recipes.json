@@ -85846,7 +85846,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 블루베리 페타치즈",
+  "title": "페타치즈를 곁들인 블루베리",
   "credit": null,
   "hashtags": [
    "블루베리",
@@ -85856,18 +85856,11 @@
    "페타치즈"
   ],
   "intro": "안토시아닌 플렉스를 위한 #오늘의조식 은 #블루베리 와 짭쪼롬 #페타치즈 에 후추후추, 파슬파슬리에 발사믹 #조식 #조식스타그램",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 블루베리 2컵\n- 페타치즈 2T\n- 발사믹 비니거 2t\n- 후추\n- 파슬리",
+  "steps": "1. 블루베리 2컵을 흐르는 물에 씻는다. \n2. 그릇에 블루베리 담고 페타치즈 2T와 후추와 파슬리 조금, 발사믹 비니거 얹는다. ",
   "raw": "안토시아닌 플렉스를 위한 #오늘의조식 은 #블루베리 와 짭쪼롬 #페타치즈 에 후추후추, 파슬파슬리에 발사믹 #조식 #조식스타그램",
   "pre_label": "D-168",
   "image": "https://images.how-about-breakfast.com/images/pre-168.jpg",
-  "_en": {
-   "hash": "6d8fc789efed85ae92115f8f986b9b0b057c568bd25bed00ada1a481237e7a12",
-   "title": "Blueberries and Feta for an Antioxidant Boost",
-   "intro": "Today's breakfast is all about flexing on anthocyanins: #blueberries and salty little cubes of #fetacheese, finished with plenty of pepper, parsley, and balsamic. #breakfast #breakfaststagram",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-블루베리-페타치즈"
  },
  {
