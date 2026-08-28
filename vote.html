@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<script>if(location.hostname==='najosik.github.io'){location.replace('https://how-about-breakfast.com'+location.pathname.replace(/^\/how-about-breakfast-recipes/,'')+location.search+location.hash);}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이달의 조식 투표 — 날마다 조식</title>
+<meta name="description" content="지난달 조식 후보 4개 중 가장 마음에 드는 걸 투표로 골라주세요.">
+<link rel="canonical" href="https://how-about-breakfast.com/vote.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="날마다, 조식">
+<meta property="og:title" content="이달의 조식 투표 — 날마다 조식">
+<meta property="og:description" content="지난달 조식 후보 4개 중 가장 마음에 드는 걸 투표로 골라주세요.">
+<meta property="og:url" content="https://how-about-breakfast.com/vote.html">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-64KS503K5Y"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-64KS503K5Y');
+</script>
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "y3orfq5syr");
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="nav-bar">
+    <a href="index.html" data-i18n="nav_home">← 홈으로</a>
+    <div class="nav-right">
+      <div class="channel-links">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+      </div>
+      <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+        <button type="button" data-lang="ko" class="active">한국어</button>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+  </div>
+
+  <header class="top">
+    <p class="eyebrow">MONTHLY PICK</p>
+    <h1 class="title" data-i18n="vote_title">이달의 조식 투표</h1>
+    <p class="subtitle" data-i18n="vote_subtitle">지난달 조식 후보 4개 중 가장 마음에 드는 걸 골라주세요. 하루에 한 표, IP당 한 번만 가능합니다.</p>
+  </header>
+
+  <div id="voteContent" class="vote-content"></div>
+
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-social">
+      <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="site-footer-links"><a href="privacy.html" data-i18n="footer_privacy">개인정보처리방침</a></div>
+    <div class="site-footer-bottom" data-i18n="footer_copyright">© how.about.breakfast 2020-2026. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="i18n.js"></script>
+<script src="shared.js"></script>
+<script>I18N.applyStaticI18n();</script>
+<script src="vote.js"></script>
+</body>
+</html>

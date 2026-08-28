@@ -2,7 +2,7 @@
  * edit-api Worker
  *
  * The only piece of this feature that holds any secret. Verifies the editor
- * password server-side (never trust the browser), then does one of three
+ * password server-side (never trust the browser), then does one of five
  * things depending on `action`:
  *   - 'edit' (default): triggers "Apply content edit" - patches an
  *     existing record
@@ -11,6 +11,12 @@
  *   - 'preview': looks up Instagram's own post for a given date (read-only,
  *     no GitHub Actions involved) so the admin page can show what was
  *     actually posted before deciding whether to add or skip that date
+ *   - 'add_vote_round': triggers "Add vote round" - registers a new
+ *     "이달의 조식" vote round (body.round: {target_month, candidates,
+ *     vote_start, vote_end})
+ *   - 'finalize_vote_round': triggers "Finalize vote round" - records a
+ *     vote round's winner (body.round_id, body.winner_page_id), once the
+ *     admin has read the final tally from the public vote-api Worker
  * The GitHub token and Instagram access token never reach the browser —
  * they live only as Worker secrets, set via the Cloudflare dashboard
  * (Settings > Variables and Secrets), never committed to the repo.
@@ -81,6 +87,23 @@ export default {
       return json(result, 200, cors);
     }
 
+    if (action === 'add_vote_round') {
+      const round = body.round;
+      if (!round || typeof round !== 'object') {
+        return json({ error: 'invalid payload' }, 400, cors);
+      }
+      return dispatchWorkflow('add-vote-round.yml', { round: JSON.stringify(round) }, env, cors);
+    }
+
+    if (action === 'finalize_vote_round') {
+      const roundId = body.round_id;
+      const winnerPageId = body.winner_page_id;
+      if (typeof roundId !== 'string' || !roundId || typeof winnerPageId !== 'string' || !winnerPageId) {
+        return json({ error: 'invalid payload' }, 400, cors);
+      }
+      return dispatchWorkflow('finalize-vote-round.yml', { round_id: roundId, winner_page_id: winnerPageId }, env, cors);
+    }
+
     const act = action === 'add' ? 'add' : 'edit';
 
     if (!fields || typeof fields !== 'object') {
@@ -106,29 +129,33 @@ export default {
       ? { date, patch: JSON.stringify(patch) }
       : { page_id, patch: JSON.stringify(patch) };
 
-    const dispatchUrl =
-      `https://api.github.com/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}` +
-      `/actions/workflows/${workflowFile}/dispatches`;
-
-    const ghRes = await fetch(dispatchUrl, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${env.GITHUB_TOKEN}`,
-        Accept: 'application/vnd.github+json',
-        'User-Agent': 'how-about-breakfast-edit-worker',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ ref: 'main', inputs }),
-    });
-
-    if (!ghRes.ok) {
-      const detail = await ghRes.text();
-      return json({ error: 'github dispatch failed', detail }, 502, cors);
-    }
-
-    return json({ ok: true }, 200, cors);
+    return dispatchWorkflow(workflowFile, inputs, env, cors);
   },
 };
+
+async function dispatchWorkflow(workflowFile, inputs, env, cors) {
+  const dispatchUrl =
+    `https://api.github.com/repos/${env.GITHUB_OWNER}/${env.GITHUB_REPO}` +
+    `/actions/workflows/${workflowFile}/dispatches`;
+
+  const ghRes = await fetch(dispatchUrl, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${env.GITHUB_TOKEN}`,
+      Accept: 'application/vnd.github+json',
+      'User-Agent': 'how-about-breakfast-edit-worker',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ ref: 'main', inputs }),
+  });
+
+  if (!ghRes.ok) {
+    const detail = await ghRes.text();
+    return json({ error: 'github dispatch failed', detail }, 502, cors);
+  }
+
+  return json({ ok: true }, 200, cors);
+}
 
 async function searchInstagramForDate(targetDate, env) {
   const fields = 'id,caption,media_type,media_url,thumbnail_url,timestamp,permalink,children{media_type,media_url,thumbnail_url}';

@@ -1,0 +1,57 @@
+name: Add vote round
+
+on:
+  workflow_dispatch:
+    inputs:
+      round:
+        description: 'JSON object: target_month, candidates (4 page_ids), vote_start, vote_end'
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+# Shared with every other workflow that commits to main - see add-post.yml
+# for why (queues concurrent runs instead of letting them race to push and
+# silently drop the loser's otherwise-successful commit).
+concurrency:
+  group: main-branch-writer
+  cancel-in-progress: false
+
+jobs:
+  add:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Add vote round, rebuild, and commit (retry on push race)
+        env:
+          ROUND_JSON: ${{ inputs.round }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for i in 1 2 3 4 5; do
+            python add_vote_round.py
+            python build_public_data.py
+            git add -A
+            if git diff --cached --quiet; then
+              echo "No changes."
+              exit 0
+            fi
+            git commit -m "Add vote round via admin tool"
+            if git push; then
+              echo "Pushed successfully."
+              exit 0
+            fi
+            echo "Push rejected (attempt $i) - resyncing to latest main and retrying."
+            git reset --hard HEAD~1
+            git fetch origin main
+            git reset --hard origin/main
+            sleep $((RANDOM % 3 + 1))
+          done
+          echo "::error::Failed to push after retries - vote round was NOT added."
+          exit 1

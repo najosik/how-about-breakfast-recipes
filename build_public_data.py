@@ -43,8 +43,25 @@ INDEX_EN_PATH = os.path.join(HERE, 'recipes-index-en.json')
 PAGES_DIR = os.path.join(HERE, 'recipes')
 PAGES_DIR_EN = os.path.join(HERE, 'en', 'recipes')
 SITEMAP_PATH = os.path.join(HERE, 'sitemap.xml')
+VOTE_PATH = os.path.join(HERE, 'monthly-vote.json')
 
 SITE_BASE = 'https://how-about-breakfast.com'
+
+
+def load_medal_winners():
+    """{page_id: target_month} for every 이달의 조식 vote round that has a
+    winner recorded - drives the medal badge on that record's card and
+    detail page. monthly-vote.json is optional (site works fine before the
+    feature's first round is ever registered)."""
+    if not os.path.exists(VOTE_PATH):
+        return {}
+    with open(VOTE_PATH, encoding='utf-8') as f:
+        data = json.load(f)
+    return {
+        r['winner']: r['target_month']
+        for r in data.get('rounds', [])
+        if r.get('winner')
+    }
 
 # Static per-language labels for the recipe page chrome (headers, nav,
 # share button). Free-text recipe content itself comes from r['_en'].
@@ -62,6 +79,7 @@ LABELS = {
         'recipe_word': '레시피',
         'prev_fallback': '이전', 'next_fallback': '다음',
         'footer_privacy': '개인정보처리방침',
+        'medal_label': '이달의 조식',
     },
     'en': {
         'site_name': 'Breakfast, Every Day',
@@ -76,6 +94,7 @@ LABELS = {
         'recipe_word': 'recipe',
         'prev_fallback': 'Previous', 'next_fallback': 'Next',
         'footer_privacy': 'Privacy Policy',
+        'medal_label': 'Breakfast of the Month',
     },
 }
 
@@ -208,11 +227,13 @@ def clean_description(intro, title, fallback_suffix='레시피'):
     return cleaned[:150]
 
 
-def build_index(live, ids):
+def build_index(live, ids, medal_winners):
     slim = []
     for r, pid in zip(live, ids):
         rec = {k: r[k] for k in INDEX_FIELDS if k in r}
         rec['page_id'] = pid
+        if pid in medal_winners:
+            rec['medal'] = medal_winners[pid]
         slim.append(rec)
     with open(INDEX_PATH, 'w', encoding='utf-8') as f:
         json.dump(slim, f, ensure_ascii=False, separators=(',', ':'))
@@ -404,6 +425,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-nav a:hover{{color:var(--teal-deep); text-decoration:underline;}}
   .recipe-stamp-row{{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;}}
   .recipe-stamp-row .stamp, .recipe-stamp-row .fail-badge{{margin-bottom:0;}}
+  .medal-badge{{display:inline-flex; align-items:center; gap:4px; font-size:12px; font-weight:700; color:#8a6100; background:#fff3cf; border:1px solid #e8c465; border-radius:20px; padding:3px 11px;}}
   .recipe-share-btn{{display:inline-flex; align-items:center; gap:6px; flex:0 0 auto; white-space:nowrap; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:5px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}}
   .recipe-share-btn:hover{{border-color:var(--teal); color:var(--teal-deep);}}
   .recipe-share-btn.copied{{border-color:var(--teal); color:var(--teal-deep); background:var(--teal-pale);}}
@@ -422,6 +444,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     <div class="recipe-stamp-row">
       <span class="stamp">{stamp}</span>
       {fail_badge}
+      {medal_badge}
       {share_btn}
     </div>
     <h1>{title}</h1>
@@ -503,7 +526,8 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 """
 
 
-def build_pages(live, ids, lang='ko'):
+def build_pages(live, ids, lang='ko', medal_winners=None):
+    medal_winners = medal_winners or {}
     labels = LABELS[lang]
     pages_dir = PAGES_DIR if lang == 'ko' else PAGES_DIR_EN
     url_prefix = 'recipes' if lang == 'ko' else 'en/recipes'
@@ -601,6 +625,11 @@ def build_pages(live, ids, lang='ko'):
 
         robots_meta = '<meta name="robots" content="noindex,follow">' if thin else ''
 
+        medal_badge = (
+            f'<span class="medal-badge" title="{esc(medal_winners[pid])}">🥇 {labels["medal_label"]}</span>'
+            if pid in medal_winners else ''
+        )
+
         html_out = PAGE_TEMPLATE.format(
             html_lang=lang, title_suffix=labels['title_suffix'], site_name=labels['site_name'],
             title=esc(title), description=esc(description), url=url, rel=rel,
@@ -610,6 +639,7 @@ def build_pages(live, ids, lang='ko'):
             og_image=og_image, twitter_image=twitter_image, ad_verify_script=AD_VERIFY_SCRIPT,
             media=media_html(r, title, lang), stamp=esc(stamp_label(r)),
             fail_badge=f'<span class="fail-badge">{labels["failed_badge"]}</span>' if r.get('failed') else '',
+            medal_badge=medal_badge,
             share_btn=share_btn_html(lang), share_copied_label=labels['share_copied'],
             meta_line=meta_line,
             intro_section=intro_section, ingredients_section=ingredients_section,
@@ -628,6 +658,7 @@ def build_sitemap(recipe_urls, recipe_urls_en):
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     lines.append(f'  <url><loc>{SITE_BASE}/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>')
     lines.append(f'  <url><loc>{SITE_BASE}/archive.html</loc><changefreq>daily</changefreq><priority>0.9</priority></url>')
+    lines.append(f'  <url><loc>{SITE_BASE}/vote.html</loc><changefreq>daily</changefreq><priority>0.5</priority></url>')
     lines.append(f'  <url><loc>{SITE_BASE}/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>')
     lines.append(f'  <url><loc>{SITE_BASE}/en/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>')
     for u in recipe_urls:
@@ -656,20 +687,22 @@ def main():
             json.dump(records, f, ensure_ascii=False, indent=1)
         print(f'recipes.json: froze {newly_assigned} new page_id(s)')
 
-    slim = build_index(live, ids)
+    medal_winners = load_medal_winners()
+
+    slim = build_index(live, ids, medal_winners)
     print(f'recipes-index.json: {len(slim)} records')
 
     en_map = build_index_en(live, ids)
     print(f'recipes-index-en.json: {len(en_map)} records')
 
-    urls = build_pages(live, ids, lang='ko')
+    urls = build_pages(live, ids, lang='ko', medal_winners=medal_winners)
     print(f'recipe pages generated (ko): {len(urls)}')
 
-    urls_en = build_pages(live, ids, lang='en')
+    urls_en = build_pages(live, ids, lang='en', medal_winners=medal_winners)
     print(f'recipe pages generated (en): {len(urls_en)}')
 
     build_sitemap(urls, urls_en)
-    print(f'sitemap.xml: {len(urls) + len(urls_en) + 2} URLs')
+    print(f'sitemap.xml: {len(urls) + len(urls_en) + 3} URLs')
 
 
 if __name__ == '__main__':

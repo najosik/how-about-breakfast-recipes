@@ -302,6 +302,7 @@ var Shared = (function () {
       '<div class="modal-stamp-row">' +
       '<span class="stamp">' + stampLabel(r) + '</span>' +
       (r.failed ? '<span class="fail-badge">' + L('badge_failed') + '</span>' : '') +
+      (r.medal ? '<span class="medal-badge">🥇 ' + escapeHtml(L('medal_label')) + '</span>' : '') +
       shareBtnHtml +
       '</div>' +
       titleHtml +
@@ -381,6 +382,7 @@ var Shared = (function () {
       thumbHTML(r, 30) +
       '<span class="stamp">' + stampLabel(r) + '</span>' +
       (r.failed ? '<span class="fail-badge">' + L('badge_failed') + '</span>' : '') +
+      (r.medal ? '<span class="medal-badge">🥇 ' + escapeHtml(L('medal_label')) + '</span>' : '') +
       titleHtml +
       '<div class="card-meta"><span>' + metaBits.join(' · ') + '</span>' + kcal + '</div>' +
       '<div class="card-tags">' + tagsHtml + '</div>' +
@@ -416,6 +418,7 @@ var Shared = (function () {
     iconSVG: iconSVG,
     thumbHTML: thumbHTML,
     galleryHTML: galleryHTML,
+    bindGallery: bindGallery,
     openModal: openModal,
     closeModal: closeModal,
     cardHTML: cardHTML,
