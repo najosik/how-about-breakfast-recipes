@@ -37795,7 +37795,7 @@
   "weather": "21도/흐림",
   "failed": false,
   "calories": null,
-  "title": "연어오차즈케",
+  "title": "연어 오차즈케",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37805,17 +37805,10 @@
    "조식다이어리"
   ],
   "intro": "20230829, #조식다이어리 831, 21도/흐림\n상할까 말까 망설이고 있는 결정장애 연어는 굽자. 달군 팬에 올리브오일 두르고 후추 듬뿍 뿌려 연어를 앞, 뒤, 위, 아래 바삭하게 굽는다. \n물 500ml, 찬물에도 잘 녹는 녹차가루를 섞고 액젓을 한 숟가락 정도 넣는다. 이렇게 하면 다시마, 가쓰오부시 등등에 소요되는 시간과 절차를 집약한 하지만 깊이는 없는 묘한 맛을 낼 수 있다. \n그릇에 밥 담고 후리가케 조금, 구운 연어를 올리고 녹차를 붓는다. \n가끔 볶은 겉보리가 씹힐 때도 있었던, 진한 보리차에 밥 말아 먹던 어린 시절과 할머니가 생각나는 그래서 어떤 의미에선 소울푸드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 생연어 50g\n- (국물) 물 500ml, 녹차 파우더, 액젓 1t \n- 후리가케 2t\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 팬에 올리브오일 두르고 소금, 후추로 간해서 연어를 굽는다. \n2. 물 500ml, 녹차 파우더, 액젓 1t 넣고 골고루 섞는다. \n3. 그릇에 밥 담고 후리가케 조금 뿌린 후 1의 연어를 얹고 2의 녹차를 붓는다. ",
   "raw": "20230829, #조식다이어리 831, 21도/흐림\n\n상할까 말까 망설이고 있는 결정장애 연어는 굽자. 달군 팬에 올리브오일 두르고 후추 듬뿍 뿌려 연어를 앞, 뒤, 위, 아래 바삭하게 굽는다. \n물 500ml, 찬물에도 잘 녹는 녹차가루를 섞고 액젓을 한 숟가락 정도 넣는다. 이렇게 하면 다시마, 가쓰오부시 등등에 소요되는 시간과 절차를 집약한 하지만 깊이는 없는 묘한 맛을 낼 수 있다. \n그릇에 밥 담고 후리가케 조금, 구운 연어를 올리고 녹차를 붓는다. \n\n가끔 볶은 겉보리가 씹힐 때도 있었던, 진한 보리차에 밥 말아 먹던 어린 시절과 할머니가 생각나는 그래서 어떤 의미에선 소울푸드\n\n#조식 #레시피 #미라클모닝 #연어오차즈케",
   "video": "https://images.how-about-breakfast.com/images/831.mp4",
-  "_en": {
-   "hash": "6344b83ef626f36b72a4a3de9a9faf6392266cfa253175db041b7d46dbbb6832",
-   "title": "Salmon Ochazuke",
-   "intro": "20230829 #breakfastdiary 831, 21°C/cloudy\nThis salmon can't decide whether it's about to spoil — so let's just grill it. Heat olive oil in a pan, sprinkle the salmon generously with pepper, and sear it crisp on all sides — front, back, top, bottom.\nMix 500ml of water with green tea powder that dissolves well even in cold water, and stir in about a spoonful of fish sauce. This condenses all the time and effort you'd normally spend on kelp, bonito flakes, and so on, into a curious flavor that's quick but not exactly deep.\nSpoon rice into a bowl, sprinkle a little furikake, add the grilled salmon on top, and pour over the green tea.\nIt brings back memories of childhood and my grandmother — mixing rice into strong barley tea that sometimes still had a bit of roasted barley grain to chew on — so in a way, it's soul food.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "연어오차즈케"
  },
  {
