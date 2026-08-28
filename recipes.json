@@ -68867,7 +68867,7 @@
   "weather": "22도/흐림, 50분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "땅콩호박베이크 모닝리추얼 모닝루틴",
+  "title": "땅콩호박 베이크",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68893,8 +68893,8 @@
    "홈쿡"
   ],
   "intro": "20210829, #조식다이어리 194, 22도/흐림, 50분/운동하기\n세상에서 제일 예쁜 땅콩호박을 반으로 가르고 씨를 파낸 후 정성껏 올리브오일을 발라 190도 오븐에 1시간 굽는다. 속을 파내고 그릭요거트, 파마산치즈, 소금, 후추를 넣어 쉐낏한 후 속을 채운다. 그뤼예르치즈를 올리고 190도 오븐에 15분 굽는다. #땅콩호박베이크\n영어로는 버터넛스쿼시, 한국어로는 땅콩호박이다. 이름과 레시피에서 연상되는 것처럼 크리미하고 고소한 맛이 일품이다. 믿고 보는 #나의프랑스식오븐요리",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 땅콩호박 1/2개\n- 그릭요거트 2T \n- 파마산치즈 1T \n- 그뤼예르치즈 1T\n- 올리브오일\n- 소금 \n- 후추",
+  "steps": "1. 땅콩호박은 조심조심 반으로 자르고 씨를 파낸 후 단면에 올리브오일 발라서 190도 오븐에 1시간 굽는다. \n2. 구운 땅콩호박의 속을 파낸 후 믹싱볼에 담고 그릭요거트 2T, 파마산치즈 1T, 소금과 후추 1t 넣고 골고루 섞은 후 다시 땅콩호박의 속을 채운다. \n3. 그뤼예르치즈를 땅콩호박 위에 얹고 190도 오븐에 15분 굽는다. ",
   "raw": "20210829, #조식다이어리 194, 22도/흐림, 50분/운동하기\n\n세상에서 제일 예쁜 땅콩호박을 반으로 가르고 씨를 파낸 후 정성껏 올리브오일을 발라 190도 오븐에 1시간 굽는다. 속을 파내고 그릭요거트, 파마산치즈, 소금, 후추를 넣어 쉐낏한 후 속을 채운다. 그뤼예르치즈를 올리고 190도 오븐에 15분 굽는다. #땅콩호박베이크\n\n영어로는 버터넛스쿼시, 한국어로는 땅콩호박이다. 이름과 레시피에서 연상되는 것처럼 크리미하고 고소한 맛이 일품이다. 믿고 보는 #나의프랑스식오븐요리 \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #땅콩호박  \n#breakfast #frenchtoast #salad #buttetnutsquash #parmigianoreggiano #gruyere ",
   "image": "https://images.how-about-breakfast.com/images/194.jpg",
   "gallery": [
@@ -68903,13 +68903,6 @@
    "https://images.how-about-breakfast.com/images/194_3.jpg",
    "https://images.how-about-breakfast.com/images/194_4.jpg"
   ],
-  "_en": {
-   "hash": "78b4386b26dd2e0c1c7ab355be9873b42e74710df3603d7cec804413b92e6ec5",
-   "title": "Butternut Squash Bake, Morning Ritual, Morning Routine",
-   "intro": "20210829 #breakfastdiary 194, 22°C/cloudy, 50 min/workout\nHalve the prettiest butternut squash in the world and scoop out the seeds, brush it lovingly with olive oil, and roast in a 190°C oven for an hour. Scoop out the flesh, mix it with Greek yogurt, parmesan, salt, and pepper, and spoon it back in. Top with Gruyère and bake for another 15 minutes at 190°C. #butternutsquashbake\nIt’s called butternut squash in English and ‘peanut pumpkin’ in Korean. True to what its name and the recipe suggest, it’s every bit as creamy and nutty as you’d hope. Another reliable favorite from #myfrenchstyleoven",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "땅콩호박베이크-모닝리추얼-모닝루틴"
  },
  {
