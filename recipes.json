@@ -25360,9 +25360,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20240829 #조식다이어리 1162, 24도/맑음, 25분/운동(S, M) \n오늘 조식 메뉴를 두고 멜론과 당근이 다퉜는데 멜론이 이겼다. \n브라운치즈 곁들인 멜론\n멜론 썰어서 칼집 낸 뒤 접시에 담고 브라운치즈 솔솔솔, 후추후추 마무리~\n-\n단호박, 버터헤드레터스, 요거트, 견과류가 필요하다. \n흰미니단호박은 전자렌지에 2분 데운 후 한 입 크기로 자른다. \n접시에 레터스, 단호박, 요거트 담고 견과류 얹는다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240829 #조식다이어리 1162, 24도/맑음, 25분/운동(S, M) \n오늘 조식 메뉴를 두고 멜론과 당근이 다퉜는데 멜론이 이겼다. \n브라운치즈 곁들인 멜론\n멜론 썰어서 칼집 낸 뒤 접시에 담고 브라운치즈 솔솔솔, 후추후추 마무리~",
+  "ingredients": "- 멜론 1/2",
+  "steps": "1. 멜론은 웻지모양으로 썬 후 접시에 가지런히 담는다. \n2. 멜론 위에 브라운치즈를 갈아서 얹고 후추 조금 넣는다. ",
   "raw": "20240829 #조식다이어리 1162, 24도/맑음, 25분/운동(S, M) \n\n오늘 조식 메뉴를 두고 멜론과 당근이 다퉜는데 멜론이 이겼다. \n\n브라운치즈 곁들인 멜론\n\n멜론 썰어서 칼집 낸 뒤 접시에 담고 브라운치즈 솔솔솔, 후추후추 마무리~\n\n#조식 #레시피 #미라클모닝 #멜론\n\n-\n\n단호박, 버터헤드레터스, 요거트, 견과류가 필요하다. \n\n흰미니단호박은 전자렌지에 2분 데운 후 한 입 크기로 자른다. \n접시에 레터스, 단호박, 요거트 담고 견과류 얹는다. ",
   "image": "https://images.how-about-breakfast.com/images/1162.jpg",
   "gallery": [
@@ -25372,13 +25372,6 @@
    "https://images.how-about-breakfast.com/images/1162_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1162.mp4",
-  "_en": {
-   "hash": "91d85536bd222242336da18396acad115585c8f7b0e53dac6ef16be482438aec",
-   "title": "Melon",
-   "intro": "20240829 #breakfastdiary 1162, 24°C/clear, 25min/exercise(S, M)\nToday melon and carrot competed for the breakfast slot, and melon won.\nMelon with brown cheese\nSlice the melon, score it, plate it, sprinkle brown cheese on top, and finish with pepper~\n-\nYou need sweet pumpkin, butterhead lettuce, yogurt, and nuts.\nMicrowave the white mini sweet pumpkin for 2 minutes and cut into bite-size pieces.\nPlate the lettuce, pumpkin, and yogurt, and top with nuts.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "멜론-2"
  },
  {
