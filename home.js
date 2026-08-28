@@ -140,15 +140,6 @@
   }
 
   function renderMasthead(all) {
-    var strip = document.getElementById('mastheadIcons');
-    if (strip) {
-      var demo = [
-        { hashtags: ['토마토'] }, { hashtags: ['아보카도'] }, { hashtags: ['계란'] },
-        { hashtags: ['파스타'] }, { hashtags: ['샌드위치'] }, { hashtags: ['버섯'] }
-      ];
-      strip.innerHTML = demo.map(function (d) { return Shared.iconSVG(d, 26); }).join('');
-    }
-
     var dated = all.filter(function (r) { return r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date); });
     var sorted = dated.slice().sort(function (a, b) { return a.date.localeCompare(b.date); });
     var first = sorted[0].date;
