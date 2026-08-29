@@ -85760,7 +85760,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 아스파라거스 방울토마토",
+  "title": "아스파라거스 방울토마토 구이",
   "credit": null,
   "hashtags": [
    "방울토마토",
@@ -85770,18 +85770,11 @@
    "조식스타그램"
   ],
   "intro": "#오늘의조식 은 #아스파라거스 와 #방울토마토 를 팬에 구워 #조식 #조식스타그램",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 아스파라거스 3개\n- 방울토마토 5개\n- 호두\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 그레이터로 아스파라거스 줄기를 다듬는다. \n2. 팬에 올리브오일 두르고 소금, 후추로 간해서 아스파라거스를 볶는다. \n3. 아스파라거스를 따로 담아두고 방울토마토도 소금, 후추로 간해서 볶는다. \n4. 접시에 2의 아스파라거스와 3의 방울토마토 담고 다진 호두 조금 얹는다. ",
   "raw": "#오늘의조식 은 #아스파라거스 와 #방울토마토 를 팬에 구워 #조식 #조식스타그램",
   "pre_label": "D-165",
   "image": "https://images.how-about-breakfast.com/images/pre-165.jpg",
-  "_en": {
-   "hash": "9cd701ff6a209a8fe37b006bfcd8432ccf03a647933ba2a71050224637c4b24c",
-   "title": "Asparagus and Cherry Tomatoes",
-   "intro": "#todaysbreakfast is #asparagus and #cherrytomatoes seared in a pan. #breakfast #breakfastgram",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-아스파라거스-방울토마토"
  },
  {
