@@ -17,12 +17,6 @@
     return rounds.find(function (r) { return !r.winner && r.vote_start <= today && today <= r.vote_end; });
   }
 
-  function findLatestFinalized(rounds) {
-    var finalized = rounds.filter(function (r) { return r.winner; });
-    finalized.sort(function (a, b) { return b.id < a.id ? -1 : 1; });
-    return finalized[0] || null;
-  }
-
   Promise.all([
     fetch('monthly-vote.json').then(function (r) { return r.json(); }),
     Shared.loadData(),
@@ -43,8 +37,9 @@
       if (active) {
         renderActive(active, byId);
       } else {
-        renderInactive(findLatestFinalized(rounds), byId);
+        renderInactive();
       }
+      renderTimeline(rounds, byId);
       bindLangToggle();
     })
     .catch(function (err) {
@@ -81,54 +76,74 @@
     }
   }
 
-  function monthLabel(targetMonth) {
-    var parts = (targetMonth || '').split('-');
-    var year = parts[0];
-    var month = parseInt(parts[1], 10);
-    if (!year || !month) return I18N.t('vote_winner_prefix');
-    if (I18N.getLang() === 'en') {
-      var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      return MONTHS[month - 1] + ' ' + year;
-    }
-    return year + '년 ' + month + '월';
-  }
-
-  function renderInactive(latestFinalized, byId) {
-    var html =
+  function renderInactive() {
+    content.innerHTML =
       '<div class="vote-empty">' +
       '<b>' + I18N.t('vote_no_active_title') + '</b>' +
       '<span>' + I18N.t('vote_no_active_desc') + '</span>' +
-      '</div>' +
-      '<div class="vote-divider"></div>';
+      '</div>';
+  }
 
-    var winner = null;
-    if (latestFinalized) {
-      winner = byId[latestFinalized.winner];
-      if (winner) {
-        var winnerTitle = Shared.hasStaticEn(winner, 'title') ? Shared.localizedText(winner, 'title') : (winner.title || '');
-        html +=
-          '<div class="vote-winner">' +
-          '<p class="label">' + Shared.escapeHtml(monthLabel(latestFinalized.target_month)) + '</p>' +
-          '<span class="medal-badge">🥇 ' + I18N.t('medal_label') + '</span>' +
-          '<p class="vote-winner-name">' + Shared.escapeHtml(winnerTitle) + '</p>' +
-          '<div class="card" id="voteWinnerCard" role="button" tabindex="0">' +
-          Shared.thumbHTML(winner, 30) +
-          '</div>' +
+  var MONTH_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+  function yearLabel(year) {
+    return I18N.getLang() === 'en'
+      ? year + ' ' + I18N.t('medal_label')
+      : year + '년 ' + I18N.t('medal_label');
+  }
+
+  function monthShortLabel(m) {
+    return I18N.getLang() === 'en' ? MONTH_SHORT[m - 1] : m + '월';
+  }
+
+  // Jan-Dec strip for the current year: each month shows its finalized
+  // winner's thumbnail (clickable, opens the same modal used elsewhere on
+  // the site), or an empty placeholder if that month has no winner yet
+  // (still voting, or in the future).
+  function renderTimeline(rounds, byId) {
+    var year = todayKST().slice(0, 4);
+    var winnerByMonth = {};
+    rounds.forEach(function (r) {
+      if (r.winner && r.target_month && r.target_month.slice(0, 4) === year) {
+        winnerByMonth[r.target_month] = r.winner;
+      }
+    });
+
+    var items = '';
+    for (var m = 1; m <= 12; m++) {
+      var key = year + '-' + String(m).padStart(2, '0');
+      var pid = winnerByMonth[key];
+      var rec = pid ? byId[pid] : null;
+      if (rec) {
+        var title = Shared.hasStaticEn(rec, 'title') ? Shared.localizedText(rec, 'title') : (rec.title || '');
+        items +=
+          '<div class="vote-timeline-item filled" data-page-id="' + Shared.escapeHtml(pid) + '" role="button" tabindex="0" aria-label="' + Shared.escapeHtml(title) + '">' +
+          '<div class="thumb">' + Shared.thumbHTML(rec, 20) + '</div>' +
+          '<div class="month">' + monthShortLabel(m) + '</div>' +
+          '</div>';
+      } else {
+        items +=
+          '<div class="vote-timeline-item empty">' +
+          '<div class="thumb"></div>' +
+          '<div class="month">' + monthShortLabel(m) + '</div>' +
           '</div>';
       }
     }
-    if (!winner) {
-      html += '<p class="vote-note">' + I18N.t('vote_winner_none') + '</p>';
-    }
 
-    content.innerHTML = html;
+    var section =
+      '<div class="vote-divider"></div>' +
+      '<div class="vote-timeline-wrap">' +
+      '<p class="label">' + Shared.escapeHtml(yearLabel(year)) + '</p>' +
+      '<div class="vote-timeline">' + items + '</div>' +
+      '</div>';
+    content.insertAdjacentHTML('beforeend', section);
 
-    var winnerCard = document.getElementById('voteWinnerCard');
-    if (winnerCard && winner) {
-      var open = function () { Shared.openModal(winner); };
-      winnerCard.addEventListener('click', open);
-      winnerCard.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-    }
+    Array.prototype.forEach.call(content.querySelectorAll('.vote-timeline-item.filled'), function (el) {
+      var rec = byId[el.getAttribute('data-page-id')];
+      var open = function () { Shared.openModal(rec); };
+      el.addEventListener('click', open);
+      el.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    });
   }
 
   function cssId(pageId) {

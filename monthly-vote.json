@@ -1,3 +1,81 @@
 {
- "rounds": []
+ "rounds": [
+  {
+   "id": "2026-01",
+   "target_month": "2026-01",
+   "candidates": [
+    "스팀드-오이스터-Steamed-Oyster-굴찜-이다"
+   ],
+   "vote_start": "2026-01-01",
+   "vote_end": "2026-01-31",
+   "winner": "스팀드-오이스터-Steamed-Oyster-굴찜-이다",
+   "manual": true
+  },
+  {
+   "id": "2026-02",
+   "target_month": "2026-02",
+   "candidates": [
+    "소스는-100kcal-정도-된다-명절이니-여럿이서-나누어-먹자"
+   ],
+   "vote_start": "2026-02-01",
+   "vote_end": "2026-02-28",
+   "winner": "소스는-100kcal-정도-된다-명절이니-여럿이서-나누어-먹자",
+   "manual": true
+  },
+  {
+   "id": "2026-03",
+   "target_month": "2026-03",
+   "candidates": [
+    "비비오틱-이다"
+   ],
+   "vote_start": "2026-03-01",
+   "vote_end": "2026-03-31",
+   "winner": "비비오틱-이다",
+   "manual": true
+  },
+  {
+   "id": "2026-04",
+   "target_month": "2026-04",
+   "candidates": [
+    "미나리"
+   ],
+   "vote_start": "2026-04-01",
+   "vote_end": "2026-04-30",
+   "winner": "미나리",
+   "manual": true
+  },
+  {
+   "id": "2026-05",
+   "target_month": "2026-05",
+   "candidates": [
+    "포칭-닭가슴살-오이-샐러드-Poached-Chicken-Breast-Cucumber-Salad"
+   ],
+   "vote_start": "2026-05-01",
+   "vote_end": "2026-05-31",
+   "winner": "포칭-닭가슴살-오이-샐러드-Poached-Chicken-Breast-Cucumber-Salad",
+   "manual": true
+  },
+  {
+   "id": "2026-06",
+   "target_month": "2026-06",
+   "candidates": [
+    "2026-여름-한정-콜드-망고-링귀니-2026-Summer-Limited-Cold-Mango-Lingui"
+   ],
+   "vote_start": "2026-06-01",
+   "vote_end": "2026-06-30",
+   "winner": "2026-여름-한정-콜드-망고-링귀니-2026-Summer-Limited-Cold-Mango-Lingui",
+   "manual": true
+  },
+  {
+   "id": "2026-07",
+   "target_month": "2026-07",
+   "candidates": [
+    "망고-아보카도-템페-크리스피-롤-Mango-Avocado-Tempeh-Crispy-Roll"
+   ],
+   "vote_start": "2026-07-01",
+   "vote_end": "2026-07-31",
+   "winner": "망고-아보카도-템페-크리스피-롤-Mango-Avocado-Tempeh-Crispy-Roll",
+   "manual": true
+  }
+ ]
 }
