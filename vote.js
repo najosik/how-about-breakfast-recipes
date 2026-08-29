@@ -88,9 +88,9 @@
     if (!year || !month) return I18N.t('vote_winner_prefix');
     if (I18N.getLang() === 'en') {
       var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-      return MONTHS[month - 1] + ' ' + year + ' ' + I18N.t('medal_label');
+      return MONTHS[month - 1] + ' ' + year;
     }
-    return year + '년 ' + month + '월 ' + I18N.t('medal_label');
+    return year + '년 ' + month + '월';
   }
 
   function renderInactive(latestFinalized, byId) {
