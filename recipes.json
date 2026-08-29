@@ -25440,7 +25440,8 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "가스파초-토마토"
+  "page_id": "가스파초-토마토",
+  "deleted": true
  },
  {
   "date": "2024-08-30",
@@ -25462,6 +25463,14 @@
   "ingredients": "- 토마토 2개\n- 오이 1/2개\n- 셀러리 1줄기\n- 마늘 1개\n- 올리브오일 1T\n- 레몬주스 1T\n- 소금\n- 후추\n- 민트",
   "steps": "1. 토마토 2개는 칼집 내서 끓는 물에 데치고 찬물에 넣어서 껍질을 벗긴다.\n2. 블렌더에 토마토 1개(1개는 남겨둔다.), 오이, 셀러리, 마늘 넣고 블렌더로 간다. \n3. 2를 믹싱볼에 붓고 올리브오일, 레몬주스, 소금, 후추 넣고 섞어서 잠시 냉장실에 넣어둔다. (원래는 1시간쯤 시원하게,)\n4. 그릇에 담고 남겨놓은 토마토 다져서 얹고 올리브오일, 민트 몇 조각 얹는다. ",
   "raw": "20240830 #조식다이어리 1163, 24도/맑음, \n\n검은 돌솥에\n\n토마토 3개, 셀러리 줄기 1, 오이 1/2개, 마늘 1/2개, 올리브오일 2, \n#조식 #레시피 #미라클모닝 #멜론\n\n-",
+  "image": "https://images.how-about-breakfast.com/images/1164.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1164.jpg",
+   "https://images.how-about-breakfast.com/images/1164_2.jpg",
+   "https://images.how-about-breakfast.com/images/1164_3.jpg",
+   "https://images.how-about-breakfast.com/images/1164_4.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1164.mp4",
   "page_id": "멜론",
   "_en": {
    "hash": "9d93cfbcb913cc26311150d614acd3a7c0543a525918cee655ab361c6e375bdd",
