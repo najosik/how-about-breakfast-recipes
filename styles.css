@@ -192,17 +192,17 @@ h3.card-title{
 .vote-divider{border-top:1px solid var(--line); margin:40px 0;}
 .vote-timeline-wrap{text-align:center;}
 .vote-timeline-wrap .label{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-bottom:14px;}
-.vote-timeline{display:flex; gap:10px; overflow-x:auto; padding:2px 2px 10px; justify-content:flex-start;}
-.vote-timeline-item{flex:0 0 68px; min-width:0; text-align:center; cursor:default;}
+.vote-timeline{display:flex; flex-wrap:nowrap; gap:6px; padding:2px 0 10px;}
+.vote-timeline-item{flex:0 0 auto; width:calc((100% - 66px) / 12); min-width:0; text-align:center; cursor:default;}
 .vote-timeline-item.filled{cursor:pointer;}
 .vote-timeline-item .thumb{
-  width:68px; height:68px; border-radius:6px; overflow:hidden; background:var(--paper-raised);
-  border:1px solid var(--line); margin:0 auto 6px;
+  width:100%; aspect-ratio:1; border-radius:6px; overflow:hidden; background:var(--paper-raised);
+  border:1px solid var(--line); margin:0 0 6px;
 }
-.vote-timeline-item .thumb img, .vote-timeline-item .thumb .card-photo{width:100%; height:100%;}
+.vote-timeline-item .thumb img, .vote-timeline-item .thumb .card-photo{width:100%; height:100%; aspect-ratio:1; margin:0;}
 .vote-timeline-item .thumb img{object-fit:cover; display:block;}
-.vote-timeline-item.empty .thumb{background:var(--line); opacity:.4;}
-.vote-timeline-item .month{font-size:11px; color:var(--ink-faint);}
+.vote-timeline-item.unfilled .thumb{background:var(--line); opacity:.4;}
+.vote-timeline-item .month{font-size:11px; color:var(--ink-faint); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 .vote-timeline-item.filled .month{color:var(--ink-soft); font-weight:600;}
 
 .load-more-wrap{text-align:center; margin-top:36px;}
@@ -427,4 +427,7 @@ section.mag-section + section.mag-section{margin-top:0; border-top:1px solid var
   .cta-archive{flex-direction:column; align-items:flex-start;}
   .nav-right{flex-wrap:wrap; justify-content:flex-end;}
   .tag-cloud{flex-basis:100%;}
+  .vote-timeline{gap:3px;}
+  .vote-timeline-item{width:calc((100% - 33px) / 12);}
+  .vote-timeline-item .month{font-size:9px;}
 }

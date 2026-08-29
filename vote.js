@@ -123,7 +123,7 @@
           '</div>';
       } else {
         items +=
-          '<div class="vote-timeline-item empty">' +
+          '<div class="vote-timeline-item unfilled">' +
           '<div class="thumb"></div>' +
           '<div class="month">' + monthShortLabel(m) + '</div>' +
           '</div>';
