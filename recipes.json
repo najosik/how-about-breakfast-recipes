@@ -4750,43 +4750,6 @@
   "date": "2026-04-20",
   "date_raw": "20260420",
   "diary_no": 1707,
-  "weather": "12도/흐림",
-  "failed": false,
-  "calories": 500,
-  "title": "#버섯볶음밥 Mushroom Fried Rice",
-  "credit": null,
-  "hashtags": [
-   "레시피",
-   "버섯",
-   "버섯볶음밥",
-   "조식",
-   "조식다이어리"
-  ],
-  "intro": "20260420 #조식다이어리 1696, 12도/흐림\n갈아놓은 들깨는 쉽게 산패되기 때문에 필요할 때마다 갈아서 쓰면 좋다. \n1인분 약 500kcal #버섯볶음밥 Mushroom Fried Rice",
-  "ingredients": "각종 버섯(오늘은 표고버섯, 느타리버섯, 팽이버섯), 밥 1/2공기, 간장 1T, 굴소스 1T, 버터 5g, 다진 쪽파, 참기름 1T, 들깨가루 2T",
-  "steps": "1. 표고버섯은 세로로 썰고 느타리버섯은 한 개씩 뜯어낸다. 팽이버섯은 낱낱이 해체한다. \n2. 팬에 올리브오일, 1의 버섯 넣고 후추후추, 간장 1T, 굴소스 1T 넣고 좀 더 볶는다. \n3. 밥 1 그릇과 버터 5g 넣고 골고루 섞는다. 누룽지를 만든다는 느낌을 꾹꾹 눌러준다. \n4. 불 끄고 다진 쪽파, 참기름 1T, 들깨가루 듬뿍 넣고 골고루 섞는다. \n5. 버섯이 보일 수 있도록 넓게 펼쳐 담는다.",
-  "raw": "20260420 #조식다이어리 1696, 12도/흐림\n\n갈아놓은 들깨는 쉽게 산패되기 때문에 필요할 때마다 갈아서 쓰면 좋다. \n\n1인분 약 500kcal #버섯볶음밥 Mushroom Fried Rice\n\n👉 재료(2인분)\n각종 버섯(오늘은 표고버섯, 느타리버섯, 팽이버섯), 밥 1/2공기, 간장 1T, 굴소스 1T, 버터 5g, 다진 쪽파, 참기름 1T, 들깨가루 2T \n\n👉 조리\n1. 표고버섯은 세로로 썰고 느타리버섯은 한 개씩 뜯어낸다. 팽이버섯은 낱낱이 해체한다. \n2. 팬에 올리브오일, 1의 버섯 넣고 후추후추, 간장 1T, 굴소스 1T 넣고 좀 더 볶는다. \n3. 밥 1 그릇과 버터 5g 넣고 골고루 섞는다. 누룽지를 만든다는 느낌을 꾹꾹 눌러준다. \n4. 불 끄고 다진 쪽파, 참기름 1T, 들깨가루 듬뿍 넣고 골고루 섞는다. \n5. 버섯이 보일 수 있도록 넓게 펼쳐 담는다. \n\n#조식 #레시피 #버섯",
-  "image": "https://images.how-about-breakfast.com/images/1696.jpg",
-  "gallery": [
-   "https://images.how-about-breakfast.com/images/1696.jpg",
-   "https://images.how-about-breakfast.com/images/1696_2.jpg",
-   "https://images.how-about-breakfast.com/images/1696_3.jpg",
-   "https://images.how-about-breakfast.com/images/1696_4.jpg",
-   "https://images.how-about-breakfast.com/images/1696_5.jpg"
-  ],
-  "_en": {
-   "hash": "5f6499f2ff5420cf4090c0a59ecd672dd0135151f8c3988615e6543fdd49e68b",
-   "title": "Mushroom Fried Rice",
-   "intro": "20260420, #BreakfastDiary 1696, 12°C/cloudy\nGround perilla seed powder oxidizes quickly, so it's best to grind only as much as you need each time.\nAbout 500kcal per serving, #MushroomFriedRice Mushroom Fried Rice.",
-   "ingredients": "assorted mushrooms (today: shiitake, oyster, enoki), 1/2 bowl rice, 1T soy sauce, 1T oyster sauce, 5g butter, chopped scallion, 1T sesame oil, 2T perilla seed powder",
-   "steps": "1. Slice the shiitake mushrooms lengthwise, pull the oyster mushrooms apart into individual pieces, and separate the enoki mushrooms strand by strand.\n2. Heat olive oil in a pan, add the mushrooms from step 1, then add a good pinch of pepper, 1T soy sauce, and 1T oyster sauce, and sauté a bit more.\n3. Add 1 bowl of rice and 5g butter and mix evenly. Press down firmly as if you're forming a crust of nurungji (crispy rice).\n4. Turn off the heat, add the chopped scallion, 1T sesame oil, and a generous amount of perilla seed powder, and mix evenly.\n5. Spread it out wide on the plate so the mushrooms are visible."
-  },
-  "page_id": "버섯볶음밥-Mushroom-Fried-Rice"
- },
- {
-  "date": "2026-04-19",
-  "date_raw": "20260419",
-  "diary_no": 1706,
   "weather": "22도/대체로 흐림",
   "failed": false,
   "calories": 700,
@@ -4798,30 +4761,31 @@
    "조식다이어리",
    "치즈케이크"
   ],
-  "intro": "20260419 #조식다이어리 1695, 22도/대체로 흐림\n오리지널 레시피엔 리코타치즈와 세몰리나가 들어가는데 세몰리나는 없고 리코타치즈도 모자라서 그릭요거트와 오트밀을 넣었다. 약 700kcal 노슈가, 노밀가루 포실포실 치즈케이크 \n오븐에 넣고 30분쯤 지난 뒤 원하는 색이 나오면 쿠킹포일로 살짝 덮는 게 좋다. 코코넛가루가 타면 지옥에서 온, 이라는 수식어가 붙게 된다.",
+  "intro": "20260420 #조식다이어리 1696, 22도/대체로 흐림\n오리지널 레시피엔 리코타치즈와 세몰리나가 들어가는데 세몰리나는 없고 리코타치즈도 모자라서 그릭요거트와 오트밀을 넣었다. 약 700kcal 노슈가, 노밀가루 포실포실 치즈케이크 \n오븐에 넣고 30분쯤 지난 뒤 원하는 색이 나오면 쿠킹포일로 살짝 덮는 게 좋다. 코코넛가루가 타면 지옥에서 온, 이라는 수식어가 붙게 된다.",
   "ingredients": "리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵, (토핑) 코코넛가루 2T",
   "steps": "1. 믹싱볼에 리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵 넣고 골고루 섞는다. 그릇에 옮겨 담고 코코넛가루 얹는다. \n2. 180도 오븐에 45분 굽는다.",
-  "raw": "20260419 #조식다이어리 1695, 22도/대체로 흐림\n\n오리지널 레시피엔 리코타치즈와 세몰리나가 들어가는데 세몰리나는 없고 리코타치즈도 모자라서 그릭요거트와 오트밀을 넣었다. 약 700kcal 노슈가, 노밀가루 포실포실 치즈케이크 \n오븐에 넣고 30분쯤 지난 뒤 원하는 색이 나오면 쿠킹포일로 살짝 덮는 게 좋다. 코코넛가루가 타면 지옥에서 온, 이라는 수식어가 붙게 된다. \n\n👉 재료\n리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵, (토핑) 코코넛가루 2T\n\n👉 조리\n1. 믹싱볼에 리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵 넣고 골고루 섞는다. 그릇에 옮겨 담고 코코넛가루 얹는다. \n2. 180도 오븐에 45분 굽는다. \n\nInspired by @simplefood_recipe\n\n#조식 #레시피 #치즈케이크",
-  "image": "https://images.how-about-breakfast.com/images/1695.jpg",
+  "raw": "20260420 #조식다이어리 1696, 12도/흐림\n\n갈아놓은 들깨는 쉽게 산패되기 때문에 필요할 때마다 갈아서 쓰면 좋다. \n\n1인분 약 500kcal #버섯볶음밥 Mushroom Fried Rice\n\n👉 재료(2인분)\n각종 버섯(오늘은 표고버섯, 느타리버섯, 팽이버섯), 밥 1/2공기, 간장 1T, 굴소스 1T, 버터 5g, 다진 쪽파, 참기름 1T, 들깨가루 2T \n\n👉 조리\n1. 표고버섯은 세로로 썰고 느타리버섯은 한 개씩 뜯어낸다. 팽이버섯은 낱낱이 해체한다. \n2. 팬에 올리브오일, 1의 버섯 넣고 후추후추, 간장 1T, 굴소스 1T 넣고 좀 더 볶는다. \n3. 밥 1 그릇과 버터 5g 넣고 골고루 섞는다. 누룽지를 만든다는 느낌을 꾹꾹 눌러준다. \n4. 불 끄고 다진 쪽파, 참기름 1T, 들깨가루 듬뿍 넣고 골고루 섞는다. \n5. 버섯이 보일 수 있도록 넓게 펼쳐 담는다. \n\n#조식 #레시피 #버섯",
+  "image": "https://images.how-about-breakfast.com/images/1696.jpg",
   "gallery": [
-   "https://images.how-about-breakfast.com/images/1695.jpg",
-   "https://images.how-about-breakfast.com/images/1695_2.jpg",
-   "https://images.how-about-breakfast.com/images/1695_3.jpg"
+   "https://images.how-about-breakfast.com/images/1696.jpg",
+   "https://images.how-about-breakfast.com/images/1696_2.jpg",
+   "https://images.how-about-breakfast.com/images/1696_3.jpg",
+   "https://images.how-about-breakfast.com/images/1696_4.jpg",
+   "https://images.how-about-breakfast.com/images/1696_5.jpg"
   ],
-  "video": "https://images.how-about-breakfast.com/images/1695.mp4",
   "_en": {
-   "hash": "b21d4731d659eb4e4bda610aabd26a856e6515ca7d8cba658bf77e48fdddf368",
+   "hash": "137a4244a21e0d51fced3b926a112328189e82648814aa32c556e7b50520ecfd",
    "title": "No-Sugar, No-Flour Fluffy Cheesecake",
-   "intro": "20260419, #BreakfastDiary 1695, 22°C/mostly cloudy\nThe original recipe calls for ricotta cheese and semolina, but I had no semolina and not quite enough ricotta either, so I added Greek yogurt and oatmeal instead. About 700kcal, No-Sugar, No-Flour Fluffy Cheesecake.\nAbout 30 minutes into baking, once it reaches the color you want, it's best to loosely cover it with foil. If the coconut powder on top burns, it earns itself the modifier 'straight from hell.'",
+   "intro": "20260420, #BreakfastDiary 1696, 22°C/mostly cloudy\nThe original recipe calls for ricotta cheese and semolina, but I had no semolina and not quite enough ricotta either, so I added Greek yogurt and oatmeal instead. About 700kcal, No-Sugar, No-Flour Fluffy Cheesecake.\nAbout 30 minutes into baking, once it reaches the color you want, it's best to loosely cover it with foil. If the coconut powder on top burns, it earns itself the modifier 'straight from hell.'",
    "ingredients": "150g ricotta cheese, 150g Greek yogurt, 2 eggs, 5T finely ground oatmeal, 3/4t baking powder, 1/4 cup raisins, (topping) 2T coconut powder",
    "steps": "1. In a mixing bowl, combine 150g ricotta cheese, 150g Greek yogurt, 2 eggs, 5T finely ground oatmeal, 3/4t baking powder, and 1/4 cup raisins, and mix evenly. Transfer to a baking dish and top with coconut powder.\n2. Bake in a 180°C oven for 45 minutes."
   },
-  "page_id": "노슈가-노밀가루-포실포실-치즈케이크-오븐에-넣고-30분쯤-지난-뒤-원하는-색이-나오면-쿠킹포일로-살짝-덮는"
+  "page_id": "버섯볶음밥-Mushroom-Fried-Rice"
  },
  {
-  "date": "2026-04-18",
-  "date_raw": "20260418",
-  "diary_no": 1705,
+  "date": "2026-04-19",
+  "date_raw": "20260419",
+  "diary_no": 1706,
   "weather": "14도/맑음",
   "failed": false,
   "calories": 650,
@@ -4833,31 +4797,30 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20260418 #조식다이어리 1694, 14도/맑음\n콘킬리에 속에 토마토를 가득 채운 약 650kcal 토마토 참치 콘킬리에 파스타 Tomato Tuna Conchiglie Pasta",
+  "intro": "20260419 #조식다이어리 1695, 14도/맑음\n콘킬리에 속에 토마토를 가득 채운 약 650kcal 토마토 참치 콘킬리에 파스타 Tomato Tuna Conchiglie Pasta",
   "ingredients": "콘킬리에 100g, 마늘 2개, 앤초비 페이스트 1t, 양파 1/2개, 토마토소스 150g, 바질 조금, 참치캔 1개, 파마산치즈 조금",
   "steps": "1. 끓는 물에 소금소금 콘킬리에를 삶는다. \n2. 팬에 올리브오일 두르고 다진 마늘과 앤초비 페이스트 1t 넣고 볶는다. \n3. 다진 양파 1/2개 다져서 볶는다. \n4. 팬에 토마토소스, 1의 면수 1국자 넣고 보글보글 끓인다. \n5. 3에 콘킬리에 넣고 가볍게 만테까레한다. 원하는 농도에 이르면 불 끄고 다진 바질 넣고 골고루 섞는다. \n6. 접시에 콘킬리에 담고 참치와 바질, 파마산치즈 갈아서 얹는다.",
-  "raw": "20260418 #조식다이어리 1694, 14도/맑음\n\n콘킬리에 속에 토마토를 가득 채운 약 650kcal 토마토 참치 콘킬리에 파스타 Tomato Tuna Conchiglie Pasta \n\n👉 재료\n콘킬리에 100g, 마늘 2개, 앤초비 페이스트 1t, 양파 1/2개, 토마토소스 150g, 바질 조금, 참치캔 1개, 파마산치즈 조금 \n\n👉 조리\n1. 끓는 물에 소금소금 콘킬리에를 삶는다. \n2. 팬에 올리브오일 두르고 다진 마늘과 앤초비 페이스트 1t 넣고 볶는다. \n3. 다진 양파 1/2개 다져서 볶는다. \n4. 팬에 토마토소스, 1의 면수 1국자 넣고 보글보글 끓인다. \n5. 3에 콘킬리에 넣고 가볍게 만테까레한다. 원하는 농도에 이르면 불 끄고 다진 바질 넣고 골고루 섞는다. \n6. 접시에 콘킬리에 담고 참치와 바질, 파마산치즈 갈아서 얹는다. \n\nInspired by @gmcoo.k\n\n#조식 #레시피 #바질",
-  "image": "https://images.how-about-breakfast.com/images/1694.jpg",
+  "raw": "20260419 #조식다이어리 1695, 22도/대체로 흐림\n\n오리지널 레시피엔 리코타치즈와 세몰리나가 들어가는데 세몰리나는 없고 리코타치즈도 모자라서 그릭요거트와 오트밀을 넣었다. 약 700kcal 노슈가, 노밀가루 포실포실 치즈케이크 \n오븐에 넣고 30분쯤 지난 뒤 원하는 색이 나오면 쿠킹포일로 살짝 덮는 게 좋다. 코코넛가루가 타면 지옥에서 온, 이라는 수식어가 붙게 된다. \n\n👉 재료\n리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵, (토핑) 코코넛가루 2T\n\n👉 조리\n1. 믹싱볼에 리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵 넣고 골고루 섞는다. 그릇에 옮겨 담고 코코넛가루 얹는다. \n2. 180도 오븐에 45분 굽는다. \n\nInspired by @simplefood_recipe\n\n#조식 #레시피 #치즈케이크",
+  "image": "https://images.how-about-breakfast.com/images/1695.jpg",
   "gallery": [
-   "https://images.how-about-breakfast.com/images/1694.jpg",
-   "https://images.how-about-breakfast.com/images/1694_2.jpg",
-   "https://images.how-about-breakfast.com/images/1694_3.jpg",
-   "https://images.how-about-breakfast.com/images/1694_4.jpg"
+   "https://images.how-about-breakfast.com/images/1695.jpg",
+   "https://images.how-about-breakfast.com/images/1695_2.jpg",
+   "https://images.how-about-breakfast.com/images/1695_3.jpg"
   ],
-  "video": "https://images.how-about-breakfast.com/images/1694.mp4",
+  "video": "https://images.how-about-breakfast.com/images/1695.mp4",
   "_en": {
-   "hash": "7f7353335d7877002fbd2a4e7adf2ef834f3b491876211fddad487658058585d",
+   "hash": "04d487d9d0e46c1f4043cc9e33803db89e818b3a80586d2c495cde0b16891dbf",
    "title": "Tomato Tuna Conchiglie Pasta",
-   "intro": "20260418, #BreakfastDiary 1694, 14°C/sunny\nConchiglie shells packed full of tomato, about 650kcal, Tomato Tuna Conchiglie Pasta.",
+   "intro": "20260419, #BreakfastDiary 1695, 14°C/sunny\nConchiglie shells packed full of tomato, about 650kcal, Tomato Tuna Conchiglie Pasta.",
    "ingredients": "100g conchiglie, 2 cloves garlic, 1t anchovy paste, 1/2 onion, 150g tomato sauce, a little basil, 1 can tuna, a little parmesan cheese",
    "steps": "1. Boil the conchiglie in well-salted water.\n2. Heat olive oil in a pan and sauté the minced garlic and 1t anchovy paste.\n3. Add the chopped 1/2 onion and sauté.\n4. Add the tomato sauce and a ladle of pasta water from step 1 to the pan and let it simmer.\n5. Add the conchiglie to step 3 and toss lightly to mantecare. Once it reaches the consistency you want, turn off the heat, add the chopped basil, and mix evenly.\n6. Plate the conchiglie and top with tuna, basil, and grated parmesan cheese."
   },
-  "page_id": "토마토-참치-콘킬리에-파스타-Tomato-Tuna-Conchiglie-Pasta"
+  "page_id": "노슈가-노밀가루-포실포실-치즈케이크-오븐에-넣고-30분쯤-지난-뒤-원하는-색이-나오면-쿠킹포일로-살짝-덮는"
  },
  {
-  "date": "2026-04-16",
-  "date_raw": "20260416",
-  "diary_no": 1704,
+  "date": "2026-04-18",
+  "date_raw": "20260418",
+  "diary_no": 1705,
   "weather": "14도/맑음",
   "failed": false,
   "calories": 580,
@@ -4870,30 +4833,31 @@
    "콩비지",
    "콩비지샐러드"
   ],
-  "intro": "20260416 #조식다이어리 1694, 14도/맑음\n기억할께\n580kcal #콩비지샐러드 Soy Bean Pulp Salad",
+  "intro": "20260418 #조식다이어리 1694, 14도/맑음\n기억할께\n580kcal #콩비지샐러드 Soy Bean Pulp Salad",
   "ingredients": "콩비지 300g, 버터 1T, 마요네즈 3T, 그릭요거트 2T, 오이 1/2개, 사과 1/2개, 토마토 1개, 래디시 2개, 체다치즈 10g, 소금, 후추",
   "steps": "1. 오이 1/2개, 사과 1/2개, 토마토 1개, 체다치즈 10g을 먹기 좋게 썰고 래디시 2개는 채칼로 썬다. \n2. 콩비지는 전자레인지에 2분 데운다. \n3. 믹싱볼에 방금 데운 콩비지 300g, 버터 1T 넣고 섞는다. 버터가 잘 녹는다. 마요네즈 3T, 그릭요거트 2T 넣고 섞는다. 1에서 손질한 재료를 넣고 골고루 섞는다. 소금과 후추로 간을 한다.",
-  "raw": "20260415 #조식다이어리 1693, 14도/맑음\n\n기억할께\n\n580kcal #콩비지샐러드 Soy Bean Pulp Salad\n\n👉 재료\n콩비지 300g, 버터 1T, 마요네즈 3T, 그릭요거트 2T, 오이 1/2개, 사과 1/2개, 토마토 1개, 래디시 2개, 체다치즈 10g, 소금, 후추\n\n👉 조리\n1. 오이 1/2개, 사과 1/2개, 토마토 1개, 체다치즈 10g을 먹기 좋게 썰고 래디시 2개는 채칼로 썬다. \n2. 콩비지는 전자레인지에 2분 데운다. \n3. 믹싱볼에 방금 데운 콩비지 300g, 버터 1T 넣고 섞는다. 버터가 잘 녹는다. 마요네즈 3T, 그릭요거트 2T 넣고 섞는다. 1에서 손질한 재료를 넣고 골고루 섞는다. 소금과 후추로 간을 한다. \n\n#조식 #레시피 #콩비지",
-  "image": "https://images.how-about-breakfast.com/images/1693.jpg",
+  "raw": "20260418 #조식다이어리 1694, 14도/맑음\n\n콘킬리에 속에 토마토를 가득 채운 약 650kcal 토마토 참치 콘킬리에 파스타 Tomato Tuna Conchiglie Pasta \n\n👉 재료\n콘킬리에 100g, 마늘 2개, 앤초비 페이스트 1t, 양파 1/2개, 토마토소스 150g, 바질 조금, 참치캔 1개, 파마산치즈 조금 \n\n👉 조리\n1. 끓는 물에 소금소금 콘킬리에를 삶는다. \n2. 팬에 올리브오일 두르고 다진 마늘과 앤초비 페이스트 1t 넣고 볶는다. \n3. 다진 양파 1/2개 다져서 볶는다. \n4. 팬에 토마토소스, 1의 면수 1국자 넣고 보글보글 끓인다. \n5. 3에 콘킬리에 넣고 가볍게 만테까레한다. 원하는 농도에 이르면 불 끄고 다진 바질 넣고 골고루 섞는다. \n6. 접시에 콘킬리에 담고 참치와 바질, 파마산치즈 갈아서 얹는다. \n\nInspired by @gmcoo.k\n\n#조식 #레시피 #바질",
+  "image": "https://images.how-about-breakfast.com/images/1694.jpg",
   "gallery": [
-   "https://images.how-about-breakfast.com/images/1693.jpg",
-   "https://images.how-about-breakfast.com/images/1693_2.jpg",
-   "https://images.how-about-breakfast.com/images/1693_3.jpg"
+   "https://images.how-about-breakfast.com/images/1694.jpg",
+   "https://images.how-about-breakfast.com/images/1694_2.jpg",
+   "https://images.how-about-breakfast.com/images/1694_3.jpg",
+   "https://images.how-about-breakfast.com/images/1694_4.jpg"
   ],
-  "video": "https://images.how-about-breakfast.com/images/1693.mp4",
+  "video": "https://images.how-about-breakfast.com/images/1694.mp4",
   "_en": {
-   "hash": "53620d2c80ec02929e275273ce2097661799ba15bf256f48a847f16c0ae1ec90",
+   "hash": "faf67229c6ac50037f5eeb4e1b178436289fd31b7140ba2e9b4ba608e71e9a0a",
    "title": "Soybean Pulp Salad",
-   "intro": "20260416, #BreakfastDiary 1694, 14°C/sunny\nI'll remember this.\n580kcal, #SoybeanPulpSalad Soy Bean Pulp Salad.",
+   "intro": "20260418, #BreakfastDiary 1694, 14°C/sunny\nI'll remember this.\n580kcal, #SoybeanPulpSalad Soy Bean Pulp Salad.",
    "ingredients": "300g soybean pulp (biji), 1T butter, 3T mayonnaise, 2T Greek yogurt, 1/2 cucumber, 1/2 apple, 1 tomato, 2 radishes, 10g cheddar cheese, salt, pepper",
    "steps": "1. Cut the 1/2 cucumber, 1/2 apple, 1 tomato, and 10g cheddar cheese into bite-sized pieces, and slice the 2 radishes with a mandoline.\n2. Microwave the soybean pulp for 2 minutes.\n3. In a mixing bowl, combine the freshly warmed 300g soybean pulp with 1T butter and mix - the butter melts nicely. Add 3T mayonnaise and 2T Greek yogurt and mix. Add the ingredients prepped in step 1 and mix evenly. Season with salt and pepper."
   },
-  "page_id": "콩비지샐러드-Soy-Bean-Pulp-Salad"
+  "page_id": "토마토-참치-콘킬리에-파스타-Tomato-Tuna-Conchiglie-Pasta"
  },
  {
   "date": "2026-04-15",
   "date_raw": "20260415",
-  "diary_no": 1703,
+  "diary_no": 1704,
   "weather": "14도/대체로 맑음",
   "failed": false,
   "calories": 450,
@@ -4908,27 +4872,27 @@
   "intro": "20260415 #조식다이어리 1693, 14도/대체로 맑음\nB브랜드의 통밀 건강콩 식빵, 건강에 좋(을 것 같)고 맛도 좋은데 샌드하고 반으로 잘랐더니 산산히 부서진다. 토마토 바질 샌드위치는 건강을 포기하고 하얗고 쫀쫀한 우유식빵을 사용하는 게 좋겠다. \n450kcal 토마토 바질 샌드위치 Tomato Basil Sandwich",
   "ingredients": "식빵 2장, 토마토 2개, 바질 한 줌, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추",
   "steps": "1. 흐르는 물에 토마토 2개 씻어서 먹기 좋게 썬다. 속은 제거한다. \n2. 바질 한 줌 다진다. \n3. 믹싱볼에 1의 토마토, 2의 바질, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추 넣고 골고루 섞는다. \n4. (몸 생각해서 우유식빵 대신에) 발효종 통밀 콩식빵 위에 2의 토마토 바질 샐러드 얹는다.",
-  "raw": "20260414 #조식다이어리 1692, 14도/대체로 맑음\n\nB브랜드의 통밀 건강콩 식빵, 건강에 좋(을 것 같)고 맛도 좋은데 샌드하고 반으로 잘랐더니 산산히 부서진다. 토마토 바질 샌드위치는 건강을 포기하고 하얗고 쫀쫀한 우유식빵을 사용하는 게 좋겠다. \n\n450kcal 토마토 바질 샌드위치 Tomato Basil Sandwich\n\n👉 재료\n식빵 2장, 토마토 2개, 바질 한 줌, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추\n\n👉 조리\n1. 흐르는 물에 토마토 2개 씻어서 먹기 좋게 썬다. 속은 제거한다. \n2. 바질 한 줌 다진다. \n3. 믹싱볼에 1의 토마토, 2의 바질, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추 넣고 골고루 섞는다. \n4. (몸 생각해서 우유식빵 대신에) 발효종 통밀 콩식빵 위에 2의 토마토 바질 샐러드 얹는다. \n\n#조식 #레시피 #토마토",
-  "image": "https://images.how-about-breakfast.com/images/1692.jpg",
+  "raw": "20260415 #조식다이어리 1693, 14도/맑음\n\n기억할께\n\n580kcal #콩비지샐러드 Soy Bean Pulp Salad\n\n👉 재료\n콩비지 300g, 버터 1T, 마요네즈 3T, 그릭요거트 2T, 오이 1/2개, 사과 1/2개, 토마토 1개, 래디시 2개, 체다치즈 10g, 소금, 후추\n\n👉 조리\n1. 오이 1/2개, 사과 1/2개, 토마토 1개, 체다치즈 10g을 먹기 좋게 썰고 래디시 2개는 채칼로 썬다. \n2. 콩비지는 전자레인지에 2분 데운다. \n3. 믹싱볼에 방금 데운 콩비지 300g, 버터 1T 넣고 섞는다. 버터가 잘 녹는다. 마요네즈 3T, 그릭요거트 2T 넣고 섞는다. 1에서 손질한 재료를 넣고 골고루 섞는다. 소금과 후추로 간을 한다. \n\n#조식 #레시피 #콩비지",
+  "image": "https://images.how-about-breakfast.com/images/1693.jpg",
   "gallery": [
-   "https://images.how-about-breakfast.com/images/1692.jpg",
-   "https://images.how-about-breakfast.com/images/1692_2.jpg",
-   "https://images.how-about-breakfast.com/images/1692_3.jpg"
+   "https://images.how-about-breakfast.com/images/1693.jpg",
+   "https://images.how-about-breakfast.com/images/1693_2.jpg",
+   "https://images.how-about-breakfast.com/images/1693_3.jpg"
   ],
-  "video": "https://images.how-about-breakfast.com/images/1692.mp4",
+  "video": "https://images.how-about-breakfast.com/images/1693.mp4",
   "_en": {
-   "hash": "91a0e54e7075badda95b3de58bff602b6ba57fa0405fcdfc45a39a404a9b370e",
+   "hash": "cc839373e0a0169ded2e14f5aa4d80b10c769ef4a3e17297035c08561acc39a6",
    "title": "Tomato Basil Sandwich",
    "intro": "20260415, #BreakfastDiary 1693, 14°C/mostly sunny\nBrand B's whole-wheat health soybean bread - it seems good for you and tastes good too, but when I made the sandwich and cut it in half, it crumbled to pieces. For tomato basil sandwiches, I think it's better to give up on health and use soft, chewy white milk bread instead.\n450kcal, Tomato Basil Sandwich.",
    "ingredients": "2 slices white bread, 2 tomatoes, a handful of basil, 2T mayonnaise, 1t balsamic vinegar, 1T hemp seeds, a good pinch of salt, a good pinch of pepper",
    "steps": "1. Wash the 2 tomatoes under running water and cut into bite-sized pieces. Remove the seeds and pulp.\n2. Chop a handful of basil.\n3. In a mixing bowl, combine the tomato from step 1, basil from step 2, 2T mayonnaise, 1t balsamic vinegar, 1T hemp seeds, a good pinch of salt, and a good pinch of pepper, and mix evenly.\n4. (Thinking of my health, instead of milk bread) top the fermented whole-wheat soybean bread with the tomato basil salad from step 2."
   },
-  "page_id": "토마토-바질-샌드위치-Tomato-Basil-Sandwich-2"
+  "page_id": "콩비지샐러드-Soy-Bean-Pulp-Salad"
  },
  {
   "date": "2026-04-14",
   "date_raw": "20260414",
-  "diary_no": 1702,
+  "diary_no": 1703,
   "weather": "14도/흐림",
   "failed": false,
   "calories": null,
@@ -4943,6 +4907,43 @@
   "intro": "20260414 #조식다이어리 1692, 14도/흐림\n토마토 바질 샌드위치를 만들려고 했는데 빵이 없구나. 오히려 좋아. \n달궈진 속을 시원하게 달래줄 약 240kca 미나리 두부 미소국 Minari(Water Parsley)Tofu Miso Soup",
   "ingredients": "미나리 적당히, 현미밥 1/2공기, 물 600ml, 두부 1모, 다시다 1t, 미소 1T",
   "steps": "1. 냄비에 물 600ml 붓고 물이 끓으면 다시다 1t, 미소 1T 풀어서 섞는다. \n2. 두부 1cm 다이스로 썰어서 넣는다. \n3. 미나리 줄기 썰어서 넣고 1분 끓이고 불을 끈다. (오래 끓이면 미나리 향이 날아간다.) \n4. 그릇에 담고 후추후추, 식은밥 말아 먹는다.",
+  "raw": "20260414 #조식다이어리 1692, 14도/대체로 맑음\n\nB브랜드의 통밀 건강콩 식빵, 건강에 좋(을 것 같)고 맛도 좋은데 샌드하고 반으로 잘랐더니 산산히 부서진다. 토마토 바질 샌드위치는 건강을 포기하고 하얗고 쫀쫀한 우유식빵을 사용하는 게 좋겠다. \n\n450kcal 토마토 바질 샌드위치 Tomato Basil Sandwich\n\n👉 재료\n식빵 2장, 토마토 2개, 바질 한 줌, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추\n\n👉 조리\n1. 흐르는 물에 토마토 2개 씻어서 먹기 좋게 썬다. 속은 제거한다. \n2. 바질 한 줌 다진다. \n3. 믹싱볼에 1의 토마토, 2의 바질, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추 넣고 골고루 섞는다. \n4. (몸 생각해서 우유식빵 대신에) 발효종 통밀 콩식빵 위에 2의 토마토 바질 샐러드 얹는다. \n\n#조식 #레시피 #토마토",
+  "image": "https://images.how-about-breakfast.com/images/1692.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1692.jpg",
+   "https://images.how-about-breakfast.com/images/1692_2.jpg",
+   "https://images.how-about-breakfast.com/images/1692_3.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1692.mp4",
+  "_en": {
+   "hash": "ce2e1ce5e965f3c45266f1c2694103165088b0cda0ac32c63e35e93580906b41",
+   "title": "Minari (Water Parsley)",
+   "intro": "20260414, #BreakfastDiary 1692, 14°C/cloudy\nI was going to make a tomato basil sandwich, but there's no bread. Even better.\nAbout 240kcal to soothe an overheated stomach, Minari (Water Parsley) Tofu Miso Soup.",
+   "ingredients": "minari (water parsley), a suitable amount, 1/2 bowl brown rice, 600ml water, 1 block tofu, 1t soup stock powder, 1T miso",
+   "steps": "1. Pour 600ml water into a pot, and once it boils, dissolve in 1t soup stock powder and 1T miso and stir.\n2. Cut the tofu into 1cm dice and add it in.\n3. Cut the minari stems, add them in, boil for 1 minute, and turn off the heat. (If you boil it too long, the minari's fragrance disappears.)\n4. Plate it, add a good pinch of pepper, and eat with cold rice stirred in."
+  },
+  "page_id": "토마토-바질-샌드위치-Tomato-Basil-Sandwich-2"
+ },
+ {
+  "date": "2026-04-13",
+  "date_raw": "20260413",
+  "diary_no": 1702,
+  "weather": "10도/맑음",
+  "failed": false,
+  "calories": 580,
+  "title": "#현남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote",
+  "credit": null,
+  "hashtags": [
+   "레시피",
+   "전남친토스트",
+   "조식",
+   "조식다이어리",
+   "콩포트",
+   "현남친토스트"
+  ],
+  "intro": "20260413 #조식다이어리 1691, 10도/맑음\n식빵 대신 통밀빵, 크림치즈 대신 스트라타첼라치즈st, 블루베리 잼 대신 블루베리 콩포트를 얹은, 떠난 여친도 연락오게 만드는 #전남친토스트 의 고급 버전, 약 580kcal #현남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote",
+  "ingredients": "통밀빵 1장, (블루베리 콩포트) 블루베리와 자일로스(설탕) 3:1, 레몬주스 1T, (스트라차텔라치즈st) 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집",
+  "steps": "1. 잠들기 전에 블루베리 콩포트를 만든다. 블루베리와 자일로스(설탕)의 비율은 3:1로 넣고 중불에서 끓이다가 레몬주스 1T 넣고 약불에서 끈적해질 때까지 끓인다. 그대로 아침까지 식힌다. \n2. 통밀빵은 올리브오일 발라서 앞뒤로 바삭하게 굽는다. \n3. 믹싱볼에 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집 넣고 손으로 휘핑해서 스트라타첼라치즈st를 만든다. \n4. 통밀빵 위에 4의 스트라타첼라치즈st 얹고 1의 블루베리 콩포트 얹는다.",
   "raw": "20260413 #조식다이어리 1691, 14도/흐림\n\n토마토 바질 샌드위치를 만들려고 했는데 빵이 없구나. 오히려 좋아. \n달궈진 속을 시원하게 달래줄 약 240kca 미나리 두부 미소국 Minari(Water Parsley)Tofu Miso Soup\n\n👉 재료\n미나리 적당히, 현미밥 1/2공기, 물 600ml, 두부 1모, 다시다 1t, 미소 1T\n\n👉 조리\n1. 냄비에 물 600ml 붓고 물이 끓으면 다시다 1t, 미소 1T 풀어서 섞는다. \n2. 두부 1cm 다이스로 썰어서 넣는다. \n3. 미나리 줄기 썰어서 넣고 1분 끓이고 불을 끈다. (오래 끓이면 미나리 향이 날아간다.) \n4. 그릇에 담고 후추후추, 식은밥 말아 먹는다. \n\n#조식 #레시피 #미나리",
   "image": "https://images.how-about-breakfast.com/images/1691.jpg",
   "gallery": [
@@ -4952,56 +4953,18 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/1691.mp4",
   "_en": {
-   "hash": "893727b65fbc5f09f47637bf4ea16fed2aecfa11db3dabe13e13182e1344b1f9",
-   "title": "Minari (Water Parsley)",
-   "intro": "20260414, #BreakfastDiary 1692, 14°C/cloudy\nI was going to make a tomato basil sandwich, but there's no bread. Even better.\nAbout 240kcal to soothe an overheated stomach, Minari (Water Parsley) Tofu Miso Soup.",
-   "ingredients": "minari (water parsley), a suitable amount, 1/2 bowl brown rice, 600ml water, 1 block tofu, 1t soup stock powder, 1T miso",
-   "steps": "1. Pour 600ml water into a pot, and once it boils, dissolve in 1t soup stock powder and 1T miso and stir.\n2. Cut the tofu into 1cm dice and add it in.\n3. Cut the minari stems, add them in, boil for 1 minute, and turn off the heat. (If you boil it too long, the minari's fragrance disappears.)\n4. Plate it, add a good pinch of pepper, and eat with cold rice stirred in."
-  },
-  "page_id": "미나리"
- },
- {
-  "date": "2026-04-13",
-  "date_raw": "20260413",
-  "diary_no": 1701,
-  "weather": "10도/맑음",
-  "failed": false,
-  "calories": 580,
-  "title": "#현남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote",
-  "credit": null,
-  "hashtags": [
-   "현남친토스트",
-   "레시피",
-   "전남친토스트",
-   "조식",
-   "조식다이어리",
-   "콩포트"
-  ],
-  "intro": "20260413 #조식다이어리 1691, 10도/맑음\n식빵 대신 통밀빵, 크림치즈 대신 스트라타첼라치즈st, 블루베리 잼 대신 블루베리 콩포트를 얹은, 떠난 여친도 연락오게 만드는 #전남친토스트 의 고급 버전, 약 580kcal #현남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote",
-  "ingredients": "통밀빵 1장, (블루베리 콩포트) 블루베리와 자일로스(설탕) 3:1, 레몬주스 1T, (스트라차텔라치즈st) 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집",
-  "steps": "1. 잠들기 전에 블루베리 콩포트를 만든다. 블루베리와 자일로스(설탕)의 비율은 3:1로 넣고 중불에서 끓이다가 레몬주스 1T 넣고 약불에서 끈적해질 때까지 끓인다. 그대로 아침까지 식힌다. \n2. 통밀빵은 올리브오일 발라서 앞뒤로 바삭하게 굽는다. \n3. 믹싱볼에 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집 넣고 손으로 휘핑해서 스트라타첼라치즈st를 만든다. \n4. 통밀빵 위에 4의 스트라타첼라치즈st 얹고 1의 블루베리 콩포트 얹는다.",
-  "raw": "20260412 #조식다이어리 1690, 10도/맑음\n\n식빵 대신 통밀빵, 크림치즈 대신 스트라타첼라치즈st, 블루베리 잼 대신 블루베리 콩포트를 얹은, 떠난 여친도 연락오게 만드는 #전남친토스트 의 고급 버전, 약 580kcal #구남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote\n\n👉 재료\n통밀빵 1장, (블루베리 콩포트) 블루베리와 자일로스(설탕) 3:1, 레몬주스 1T, (스트라차텔라치즈st) 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집\n\n👉 조리\n1. 잠들기 전에 블루베리 콩포트를 만든다. 블루베리와 자일로스(설탕)의 비율은 3:1로 넣고 중불에서 끓이다가 레몬주스 1T 넣고 약불에서 끈적해질 때까지 끓인다. 그대로 아침까지 식힌다. \n2. 통밀빵은 올리브오일 발라서 앞뒤로 바삭하게 굽는다. \n3. 믹싱볼에 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집 넣고 손으로 휘핑해서 스트라타첼라치즈st를 만든다. \n4. 통밀빵 위에 4의 스트라타첼라치즈st 얹고 1의 블루베리 콩포트 얹는다.  \n\n#조식 #레시피 #콩포트",
-  "image": "https://images.how-about-breakfast.com/images/1690.jpg",
-  "gallery": [
-   "https://images.how-about-breakfast.com/images/1690.jpg",
-   "https://images.how-about-breakfast.com/images/1690_2.jpg",
-   "https://images.how-about-breakfast.com/images/1690_3.jpg",
-   "https://images.how-about-breakfast.com/images/1690_4.jpg"
-  ],
-  "video": "https://images.how-about-breakfast.com/images/1690.mp4",
-  "_en": {
-   "hash": "589bc949d6ade289d1d693c7b702dce32ce6e6252ea436610032d92b00a40519",
+   "hash": "7dd7b87f835eded1194bc76186f901bb2f7b22ec4c16f8e5c6c09c133a215920",
    "title": "Should I Call It 'Current Boyfriend Toast'? Whole Wheat Toast with Blueberry Compote",
    "intro": "20260413, #BreakfastDiary 1691, 10°C/sunny\nWhole wheat bread instead of white bread, stracciatella cheese instead of cream cheese, blueberry compote instead of blueberry jam - the deluxe version of the 'Ex-Boyfriend Toast' that makes even an ex-girlfriend who left come crawling back, about 580kcal. Should I call it 'Current Boyfriend Toast'? Whole Wheat Toast with Blueberry Compote.",
    "ingredients": "1 slice whole wheat bread, (blueberry compote) blueberries and xylose (sugar) at a 3:1 ratio, 1T lemon juice, (stracciatella cheese) 100g ricotta cheese, 60ml heavy cream, a pinch of salt",
    "steps": "1. Make the blueberry compote before going to bed. Combine blueberries and xylose (sugar) at a 3:1 ratio and simmer over medium heat, then add 1T lemon juice and simmer over low heat until sticky. Let it cool as is until morning.\n2. Brush the whole wheat bread with olive oil and toast both sides until crisp.\n3. In a mixing bowl, combine 100g ricotta cheese, 60ml heavy cream, and a pinch of salt, and whip by hand to make the stracciatella cheese.\n4. Top the whole wheat bread with the stracciatella cheese from step 4, then top with the blueberry compote from step 1."
   },
-  "page_id": "구남친토스트-라고-할까-Whole-Wheat-Toast-with-Blueberry-Compote"
+  "page_id": "미나리"
  },
  {
   "date": "2026-04-12",
   "date_raw": "20260412",
-  "diary_no": 1700,
+  "diary_no": 1701,
   "weather": "7도/맑음",
   "failed": false,
   "calories": 806,
@@ -5017,29 +4980,28 @@
   "intro": "20260412 #조식다이어리 1690, 7도/맑음\n폴렌타는 거칠게 간 옥수수가루로 만든 이탈리아 북부 요리다. 물을 부어 끓이면 유동식처럼 가볍게 먹을 수 있어서 조식으로 좋다. \n오늘은 씹는 식감이 살아있는 아스파라거스와 고소하고 단 완두콩을 곁들여, 약 806kcal 아스파라거스 #폴렌타 Polenta with Roasted Asparagus",
   "ingredients": "폴렌타 1컵, 물 4컵, 버터 5g, 페코리노치즈 10g, 아스파라거스 5개, 완두콩 1컵",
   "steps": "1. 팬에 폴렌타 1컵, 물 4컵, 소금소금 넣고 약불에서 천천히 저어가며 익힌다. 버터 5g, 페코리노치즈 갈아서 넣는다. \n2. 팬에 올리브오일 두르고 손질한 아스파라거스, 끓는 물에 데친 완두콩 넣고 소금소금, 후추후추 볶는다. \n3. 믹싱볼에 2의 아스파라거스와 완두콩, 다진 바질과 비네그레트 드레싱 넣고 골고루 섞는다. \n4. 접시에 1의 폴렌타 담고 3의 아스파라거스, 완두콩 얹은 다음 필러로 페코리노치즈 잘라서 얹는다.",
-  "raw": "20260411 #조식다이어리 1689, 7도/맑음\n\n폴렌타는 거칠게 간 옥수수가루로 만든 이탈리아 북부 요리다. 물을 부어 끓이면 유동식처럼 가볍게 먹을 수 있어서 조식으로 좋다. \n오늘은 씹는 식감이 살아있는 아스파라거스와 고소하고 단 완두콩을 곁들여, 약 806kcal 아스파라거스 #폴렌타 Polenta with Roasted Asparagus\n\n👉 재료(2인분) \n폴렌타 1컵, 물 4컵, 버터 5g, 페코리노치즈 10g, 아스파라거스 5개, 완두콩 1컵\n\n👉 조리\n1. 팬에 폴렌타 1컵, 물 4컵, 소금소금 넣고 약불에서 천천히 저어가며 익힌다. 버터 5g, 페코리노치즈 갈아서 넣는다. \n2. 팬에 올리브오일 두르고 손질한 아스파라거스, 끓는 물에 데친 완두콩 넣고 소금소금, 후추후추 볶는다. \n3. 믹싱볼에 2의 아스파라거스와 완두콩, 다진 바질과 비네그레트 드레싱 넣고 골고루 섞는다. \n4. 접시에 1의 폴렌타 담고 3의 아스파라거스, 완두콩 얹은 다음 필러로 페코리노치즈 잘라서 얹는다. \n\n#조식 #레시피 #아스파라거스",
-  "image": "https://images.how-about-breakfast.com/images/1689.jpg",
+  "raw": "20260412 #조식다이어리 1690, 10도/맑음\n\n식빵 대신 통밀빵, 크림치즈 대신 스트라타첼라치즈st, 블루베리 잼 대신 블루베리 콩포트를 얹은, 떠난 여친도 연락오게 만드는 #전남친토스트 의 고급 버전, 약 580kcal #구남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote\n\n👉 재료\n통밀빵 1장, (블루베리 콩포트) 블루베리와 자일로스(설탕) 3:1, 레몬주스 1T, (스트라차텔라치즈st) 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집\n\n👉 조리\n1. 잠들기 전에 블루베리 콩포트를 만든다. 블루베리와 자일로스(설탕)의 비율은 3:1로 넣고 중불에서 끓이다가 레몬주스 1T 넣고 약불에서 끈적해질 때까지 끓인다. 그대로 아침까지 식힌다. \n2. 통밀빵은 올리브오일 발라서 앞뒤로 바삭하게 굽는다. \n3. 믹싱볼에 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집 넣고 손으로 휘핑해서 스트라타첼라치즈st를 만든다. \n4. 통밀빵 위에 4의 스트라타첼라치즈st 얹고 1의 블루베리 콩포트 얹는다.  \n\n#조식 #레시피 #콩포트",
+  "image": "https://images.how-about-breakfast.com/images/1690.jpg",
   "gallery": [
-   "https://images.how-about-breakfast.com/images/1689.jpg",
-   "https://images.how-about-breakfast.com/images/1689_2.jpg",
-   "https://images.how-about-breakfast.com/images/1689_3.jpg",
-   "https://images.how-about-breakfast.com/images/1689_4.jpg",
-   "https://images.how-about-breakfast.com/images/1689_5.jpg"
+   "https://images.how-about-breakfast.com/images/1690.jpg",
+   "https://images.how-about-breakfast.com/images/1690_2.jpg",
+   "https://images.how-about-breakfast.com/images/1690_3.jpg",
+   "https://images.how-about-breakfast.com/images/1690_4.jpg"
   ],
-  "video": "https://images.how-about-breakfast.com/images/1689.mp4",
+  "video": "https://images.how-about-breakfast.com/images/1690.mp4",
   "_en": {
-   "hash": "e6c27bb97cee748033503b66cc8aaca4cba75358932aef0d50fa4692360588f9",
+   "hash": "ee1da02713640ee01b154c0526d35baf6e8f58437d88b9308587fb19d9d04798",
    "title": "Polenta with Roasted Asparagus",
    "intro": "20260412, #BreakfastDiary 1690, 7°C/sunny\nPolenta is a dish from northern Italy made from coarsely ground cornmeal. Boiled with water, it can be eaten light, almost like a porridge, which makes it a good breakfast.\nToday I paired it with asparagus that still has some bite to it, and nutty, sweet peas - about 806kcal, #Polenta with Roasted Asparagus.",
    "ingredients": "1 cup polenta, 4 cups water, 5g butter, 10g pecorino cheese, 5 asparagus spears, 1 cup peas",
    "steps": "1. In a pan, combine 1 cup polenta, 4 cups water, and a good pinch of salt, and cook over low heat, stirring slowly. Add 5g butter and grated pecorino cheese.\n2. Heat olive oil in a pan and sauté the trimmed asparagus and peas (blanched in boiling water) with a good pinch of salt and pepper.\n3. In a mixing bowl, combine the asparagus and peas from step 2 with chopped basil and vinaigrette dressing, and mix evenly.\n4. Plate the polenta from step 1, top with the asparagus and peas from step 3, then shave pecorino cheese over the top with a peeler."
   },
-  "page_id": "아스파라거스-폴렌타-Polenta-with-Roasted-Asparagus"
+  "page_id": "구남친토스트-라고-할까-Whole-Wheat-Toast-with-Blueberry-Compote"
  },
  {
-  "date": "2026-04-10",
-  "date_raw": "20260410",
-  "diary_no": 1699,
+  "date": "2026-04-11",
+  "date_raw": "20260411",
+  "diary_no": 1700,
   "weather": "9도/흐림",
   "failed": false,
   "calories": 656,
@@ -5051,32 +5013,32 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20260410 #조식다이어리 1688, 9도/흐림\n이 계절이 가기 전에 봄나물을 실컷 먹는다. 이정현씨가 집밥으로 소개했다는, 약 656kcal 원팬 @uglyus.market #냉이 밥 One-pan shepherd’s purse rice",
+  "intro": "20260411 #조식다이어리 1689, 9도/흐림\n이 계절이 가기 전에 봄나물을 실컷 먹는다. 이정현씨가 집밥으로 소개했다는, 약 656kcal 원팬 @uglyus.market #냉이 밥 One-pan shepherd’s purse rice",
   "ingredients": "냉이100g, 쌀 2컵, 미소 1/2T, 다시다 1t, 버터 5g",
   "steps": "1. 쌀 2컵은 물에 불려둔다. 30분 정도면 된다. \n2. 팬에 올리브오일 두르고 양파 1/2개 썰어서 볶는다. \n3. 1의 불린 쌀을 넣고 뒤섞뒤섞, 물 2컵 붓고 미소 1/2T, 다시다 1t 넣고 물이 자작해질 때까지 중불로 7분 익힌다. \n4. 버터 넣고 뒤섞뒤섞, 손질해 둔 냉이 얹고 약불에서 3분, 불 끄고 5분 뜸들인다.",
-  "raw": "20260410 #조식다이어리 1688, 9도/흐림\n\n이 계절이 가기 전에 봄나물을 실컷 먹는다. 이정현씨가 집밥으로 소개했다는, 약 656kcal 원팬 @uglyus.market #냉이 밥 One-pan shepherd’s purse rice\n\n👉 재료(2인분) \n냉이100g, 쌀 2컵, 미소 1/2T, 다시다 1t, 버터 5g\n\n👉 조리\n1. 쌀 2컵은 물에 불려둔다. 30분 정도면 된다. \n2. 팬에 올리브오일 두르고 양파 1/2개 썰어서 볶는다. \n3. 1의 불린 쌀을 넣고 뒤섞뒤섞, 물 2컵 붓고 미소 1/2T, 다시다 1t 넣고 물이 자작해질 때까지 중불로 7분 익힌다. \n4. 버터 넣고 뒤섞뒤섞, 손질해 둔 냉이 얹고 약불에서 3분, 불 끄고 5분 뜸들인다. \n\n#조식 #레시피 #냉이",
-  "image": "https://images.how-about-breakfast.com/images/1688.jpg",
+  "raw": "20260411 #조식다이어리 1689, 7도/맑음\n\n폴렌타는 거칠게 간 옥수수가루로 만든 이탈리아 북부 요리다. 물을 부어 끓이면 유동식처럼 가볍게 먹을 수 있어서 조식으로 좋다. \n오늘은 씹는 식감이 살아있는 아스파라거스와 고소하고 단 완두콩을 곁들여, 약 806kcal 아스파라거스 #폴렌타 Polenta with Roasted Asparagus\n\n👉 재료(2인분) \n폴렌타 1컵, 물 4컵, 버터 5g, 페코리노치즈 10g, 아스파라거스 5개, 완두콩 1컵\n\n👉 조리\n1. 팬에 폴렌타 1컵, 물 4컵, 소금소금 넣고 약불에서 천천히 저어가며 익힌다. 버터 5g, 페코리노치즈 갈아서 넣는다. \n2. 팬에 올리브오일 두르고 손질한 아스파라거스, 끓는 물에 데친 완두콩 넣고 소금소금, 후추후추 볶는다. \n3. 믹싱볼에 2의 아스파라거스와 완두콩, 다진 바질과 비네그레트 드레싱 넣고 골고루 섞는다. \n4. 접시에 1의 폴렌타 담고 3의 아스파라거스, 완두콩 얹은 다음 필러로 페코리노치즈 잘라서 얹는다. \n\n#조식 #레시피 #아스파라거스",
+  "image": "https://images.how-about-breakfast.com/images/1689.jpg",
   "gallery": [
-   "https://images.how-about-breakfast.com/images/1688.jpg",
-   "https://images.how-about-breakfast.com/images/1688_2.jpg",
-   "https://images.how-about-breakfast.com/images/1688_3.jpg",
-   "https://images.how-about-breakfast.com/images/1688_4.jpg",
-   "https://images.how-about-breakfast.com/images/1688_5.jpg",
-   "https://images.how-about-breakfast.com/images/1688_6.jpg"
+   "https://images.how-about-breakfast.com/images/1689.jpg",
+   "https://images.how-about-breakfast.com/images/1689_2.jpg",
+   "https://images.how-about-breakfast.com/images/1689_3.jpg",
+   "https://images.how-about-breakfast.com/images/1689_4.jpg",
+   "https://images.how-about-breakfast.com/images/1689_5.jpg"
   ],
+  "video": "https://images.how-about-breakfast.com/images/1689.mp4",
   "_en": {
-   "hash": "be26e6c7b567b02b5a468327c34c035d7aef7ec91bed5af31af451bd1d33ddee",
+   "hash": "81b35314c200f91e2d658ef7fedd4e3a2411e03f3654b441a33079931770ef8b",
    "title": "One-Pan Shepherd's Purse Rice",
-   "intro": "20260410, #BreakfastDiary 1688, 9°C/cloudy\nBefore this season passes, I'm eating my fill of spring greens. Said to have been introduced by Lee Jung-hyun as a home-cooked dish, about 656kcal, One-Pan @uglyus.market #ShepherdsPurse Rice, One-pan shepherd's purse rice.",
+   "intro": "20260411, #BreakfastDiary 1689, 9°C/cloudy\nBefore this season passes, I'm eating my fill of spring greens. Said to have been introduced by Lee Jung-hyun as a home-cooked dish, about 656kcal, One-Pan @uglyus.market #ShepherdsPurse Rice, One-pan shepherd's purse rice.",
    "ingredients": "100g shepherd's purse, 2 cups rice, 1/2T miso, 1t soup stock powder, 5g butter",
    "steps": "1. Soak 2 cups of rice in water. About 30 minutes is enough.\n2. Heat olive oil in a pan and sauté 1/2 sliced onion.\n3. Add the soaked rice from step 1 and stir well, pour in 2 cups water, add 1/2T miso and 1t soup stock powder, and cook over medium heat for 7 minutes until the water has mostly absorbed.\n4. Add butter and stir well, top with the prepped shepherd's purse, cook over low heat for 3 minutes, then turn off the heat and let it steam for 5 minutes."
   },
-  "page_id": "원팬-uglyus-market-냉이-밥-One-pan-shepherd-s-purse-rice"
+  "page_id": "아스파라거스-폴렌타-Polenta-with-Roasted-Asparagus"
  },
  {
-  "date": "2026-04-09",
-  "date_raw": "20260409",
-  "diary_no": 1698,
+  "date": "2026-04-10",
+  "date_raw": "20260410",
+  "diary_no": 1699,
   "weather": "10도/비",
   "failed": false,
   "calories": 420,
@@ -5088,31 +5050,32 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20260409 #조식다이어리 1687, 10도/비\n유채꽃밭\n노란 꽃 핀 것만 봐도\n눈물 고였다\n(나태주, 유채꽃밭)\n유채나물은 봄나물로 먹는 유채의 어린 잎이다. \n나의 처음은 어땠던가 생각하며 시작하는 하루, 약 420kcal 유채나물무침을 곁들인 간장메밀면",
+  "intro": "20260410 #조식다이어리 1688, 10도/비\n유채꽃밭\n노란 꽃 핀 것만 봐도\n눈물 고였다\n(나태주, 유채꽃밭)\n유채나물은 봄나물로 먹는 유채의 어린 잎이다. \n나의 처음은 어땠던가 생각하며 시작하는 하루, 약 420kcal 유채나물무침을 곁들인 간장메밀면",
   "ingredients": "(유채나물무침) 유채나물, 간장 1T, 멸치액젓 1T, 식초 1T, 다진마늘 1t, 고춧가루 1T, 매실액 2T, 들기름 1T, (간장메밀면) 메밀면 1인분, 간장 2T, 들기름 2T, 알룰로스 1/2T, 김자반 1T",
   "steps": "1. 유채나물은 흐르는 물에 헹구고 억센 줄기는 잘라낸다. 먹기 좋은 썬 다음 믹싱볼에 넣고 간장 1T, 멸치액젓 1T, 식초 1T, 다진마늘 1t, 고춧가루 1T, 매실액 2T, 들기름 1T 넣고 맛있게 무친다.  \n2. 끓는 물에 메밀면 넣고 찬물을 부어가며 익힌다. 찬물에 헹구어 식힌다. \n3. 믹싱볼에 2의 메밀면 넣고 간장 2T, 들기름 2T, 알룰로스 1/2T, 김자반 1T 넣고 골고루 섞는다. \n4. 접시에 1의 유채나물과 3의 메밀면 담고 들기름 조금 얹는다.",
-  "raw": "20260409 #조식다이어리 1687, 10도/비\n\n유채꽃밭\n노란 꽃 핀 것만 봐도\n눈물 고였다\n(나태주, 유채꽃밭)\n\n유채나물은 봄나물로 먹는 유채의 어린 잎이다. \n\n나의 처음은 어땠던가 생각하며 시작하는 하루, 약 420kcal 유채나물무침을 곁들인 간장메밀면\n\n👉 재료\n(유채나물무침) 유채나물, 간장 1T, 멸치액젓 1T, 식초 1T, 다진마늘 1t, 고춧가루 1T, 매실액 2T, 들기름 1T, (간장메밀면) 메밀면 1인분, 간장 2T, 들기름 2T, 알룰로스 1/2T, 김자반 1T\n\n👉 조리\n1. 유채나물은 흐르는 물에 헹구고 억센 줄기는 잘라낸다. 먹기 좋은 썬 다음 믹싱볼에 넣고 간장 1T, 멸치액젓 1T, 식초 1T, 다진마늘 1t, 고춧가루 1T, 매실액 2T, 들기름 1T 넣고 맛있게 무친다.  \n2. 끓는 물에 메밀면 넣고 찬물을 부어가며 익힌다. 찬물에 헹구어 식힌다. \n3. 믹싱볼에 2의 메밀면 넣고 간장 2T, 들기름 2T, 알룰로스 1/2T, 김자반 1T 넣고 골고루 섞는다. \n4. 접시에 1의 유채나물과 3의 메밀면 담고 들기름 조금 얹는다. \n\n#조식 #레시피 #유채나물",
-  "image": "https://images.how-about-breakfast.com/images/1687.jpg",
+  "raw": "20260410 #조식다이어리 1688, 9도/흐림\n\n이 계절이 가기 전에 봄나물을 실컷 먹는다. 이정현씨가 집밥으로 소개했다는, 약 656kcal 원팬 @uglyus.market #냉이 밥 One-pan shepherd’s purse rice\n\n👉 재료(2인분) \n냉이100g, 쌀 2컵, 미소 1/2T, 다시다 1t, 버터 5g\n\n👉 조리\n1. 쌀 2컵은 물에 불려둔다. 30분 정도면 된다. \n2. 팬에 올리브오일 두르고 양파 1/2개 썰어서 볶는다. \n3. 1의 불린 쌀을 넣고 뒤섞뒤섞, 물 2컵 붓고 미소 1/2T, 다시다 1t 넣고 물이 자작해질 때까지 중불로 7분 익힌다. \n4. 버터 넣고 뒤섞뒤섞, 손질해 둔 냉이 얹고 약불에서 3분, 불 끄고 5분 뜸들인다. \n\n#조식 #레시피 #냉이",
+  "image": "https://images.how-about-breakfast.com/images/1688.jpg",
   "gallery": [
-   "https://images.how-about-breakfast.com/images/1687.jpg",
-   "https://images.how-about-breakfast.com/images/1687_2.jpg",
-   "https://images.how-about-breakfast.com/images/1687_3.jpg",
-   "https://images.how-about-breakfast.com/images/1687_4.jpg"
+   "https://images.how-about-breakfast.com/images/1688.jpg",
+   "https://images.how-about-breakfast.com/images/1688_2.jpg",
+   "https://images.how-about-breakfast.com/images/1688_3.jpg",
+   "https://images.how-about-breakfast.com/images/1688_4.jpg",
+   "https://images.how-about-breakfast.com/images/1688_5.jpg",
+   "https://images.how-about-breakfast.com/images/1688_6.jpg"
   ],
-  "video": "https://images.how-about-breakfast.com/images/1687.mp4",
   "_en": {
-   "hash": "e4353c7e9a7673c30830f9ddb57d97893560ee1dc9b48c9ca7f288e606eef27b",
+   "hash": "3387188931eecae7302e3762e006a9ae6d7134bf4a7fa70096b3a1f31ff58c25",
    "title": "Soy Sauce Buckwheat Noodles with Seasoned Rapeseed Greens",
-   "intro": "20260409, #BreakfastDiary 1687, 10°C/rain\nRapeseed flower field\nJust seeing the yellow blossoms\nbrought tears to my eyes\n(Na Tae-ju, Rapeseed Flower Field)\nRapeseed greens are the young leaves of the rapeseed plant, eaten as a spring vegetable.\nStarting the day thinking about what my own beginning was like, about 420kcal, Soy Sauce Buckwheat Noodles with Seasoned Rapeseed Greens.",
+   "intro": "20260410, #BreakfastDiary 1688, 10°C/rain\nRapeseed flower field\nJust seeing the yellow blossoms\nbrought tears to my eyes\n(Na Tae-ju, Rapeseed Flower Field)\nRapeseed greens are the young leaves of the rapeseed plant, eaten as a spring vegetable.\nStarting the day thinking about what my own beginning was like, about 420kcal, Soy Sauce Buckwheat Noodles with Seasoned Rapeseed Greens.",
    "ingredients": "(seasoned rapeseed greens) rapeseed greens, 1T soy sauce, 1T anchovy fish sauce, 1T vinegar, 1t minced garlic, 1T red pepper flakes, 2T plum extract, 1T perilla oil, (soy sauce buckwheat noodles) 1 serving buckwheat noodles, 2T soy sauce, 2T perilla oil, 1/2T allulose, 1T seasoned laver flakes",
    "steps": "1. Rinse the rapeseed greens under running water and trim off any tough stems. Cut into bite-sized pieces, then put in a mixing bowl with 1T soy sauce, 1T anchovy fish sauce, 1T vinegar, 1t minced garlic, 1T red pepper flakes, 2T plum extract, and 1T perilla oil, and toss to season well.\n2. Cook the buckwheat noodles in boiling water, adding splashes of cold water as you go. Rinse in cold water to cool.\n3. In a mixing bowl, combine the buckwheat noodles from step 2 with 2T soy sauce, 2T perilla oil, 1/2T allulose, and 1T seasoned laver flakes, and mix evenly.\n4. Plate the rapeseed greens from step 1 and the buckwheat noodles from step 3, and drizzle with a little perilla oil."
   },
-  "page_id": "유채나물무침을-곁들인-간장메밀면"
+  "page_id": "원팬-uglyus-market-냉이-밥-One-pan-shepherd-s-purse-rice"
  },
  {
-  "date": "2026-04-08",
-  "date_raw": "20260408",
-  "diary_no": 1697,
+  "date": "2026-04-09",
+  "date_raw": "20260409",
+  "diary_no": 1698,
   "weather": "9도/흐림(비소식 있음)",
   "failed": false,
   "calories": 500,
@@ -5125,9 +5088,45 @@
    "콩",
    "콩샐러드"
   ],
-  "intro": "20260408 #조식다이어리 1686, 9도/흐림(비소식 있음)\n그릭요거트를 접시에 담고 그 위에 콩샐러드를 얹으려 했으나, 조리하는 동안 기억 저편으로 사라졌다. \n1인분 약 500kcal #콩샐러드",
+  "intro": "20260409 #조식다이어리 1687, 9도/흐림(비소식 있음)\n그릭요거트를 접시에 담고 그 위에 콩샐러드를 얹으려 했으나, 조리하는 동안 기억 저편으로 사라졌다. \n1인분 약 500kcal #콩샐러드",
   "ingredients": "다양한 콩 3컵, 래디시 1개, 옥수수 1개, 고수잎 조금, 레몬소금 비네그레트(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t, 레몬소금 1t)",
   "steps": "1. 대부분의 콩은 자기 전 물에 담가서 불린다. \n2. 끓는 물에 소금소금, 불린 콩과 아메다마, 완두콩 넣고 삶는다. \n3. 래디시와 옥수수 썰고 고수잎 떼서 준비한다. \n4. 믹싱볼에 2의 콩과 래디시, 옥수수, 고수 넣고 레몬소금 비네그레트 드레싱 넣고 골고루 섞는다.",
+  "raw": "20260409 #조식다이어리 1687, 10도/비\n\n유채꽃밭\n노란 꽃 핀 것만 봐도\n눈물 고였다\n(나태주, 유채꽃밭)\n\n유채나물은 봄나물로 먹는 유채의 어린 잎이다. \n\n나의 처음은 어땠던가 생각하며 시작하는 하루, 약 420kcal 유채나물무침을 곁들인 간장메밀면\n\n👉 재료\n(유채나물무침) 유채나물, 간장 1T, 멸치액젓 1T, 식초 1T, 다진마늘 1t, 고춧가루 1T, 매실액 2T, 들기름 1T, (간장메밀면) 메밀면 1인분, 간장 2T, 들기름 2T, 알룰로스 1/2T, 김자반 1T\n\n👉 조리\n1. 유채나물은 흐르는 물에 헹구고 억센 줄기는 잘라낸다. 먹기 좋은 썬 다음 믹싱볼에 넣고 간장 1T, 멸치액젓 1T, 식초 1T, 다진마늘 1t, 고춧가루 1T, 매실액 2T, 들기름 1T 넣고 맛있게 무친다.  \n2. 끓는 물에 메밀면 넣고 찬물을 부어가며 익힌다. 찬물에 헹구어 식힌다. \n3. 믹싱볼에 2의 메밀면 넣고 간장 2T, 들기름 2T, 알룰로스 1/2T, 김자반 1T 넣고 골고루 섞는다. \n4. 접시에 1의 유채나물과 3의 메밀면 담고 들기름 조금 얹는다. \n\n#조식 #레시피 #유채나물",
+  "image": "https://images.how-about-breakfast.com/images/1687.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1687.jpg",
+   "https://images.how-about-breakfast.com/images/1687_2.jpg",
+   "https://images.how-about-breakfast.com/images/1687_3.jpg",
+   "https://images.how-about-breakfast.com/images/1687_4.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1687.mp4",
+  "_en": {
+   "hash": "9c2677c4c397211b996bcf816d34ee2372de35bd0f87ff08fee66f54f78a3c49",
+   "title": "Bean Salad",
+   "intro": "20260409, #BreakfastDiary 1687, 9°C/cloudy (rain in the forecast)\nI meant to put Greek yogurt on the plate and pile the bean salad on top, but somewhere during the cooking it slipped my mind entirely.\nAbout 500kcal per serving, #BeanSalad.",
+   "ingredients": "3 cups assorted beans, 1 radish, 1 ear of corn, a little cilantro, lemon salt vinaigrette (2T olive oil, 1T white wine vinegar, 1t wholegrain mustard, 1t lemon salt)",
+   "steps": "1. Soak most of the beans in water the night before.\n2. Boil the soaked beans, edamame, and peas in well-salted water.\n3. Slice the radish and corn, and pick the cilantro leaves to prep.\n4. In a mixing bowl, combine the beans, radish, corn, and cilantro from step 2 with the lemon salt vinaigrette, and mix evenly."
+  },
+  "page_id": "유채나물무침을-곁들인-간장메밀면"
+ },
+ {
+  "date": "2026-04-08",
+  "date_raw": "20260408",
+  "diary_no": 1697,
+  "weather": "6도/맑음",
+  "failed": false,
+  "calories": 650,
+  "title": "표고버섯 라구소스를 곁들인 알배추 구이 Roasted Napa Cabbage with Shiitake Mushroom Ragù",
+  "credit": null,
+  "hashtags": [
+   "레시피",
+   "알배추",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20260408 #조식다이어리 1686, 6도/맑음\n제법 고기스럽게 보이지만 실은 표고버섯, 약 650kcal 표고버섯 라구소스를 곁들인 알배추 구이 Roasted Napa Cabbage with Shiitake Mushroom Ragù",
+  "ingredients": "알배추 1개, 페코리노로마노치즈 조금, (표고버섯 라구소스) 마늘 3개, 양파 1/2개, 주키니 1/4개, 우유 50ml, 표고버섯 200g, 토마토소스 2T",
+  "steps": "1. 팬에 올리브오일 두르고 다진 마늘과 다진 양파, 다진 주키니 볶는다. \n2. 다진 표고버섯 넣고 맛있게 볶는다. 토마토소스와 우유 넣고 소금, 후추로 간을 맞춘다. 적당히 되직해 질때까지 10분 정도 졸인다. \n3. 알배추는 4등분하고 겉잎을 떼어낸 뒤 흐르는 물에 가볍게 씻고 물기를 닦는다. 전자레인지에 1분씩 두 번 굽는다. \n4. 팬에 올리브오일 두르고 소금, 후추 뿌려가며 알배추를 노릇하게 굽는다.\n5. 접시에 알배추 담고 2의 표고버섯 라구소스를 얹는다. 페코리노로마노치즈 얹는다.",
   "raw": "20260408 #조식다이어리 1686, 9도/흐림(비소식 있음)\n\n그릭요거트를 접시에 담고 그 위에 콩샐러드를 얹으려 했으나, 조리하는 동안 기억 저편으로 사라졌다. \n\n1인분 약 500kcal #콩샐러드\n\n👉 재료(2인분)\n다양한 콩 3컵, 래디시 1개, 옥수수 1개, 고수잎 조금, 레몬소금 비네그레트(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t, 레몬소금 1t)\n\n👉 조리\n1. 대부분의 콩은 자기 전 물에 담가서 불린다. \n2. 끓는 물에 소금소금, 불린 콩과 아메다마, 완두콩 넣고 삶는다. \n3. 래디시와 옥수수 썰고 고수잎 떼서 준비한다. \n4. 믹싱볼에 2의 콩과 래디시, 옥수수, 고수 넣고 레몬소금 비네그레트 드레싱 넣고 골고루 섞는다. \n \n#조식 #레시피 #콩",
   "image": "https://images.how-about-breakfast.com/images/1686.jpg",
   "gallery": [
@@ -5138,11 +5137,11 @@
    "https://images.how-about-breakfast.com/images/1686_5.jpg"
   ],
   "_en": {
-   "hash": "06cde4d6462567f2ecf005647f0bda3454d5ab22f8f03594284d32b9e8f8a523",
-   "title": "Bean Salad",
-   "intro": "20260408, #BreakfastDiary 1686, 9°C/cloudy (rain in the forecast)\nI meant to put Greek yogurt on the plate and pile the bean salad on top, but somewhere during the cooking it slipped my mind entirely.\nAbout 500kcal per serving, #BeanSalad.",
-   "ingredients": "3 cups assorted beans, 1 radish, 1 ear of corn, a little cilantro, lemon salt vinaigrette (2T olive oil, 1T white wine vinegar, 1t wholegrain mustard, 1t lemon salt)",
-   "steps": "1. Soak most of the beans in water the night before.\n2. Boil the soaked beans, edamame, and peas in well-salted water.\n3. Slice the radish and corn, and pick the cilantro leaves to prep.\n4. In a mixing bowl, combine the beans, radish, corn, and cilantro from step 2 with the lemon salt vinaigrette, and mix evenly."
+   "hash": "ce9f431d78a6f1bfa6701253c5a5aefec88cb958b410520747f806569d06de2d",
+   "title": "Roasted Napa Cabbage with Shiitake Mushroom Ragù",
+   "intro": "20260408, #BreakfastDiary 1686, 6°C/clear\nLooks fairly meaty, but it's actually shiitake mushrooms — about 650kcal, Roasted Napa Cabbage with Shiitake Mushroom Ragù",
+   "ingredients": "1 napa cabbage, a little pecorino romano cheese, (shiitake mushroom ragù) 3 cloves garlic, 1/2 onion, 1/4 zucchini, 50ml milk, 200g shiitake mushrooms, 2T tomato sauce",
+   "steps": "1. Heat olive oil in a pan and sauté the minced garlic, onion, and zucchini. \n2. Add the minced shiitake mushrooms and sauté until tasty. Add the tomato sauce and milk, season with salt and pepper, and simmer for about 10 minutes until it thickens nicely. \n3. Quarter the napa cabbage, remove the outer leaves, rinse lightly under running water, and pat dry. Microwave for 1 minute, twice. \n4. Heat olive oil in a pan and pan-fry the napa cabbage until golden, sprinkling with salt and pepper. \n5. Plate the napa cabbage and top with the shiitake mushroom ragù from step 2. Top with pecorino romano cheese."
   },
   "page_id": "콩샐러드"
  },
