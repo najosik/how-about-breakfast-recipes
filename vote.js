@@ -2,7 +2,7 @@
   'use strict';
 
   // Fill in after deploying the vote-api Cloudflare Worker (cloudflare-worker/vote-api.js).
-  var VOTE_API_URL = 'https://how-about-breakfast-vote-api.howaboutbreakfast2020.workers.dev';
+  var VOTE_API_URL = 'https://misty-hill-0027.howaboutbreakfast2020.workers.dev';
 
   var content = document.getElementById('voteContent');
   var langToggle = document.getElementById('langToggle');
