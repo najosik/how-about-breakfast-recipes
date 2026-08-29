@@ -69,6 +69,9 @@ async function handleVote(request, env, cors) {
   if (!round) {
     return json({ error: 'unknown round' }, 404, cors);
   }
+  if (round.winner) {
+    return json({ error: 'voting is closed for this round' }, 403, cors);
+  }
   const today = kstDateString(new Date());
   if (today < round.vote_start || today > round.vote_end) {
     return json({ error: 'voting is not open for this round' }, 403, cors);

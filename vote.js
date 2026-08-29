@@ -14,7 +14,7 @@
 
   function findActiveRound(rounds) {
     var today = todayKST();
-    return rounds.find(function (r) { return r.vote_start <= today && today <= r.vote_end; });
+    return rounds.find(function (r) { return !r.winner && r.vote_start <= today && today <= r.vote_end; });
   }
 
   function findLatestFinalized(rounds) {
