@@ -81,32 +81,55 @@
     }
   }
 
+  function monthLabel(targetMonth) {
+    var parts = (targetMonth || '').split('-');
+    var year = parts[0];
+    var month = parseInt(parts[1], 10);
+    if (!year || !month) return I18N.t('vote_winner_prefix');
+    if (I18N.getLang() === 'en') {
+      var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+      return MONTHS[month - 1] + ' ' + year + ' ' + I18N.t('medal_label');
+    }
+    return year + '년 ' + month + '월 ' + I18N.t('medal_label');
+  }
+
   function renderInactive(latestFinalized, byId) {
     var html =
       '<div class="vote-empty">' +
       '<b>' + I18N.t('vote_no_active_title') + '</b>' +
       '<span>' + I18N.t('vote_no_active_desc') + '</span>' +
-      '</div>';
+      '</div>' +
+      '<div class="vote-divider"></div>';
 
+    var winner = null;
     if (latestFinalized) {
-      var winner = byId[latestFinalized.winner];
+      winner = byId[latestFinalized.winner];
       if (winner) {
         var winnerTitle = Shared.hasStaticEn(winner, 'title') ? Shared.localizedText(winner, 'title') : (winner.title || '');
         html +=
           '<div class="vote-winner">' +
-          '<p class="label">' + I18N.t('vote_winner_prefix') + '</p>' +
-          '<a class="card" href="' + Shared.escapeHtml(Shared.recipeUrl(winner)) + '">' +
+          '<p class="label">' + Shared.escapeHtml(monthLabel(latestFinalized.target_month)) + '</p>' +
+          '<p class="vote-winner-name">' + Shared.escapeHtml(winnerTitle) + '</p>' +
+          '<div class="card" id="voteWinnerCard" role="button" tabindex="0">' +
           Shared.thumbHTML(winner, 30) +
           '<span class="medal-badge">🥇 ' + I18N.t('medal_label') + '</span>' +
           '<h3 class="card-title">' + Shared.escapeHtml(winnerTitle) + '</h3>' +
-          '</a>' +
+          '</div>' +
           '</div>';
       }
-    } else {
+    }
+    if (!winner) {
       html += '<p class="vote-note">' + I18N.t('vote_winner_none') + '</p>';
     }
 
     content.innerHTML = html;
+
+    var winnerCard = document.getElementById('voteWinnerCard');
+    if (winnerCard && winner) {
+      var open = function () { Shared.openModal(winner); };
+      winnerCard.addEventListener('click', open);
+      winnerCard.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    }
   }
 
   function cssId(pageId) {

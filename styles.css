@@ -189,9 +189,11 @@ h3.card-title{
 .vote-note{text-align:center; color:var(--ink-soft); font-size:14px; margin-top:24px;}
 .vote-empty{text-align:center; padding:50px 20px; color:var(--ink-faint);}
 .vote-empty b{display:block; font-family:'Nanum Myeongjo',serif; font-size:20px; color:var(--ink); margin-bottom:8px;}
+.vote-divider{border-top:1px solid var(--line); margin:40px 0;}
 .vote-winner{max-width:260px; margin:24px auto 0; text-align:center;}
-.vote-winner .label{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-bottom:10px;}
-.vote-winner .card{display:block;}
+.vote-winner .label{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-bottom:4px;}
+.vote-winner-name{font-family:'Nanum Myeongjo',serif; font-size:17px; color:var(--ink); margin:0 0 14px;}
+.vote-winner .card{display:block; cursor:pointer;}
 
 .load-more-wrap{text-align:center; margin-top:36px;}
 button.loadmore{
