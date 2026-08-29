@@ -68753,7 +68753,7 @@
   "weather": "22도/소나기",
   "failed": false,
   "calories": null,
-  "title": "아보카도샌드위치 모닝리추얼 모닝루틴",
+  "title": "아보카도 토스트",
   "credit": null,
   "hashtags": [
    "avocado",
@@ -68778,22 +68778,15 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210831, #조식다이어리 196, 22도/소나기\n올리브오일 두른 팬에 앞뒤로 두툼하게 썬 빵을 굽는다. 이왕 먹는 것 마요네즈는 듬뿍, 스크램블에그를 만들어 올리고 슬라이스한 아보카도까지, 마지막으로 레몬즙, 레몬제스트, 소금과 후추 약간 #아보카도샌드위치\n인류의 새 보금자리를 찾아 떠난 인듀어런스호가 도착한 밀러 행성, 거대한 해일에 휩싸인 일행은 지구 시간으로 무려 23년 4개월 하고도 8일을 허비하는데, \n밀러 행성의 1시간이 지구 시간의 7년인 것처럼 아침 출근길의 1분 역시 평소의 1시간 같은 느낌이다. 게다가 평소와 같은 시간에 깼다고 생각했다가 문득 사뭇 다른 아침 공기에 약간 모골이 송연해지고 결정적으로 정확히 1시간 늦게 깬 것을 확인한 아침이라면 더욱 더 그렇다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210831, #조식다이어리 196, 22도/소나기\n올리브오일 두른 팬에 앞뒤로 두툼하게 썬 빵을 굽는다. 이왕 먹는 것 마요네즈는 듬뿍, 스크램블에그를 만들어 올리고 슬라이스한 아보카도까지, 마지막으로 레몬즙, 레몬제스트, 소금과 후추 약간 #아보카도샌드위치\n\n인류의 새 보금자리를 찾아 떠난 인듀어런스호가 도착한 밀러 행성, 거대한 해일에 휩싸인 일행은 지구 시간으로 무려 23년 4개월 하고도 8일을 허비하는데, \n밀러 행성의 1시간이 지구 시간의 7년인 것처럼 아침 출근길의 1분 역시 평소의 1시간 같은 느낌이다. 게다가 평소와 같은 시간에 깼다고 생각했다가 문득 사뭇 다른 아침 공기에 약간 모골이 송연해지고 결정적으로 정확히 1시간 늦게 깬 것을 확인한 아침이라면 더욱 더 그렇다.",
+  "ingredients": "- 사워도우 1장\n- 스크램블 에그(계란 2개, 소금, 후추)\n- 마요네즈 1T\n- 레몬 1/2개(레몬주스, 레몬제스트)\n- 아보카도 1/2개",
+  "steps": "1. 팬에 올리브오일 두르고 사워도우를 굽는다. \n2. 계란 2개, 소금, 후추로 간해서 팬에 붓고 스크램블 에그를 만든다. \n3. 사워도우에 마요네즈 1T 바르고 2의 스크램블 에그, 아보카도, 레몬주스와 레몬제스트 얹는다.  ",
   "raw": "20210831, #조식다이어리 196, 22도/소나기\n\n올리브오일 두른 팬에 앞뒤로 두툼하게 썬 빵을 굽는다. 이왕 먹는 것 마요네즈는 듬뿍, 스크램블에그를 만들어 올리고 슬라이스한 아보카도까지, 마지막으로 레몬즙, 레몬제스트, 소금과 후추 약간 #아보카도샌드위치\n\n인류의 새 보금자리를 찾아 떠난 인듀어런스호가 도착한 밀러 행성, 거대한 해일에 휩싸인 일행은 지구 시간으로 무려 23년 4개월 하고도 8일을 허비하는데, \n밀러 행성의 1시간이 지구 시간의 7년인 것처럼 아침 출근길의 1분 역시 평소의 1시간 같은 느낌이다. 게다가 평소와 같은 시간에 깼다고 생각했다가 문득 사뭇 다른 아침 공기에 약간 모골이 송연해지고 결정적으로 정확히 1시간 늦게 깬 것을 확인한 아침이라면 더욱 더 그렇다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샌드위치 #빵 #아보카도 #스크램블에그\n#breakfast #sandwich #avocado #scrambledeggs #avocadosandwich ",
   "image": "https://images.how-about-breakfast.com/images/196.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/196.jpg",
    "https://images.how-about-breakfast.com/images/196_2.jpg"
   ],
-  "_en": {
-   "hash": "4827767ac268b61ac5d4821b84b3665a088b3609a17832791ad1ab7a84fc98ec",
-   "title": "Avocado Sandwich, Morning Ritual, Morning Routine",
-   "intro": "20210831 #breakfastdiary 196, 22°C/showers\nToast thick slices of bread on both sides in a pan with olive oil. Since I’m already at it, go heavy on the mayonnaise, pile on scrambled eggs and sliced avocado, and finish with lemon juice, lemon zest, and a little salt and pepper. #avocadosandwich\nOn Miller’s planet, where the Endurance lands in its search for humanity’s new home, the crew gets swept up in giant tidal waves and loses a staggering 23 years, 4 months, and 8 days of Earth time. \nJust as one hour on Miller’s planet equals seven years on Earth, one minute on the morning commute can feel like a full hour on any ordinary day. And that feeling is even stronger on a morning when you think you woke up at the usual time, only to be unsettled by the strangely different air outside — and then realize, with a jolt, that you actually woke up exactly one hour late.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "아보카도샌드위치-모닝리추얼-모닝루틴-2"
  },
  {
