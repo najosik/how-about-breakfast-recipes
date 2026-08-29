@@ -109,11 +109,10 @@
         html +=
           '<div class="vote-winner">' +
           '<p class="label">' + Shared.escapeHtml(monthLabel(latestFinalized.target_month)) + '</p>' +
+          '<span class="medal-badge">🥇 ' + I18N.t('medal_label') + '</span>' +
           '<p class="vote-winner-name">' + Shared.escapeHtml(winnerTitle) + '</p>' +
           '<div class="card" id="voteWinnerCard" role="button" tabindex="0">' +
           Shared.thumbHTML(winner, 30) +
-          '<span class="medal-badge">🥇 ' + I18N.t('medal_label') + '</span>' +
-          '<h3 class="card-title">' + Shared.escapeHtml(winnerTitle) + '</h3>' +
           '</div>' +
           '</div>';
       }
