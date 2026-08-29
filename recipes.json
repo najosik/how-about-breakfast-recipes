@@ -4750,6 +4750,43 @@
   "date": "2026-04-20",
   "date_raw": "20260420",
   "diary_no": 1707,
+  "weather": "12도/흐림",
+  "failed": false,
+  "calories": 500,
+  "title": "#버섯볶음밥 Mushroom Fried Rice",
+  "credit": null,
+  "hashtags": [
+   "레시피",
+   "버섯",
+   "버섯볶음밥",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20260420 #조식다이어리 1696, 12도/흐림\n갈아놓은 들깨는 쉽게 산패되기 때문에 필요할 때마다 갈아서 쓰면 좋다. \n1인분 약 500kcal #버섯볶음밥 Mushroom Fried Rice",
+  "ingredients": "각종 버섯(오늘은 표고버섯, 느타리버섯, 팽이버섯), 밥 1/2공기, 간장 1T, 굴소스 1T, 버터 5g, 다진 쪽파, 참기름 1T, 들깨가루 2T",
+  "steps": "1. 표고버섯은 세로로 썰고 느타리버섯은 한 개씩 뜯어낸다. 팽이버섯은 낱낱이 해체한다. \n2. 팬에 올리브오일, 1의 버섯 넣고 후추후추, 간장 1T, 굴소스 1T 넣고 좀 더 볶는다. \n3. 밥 1 그릇과 버터 5g 넣고 골고루 섞는다. 누룽지를 만든다는 느낌을 꾹꾹 눌러준다. \n4. 불 끄고 다진 쪽파, 참기름 1T, 들깨가루 듬뿍 넣고 골고루 섞는다. \n5. 버섯이 보일 수 있도록 넓게 펼쳐 담는다.",
+  "raw": "20260420 #조식다이어리 1696, 12도/흐림\n\n갈아놓은 들깨는 쉽게 산패되기 때문에 필요할 때마다 갈아서 쓰면 좋다. \n\n1인분 약 500kcal #버섯볶음밥 Mushroom Fried Rice\n\n👉 재료(2인분)\n각종 버섯(오늘은 표고버섯, 느타리버섯, 팽이버섯), 밥 1/2공기, 간장 1T, 굴소스 1T, 버터 5g, 다진 쪽파, 참기름 1T, 들깨가루 2T \n\n👉 조리\n1. 표고버섯은 세로로 썰고 느타리버섯은 한 개씩 뜯어낸다. 팽이버섯은 낱낱이 해체한다. \n2. 팬에 올리브오일, 1의 버섯 넣고 후추후추, 간장 1T, 굴소스 1T 넣고 좀 더 볶는다. \n3. 밥 1 그릇과 버터 5g 넣고 골고루 섞는다. 누룽지를 만든다는 느낌을 꾹꾹 눌러준다. \n4. 불 끄고 다진 쪽파, 참기름 1T, 들깨가루 듬뿍 넣고 골고루 섞는다. \n5. 버섯이 보일 수 있도록 넓게 펼쳐 담는다. \n\n#조식 #레시피 #버섯",
+  "image": "https://images.how-about-breakfast.com/images/1696.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1696.jpg",
+   "https://images.how-about-breakfast.com/images/1696_2.jpg",
+   "https://images.how-about-breakfast.com/images/1696_3.jpg",
+   "https://images.how-about-breakfast.com/images/1696_4.jpg",
+   "https://images.how-about-breakfast.com/images/1696_5.jpg"
+  ],
+  "_en": {
+   "hash": "5f6499f2ff5420cf4090c0a59ecd672dd0135151f8c3988615e6543fdd49e68b",
+   "title": "Mushroom Fried Rice",
+   "intro": "20260420, #BreakfastDiary 1696, 12°C/cloudy\nGround perilla seed powder oxidizes quickly, so it's best to grind only as much as you need each time.\nAbout 500kcal per serving, #MushroomFriedRice Mushroom Fried Rice.",
+   "ingredients": "assorted mushrooms (today: shiitake, oyster, enoki), 1/2 bowl rice, 1T soy sauce, 1T oyster sauce, 5g butter, chopped scallion, 1T sesame oil, 2T perilla seed powder",
+   "steps": "1. Slice the shiitake mushrooms lengthwise, pull the oyster mushrooms apart into individual pieces, and separate the enoki mushrooms strand by strand.\n2. Heat olive oil in a pan, add the mushrooms from step 1, then add a good pinch of pepper, 1T soy sauce, and 1T oyster sauce, and sauté a bit more.\n3. Add 1 bowl of rice and 5g butter and mix evenly. Press down firmly as if you're forming a crust of nurungji (crispy rice).\n4. Turn off the heat, add the chopped scallion, 1T sesame oil, and a generous amount of perilla seed powder, and mix evenly.\n5. Spread it out wide on the plate so the mushrooms are visible."
+  },
+  "page_id": "버섯볶음밥-Mushroom-Fried-Rice"
+ },
+ {
+  "date": "2026-04-19",
+  "date_raw": "20260419",
+  "diary_no": 1706,
   "weather": "22도/대체로 흐림",
   "failed": false,
   "calories": 700,
@@ -4761,31 +4798,30 @@
    "조식다이어리",
    "치즈케이크"
   ],
-  "intro": "20260420 #조식다이어리 1696, 22도/대체로 흐림\n오리지널 레시피엔 리코타치즈와 세몰리나가 들어가는데 세몰리나는 없고 리코타치즈도 모자라서 그릭요거트와 오트밀을 넣었다. 약 700kcal 노슈가, 노밀가루 포실포실 치즈케이크 \n오븐에 넣고 30분쯤 지난 뒤 원하는 색이 나오면 쿠킹포일로 살짝 덮는 게 좋다. 코코넛가루가 타면 지옥에서 온, 이라는 수식어가 붙게 된다.",
+  "intro": "20260419 #조식다이어리 1695, 22도/대체로 흐림\n오리지널 레시피엔 리코타치즈와 세몰리나가 들어가는데 세몰리나는 없고 리코타치즈도 모자라서 그릭요거트와 오트밀을 넣었다. 약 700kcal 노슈가, 노밀가루 포실포실 치즈케이크 \n오븐에 넣고 30분쯤 지난 뒤 원하는 색이 나오면 쿠킹포일로 살짝 덮는 게 좋다. 코코넛가루가 타면 지옥에서 온, 이라는 수식어가 붙게 된다.",
   "ingredients": "리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵, (토핑) 코코넛가루 2T",
   "steps": "1. 믹싱볼에 리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵 넣고 골고루 섞는다. 그릇에 옮겨 담고 코코넛가루 얹는다. \n2. 180도 오븐에 45분 굽는다.",
-  "raw": "20260420 #조식다이어리 1696, 12도/흐림\n\n갈아놓은 들깨는 쉽게 산패되기 때문에 필요할 때마다 갈아서 쓰면 좋다. \n\n1인분 약 500kcal #버섯볶음밥 Mushroom Fried Rice\n\n👉 재료(2인분)\n각종 버섯(오늘은 표고버섯, 느타리버섯, 팽이버섯), 밥 1/2공기, 간장 1T, 굴소스 1T, 버터 5g, 다진 쪽파, 참기름 1T, 들깨가루 2T \n\n👉 조리\n1. 표고버섯은 세로로 썰고 느타리버섯은 한 개씩 뜯어낸다. 팽이버섯은 낱낱이 해체한다. \n2. 팬에 올리브오일, 1의 버섯 넣고 후추후추, 간장 1T, 굴소스 1T 넣고 좀 더 볶는다. \n3. 밥 1 그릇과 버터 5g 넣고 골고루 섞는다. 누룽지를 만든다는 느낌을 꾹꾹 눌러준다. \n4. 불 끄고 다진 쪽파, 참기름 1T, 들깨가루 듬뿍 넣고 골고루 섞는다. \n5. 버섯이 보일 수 있도록 넓게 펼쳐 담는다. \n\n#조식 #레시피 #버섯",
-  "image": "https://images.how-about-breakfast.com/images/1696.jpg",
+  "raw": "20260419 #조식다이어리 1695, 22도/대체로 흐림\n\n오리지널 레시피엔 리코타치즈와 세몰리나가 들어가는데 세몰리나는 없고 리코타치즈도 모자라서 그릭요거트와 오트밀을 넣었다. 약 700kcal 노슈가, 노밀가루 포실포실 치즈케이크 \n오븐에 넣고 30분쯤 지난 뒤 원하는 색이 나오면 쿠킹포일로 살짝 덮는 게 좋다. 코코넛가루가 타면 지옥에서 온, 이라는 수식어가 붙게 된다. \n\n👉 재료\n리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵, (토핑) 코코넛가루 2T\n\n👉 조리\n1. 믹싱볼에 리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵 넣고 골고루 섞는다. 그릇에 옮겨 담고 코코넛가루 얹는다. \n2. 180도 오븐에 45분 굽는다. \n\nInspired by @simplefood_recipe\n\n#조식 #레시피 #치즈케이크",
+  "image": "https://images.how-about-breakfast.com/images/1695.jpg",
   "gallery": [
-   "https://images.how-about-breakfast.com/images/1696.jpg",
-   "https://images.how-about-breakfast.com/images/1696_2.jpg",
-   "https://images.how-about-breakfast.com/images/1696_3.jpg",
-   "https://images.how-about-breakfast.com/images/1696_4.jpg",
-   "https://images.how-about-breakfast.com/images/1696_5.jpg"
+   "https://images.how-about-breakfast.com/images/1695.jpg",
+   "https://images.how-about-breakfast.com/images/1695_2.jpg",
+   "https://images.how-about-breakfast.com/images/1695_3.jpg"
   ],
+  "video": "https://images.how-about-breakfast.com/images/1695.mp4",
   "_en": {
-   "hash": "137a4244a21e0d51fced3b926a112328189e82648814aa32c556e7b50520ecfd",
+   "hash": "b21d4731d659eb4e4bda610aabd26a856e6515ca7d8cba658bf77e48fdddf368",
    "title": "No-Sugar, No-Flour Fluffy Cheesecake",
-   "intro": "20260420, #BreakfastDiary 1696, 22°C/mostly cloudy\nThe original recipe calls for ricotta cheese and semolina, but I had no semolina and not quite enough ricotta either, so I added Greek yogurt and oatmeal instead. About 700kcal, No-Sugar, No-Flour Fluffy Cheesecake.\nAbout 30 minutes into baking, once it reaches the color you want, it's best to loosely cover it with foil. If the coconut powder on top burns, it earns itself the modifier 'straight from hell.'",
+   "intro": "20260419, #BreakfastDiary 1695, 22°C/mostly cloudy\nThe original recipe calls for ricotta cheese and semolina, but I had no semolina and not quite enough ricotta either, so I added Greek yogurt and oatmeal instead. About 700kcal, No-Sugar, No-Flour Fluffy Cheesecake.\nAbout 30 minutes into baking, once it reaches the color you want, it's best to loosely cover it with foil. If the coconut powder on top burns, it earns itself the modifier 'straight from hell.'",
    "ingredients": "150g ricotta cheese, 150g Greek yogurt, 2 eggs, 5T finely ground oatmeal, 3/4t baking powder, 1/4 cup raisins, (topping) 2T coconut powder",
    "steps": "1. In a mixing bowl, combine 150g ricotta cheese, 150g Greek yogurt, 2 eggs, 5T finely ground oatmeal, 3/4t baking powder, and 1/4 cup raisins, and mix evenly. Transfer to a baking dish and top with coconut powder.\n2. Bake in a 180°C oven for 45 minutes."
   },
-  "page_id": "버섯볶음밥-Mushroom-Fried-Rice"
+  "page_id": "노슈가-노밀가루-포실포실-치즈케이크-오븐에-넣고-30분쯤-지난-뒤-원하는-색이-나오면-쿠킹포일로-살짝-덮는"
  },
  {
-  "date": "2026-04-19",
-  "date_raw": "20260419",
-  "diary_no": 1706,
+  "date": "2026-04-18",
+  "date_raw": "20260418",
+  "diary_no": 1705,
   "weather": "14도/맑음",
   "failed": false,
   "calories": 650,
@@ -4797,45 +4833,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20260419 #조식다이어리 1695, 14도/맑음\n콘킬리에 속에 토마토를 가득 채운 약 650kcal 토마토 참치 콘킬리에 파스타 Tomato Tuna Conchiglie Pasta",
+  "intro": "20260418 #조식다이어리 1694, 14도/맑음\n콘킬리에 속에 토마토를 가득 채운 약 650kcal 토마토 참치 콘킬리에 파스타 Tomato Tuna Conchiglie Pasta",
   "ingredients": "콘킬리에 100g, 마늘 2개, 앤초비 페이스트 1t, 양파 1/2개, 토마토소스 150g, 바질 조금, 참치캔 1개, 파마산치즈 조금",
   "steps": "1. 끓는 물에 소금소금 콘킬리에를 삶는다. \n2. 팬에 올리브오일 두르고 다진 마늘과 앤초비 페이스트 1t 넣고 볶는다. \n3. 다진 양파 1/2개 다져서 볶는다. \n4. 팬에 토마토소스, 1의 면수 1국자 넣고 보글보글 끓인다. \n5. 3에 콘킬리에 넣고 가볍게 만테까레한다. 원하는 농도에 이르면 불 끄고 다진 바질 넣고 골고루 섞는다. \n6. 접시에 콘킬리에 담고 참치와 바질, 파마산치즈 갈아서 얹는다.",
-  "raw": "20260419 #조식다이어리 1695, 22도/대체로 흐림\n\n오리지널 레시피엔 리코타치즈와 세몰리나가 들어가는데 세몰리나는 없고 리코타치즈도 모자라서 그릭요거트와 오트밀을 넣었다. 약 700kcal 노슈가, 노밀가루 포실포실 치즈케이크 \n오븐에 넣고 30분쯤 지난 뒤 원하는 색이 나오면 쿠킹포일로 살짝 덮는 게 좋다. 코코넛가루가 타면 지옥에서 온, 이라는 수식어가 붙게 된다. \n\n👉 재료\n리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵, (토핑) 코코넛가루 2T\n\n👉 조리\n1. 믹싱볼에 리코타치즈 150g, 그릭요거트 150g, 계란 2개, 곱게 간 오트밀 5T, 베이킹파우더 3/4t, 건포도 1/4컵 넣고 골고루 섞는다. 그릇에 옮겨 담고 코코넛가루 얹는다. \n2. 180도 오븐에 45분 굽는다. \n\nInspired by @simplefood_recipe\n\n#조식 #레시피 #치즈케이크",
-  "image": "https://images.how-about-breakfast.com/images/1695.jpg",
-  "gallery": [
-   "https://images.how-about-breakfast.com/images/1695.jpg",
-   "https://images.how-about-breakfast.com/images/1695_2.jpg",
-   "https://images.how-about-breakfast.com/images/1695_3.jpg"
-  ],
-  "video": "https://images.how-about-breakfast.com/images/1695.mp4",
-  "_en": {
-   "hash": "04d487d9d0e46c1f4043cc9e33803db89e818b3a80586d2c495cde0b16891dbf",
-   "title": "Tomato Tuna Conchiglie Pasta",
-   "intro": "20260419, #BreakfastDiary 1695, 14°C/sunny\nConchiglie shells packed full of tomato, about 650kcal, Tomato Tuna Conchiglie Pasta.",
-   "ingredients": "100g conchiglie, 2 cloves garlic, 1t anchovy paste, 1/2 onion, 150g tomato sauce, a little basil, 1 can tuna, a little parmesan cheese",
-   "steps": "1. Boil the conchiglie in well-salted water.\n2. Heat olive oil in a pan and sauté the minced garlic and 1t anchovy paste.\n3. Add the chopped 1/2 onion and sauté.\n4. Add the tomato sauce and a ladle of pasta water from step 1 to the pan and let it simmer.\n5. Add the conchiglie to step 3 and toss lightly to mantecare. Once it reaches the consistency you want, turn off the heat, add the chopped basil, and mix evenly.\n6. Plate the conchiglie and top with tuna, basil, and grated parmesan cheese."
-  },
-  "page_id": "노슈가-노밀가루-포실포실-치즈케이크-오븐에-넣고-30분쯤-지난-뒤-원하는-색이-나오면-쿠킹포일로-살짝-덮는"
- },
- {
-  "date": "2026-04-18",
-  "date_raw": "20260418",
-  "diary_no": 1705,
-  "weather": "14도/맑음",
-  "failed": false,
-  "calories": 580,
-  "title": "#콩비지샐러드 Soy Bean Pulp Salad",
-  "credit": null,
-  "hashtags": [
-   "레시피",
-   "조식",
-   "조식다이어리",
-   "콩비지",
-   "콩비지샐러드"
-  ],
-  "intro": "20260418 #조식다이어리 1694, 14도/맑음\n기억할께\n580kcal #콩비지샐러드 Soy Bean Pulp Salad",
-  "ingredients": "콩비지 300g, 버터 1T, 마요네즈 3T, 그릭요거트 2T, 오이 1/2개, 사과 1/2개, 토마토 1개, 래디시 2개, 체다치즈 10g, 소금, 후추",
-  "steps": "1. 오이 1/2개, 사과 1/2개, 토마토 1개, 체다치즈 10g을 먹기 좋게 썰고 래디시 2개는 채칼로 썬다. \n2. 콩비지는 전자레인지에 2분 데운다. \n3. 믹싱볼에 방금 데운 콩비지 300g, 버터 1T 넣고 섞는다. 버터가 잘 녹는다. 마요네즈 3T, 그릭요거트 2T 넣고 섞는다. 1에서 손질한 재료를 넣고 골고루 섞는다. 소금과 후추로 간을 한다.",
   "raw": "20260418 #조식다이어리 1694, 14도/맑음\n\n콘킬리에 속에 토마토를 가득 채운 약 650kcal 토마토 참치 콘킬리에 파스타 Tomato Tuna Conchiglie Pasta \n\n👉 재료\n콘킬리에 100g, 마늘 2개, 앤초비 페이스트 1t, 양파 1/2개, 토마토소스 150g, 바질 조금, 참치캔 1개, 파마산치즈 조금 \n\n👉 조리\n1. 끓는 물에 소금소금 콘킬리에를 삶는다. \n2. 팬에 올리브오일 두르고 다진 마늘과 앤초비 페이스트 1t 넣고 볶는다. \n3. 다진 양파 1/2개 다져서 볶는다. \n4. 팬에 토마토소스, 1의 면수 1국자 넣고 보글보글 끓인다. \n5. 3에 콘킬리에 넣고 가볍게 만테까레한다. 원하는 농도에 이르면 불 끄고 다진 바질 넣고 골고루 섞는다. \n6. 접시에 콘킬리에 담고 참치와 바질, 파마산치즈 갈아서 얹는다. \n\nInspired by @gmcoo.k\n\n#조식 #레시피 #바질",
   "image": "https://images.how-about-breakfast.com/images/1694.jpg",
   "gallery": [
@@ -4846,11 +4846,11 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/1694.mp4",
   "_en": {
-   "hash": "faf67229c6ac50037f5eeb4e1b178436289fd31b7140ba2e9b4ba608e71e9a0a",
-   "title": "Soybean Pulp Salad",
-   "intro": "20260418, #BreakfastDiary 1694, 14°C/sunny\nI'll remember this.\n580kcal, #SoybeanPulpSalad Soy Bean Pulp Salad.",
-   "ingredients": "300g soybean pulp (biji), 1T butter, 3T mayonnaise, 2T Greek yogurt, 1/2 cucumber, 1/2 apple, 1 tomato, 2 radishes, 10g cheddar cheese, salt, pepper",
-   "steps": "1. Cut the 1/2 cucumber, 1/2 apple, 1 tomato, and 10g cheddar cheese into bite-sized pieces, and slice the 2 radishes with a mandoline.\n2. Microwave the soybean pulp for 2 minutes.\n3. In a mixing bowl, combine the freshly warmed 300g soybean pulp with 1T butter and mix - the butter melts nicely. Add 3T mayonnaise and 2T Greek yogurt and mix. Add the ingredients prepped in step 1 and mix evenly. Season with salt and pepper."
+   "hash": "7f7353335d7877002fbd2a4e7adf2ef834f3b491876211fddad487658058585d",
+   "title": "Tomato Tuna Conchiglie Pasta",
+   "intro": "20260418, #BreakfastDiary 1694, 14°C/sunny\nConchiglie shells packed full of tomato, about 650kcal, Tomato Tuna Conchiglie Pasta.",
+   "ingredients": "100g conchiglie, 2 cloves garlic, 1t anchovy paste, 1/2 onion, 150g tomato sauce, a little basil, 1 can tuna, a little parmesan cheese",
+   "steps": "1. Boil the conchiglie in well-salted water.\n2. Heat olive oil in a pan and sauté the minced garlic and 1t anchovy paste.\n3. Add the chopped 1/2 onion and sauté.\n4. Add the tomato sauce and a ladle of pasta water from step 1 to the pan and let it simmer.\n5. Add the conchiglie to step 3 and toss lightly to mantecare. Once it reaches the consistency you want, turn off the heat, add the chopped basil, and mix evenly.\n6. Plate the conchiglie and top with tuna, basil, and grated parmesan cheese."
   },
   "page_id": "토마토-참치-콘킬리에-파스타-Tomato-Tuna-Conchiglie-Pasta"
  },
