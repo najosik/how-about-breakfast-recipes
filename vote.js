@@ -87,9 +87,7 @@
   var MONTH_SHORT = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
   function yearLabel(year) {
-    return I18N.getLang() === 'en'
-      ? year + ' ' + I18N.t('medal_label')
-      : year + '년 ' + I18N.t('medal_label');
+    return year + ' ' + I18N.t('footer_vote');
   }
 
   function monthShortLabel(m) {
