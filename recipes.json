@@ -4855,8 +4855,8 @@
   "page_id": "토마토-참치-콘킬리에-파스타-Tomato-Tuna-Conchiglie-Pasta"
  },
  {
-  "date": "2026-04-15",
-  "date_raw": "20260415",
+  "date": "2026-04-16",
+  "date_raw": "20260416",
   "diary_no": 1704,
   "weather": "14도/맑음",
   "failed": false,
@@ -4870,7 +4870,7 @@
    "콩비지",
    "콩비지샐러드"
   ],
-  "intro": "20260415 #조식다이어리 1693, 14도/맑음\n기억할께\n580kcal #콩비지샐러드 Soy Bean Pulp Salad",
+  "intro": "20260416 #조식다이어리 1694, 14도/맑음\n기억할께\n580kcal #콩비지샐러드 Soy Bean Pulp Salad",
   "ingredients": "콩비지 300g, 버터 1T, 마요네즈 3T, 그릭요거트 2T, 오이 1/2개, 사과 1/2개, 토마토 1개, 래디시 2개, 체다치즈 10g, 소금, 후추",
   "steps": "1. 오이 1/2개, 사과 1/2개, 토마토 1개, 체다치즈 10g을 먹기 좋게 썰고 래디시 2개는 채칼로 썬다. \n2. 콩비지는 전자레인지에 2분 데운다. \n3. 믹싱볼에 방금 데운 콩비지 300g, 버터 1T 넣고 섞는다. 버터가 잘 녹는다. 마요네즈 3T, 그릭요거트 2T 넣고 섞는다. 1에서 손질한 재료를 넣고 골고루 섞는다. 소금과 후추로 간을 한다.",
   "raw": "20260415 #조식다이어리 1693, 14도/맑음\n\n기억할께\n\n580kcal #콩비지샐러드 Soy Bean Pulp Salad\n\n👉 재료\n콩비지 300g, 버터 1T, 마요네즈 3T, 그릭요거트 2T, 오이 1/2개, 사과 1/2개, 토마토 1개, 래디시 2개, 체다치즈 10g, 소금, 후추\n\n👉 조리\n1. 오이 1/2개, 사과 1/2개, 토마토 1개, 체다치즈 10g을 먹기 좋게 썰고 래디시 2개는 채칼로 썬다. \n2. 콩비지는 전자레인지에 2분 데운다. \n3. 믹싱볼에 방금 데운 콩비지 300g, 버터 1T 넣고 섞는다. 버터가 잘 녹는다. 마요네즈 3T, 그릭요거트 2T 넣고 섞는다. 1에서 손질한 재료를 넣고 골고루 섞는다. 소금과 후추로 간을 한다. \n\n#조식 #레시피 #콩비지",
@@ -4884,44 +4884,15 @@
   "_en": {
    "hash": "53620d2c80ec02929e275273ce2097661799ba15bf256f48a847f16c0ae1ec90",
    "title": "Soybean Pulp Salad",
-   "intro": "20260415, #BreakfastDiary 1693, 14°C/sunny\nI'll remember this.\n580kcal, #SoybeanPulpSalad Soy Bean Pulp Salad.",
+   "intro": "20260416, #BreakfastDiary 1694, 14°C/sunny\nI'll remember this.\n580kcal, #SoybeanPulpSalad Soy Bean Pulp Salad.",
    "ingredients": "300g soybean pulp (biji), 1T butter, 3T mayonnaise, 2T Greek yogurt, 1/2 cucumber, 1/2 apple, 1 tomato, 2 radishes, 10g cheddar cheese, salt, pepper",
    "steps": "1. Cut the 1/2 cucumber, 1/2 apple, 1 tomato, and 10g cheddar cheese into bite-sized pieces, and slice the 2 radishes with a mandoline.\n2. Microwave the soybean pulp for 2 minutes.\n3. In a mixing bowl, combine the freshly warmed 300g soybean pulp with 1T butter and mix - the butter melts nicely. Add 3T mayonnaise and 2T Greek yogurt and mix. Add the ingredients prepped in step 1 and mix evenly. Season with salt and pepper."
   },
   "page_id": "콩비지샐러드-Soy-Bean-Pulp-Salad"
  },
  {
-  "date": "2026-04-14",
-  "date_raw": "20260414",
-  "diary_no": 1703,
-  "weather": "00도/흐림",
-  "failed": false,
-  "calories": 450,
-  "title": "토마토 바질 샌드위치 Tomato Basil Sandwich",
-  "credit": null,
-  "hashtags": [
-   "레시피",
-   "조식",
-   "조식다이어리",
-   "토마토"
-  ],
-  "intro": "20260414 #조식다이어리 1692, 00도/흐림\n450kcal 토마토 바질 샌드위치 Tomato Basil Sandwich",
-  "ingredients": "식빵 2장, 토마토 2개, 바질 한 줌, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추",
-  "steps": "1. 흐르는 물에 토마토 2개 씻어서 먹기 좋게 썬다. 속은 제거한다. \n2. 바질 한 줌 다진다. \n3. 믹싱볼에 1의 토마토, 2의 바질, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추 넣고 골고루 섞는다. \n4. (몸 생각해서 우유식빵 대신에) 발효종 통밀 콩식빵 위에 2의 토마토 바질 샐러드 얹는다.",
-  "raw": "20260414 #조식다이어리 1692, 00도/흐림\n\n450kcal 토마토 바질 샌드위치 Tomato Basil Sandwich\n\n👉 재료\n식빵 2장, 토마토 2개, 바질 한 줌, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추\n\n👉 조리\n1. 흐르는 물에 토마토 2개 씻어서 먹기 좋게 썬다. 속은 제거한다. \n2. 바질 한 줌 다진다. \n3. 믹싱볼에 1의 토마토, 2의 바질, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추 넣고 골고루 섞는다. \n4. (몸 생각해서 우유식빵 대신에) 발효종 통밀 콩식빵 위에 2의 토마토 바질 샐러드 얹는다. \n\n#조식 #레시피 #토마토",
-  "_en": {
-   "hash": "6f654345b2169eeb14e82a115ed4e7c79f352d9d0013e45d2b88345456b642ed",
-   "title": "Tomato Basil Sandwich",
-   "intro": "20260414, #BreakfastDiary 1692, 0°C/cloudy\n450kcal, Tomato Basil Sandwich.",
-   "ingredients": "2 slices white bread, 2 tomatoes, a handful of basil, 2T mayonnaise, 1t balsamic vinegar, 1T hemp seeds, a good pinch of salt, a good pinch of pepper",
-   "steps": "1. Wash the 2 tomatoes under running water and cut into bite-sized pieces. Remove the seeds and pulp.\n2. Chop a handful of basil.\n3. In a mixing bowl, combine the tomato from step 1, basil from step 2, 2T mayonnaise, 1t balsamic vinegar, 1T hemp seeds, a good pinch of salt, and a good pinch of pepper, and mix evenly.\n4. (Thinking of my health, instead of milk bread) top the fermented whole-wheat soybean bread with the tomato basil salad from step 2."
-  },
-  "page_id": "토마토-바질-샌드위치-Tomato-Basil-Sandwich",
-  "deleted": true
- },
- {
-  "date": "2026-04-14",
-  "date_raw": "20260414",
+  "date": "2026-04-15",
+  "date_raw": "20260415",
   "diary_no": 1703,
   "weather": "14도/대체로 맑음",
   "failed": false,
@@ -4934,7 +4905,7 @@
    "조식다이어리",
    "토마토"
   ],
-  "intro": "20260414 #조식다이어리 1692, 14도/대체로 맑음\nB브랜드의 통밀 건강콩 식빵, 건강에 좋(을 것 같)고 맛도 좋은데 샌드하고 반으로 잘랐더니 산산히 부서진다. 토마토 바질 샌드위치는 건강을 포기하고 하얗고 쫀쫀한 우유식빵을 사용하는 게 좋겠다. \n450kcal 토마토 바질 샌드위치 Tomato Basil Sandwich",
+  "intro": "20260415 #조식다이어리 1693, 14도/대체로 맑음\nB브랜드의 통밀 건강콩 식빵, 건강에 좋(을 것 같)고 맛도 좋은데 샌드하고 반으로 잘랐더니 산산히 부서진다. 토마토 바질 샌드위치는 건강을 포기하고 하얗고 쫀쫀한 우유식빵을 사용하는 게 좋겠다. \n450kcal 토마토 바질 샌드위치 Tomato Basil Sandwich",
   "ingredients": "식빵 2장, 토마토 2개, 바질 한 줌, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추",
   "steps": "1. 흐르는 물에 토마토 2개 씻어서 먹기 좋게 썬다. 속은 제거한다. \n2. 바질 한 줌 다진다. \n3. 믹싱볼에 1의 토마토, 2의 바질, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추 넣고 골고루 섞는다. \n4. (몸 생각해서 우유식빵 대신에) 발효종 통밀 콩식빵 위에 2의 토마토 바질 샐러드 얹는다.",
   "raw": "20260414 #조식다이어리 1692, 14도/대체로 맑음\n\nB브랜드의 통밀 건강콩 식빵, 건강에 좋(을 것 같)고 맛도 좋은데 샌드하고 반으로 잘랐더니 산산히 부서진다. 토마토 바질 샌드위치는 건강을 포기하고 하얗고 쫀쫀한 우유식빵을 사용하는 게 좋겠다. \n\n450kcal 토마토 바질 샌드위치 Tomato Basil Sandwich\n\n👉 재료\n식빵 2장, 토마토 2개, 바질 한 줌, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추\n\n👉 조리\n1. 흐르는 물에 토마토 2개 씻어서 먹기 좋게 썬다. 속은 제거한다. \n2. 바질 한 줌 다진다. \n3. 믹싱볼에 1의 토마토, 2의 바질, 마요네즈 2T, 발사믹 1t, 햄프시드 1T, 소금소금, 후추후추 넣고 골고루 섞는다. \n4. (몸 생각해서 우유식빵 대신에) 발효종 통밀 콩식빵 위에 2의 토마토 바질 샐러드 얹는다. \n\n#조식 #레시피 #토마토",
@@ -4948,15 +4919,15 @@
   "_en": {
    "hash": "91a0e54e7075badda95b3de58bff602b6ba57fa0405fcdfc45a39a404a9b370e",
    "title": "Tomato Basil Sandwich",
-   "intro": "20260414, #BreakfastDiary 1692, 14°C/mostly sunny\nBrand B's whole-wheat health soybean bread - it seems good for you and tastes good too, but when I made the sandwich and cut it in half, it crumbled to pieces. For tomato basil sandwiches, I think it's better to give up on health and use soft, chewy white milk bread instead.\n450kcal, Tomato Basil Sandwich.",
+   "intro": "20260415, #BreakfastDiary 1693, 14°C/mostly sunny\nBrand B's whole-wheat health soybean bread - it seems good for you and tastes good too, but when I made the sandwich and cut it in half, it crumbled to pieces. For tomato basil sandwiches, I think it's better to give up on health and use soft, chewy white milk bread instead.\n450kcal, Tomato Basil Sandwich.",
    "ingredients": "2 slices white bread, 2 tomatoes, a handful of basil, 2T mayonnaise, 1t balsamic vinegar, 1T hemp seeds, a good pinch of salt, a good pinch of pepper",
    "steps": "1. Wash the 2 tomatoes under running water and cut into bite-sized pieces. Remove the seeds and pulp.\n2. Chop a handful of basil.\n3. In a mixing bowl, combine the tomato from step 1, basil from step 2, 2T mayonnaise, 1t balsamic vinegar, 1T hemp seeds, a good pinch of salt, and a good pinch of pepper, and mix evenly.\n4. (Thinking of my health, instead of milk bread) top the fermented whole-wheat soybean bread with the tomato basil salad from step 2."
   },
   "page_id": "토마토-바질-샌드위치-Tomato-Basil-Sandwich-2"
  },
  {
-  "date": "2026-04-13",
-  "date_raw": "20260413",
+  "date": "2026-04-14",
+  "date_raw": "20260414",
   "diary_no": 1702,
   "weather": "14도/흐림",
   "failed": false,
@@ -4969,7 +4940,7 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20260413 #조식다이어리 1691, 14도/흐림\n토마토 바질 샌드위치를 만들려고 했는데 빵이 없구나. 오히려 좋아. \n달궈진 속을 시원하게 달래줄 약 240kca 미나리 두부 미소국 Minari(Water Parsley)Tofu Miso Soup",
+  "intro": "20260414 #조식다이어리 1692, 14도/흐림\n토마토 바질 샌드위치를 만들려고 했는데 빵이 없구나. 오히려 좋아. \n달궈진 속을 시원하게 달래줄 약 240kca 미나리 두부 미소국 Minari(Water Parsley)Tofu Miso Soup",
   "ingredients": "미나리 적당히, 현미밥 1/2공기, 물 600ml, 두부 1모, 다시다 1t, 미소 1T",
   "steps": "1. 냄비에 물 600ml 붓고 물이 끓으면 다시다 1t, 미소 1T 풀어서 섞는다. \n2. 두부 1cm 다이스로 썰어서 넣는다. \n3. 미나리 줄기 썰어서 넣고 1분 끓이고 불을 끈다. (오래 끓이면 미나리 향이 날아간다.) \n4. 그릇에 담고 후추후추, 식은밥 말아 먹는다.",
   "raw": "20260413 #조식다이어리 1691, 14도/흐림\n\n토마토 바질 샌드위치를 만들려고 했는데 빵이 없구나. 오히려 좋아. \n달궈진 속을 시원하게 달래줄 약 240kca 미나리 두부 미소국 Minari(Water Parsley)Tofu Miso Soup\n\n👉 재료\n미나리 적당히, 현미밥 1/2공기, 물 600ml, 두부 1모, 다시다 1t, 미소 1T\n\n👉 조리\n1. 냄비에 물 600ml 붓고 물이 끓으면 다시다 1t, 미소 1T 풀어서 섞는다. \n2. 두부 1cm 다이스로 썰어서 넣는다. \n3. 미나리 줄기 썰어서 넣고 1분 끓이고 불을 끈다. (오래 끓이면 미나리 향이 날아간다.) \n4. 그릇에 담고 후추후추, 식은밥 말아 먹는다. \n\n#조식 #레시피 #미나리",
@@ -4983,30 +4954,30 @@
   "_en": {
    "hash": "893727b65fbc5f09f47637bf4ea16fed2aecfa11db3dabe13e13182e1344b1f9",
    "title": "Minari (Water Parsley)",
-   "intro": "20260413, #BreakfastDiary 1691, 14°C/cloudy\nI was going to make a tomato basil sandwich, but there's no bread. Even better.\nAbout 240kcal to soothe an overheated stomach, Minari (Water Parsley) Tofu Miso Soup.",
+   "intro": "20260414, #BreakfastDiary 1692, 14°C/cloudy\nI was going to make a tomato basil sandwich, but there's no bread. Even better.\nAbout 240kcal to soothe an overheated stomach, Minari (Water Parsley) Tofu Miso Soup.",
    "ingredients": "minari (water parsley), a suitable amount, 1/2 bowl brown rice, 600ml water, 1 block tofu, 1t soup stock powder, 1T miso",
    "steps": "1. Pour 600ml water into a pot, and once it boils, dissolve in 1t soup stock powder and 1T miso and stir.\n2. Cut the tofu into 1cm dice and add it in.\n3. Cut the minari stems, add them in, boil for 1 minute, and turn off the heat. (If you boil it too long, the minari's fragrance disappears.)\n4. Plate it, add a good pinch of pepper, and eat with cold rice stirred in."
   },
   "page_id": "미나리"
  },
  {
-  "date": "2026-04-12",
-  "date_raw": "20260412",
+  "date": "2026-04-13",
+  "date_raw": "20260413",
   "diary_no": 1701,
   "weather": "10도/맑음",
   "failed": false,
   "calories": 580,
-  "title": "#구남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote",
+  "title": "#현남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote",
   "credit": null,
   "hashtags": [
-   "구남친토스트",
+   "현남친토스트",
    "레시피",
    "전남친토스트",
    "조식",
    "조식다이어리",
    "콩포트"
   ],
-  "intro": "20260412 #조식다이어리 1690, 10도/맑음\n식빵 대신 통밀빵, 크림치즈 대신 스트라타첼라치즈st, 블루베리 잼 대신 블루베리 콩포트를 얹은, 떠난 여친도 연락오게 만드는 #전남친토스트 의 고급 버전, 약 580kcal #구남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote",
+  "intro": "20260413 #조식다이어리 1691, 10도/맑음\n식빵 대신 통밀빵, 크림치즈 대신 스트라타첼라치즈st, 블루베리 잼 대신 블루베리 콩포트를 얹은, 떠난 여친도 연락오게 만드는 #전남친토스트 의 고급 버전, 약 580kcal #현남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote",
   "ingredients": "통밀빵 1장, (블루베리 콩포트) 블루베리와 자일로스(설탕) 3:1, 레몬주스 1T, (스트라차텔라치즈st) 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집",
   "steps": "1. 잠들기 전에 블루베리 콩포트를 만든다. 블루베리와 자일로스(설탕)의 비율은 3:1로 넣고 중불에서 끓이다가 레몬주스 1T 넣고 약불에서 끈적해질 때까지 끓인다. 그대로 아침까지 식힌다. \n2. 통밀빵은 올리브오일 발라서 앞뒤로 바삭하게 굽는다. \n3. 믹싱볼에 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집 넣고 손으로 휘핑해서 스트라타첼라치즈st를 만든다. \n4. 통밀빵 위에 4의 스트라타첼라치즈st 얹고 1의 블루베리 콩포트 얹는다.",
   "raw": "20260412 #조식다이어리 1690, 10도/맑음\n\n식빵 대신 통밀빵, 크림치즈 대신 스트라타첼라치즈st, 블루베리 잼 대신 블루베리 콩포트를 얹은, 떠난 여친도 연락오게 만드는 #전남친토스트 의 고급 버전, 약 580kcal #구남친토스트 라고 할까? Whole Wheat Toast with Blueberry Compote\n\n👉 재료\n통밀빵 1장, (블루베리 콩포트) 블루베리와 자일로스(설탕) 3:1, 레몬주스 1T, (스트라차텔라치즈st) 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집\n\n👉 조리\n1. 잠들기 전에 블루베리 콩포트를 만든다. 블루베리와 자일로스(설탕)의 비율은 3:1로 넣고 중불에서 끓이다가 레몬주스 1T 넣고 약불에서 끈적해질 때까지 끓인다. 그대로 아침까지 식힌다. \n2. 통밀빵은 올리브오일 발라서 앞뒤로 바삭하게 굽는다. \n3. 믹싱볼에 리코타치즈 100g, 생크림 60ml, 소금 한 꼬집 넣고 손으로 휘핑해서 스트라타첼라치즈st를 만든다. \n4. 통밀빵 위에 4의 스트라타첼라치즈st 얹고 1의 블루베리 콩포트 얹는다.  \n\n#조식 #레시피 #콩포트",
@@ -5020,16 +4991,16 @@
   "video": "https://images.how-about-breakfast.com/images/1690.mp4",
   "_en": {
    "hash": "589bc949d6ade289d1d693c7b702dce32ce6e6252ea436610032d92b00a40519",
-   "title": "Should I Call It 'Old Flame Toast'? Whole Wheat Toast with Blueberry Compote",
-   "intro": "20260412, #BreakfastDiary 1690, 10°C/sunny\nWhole wheat bread instead of white bread, stracciatella cheese instead of cream cheese, blueberry compote instead of blueberry jam - the deluxe version of the 'Ex-Boyfriend Toast' that makes even an ex-girlfriend who left come crawling back, about 580kcal. Should I call it 'Old Flame Toast'? Whole Wheat Toast with Blueberry Compote.",
+   "title": "Should I Call It 'Current Boyfriend Toast'? Whole Wheat Toast with Blueberry Compote",
+   "intro": "20260413, #BreakfastDiary 1691, 10°C/sunny\nWhole wheat bread instead of white bread, stracciatella cheese instead of cream cheese, blueberry compote instead of blueberry jam - the deluxe version of the 'Ex-Boyfriend Toast' that makes even an ex-girlfriend who left come crawling back, about 580kcal. Should I call it 'Current Boyfriend Toast'? Whole Wheat Toast with Blueberry Compote.",
    "ingredients": "1 slice whole wheat bread, (blueberry compote) blueberries and xylose (sugar) at a 3:1 ratio, 1T lemon juice, (stracciatella cheese) 100g ricotta cheese, 60ml heavy cream, a pinch of salt",
    "steps": "1. Make the blueberry compote before going to bed. Combine blueberries and xylose (sugar) at a 3:1 ratio and simmer over medium heat, then add 1T lemon juice and simmer over low heat until sticky. Let it cool as is until morning.\n2. Brush the whole wheat bread with olive oil and toast both sides until crisp.\n3. In a mixing bowl, combine 100g ricotta cheese, 60ml heavy cream, and a pinch of salt, and whip by hand to make the stracciatella cheese.\n4. Top the whole wheat bread with the stracciatella cheese from step 4, then top with the blueberry compote from step 1."
   },
   "page_id": "구남친토스트-라고-할까-Whole-Wheat-Toast-with-Blueberry-Compote"
  },
  {
-  "date": "2026-04-11",
-  "date_raw": "20260411",
+  "date": "2026-04-12",
+  "date_raw": "20260412",
   "diary_no": 1700,
   "weather": "7도/맑음",
   "failed": false,
@@ -5043,7 +5014,7 @@
    "조식다이어리",
    "폴렌타"
   ],
-  "intro": "20260411 #조식다이어리 1689, 7도/맑음\n폴렌타는 거칠게 간 옥수수가루로 만든 이탈리아 북부 요리다. 물을 부어 끓이면 유동식처럼 가볍게 먹을 수 있어서 조식으로 좋다. \n오늘은 씹는 식감이 살아있는 아스파라거스와 고소하고 단 완두콩을 곁들여, 약 806kcal 아스파라거스 #폴렌타 Polenta with Roasted Asparagus",
+  "intro": "20260412 #조식다이어리 1690, 7도/맑음\n폴렌타는 거칠게 간 옥수수가루로 만든 이탈리아 북부 요리다. 물을 부어 끓이면 유동식처럼 가볍게 먹을 수 있어서 조식으로 좋다. \n오늘은 씹는 식감이 살아있는 아스파라거스와 고소하고 단 완두콩을 곁들여, 약 806kcal 아스파라거스 #폴렌타 Polenta with Roasted Asparagus",
   "ingredients": "폴렌타 1컵, 물 4컵, 버터 5g, 페코리노치즈 10g, 아스파라거스 5개, 완두콩 1컵",
   "steps": "1. 팬에 폴렌타 1컵, 물 4컵, 소금소금 넣고 약불에서 천천히 저어가며 익힌다. 버터 5g, 페코리노치즈 갈아서 넣는다. \n2. 팬에 올리브오일 두르고 손질한 아스파라거스, 끓는 물에 데친 완두콩 넣고 소금소금, 후추후추 볶는다. \n3. 믹싱볼에 2의 아스파라거스와 완두콩, 다진 바질과 비네그레트 드레싱 넣고 골고루 섞는다. \n4. 접시에 1의 폴렌타 담고 3의 아스파라거스, 완두콩 얹은 다음 필러로 페코리노치즈 잘라서 얹는다.",
   "raw": "20260411 #조식다이어리 1689, 7도/맑음\n\n폴렌타는 거칠게 간 옥수수가루로 만든 이탈리아 북부 요리다. 물을 부어 끓이면 유동식처럼 가볍게 먹을 수 있어서 조식으로 좋다. \n오늘은 씹는 식감이 살아있는 아스파라거스와 고소하고 단 완두콩을 곁들여, 약 806kcal 아스파라거스 #폴렌타 Polenta with Roasted Asparagus\n\n👉 재료(2인분) \n폴렌타 1컵, 물 4컵, 버터 5g, 페코리노치즈 10g, 아스파라거스 5개, 완두콩 1컵\n\n👉 조리\n1. 팬에 폴렌타 1컵, 물 4컵, 소금소금 넣고 약불에서 천천히 저어가며 익힌다. 버터 5g, 페코리노치즈 갈아서 넣는다. \n2. 팬에 올리브오일 두르고 손질한 아스파라거스, 끓는 물에 데친 완두콩 넣고 소금소금, 후추후추 볶는다. \n3. 믹싱볼에 2의 아스파라거스와 완두콩, 다진 바질과 비네그레트 드레싱 넣고 골고루 섞는다. \n4. 접시에 1의 폴렌타 담고 3의 아스파라거스, 완두콩 얹은 다음 필러로 페코리노치즈 잘라서 얹는다. \n\n#조식 #레시피 #아스파라거스",
@@ -5059,7 +5030,7 @@
   "_en": {
    "hash": "e6c27bb97cee748033503b66cc8aaca4cba75358932aef0d50fa4692360588f9",
    "title": "Polenta with Roasted Asparagus",
-   "intro": "20260411, #BreakfastDiary 1689, 7°C/sunny\nPolenta is a dish from northern Italy made from coarsely ground cornmeal. Boiled with water, it can be eaten light, almost like a porridge, which makes it a good breakfast.\nToday I paired it with asparagus that still has some bite to it, and nutty, sweet peas - about 806kcal, #Polenta with Roasted Asparagus.",
+   "intro": "20260412, #BreakfastDiary 1690, 7°C/sunny\nPolenta is a dish from northern Italy made from coarsely ground cornmeal. Boiled with water, it can be eaten light, almost like a porridge, which makes it a good breakfast.\nToday I paired it with asparagus that still has some bite to it, and nutty, sweet peas - about 806kcal, #Polenta with Roasted Asparagus.",
    "ingredients": "1 cup polenta, 4 cups water, 5g butter, 10g pecorino cheese, 5 asparagus spears, 1 cup peas",
    "steps": "1. In a pan, combine 1 cup polenta, 4 cups water, and a good pinch of salt, and cook over low heat, stirring slowly. Add 5g butter and grated pecorino cheese.\n2. Heat olive oil in a pan and sauté the trimmed asparagus and peas (blanched in boiling water) with a good pinch of salt and pepper.\n3. In a mixing bowl, combine the asparagus and peas from step 2 with chopped basil and vinaigrette dressing, and mix evenly.\n4. Plate the polenta from step 1, top with the asparagus and peas from step 3, then shave pecorino cheese over the top with a peeler."
   },
