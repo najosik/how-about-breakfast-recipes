@@ -37796,7 +37796,7 @@
   "weather": "22도/흐림",
   "failed": false,
   "calories": null,
-  "title": "당근라페토스트",
+  "title": "당근 라페 토스트",
   "credit": null,
   "hashtags": [
    "당근라페토스트",
@@ -37806,21 +37806,14 @@
    "조식다이어리"
   ],
   "intro": "20230830, #조식다이어리 832, 22도/흐림\n작은 당근 한 개 채 쳐서 올리브오일3, 와인비니거1, 홀그레인머스타드1/2 넣고 SSG SSG 섞는다. 올리브 몇 개 큼지막하게 다져서 넣는다. \n밀도 높은 올리브 빵 위에 리코타치즈 듬뿍 바르고 당근라페, 올리브 다져서 올린다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 올리브 빵 1조각\n- 당근 1개\n- 드레싱(올리브오일 3T, 와인비니거 1T, 홀그레인 머스터드 1t, 올리브 10개)\n- 리코타치즈 2T",
+  "steps": "1. 올리브 빵은 전자레인지에 20초 데운다. \n2. 당근 한 개 채칼로 썰고 믹싱볼에 담은 뒤 올리브오일 3T, 와인비니거 1T, 홀그레인 머스터드 1t 넣고 골고루 섞는다. 올리브도 조금 다져서 넣는다. (올리브는 토핑용으로 조금 남겨둔다.)\n3. 올리브 빵에 리코타치즈 듬뿍 바르고 2의 당근 라페 얹고 그 위에 다진 올리브 얹는다. ",
   "raw": "20230830, #조식다이어리 832, 22도/흐림\n\n작은 당근 한 개 채 쳐서 올리브오일3, 와인비니거1, 홀그레인머스타드1/2 넣고 SSG SSG 섞는다. 올리브 몇 개 큼지막하게 다져서 넣는다. \n밀도 높은 올리브 빵 위에 리코타치즈 듬뿍 바르고 당근라페, 올리브 다져서 올린다. \n\n#조식 #레시피 #미라클모닝 #당근라페토스트",
   "image": "https://images.how-about-breakfast.com/images/832.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/832.jpg",
    "https://images.how-about-breakfast.com/images/832_2.jpg"
   ],
-  "_en": {
-   "hash": "2765c42388997e2fa704322476d014e2e3d0523b08310943ba5f481bd5fa2cfd",
-   "title": "Carrot Slaw Toast",
-   "intro": "20230830 #breakfastdiary 832, 22°C/cloudy\nJulienne one small carrot and mix with olive oil 3, wine vinegar 1, and whole-grain mustard 1/2, tossing it swish-swish. Add in a few olives, roughly chopped.\nSpread plenty of ricotta cheese on dense olive bread, then top with the carrot slaw and chopped olives.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "당근라페토스트"
  },
  {
