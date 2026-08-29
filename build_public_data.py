@@ -658,6 +658,7 @@ def build_sitemap(recipe_urls, recipe_urls_en):
     lines = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
     lines.append(f'  <url><loc>{SITE_BASE}/</loc><changefreq>daily</changefreq><priority>1.0</priority></url>')
     lines.append(f'  <url><loc>{SITE_BASE}/archive.html</loc><changefreq>daily</changefreq><priority>0.9</priority></url>')
+    lines.append(f'  <url><loc>{SITE_BASE}/vote.html</loc><changefreq>weekly</changefreq><priority>0.6</priority></url>')
     lines.append(f'  <url><loc>{SITE_BASE}/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>')
     lines.append(f'  <url><loc>{SITE_BASE}/en/privacy.html</loc><changefreq>yearly</changefreq><priority>0.2</priority></url>')
     for u in recipe_urls:
@@ -701,7 +702,7 @@ def main():
     print(f'recipe pages generated (en): {len(urls_en)}')
 
     build_sitemap(urls, urls_en)
-    print(f'sitemap.xml: {len(urls) + len(urls_en) + 2} URLs')
+    print(f'sitemap.xml: {len(urls) + len(urls_en) + 3} URLs')
 
 
 if __name__ == '__main__':

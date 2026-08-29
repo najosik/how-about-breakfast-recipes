@@ -13,7 +13,7 @@ workflow_dispatch input), a JSON object shaped like:
     {
       "target_month": "2026-08",       # YYYY-MM, the month whose posts are
                                         # the candidates
-      "candidates": ["page-id-a", "page-id-b", "page-id-c", "page-id-d"],
+      "candidates": [... 12 page_ids ...],
       "vote_start": "2026-09-01",       # YYYY-MM-DD
       "vote_end": "2026-09-07"          # YYYY-MM-DD, inclusive
     }
@@ -69,12 +69,12 @@ def main():
     if vote_end < vote_start:
         print('vote_end must not be before vote_start.', file=sys.stderr)
         sys.exit(1)
-    if not isinstance(candidates, list) or len(candidates) != 4:
-        print('candidates must be a list of exactly 4 page_ids.', file=sys.stderr)
+    if not isinstance(candidates, list) or len(candidates) != 12:
+        print('candidates must be a list of exactly 12 page_ids.', file=sys.stderr)
         sys.exit(1)
     candidates = [str(c) for c in candidates]
-    if len(set(candidates)) != 4:
-        print('candidates must be 4 distinct page_ids.', file=sys.stderr)
+    if len(set(candidates)) != 12:
+        print('candidates must be 12 distinct page_ids.', file=sys.stderr)
         sys.exit(1)
 
     with open(RECIPES_PATH, encoding='utf-8') as f:

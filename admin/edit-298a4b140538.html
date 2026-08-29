@@ -155,30 +155,7 @@
       <label for="vVoteEnd">투표 종료일 (보통 다음 달 7일)</label>
       <input type="text" id="vVoteEnd" placeholder="2026-09-07">
 
-      <div class="v-cand-slot" data-slot="0">
-        <label>후보 1 검색 (제목/날짜)</label>
-        <input type="text" class="v-cand-search" data-slot="0" placeholder="예: 토스트, 2026-08-13">
-        <ul class="v-cand-results" data-slot="0"></ul>
-        <div class="v-cand-picked" data-slot="0"></div>
-      </div>
-      <div class="v-cand-slot" data-slot="1">
-        <label>후보 2 검색 (제목/날짜)</label>
-        <input type="text" class="v-cand-search" data-slot="1" placeholder="예: 토스트, 2026-08-13">
-        <ul class="v-cand-results" data-slot="1"></ul>
-        <div class="v-cand-picked" data-slot="1"></div>
-      </div>
-      <div class="v-cand-slot" data-slot="2">
-        <label>후보 3 검색 (제목/날짜)</label>
-        <input type="text" class="v-cand-search" data-slot="2" placeholder="예: 토스트, 2026-08-13">
-        <ul class="v-cand-results" data-slot="2"></ul>
-        <div class="v-cand-picked" data-slot="2"></div>
-      </div>
-      <div class="v-cand-slot" data-slot="3">
-        <label>후보 4 검색 (제목/날짜)</label>
-        <input type="text" class="v-cand-search" data-slot="3" placeholder="예: 토스트, 2026-08-13">
-        <ul class="v-cand-results" data-slot="3"></ul>
-        <div class="v-cand-picked" data-slot="3"></div>
-      </div>
+      <div id="voteCandSlots"></div>
 
       <button type="submit" id="voteRoundSaveBtn">투표 라운드 등록</button>
     </form>
@@ -240,7 +217,20 @@
   var igIndexMaxDate = null; // latest date key in igIndex - anything at/before this and absent genuinely isn't on Instagram
   var current = null; // the record currently loaded into the form
   var currentAddDate = null; // the date currently loaded into the add-post form
-  var pickedCandidates = [null, null, null, null]; // page_ids chosen for the new vote round's 4 slots
+  var VOTE_CANDIDATE_COUNT = 12;
+  var pickedCandidates = new Array(VOTE_CANDIDATE_COUNT).fill(null); // page_ids chosen for the new vote round's slots
+  var voteCandSlots = document.getElementById('voteCandSlots');
+  var slotsHtml = '';
+  for (var vi = 0; vi < VOTE_CANDIDATE_COUNT; vi++) {
+    slotsHtml +=
+      '<div class="v-cand-slot" data-slot="' + vi + '">' +
+      '<label>후보 ' + (vi + 1) + ' 검색 (제목/날짜)</label>' +
+      '<input type="text" class="v-cand-search" data-slot="' + vi + '" placeholder="예: 토스트, 2026-08-13">' +
+      '<ul class="v-cand-results" data-slot="' + vi + '"></ul>' +
+      '<div class="v-cand-picked" data-slot="' + vi + '"></div>' +
+      '</div>';
+  }
+  voteCandSlots.innerHTML = slotsHtml;
 
   // Mobile Safari (iPad included) doesn't render a draggable resize handle
   // on textareas, so long intro/steps text gets stuck in an 80px box with
@@ -707,10 +697,10 @@
     e.preventDefault();
     var candidates = pickedCandidates.slice();
     if (candidates.some(function (c) { return !c; })) {
-      showStatus('err', '후보 4개를 모두 선택해주세요.');
+      showStatus('err', '후보 ' + VOTE_CANDIDATE_COUNT + '개를 모두 선택해주세요.');
       return;
     }
-    if (new Set(candidates).size !== 4) {
+    if (new Set(candidates).size !== VOTE_CANDIDATE_COUNT) {
       showStatus('err', '후보는 서로 달라야 합니다.');
       return;
     }
@@ -732,7 +722,7 @@
         if (res.ok) {
           showStatus('ok', '투표 라운드 등록 요청 완료. 1~2분 후 사이트에 반영됩니다.');
           voteRoundForm.reset();
-          pickedCandidates = [null, null, null, null];
+          pickedCandidates = new Array(VOTE_CANDIDATE_COUNT).fill(null);
           Array.prototype.forEach.call(document.querySelectorAll('.v-cand-picked'), function (el) {
             el.textContent = '';
             el.classList.remove('filled');
