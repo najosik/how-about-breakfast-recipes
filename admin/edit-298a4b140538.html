@@ -629,7 +629,7 @@
       });
       row.appendChild(cands);
 
-      if (needsClosing) {
+      if (!round.winner) {
         var tallyBtn = document.createElement('button');
         tallyBtn.type = 'button';
         tallyBtn.textContent = '득표 수 확인';
