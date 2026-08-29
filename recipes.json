@@ -68882,7 +68882,7 @@
   "weather": "21도/대체로흐림, 20분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "토마토하몽피자 모닝리추얼 모닝루틴",
+  "title": "토마토 하몽 피자",
   "credit": null,
   "hashtags": [
    "Buongiorno",
@@ -68911,21 +68911,14 @@
    "홈쿡"
   ],
   "intro": "20210830, #조식다이어리 195, 21도/대체로흐림, 20분/운동하기\n시판 또띠아 위에 토마토소스를 바르고 모짜렐라치즈, 토마토, 하몽을 얹는다. 180도 오븐에 15분, 바질을 얹어 #토마토하몽피자",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 또띠아 1장\n- 토마토소스 2T\n- 모짜렐라치즈 1T\n- 방울토마토 3개\n- 하몽 3~4조각\n- 바질",
+  "steps": "1. 또띠아 위에 토마토소스를 바르고 모짜렐라치즈, 방울토마토, 하몽을 얹는다. \n2. 180도 오븐에 15분 굽는다. \n3. 접시에 담고 바질 조금 얹는다. ",
   "raw": "20210830, #조식다이어리 195, 21도/대체로흐림, 20분/운동하기\n\n시판 또띠아 위에 토마토소스를 바르고 모짜렐라치즈, 토마토, 하몽을 얹는다. 180도 오븐에 15분, 바질을 얹어 #토마토하몽피자 \n\n#Buongiorno\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #피자 #토마토 #모짜렐라치즈 #하몽 #바질\n#breakfast #pizza #basil #tomato #jamon #mozzarella ",
   "image": "https://images.how-about-breakfast.com/images/195.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/195.jpg",
    "https://images.how-about-breakfast.com/images/195_2.jpg"
   ],
-  "_en": {
-   "hash": "69fc305c27013d380b74f617aa9658ce7d2ce9cc94cdf6449a058c2ba2926be0",
-   "title": "Tomato Jamón Pizza, Morning Ritual, Morning Routine",
-   "intro": "20210830 #breakfastdiary 195, 21°C/mostly cloudy, 20 min/workout\nSpread tomato sauce on a store-bought tortilla and top with mozzarella, tomato, and jamón. Bake in a 180°C oven for 15 minutes, then finish with basil. #tomatojamonpizza",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "토마토하몽피자-모닝리추얼-모닝루틴"
  },
  {
