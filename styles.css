@@ -205,6 +205,36 @@ h3.card-title{
 .vote-timeline-item .month{font-size:11px; color:var(--ink-faint); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
 .vote-timeline-item.filled .month{color:var(--ink-soft); font-weight:600;}
 
+/* ---- World Cup bracket (separate module from vote-*, see worldcup.js) ---- */
+.wc-wrap{max-width:640px; margin:0 auto; text-align:center;}
+.wc-progress{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-bottom:20px;}
+.wc-match{display:flex; align-items:center; justify-content:center; gap:18px;}
+.wc-card{
+  flex:1; max-width:220px; background:var(--paper-raised); border:1px solid var(--line); border-radius:6px;
+  padding:14px; cursor:pointer; transition:transform .25s ease, opacity .25s ease, border-color .15s, box-shadow .25s ease;
+}
+.wc-card:hover{border-color:var(--teal);}
+.wc-card .thumb{width:100%; aspect-ratio:1; border-radius:4px; overflow:hidden; margin:0 0 10px; background:var(--line);}
+.wc-card .thumb img, .wc-card .thumb .card-photo{width:100%; height:100%; aspect-ratio:1; margin:0;}
+.wc-card .thumb img{object-fit:cover; display:block;}
+.wc-card .title{font-size:14px; font-weight:600; color:var(--ink); line-height:1.35;}
+.wc-vs{font-family:'Nanum Myeongjo',serif; font-size:20px; color:var(--ink-faint); flex:0 0 auto;}
+.wc-card.wc-pick{transform:scale(1.08); border-color:var(--teal); box-shadow:0 10px 28px rgba(0,0,0,.14); cursor:default;}
+.wc-card.wc-drop{transform:scale(.88); opacity:.25; cursor:default;}
+.wc-champion{padding:36px 20px;}
+.wc-champion .crown{font-size:42px; margin-bottom:8px; animation:wc-bounce .6s ease;}
+.wc-champion .champion-label{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-bottom:16px;}
+.wc-champion .thumb{width:200px; height:200px; margin:0 auto 16px; border-radius:8px; overflow:hidden; box-shadow:0 14px 34px rgba(0,0,0,.16); background:var(--line);}
+.wc-champion .thumb img, .wc-champion .thumb .card-photo{width:100%; height:100%; aspect-ratio:1; margin:0;}
+.wc-champion .thumb img{object-fit:cover; display:block;}
+.wc-champion .title{font-family:'Nanum Myeongjo',serif; font-size:22px; color:var(--teal-deep);}
+@keyframes wc-bounce{0%{transform:scale(.4); opacity:0;} 60%{transform:scale(1.15); opacity:1;} 100%{transform:scale(1);}}
+@media (max-width:520px){
+  .wc-match{flex-direction:column; gap:10px;}
+  .wc-card{max-width:none; width:100%;}
+  .wc-vs{padding:2px 0;}
+}
+
 .load-more-wrap{text-align:center; margin-top:36px;}
 button.loadmore{
   padding:12px 28px; border:1px solid var(--line-strong); border-radius:4px;

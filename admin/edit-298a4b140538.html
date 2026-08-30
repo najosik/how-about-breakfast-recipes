@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>게시물 편집 (관리자 전용)</title>
+<link rel="stylesheet" href="../styles.css">
 <style>
   body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 16px; color: #222; }
   h1 { font-size: 1.1rem; }
@@ -88,6 +89,7 @@
     <button type="button" class="tab-btn active" data-tab="editTab">게시물 수정</button>
     <button type="button" class="tab-btn" data-tab="missingTab">빠진 날짜</button>
     <button type="button" class="tab-btn" data-tab="voteTab">이달의 투표</button>
+    <button type="button" class="tab-btn" data-tab="wcTab">월드컵 테스트</button>
   </div>
 
   <div id="editTab" class="tabpage active">
@@ -161,9 +163,20 @@
     </form>
   </div>
 
+  <div id="wcTab" class="tabpage">
+    <p class="hint">"이 달의 조식" 토너먼트 브라켓을 미리 체험해봅니다. 서버에는 아무것도 저장되지 않고, 이 브라우저 안에서만 진행됩니다.</p>
+    <label for="wcMonth">대상 월 (게시물이 올라온 달, YYYY-MM)</label>
+    <input type="text" id="wcMonth" placeholder="2026-08">
+    <button type="button" id="wcStartBtn">테스트 시작</button>
+    <div id="wcResultBox" class="preview-box"></div>
+    <div id="wcContainer" class="wc-wrap" style="margin-top:20px;"></div>
+  </div>
+
   <div id="status" style="display:none"></div>
 </div>
 
+<script src="../shared.js"></script>
+<script src="../worldcup.js"></script>
 <script>
 (function () {
   'use strict';
@@ -211,6 +224,11 @@
   var vTargetMonth = document.getElementById('vTargetMonth');
   var vVoteStart = document.getElementById('vVoteStart');
   var vVoteEnd = document.getElementById('vVoteEnd');
+
+  var wcMonth = document.getElementById('wcMonth');
+  var wcStartBtn = document.getElementById('wcStartBtn');
+  var wcResultBox = document.getElementById('wcResultBox');
+  var wcContainer = document.getElementById('wcContainer');
 
   var allRecords = [];
   var igIndex = null; // {date: {caption, images, ...}} from ig_index.json, or null if not built yet
@@ -736,6 +754,39 @@
         voteRoundSaveBtn.disabled = false;
         voteRoundSaveBtn.textContent = '투표 라운드 등록';
       });
+  });
+
+  // World Cup bracket test harness: entirely client-side, nothing is sent
+  // to any Worker or saved anywhere - just runs WorldCup.start() against
+  // that month's real posts so the UX/animations can be reviewed before
+  // building the "official round" admin flow (Cloudflare Worker + GitHub
+  // Action) on top of it.
+  wcStartBtn.addEventListener('click', function () {
+    var month = wcMonth.value.trim();
+    if (!/^\d{4}-\d{2}$/.test(month)) {
+      alert('대상 월은 YYYY-MM 형식으로 입력해주세요 (예: 2026-08).');
+      return;
+    }
+    var candidates = allRecords.filter(function (r) {
+      return r.date && r.date.slice(0, 7) === month && !r.failed &&
+        (r.image || (r.gallery && r.gallery.length));
+    });
+    if (candidates.length < 2) {
+      alert('해당 월에 사진/영상이 있는 게시물이 ' + candidates.length + '개뿐입니다 (최소 2개 필요).');
+      return;
+    }
+    wcResultBox.style.display = 'none';
+    wcStartBtn.textContent = '테스트 시작 (다시 섞기)';
+    WorldCup.start(wcContainer, candidates, {
+      lang: 'ko',
+      onComplete: function (champion) {
+        wcResultBox.innerHTML =
+          '<b>테스트 완료 (서버에는 저장되지 않았습니다)</b><br>' +
+          '우승: ' + (champion.title || champion.page_id) + ' (' + champion.date + ')<br>' +
+          '참가 게시물 수: ' + candidates.length;
+        wcResultBox.style.display = 'block';
+      },
+    });
   });
 
   searchInput.addEventListener('input', function () {
