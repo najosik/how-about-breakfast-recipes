@@ -70,6 +70,13 @@ var WorldCup = (function () {
     en: { byePrefix: 'Bye', championLabel: 'Champion of the Month!', restart: 'Play Again' }
   };
 
+  var ANNOUNCE_DURATION_MS = 1200;
+
+  function announceText(size, lang) {
+    var label = roundLabel(size, lang);
+    return lang === 'en' ? ('Yay~ Starting the ' + label + '!') : ('오예~ ' + label + '을 시작합니다!');
+  }
+
   /**
    * Runs a single-elimination bracket inside `container`.
    * candidates: array of record objects (must have .page_id, .title/._en.title, .image or gallery).
@@ -94,6 +101,7 @@ var WorldCup = (function () {
     var winners = [];
     var matchNumInRound = 0;
     var totalPairsInRound = Math.ceil(roundSize / 2);
+    var announcedForSize = null;
 
     function advanceRound() {
       currentRound = winners;
@@ -110,6 +118,15 @@ var WorldCup = (function () {
     }
 
     function step() {
+      // once per round size (including the very first), show a brief
+      // "Starting the Round of 32!"-style announcement before anything else
+      // in that round - byes included - gets resolved or rendered.
+      if (announcedForSize !== roundSize) {
+        announcedForSize = roundSize;
+        renderAnnouncement(roundSize);
+        return;
+      }
+
       // auto-resolve byes (a lone real entrant paired with a `null` slot
       // advances without a click) before rendering the next real matchup.
       while (pairIndex < currentRound.length) {
@@ -134,6 +151,14 @@ var WorldCup = (function () {
 
       matchNumInRound++;
       renderMatchup(currentRound[pairIndex], currentRound[pairIndex + 1]);
+    }
+
+    function renderAnnouncement(size) {
+      container.innerHTML =
+        '<div class="wc-announce"><div class="wc-announce-text">' +
+        escapeHtml(announceText(size, lang)) +
+        '</div></div>';
+      setTimeout(step, ANNOUNCE_DURATION_MS);
     }
 
     function renderMatchup(a, b) {
