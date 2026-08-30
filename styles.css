@@ -237,6 +237,50 @@ h3.card-title{
   .wc-vs{padding:2px 0;}
 }
 
+/* ---- Cook Mode (recipe detail pages, see cookmode.js) ---- */
+.cook-start-btn{
+  display:block; width:100%; max-width:480px; margin:18px auto 0; padding:16px 20px; border:none; border-radius:999px;
+  background:var(--ink); color:#fff; font-size:16px; font-weight:700; cursor:pointer; font-family:inherit;
+}
+.cook-start-btn:hover{background:var(--teal-deep);}
+
+.cook-overlay{position:fixed; inset:0; background:rgba(20,20,17,0.6); z-index:60; display:flex; align-items:flex-start; justify-content:center; padding:40px 16px; overflow-y:auto;}
+.cook-overlay.hidden{display:none;}
+.cook-modal{background:var(--paper); max-width:480px; width:100%; border-radius:12px; padding:32px 28px 36px; position:relative; margin-bottom:40px; box-shadow:0 20px 60px rgba(0,0,0,0.24);}
+.cook-modal h2{font-family:'Nanum Myeongjo',serif; font-size:22px; color:var(--teal-deep); margin:0 0 6px; padding-right:30px;}
+.cook-close{position:absolute; top:18px; right:18px; width:32px; height:32px; border-radius:50%; border:1px solid var(--line-strong); background:var(--paper); cursor:pointer; font-size:16px; color:var(--ink-soft); line-height:1;}
+.cook-close:hover{border-color:var(--teal); color:var(--teal);}
+.cook-meta{font-size:13px; color:var(--ink-faint); margin-bottom:18px;}
+.cook-servings{display:flex; align-items:center; justify-content:space-between; padding:10px 14px; background:var(--paper-raised); border:1px solid var(--line); border-radius:999px; margin-bottom:18px; font-size:13px; color:var(--ink-soft);}
+.cook-stepper{display:flex; align-items:center; gap:12px;}
+.cook-step-btn{width:28px; height:28px; border-radius:50%; border:1px solid var(--line-strong); background:var(--paper); font-size:16px; color:var(--ink); cursor:pointer; line-height:1;}
+.cook-step-btn:hover{border-color:var(--teal); color:var(--teal-deep);}
+.cook-mult{font-weight:700; color:var(--ink); min-width:28px; text-align:center;}
+.cook-ing-list{list-style:none; margin:0 0 22px; padding:0;}
+.cook-ing-item{display:flex; align-items:center; gap:10px; padding:10px 4px; border-bottom:1px solid var(--line); cursor:pointer; font-size:14.5px; color:var(--ink);}
+.cook-ing-item:last-child{border-bottom:none;}
+.cook-check{flex:0 0 auto; width:20px; height:20px; border-radius:50%; border:1.5px solid var(--line-strong); position:relative;}
+.cook-ing-item.checked .cook-check{background:var(--teal); border-color:var(--teal);}
+.cook-ing-item.checked .cook-check::after{content:''; position:absolute; left:5px; top:2px; width:5px; height:9px; border:solid #fff; border-width:0 2px 2px 0; transform:rotate(45deg);}
+.cook-ing-item.checked .cook-ing-text{color:var(--ink-faint); text-decoration:line-through;}
+.cook-start-primary{width:100%; padding:15px; border:none; border-radius:999px; background:var(--ink); color:#fff; font-size:15px; font-weight:700; cursor:pointer; font-family:inherit;}
+.cook-start-primary:hover{background:var(--teal-deep);}
+.cook-step-progress{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-bottom:10px; padding-right:30px;}
+.cook-step-bar{height:4px; background:var(--line); border-radius:2px; margin-bottom:28px; overflow:hidden;}
+.cook-step-bar-fill{height:100%; background:var(--teal); transition:width .3s ease;}
+.cook-step-text{font-size:19px; line-height:1.6; color:var(--ink); min-height:120px; margin-bottom:24px;}
+.cook-step-nav{display:flex; gap:10px; margin-bottom:14px;}
+.cook-nav-btn{flex:1; padding:13px; border-radius:999px; border:1px solid var(--line-strong); background:var(--paper); color:var(--ink); font-size:14px; font-weight:600; cursor:pointer; font-family:inherit;}
+.cook-nav-btn:hover:not(:disabled){border-color:var(--teal); color:var(--teal-deep);}
+.cook-nav-btn:disabled{opacity:0.35; cursor:default;}
+.cook-nav-next{background:var(--ink); color:#fff; border-color:var(--ink);}
+.cook-nav-next:hover{background:var(--teal-deep); border-color:var(--teal-deep); color:#fff;}
+.cook-back-link{display:block; width:100%; text-align:center; background:none; border:none; color:var(--ink-faint); font-size:13px; cursor:pointer; text-decoration:underline; font-family:inherit;}
+.cook-finish{text-align:center; padding:20px 0;}
+.cook-finish-emoji{font-size:44px; margin-bottom:10px; animation:wc-bounce .6s ease;}
+.cook-finish-title{font-family:'Nanum Myeongjo',serif; font-size:22px; color:var(--teal-deep); margin-bottom:6px;}
+.cook-finish-desc{font-size:14px; color:var(--ink-soft);}
+
 .load-more-wrap{text-align:center; margin-top:36px;}
 button.loadmore{
   padding:12px 28px; border:1px solid var(--line-strong); border-radius:4px;

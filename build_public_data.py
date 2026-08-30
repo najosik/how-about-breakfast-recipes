@@ -80,6 +80,7 @@ LABELS = {
         'prev_fallback': '이전', 'next_fallback': '다음',
         'footer_privacy': '개인정보처리방침',
         'medal_label': '이달의 조식',
+        'cook_start': '요리하기',
     },
     'en': {
         'site_name': 'Breakfast, Every Day',
@@ -95,8 +96,22 @@ LABELS = {
         'prev_fallback': 'Previous', 'next_fallback': 'Next',
         'footer_privacy': 'Privacy Policy',
         'medal_label': 'Breakfast of the Month',
+        'cook_start': 'Start Cooking',
     },
 }
+
+
+def json_script_safe(obj):
+    """Serializes `obj` for embedding inside a <script type="application/json">
+    tag - escapes '<', '>', '&' as \\uXXXX so the recipe text can never be
+    mistaken for markup or close the script tag early (the same technique
+    Django's json_script uses)."""
+    return (
+        json.dumps(obj, ensure_ascii=False)
+        .replace('<', '\\u003c')
+        .replace('>', '\\u003e')
+        .replace('&', '\\u0026')
+    )
 
 # Best-effort translation for the standalone `weather` field (e.g. "31도/맑음")
 # shown in the meta line. The _en data only covers title/intro/ingredients/
@@ -452,6 +467,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
     {intro_section}
     {ingredients_section}
     {steps_section}
+    {cook_section}
     {credit_section}
     {tags_section}
     <div class="recipe-nav">
@@ -478,6 +494,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 </footer>
 
 {json_ld}
+<script src="{rel}/cookmode.js"></script>
 <script>
 (function () {{
   var btn = document.getElementById('shareBtn');
@@ -588,6 +605,13 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
             f'<section><h2>{labels["steps"]}</h2><div class="recipe-body">{esc(steps)}</div></section>'
             if steps else ''
         )
+        cook_section = (
+            f'<button type="button" class="cook-start-btn" id="cookStartBtn">{labels["cook_start"]}</button>'
+            f'<script type="application/json" id="cookData">'
+            f'{json_script_safe({"title": title, "ingredients": ingredients, "steps": steps})}'
+            f'</script>'
+            if ingredients and steps else ''
+        )
         credit_section = (
             f'<section><h2>{labels["credit"]}</h2><div class="recipe-body">Inspired by {esc(r["credit"])}</div></section>'
             if r.get('credit') else ''
@@ -643,7 +667,8 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
             share_btn=share_btn_html(lang), share_copied_label=labels['share_copied'],
             meta_line=meta_line,
             intro_section=intro_section, ingredients_section=ingredients_section,
-            steps_section=steps_section, credit_section=credit_section, tags_section=tags_section,
+            steps_section=steps_section, cook_section=cook_section,
+            credit_section=credit_section, tags_section=tags_section,
             prev_href=prev_href, prev_label=prev_label, next_href=next_href, next_label=next_label,
             json_ld=json_ld(r, url, title, intro=intro, ingredients=ingredients, steps=steps, lang=lang),
             ad_slot=ad_slot_html('recipe-bottom') if ad_eligible(r) else '',
