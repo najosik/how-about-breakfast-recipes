@@ -79,6 +79,10 @@ def main():
         full = os.path.join(PENDING_DIR, name)
         key = f'images/{os.path.basename(name)}'
         if object_exists(client, bucket, key):
+            # Already uploaded in an earlier run - the goal state (this file
+            # lives in R2) is already true, so clear it locally too instead
+            # of leaving it stuck in .pending-uploads/ forever.
+            os.remove(full)
             skipped += 1
             print(f'  ! skipped (already exists in bucket): {key}', file=sys.stderr)
             continue
