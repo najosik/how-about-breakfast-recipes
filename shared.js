@@ -287,6 +287,8 @@ var Shared = (function () {
       ? '<section><h4>' + (r.ingredients ? L('modal_notes') : L('modal_fulltext')) + '</h4>' + bodyTextHtml(r, 'intro') + '</section>' : '';
     var creditSection = r.credit
       ? '<section><h4>' + L('modal_credit') + '</h4><div class="credit">Inspired by ' + escapeHtml(r.credit) + '</div></section>' : '';
+    var cookSection = (r.ingredients && r.steps && typeof CookMode !== 'undefined')
+      ? '<button type="button" class="cook-start-btn modal-cook-btn">' + escapeHtml(L('cook_start')) + '</button>' : '';
 
     var shareBtnHtml = '<button class="modal-share-btn" type="button" aria-label="' + escapeHtml(L('modal_copy_link')) + '">' + LINK_ICON_SVG + '<span class="modal-share-label">' + L('modal_copy_link') + '</span></button>';
 
@@ -307,11 +309,22 @@ var Shared = (function () {
       '</div>' +
       titleHtml +
       '<div class="modal-meta">' + [r.date, r.weather, r.calories ? r.calories + 'kcal' : null].filter(Boolean).map(escapeHtml).join(' · ') + '</div>' +
-      introSection + ingSection + stepSection + creditSection +
+      introSection + ingSection + stepSection + cookSection + creditSection +
       (tagsHtml ? '<section><h4>' + L('modal_tags') + '</h4><div class="tag-list">' + tagsHtml + '</div></section>' : '');
 
     modalContent.querySelector('.modal-close').addEventListener('click', closeModal);
     bindShareButton(modalContent.querySelector('.modal-share-btn'), r, L);
+    var cookBtn = modalContent.querySelector('.modal-cook-btn');
+    if (cookBtn && typeof CookMode !== 'undefined') {
+      cookBtn.addEventListener('click', function () {
+        var lang = (typeof I18N !== 'undefined') ? I18N.getLang() : 'ko';
+        CookMode.open({
+          title: hasStaticEn(r, 'title') ? localizedText(r, 'title') : koTitle,
+          ingredients: hasStaticEn(r, 'ingredients') ? localizedText(r, 'ingredients') : r.ingredients,
+          steps: hasStaticEn(r, 'steps') ? localizedText(r, 'steps') : r.steps,
+        }, lang);
+      });
+    }
     if (nav) {
       var prevBtn = modalContent.querySelector('.modal-nav-prev');
       var nextBtn = modalContent.querySelector('.modal-nav-next');

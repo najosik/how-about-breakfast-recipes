@@ -77,6 +77,7 @@ var I18N = (function () {
 
       modal_ingredients: '재료',
       modal_steps: '조리',
+      cook_start: '요리하기',
       modal_notes: '메모',
       modal_fulltext: '전문',
       modal_credit: '원본 크레딧',
@@ -158,6 +159,7 @@ var I18N = (function () {
 
       modal_ingredients: 'Ingredients',
       modal_steps: 'Steps',
+      cook_start: 'Start Cooking',
       modal_notes: 'Notes',
       modal_fulltext: 'Full entry',
       modal_credit: 'Credit',

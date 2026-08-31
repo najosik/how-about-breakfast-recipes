@@ -115,8 +115,12 @@ var CookMode = (function () {
     document.body.style.overflow = '';
   }
 
-  function open(data) {
-    var lang = document.documentElement.lang === 'en' ? 'en' : 'ko';
+  function open(data, lang) {
+    // Recipe pages ship as separate ko/en static files, so <html lang> is a
+    // reliable signal there; index.html/archive.html instead toggle
+    // language client-side without ever touching <html lang>, so their
+    // modal integration passes I18N.getLang() explicitly instead.
+    if (lang !== 'ko' && lang !== 'en') lang = document.documentElement.lang === 'en' ? 'en' : 'ko';
     var t = STR[lang];
     var ingredientLines = parseIngredientLines(data.ingredients);
     var stepLines = parseStepLines(data.steps);
