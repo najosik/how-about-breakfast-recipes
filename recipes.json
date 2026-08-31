@@ -68911,22 +68911,15 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210901, #조식다이어리 197, 19도/흐림, 31분/운동하기\n토마토, 자색양파, 애플민트에 소금, 후추, 비네그레트 드레싱 #토마토민트샐러드\n아침 출근길에 떠오른 노래, 50번쯤 부르면 일터에 도착할 것 같다. \n내 눈길 닿는 곳 어디나 \n해맑은 빛이 흐르고\n내 가슴 지나는 바람 모두 \n따스한 향기 머금게 하소서\n내 손길 있는 곳 어디나\n따뜻한 손 마주 잡고\n내 발길 가는 곳 어디에나\n어지런 물결 그치게 하소서\n고단한 하늘 저 마루아래 \n검게 드리운 어둠도 \n흐느끼는 강물 시린 바람조차\n빛흐르게 하소서 향기롭게 하소서\n내 마음 다가오는 모두가\n하나로 그리웁고\n내 귀 기울이는 어디에나\n고운 노래 울리게 하소서\n뿌연 안개 그 그늘 속에 \n외로움으로 남은 이\n거친 바람 속에 미움으로 사는 이\n노래하게 하소서 노래하게 하소서",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210901, #조식다이어리 197, 19도/흐림, 31분/운동하기\n토마토, 자색양파, 애플민트에 소금, 후추, 비네그레트 드레싱 #토마토민트샐러드\n\n아침 출근길에 떠오른 노래, 50번쯤 부르면 일터에 도착할 것 같다. \n내 눈길 닿는 곳 어디나 \n해맑은 빛이 흐르고\n내 가슴 지나는 바람 모두 \n따스한 향기 머금게 하소서\n내 손길 있는 곳 어디나\n따뜻한 손 마주 잡고\n내 발길 가는 곳 어디에나\n어지런 물결 그치게 하소서\n고단한 하늘 저 마루아래 \n검게 드리운 어둠도 \n흐느끼는 강물 시린 바람조차\n빛흐르게 하소서 향기롭게 하소서\n내 마음 다가오는 모두가\n하나로 그리웁고\n내 귀 기울이는 어디에나\n고운 노래 울리게 하소서\n뿌연 안개 그 그늘 속에 \n외로움으로 남은 이\n거친 바람 속에 미움으로 사는 이\n노래하게 하소서 노래하게 하소서",
+  "ingredients": "- 토마토 2개\n- 자색양파 1/2개\n- 민트\n- 드레싱(올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 소금\n- 후추",
+  "steps": "1. 자색양파는 잘라서 물에 담가 놓는다. \n2. 토마토는 깨끗하게 씻은 후 웻지모양으로 썰어서 접시에 담는다. \n3. 1의 양파와 민트, 소금과 후추 조금 넣고 드레싱으로 마무리한다. ",
   "raw": "20210901, #조식다이어리 197, 19도/흐림, 31분/운동하기\n\n토마토, 자색양파, 애플민트에 소금, 후추, 비네그레트 드레싱 #토마토민트샐러드\n\n아침 출근길에 떠오른 노래, 50번쯤 부르면 일터에 도착할 것 같다. \n\n내 눈길 닿는 곳 어디나 \n해맑은 빛이 흐르고\n내 가슴 지나는 바람 모두 \n따스한 향기 머금게 하소서\n내 손길 있는 곳 어디나\n따뜻한 손 마주 잡고\n내 발길 가는 곳 어디에나\n어지런 물결 그치게 하소서\n고단한 하늘 저 마루아래 \n검게 드리운 어둠도 \n흐느끼는 강물 시린 바람조차\n빛흐르게 하소서 향기롭게 하소서\n\n내 마음 다가오는 모두가\n하나로 그리웁고\n내 귀 기울이는 어디에나\n고운 노래 울리게 하소서\n뿌연 안개 그 그늘 속에 \n외로움으로 남은 이\n거친 바람 속에 미움으로 사는 이\n노래하게 하소서 노래하게 하소서\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #토마토 #자색양파 #애플민트\n#breakfast #salad #tomato #redonion #applemint #vinaigrette ",
   "image": "https://images.how-about-breakfast.com/images/197.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/197.jpg",
    "https://images.how-about-breakfast.com/images/197_2.jpg"
   ],
-  "_en": {
-   "hash": "b73cfc2a915815defdd92e3662d0b2862ec5cf34f1a7457fefcee43d501f47dc",
-   "title": "Tomato Mint Salad, Morning Ritual, Morning Routine",
-   "intro": "20210901 #breakfastdiary 197, 19°C/cloudy, 31 min/workout\nTomato, red onion, and apple mint with salt, pepper, and a vinaigrette. #tomatomintsalad\nA song came to mind on my walk to work this morning — sing it about fifty times and I’ll probably be at the office. \nWherever my eyes may fall, \nlet bright light flow,\nlet every wind that crosses my heart \ncarry a warm fragrance.\nWherever my hands may reach,\nlet them clasp warm hands,\nwherever my feet may go,\nlet the troubled waters be stilled.\nBeneath that weary sky’s ridge, \neven the darkness cast in black, \neven the sobbing river’s cold wind —\nlet light flow, let fragrance flow.\nMay all that draws near my heart\nbe longed for as one,\nwherever my ear may listen,\nlet a beautiful song ring out.\nIn the shadow of that hazy fog, \nthe one left in loneliness\nthe one living in hatred amid the harsh wind\nlet them sing, let them sing.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "토마토민트샐러드-모닝리추얼-모닝루틴"
  },
  {
