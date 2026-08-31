@@ -144,7 +144,6 @@ var CookMode = (function () {
       modal.innerHTML =
         '<button type="button" class="cook-close" aria-label="' + t.close + '">✕</button>' +
         '<div class="cook-finish">' +
-        '<div class="cook-finish-emoji">🍳</div>' +
         '<div class="cook-finish-title">' + t.finish + '</div>' +
         '<div class="cook-finish-desc">' + t.finishDesc + '</div>' +
         '</div>';
