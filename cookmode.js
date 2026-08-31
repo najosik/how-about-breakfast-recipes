@@ -2,8 +2,12 @@
    (recipes/*.html, en/recipes/*.html). Self-contained: reads the page's own
    embedded #cookData JSON (no fetch, no dependency on shared.js/vote.js/
    worldcup.js) and renders a full-screen overlay with a checkable
-   ingredient list (with a serving multiplier) followed by a one-step-at-a-
-   time walkthrough. */
+   ingredient list followed by a one-step-at-a-time walkthrough.
+
+   No serving-size multiplier: ingredients are free text with no reliable
+   quantity/unit structure across the site's history, so scaling them was
+   often wrong (multi-quantity clauses, "a pinch", "to taste", etc.) -
+   dropped rather than shown with occasionally-bad numbers. */
 var CookMode = (function () {
   'use strict';
 
@@ -17,17 +21,17 @@ var CookMode = (function () {
     ko: {
       ingredientsCount: function (n) { return '재료 ' + n + '개'; },
       stepsCount: function (n) { return n + '단계'; },
-      servings: '배수', start: '요리 시작하기', close: '닫기',
+      start: '요리 시작하기', close: '닫기',
       step: function (i, n) { return i + ' / ' + n + '단계'; },
-      prev: '이전', next: '다음', finish: '완료!', finishDesc: '요리가 완성됐습니다. 맛있게 드세요!',
+      prev: '이전', next: '다음', finish: '짠!', finishDesc: '조식이 준비됐습니다. 맛있게 드세요!',
       backToIngredients: '재료로 돌아가기'
     },
     en: {
       ingredientsCount: function (n) { return n + ' ingredients'; },
       stepsCount: function (n) { return n + ' steps'; },
-      servings: 'multiplier', start: 'Start Cooking', close: 'Close',
+      start: 'Start Cooking', close: 'Close',
       step: function (i, n) { return 'Step ' + i + ' / ' + n; },
-      prev: 'Prev', next: 'Next', finish: 'All done!', finishDesc: 'Your breakfast is ready. Enjoy!',
+      prev: 'Prev', next: 'Next', finish: 'Ta-da!', finishDesc: 'Your breakfast is ready. Enjoy!',
       backToIngredients: 'Back to ingredients'
     }
   };
@@ -50,47 +54,6 @@ var CookMode = (function () {
       .map(function (l) { return l.trim(); })
       .filter(Boolean)
       .map(function (l) { return l.replace(/^\d+\.\s*/, ''); });
-  }
-
-  // Matches a trailing quantity ("2개", "1/2컵", "1T", "1.5t") at the end of
-  // an ingredient line, so the serving multiplier can scale it. Lines with
-  // no recognizable trailing quantity ("소금", "후추") are left untouched.
-  var QTY_RE = /^(.*?)([\d]+(?:\.\d+)?(?:\/\d+)?)\s*([a-zA-Z가-힣]{0,4})\s*$/;
-
-  function parseQty(str) {
-    var m = QTY_RE.exec(str);
-    if (!m || !m[1].trim()) return null;
-    var amountStr = m[2];
-    var amount;
-    if (amountStr.indexOf('/') !== -1) {
-      var parts = amountStr.split('/');
-      amount = parseFloat(parts[0]) / parseFloat(parts[1]);
-    } else {
-      amount = parseFloat(amountStr);
-    }
-    if (isNaN(amount)) return null;
-    return { name: m[1].trim(), amount: amount, unit: m[3] || '' };
-  }
-
-  function formatAmount(n) {
-    var rounded = Math.round(n * 100) / 100;
-    if (Math.abs(rounded - Math.round(rounded)) < 0.01) return String(Math.round(rounded));
-    var whole = Math.floor(rounded);
-    var frac = rounded - whole;
-    var fracStr = Math.abs(frac - 0.5) < 0.05 ? '1/2' :
-      Math.abs(frac - 0.25) < 0.05 ? '1/4' :
-      Math.abs(frac - 0.75) < 0.05 ? '3/4' :
-      Math.abs(frac - 1 / 3) < 0.05 ? '1/3' :
-      Math.abs(frac - 2 / 3) < 0.05 ? '2/3' : null;
-    if (fracStr) return (whole > 0 ? whole + ' ' : '') + fracStr;
-    return String(Math.round(rounded * 10) / 10);
-  }
-
-  function scaledIngredientText(raw, multiplier) {
-    if (multiplier === 1) return raw;
-    var parsed = parseQty(raw);
-    if (!parsed) return raw;
-    return (parsed.name ? parsed.name + ' ' : '') + formatAmount(parsed.amount * multiplier) + parsed.unit;
   }
 
   function ensureOverlay() {
@@ -124,7 +87,6 @@ var CookMode = (function () {
     var t = STR[lang];
     var ingredientLines = parseIngredientLines(data.ingredients);
     var stepLines = parseStepLines(data.steps);
-    var multiplier = 1;
     var checked = {};
 
     var overlay = ensureOverlay();
@@ -135,17 +97,11 @@ var CookMode = (function () {
         '<button type="button" class="cook-close" aria-label="' + t.close + '">✕</button>' +
         '<h2>' + escapeHtml(data.title) + '</h2>' +
         '<div class="cook-meta">' + t.ingredientsCount(ingredientLines.length) + ' · ' + t.stepsCount(stepLines.length) + '</div>' +
-        '<div class="cook-servings"><span>' + t.servings + '</span>' +
-        '<div class="cook-stepper">' +
-        '<button type="button" class="cook-step-btn" data-dir="-1">−</button>' +
-        '<span class="cook-mult">' + multiplier + '×</span>' +
-        '<button type="button" class="cook-step-btn" data-dir="1">+</button>' +
-        '</div></div>' +
         '<ul class="cook-ing-list">' +
         ingredientLines.map(function (line, i) {
           return '<li class="cook-ing-item' + (checked[i] ? ' checked' : '') + '" data-idx="' + i + '">' +
             '<span class="cook-check"></span>' +
-            '<span class="cook-ing-text">' + escapeHtml(scaledIngredientText(line, multiplier)) + '</span>' +
+            '<span class="cook-ing-text">' + escapeHtml(line) + '</span>' +
             '</li>';
         }).join('') +
         '</ul>' +
@@ -157,13 +113,6 @@ var CookMode = (function () {
           var i = li.getAttribute('data-idx');
           checked[i] = !checked[i];
           li.classList.toggle('checked');
-        });
-      });
-      Array.prototype.forEach.call(modal.querySelectorAll('.cook-step-btn'), function (btn) {
-        btn.addEventListener('click', function () {
-          var dir = parseInt(btn.getAttribute('data-dir'), 10);
-          multiplier = Math.max(0.5, Math.min(6, Math.round((multiplier + dir * 0.5) * 2) / 2));
-          renderIngredients();
         });
       });
       modal.querySelector('.cook-start-primary').addEventListener('click', function () { renderStep(0); });
