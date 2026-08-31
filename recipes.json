@@ -12593,8 +12593,8 @@
    "조식다이어리"
   ],
   "intro": "20250901 #조식다이어리 1495, 24도/비, 20분/운동(M)\n소스에 칠리 페이스트, 토마토소스, 고추장, 간장, 미소, 식초와 코코넛밀크가 들어갔는데 만들기 전엔 코코넛밀크와 고추장 섞어서 잠깐 끓이면 비슷한 맛을 낼 수 있겠거니 생각했다. 하지만 맛을 보니 시간과 재료를 필요로 하는데는 다 이유가 있구나 싶었다. \n약 660kcal 스파이시 코코넛 만두전골",
-  "ingredients": "만두 5개, 청경채 한 줌, 다진 마늘 3개, 칠리 페이스트 1T, 토마토소스 2T, 고추장 3T, 간장 2T, 미소 1T, 식초 1T와 코코넛밀크 400ml",
-  "steps": "1. 오븐 용기에 칠리 페이스트 1T, 토마토소스 2T, 고추장 3T, 간장 2T, 미소 1T, 식초 1T과 코코넛밀크 400ml 붓고 청경채 한 줌, 다진 마늘 3개 넣고 골고루 섞는다. \n2. 만두 넣고 200도 오븐에 20분 데운다. \n3. 다진 쪽파, 참깨, 검은깨, 프라이드 샬롯 얹는다.",
+  "ingredients": "- 만두 5개 \n- 청경채 한 줌 \n- 다진 마늘 3개 \n- 칠리 페이스트 1T \n- 토마토소스 2T \n- 고추장 3T \n- 간장 2T \n- 미소 1T \n- 식초 1T\n- 코코넛밀크 400ml",
+  "steps": "1. 오븐 용기에 칠리 페이스트 1T, 토마토소스 2T, 고추장 3T, 간장 2T, 미소 1T, 식초 1T과 코코넛밀크 400ml 붓고 청경채 한 줌, 다진 마늘 3개 넣고 골고루 섞는다. \n2. 1에 만두 넣고 200도 오븐에 20분 데운다. \n3. 2에 다진 쪽파, 참깨, 검은깨, 프라이드 샬롯 얹는다.",
   "raw": "20250901 #조식다이어리 1495, 24도/비, 20분/운동(M)\n\n소스에 칠리 페이스트, 토마토소스, 고추장, 간장, 미소, 식초와 코코넛밀크가 들어갔는데 만들기 전엔 코코넛밀크와 고추장 섞어서 잠깐 끓이면 비슷한 맛을 낼 수 있겠거니 생각했다. 하지만 맛을 보니 시간과 재료를 필요로 하는데는 다 이유가 있구나 싶었다. \n\n약 660kcal 스파이시 코코넛 만두전골\n\n👉 재료(2인분)\n만두 5개, 청경채 한 줌, 다진 마늘 3개, 칠리 페이스트 1T, 토마토소스 2T, 고추장 3T, 간장 2T, 미소 1T, 식초 1T와 코코넛밀크 400ml\n\n👉 조리\n1. 오븐 용기에 칠리 페이스트 1T, 토마토소스 2T, 고추장 3T, 간장 2T, 미소 1T, 식초 1T과 코코넛밀크 400ml 붓고 청경채 한 줌, 다진 마늘 3개 넣고 골고루 섞는다. \n2. 만두 넣고 200도 오븐에 20분 데운다. \n3. 다진 쪽파, 참깨, 검은깨, 프라이드 샬롯 얹는다. \n\nInspired by @bosh.tv\n\n#조식 #레시피 #만두",
   "image": "https://images.how-about-breakfast.com/images/1495.jpg",
   "gallery": [
@@ -12604,13 +12604,6 @@
    "https://images.how-about-breakfast.com/images/1495_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1495.mp4",
-  "_en": {
-   "hash": "9e49ec87a53da41ca74547b1d24c5de0559ce874ba2a8c6bea0fbfdf9558c48d",
-   "title": "Spicy Coconut Dumpling Hot Pot",
-   "intro": "20250901 #breakfastdiary 1495, 24°C/rain, 20 min/workout(M)\nThe sauce has chili paste, tomato sauce, gochujang, soy sauce, miso, vinegar, and coconut milk in it. Before I made it, I figured mixing coconut milk and gochujang and simmering it briefly would get me close enough. But after tasting it, I realized there's a reason certain things need time and the full list of ingredients. \nA roughly 660kcal spicy coconut dumpling hot pot",
-   "ingredients": "5 dumplings, a handful of bok choy, 3 cloves minced garlic, 1T chili paste, 2T tomato sauce, 3T gochujang, 2T soy sauce, 1T miso, 1T vinegar, and 400ml coconut milk",
-   "steps": "1. In an oven-safe dish, pour in 1T chili paste, 2T tomato sauce, 3T gochujang, 2T soy sauce, 1T miso, 1T vinegar, and 400ml coconut milk, add a handful of bok choy and 3 cloves minced garlic, and mix well. \n2. Add the dumplings and heat in a 200°C oven for 20 minutes. \n3. Top with chopped scallions, sesame seeds, black sesame seeds, and fried shallots."
-  },
   "page_id": "스파이시-코코넛-만두전골"
  },
  {
@@ -25366,7 +25359,7 @@
   "weather": "27도/맑음, 2분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "파인애플토스트 파인애플",
+  "title": "파인애플 토스트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25376,9 +25369,9 @@
    "파인애플",
    "파인애플토스트"
   ],
-  "intro": "20240901 #조식다이어리 1166, 27도/맑음, 2분/운동(M) \n흔히 하와이안 피자라고 하면 연상되는 것이 바로 구운 파인애플 토핑이 올라간 파인애플 피자. 하지만 피자의 종주국 이탈리아에선 푸대접을 받는다. 심지어 이 파인애플 피자를 '피자에 대한 모욕'이라고 여긴다고. \n그런데 올초 나폴리에서 3대째 대를 이어 온 피자집의 장인이 파인애플 토핑이 올라간 피자를 만들어 화제가 됐다. 그의 용기에 찬사를 보내며, #파인애플토스트\n파인애플, 크림치즈나 리코타치즈 등이 필요하다. \n사워도우에 올리브오일 발라서 앞뒤로 바삭하게 굽는다. \n파인애플은 과즙을 닦아내고 큐브 모양으로 썰어 팬에 굽는다. 강불로 짧게 과즙을 날린다. 신맛은 줄어들고 단맛은 배가된다.   \n사워도우에 크림치즈 바르고 파인애플 얹는다. 리코타치즈나 부라타치즈라면 파인애플 위에 얹어도 좋을 것 같다. \n아, 파인애플은 시나몬과 페어링이 좋습니다. 시나몬 조금 뿌려보세요~",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240901 #조식다이어리 1166, 27도/맑음, 2분/운동(M) \n흔히 하와이안 피자라고 하면 연상되는 것이 바로 구운 파인애플 토핑이 올라간 파인애플 피자. 하지만 피자의 종주국 이탈리아에선 푸대접을 받는다. 심지어 이 파인애플 피자를 '피자에 대한 모욕'이라고 여긴다고. \n그런데 올초 나폴리에서 3대째 대를 이어 온 피자집의 장인이 파인애플 토핑이 올라간 피자를 만들어 화제가 됐다. 그의 용기에 찬사를 보내며, #파인애플토스트\n파인애플, 크림치즈나 리코타치즈 등이 필요하다. \n\n사워도우에 올리브오일 발라서 앞뒤로 바삭하게 굽는다. \n파인애플은 과즙을 닦아내고 큐브 모양으로 썰어 팬에 굽는다. 강불로 짧게 과즙을 날린다. 신맛은 줄어들고 단맛은 배가된다.   \n사워도우에 크림치즈 바르고 파인애플 얹는다. 리코타치즈나 부라타치즈라면 파인애플 위에 얹어도 좋을 것 같다. \n아, 파인애플은 시나몬과 페어링이 좋습니다. 시나몬 조금 뿌려보세요~",
+  "ingredients": "- 사워도우 1장\n- 파인애플 1컵\n- 크림치즈 2T\n- 민트",
+  "steps": "1. 사워도우에 올리브오일 바르고 팬에서 바삭하게 굽는다. \n2. 파인애플의 과즙을 닦고 큐브 모양으로 썬 뒤 팬에서 강불로 굽는다. \n3. 1의 사워도우에 크림치즈 바르고 2의 파인애플 얹는다. 취향에 따라 시나몬 조금 얹는다.",
   "raw": "20240901 #조식다이어리 1166, 27도/맑음, 2분/운동(M) \n\n흔히 하와이안 피자라고 하면 연상되는 것이 바로 구운 파인애플 토핑이 올라간 파인애플 피자. 하지만 피자의 종주국 이탈리아에선 푸대접을 받는다. 심지어 이 파인애플 피자를 '피자에 대한 모욕'이라고 여긴다고. \n그런데 올초 나폴리에서 3대째 대를 이어 온 피자집의 장인이 파인애플 토핑이 올라간 피자를 만들어 화제가 됐다. 그의 용기에 찬사를 보내며, #파인애플토스트\n\n파인애플, 크림치즈나 리코타치즈 등이 필요하다. \n\n사워도우에 올리브오일 발라서 앞뒤로 바삭하게 굽는다. \n파인애플은 과즙을 닦아내고 큐브 모양으로 썰어 팬에 굽는다. 강불로 짧게 과즙을 날린다. 신맛은 줄어들고 단맛은 배가된다.   \n사워도우에 크림치즈 바르고 파인애플 얹는다. 리코타치즈나 부라타치즈라면 파인애플 위에 얹어도 좋을 것 같다. \n\n#조식 #레시피 #미라클모닝 #파인애플\n\n아, 파인애플은 시나몬과 페어링이 좋습니다. 시나몬 조금 뿌려보세요~",
   "image": "https://images.how-about-breakfast.com/images/1166.jpg",
   "gallery": [
@@ -25388,13 +25381,6 @@
    "https://images.how-about-breakfast.com/images/1166_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1166.mp4",
-  "_en": {
-   "hash": "faa7110839a3b0d1af0c38cbf1db7f3b1a00070caaf921c408b02bab07afc6d2",
-   "title": "Pineapple Toast Pineapple",
-   "intro": "20240901 #breakfastdiary 1166, 27°C/clear, 2min/exercise(M)\nWhen you say Hawaiian pizza, what usually comes to mind is pineapple pizza topped with grilled pineapple. But in Italy, the birthplace of pizza, it gets snubbed. They even consider this pineapple pizza \"an insult to pizza.\"\nBut earlier this year, a third-generation pizza master in Naples made headlines by making a pizza topped with pineapple. Applauding his courage, #pineappletoast\nYou need pineapple, cream cheese or ricotta cheese, etc.\nBrush sourdough with olive oil and toast both sides until crisp.\nWipe the juice off the pineapple, cut into cubes, and pan-fry. Sear briefly on high heat to burn off the juice. This reduces the sourness and doubles the sweetness.\nSpread cream cheese on the sourdough and top with pineapple. If using ricotta or burrata, it might be nice to layer it on top of the pineapple instead.\nOh, pineapple pairs well with cinnamon. Try sprinkling on a little cinnamon~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "파인애플토스트-파인애플"
  },
  {
@@ -37896,7 +37882,7 @@
   "weather": "19도/대체로맑음",
   "failed": false,
   "calories": null,
-  "title": "복숭아샐러드 복숭아",
+  "title": "카이막 복숭아 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37908,18 +37894,11 @@
    "조식다이어리"
   ],
   "intro": "20230901, #조식다이어리 833, 19도/대체로맑음\n이 복숭아, 어쩌다보니 냉장고 안에서 딱복이 물복 가까이 될만큼의 시간이 지나버렸다. 신선한 맛과 비주얼을 기대하긴 어렵게 됐다. \n한편 얼마 전부터 여기저기 많이 보이는 카이막은 약간 클로티드 크림 같은 느낌이 있다. 클로티드 크림을 잼과 조합할 때 최상의 맛을 내는 것처럼 카이막엔 역시 꿀이라는 얘기다. \n그래서 오늘 조식은, 비록 신선함을 잃었지만 달콤함이 무르익은 복숭아에 카이막, 꿀, 쓰리콤보로 완성된 #복숭아샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 복숭아 1개\n- 카이막 2T\n- 민트\n- 후추\n- 꿀 1T",
+  "steps": "1. 복숭아 1개 잘 씻고 웻지모양으로 썬다. \n2. 접시에 1의 복숭아 담고 사이사이에 카이막과 민트 얹는다. \n3. 후추 뿌리고 꿀 얹는다. ",
   "raw": "20230901, #조식다이어리 833, 19도/대체로맑음\n\n이 복숭아, 어쩌다보니 냉장고 안에서 딱복이 물복 가까이 될만큼의 시간이 지나버렸다. 신선한 맛과 비주얼을 기대하긴 어렵게 됐다. \n한편 얼마 전부터 여기저기 많이 보이는 카이막은 약간 클로티드 크림 같은 느낌이 있다. 클로티드 크림을 잼과 조합할 때 최상의 맛을 내는 것처럼 카이막엔 역시 꿀이라는 얘기다. \n그래서 오늘 조식은, 비록 신선함을 잃었지만 달콤함이 무르익은 복숭아에 카이막, 꿀, 쓰리콤보로 완성된 #복숭아샐러드\n\n#조식 #레시피 #미라클모닝 #샐러드 #복숭아",
   "image": "https://images.how-about-breakfast.com/images/833.jpg",
   "video": "https://images.how-about-breakfast.com/images/833.mp4",
-  "_en": {
-   "hash": "5d1efb1fa2ed587ab9b6838bd3ef9e947c96d57be8e33ecfe201e32ff6510d9c",
-   "title": "Peach Salad",
-   "intro": "20230901 #breakfastdiary 833, 19°C/mostly clear\nThis peach, somehow, spent enough time in the fridge that a firm peach edged close to becoming a soft, juicy one. Fresh flavor and good looks were no longer really on the table.\nMeanwhile, kaymak — which has been popping up everywhere lately — has a texture a bit like clotted cream. And just as clotted cream pairs best with jam, kaymak, it turns out, wants honey.\nSo today's breakfast is a #peachsalad finished as a three-way combo: a peach that's lost its freshness but gained ripe sweetness, kaymak, and honey.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "복숭아샐러드-복숭아-3"
  },
  {
@@ -51228,7 +51207,7 @@
   "weather": "19도/맑음, 20분/운동",
   "failed": false,
   "calories": null,
-  "title": "참외샐러드 모닝리추얼 모닝루틴",
+  "title": "참외 샐러드",
   "credit": null,
   "hashtags": [
    "applemint",
@@ -51249,9 +51228,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220901, #조식다이어리 531, 19도/맑음, 20분/운동\n올 여름 어쩌면 마지막 참외에 화이트 발사믹과 레몬주스 약간, 풍미 가득한 #참외샐러드\n무례와 혐오와 경쟁과 분열과 비교와 나태와 허무의 달콤함에 길들지 말길, 의미와 무의미의 온갖 폭력을 이겨내고 하루하루를 온전히 경험하길, 그 끝에서 오래 기다리고 있는 낯선 나를 아무 아쉬움 없이 맞이하길 바랍니다. \n허준이, 서울대 학위수여식 허준이 교수 축사\n전문 일독을 권합니다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220901, #조식다이어리 531, 19도/맑음, 20분/운동\n올 여름 어쩌면 마지막 참외에 화이트 발사믹과 레몬주스 약간, 풍미 가득한 #참외샐러드\n\n무례와 혐오와 경쟁과 분열과 비교와 나태와 허무의 달콤함에 길들지 말길, 의미와 무의미의 온갖 폭력을 이겨내고 하루하루를 온전히 경험하길, 그 끝에서 오래 기다리고 있는 낯선 나를 아무 아쉬움 없이 맞이하길 바랍니다. \n허준이, 서울대 학위수여식 허준이 교수 축사\n\n전문 일독을 권합니다.",
+  "ingredients": "- 참외 1개\n- 드레싱(화이트 발사믹 1T, 레몬주스 1t)",
+  "steps": "1. 참외 1개 껍질 벗기고 씨를 파낸 뒤 가지런히 썰어서 접시에 담는다. \n2. 화이트 발사믹 1T, 레몬주스 1t 섞어서 붓는다. ",
   "raw": "20220901, #조식다이어리 531, 19도/맑음, 20분/운동\n\n올 여름 어쩌면 마지막 참외에 화이트 발사믹과 레몬주스 약간, 풍미 가득한 #참외샐러드\n\n무례와 혐오와 경쟁과 분열과 비교와 나태와 허무의 달콤함에 길들지 말길, 의미와 무의미의 온갖 폭력을 이겨내고 하루하루를 온전히 경험하길, 그 끝에서 오래 기다리고 있는 낯선 나를 아무 아쉬움 없이 맞이하길 바랍니다. \n허준이, 서울대 학위수여식 허준이 교수 축사\n\n전문 일독을 권합니다. \n\n#직장인 #조식 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #참외 #애플민트\n#breakfast #salad #koreanmelon #applemint ",
   "image": "https://images.how-about-breakfast.com/images/531.jpg",
   "gallery": [
@@ -51259,13 +51238,6 @@
    "https://images.how-about-breakfast.com/images/531_2.jpg",
    "https://images.how-about-breakfast.com/images/531_3.jpg"
   ],
-  "_en": {
-   "hash": "a9fb2b366202397a693afa667563ce05edad5f1c9fb8ef60f828f8928f4554d0",
-   "title": "Korean Melon Salad",
-   "intro": "20220901 #breakfastdiary 531, 19°C/clear, 20min/exercise\nMaybe the last Korean melon of the summer, with white balsamic and a little lemon juice — a flavor-packed #koreanmelonsalad\nI hope you won't grow accustomed to the sweetness of rudeness, hatred, competition, division, comparison, laziness, and emptiness. I hope you overcome every kind of violence, meaningful or meaningless, and fully experience each day. And I hope that, at the end of it, you welcome the unfamiliar version of yourself who has been waiting there so long, without a trace of regret.\nHuh June-Huh, congratulatory address at Seoul National University's degree conferment ceremony\nI recommend reading the whole speech.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "참외샐러드-모닝리추얼-모닝루틴"
  },
  {
@@ -68886,7 +68858,7 @@
   "weather": "19도/흐림, 31분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "토마토민트샐러드 모닝리추얼 모닝루틴",
+  "title": "토마토 민트 샐러드",
   "credit": null,
   "hashtags": [
    "applemint",
@@ -68912,22 +68884,15 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210901, #조식다이어리 197, 19도/흐림, 31분/운동하기\n토마토, 자색양파, 애플민트에 소금, 후추, 비네그레트 드레싱 #토마토민트샐러드\n아침 출근길에 떠오른 노래, 50번쯤 부르면 일터에 도착할 것 같다. \n내 눈길 닿는 곳 어디나 \n해맑은 빛이 흐르고\n내 가슴 지나는 바람 모두 \n따스한 향기 머금게 하소서\n내 손길 있는 곳 어디나\n따뜻한 손 마주 잡고\n내 발길 가는 곳 어디에나\n어지런 물결 그치게 하소서\n고단한 하늘 저 마루아래 \n검게 드리운 어둠도 \n흐느끼는 강물 시린 바람조차\n빛흐르게 하소서 향기롭게 하소서\n내 마음 다가오는 모두가\n하나로 그리웁고\n내 귀 기울이는 어디에나\n고운 노래 울리게 하소서\n뿌연 안개 그 그늘 속에 \n외로움으로 남은 이\n거친 바람 속에 미움으로 사는 이\n노래하게 하소서 노래하게 하소서",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210901, #조식다이어리 197, 19도/흐림, 31분/운동하기\n토마토, 자색양파, 애플민트에 소금, 후추, 비네그레트 드레싱 #토마토민트샐러드\n\n아침 출근길에 떠오른 노래, 50번쯤 부르면 일터에 도착할 것 같다. \n내 눈길 닿는 곳 어디나 \n해맑은 빛이 흐르고\n내 가슴 지나는 바람 모두 \n따스한 향기 머금게 하소서\n내 손길 있는 곳 어디나\n따뜻한 손 마주 잡고\n내 발길 가는 곳 어디에나\n어지런 물결 그치게 하소서\n고단한 하늘 저 마루아래 \n검게 드리운 어둠도 \n흐느끼는 강물 시린 바람조차\n빛흐르게 하소서 향기롭게 하소서\n내 마음 다가오는 모두가\n하나로 그리웁고\n내 귀 기울이는 어디에나\n고운 노래 울리게 하소서\n뿌연 안개 그 그늘 속에 \n외로움으로 남은 이\n거친 바람 속에 미움으로 사는 이\n노래하게 하소서 노래하게 하소서",
+  "ingredients": "- 토마토 2개\n- 자색양파 1/2개\n- 민트\n- 드레싱(올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 소금\n- 후추",
+  "steps": "1. 자색양파는 잘라서 물에 담가 놓는다. \n2. 토마토는 깨끗하게 씻은 후 웻지모양으로 썰어서 접시에 담는다. \n3. 1의 양파와 민트, 소금과 후추 조금 넣고 드레싱으로 마무리한다. ",
   "raw": "20210901, #조식다이어리 197, 19도/흐림, 31분/운동하기\n\n토마토, 자색양파, 애플민트에 소금, 후추, 비네그레트 드레싱 #토마토민트샐러드\n\n아침 출근길에 떠오른 노래, 50번쯤 부르면 일터에 도착할 것 같다. \n\n내 눈길 닿는 곳 어디나 \n해맑은 빛이 흐르고\n내 가슴 지나는 바람 모두 \n따스한 향기 머금게 하소서\n내 손길 있는 곳 어디나\n따뜻한 손 마주 잡고\n내 발길 가는 곳 어디에나\n어지런 물결 그치게 하소서\n고단한 하늘 저 마루아래 \n검게 드리운 어둠도 \n흐느끼는 강물 시린 바람조차\n빛흐르게 하소서 향기롭게 하소서\n\n내 마음 다가오는 모두가\n하나로 그리웁고\n내 귀 기울이는 어디에나\n고운 노래 울리게 하소서\n뿌연 안개 그 그늘 속에 \n외로움으로 남은 이\n거친 바람 속에 미움으로 사는 이\n노래하게 하소서 노래하게 하소서\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #토마토 #자색양파 #애플민트\n#breakfast #salad #tomato #redonion #applemint #vinaigrette ",
   "image": "https://images.how-about-breakfast.com/images/197.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/197.jpg",
    "https://images.how-about-breakfast.com/images/197_2.jpg"
   ],
-  "_en": {
-   "hash": "b73cfc2a915815defdd92e3662d0b2862ec5cf34f1a7457fefcee43d501f47dc",
-   "title": "Tomato Mint Salad, Morning Ritual, Morning Routine",
-   "intro": "20210901 #breakfastdiary 197, 19°C/cloudy, 31 min/workout\nTomato, red onion, and apple mint with salt, pepper, and a vinaigrette. #tomatomintsalad\nA song came to mind on my walk to work this morning — sing it about fifty times and I’ll probably be at the office. \nWherever my eyes may fall, \nlet bright light flow,\nlet every wind that crosses my heart \ncarry a warm fragrance.\nWherever my hands may reach,\nlet them clasp warm hands,\nwherever my feet may go,\nlet the troubled waters be stilled.\nBeneath that weary sky’s ridge, \neven the darkness cast in black, \neven the sobbing river’s cold wind —\nlet light flow, let fragrance flow.\nMay all that draws near my heart\nbe longed for as one,\nwherever my ear may listen,\nlet a beautiful song ring out.\nIn the shadow of that hazy fog, \nthe one left in loneliness\nthe one living in hatred amid the harsh wind\nlet them sing, let them sing.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "토마토민트샐러드-모닝리추얼-모닝루틴"
  },
  {
@@ -85912,7 +85877,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 병아리콩 페타치즈",
+  "title": "페타치즈를 곁들인 병아리콩 샐러드",
   "credit": null,
   "hashtags": [
    "병아리콩",
@@ -85922,18 +85887,11 @@
    "페타치즈"
   ],
   "intro": "쉰 한 번째 포스팅이자, #오늘의조식 은 어젯 밤에 불려놓은 #병아리콩 을 삶아서 모둠야채, 간을 위한 #페타치즈 그리고 올리브오일, 홀그레인머스타드, 화이트와인식초 드레싱 #조식 #조식스타그램",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 병아리콩 2컵\n- 야채(레터스, 치커리, 양파 등) \n- 드레싱(올리브오일 3T, 화이트와인 비니거 2T, 홀그레인 머스터드 1t)\n- 페타치즈 1T",
+  "steps": "1. 잠들기 전에 병아리콩을 물에 담가 놓는다. \n2. 냄비에 물과 병아리콩 넣고 30~40분 삶는다. \n3. 레터스, 치커리, 양파를 흐르는 물에 씻고 먹기 좋은 크기로 썬다. 양파는 물에 담가 놓는다. \n4. 접시에 3의 채소 담고 2의 병아리콩 얹은 후 페타치즈와 드레싱 얹는다. \n",
   "raw": "쉰 한 번째 포스팅이자, #오늘의조식 은 어젯 밤에 불려놓은 #병아리콩 을 삶아서 모둠야채, 간을 위한 #페타치즈 그리고 올리브오일, 홀그레인머스타드, 화이트와인식초 드레싱 #조식 #조식스타그램",
   "pre_label": "D-164",
   "image": "https://images.how-about-breakfast.com/images/pre-164.jpg",
-  "_en": {
-   "hash": "f34844f5fa9f84ecd79467599948ddd7aeb62608446e872e308f2a34c80cb688",
-   "title": "Chickpeas with Feta",
-   "intro": "Fifty-first post, and #todaysbreakfast is #chickpeas soaked overnight and boiled, served with a mix of vegetables, feta cheese for seasoning, and a dressing of olive oil, whole grain mustard, and white wine vinegar. #breakfast #breakfastgram",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-병아리콩-페타치즈"
  },
  {
