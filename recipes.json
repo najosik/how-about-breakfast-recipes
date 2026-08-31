@@ -37896,7 +37896,7 @@
   "weather": "19도/대체로맑음",
   "failed": false,
   "calories": null,
-  "title": "복숭아샐러드 복숭아",
+  "title": "카이막 복숭아 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37908,17 +37908,10 @@
    "조식다이어리"
   ],
   "intro": "20230901, #조식다이어리 833, 19도/대체로맑음\n이 복숭아, 어쩌다보니 냉장고 안에서 딱복이 물복 가까이 될만큼의 시간이 지나버렸다. 신선한 맛과 비주얼을 기대하긴 어렵게 됐다. \n한편 얼마 전부터 여기저기 많이 보이는 카이막은 약간 클로티드 크림 같은 느낌이 있다. 클로티드 크림을 잼과 조합할 때 최상의 맛을 내는 것처럼 카이막엔 역시 꿀이라는 얘기다. \n그래서 오늘 조식은, 비록 신선함을 잃었지만 달콤함이 무르익은 복숭아에 카이막, 꿀, 쓰리콤보로 완성된 #복숭아샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 복숭아 1개\n- 카이막 2T\n- 민트\n- 후추\n- 꿀 1T",
+  "steps": "1. 복숭아 1개 잘 씻고 웻지모양으로 썬다. \n2. 접시에 1의 복숭아 담고 사이사이에 카이막과 민트 얹는다. \n3. 후추 뿌리고 꿀 얹는다. ",
   "raw": "20230901, #조식다이어리 833, 19도/대체로맑음\n\n이 복숭아, 어쩌다보니 냉장고 안에서 딱복이 물복 가까이 될만큼의 시간이 지나버렸다. 신선한 맛과 비주얼을 기대하긴 어렵게 됐다. \n한편 얼마 전부터 여기저기 많이 보이는 카이막은 약간 클로티드 크림 같은 느낌이 있다. 클로티드 크림을 잼과 조합할 때 최상의 맛을 내는 것처럼 카이막엔 역시 꿀이라는 얘기다. \n그래서 오늘 조식은, 비록 신선함을 잃었지만 달콤함이 무르익은 복숭아에 카이막, 꿀, 쓰리콤보로 완성된 #복숭아샐러드\n\n#조식 #레시피 #미라클모닝 #샐러드 #복숭아",
   "video": "https://images.how-about-breakfast.com/images/833.mp4",
-  "_en": {
-   "hash": "5d1efb1fa2ed587ab9b6838bd3ef9e947c96d57be8e33ecfe201e32ff6510d9c",
-   "title": "Peach Salad",
-   "intro": "20230901 #breakfastdiary 833, 19°C/mostly clear\nThis peach, somehow, spent enough time in the fridge that a firm peach edged close to becoming a soft, juicy one. Fresh flavor and good looks were no longer really on the table.\nMeanwhile, kaymak — which has been popping up everywhere lately — has a texture a bit like clotted cream. And just as clotted cream pairs best with jam, kaymak, it turns out, wants honey.\nSo today's breakfast is a #peachsalad finished as a three-way combo: a peach that's lost its freshness but gained ripe sweetness, kaymak, and honey.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "복숭아샐러드-복숭아-3"
  },
  {
