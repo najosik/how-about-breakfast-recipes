@@ -51227,7 +51227,7 @@
   "weather": "19도/맑음, 20분/운동",
   "failed": false,
   "calories": null,
-  "title": "참외샐러드 모닝리추얼 모닝루틴",
+  "title": "참외 샐러드",
   "credit": null,
   "hashtags": [
    "applemint",
@@ -51248,9 +51248,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220901, #조식다이어리 531, 19도/맑음, 20분/운동\n올 여름 어쩌면 마지막 참외에 화이트 발사믹과 레몬주스 약간, 풍미 가득한 #참외샐러드\n무례와 혐오와 경쟁과 분열과 비교와 나태와 허무의 달콤함에 길들지 말길, 의미와 무의미의 온갖 폭력을 이겨내고 하루하루를 온전히 경험하길, 그 끝에서 오래 기다리고 있는 낯선 나를 아무 아쉬움 없이 맞이하길 바랍니다. \n허준이, 서울대 학위수여식 허준이 교수 축사\n전문 일독을 권합니다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220901, #조식다이어리 531, 19도/맑음, 20분/운동\n올 여름 어쩌면 마지막 참외에 화이트 발사믹과 레몬주스 약간, 풍미 가득한 #참외샐러드\n\n무례와 혐오와 경쟁과 분열과 비교와 나태와 허무의 달콤함에 길들지 말길, 의미와 무의미의 온갖 폭력을 이겨내고 하루하루를 온전히 경험하길, 그 끝에서 오래 기다리고 있는 낯선 나를 아무 아쉬움 없이 맞이하길 바랍니다. \n허준이, 서울대 학위수여식 허준이 교수 축사\n\n전문 일독을 권합니다.",
+  "ingredients": "- 참외 1개\n- 드레싱(화이트 발사믹 1T, 레몬주스 1t)",
+  "steps": "1. 참외 1개 껍질 벗기고 씨를 파낸 뒤 가지런히 썰어서 접시에 담는다. \n2. 화이트 발사믹 1T, 레몬주스 1t 섞어서 붓는다. ",
   "raw": "20220901, #조식다이어리 531, 19도/맑음, 20분/운동\n\n올 여름 어쩌면 마지막 참외에 화이트 발사믹과 레몬주스 약간, 풍미 가득한 #참외샐러드\n\n무례와 혐오와 경쟁과 분열과 비교와 나태와 허무의 달콤함에 길들지 말길, 의미와 무의미의 온갖 폭력을 이겨내고 하루하루를 온전히 경험하길, 그 끝에서 오래 기다리고 있는 낯선 나를 아무 아쉬움 없이 맞이하길 바랍니다. \n허준이, 서울대 학위수여식 허준이 교수 축사\n\n전문 일독을 권합니다. \n\n#직장인 #조식 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #참외 #애플민트\n#breakfast #salad #koreanmelon #applemint ",
   "image": "https://images.how-about-breakfast.com/images/531.jpg",
   "gallery": [
@@ -51258,13 +51258,6 @@
    "https://images.how-about-breakfast.com/images/531_2.jpg",
    "https://images.how-about-breakfast.com/images/531_3.jpg"
   ],
-  "_en": {
-   "hash": "a9fb2b366202397a693afa667563ce05edad5f1c9fb8ef60f828f8928f4554d0",
-   "title": "Korean Melon Salad",
-   "intro": "20220901 #breakfastdiary 531, 19°C/clear, 20min/exercise\nMaybe the last Korean melon of the summer, with white balsamic and a little lemon juice — a flavor-packed #koreanmelonsalad\nI hope you won't grow accustomed to the sweetness of rudeness, hatred, competition, division, comparison, laziness, and emptiness. I hope you overcome every kind of violence, meaningful or meaningless, and fully experience each day. And I hope that, at the end of it, you welcome the unfamiliar version of yourself who has been waiting there so long, without a trace of regret.\nHuh June-Huh, congratulatory address at Seoul National University's degree conferment ceremony\nI recommend reading the whole speech.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "참외샐러드-모닝리추얼-모닝루틴"
  },
  {
