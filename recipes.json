@@ -1,5 +1,35 @@
 [
  {
+  "date": "2026-08-31",
+  "date_raw": "20260831",
+  "diary_no": 1849,
+  "weather": "23도/비",
+  "failed": false,
+  "calories": 200,
+  "title": "크리미한 두부 소스를 곁들인 메밀 두유면",
+  "credit": "@mommaskitchenlab",
+  "hashtags": [
+   "레시피",
+   "순두부",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20260831 #조식다이어리 1821, 23도/비\n아차 하는 순간에 사고가 나고, 누군가는 사고에 버금가는 사랑에 빠지기도 한다. \n오늘 조식은 아차 하는 순간 완성되는, 정말 간단한, 고단백 약 200kcal 크리미한 두부 소스를 곁들인 메밀 두유면",
+  "ingredients": "- 순두부 1개\n- 풀무원 메일 두유면 2개\n- 간장 1T\n- 화이트와인 비니거 1T\n- 참기름 1t\n- 어린잎 \n- 검은깨 한 꼬집\n- 칠리오일 1t",
+  "steps": "1. 블렌더에 순두부 300g, 간장 2T, 화이트와인 비니거 1T, 참기름 1t 넣고 곱게 간다. \n2. 메밀 두유면 헹군 뒤 그릇에 담고 1의 순두부 드레싱을 붓는다. 어린잎, 검은깨, 칠리오일 얹는다.",
+  "raw": "20260831 #조식다이어리 1821, 23도/비\n\n아차 하는 순간에 사고가 나고, 누군가는 사고에 버금가는 사랑에 빠지기도 한다. \n\n오늘 조식은 아차 하는 순간 완성되는, 정말 간단한, 고단백 약 200kcal 크리미한 두부 소스를 곁들인 메밀 두유면\n\n👉재료(2인분)\n- 순두부 1개\n- 풀무원 메일 두유면 2개\n- 간장 1T\n- 화이트와인 비니거 1T\n- 참기름 1t\n- 어린잎 \n- 검은깨 한 꼬집\n- 칠리오일 1t\n\n👉조리\n1. 블렌더에 순두부 300g, 간장 2T, 화이트와인 비니거 1T, 참기름 1t 넣고 곱게 간다. \n2. 메밀 두유면 헹군 뒤 그릇에 담고 1의 순두부 드레싱을 붓는다. 어린잎, 검은깨, 칠리오일 얹는다. \n\nInspired by @mommaskitchenlab\n\n#조식 #레시피 #순두부",
+  "permalink": "https://www.instagram.com/p/DctLAKJHVgl/",
+  "image": "https://images.how-about-breakfast.com/images/1849.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1849.jpg",
+   "https://images.how-about-breakfast.com/images/1849_2.jpg",
+   "https://images.how-about-breakfast.com/images/1849_3.jpg",
+   "https://images.how-about-breakfast.com/images/1849_4.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1849.mp4",
+  "page_id": "크리미한-두부-소스를-곁들인-메밀-두유면"
+ },
+ {
   "date": "2026-08-30",
   "date_raw": "20260830",
   "diary_no": 1848,
