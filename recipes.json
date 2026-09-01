@@ -25350,7 +25350,7 @@
   "weather": "22도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "무화과토스트 무화과",
+  "title": "제철 무화과 바게트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25361,8 +25361,8 @@
    "조식다이어리"
   ],
   "intro": "20240902 #조식다이어리 1167, 22도/흐림, 20분/운동(M) \n무화과 철도 가고 있는지 한 박스 만 원대 하던 게 칠천 원대로 떨어졌다. 계절이 하는 일과 시간이 맡은 몫(김애란)을 생각한다. \n공복에 먹으면 당 스파이크가 올 구성이다. 미리 양배추 한 조각 먹어둔다. \n무화과, 바게트, 크림치즈나 리코타치즈, 부라타치즈가 필요하다. 취향에 따라 꿀도 조금, \n바게트는 반으로 갈라 올리브오일 바르고 팬에 굽는다. 겉바속촉이 됐다. \n크림치즈 바르고 무화과 썰어서 얹는다. 식감을 생각해서 웻지 모양으로 썰었더니 얼마 안 올라간다. 얇게 썰어서 듬뿍 얹어 먹자. 꿀을 조금 얹는다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 작은 바게트 1조각\n- 무화과 2개\n- 크림치즈 2T\n- 꿀 1T",
+  "steps": "1. 바게트는 올리브오일 발라서 앞뒤로 바삭하게 굽는다. \n2. 제철 무화과는 웻지모양으로 썬다. \n3. 1의 바게트에 크림치즈 듬뿍 바른다. \n4. 크림치즈 바른 바게트 위에 웻지모양으로 썬 무화과와 꿀을 조금 얹는다. ",
   "raw": "20240902 #조식다이어리 1167, 22도/흐림, 20분/운동(M) \n\n무화과 철도 가고 있는지 한 박스 만 원대 하던 게 칠천 원대로 떨어졌다. 계절이 하는 일과 시간이 맡은 몫(김애란)을 생각한다. \n\n공복에 먹으면 당 스파이크가 올 구성이다. 미리 양배추 한 조각 먹어둔다. \n\n#무화과토스트\n\n무화과, 바게트, 크림치즈나 리코타치즈, 부라타치즈가 필요하다. 취향에 따라 꿀도 조금, \n\n바게트는 반으로 갈라 올리브오일 바르고 팬에 굽는다. 겉바속촉이 됐다. \n크림치즈 바르고 무화과 썰어서 얹는다. 식감을 생각해서 웻지 모양으로 썰었더니 얼마 안 올라간다. 얇게 썰어서 듬뿍 얹어 먹자. 꿀을 조금 얹는다. \n\n#조식 #레시피 #미라클모닝 #무화과",
   "image": "https://images.how-about-breakfast.com/images/1167.jpg",
   "gallery": [
@@ -25373,13 +25373,6 @@
    "https://images.how-about-breakfast.com/images/1167_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1167.mp4",
-  "_en": {
-   "hash": "c1503ea719eec64dc99e9f5badbe26a602a3a214fc3947fc24acab5e7937f709",
-   "title": "Fig Toast Fig",
-   "intro": "20240902 #breakfastdiary 1167, 22°C/cloudy, 20min/exercise(M)\nFig season seems to be winding down too — a box that was over 10,000 won has dropped to around 7,000 won. Makes me think about what the season does and what time takes care of (Kim Ae-ran).\nThis combo will spike your blood sugar if eaten on an empty stomach. Eat a piece of cabbage beforehand.\nYou need figs, baguette, cream cheese or ricotta cheese, or burrata. A little honey too, depending on taste,\nSplit the baguette in half, brush with olive oil, and toast in a pan. Came out crisp outside, soft inside.\nSpread cream cheese and top with sliced figs. Cut them into wedges for texture, but not much fits on top that way. Better to slice thin and pile them generously. Drizzle a little honey on top.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "무화과토스트-무화과"
  },
  {
