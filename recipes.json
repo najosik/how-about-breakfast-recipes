@@ -12577,7 +12577,7 @@
   "weather": "22도/대체로 흐림",
   "failed": false,
   "calories": null,
-  "title": "뢰스티 감자",
+  "title": "당근 라페를 곁들인 뢰스티",
   "credit": null,
   "hashtags": [
    "감자",
@@ -12587,7 +12587,7 @@
    "조식다이어리"
   ],
   "intro": "20250902 #조식다이어리 1496, 22도/대체로 흐림\n브런치에 연재 중인 날마다 조식의 9번째 에피소드가 발행됐습니다. 조식을 기획하는 이야기, 만드는 이야기에 이어 앞으로 네 번에 걸쳐 조식을 먹는 이야기가 매주 화요일 발행됩니다. '조식을 즐기는 순간‘이라는, 제법 그럴 듯한 부제를 달고 있는 9번째 에피소드의 제목은 ‘비빔밥을 비벼 먹지 않는 이유?’입니다. 궁금하시죠? 프로필에 링크가 있습니다. \n조식치고는 상당한 칼로리의 당근 라페를 곁들인 #뢰스티",
-  "ingredients": "작은 홍감자 3개, 버터 2T, 소금, 작은 당근 1개, 그라나파다노 치즈 조금, (라페 드레싱) 올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t",
+  "ingredients": "- 작은 홍감자 3개 \n- 버터 2T \n- 작은 당근 1개 \n- 그라나파다노 치즈 \n- 라페 드레싱(올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 올리브오일\n- 소금\n- 후추",
   "steps": "1. 작은 홍감자 3개 껍질 벗기고 체칼로 썬 뒤 면포에 넣고 있는 힘껏 짜서 수분을 뺀다. \n2. 믹싱볼에 넣고 소금 뿌린 뒤 골고루 섞는다. (전분을 1t 정도 넣으면 더 바삭하게 먹을 수 있다.)\n3. 팬에 버터 넣고 녹인 뒤 2의 감자채를 얹고 약불에서 앞뒤로 천천히 굽는다. (버터를 1T 녹여서 반죽에 부었다.) \n4. 그동안 체칼로 작은 당근 한 개 썰고 올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t 넣고 골고루 섞는다. \n5. 접시에 3의 뢰스티 담고 4의 당근 라페, 그라나파다노 치즈 조금 얹는다.",
   "raw": "20250902 #조식다이어리 1496, 22도/대체로 흐림\n\n브런치에 연재 중인 날마다 조식의 9번째 에피소드가 발행됐습니다. 조식을 기획하는 이야기, 만드는 이야기에 이어 앞으로 네 번에 걸쳐 조식을 먹는 이야기가 매주 화요일 발행됩니다. '조식을 즐기는 순간‘이라는, 제법 그럴 듯한 부제를 달고 있는 9번째 에피소드의 제목은 ‘비빔밥을 비벼 먹지 않는 이유?’입니다. 궁금하시죠? 프로필에 링크가 있습니다. \n\n조식치고는 상당한 칼로리의 당근 라페를 곁들인 #뢰스티\n\n👉 재료\n작은 홍감자 3개, 버터 2T, 소금, 작은 당근 1개, 그라나파다노 치즈 조금, (라페 드레싱) 올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t\n\n👉 조리\n1. 작은 홍감자 3개 껍질 벗기고 체칼로 썬 뒤 면포에 넣고 있는 힘껏 짜서 수분을 뺀다. \n2. 믹싱볼에 넣고 소금 뿌린 뒤 골고루 섞는다. (전분을 1t 정도 넣으면 더 바삭하게 먹을 수 있다.)\n3. 팬에 버터 넣고 녹인 뒤 2의 감자채를 얹고 약불에서 앞뒤로 천천히 굽는다. (버터를 1T 녹여서 반죽에 부었다.) \n4. 그동안 체칼로 작은 당근 한 개 썰고 올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t 넣고 골고루 섞는다. \n5. 접시에 3의 뢰스티 담고 4의 당근 라페, 그라나파다노 치즈 조금 얹는다. \n\n#조식 #레시피 #감자",
   "image": "https://images.how-about-breakfast.com/images/1496.jpg",
@@ -12598,13 +12598,6 @@
    "https://images.how-about-breakfast.com/images/1496_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1496.mp4",
-  "_en": {
-   "hash": "0f4f8350f85193c0ed3e8cc54673fcee56d6eb2be60bce6470722b5d01c5863e",
-   "title": "Potato Rösti",
-   "intro": "20250902 #breakfastdiary 1496, 22°C/mostly overcast\nThe 9th episode of my daily-breakfast series on Brunch just went up. After the episodes about planning and making breakfast, the next four episodes, running every Tuesday, will be about the experience of eating breakfast. This 9th episode carries the rather fitting subtitle 'The moment you savor breakfast,' and is titled 'Why I don't mix my bibimbap?' Curious? There's a link in my profile. \n#Rösti with a surprisingly high-calorie carrot rapée on the side, for a breakfast dish anyway",
-   "ingredients": "3 small red potatoes, 2T butter, salt, 1 small carrot, a little Grana Padano cheese, (rapée dressing) 3T olive oil, 1T white wine vinegar, 1t whole grain mustard",
-   "steps": "1. Peel 3 small red potatoes, shred with a mandoline, then wring them out hard in a cheesecloth to remove moisture. \n2. Put them in a mixing bowl, sprinkle with salt, and mix evenly. (Adding about 1t of starch makes it crispier.)\n3. Melt butter in a pan, add the shredded potato from step 2, and cook slowly over low heat on both sides. (I melted 1T of butter and mixed it into the batter.) \n4. Meanwhile, shred one small carrot with a mandoline and mix with 3T olive oil, 1T white wine vinegar, and 1t whole grain mustard. \n5. Plate the rösti from step 3, top with the carrot rapée from step 4, and finish with a little Grana Padano cheese."
-  },
   "page_id": "뢰스티-감자"
  },
  {
