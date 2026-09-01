@@ -85875,7 +85875,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 연어오픈샌드위치 조식스타그램",
+  "title": "훈제연어 토스트",
   "credit": null,
   "hashtags": [
    "그래놀라",
@@ -85886,18 +85886,11 @@
    "조식스타그램"
   ],
   "intro": "원래 구상은 길거리토스트, 하지민 마가린 (맞아요, 버터 아니고 마.가.린.)이 없어서 내일로 미룬 #오늘의조식 은 #연어오픈샌드위치 #조식 #조식스타그램 함께 먹은 #그래잇데이 #그래놀라 를 뿌린 그릭요거트 사진은 없어요.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 식빵 1장\n- 훈제연어 4조각\n- 계란 1개\n- 어린잎\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 후추",
+  "steps": "1. 식빵은 올리브오일 발라서 앞뒤로 굽는다. \n2. 식빵 위에 훈제연어와 삶은 계란 반으로 잘라서 얹는다. \n3. 어린잎과 드레싱 얹는다. 후추 조금 뿌린다. ",
   "raw": "원래 구상은 길거리토스트, 하지민 마가린 (맞아요, 버터 아니고 마.가.린.)이 없어서 내일로 미룬 #오늘의조식 은 #연어오픈샌드위치 #조식 #조식스타그램 함께 먹은 #그래잇데이 #그래놀라 를 뿌린 그릭요거트 사진은 없어요.",
   "pre_label": "D-163",
   "image": "https://images.how-about-breakfast.com/images/pre-163.jpg",
-  "_en": {
-   "hash": "331c084f18c5bb9136a794c18308098ea08928d10878a224b5e4c37d79a190dd",
-   "title": "Open-Faced Salmon Sandwich",
-   "intro": "The original plan was street toast, but there was no margarine (yes, margarine — not butter), so that got pushed to tomorrow. #todaysbreakfast is an #openfacedsalmonsandwich instead. #breakfast #breakfastgram No photo of the Greek yogurt with #greatday #granola I had alongside it, sorry.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-연어오픈샌드위치-조식스타그램"
  },
  {
