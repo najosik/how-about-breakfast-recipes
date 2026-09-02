@@ -85884,7 +85884,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "무화과 오늘의조식 그래잇데이",
+  "title": "무화과 리코타 샐러드",
   "credit": null,
   "hashtags": [
    "그래놀라",
@@ -85895,18 +85895,11 @@
    "조식스타그램"
   ],
   "intro": "#무화과 의 계절이 왔어요. #오늘의조식 은 제철 무화과에 올리브오일3, 꿀1, 발사믹1, 소금소금, 후추후추 드레싱 그리고 리코타치즈와 #그래잇데이 #그래놀라 도 곁들여 #조식 #조식스타그램",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 무화과 5개\n- 리코타치즈 2T\n- 그래놀라 1T\n- 드레싱(올리브오일 3T, 꿀 1T, 발사믹 1T, 소금과 후추 각 한 꼬집)",
+  "steps": "1. 제철 무화과는 흐르는 물에 씻은 후 꼭지를 잘라내고 3~4등분 한다. \n2. 사이사이에 리코타치즈 얹는다. \n3. 드레싱 뿌리고 후추 조금 얹는다. ",
   "raw": "#무화과 의 계절이 왔어요. #오늘의조식 은 제철 무화과에 올리브오일3, 꿀1, 발사믹1, 소금소금, 후추후추 드레싱 그리고 리코타치즈와 #그래잇데이 #그래놀라 도 곁들여 #조식 #조식스타그램",
   "pre_label": "D-161",
   "image": "https://images.how-about-breakfast.com/images/pre-161.jpg",
-  "_en": {
-   "hash": "1d83f241da460659a2e4dfc62ada5067e74be2a95b99388ff1efb6a76023409c",
-   "title": "Fig Season Breakfast",
-   "intro": "#fig season has arrived. #todaysbreakfast is seasonal figs with a dressing of olive oil (3), honey (1), and balsamic (1), a little salt and pepper, plus ricotta cheese and #greatday #granola on the side. #breakfast #breakfastgram",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "무화과-오늘의조식-그래잇데이"
  },
  {
