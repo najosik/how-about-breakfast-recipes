@@ -68793,7 +68793,7 @@
   "weather": "24도/맑음",
   "failed": false,
   "calories": null,
-  "title": "구운가지샐러드 지브리 모닝리추얼",
+  "title": "구운 가지와 토마토 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68820,8 +68820,8 @@
    "홈쿡"
   ],
   "intro": "20210904, #조식다이어리 200, 24도/맑음\n가지, 토마토를 썰어 드레싱을 두르고 200도 오븐에 15분 굽는다. 어린잎채소와 세상에서 제일 예쁜 올리브를 곁들인 #구운가지샐러드\n*드레싱: 올리브오일, 와인비니거, 소금, 후추, 파슬리\n#지브리 에서 애니메이션 스틸컷을 제공한다. 상식적인 범위 내에서 사용 가능하다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 가지 1개\n- 토마토 1개\n- 어린잎 채소\n- 올리브 1/2컵\n- 드레싱(올리브오일 2T, 와인비니거 1T, 소금과 후추 각 한 꼬집, 파슬리 파워더 2t)",
+  "steps": "1. 가지와 토마토는 1cm 두께로 썬 뒤 올리브오일 뿌리고 200도 오븐에 15분 굽는다. \n2. 접시에 가지와 토마토 담고 어린잎 채소, 올리브 얹고 드레싱 뿌린다. ",
   "raw": "20210904, #조식다이어리 200, 24도/맑음\n\n가지, 토마토를 썰어 드레싱을 두르고 200도 오븐에 15분 굽는다. 어린잎채소와 세상에서 제일 예쁜 올리브를 곁들인 #구운가지샐러드\n*드레싱: 올리브오일, 와인비니거, 소금, 후추, 파슬리\n\n#지브리 에서 애니메이션 스틸컷을 제공한다. 상식적인 범위 내에서 사용 가능하다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #토마토 #가지 #올리브 \n#breakfast #salad #tomato #eggplant #olive ",
   "image": "https://images.how-about-breakfast.com/images/200.jpg",
   "gallery": [
@@ -68831,13 +68831,6 @@
    "https://images.how-about-breakfast.com/images/200_4.jpg",
    "https://images.how-about-breakfast.com/images/200_5.jpg"
   ],
-  "_en": {
-   "hash": "662a0b2bd1bdc9add6e38500f426b210b430a99a9037b0aedb21897516fff83d",
-   "title": "Roasted Eggplant Salad, Ghibli, Morning Ritual",
-   "intro": "20210904 #breakfastdiary 200, 24°C/clear\nSlice eggplant and tomato, drizzle with dressing, and roast in a 200°C oven for 15 minutes. Serve with baby greens and the prettiest olives in the world. #roastedeggplantsalad\n*Dressing: olive oil, wine vinegar, salt, pepper, parsley\n#Ghibli is offering stills from its animated films, free to use within reasonable limits.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "구운가지샐러드-지브리-모닝리추얼"
  },
  {
