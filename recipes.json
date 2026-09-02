@@ -1,5 +1,35 @@
 [
  {
+  "date": "2026-09-01",
+  "date_raw": "20260901",
+  "diary_no": 1850,
+  "weather": "23도/비",
+  "failed": false,
+  "calories": 280,
+  "title": "최여사 대구 차우더",
+  "credit": null,
+  "hashtags": [
+   "대구",
+   "레시피",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20260901 #조식다이어리 1822, 23도/비\n클램차우더 레시피에 조개 대신 단백질 풍부한 대구(필레)를 넣은, 탄단지 1:1:1 어머니를 위한 고단백 조식이다. 이 레시피를 최여사 대구 차우더라고 부르기로 한다. \n👆바쁜 아침에 만들어어 하는 조식이니 과정을 압축시켜서 양파 볶다가 밀가루 넣고 루를 만드는 (흉내를 내는) 게 팁이라면 팁이다. \n호밀 사워도우 포함 약 280kcal 최여사 대구 차우더",
+  "ingredients": "- 양파 1/2개\n- 감자 1개\n- 버터 10g\n- 대구 필레 100g\n- 우유 100ml\n- 소금\n- 후추\n- 바질 파우더",
+  "steps": "1. 냄비에 버터 10g 넣고 2~3분 다진 양파를 볶는다. \n2. 1에 밀가루 1T 넣고 볶는다. \n3. 물 300ml 넣고 큐브 모양으로 썬 감자를 넣고 끓인다. \n4. 우유 100ml와 어젯 밤에 꺼내 놓은 대구 필레를 한 입 크기로 썰어서 넣고 좀 더 끓인다. \n5. 소금 2t, 후추 1t 넣는다. (소금의 양은 입맛에 따라 취향껏 조절한다.)\n6. 그릇에 담고 바질 조금, 호밀 사워도우 곁들여 먹는다.",
+  "raw": "20260901 #조식다이어리 1822, 23도/비\n\n클램차우더 레시피에 조개 대신 단백질 풍부한 대구(필레)를 넣은, 탄단지 1:1:1 어머니를 위한 고단백 조식이다. 이 레시피를 최여사 대구 차우더라고 부르기로 한다. \n\n👆바쁜 아침에 만들어어 하는 조식이니 과정을 압축시켜서 양파 볶다가 밀가루 넣고 루를 만드는 (흉내를 내는) 게 팁이라면 팁이다. \n\n호밀 사워도우 포함 약 280kcal 최여사 대구 차우더\n\n👉재료(2인분)\n- 양파 1/2개\n- 감자 1개\n- 버터 10g\n- 대구 필레 100g\n- 우유 100ml\n- 소금\n- 후추\n- 바질 파우더\n\n👉조리\n1. 냄비에 버터 10g 넣고 2~3분 다진 양파를 볶는다. \n2. 1에 밀가루 1T 넣고 볶는다. \n3. 물 300ml 넣고 큐브 모양으로 썬 감자를 넣고 끓인다. \n4. 우유 100ml와 어젯 밤에 꺼내 놓은 대구 필레를 한 입 크기로 썰어서 넣고 좀 더 끓인다. \n5. 소금 2t, 후추 1t 넣는다. (소금의 양은 입맛에 따라 취향껏 조절한다.)\n6. 그릇에 담고 바질 조금, 호밀 사워도우 곁들여 먹는다. \n\n#조식 #레시피 #대구",
+  "permalink": "https://www.instagram.com/p/DcvsTFnnSe2/",
+  "image": "https://images.how-about-breakfast.com/images/1850.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1850.jpg",
+   "https://images.how-about-breakfast.com/images/1850_2.jpg",
+   "https://images.how-about-breakfast.com/images/1850_3.jpg",
+   "https://images.how-about-breakfast.com/images/1850_4.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1850.mp4",
+  "page_id": "최여사-대구-차우더"
+ },
+ {
   "date": "2026-08-31",
   "date_raw": "20260831",
   "diary_no": 1849,
@@ -37886,18 +37916,11 @@
    "조식다이어리"
   ],
   "intro": "20230903, #조식다이어리 835, 00도/대체로흐림\n간장2, 고추가루1, 올리고당1, 참기름1. 실파 섞어 양념장을 만든다. \n쌀을 씻어 자작하게 물 붓고 센불에 5분, 약불에 5분, 꼬막 넣고 다시 5분 뜸들인다. \n누룽지가 많이 생겼다. 냄비밥 하는 게 만만치 않구나.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 현미밥 1인분\n- (살만 바른) 꼬막 2컵\n- 파무침(간장 2T, 고추가루1T, 올리고당 1T, 참기름 1T. 실파)\n- 참기름",
+  "steps": "1. 꼬막은 살을 발라낸 후 찜기에 넣고 찐다. \n2. 쌀을 씻어 냄비에 넣고 물 붓고 센불에 5분, 약불에 5분, 꼬막 넣고 다시 5분간 뜸들인다. \n3. 간장 2T, 고추가루1T, 올리고당 1T, 참기름 1T. 실파 숭덩숭덩 썰어 넣고 골고루 섞어서 양념장을 만든다. \n4. 그릇에 2의 꼬막밥 담고 3의 실파 무치 얹는다. 먹기 전에 참기름 1t 얹는다. ",
   "raw": "20230903, #조식다이어리 835, 00도/대체로흐림\n\n간장2, 고추가루1, 올리고당1, 참기름1. 실파 섞어 양념장을 만든다. \n쌀을 씻어 자작하게 물 붓고 센불에 5분, 약불에 5분, 꼬막 넣고 다시 5분 뜸들인다. \n\n누룽지가 많이 생겼다. 냄비밥 하는 게 만만치 않구나. \n\n#조식 #레시피 #미라클모닝 #꼬막솥밥",
   "image": "https://images.how-about-breakfast.com/images/835.jpg",
   "video": "https://images.how-about-breakfast.com/images/835.mp4",
-  "_en": {
-   "hash": "910b23199d9c26fb646713277dc526f29f04cd6cd20a7555124796ae6b8fed61",
-   "title": "Cockle Hot Pot Rice",
-   "intro": "20230903 #breakfastdiary 835, 0°C/mostly cloudy\nMix soy sauce 2, chili powder 1, oligosaccharide syrup 1, sesame oil 1, and scallions to make the seasoning sauce.\nWash rice, add just enough water to barely cover it, cook 5 minutes on high heat, 5 minutes on low, then add the cockles and let it steam for another 5 minutes.\nEnded up with a lot of scorched rice crust. Making pot rice isn't so simple after all.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "꼬막솥밥"
  },
  {
@@ -51171,7 +51194,7 @@
   "weather": "26도/한때흐림",
   "failed": false,
   "calories": null,
-  "title": "아보키도오픈샌드위치 모닝리추얼 모닝루틴",
+  "title": "아보카도 오픈 샌드위치",
   "credit": null,
   "hashtags": [
    "applemint",
@@ -51197,9 +51220,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220903, #조식다이어리 533, 26도/한때흐림\n달군 팬에 올리브오일, 앞뒤로 빵을 구워 마요네즈를 바르고 스크램블 에그, 아보카도, 방울토마토에 후추후추후추 #아보키도오픈샌드위치\n조선에 처음 도착했을 때 나는 조선 친구들을 항상 진실로 대하고, 그들이 요청하는 것이 있으면 무엇이든 도우려고 애썼다. 이곳에서 가장 흔한 작별인사는 \"Nail do orita, I will come again tomorrow\"인데, 대부분은 오지 않았 다. 친구들 대부분이 이런 약속을 하고 돌아갔기에 나는 곧 내 가까운 친구 들이 모두 약속을 지키지 않는다고 오해했었다. 하지만 얼마의 시간이 지나 고 나자 나는 조선 사람들의 이런 말이나 약속은 꼭 그렇게 하겠다는 것이 아니라 단순한 인사치레임을 알게 되었다. 물론 친구들과의 평화와 신뢰도 굳건히 유지되었다. \n제임스S게일, 조선그마지막10년의기록\nNail do orita, 내일 도 오리다, \n밥 한 번 먹어와 같은 한국식 인사법의 기원",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220903, #조식다이어리 533, 26도/한때흐림\n달군 팬에 올리브오일, 앞뒤로 빵을 구워 마요네즈를 바르고 스크램블 에그, 아보카도, 방울토마토에 후추후추후추 #아보카도오픈샌드위치\n\n조선에 처음 도착했을 때 나는 조선 친구들을 항상 진실로 대하고, 그들이 요청하는 것이 있으면 무엇이든 도우려고 애썼다. 이곳에서 가장 흔한 작별인사는 \"Nail do orita, I will come again tomorrow\"인데, 대부분은 오지 않았 다. 친구들 대부분이 이런 약속을 하고 돌아갔기에 나는 곧 내 가까운 친구 들이 모두 약속을 지키지 않는다고 오해했었다. 하지만 얼마의 시간이 지나 고 나자 나는 조선 사람들의 이런 말이나 약속은 꼭 그렇게 하겠다는 것이 아니라 단순한 인사치레임을 알게 되었다. 물론 친구들과의 평화와 신뢰도 굳건히 유지되었다. \n(제임스S게일, 조선그마지막10년의기록) \n\nNail do orita, 내일 도 오리다\n\n'밥 한 번 먹어'와 같은 한국식 인사법의 기원",
+  "ingredients": "- 빵 1조각\n- 스크램블 에그(계란 2개, 우유 50ml, 소금, 후추)\n- 마요네즈 1T\n- 아보카도 1/2개\n- 방울토마토 3개\n- 바질\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 빵에 올리브오일 바르고 앞뒤로 바삭하게 굽는다. \n2. 계란 2개, 우유 50ml, 소금, 후추 넣고 섞은 뒤 팬에 붓고 촉촉한 스크램블 에그 만든다. \n3. 후숙한 아보카도는 껍질 벗기고 가지런히 썬다. \n2. 1의 빵에 마요네즈 바르고 2의 스크램블 에그와 방울토마토, 아보카도 얹는다. 다진 바질과 후추 조금 뿌린다.  ",
   "raw": "20220903, #조식다이어리 533, 26도/한때흐림\n\n달군 팬에 올리브오일, 앞뒤로 빵을 구워 마요네즈를 바르고 스크램블 에그, 아보카도, 방울토마토에 후추후추후추 #아보키도오픈샌드위치\n\n조선에 처음 도착했을 때 나는 조선 친구들을 항상 진실로 대하고, 그들이 요청하는 것이 있으면 무엇이든 도우려고 애썼다. 이곳에서 가장 흔한 작별인사는 \"Nail do orita, I will come again tomorrow\"인데, 대부분은 오지 않았 다. 친구들 대부분이 이런 약속을 하고 돌아갔기에 나는 곧 내 가까운 친구 들이 모두 약속을 지키지 않는다고 오해했었다. 하지만 얼마의 시간이 지나 고 나자 나는 조선 사람들의 이런 말이나 약속은 꼭 그렇게 하겠다는 것이 아니라 단순한 인사치레임을 알게 되었다. 물론 친구들과의 평화와 신뢰도 굳건히 유지되었다. \n제임스S게일, 조선그마지막10년의기록\n\nNail do orita, 내일 도 오리다, \n밥 한 번 먹어와 같은 한국식 인사법의 기원\n\n#직장인 #조식 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #스크램블에그 #샌드위치 #토마토 #애플민트 #아보카도\n#breakfast #sandwich #avocado #openfacedsandwich #scrambledeggs #applemint ",
   "image": "https://images.how-about-breakfast.com/images/533.jpg",
   "gallery": [
@@ -51207,13 +51230,6 @@
    "https://images.how-about-breakfast.com/images/533_2.jpg",
    "https://images.how-about-breakfast.com/images/533_3.jpg"
   ],
-  "_en": {
-   "hash": "1cf7bfba7d754e9efb1d53a88e7f31b59bd36b2190a4765de98f82401a02ea69",
-   "title": "Avocado and Egg Open Sandwich",
-   "intro": "20220903 #breakfastdiary 533, 26°C/occasionally cloudy\nIn a heated pan with olive oil, toast bread on both sides, spread on mayonnaise, then top with scrambled eggs, avocado, and cherry tomatoes, and pepper pepper pepper. #avocadoandeggopensandwich\nWhen I first arrived in Joseon, I always treated my Korean friends honestly and tried to help with whatever they asked. The most common farewell here was 'Nail do orita, I will come again tomorrow,' but most of the time, they never came. Since most friends made this promise before leaving, I soon mistakenly assumed that all my close friends were breaking their word. But after some time passed, I came to understand that this kind of promise among Koreans wasn't meant literally — it was simply a polite parting phrase. And of course, the peace and trust between friends remained perfectly intact.\nJames S. Gale, Korean Sketches: The Record of Joseon's Last Ten Years\n'Nail do orita' — 'I will come again tomorrow' —\nthe origin of a Korean-style greeting like 'let's grab a meal sometime'",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "아보키도오픈샌드위치-모닝리추얼-모닝루틴"
  },
  {
@@ -68824,7 +68840,7 @@
   "weather": "21도/대체로흐림, 30분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "아스파라거스하몽샌드위치 그리움도병 정밀아",
+  "title": "아스파라거스 하몽 토스트",
   "credit": null,
   "hashtags": [
    "asparagus",
@@ -68855,22 +68871,15 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210903, #조식다이어리 199, 21도/대체로흐림, 30분/운동하기\n팬에 올리브오일을 두르고 빵을 앞뒤로 굽는다. 다른 팬에 버터를 녹이고 소금, 후추 넣고 계란 2개를 풀어 (고든 램지가 그토록 강조한) 촉촉한 스크램블 에그를 만든다. 삶아둔 아스파라거스를 올리브오일, 후추 약간 더해 팬에 데친다. \n빵 위에 스크램블 에그, 아스파라거스, 하몽을 차례대로 얹는다. 마지막으로 올리브 오일과 후추 약간 #아스파라거스하몽샌드위치 \n출근길, 하몽과 프로슈토의 차이점에 대해서 찾아보다가 랜덤으로 나오는 가사에 귀를 기울인다. \n그리움이 병이 되려나 \n이렇게 노래가 되어서 \n떨어진 꽃잎처럼 \n여기 저기 쓸려 \n낮은 신음을 뱉는다 \n#정밀아 는 #청파소나타 앨범을 듣고 팬이 되었다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210903, #조식다이어리 199, 21도/대체로흐림, 30분/운동하기\n팬에 올리브오일을 두르고 빵을 앞뒤로 굽는다. 다른 팬에 버터를 녹이고 소금, 후추 넣고 계란 2개를 풀어 (고든 램지가 그토록 강조한) 촉촉한 스크램블 에그를 만든다. 삶아둔 아스파라거스를 올리브오일, 후추 약간 더해 팬에 데친다. \n빵 위에 스크램블 에그, 아스파라거스, 하몽을 차례대로 얹는다. 마지막으로 올리브 오일과 후추 약간 #아스파라거스하몽샌드위치 \n\n출근길, 하몽과 프로슈토의 차이점에 대해서 찾아보다가 랜덤으로 나오는 가사에 귀를 기울인다. \n그리움이 병이 되려나 \n이렇게 노래가 되어서 \n떨어진 꽃잎처럼 \n여기 저기 쓸려 \n낮은 신음을 뱉는다 \n#정밀아 는 #청파소나타 앨범을 듣고 팬이 되었다.",
+  "ingredients": "- 빵 1조각\n- 계란 2개\n- 아스파라거스 3~4개\n- 하몽 2~3조각\n- 버터 1T\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 빵에 올리브오일 바르고 앞뒤로 굽는다. \n2. 계란 2개, 소금, 후추 넣고 골고루 섞어서 버터 녹인 팬에 붓고 스크램블 에그를 만든다. \n3. 손질한 아스파라거스 삶아서 소금, 후추 넣고 팬에서 살짝 굽는다. \n4. 접시에 빵을 담고 2의 스크램블 에그, 3의 아스파라거스와 하몽을 얹는다. 먹기 전에 올리브오일과 후추 조금 뿌린다. ",
   "raw": "20210903, #조식다이어리 199, 21도/대체로흐림, 30분/운동하기\n\n팬에 올리브오일을 두르고 빵을 앞뒤로 굽는다. 다른 팬에 버터를 녹이고 소금, 후추 넣고 계란 2개를 풀어 (고든 램지가 그토록 강조한) 촉촉한 스크램블 에그를 만든다. 삶아둔 아스파라거스를 올리브오일, 후추 약간 더해 팬에 데친다. \n빵 위에 스크램블 에그, 아스파라거스, 하몽을 차례대로 얹는다. 마지막으로 올리브 오일과 후추 약간 #아스파라거스하몽샌드위치 \n\n출근길, 하몽과 프로슈토의 차이점에 대해서 찾아보다가 랜덤으로 나오는 가사에 귀를 기울인다. \n\n그리움이 병이 되려나 \n이렇게 노래가 되어서 \n떨어진 꽃잎처럼 \n여기 저기 쓸려 \n낮은 신음을 뱉는다 \n#그리움도병\n\n#정밀아 는 #청파소나타 앨범을 듣고 팬이 되었다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #아스파라거스 #스크램블에그 #하몽 #오픈샌드위치 \n#breakfast #salad #asparagus #jamon #scrambedeggs #opensandwich #sandwich ",
   "image": "https://images.how-about-breakfast.com/images/199.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/199.jpg",
    "https://images.how-about-breakfast.com/images/199_2.jpg"
   ],
-  "_en": {
-   "hash": "f03f88aaa8e20b8268c7d7cf0af4dcc2599138b1303e8136fbfa4cdb249d3f08",
-   "title": "Asparagus Jamón Sandwich, Longing as Sickness, Jeong Mira",
-   "intro": "20210903 #breakfastdiary 199, 21°C/mostly cloudy, 30 min/workout\nDrizzle olive oil in a pan and toast the bread on both sides. In another pan, melt butter, add salt and pepper, and beat in 2 eggs to make the moist scrambled eggs Gordon Ramsay is always going on about. Blanch the pre-boiled asparagus in the pan with a little olive oil and pepper. \nLayer scrambled eggs, asparagus, and jamón onto the bread in order. Finish with a little olive oil and pepper. #asparagusjamonsandwich \nOn the way to work, while looking up the difference between jamón and prosciutto, a random lyric catches my ear. \nCould longing turn into an illness \nbecoming a song like this \nlike fallen petals \nswept here and there \nletting out a low moan \nI became a fan of #JeongMira after hearing the #Cheongpasonata album.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "아스파라거스하몽샌드위치-그리움도병-정밀아"
  },
  {
@@ -85893,7 +85902,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "그래잇데이 그래놀라 조식스타그램",
+  "title": "토마토 파프리카 샐러드",
   "credit": null,
   "hashtags": [
    "그래놀라",
@@ -85904,18 +85913,11 @@
    "토마토샐러드"
   ],
   "intro": "올리브가 떨어져서 수명을 다해가는 블루베리 그리고 #그래잇데이 #그래놀라 와 함께 한 오늘의 #조식스타그램 은 언제나 간편한 #토마토샐러드 #조식 #오늘의조식",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 방울토마토 5개\n- 파프리카 1/2개\n- 블루베리 1/2컵\n- 민트\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)",
+  "steps": "1. 방울토마토, 파프리카는 먹기 좋은 크기로 썬다. \n2. 블루베리는 깨끗하게 씻어서 준비한다. \n3. 접시에 방울토마토, 파프리카, 블루베리 담고 민트도 조금 얹는다. \n4. 그래놀라와 드레싱 얹는다. ",
   "raw": "올리브가 떨어져서 수명을 다해가는 블루베리 그리고 #그래잇데이 #그래놀라 와 함께 한 오늘의 #조식스타그램 은 언제나 간편한 #토마토샐러드 #조식 #오늘의조식",
   "pre_label": "D-162",
   "image": "https://images.how-about-breakfast.com/images/pre-162.jpg",
-  "_en": {
-   "hash": "f99fc645709b18f905771cb7db970c9571b4cdbccf71fa8eec5614398588f4c4",
-   "title": "Granola and Tomato Salad",
-   "intro": "Out of olives, so today's #breakfastgram pairs the last of some blueberries past their prime with #greatday #granola, plus the always-easy #tomatosalad. #breakfast #todaysbreakfast",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "그래잇데이-그래놀라-조식스타그램"
  },
  {
