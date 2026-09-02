@@ -25300,7 +25300,7 @@
   "weather": "23도/대체로 맑음, 25분/운동(S, M)",
   "failed": false,
   "calories": null,
-  "title": "적양배추스테이크 적양배추",
+  "title": "적양배추 스테이크",
   "credit": "@setuyacook",
   "hashtags": [
    "레시피",
@@ -25311,8 +25311,8 @@
    "조식다이어리"
   ],
   "intro": "20240904 #조식다이어리 1169, 23도/대체로 맑음, 25분/운동(S, M) \n양배추를 구워보자. 이거 보기보다 꽤 맛있다. \n적양배추(양배추도 좋다.), 모짜렐라 치즈가 필요하다. 정말 간단하지 않나? \n적양배추 구이 아니 있어빌리티하게 #적양배추스테이크 라고 하자, \n적양배추는 1cm 두께로 썰고 산적용 꼬치를 꽂는다. 적양배추가 해체되는 걸 붙잡아 줄 것이다. \n달군 팬에 올리브오일 두르고 적양배추 얹고 소금소금, 후추후추, 앞뒤로 굽는다. 버터를 바르면 좀 더 풍미가 넘쳐나겠지만 오늘은 올리브오일까지만, \n모짜렐라 치즈 얹고 뚜껑 덮고 약불에서 5분 정도 굽는다. 후추후추,",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 적양배추 1/4개\n- 모짜렐라치즈 4T\n- 올리브오일\n- 소금\n- 후추\n- 산적용 꼬치",
+  "steps": "1. 적양배추는 1cm 두께로 썬 뒤 흐트러지지 않도록 산적용 꼬치를 끼워둔다. \n2. 팬에 올리브오일 두르고 1의 적양배추 얹고 앞뒤로 올리브오일 1T, 소금과 후추 한 꼬집 얹는다. \n3. 적양배추 위에 모짜렐라치즈 얹고 뚜껑 덮은 뒤 약불에 5분 정도 굽는다. (모짜렐라치즈가 녹을 때까지) 후추 한 꼬집 얹는다. ",
   "raw": "20240904 #조식다이어리 1169, 23도/대체로 맑음, 25분/운동(S, M) \n\n양배추를 구워보자. 이거 보기보다 꽤 맛있다. \n\n적양배추(양배추도 좋다.), 모짜렐라 치즈가 필요하다. 정말 간단하지 않나? \n\n적양배추 구이 아니 있어빌리티하게 #적양배추스테이크 라고 하자, \n\n적양배추는 1cm 두께로 썰고 산적용 꼬치를 꽂는다. 적양배추가 해체되는 걸 붙잡아 줄 것이다. \n달군 팬에 올리브오일 두르고 적양배추 얹고 소금소금, 후추후추, 앞뒤로 굽는다. 버터를 바르면 좀 더 풍미가 넘쳐나겠지만 오늘은 올리브오일까지만, \n모짜렐라 치즈 얹고 뚜껑 덮고 약불에서 5분 정도 굽는다. 후추후추, \n\nInspired by @setuyacook \n\n#조식 #레시피 #미라클모닝 #적양배추",
   "image": "https://images.how-about-breakfast.com/images/9990.jpg",
   "gallery": [
@@ -25321,13 +25321,6 @@
    "https://images.how-about-breakfast.com/images/9990_3.jpg",
    "https://images.how-about-breakfast.com/images/9990_4.jpg"
   ],
-  "_en": {
-   "hash": "4e00b6c68904c3202fa6bc404ad670807b4655a9368bbc6af702dee8da943663",
-   "title": "Red Cabbage Steak Red Cabbage",
-   "intro": "20240904 #breakfastdiary 1169, 23°C/mostly clear, 25min/exercise(S, M)\nLet's roast some cabbage. It's actually pretty tasty, more than it looks.\nYou need red cabbage (regular cabbage works too) and mozzarella cheese. Pretty simple, right?\nLet's call it grilled red cabbage — no, let's give it some flair and call it #redcabbagesteak,\nSlice the red cabbage 1cm thick and skewer with a satay stick. It'll hold the cabbage together so it doesn't fall apart.\nHeat olive oil in a pan, add the red cabbage, salt and pepper, and grill on both sides. Butter would add even more richness, but today let's stick with olive oil,\nTop with mozzarella cheese, cover with a lid, and cook on low heat for about 5 minutes. Pepper to finish,",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "적양배추스테이크-적양배추"
  },
  {
