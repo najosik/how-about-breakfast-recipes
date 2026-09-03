@@ -358,10 +358,19 @@
       return parseInt(parts[1], 10) === mm && parseInt(parts[2], 10) === dd;
     }
 
+    // A handful of dates have two records for the same day (an admin-tool
+    // duplicate, or one post's text/media split across two entries) - when
+    // that happens, prefer whichever one actually has a photo/video over a
+    // later one in array order that doesn't, instead of blindly overwriting.
+    function hasMedia(r) { return !!(r.image || r.gallery || r.video); }
     var byYear = {};
     all.forEach(function (r) {
       if (!isExactMatch(r)) return;
-      byYear[r.date.slice(0, 4)] = r;
+      var y = r.date.slice(0, 4);
+      var existing = byYear[y];
+      if (!existing || (!hasMedia(existing) && hasMedia(r))) {
+        byYear[y] = r;
+      }
     });
 
     // Years the archive actually spans, so a year with no exact-day post
