@@ -145,7 +145,7 @@ MIN_AD_CONTENT_CHARS = 60
 INDEX_FIELDS = [
     'date', 'diary_no', 'pre_label', 'weather', 'failed', 'calories',
     'title', 'credit', 'hashtags', 'intro', 'ingredients', 'steps',
-    'image', 'gallery', 'video', 'permalink',
+    'image', 'gallery', 'video', 'permalink', 'day_secondary',
 ]
 
 
