@@ -85950,7 +85950,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "복숭아 오늘의조식 조식스타그램",
+  "title": "복숭아 샐러드",
   "credit": null,
   "hashtags": [
    "복숭아",
@@ -85958,9 +85958,9 @@
    "조식",
    "조식스타그램"
   ],
-  "intro": "큰 #복숭아 한 개를 잘라서 1. 레몬 제스트를 살짝 얹어, 2. 얼그레이를흩뿌려 리코타 치즈와 3. 마지막으로 아보카도, 토마토, 체리를 곁들여 복숭아 삼종으로 #오늘의조식 #조식 #조식스타그램 완성",
-  "ingredients": null,
-  "steps": null,
+  "intro": "큰 #복숭아 한 개를 잘라서 1. 레몬 제스트를 살짝 얹어, 2. 얼그레이를 흩뿌려 리코타 치즈와 3. 마지막으로 아보카도, 토마토, 체리를 곁들여 복숭아 삼종으로 #오늘의조식 #조식 #조식스타그램 완성",
+  "ingredients": "- 복숭아 1/2개\n- 레몬 1/2개(레몬제스트용)\n- 얼그레이 티백 1개\n- 리코타치즈 1T",
+  "steps": "1. 믹싱볼에 웻지모양으로 썬 복숭아, 레몬제스트 얹고 얼그레이 뿌려서 골고루 섞는다. \n2. 1의 복숭아를 그릇에 담고 리코타치즈를 얹는다. ",
   "raw": "큰 #복숭아 한 개를 잘라서 1. 레몬 제스트를 살짝 얹어, 2. 얼그레이를흩뿌려 리코타 치즈와 3. 마지막으로 아보카도, 토마토, 체리를 곁들여 복숭아 삼종으로 #오늘의조식 #조식 #조식스타그램 완성",
   "pre_label": "2020-09-05-2",
   "image": "https://images.how-about-breakfast.com/images/2020-09-05-2.jpg",
@@ -85969,13 +85969,6 @@
    "https://images.how-about-breakfast.com/images/2020-09-05-2_2.jpg",
    "https://images.how-about-breakfast.com/images/2020-09-05-2_3.jpg"
   ],
-  "_en": {
-   "hash": "cd82a767d9cb88ee2ab6ef89c09531cf28d2f43236b47cbdfc8ca66d30395ead",
-   "title": "Peach Three Ways",
-   "intro": "Cut one big #peach into pieces: 1. A light dusting of lemon zest, 2. A sprinkle of Earl Grey with ricotta cheese, and 3. Finally, avocado, tomato, and cherries on the side — #todaysbreakfast complete, peaches served three ways. #breakfast #breakfastgram",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "복숭아-오늘의조식-조식스타그램"
  },
  {
