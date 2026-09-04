@@ -177,8 +177,10 @@
     var recordByDate = {};
     all.forEach(function (r) {
       if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return;
-      // prefer a successful entry over a failed one when a day has both
-      if (!recordByDate[r.date] || (recordByDate[r.date].failed && !r.failed)) {
+      // prefer a successful entry over a failed one when a day has both,
+      // and prefer a non-day_secondary entry when a day has multiple posts
+      var existing = recordByDate[r.date];
+      if (!existing || (existing.failed && !r.failed) || (existing.day_secondary && !r.day_secondary)) {
         recordByDate[r.date] = r;
       }
     });
@@ -361,14 +363,16 @@
     // A handful of dates have two records for the same day (an admin-tool
     // duplicate, or one post's text/media split across two entries) - when
     // that happens, prefer whichever one actually has a photo/video over a
-    // later one in array order that doesn't, instead of blindly overwriting.
+    // later one in array order that doesn't, and respect an explicit
+    // day_secondary flag marking a record as not the preferred one to show,
+    // instead of blindly overwriting.
     function hasMedia(r) { return !!(r.image || r.gallery || r.video); }
     var byYear = {};
     all.forEach(function (r) {
       if (!isExactMatch(r)) return;
       var y = r.date.slice(0, 4);
       var existing = byYear[y];
-      if (!existing || (!hasMedia(existing) && hasMedia(r))) {
+      if (!existing || (existing.day_secondary && !r.day_secondary) || (!hasMedia(existing) && hasMedia(r) && !r.day_secondary)) {
         byYear[y] = r;
       }
     });
