@@ -37928,7 +37928,7 @@
   "weather": "24도/흐림, 21분/운동(Y)",
   "failed": false,
   "calories": null,
-  "title": "양배추스테이크 양배추",
+  "title": "양배추 스테이크",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37940,7 +37940,7 @@
   ],
   "intro": "20230905, #조식다이어리 837, 24도/흐림, 21분/운동(Y)\n양배추를 (1등급 한우1 +++ 안심 스테이크 200g 정도로 느낌으로 썰어서) 준비한다. 꿀과 후추로 잠깐 마리네이드한 뒤, 토마토소스를 바르고 모짜렐라 올린 뒤 에어프라이기에 넣어 180도 10분 굽는다. 모짜렐라 치즈가 녹아 제법 그럴싸하게 보인다. \n가만히 접시에 담고 파마산치즈, 실파 송송송 #양배추스테이크",
   "ingredients": null,
-  "steps": null,
+  "steps": "1. 통양배추를 2cm 두께로 썬 뒤 앞뒤에 꿀을 펴바른다. 후추 조금 뿌린다.  \n2. 2의 양배추에 토마토소스 바르고 모짜렐라치즈 넣는다. 꿀과 ㅇㅈ\n3. ",
   "raw": "20230905, #조식다이어리 837, 24도/흐림, 21분/운동(Y)\n\n양배추를 (1등급 한우1 +++ 안심 스테이크 200g 정도로 느낌으로 썰어서) 준비한다. 꿀과 후추로 잠깐 마리네이드한 뒤, 토마토소스를 바르고 모짜렐라 올린 뒤 에어프라이기에 넣어 180도 10분 굽는다. 모짜렐라 치즈가 녹아 제법 그럴싸하게 보인다. \n가만히 접시에 담고 파마산치즈, 실파 송송송 #양배추스테이크\n\n#조식 #레시피 #미라클모닝 #양배추",
   "image": "https://images.how-about-breakfast.com/images/837.jpg",
   "gallery": [
@@ -37950,11 +37950,11 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/837.mp4",
   "_en": {
-   "hash": "04e8c1cefcc9289a05493e26383b4bae5a24a63ea3bc5b627a3563119219cd9e",
+   "hash": "ffbff8ef85f2b9aa6876b5df24bff0fac8d79dea31e790daff852cfa51041479",
    "title": "Cabbage Steak",
    "intro": "20230905 #breakfastdiary 837, 24°C/cloudy, 21min/exercise(Y)\nPrepare cabbage (sliced to feel like a 200g cut of grade-1+++ Korean beef tenderloin steak). Marinate briefly in honey and pepper, spread on tomato sauce, top with mozzarella, then air-fry at 180°C for 10 minutes. Once the mozzarella melts, it looks quite convincing.\nPlate it gently, and finish with parmesan cheese and finely chopped scallions. #cabbagesteak",
    "ingredients": "",
-   "steps": ""
+   "steps": "1. Cut a whole cabbage into 2cm-thick rounds and spread honey on both sides. Sprinkle on a little pepper.  \n2. Spread tomato sauce on the cabbage from step 1 and add mozzarella cheese. Honey too — noted.\n3. "
   },
   "page_id": "양배추스테이크-양배추-2"
  },
@@ -51238,7 +51238,7 @@
   "weather": "19도/비, 21분/운동",
   "failed": false,
   "calories": null,
-  "title": "야채구이만 모닝리추얼 모닝루틴",
+  "title": "구운 야채 샐러드",
   "credit": null,
   "hashtags": [
    "asparagus",
@@ -51265,9 +51265,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220905, #조식다이어리 534, 19도/비, 21분/운동\n달군 팬에 올리브오일을 두르고 연근, 아스파라거스, 파프리카, 브로콜리, 단호박을 굽는다. 소금소금, 후추후추, 플레이팅하고 비네그레트 드레싱 좌악, \n야채를 구워 커리를 만들려 했으나 시간이 없어서 #야채구이만 먹는걸로, \n나이를 잘 먹는 것은 어려운 일 같습니다. 나 역시 나이를 처음 먹어보니 잘될지 어떨지 솔직히 자신은 없습니다.\n이 나이가 되는 건 처음이라,",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220905, #조식다이어리 534, 19도/비, 21분/운동\n달군 팬에 올리브오일을 두르고 연근, 아스파라거스, 파프리카, 브로콜리, 단호박을 굽는다. 소금소금, 후추후추, 플레이팅하고 비네그레트 드레싱 좌악, \n야채를 구워 커리를 만들려 했으나 시간이 없어서 #야채구이만 먹는걸로, \n\n나이를 잘 먹는 것은 어려운 일 같습니다. 나 역시 나이를 처음 먹어보니 잘될지 어떨지 솔직히 자신은 없습니다.\n이 나이가 되는 건 처음이라,",
+  "ingredients": "- 연근 2조각\n- 아스파라거스 4개\n- 파프리카 1/4개\n- 브로콜리 3~4개\n- 단호박 1/4개\n- 드레싱(올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)",
+  "steps": "1. 아스파라거스는 그레이터로 억센 줄기를 다듬는다. \n2. 연근, 파프리카, 브로콜리, 단호박 잘라서 준비한다. \n3 팬에 올리브오일 두르고 소금, 후추로 간해서 연근, 손질한 아스파라거스, 파프리카, 브로콜리, 단호박을 굽는다. \n4. 접시에 4의 채소를 담고 드레싱 뿌린다. ",
   "raw": "20220905, #조식다이어리 534, 19도/비, 21분/운동\n\n달군 팬에 올리브오일을 두르고 연근, 아스파라거스, 파프리카, 브로콜리, 단호박을 굽는다. 소금소금, 후추후추, 플레이팅하고 비네그레트 드레싱 좌악, \n야채를 구워 커리를 만들려 했으나 시간이 없어서 #야채구이만 먹는걸로, \n\n#직장인 #조식 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #연근 #브로콜리 #아스파라거스 #파프리카 #단호박\n#breakfast #asparagus #broccoli #paprika #squash #lotusroots\n\n나이를 잘 먹는 것은 어려운 일 같습니다. 나 역시 나이를 처음 먹어보니 잘될지 어떨지 솔직히 자신은 없습니다.\n#무라카미하루키 \n\n이 나이가 되는 건 처음이라, ",
   "image": "https://images.how-about-breakfast.com/images/534.jpg",
   "gallery": [
@@ -51277,11 +51277,11 @@
    "https://images.how-about-breakfast.com/images/534_4.jpg"
   ],
   "_en": {
-   "hash": "2a68095d8bcb6df2fb15204c2f0306417e67a5fb5dddc7ae1c22a1faadfe9fe0",
-   "title": "Just Roasted Vegetables",
-   "intro": "20220905 #breakfastdiary 534, 19°C/rain, 21min/exercise\nIn a heated pan with olive oil, roast lotus root, asparagus, bell pepper, broccoli, and sweet pumpkin. Salt salt, pepper pepper, plate it and drizzle on plenty of vinaigrette.\nI meant to roast the vegetables and turn them into a curry, but I ran out of time, so it's #justroastedvegetables today.\nAging well seems like a hard thing to do. Since this is my first time being this age too, honestly I'm not sure how well I'll manage it.\nBecause being this age is a first for me,",
-   "ingredients": "",
-   "steps": ""
+   "hash": "7cbc093a5368bbec5af3419c95dd53db96a686e5aa55a02c8df2fc62998a7a85",
+   "title": "Grilled Vegetable Salad",
+   "intro": "20220905, #breakfastdiary 534, 19°C/rain, 21min/exercise\nHeat oil in a pan and grill lotus root, asparagus, paprika, broccoli, and sweet pumpkin. Season with salt and pepper, plate it, and drizzle generously with vinaigrette dressing.\nI was going to grill the vegetables and make a curry, but I didn't have time, so I just went with #GrilledVegetablesOnly,\n\nAging well seems like a hard thing to do. Honestly, now that I'm experiencing this age for the first time myself, I'm not sure I'll manage it well either.\nBecause being this age is a first for me, too,",
+   "ingredients": "- 2 slices lotus root\n- 4 asparagus spears\n- 1/4 paprika\n- 3-4 broccoli florets\n- 1/4 sweet pumpkin (kabocha)\n- Dressing (3T olive oil, 1T white wine vinegar, 1t whole grain mustard)",
+   "steps": "1. Use a grater to trim the tough fibers off the asparagus stalks. \n2. Cut and prepare the lotus root, paprika, broccoli, and sweet pumpkin. \n3. Heat olive oil in a pan, season with salt and pepper, and grill the lotus root, trimmed asparagus, paprika, broccoli, and sweet pumpkin. \n4. Plate the vegetables and drizzle with the dressing."
   },
   "page_id": "야채구이만-모닝리추얼-모닝루틴"
  },
@@ -85963,7 +85963,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "복숭아 오늘의조식 조식스타그램",
+  "title": "복숭아 샐러드",
   "credit": null,
   "hashtags": [
    "복숭아",
@@ -85971,9 +85971,9 @@
    "조식",
    "조식스타그램"
   ],
-  "intro": "큰 #복숭아 한 개를 잘라서 1. 레몬 제스트를 살짝 얹어, 2. 얼그레이를흩뿌려 리코타 치즈와 3. 마지막으로 아보카도, 토마토, 체리를 곁들여 복숭아 삼종으로 #오늘의조식 #조식 #조식스타그램 완성",
-  "ingredients": null,
-  "steps": null,
+  "intro": "큰 #복숭아 한 개를 잘라서 1. 레몬 제스트를 살짝 얹어, 2. 얼그레이를 흩뿌려 리코타 치즈와 3. 마지막으로 아보카도, 토마토, 체리를 곁들여 복숭아 삼종으로 #오늘의조식 #조식 #조식스타그램 완성",
+  "ingredients": "- 복숭아 1/2개\n- 레몬 1/2개(레몬제스트용)\n- 얼그레이 티백 1개\n- 리코타치즈 1T",
+  "steps": "1. 믹싱볼에 웻지모양으로 썬 복숭아, 레몬제스트 얹고 얼그레이 뿌려서 골고루 섞는다. \n2. 1의 복숭아를 그릇에 담고 리코타치즈를 얹는다. ",
   "raw": "큰 #복숭아 한 개를 잘라서 1. 레몬 제스트를 살짝 얹어, 2. 얼그레이를흩뿌려 리코타 치즈와 3. 마지막으로 아보카도, 토마토, 체리를 곁들여 복숭아 삼종으로 #오늘의조식 #조식 #조식스타그램 완성",
   "pre_label": "2020-09-05-2",
   "image": "https://images.how-about-breakfast.com/images/2020-09-05-2.jpg",
@@ -85983,11 +85983,11 @@
    "https://images.how-about-breakfast.com/images/2020-09-05-2_3.jpg"
   ],
   "_en": {
-   "hash": "cd82a767d9cb88ee2ab6ef89c09531cf28d2f43236b47cbdfc8ca66d30395ead",
-   "title": "Peach Three Ways",
-   "intro": "Cut one big #peach into pieces: 1. A light dusting of lemon zest, 2. A sprinkle of Earl Grey with ricotta cheese, and 3. Finally, avocado, tomato, and cherries on the side — #todaysbreakfast complete, peaches served three ways. #breakfast #breakfastgram",
-   "ingredients": "",
-   "steps": ""
+   "hash": "865e7c839cc7434f7dc8587dc6edbf177d6f9002a4ae19cd3beb9ef13481235a",
+   "title": "Peach Salad",
+   "intro": "Slice one large #peach in half, then: 1. top with a touch of lemon zest, 2. sprinkle with Earl Grey and add ricotta cheese, and 3. finish with avocado, tomato, and cherries for a peach trio — today's #OnThisDay #breakfast #breakfaststagram, complete",
+   "ingredients": "- 1/2 peach\n- 1/2 lemon (for zest)\n- 1 Earl Grey tea bag\n- 1T ricotta cheese",
+   "steps": "1. In a mixing bowl, add the peach cut into wedges, top with lemon zest, sprinkle with Earl Grey, and mix well. \n2. Place the peach from step 1 in a bowl and top with ricotta cheese."
   },
   "page_id": "복숭아-오늘의조식-조식스타그램"
  },
