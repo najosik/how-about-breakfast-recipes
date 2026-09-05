@@ -68735,7 +68735,7 @@
   "weather": "17도/비, 25분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "두부낫또샐러드 모닝리추얼 모닝루틴",
+  "title": "두부 낫토 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68758,9 +68758,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210907, #조식다이어리 203, 17도/비, 25분/운동하기\n어린잎채소, 두부, 낫또에 간장, 참기름 조금 #두부낫또샐러드 \nR.I.P. Jean-Paul Belmond",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210907, #조식다이어리 203, 17도/비, 25분/운동하기\n어린잎채소, 두부, 낫또에 간장, 참기름 조금 #두부낫또샐러드 \n\nR.I.P. Jean-Paul Belmond",
+  "ingredients": "- 어린잎채소 2~3컵\n- 두부 1/2모\n- 낫토 1개\n- 간장 1/2T\n- 참기름 1t",
+  "steps": "1. 흐르는 물에 어린잎채소 씻고 물기를 제거한다. \n2. 접시에 1의 어린잎채소 담고 큐브모양으로 썬 두부, 낫토 얹고 간장 1T, 참기름 1t 뿌린다. ",
   "raw": "20210907, #조식다이어리 203, 17도/비, 25분/운동하기\n\n어린잎채소, 두부, 낫또에 간장, 참기름 조금 #두부낫또샐러드 \n\nR.I.P. Jean-Paul Belmond\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #두부 #낫또\n#breakfast #salad #dubu #natto ",
   "image": "https://images.how-about-breakfast.com/images/203.jpg",
   "gallery": [
@@ -68768,13 +68768,6 @@
    "https://images.how-about-breakfast.com/images/203_2.jpg",
    "https://images.how-about-breakfast.com/images/203_3.jpg"
   ],
-  "_en": {
-   "hash": "5496eced70e5af158abd174a44b18994af542b9688d7cd7b5b2bf64ad6c3505a",
-   "title": "Tofu Natto Salad, Morning Ritual, Morning Routine",
-   "intro": "20210907 #breakfastdiary 203, 17°C/rain, 25 min/workout\nBaby greens, tofu, and natto with a little soy sauce and sesame oil. #tofunattosalad \nR.I.P. Jean-Paul Belmondo",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "두부낫또샐러드-모닝리추얼-모닝루틴"
  },
  {
