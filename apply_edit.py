@@ -14,7 +14,8 @@ present in PATCH_JSON are overwritten on the matching live record.
 If any of the translatable fields (title/intro/ingredients/steps) change,
 the record's _en translation is cleared so it naturally reappears in the
 normal "any posts missing an English translation?" check instead of
-silently drifting out of sync with the edited Korean text.
+silently drifting out of sync with the edited Korean text. Media fields
+(image/gallery/video) are not translatable and never clear it.
 
 Usage (set by the workflow, not run manually):
     PAGE_ID=... PATCH_JSON='{"title": "..."}' python apply_edit.py
@@ -24,8 +25,12 @@ import os
 import sys
 
 RECIPES_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'recipes.json')
-ALLOWED_FIELDS = {'title', 'intro', 'ingredients', 'steps', 'hashtags', 'credit'}
+ALLOWED_FIELDS = {
+    'title', 'intro', 'ingredients', 'steps', 'hashtags', 'credit',
+    'image', 'gallery', 'video',
+}
 TRANSLATABLE_FIELDS = {'title', 'intro', 'ingredients', 'steps'}
+LIST_FIELDS = {'hashtags', 'gallery'}
 
 
 def main():
@@ -66,17 +71,26 @@ def main():
 
     changed_translatable = False
     for key, value in patch.items():
-        if key == 'hashtags':
+        if key in LIST_FIELDS:
             if not isinstance(value, list):
-                print('hashtags must be a list of strings.', file=sys.stderr)
+                print(f'{key} must be a list of strings.', file=sys.stderr)
                 sys.exit(1)
-            value = [str(v) for v in value]
+            value = [str(v) for v in value if str(v).strip()]
         else:
-            value = str(value) if value is not None else None
+            value = str(value) if value not in (None, '') else None
         if target.get(key) != value:
             if key in TRANSLATABLE_FIELDS:
                 changed_translatable = True
             target[key] = value
+
+    # Mirrors add_post.py: image and gallery are kept in sync so a
+    # single-URL edit (or a gallery edit that drops the old cover image)
+    # doesn't leave the two contradicting each other.
+    if 'image' in patch or 'gallery' in patch:
+        if target.get('image') and not target.get('gallery'):
+            target['gallery'] = [target['image']]
+        elif target.get('gallery') and not target.get('image'):
+            target['image'] = target['gallery'][0]
 
     if changed_translatable and target.get('_en'):
         del target['_en']

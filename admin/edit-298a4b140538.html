@@ -99,6 +99,16 @@
 
     <form id="editForm">
       <h2 id="editingTitle" style="font-size:1rem"></h2>
+
+      <label>미디어 미리보기 (실제 사이트에 노출되는 그대로)</label>
+      <div id="fMediaPreview" style="max-width:280px; margin-bottom:12px"></div>
+      <label for="fImage">대표 이미지 URL</label>
+      <input type="text" id="fImage" placeholder="https://images.how-about-breakfast.com/images/1234.jpg">
+      <label for="fGallery">갤러리 이미지 URL (한 줄에 하나씩, 첫 줄이 대표 이미지)</label>
+      <textarea id="fGallery" placeholder="https://images.how-about-breakfast.com/images/1234.jpg"></textarea>
+      <label for="fVideo">영상 URL</label>
+      <input type="text" id="fVideo" placeholder="https://images.how-about-breakfast.com/images/1234.mp4">
+
       <label for="fTitle">제목</label>
       <input type="text" id="fTitle">
       <label for="fIntro">본문(intro)</label>
@@ -196,6 +206,10 @@
   var saveBtn = document.getElementById('saveBtn');
   var statusEl = document.getElementById('status');
 
+  var fMediaPreview = document.getElementById('fMediaPreview');
+  var fImage = document.getElementById('fImage');
+  var fGallery = document.getElementById('fGallery');
+  var fVideo = document.getElementById('fVideo');
   var fTitle = document.getElementById('fTitle');
   var fIntro = document.getElementById('fIntro');
   var fIngredients = document.getElementById('fIngredients');
@@ -255,7 +269,7 @@
   // no way to make it bigger. Auto-grow to fit content instead — this also
   // benefits desktop, which additionally keeps the CSS `resize: vertical`
   // handle for manual override.
-  var growTargets = [fIntro, fIngredients, fSteps, aIntro, aIngredients, aSteps, aImages];
+  var growTargets = [fIntro, fIngredients, fSteps, fGallery, aIntro, aIngredients, aSteps, aImages];
   function autoGrow(el) {
     el.style.height = 'auto';
     el.style.height = el.scrollHeight + 'px';
@@ -805,9 +819,35 @@
     });
   });
 
+  function renderMediaPreview(r) {
+    fMediaPreview.innerHTML = (typeof Shared !== 'undefined') ? Shared.galleryHTML(r) : '';
+    if (typeof Shared !== 'undefined') Shared.bindGallery(fMediaPreview, r);
+  }
+
+  // Re-render the preview from the form fields as they're typed, so the
+  // admin can check a fix (new image/video URL) before saving instead of
+  // saving blind and reloading the record to see if it worked.
+  function renderMediaPreviewFromForm() {
+    if (!current) return;
+    var gallery = fGallery.value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+    renderMediaPreview({
+      title: current.title,
+      image: fImage.value.trim() || null,
+      gallery: gallery.length ? gallery : null,
+      video: fVideo.value.trim() || null,
+    });
+  }
+  [fImage, fGallery, fVideo].forEach(function (el) {
+    el.addEventListener('input', renderMediaPreviewFromForm);
+  });
+
   function loadRecord(r) {
     current = r;
     editingTitle.textContent = (r.date || '') + ' — ' + (r.title || '');
+    renderMediaPreview(r);
+    fImage.value = r.image || '';
+    fGallery.value = (r.gallery || []).join('\n');
+    fVideo.value = r.video || '';
     fTitle.value = r.title || '';
     fIntro.value = r.intro || '';
     fIngredients.value = r.ingredients || '';
@@ -824,7 +864,11 @@
     if (!current) return;
 
     var newHashtags = fHashtags.value.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    var newGallery = fGallery.value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
     var candidates = {
+      image: fImage.value.trim(),
+      gallery: newGallery,
+      video: fVideo.value.trim(),
       title: fTitle.value,
       intro: fIntro.value,
       ingredients: fIngredients.value,
@@ -832,10 +876,11 @@
       hashtags: newHashtags,
       credit: fCredit.value,
     };
+    var LIST_FIELDS = { hashtags: true, gallery: true };
 
     var fields = {};
     Object.keys(candidates).forEach(function (key) {
-      var oldVal = key === 'hashtags' ? (current.hashtags || []) : (current[key] || '');
+      var oldVal = LIST_FIELDS[key] ? (current[key] || []) : (current[key] || '');
       var newVal = candidates[key];
       if (JSON.stringify(newVal) !== JSON.stringify(oldVal)) {
         fields[key] = newVal;
