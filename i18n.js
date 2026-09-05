@@ -35,6 +35,7 @@ var I18N = (function () {
       footer_privacy: '개인정보처리방침',
       medal_label: '이달의 조식',
       footer_vote: '명예의 전당',
+      footer_shuffle: '오늘 뭐 먹지?',
 
       vote_title: '올해의 조식에 투표하세요!',
       vote_subtitle: '올해의 조식 가운데 가장 먹음직스러운 조식을 하나만 골라주세요.',
@@ -116,6 +117,7 @@ var I18N = (function () {
       footer_privacy: 'Privacy Policy',
       medal_label: 'Breakfast of the Month',
       footer_vote: 'Hall of Fame',
+      footer_shuffle: 'What should I eat today?',
 
       vote_title: "Vote for This Year's Breakfast!",
       vote_subtitle: "Pick just one favorite from this year's breakfasts.",

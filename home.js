@@ -59,6 +59,7 @@
       renderAll(all);
       bindShuffle(all);
       bindLangToggle(all);
+      scrollToShuffleIfLinked();
     });
   }).catch(function (err) {
     document.getElementById('ledgerWrap').innerHTML =
@@ -523,6 +524,34 @@
         step++;
       }
       tick();
+    });
+  }
+
+  // Lets index.html#shuffleBtn (e.g. the footer's "오늘 뭐 먹지?" link, or a
+  // shared link) land on the shuffle section instead of the page top. Native
+  // browser fragment-scroll fires before renderAll() has finished injecting
+  // the on-this-day/ledger/collections content above this section, so it
+  // lands in the wrong place once that content pushes the page down - this
+  // re-scrolls once everything's actually rendered.
+  function scrollToShuffleIfLinked() {
+    if (location.hash !== '#shuffleBtn') return;
+    var btn = document.getElementById('shuffleBtn');
+    if (!btn) return;
+    (btn.closest('section') || btn).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // Same-page click (already on index.html) never fires a load event, so
+  // scrollToShuffleIfLinked()'s one-shot call above wouldn't run again -
+  // handle that case directly instead of relying on the browser's own
+  // (instant, un-smooth) fragment jump.
+  var footerShuffleLink = document.getElementById('footerShuffleLink');
+  if (footerShuffleLink) {
+    footerShuffleLink.addEventListener('click', function (e) {
+      var btn = document.getElementById('shuffleBtn');
+      if (!btn) return;
+      e.preventDefault();
+      history.replaceState(null, '', '#shuffleBtn');
+      (btn.closest('section') || btn).scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }
 })();
