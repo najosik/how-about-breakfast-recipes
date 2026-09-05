@@ -25280,7 +25280,7 @@
   "weather": "28도/대체로 맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "완두콩",
+  "title": "타이 칠리페이스트에 버무린 완두콩 토스트  ",
   "credit": "@emilyontoast",
   "hashtags": [
    "레시피",
@@ -25289,9 +25289,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20240907 #조식다이어리 1172, 28도/대체로 맑음, 20분/운동(M) \n남 프릭 파오, 타이 칠리 페이스트다. 전에 타이 쿠킹 스쿨에서 똠 얌 꿍 만들 때 사용했었다. 고추장 보다는 달콤 짭찔해서 적당히 사용하면 꽤 중독성 있는 맛을 낸다. 원래 레시피엔 (중국식) 크리스피 칠리 페이스트를 사용했는데 나는 남 프릭 파오에 몰표다. \n타이 칠리 페이스트에 버무린 완두콩과 사워도우\n사워도우, 완두콩, 타이 칠리 페이스트가 필요하다. 계란도 한 개~\n팬 달구고 사워도우에 올리브오일 분사해서 앞뒤로 굽는다. \n냉동 완두콩 해동해서 팬에 살짝 굽는다. 접시에 담고 타이 칠리 페이스트 넣고 섞는다. \n써니 사이드업으로 계란 굽는다. \n사워도우에 완두콩, 계란 프라이 얹고 소금소금, 후추후추",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240907 #조식다이어리 1172, 28도/대체로 맑음, 20분/운동(M) \n남 프릭 파오, 타이 칠리 페이스트다. 전에 타이 쿠킹 스쿨에서 똠 얌 꿍 만들 때 사용했었다. 고추장 보다는 달콤 짭찔해서 적당히 사용하면 꽤 중독성 있는 맛을 낸다. 원래 레시피엔 (중국식) 크리스피 칠리 페이스트를 사용했는데 나는 남 프릭 파오에 몰표다. \n타이 칠리 페이스트에 버무린 완두콩과 사워도우\n사워도우, 완두콩, 타이 칠리 페이스트가 필요하다. 계란도 한 개~\n\n팬 달구고 사워도우에 올리브오일 분사해서 앞뒤로 굽는다. \n냉동 완두콩 해동해서 팬에 살짝 굽는다. 접시에 담고 타이 칠리 페이스트 넣고 섞는다. \n써니 사이드업으로 계란 굽는다. \n사워도우에 완두콩, 계란 프라이 얹고 소금소금, 후추후추",
+  "ingredients": "- 사워도우 1장\n- 완두콩 1/2컵\n- 타이 칠리페이스트 1t\n- 계란 1개\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 사워도우에 올리브오일 바르고 팬에서 바삭하게 굽는다. \n2. 1의 팬에 완두콩도 굽고 타이 칠리페이스트 넣고 골고루 섞는다. \n3. 써니 사이드업으로 계란 굽는다. \n4. 접시에 1의 사워도우와 2의 완두콩, 3의 계란 프라이 얹는다. 소금, 후추 조금 뿌린다. ",
   "raw": "20240907 #조식다이어리 1172, 28도/대체로 맑음, 20분/운동(M) \n\n남 프릭 파오, 타이 칠리 페이스트다. 전에 타이 쿠킹 스쿨에서 똠 얌 꿍 만들 때 사용했었다. 고추장 보다는 달콤 짭찔해서 적당히 사용하면 꽤 중독성 있는 맛을 낸다. 원래 레시피엔 (중국식) 크리스피 칠리 페이스트를 사용했는데 나는 남 프릭 파오에 몰표다. \n\n타이 칠리 페이스트에 버무린 완두콩과 사워도우\n\n사워도우, 완두콩, 타이 칠리 페이스트가 필요하다. 계란도 한 개~\n\n팬 달구고 사워도우에 올리브오일 분사해서 앞뒤로 굽는다. \n냉동 완두콩 해동해서 팬에 살짝 굽는다. 접시에 담고 타이 칠리 페이스트 넣고 섞는다. \n써니 사이드업으로 계란 굽는다. \n사워도우에 완두콩, 계란 프라이 얹고 소금소금, 후추후추  \n\nInspired by @emilyontoast\n\n#조식 #레시피 #미라클모닝 #완두콩",
   "image": "https://images.how-about-breakfast.com/images/1172.jpg",
   "gallery": [
@@ -25303,13 +25303,6 @@
    "https://images.how-about-breakfast.com/images/1172_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1172.mp4",
-  "_en": {
-   "hash": "d3e15e214fec193b6fe98472c54c080889c5f40d7ccd64cf3be0f6307ee02609",
-   "title": "Green Peas",
-   "intro": "20240907 #breakfastdiary 1172, 28°C/mostly clear, 20min/exercise(M)\nNam prik pao, Thai chili paste. I used it before at a Thai cooking school when making tom yum goong. It's sweeter and saltier than gochujang, and used in moderation it gives a pretty addictive flavor. The original recipe calls for (Chinese-style) crispy chili paste, but I'm all about nam prik pao.\nGreen peas and sourdough tossed in Thai chili paste\nYou need sourdough, green peas, Thai chili paste. And one egg too~\nHeat a pan, spray olive oil on the sourdough, and toast on both sides.\nThaw frozen green peas and lightly pan-fry. Put in a bowl, add Thai chili paste, and mix.\nFry an egg sunny side up.\nTop the sourdough with the peas and fried egg, salt and pepper",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "완두콩"
  },
  {
