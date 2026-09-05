@@ -51202,7 +51202,7 @@
   "weather": "17도/소나기",
   "failed": false,
   "calories": null,
-  "title": "엘로떼 기상청 옥수수",
+  "title": "엘로떼(멕시코식 옥수수 구이)",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51224,9 +51224,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220906, #조식다이어리 535, 17도/소나기\n토치로 옥수수를 바삭하게 굽는다. 마요네즈를 바르고, 라면스프, 파마산 치즈, 파슬리 가루를 약간, #엘로떼\n\"지금 보여드리는 이 숫자들 하나하나에 많은 사람들의 슬픔과 회한이 담겨 있습니다. 이 슬픔과 회한이 다시 찾아오지 않도록 철저히 대비해 주시길 부탁드리고 부디 안전한 곳에 머무시길 부탁드리겠습니다.\"\n2002년 사망 209명, 실종 37명, 태풍 루사, 2003년 사망 119명, 실종 12명, 태풍 매미를 언급하는 #기상청 브리핑엔 진심이 느껴졌다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220906, #조식다이어리 535, 17도/소나기\n토치로 옥수수를 바삭하게 굽는다. 마요네즈를 바르고, 라면스프, 파마산 치즈, 파슬리 가루를 약간, #엘로떼\n\n\"지금 보여드리는 이 숫자들 하나하나에 많은 사람들의 슬픔과 회한이 담겨 있습니다. 이 슬픔과 회한이 다시 찾아오지 않도록 철저히 대비해 주시길 부탁드리고 부디 안전한 곳에 머무시길 부탁드리겠습니다.\"\n2002년 사망 209명, 실종 37명, 태풍 루사, 2003년 사망 119명, 실종 12명, 태풍 매미를 언급하는 #기상청 브리핑엔 진심이 느껴졌다.",
+  "ingredients": "- 찰옥수수 1개(엘로떼 elote 는 초당옥수수 같은 좀 더 단맛이 많이 나는 품종이 잘 어울린다.)\n- 마요네즈 1T\n- 파우더(라면수프, 파마산치즈, 파슬리 파우더를 같은 비율로 섞는다.)",
+  "steps": "1. 강원도 찰옥수수는 반으로 자른 뒤 토치로 겉을 굽는다. \n2. 라면수프, 파마산치즈, 파슬리 파우더를 같은 비율로 섞는다. \n3. 1의 찰옥수수에 마요네즈 골고루 바르고 2의 파우더를 골고루 뿌린다.  ",
   "raw": "20220906, #조식다이어리 535, 17도/소나기\n\n토치로 옥수수를 바삭하게 굽는다. 마요네즈를 바르고, 라면스프, 파마산 치즈, 파슬리 가루를 약간, #엘로떼\n\n\"지금 보여드리는 이 숫자들 하나하나에 많은 사람들의 슬픔과 회한이 담겨 있습니다. 이 슬픔과 회한이 다시 찾아오지 않도록 철저히 대비해 주시길 부탁드리고 부디 안전한 곳에 머무시길 부탁드리겠습니다.\"\n\n2002년 사망 209명, 실종 37명, 태풍 루사, 2003년 사망 119명, 실종 12명, 태풍 매미를 언급하는 #기상청 브리핑엔 진심이 느껴졌다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #옥수수 #파마산치즈 #breakfast #salad #corn #parmigianoreggiano #elote",
   "image": "https://images.how-about-breakfast.com/images/535.jpg",
   "gallery": [
@@ -51234,13 +51234,6 @@
    "https://images.how-about-breakfast.com/images/535_2.jpg",
    "https://images.how-about-breakfast.com/images/535_3.jpg"
   ],
-  "_en": {
-   "hash": "af4ed509081e081e9455b2eb92f6c46301d50788352767fac9bbd777f5c882a5",
-   "title": "Elote (Mexican Street Corn)",
-   "intro": "20220906 #breakfastdiary 535, 17°C/showers\nChar the corn crisp with a torch. Brush on mayonnaise, then add a bit of ramen seasoning powder, parmesan cheese, and parsley flakes. #elote\n\"Every single number I'm showing you now carries the grief and regret of so many people. Please prepare thoroughly so this grief and regret never comes again, and please stay somewhere safe.\"\nThe #KoreaMeteorologicalAdministration's briefing, mentioning Typhoon Rusa in 2002 (209 dead, 37 missing) and Typhoon Maemi in 2003 (119 dead, 12 missing), felt genuinely heartfelt.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "엘로떼-기상청-옥수수"
  },
  {
