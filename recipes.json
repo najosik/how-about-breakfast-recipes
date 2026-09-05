@@ -25326,7 +25326,7 @@
   "weather": "24도/부분적으로 흐림, 30분/운동(S, M)",
   "failed": false,
   "calories": null,
-  "title": "사과",
+  "title": "피넛버터링 사과",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25336,8 +25336,8 @@
    "조식다이어리"
   ],
   "intro": "20240906 #조식다이어리 1171, 24도/부분적으로 흐림, 30분/운동(S, M) \n최근 건강식으로 각광 받고 있는 땅콩버터와 피칸 곁들인 #사과\n사과 한 개, 땅콩버터, 피칸이 필요하다. 민트는 있으면 좋은데, 없으면 허전~😃\n사과 썰고 씨 파내고 땅콩버터(스키피🙅100% 땅콩버터) 발라서 다진 피칸 얹으면 끝~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 사과 1개\n- 피넛버터 2T\n- 피칸 1/2컵\n- 레몬주스 1T\n- 민트",
+  "steps": "1. 사과는 껍질째 동그랗게 썬 뒤 씨를 파낸다. \n2. 사과를 접시에 얹고 레몬주스를 조금 바른다. (풍미에도 좋고 갈변도 막을 수 있다.)\n3. 2의 사과에 피넛버터를 바른 뒤 다진 피칸을 얹는다. 민트 있으면 몇 장 얹는다. ",
   "raw": "20240906 #조식다이어리 1171, 24도/부분적으로 흐림, 30분/운동(S, M) \n\n최근 건강식으로 각광 받고 있는 땅콩버터와 피칸 곁들인 #사과\n\n사과 한 개, 땅콩버터, 피칸이 필요하다. 민트는 있으면 좋은데, 없으면 허전~😃\n\n사과 썰고 씨 파내고 땅콩버터(스키피🙅100% 땅콩버터) 발라서 다진 피칸 얹으면 끝~\n\n#조식 #레시피 #미라클모닝 #사과",
   "image": "https://images.how-about-breakfast.com/images/1171.jpg",
   "gallery": [
@@ -25347,13 +25347,6 @@
    "https://images.how-about-breakfast.com/images/1171_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1171.mp4",
-  "_en": {
-   "hash": "feebc3f67c15b2c7f86412b9b3b52d61b0bd24720d227656f79633941748cdc4",
-   "title": "Apple",
-   "intro": "20240906 #breakfastdiary 1171, 24°C/partly cloudy, 30min/exercise(S, M)\n#Apple with peanut butter and pecans, a healthy food trending lately\nYou need one apple, peanut butter, and pecans. Mint is nice to have, but it feels a bit bare without it~😃\nSlice the apple, remove the core, spread peanut butter (Skippy 🙅 — 100% peanut butter only) and top with chopped pecans, done~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "사과"
  },
  {
