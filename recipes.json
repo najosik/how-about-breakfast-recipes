@@ -1,5 +1,45 @@
 [
  {
+  "date": "2026-09-04",
+  "date_raw": "20260904",
+  "diary_no": 1853,
+  "weather": "21도/맑음",
+  "failed": false,
+  "calories": 400,
+  "title": "새송이버섯 꼬치 덮밥",
+  "credit": "@gsb_tem",
+  "hashtags": [
+   "레시피",
+   "새송이버섯",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20260904 #조식다이어리 1825, 21도/맑음\n딱 2개 남은 새송이버섯을 두고 며칠 간 고민한 끝에 새송이버섯 꼬치에 이르렀다. 칼 대신 그레이터로 썰면 좀 더 얇고 그래서 좀 더 바삭한 새송이버섯 꼬치를 먹을 수 있다. 물론 굽는 온도를 잘 맞춰야 한다. \n비주얼은 땅콩소스에 찍어 먹어야 할 동남아 스타일 사테 Satay 어쨌든 약 400kcal 새송이버섯 꼬치 덮밥",
+  "ingredients": "- 새송이버섯 2개\n- 밥. 1/2공기\n- 어린잎채소 1컵\n- 소스(올리브오일 1T, 간장 2T, 굴소스 1T, 토마토케첩 1T, 알룰로스 1T, 카레파우더 0.5T)\n- 참깨 1t\n- 라임 1조각",
+  "steps": "1. 새송이버섯의 갓은 잘라내고 대를 그레이터로 얇게 썬다. (돌려깎이 하듯 돌려가며 썰면 잘 썰린다.)\n2. 끓는 물에 1의 새송이버섯, 소금 한 꼬집 넣고 2~3분 데친 후 찬물에 헹군 뒤 물기를 짠다. \n3. 산적꼬치에 2의 새송이버섯을 가지런히 혹은 마구잡이로 꽂는다. \n4. 3의 새송이버섯에 소스를 바른 후 에어프라이어에 15분 굽는다. (중간에 한 번 뒤집는다.)\n5. 밥 위에 어린잎채소, 그 위에 새송이버섯 구이 얹고 참깨, 라임 얹는다.",
+  "raw": "20260904 #조식다이어리 1825, 21도/맑음\n\n딱 2개 남은 새송이버섯을 두고 며칠 간 고민한 끝에 새송이버섯 꼬치에 이르렀다. 칼 대신 그레이터로 썰면 좀 더 얇고 그래서 좀 더 바삭한 새송이버섯 꼬치를 먹을 수 있다. 물론 굽는 온도를 잘 맞춰야 한다. \n\n비주얼은 땅콩소스에 찍어 먹어야 할 동남아 스타일 사테 Satay 어쨌든 약 400kcal 새송이버섯 꼬치 덮밥\n\n👉재료\n- 새송이버섯 2개\n- 밥. 1/2공기\n- 어린잎채소 1컵\n- 소스(올리브오일 1T, 간장 2T, 굴소스 1T, 토마토케첩 1T, 알룰로스 1T, 카레파우더 0.5T)\n- 참깨 1t\n- 라임 1조각\n\n👉조리\n1. 새송이버섯의 갓은 잘라내고 대를 그레이터로 얇게 썬다. (돌려깎이 하듯 돌려가며 썰면 잘 썰린다.)\n2. 끓는 물에 1의 새송이버섯, 소금 한 꼬집 넣고 2~3분 데친 후 찬물에 헹군 뒤 물기를 짠다. \n3. 산적꼬치에 2의 새송이버섯을 가지런히 혹은 마구잡이로 꽂는다. \n4. 3의 새송이버섯에 소스를 바른 후 에어프라이어에 15분 굽는다. (중간에 한 번 뒤집는다.)\n5. 밥 위에 어린잎채소, 그 위에 새송이버섯 구이 얹고 참깨, 라임 얹는다. \n\nInspired by @gsb_tem\n\n#조식 #레시피 #새송이버섯",
+  "permalink": "https://www.instagram.com/p/Dc4ywMVEyXs/",
+  "image": "https://images.how-about-breakfast.com/images/1853.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1853.jpg",
+   "https://images.how-about-breakfast.com/images/1853_2.jpg",
+   "https://images.how-about-breakfast.com/images/1853_3.jpg",
+   "https://images.how-about-breakfast.com/images/1853_4.jpg",
+   "https://images.how-about-breakfast.com/images/1853_5.jpg",
+   "https://images.how-about-breakfast.com/images/1853_6.jpg",
+   "https://images.how-about-breakfast.com/images/1853_7.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1853.mp4",
+  "_en": {
+   "hash": "ff5db42d39ccbdab65002517a17f685c51301185246e2872acf3d3a4d1cf2e5a",
+   "title": "King Oyster Mushroom Skewer Rice Bowl",
+   "intro": "20260904 #breakfastdiary 1825, 21°C/clear\nAfter days of wondering what to do with just 2 remaining king oyster mushrooms, I landed on king oyster mushroom skewers. Slicing them with a grater instead of a knife gives thinner, and so crispier, mushroom skewers. Of course, you have to get the grilling temperature just right.\nVisually it looks like Southeast Asian-style satay that should be dipped in peanut sauce — anyway, about 400kcal King Oyster Mushroom Skewer Rice Bowl",
+   "ingredients": "- 2 king oyster mushrooms\n- Rice: 1/2 bowl\n- 1 cup baby greens\n- Sauce (1T olive oil, 2T soy sauce, 1T oyster sauce, 1T tomato ketchup, 1T allulose, 0.5T curry powder)\n- 1t sesame seeds\n- 1 wedge lime",
+   "steps": "1. Cut off the caps of the king oyster mushrooms and slice the stems thinly with a grater. (Rotating as you slice, like peeling around, makes it easier.)\n2. Blanch the mushrooms from step 1 in boiling water with a pinch of salt for 2-3 minutes, rinse in cold water, and squeeze out the moisture.\n3. Thread the mushrooms from step 2 onto skewers, neatly or however you like.\n4. Brush the sauce onto the mushrooms from step 3 and air-fry for 15 minutes. (Flip once halfway through.)\n5. Top rice with baby greens, then the grilled mushroom skewers, and finish with sesame seeds and lime."
+  },
+  "page_id": "새송이버섯-꼬치-덮밥"
+ },
+ {
   "date": "2026-09-03",
   "date_raw": "20260903",
   "diary_no": 1852,
@@ -12560,7 +12600,7 @@
   "weather": "27도/이슬비",
   "failed": false,
   "calories": 277,
-  "title": "베리 아보카도 스무디 볼",
+  "title": "베리 아보카도 스무디볼",
   "credit": "@dyt.pelinkelleci",
   "hashtags": [
    "레시피",
@@ -12569,7 +12609,7 @@
    "조식다이어리"
   ],
   "intro": "20250906 #조식다이어리 1500, 27도/이슬비\n아침 식사를 거르는 것이 습관이 된 사람들에게 조식은 낯설고 부담스러운 의식처럼 느껴질 것이다. 그렇다면 마치 오랜 겨울잠에서 깨어난 몸이 서서히 활동을 시작하 듯, 아침 식사 역시 다음과 같이 단계적으로 시작해 볼 수 있을 것 같다. 1단계에선 액체류나 유동식을 권장한다. 밤새 휴식을 취한 소화기관 입장에서 갑작스러운 고형식보다 부드럽게 흐르는 액체에 더 친숙함을 느낀다. 과일과 채소가 조화롭게 어우러진 스무디 한 잔은 마치 아침 햇살처럼 우리 몸을 자연스럽게 깨워 줄 것이다. 오트밀에 따뜻한 우유를 부어 만든 조식은 평화로운 시골의 아침의 풍경을, 그릭 요거트의 새콤달콤함은 지중해의 활기를 우리 몸에 전해 줄 것이다. 한 그릇의 죽은 어머니의 손길처럼 따뜻하게 위장을 감싸 줄 것이다. 그저 뜨끈한 물 200ml에 미소 1t와 잘게 썬 두부 몇 조각만으로도 아침은 풍요로워질 것이다. \n(나조식, 매일 조식을 마시고 있습니다)\n냉동과일에 치아씨드, 햄프씨드, 그릭요거트를 더해서 질감과 포만감은 물론 영양까지 잡은, 1인분 약 277kcal 베리 아보카도 스무디 볼",
-  "ingredients": "냉동 바나나 1.5개, 딸기 1컵, 아보카도 1T, 그릭요거트 2T, 치아씨드와 햄프씨드 각 1T, (토핑) 냉동 바나나 0.5개, 블랙베리 1T, 피스타치오와 그래놀라 각 1T",
+  "ingredients": "- 냉동 바나나 1.5개\n- 딸기 1컵\n- 아보카도 1T\n- 그릭요거트 2T\n- 치아씨드와 햄프씨드 각 1T\n- (토핑) 냉동 바나나 0.5개, 블랙베리 1T, 피스타치오와 그래놀라 각 1T",
   "steps": "1. 블렌더에 얼려둔 바나나 1.5개, 냉동 딸기 1컵, 냉동 아보카도 1T, 그릭요거트 2T, 치아씨드 1T, 햄프씨드 1T 갈아서 걸쭉한 스무디를 만든다. \n2. 그릇에 담고 바나나, 블랙베리, 피스타치오, 그래놀라 얹는다.",
   "raw": "20250906 #조식다이어리 1500, 27도/이슬비\n\n아침 식사를 거르는 것이 습관이 된 사람들에게 조식은 낯설고 부담스러운 의식처럼 느껴질 것이다. 그렇다면 마치 오랜 겨울잠에서 깨어난 몸이 서서히 활동을 시작하 듯, 아침 식사 역시 다음과 같이 단계적으로 시작해 볼 수 있을 것 같다. 1단계에선 액체류나 유동식을 권장한다. 밤새 휴식을 취한 소화기관 입장에서 갑작스러운 고형식보다 부드럽게 흐르는 액체에 더 친숙함을 느낀다. 과일과 채소가 조화롭게 어우러진 스무디 한 잔은 마치 아침 햇살처럼 우리 몸을 자연스럽게 깨워 줄 것이다. 오트밀에 따뜻한 우유를 부어 만든 조식은 평화로운 시골의 아침의 풍경을, 그릭 요거트의 새콤달콤함은 지중해의 활기를 우리 몸에 전해 줄 것이다. 한 그릇의 죽은 어머니의 손길처럼 따뜻하게 위장을 감싸 줄 것이다. 그저 뜨끈한 물 200ml에 미소 1t와 잘게 썬 두부 몇 조각만으로도 아침은 풍요로워질 것이다. \n(나조식, 매일 조식을 마시고 있습니다)\n\n냉동과일에 치아씨드, 햄프씨드, 그릭요거트를 더해서 질감과 포만감은 물론 영양까지 잡은, 1인분 약 277kcal 베리 아보카도 스무디 볼\n\n👉 재료(2인분)\n냉동 바나나 1.5개, 딸기 1컵, 아보카도 1T, 그릭요거트 2T, 치아씨드와 햄프씨드 각 1T, (토핑) 냉동 바나나 0.5개, 블랙베리 1T, 피스타치오와 그래놀라 각 1T\n\n👉 조리\n1. 블렌더에 얼려둔 바나나 1.5개, 냉동 딸기 1컵, 냉동 아보카도 1T, 그릭요거트 2T, 치아씨드 1T, 햄프씨드 1T 갈아서 걸쭉한 스무디를 만든다. \n2. 그릇에 담고 바나나, 블랙베리, 피스타치오, 그래놀라 얹는다. \n\nInspired by @dyt.pelinkelleci \n\n#조식 #레시피 #스무디볼",
   "image": "https://images.how-about-breakfast.com/images/1500.jpg",
@@ -12579,11 +12619,11 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/1500.mp4",
   "_en": {
-   "hash": "2589a3714b3d684d58cc4ba19ca1ab4a043e7069318cb6b75cde7bc8fb32d8d1",
+   "hash": "5b6b2ed808a2b969ba87b77e012bcd319a6793ba29067c853ba85b275100d3cd",
    "title": "Berry Avocado Smoothie Bowl",
-   "intro": "20250906 #breakfastdiary day 1500, 27°C/drizzle\nFor people who've made a habit of skipping breakfast, breakfast can feel like an unfamiliar, burdensome ritual. If so, just as a body waking from a long winter's sleep gradually starts moving again, breakfast too might be approached in stages. Stage 1 recommends liquids or soft, flowing foods. For a digestive system that's been resting all night, a gentle, flowing liquid feels more familiar than sudden solid food. A smoothie with fruits and vegetables in harmony will wake the body naturally, like morning sunlight. Breakfast made by pouring warm milk over oatmeal will bring the peaceful scenery of a rural morning; the tangy-sweetness of Greek yogurt will bring the vitality of the Mediterranean. A bowl of porridge will wrap the stomach warmly, like a mother's touch. Even something as simple as 200ml of hot water with 1t miso and a few small pieces of tofu can make the morning feel abundant.\n(Najoshik, 'I've Been Drinking Breakfast Every Day')\nAdding chia seeds, hemp seeds, and Greek yogurt to frozen fruit for texture, fullness, and nutrition all at once — approx. 277kcal per serving berry avocado smoothie bowl",
-   "ingredients": "1.5 frozen bananas, 1 cup strawberries, 1T avocado, 2T Greek yogurt, 1T each chia seeds and hemp seeds, (toppings) 0.5 frozen banana, 1T blackberries, 1T each pistachios and granola",
-   "steps": "1. In a blender, blend 1.5 frozen bananas, 1 cup frozen strawberries, 1T frozen avocado, 2T Greek yogurt, 1T chia seeds, and 1T hemp seeds into a thick smoothie.\n2. Pour into a bowl and top with banana, blackberries, pistachios, and granola."
+   "intro": "20250906 #breakfastdiary 1500, 27°C/drizzle\nFor people who've made a habit of skipping breakfast, breakfast can feel like an unfamiliar, burdensome ritual. If so, maybe breakfast can be eased into in stages, the way a body waking from a long winter's sleep gradually starts moving again. Stage one calls for liquids or fluid foods. To a digestive system that's been resting all night, a gently flowing liquid feels more familiar than a sudden solid meal. A smoothie where fruits and vegetables come together in harmony will wake the body naturally, like morning sunlight. Oatmeal made with warm milk brings the scenery of a peaceful countryside morning, while the sweet-and-tart tang of Greek yogurt carries the Mediterranean's energy into our body. A bowl of porridge will wrap the stomach in warmth, like a mother's touch. Even just 200ml of hot water with 1t of miso and a few small pieces of chopped tofu can make a morning feel abundant.\n(Breakfast-me — I drink a breakfast every single day)\nFrozen fruit with chia seeds, hemp seeds, and Greek yogurt added for texture, fullness, and nutrition all at once — about 277kcal per serving, Berry Avocado Smoothie Bowl",
+   "ingredients": "- 1.5 frozen bananas\n- 1 cup strawberries\n- 1T avocado\n- 2T Greek yogurt\n- 1T each chia seeds and hemp seeds\n- (Topping) 0.5 frozen banana, 1T blackberries, 1T each pistachios and granola",
+   "steps": "1. In a blender, combine 1.5 frozen bananas, 1 cup frozen strawberries, 1T frozen avocado, 2T Greek yogurt, 1T chia seeds, and 1T hemp seeds, and blend into a thick smoothie.\n2. Pour into a bowl and top with banana, blackberries, pistachios, and granola."
   },
   "page_id": "베리-아보카도-스무디-볼"
  },
@@ -12602,9 +12642,9 @@
    "조식다이어리",
    "청경채"
   ],
-  "intro": "20250905 #조식다이어리 1499, 24도/대체로 맑음, 20분/운동(M) \n늘 출근시간에 쫓겨 조식을 만들고, 기록하고, 먹다 보니 햇빛이 잘 드는 주방에서 느긋하게 조식을 즐기고 싶은 바램이 가득하다. 특히 사진은 빛의 영향을 많이 받기 때문에 같은 시간 같은 조식이라도 날씨와 계절에 따라 지옥에서 온 최후의 조식으로 보일 때도 있고 어머니의 손 끝에서 피어난 따뜻한 위로의 한 그릇으로 보이기도 한다. \n(나조식, 렘브란트 조명이 부럽진 않습니다만)\n간만에 식탁 위에 비치는 햇빛이 참 좋았다. 그럴만한 계절이다. \n9.23.이 추분이니, 이제 점차 밤이 길어질테고 이런 햇빛에 기대어 조식을 즐길 수 있는 날도 그리 많이 남진 않은 것 같다. \n시금치 대신 청경채를 넣은 1인분 310kcal 청경채 에그 또띠아 베이크",
-  "ingredients": "또띠아 1장, 계란 3개, 리코타치즈 2T, 청경채 적당히, 모짜렐라치즈 2T, 소금, 후추, 올리브오일",
-  "steps": "1. 오븐용 그릇에 또띠아 깔고 계란 3개, 소금, 후추 조금, 리코타치즈, 청경채, 모짜렐라치즈 넣고 올리브오일 조금 두른다. \n2. 180도 오븐에 20분 굽는다. \n\n한김 식힌 다음 스리라차 혹은 케첩 곁들여 먹는다.",
+  "intro": "20250905 #조식다이어리 1499, 24도/대체로 맑음, 20분/운동(M) \n늘 출근시간에 쫓겨 조식을 만들고, 기록하고, 먹다 보니 햇빛이 잘 드는 주방에서 느긋하게 조식을 즐기고 싶은 바램이 가득하다. 특히 사진은 빛의 영향을 많이 받기 때문에 같은 시간 같은 조식이라도 날씨와 계절에 따라 지옥에서 온 최후의 조식으로 보일 때도 있고 어머니의 손 끝에서 피어난 따뜻한 위로의 한 그릇으로 보이기도 한다. \n(나조식, 렘브란트 조명이 부럽진 않습니다만)\n\n간만에 식탁 위에 비치는 햇빛이 참 좋았다. 그럴만한 계절이다. \n9.23.이 추분이니, 이제 점차 밤이 길어질테고 이런 햇빛에 기대어 조식을 즐길 수 있는 날도 그리 많이 남진 않은 것 같다. \n시금치 대신 청경채를 넣은 1인분 310kcal 청경채 에그 또띠아 베이크",
+  "ingredients": "- 또띠아 1장\n- 계란 3개 \n- 리코타치즈 2T\n- 청경채 적당히 \n- 모짜렐라치즈 2T\n- 소금\n- 후추\n- 올리브오일",
+  "steps": "1. 오븐용 그릇에 또띠아 깔고 계란 3개, 소금과 후추 조금, 리코타치즈, 청경채, 모짜렐라치즈 넣고 올리브오일 조금 두른다. \n2. 180도 오븐에 20분 굽는다. \n3. 한김 식힌 다음 스리라차 혹은 케첩 곁들여 먹는다.",
   "raw": "20250905 #조식다이어리 1499, 24도/대체로 맑음, 20분/운동(M) \n\n늘 출근시간에 쫓겨 조식을 만들고, 기록하고, 먹다 보니 햇빛이 잘 드는 주방에서 느긋하게 조식을 즐기고 싶은 바램이 가득하다. 특히 사진은 빛의 영향을 많이 받기 때문에 같은 시간 같은 조식이라도 날씨와 계절에 따라 지옥에서 온 최후의 조식으로 보일 때도 있고 어머니의 손 끝에서 피어난 따뜻한 위로의 한 그릇으로 보이기도 한다. \n(나조식, 렘브란트 조명이 부럽진 않습니다만)\n\n간만에 식탁 위에 비치는 햇빛이 참 좋았다. 그럴만한 계절이다. \n9.23.이 추분이니, 이제 점차 밤이 길어질테고 이런 햇빛에 기대어 조식을 즐길 수 있는 날도 그리 많이 남진 않은 것 같다. \n\n시금치 대신 청경채를 넣은 1인분 310kcal 청경채 에그 또띠아 베이크\n\n👉 재료(2인분)\n또띠아 1장, 계란 3개, 리코타치즈 2T, 청경채 적당히, 모짜렐라치즈 2T, 소금, 후추, 올리브오일\n\n👉 조리\n1. 오븐용 그릇에 또띠아 깔고 계란 3개, 소금, 후추 조금, 리코타치즈, 청경채, 모짜렐라치즈 넣고 올리브오일 조금 두른다. \n2. 180도 오븐에 20분 굽는다. \n\n한김 식힌 다음 스리라차 혹은 케첩 곁들여 먹는다. \n\nInspired by @fat.burning.recipes\n\n#조식 #레시피 #청경채",
   "image": "https://images.how-about-breakfast.com/images/1499.jpg",
   "gallery": [
@@ -12616,11 +12656,11 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/1499.mp4",
   "_en": {
-   "hash": "4bfdda2c93e99e7bca5348facc1a0244c32ec69e2b1e00b4187e777f6880515a",
+   "hash": "39c92aa58375f5ecc833e816795be07e809429cbd30e25e87518dec28c40366a",
    "title": "Bok Choy Egg Tortilla Bake",
-   "intro": "20250905 #breakfastdiary 1499, 24°C/mostly clear, 20 min/workout(M) \nAlways racing the clock before work — making breakfast, photographing it, eating it — so I have this persistent wish to actually enjoy a leisurely breakfast in a sunlit kitchen someday. Photos especially depend so much on light, that the same breakfast at the same time can look like the last breakfast served from hell, or like a warm bowl of comfort straight from your mother's hands, depending on the weather and season. \n(My breakfast diary — not that I'm jealous of Rembrandt lighting or anything)\nIt had been a while since I got such nice sunlight streaming onto the table. It's that kind of season now. \nSeptember 23rd is the autumn equinox, so the nights will start getting longer from here, and I figure there aren't many days left where I can lean on light like this to enjoy breakfast. \nA 310kcal (per serving) bok choy egg tortilla bake, made with bok choy instead of spinach",
-   "ingredients": "1 tortilla, 3 eggs, 2T ricotta cheese, a good handful of bok choy, 2T mozzarella cheese, salt, pepper, olive oil",
-   "steps": "1. Lay the tortilla in an oven-safe dish, crack in the 3 eggs, add a bit of salt and pepper, the ricotta, bok choy, and mozzarella, then drizzle with a little olive oil. \n2. Bake at 180°C for 20 minutes. \n\nLet it cool a bit, then eat with sriracha or ketchup on the side."
+   "intro": "20250905 #breakfastdiary 1499, 24°C/mostly clear, 20min/exercise(M)\nAlways rushed by my commute, making, recording, and eating breakfast, I find myself longing to enjoy breakfast leisurely in a sun-drenched kitchen. Photos especially are so affected by light that the same breakfast at the same hour can look like the final breakfast from hell in one season's weather, and like a bowl of warm comfort born from a mother's hands in another.\n(Breakfast-me — not that I'm jealous of Rembrandt lighting or anything)\n\nIt had been a while, and the sunlight falling across the table felt really good. It's that kind of season.\nSince the autumnal equinox is on 9/23, the nights will only keep getting longer from here, and it seems like there aren't that many days left to enjoy breakfast leaning into light like this.\nA 310kcal, single-serving Bok Choy Egg Tortilla Bake made with bok choy in place of spinach",
+   "ingredients": "- 1 tortilla\n- 3 eggs\n- 2T ricotta cheese\n- Bok choy, as needed\n- 2T mozzarella cheese\n- Salt\n- Pepper\n- Olive oil",
+   "steps": "1. Lay the tortilla in an oven-safe dish, add 3 eggs, a little salt and pepper, ricotta cheese, bok choy, and mozzarella cheese, and drizzle with a little olive oil.\n2. Bake in a 180°C oven for 20 minutes.\n3. Let cool slightly, then enjoy with sriracha or ketchup."
   },
   "page_id": "청경채-에그-또띠아-베이크"
  },
@@ -25300,7 +25340,7 @@
   "weather": "24도/부분적으로 흐림, 30분/운동(S, M)",
   "failed": false,
   "calories": null,
-  "title": "사과",
+  "title": "피넛버터링 사과",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25310,8 +25350,8 @@
    "조식다이어리"
   ],
   "intro": "20240906 #조식다이어리 1171, 24도/부분적으로 흐림, 30분/운동(S, M) \n최근 건강식으로 각광 받고 있는 땅콩버터와 피칸 곁들인 #사과\n사과 한 개, 땅콩버터, 피칸이 필요하다. 민트는 있으면 좋은데, 없으면 허전~😃\n사과 썰고 씨 파내고 땅콩버터(스키피🙅100% 땅콩버터) 발라서 다진 피칸 얹으면 끝~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 사과 1개\n- 피넛버터 2T\n- 피칸 1/2컵\n- 레몬주스 1T\n- 민트",
+  "steps": "1. 사과는 껍질째 동그랗게 썬 뒤 씨를 파낸다. \n2. 사과를 접시에 얹고 레몬주스를 조금 바른다. (풍미에도 좋고 갈변도 막을 수 있다.)\n3. 2의 사과에 피넛버터를 바른 뒤 다진 피칸을 얹는다. 민트 있으면 몇 장 얹는다. ",
   "raw": "20240906 #조식다이어리 1171, 24도/부분적으로 흐림, 30분/운동(S, M) \n\n최근 건강식으로 각광 받고 있는 땅콩버터와 피칸 곁들인 #사과\n\n사과 한 개, 땅콩버터, 피칸이 필요하다. 민트는 있으면 좋은데, 없으면 허전~😃\n\n사과 썰고 씨 파내고 땅콩버터(스키피🙅100% 땅콩버터) 발라서 다진 피칸 얹으면 끝~\n\n#조식 #레시피 #미라클모닝 #사과",
   "image": "https://images.how-about-breakfast.com/images/1171.jpg",
   "gallery": [
@@ -25322,11 +25362,11 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/1171.mp4",
   "_en": {
-   "hash": "feebc3f67c15b2c7f86412b9b3b52d61b0bd24720d227656f79633941748cdc4",
-   "title": "Apple",
-   "intro": "20240906 #breakfastdiary 1171, 24°C/partly cloudy, 30min/exercise(S, M)\n#Apple with peanut butter and pecans, a healthy food trending lately\nYou need one apple, peanut butter, and pecans. Mint is nice to have, but it feels a bit bare without it~😃\nSlice the apple, remove the core, spread peanut butter (Skippy 🙅 — 100% peanut butter only) and top with chopped pecans, done~",
-   "ingredients": "",
-   "steps": ""
+   "hash": "878bd76b034cdf518d05cadcbfef60777e9639d200e513c35d6410d365c6808e",
+   "title": "Peanut Butter Apple",
+   "intro": "20240906 #breakfastdiary 1171, 24°C/partly cloudy, 30min/exercise(S, M)\nApple with peanut butter and pecans, a combo that's been getting attention lately as a health food\nYou need one apple, peanut butter, and pecans. Mint is nice to have, but if you don't, it feels a little empty~😃\nSlice the apple, core it, spread on peanut butter (Skippy 🙅 100% peanut butter), top with chopped pecans, and done~",
+   "ingredients": "- 1 apple\n- 2T peanut butter\n- 1/2 cup pecans\n- 1T lemon juice\n- Mint",
+   "steps": "1. Slice the apple into rounds with the skin on and core out the seeds.\n2. Plate the apple and brush on a little lemon juice. (Good for flavor, and it also prevents browning.)\n3. Spread peanut butter on the apple from step 2, then top with chopped pecans. Add a few mint leaves if you have them."
   },
   "page_id": "사과"
  },
@@ -25337,7 +25377,7 @@
   "weather": "25도/대체로 맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "홍감자샐러드 홍감자",
+  "title": "홍감자 샐러드",
   "credit": "@allurekorea",
   "hashtags": [
    "레시피",
@@ -25347,9 +25387,9 @@
    "홍감자",
    "홍감자샐러드"
   ],
-  "intro": "20240905 #조식다이어리 1170, 25도/대체로 맑음, 20분/운동(M) \n어제 신문에서 읽은 글, \n미국 최대 풍자 뉴스 사이트 ‘어니언’은 지난 8월16일 종이신문 발행을 재개해 화제를 모았다. (중략) 실제로 신문 구독의 기억이 없는 젊은이들에게 종이신문은 역설적으로 새로운 ‘뉴미디어’에 가깝다. 미국 고등학교에서는 한동안 사라졌던 종이 학보가 대거 부활하는 현상을 나타내고 있다. \n(서수민, 종이신문이 LP 음반처럼 다시 ‘힙’해지려면) \n신문이란 매체가 MZ들이 열광하는 힙한 매체가 되리라곤 생각하지 못했다. 오늘 조식, 홍감자샐러드. 네이밍은 평범하지만 감자도 힙하게 먹어보자. 혹시 아나? 대유행을 타게 될지도~\n홍감자가 필요한데 그냥 감자도 좋다. 조금 덜 포실포실할 뿐. 올리브페스토를 사용했는데 바질페스토도 좋다. 사워크림이나 요거트, 그릭요거트 혹은 부라타치즈나 리코타치즈 준비한다. 아, 올리브도. \n감자는 깨끗하게 씻어서 끓는 물에 껍질 채 삶는다. \n믹싱볼에 넣고 올리브페스토와 올리브 넣고 골고루 섞는다. \n접시에 담고 사워크림 하나 얹는다. \n-\n뉴진스의 수퍼내추럴. 무려 90년대 초에 유행했던 뉴잭스윙 쟝르의 이 곡은 새로운 것을 갈망하는 MZ들과 (한때 듀스에 열광했던 MZ들의 부모들인) 이른바 X세대까지, 두 마리 토끼를 잡아보겠는 야심찬 기획이구나 생각했다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240905 #조식다이어리 1170, 25도/대체로 맑음, 20분/운동(M) \n어제 신문에서 읽은 글, \n미국 최대 풍자 뉴스 사이트 ‘어니언’은 지난 8월16일 종이신문 발행을 재개해 화제를 모았다. (중략) 실제로 신문 구독의 기억이 없는 젊은이들에게 종이신문은 역설적으로 새로운 ‘뉴미디어’에 가깝다. 미국 고등학교에서는 한동안 사라졌던 종이 학보가 대거 부활하는 현상을 나타내고 있다. \n(서수민, 종이신문이 LP 음반처럼 다시 ‘힙’해지려면) \n\n신문이란 매체가 MZ들이 열광하는 힙한 매체가 되리라곤 생각하지 못했다. 오늘 조식, 홍감자샐러드. 네이밍은 평범하지만 감자도 힙하게 먹어보자. 혹시 아나? 대유행을 타게 될지도~\n\n홍감자가 필요한데 그냥 감자도 좋다. 조금 덜 포실포실할 뿐. 올리브페스토를 사용했는데 바질페스토도 좋다. 사워크림이나 요거트, 그릭요거트 혹은 부라타치즈나 리코타치즈 준비한다. 아, 올리브도. \n감자는 깨끗하게 씻어서 끓는 물에 껍질 채 삶는다. \n믹싱볼에 넣고 올리브페스토와 올리브 넣고 골고루 섞는다. \n접시에 담고 사워크림 하나 얹는다. \n\n뉴진스의 수퍼내추럴. 무려 90년대 초에 유행했던 뉴잭스윙 쟝르의 이 곡은 새로운 것을 갈망하는 MZ들과 (한때 듀스에 열광했던 MZ들의 부모들인) 이른바 X세대까지, 두 마리 토끼를 잡아보겠는 야심찬 기획이구나 생각했다.",
+  "ingredients": "- 홍감자 3개\n- 올리브 페스토 2T\n- 올리브 1/2컵\n- 사워크림 1T",
+  "steps": "1. 홍감자는 깨끗하게 씻은 후 먹기 좋은 크기로 썬 후 끓는 물에 넣고 껍질째 삶는다. \n2. 믹싱볼에 1의 홍감자를 넣고 올리브페스토 2T, 올리브 1/2컵 넣고 골고루 섞는다. \n3. 접시에 2의 홍감자, 올리브를 담고 사워크림 1T 얹는다. ",
   "raw": "20240905 #조식다이어리 1170, 25도/대체로 맑음, 20분/운동(M) \n\n어제 신문에서 읽은 글, \n\n미국 최대 풍자 뉴스 사이트 ‘어니언’은 지난 8월16일 종이신문 발행을 재개해 화제를 모았다. (중략) 실제로 신문 구독의 기억이 없는 젊은이들에게 종이신문은 역설적으로 새로운 ‘뉴미디어’에 가깝다. 미국 고등학교에서는 한동안 사라졌던 종이 학보가 대거 부활하는 현상을 나타내고 있다. \n(서수민, 종이신문이 LP 음반처럼 다시 ‘힙’해지려면) \n\n신문이란 매체가 MZ들이 열광하는 힙한 매체가 되리라곤 생각하지 못했다. 오늘 조식, 홍감자샐러드. 네이밍은 평범하지만 감자도 힙하게 먹어보자. 혹시 아나? 대유행을 타게 될지도~\n\n#홍감자샐러드\n\n홍감자가 필요한데 그냥 감자도 좋다. 조금 덜 포실포실할 뿐. 올리브페스토를 사용했는데 바질페스토도 좋다. 사워크림이나 요거트, 그릭요거트 혹은 부라타치즈나 리코타치즈 준비한다. 아, 올리브도. \n\n감자는 깨끗하게 씻어서 끓는 물에 껍질 채 삶는다. \n믹싱볼에 넣고 올리브페스토와 올리브 넣고 골고루 섞는다. \n접시에 담고 사워크림 하나 얹는다. \n\nInspired by @allurekorea\n\n#조식 #레시피 #미라클모닝 #홍감자\n\n-\n\n뉴진스의 수퍼내추럴. 무려 90년대 초에 유행했던 뉴잭스윙 쟝르의 이 곡은 새로운 것을 갈망하는 MZ들과 (한때 듀스에 열광했던 MZ들의 부모들인) 이른바 X세대까지, 두 마리 토끼를 잡아보겠는 야심찬 기획이구나 생각했다. ",
   "image": "https://images.how-about-breakfast.com/images/1170.jpg",
   "gallery": [
@@ -25362,11 +25402,11 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/1170.mp4",
   "_en": {
-   "hash": "516bfddaa590faf2b4c8248ac2563ce2130310a41804a4b857afd78e9d5395ee",
-   "title": "Red Potato Salad Red Potato",
-   "intro": "20240905 #breakfastdiary 1170, 25°C/mostly clear, 20min/exercise(M)\nSomething I read in the paper yesterday:\nAmerica's biggest satirical news site, The Onion, made headlines by resuming its print newspaper on August 16. (omitted) For young people who have no memory of subscribing to a newspaper, print paradoxically feels like a new \"new media.\" American high schools are seeing a resurgence of print school papers that had disappeared for a while.\n(Seo Su-min, \"For print newspapers to become 'hip' again like LP records\")\nI never thought newspapers would become the hip medium that Gen MZ raves about. Today's breakfast, red potato salad. The name is plain, but let's eat potatoes in a hip way too. Who knows? Maybe it'll go viral~\nYou need red potatoes, though regular potatoes work too — just a bit less fluffy. I used olive pesto but basil pesto is fine as well. Prepare sour cream or yogurt, Greek yogurt, or burrata or ricotta cheese. Oh, and olives too.\nWash the potatoes well and boil with the skin on in boiling water.\nPut in a mixing bowl with olive pesto and olives and mix thoroughly.\nPlate and top with a dollop of sour cream.\n-\nNewJeans' Super Shy. This song, in the Newjackswing genre popular way back in the early 90s, felt like an ambitious attempt to catch two birds at once — the MZ generation craving something new, and Gen X (once obsessed with Deux) who are now their parents.",
-   "ingredients": "",
-   "steps": ""
+   "hash": "d830fdef1c7d6202845ad0c556a355db689d370c7bbe3a5083efdcbd5c28808d",
+   "title": "Red Potato Salad",
+   "intro": "20240905 #breakfastdiary 1170, 25°C/mostly clear, 20min/exercise(M)\nSomething I read in the paper yesterday —\nThe Onion, America's biggest satirical news site, made headlines by resuming print publication on August 16th. (...) For young people who genuinely have no memory of subscribing to a newspaper, print media is, paradoxically, closer to a new 'new medium.' American high schools are seeing a wave of paper school papers, once vanished for a while, coming back.\n(Seo Su-min, \"For Print Newspapers to Get 'Hip' Again Like Vinyl Records\")\n\nI never imagined print media becoming something the MZ generation goes wild for. Today's breakfast, Red Potato Salad. The name is plain, but let's eat potatoes in a hip way too. Who knows? Maybe it'll go viral~\n\nYou need red potatoes, though regular potatoes work fine too — just a bit less fluffy. I used olive pesto, but basil pesto works too. Prepare sour cream or yogurt, Greek yogurt, or burrata or ricotta cheese. Oh, and olives too.\nWash the potatoes clean and boil them with the skin on in boiling water.\nPut them in a mixing bowl, add olive pesto and olives, and mix well.\nPlate it and top with a dollop of sour cream.\n\nNewJeans' 'Supernatural.' This track, in the Newjack Swing genre that was popular way back in the early '90s, struck me as an ambitious attempt to catch two birds at once — the MZ generation craving something new, and the so-called X generation (once-Deux-obsessed parents of those same MZs).",
+   "ingredients": "- 3 red potatoes\n- 2T olive pesto\n- 1/2 cup olives\n- 1T sour cream",
+   "steps": "1. Wash the red potatoes clean, cut into bite-sized pieces, and boil with the skin on in boiling water.\n2. Put the red potatoes from step 1 in a mixing bowl, add 2T olive pesto and 1/2 cup olives, and mix well.\n3. Plate the potatoes and olives from step 2 and top with 1T sour cream."
   },
   "page_id": "홍감자샐러드-홍감자"
  },
@@ -37860,7 +37900,7 @@
   "weather": "21도/맑음",
   "failed": false,
   "calories": null,
-  "title": "타타키큐리(일본식 오이",
+  "title": "일본식 오이무침 타타키큐리",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37872,8 +37912,8 @@
    "타타키큐리(일본식"
   ],
   "intro": "20230907, #조식다이어리 839, 21도/맑음\n바쁜 아침, 게다가 늦잠 잔 날 최적의 솔루션, #타타키큐리(일본식 오이무침) \n오이 한 개 깨끗하게 씻어 비닐에 넣고 방망이로 으깬다. 먹기 좋은 크기로 손으로 잘라 접시에 담는다. \n쯔유2, 식초1, 참기름1, 꿀0.5, 깨소금0.5 섞어 붓고 가쓰오부시를 올린다. \n@dailyn._.7 님 레시피입니다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 오이 1개\n- 드레싱(쯔유 2T, 식초 1T, 참기름 1T, 꿀 1t, 참깨 1t)\n- 가쓰오부시  ",
+  "steps": "1. 오이 1개 깨끗하게 씻은 뒤 비닐에 넣고 방망이로 으깨고 먹기 좋은 크기로 잘라서 접시에 담는다. \n2. 쯔유 2T, 식초 1T, 참기름 1T, 꿀 1t, 참깨 1t 섞어서 붓고 가쓰오부시 얹는다. ",
   "raw": "20230907, #조식다이어리 839, 21도/맑음\n\n바쁜 아침, 게다가 늦잠 잔 날 최적의 솔루션, #타타키큐리(일본식 오이무침) \n\n오이 한 개 깨끗하게 씻어 비닐에 넣고 방망이로 으깬다. 먹기 좋은 크기로 손으로 잘라 접시에 담는다. \n쯔유2, 식초1, 참기름1, 꿀0.5, 깨소금0.5 섞어 붓고 가쓰오부시를 올린다. \n\n@dailyn._.7 님 레시피입니다. \n\n#조식 #레시피 #미라클모닝 #샐러드 #오이",
   "image": "https://images.how-about-breakfast.com/images/839.jpg",
   "gallery": [
@@ -37883,11 +37923,11 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/839.mp4",
   "_en": {
-   "hash": "8b60af53d7a2f5b1c4c7c0f60cd2c5552be18e15d4b8f18cc6be262fb92b1fa3",
-   "title": "Tataki Cucumber",
-   "intro": "20230907 #breakfastdiary 839, 21°C/clear\nThe perfect solution for a busy morning, especially after sleeping in — #tatakicucumber (Japanese-style smashed cucumber).\nWash one cucumber well, put it in a plastic bag, and smash it with a rolling pin. Tear it into bite-sized pieces by hand and plate it.\nMix tsuyu 2, vinegar 1, sesame oil 1, honey 0.5, and salted sesame seeds 0.5, pour it over, and top with bonito flakes.\nRecipe by @dailyn._.7.",
-   "ingredients": "",
-   "steps": ""
+   "hash": "3f96334c329b8bccba512c1b699ed9bb2fdf665ba7453d0404a8e572aaa50ae5",
+   "title": "Japanese-Style Smashed Cucumber (Tataki Kyuri)",
+   "intro": "20230907 #breakfastdiary 839, 21°C/clear\nThe perfect solution for a busy morning, especially after sleeping in — #tatakikyuri (Japanese-style smashed cucumber).\nWash one cucumber well, put it in a plastic bag, and smash it with a rolling pin. Tear it into bite-sized pieces by hand and plate it.\nMix tsuyu 2, vinegar 1, sesame oil 1, honey 0.5, and salted sesame seeds 0.5, pour it over, and top with bonito flakes.\nRecipe by @dailyn._.7.",
+   "ingredients": "- 1 cucumber\n- Dressing (2T tsuyu, 1T vinegar, 1T sesame oil, 1t honey, 1t sesame seeds)\n- Bonito flakes",
+   "steps": "1. Wash 1 cucumber well, put it in a plastic bag, smash it with a rolling pin, tear into bite-sized pieces, and plate it.\n2. Mix 2T tsuyu, 1T vinegar, 1T sesame oil, 1t honey, and 1t sesame seeds, pour over, and top with bonito flakes."
   },
   "page_id": "타타키큐리-일본식-오이"
  },
@@ -37898,7 +37938,7 @@
   "weather": "23도/대체로맑음, 21분/운동(C)",
   "failed": false,
   "calories": null,
-  "title": "마이야르 토스트 완두콩토스트",
+  "title": "완두콩 토스트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37910,8 +37950,8 @@
    "토스트"
   ],
   "intro": "20230906, #조식다이어리 838, 23도/대체로맑음, 21분/운동(C) \n팬에 물을 조금 붓고 완두콩을 넣고 2~3분 익힌다. 저수분 조리법이다. 익었나, 하나 집어 먹어ㅜ봤는데 냉동한 완두콩 주제에 달다. 건져서 채에 받혀둔다. \n올리브 빵에 올리브오일 바르고 #마이야르 반응을 기대하며 앞뒤로 바삭하게 굽는다. 구운 빵은 접시에 담고 아직 열기가 남아있는 팬에 올리브오일 조금 넣고 익힌 완두콩을 데친다. 약간 짭쪼름한 것도 괜찮을 것 같아서 소금, 잡내를 잡아줄, 테크니컬리 안 넣으면 섭섭할 것 같은 후추도 조금 넣는다. \n빵을 집어들고 리코타치즈를 바른다. 리코타치즈는 발림성이 좋은 편이다. (발림성 면에서 크림치즈는 빌런이다.) 팬에 데친 완두콩을 소복하게 올리고 파마산 치즈도 올린다. 마지막으로 안 넣으면 섭섭한 후추도 살짝 곁들인다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 올리브 빵 1조각\n- 완두콩 1컵\n- 리코타치즈 2T\n- 파마산치즈\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 팬에 물을 자작하게 붓고 완두콩 넣고 2~3분 익힌 후 건져서 물기를 제거한다. \n2. 올리브 빵에 올리브오일 바르고 앞뒤로 바삭하게 굽는다. \n3. 빵 구운 팬에 올리브오일 조금 두른 후 1의 완두콩, 소금, 후추 넣고 데친다. \n4. 2의 빵에 리코타치즈 듬뿍 바르고 3의 완두콩과 파마산치즈 얹는다. 후추로 마무리한다.  ",
   "raw": "20230906, #조식다이어리 838, 23도/대체로맑음, 21분/운동(C) \n\n팬에 물을 조금 붓고 완두콩을 넣고 2~3분 익힌다. 저수분 조리법이다. 익었나, 하나 집어 먹어ㅜ봤는데 냉동한 완두콩 주제에 달다. 건져서 채에 받혀둔다. \n올리브 빵에 올리브오일 바르고 #마이야르 반응을 기대하며 앞뒤로 바삭하게 굽는다. 구운 빵은 접시에 담고 아직 열기가 남아있는 팬에 올리브오일 조금 넣고 익힌 완두콩을 데친다. 약간 짭쪼름한 것도 괜찮을 것 같아서 소금, 잡내를 잡아줄, 테크니컬리 안 넣으면 섭섭할 것 같은 후추도 조금 넣는다. \n빵을 집어들고 리코타치즈를 바른다. 리코타치즈는 발림성이 좋은 편이다. (발림성 면에서 크림치즈는 빌런이다.) 팬에 데친 완두콩을 소복하게 올리고 파마산 치즈도 올린다. 마지막으로 안 넣으면 섭섭한 후추도 살짝 곁들인다. \n\n#조식 #레시피 #미라클모닝 #토스트 #완두콩토스트",
   "image": "https://images.how-about-breakfast.com/images/838.jpg",
   "gallery": [
@@ -37919,11 +37959,11 @@
    "https://images.how-about-breakfast.com/images/838_2.jpg"
   ],
   "_en": {
-   "hash": "27f61186f9addca7dcf7bdbdf2599a8395d164cea180fc606f99839019db5d51",
-   "title": "Maillard Toast with Peas",
-   "intro": "20230906 #breakfastdiary 838, 23°C/mostly clear, 21min/exercise(C)\nPour a little water into a pan, add green peas, and cook for 2-3 minutes. It's a low-moisture cooking method. Testing if they're done, I ate one — sweet, for frozen peas. Drain and set aside in a strainer.\nBrush olive bread with olive oil and toast both sides until crisp, hoping for that #maillard reaction. Plate the toasted bread, then with the pan still warm, add a little olive oil and blanch the cooked peas. Thinking a touch of saltiness would be nice, I add some salt, and — technically it'd feel wrong to skip it — a bit of pepper to cut any off-flavor.\nPick up the bread and spread on ricotta cheese. Ricotta has good spreadability. (In terms of spreadability, cream cheese is the villain.) Pile the blanched peas generously on top and add parmesan cheese. Finish with a light dash of pepper — it'd feel wrong to skip that too.",
-   "ingredients": "",
-   "steps": ""
+   "hash": "cb4a2eff08e989bcda0d517f80a53c4e816e87fde3d893a80d702b19ac12013a",
+   "title": "Maillard Toast (Pea Toast)",
+   "intro": "20230906 #breakfastdiary 838, 23°C/mostly clear, 21min/exercise(C)\nPour a little water into a pan, add peas, and cook for 2-3 minutes — a low-moisture cooking method. Wondering if they were done, I tried one, and even being frozen peas, they were sweet. Drain and set aside in a strainer.\nBrush olive bread with olive oil and toast both sides until crisp, hoping for the #Maillard reaction. Plate the toasted bread, then in the still-warm pan add a little olive oil and warm through the cooked peas. Figured a bit of saltiness wouldn't hurt, so in goes some salt, and — to cut any off-flavor, and because it'd technically feel like something's missing without it — a little pepper too.\nPick up the bread and spread ricotta cheese on it. Ricotta spreads quite well. (Cream cheese, by comparison, is the villain of spreadability.) Pile the pan-warmed peas generously on top, then add parmesan cheese. Finish with a light dusting of pepper, because it'd feel like something's missing without it.",
+   "ingredients": "- 1 slice olive bread\n- 1 cup peas\n- 2T ricotta cheese\n- Parmesan cheese\n- Olive oil\n- Salt\n- Pepper",
+   "steps": "1. Pour a shallow layer of water into a pan, add the peas, cook for 2-3 minutes, then drain and remove excess moisture.\n2. Brush olive bread with olive oil and toast both sides until crisp.\n3. In the same pan used for the bread, add a little olive oil, then add the peas from step 1 with salt and pepper, and warm through.\n4. Spread the bread from step 2 generously with ricotta cheese, then top with the peas from step 3 and parmesan cheese. Finish with pepper."
   },
   "page_id": "마이야르-토스트-완두콩토스트"
  },
@@ -37945,8 +37985,8 @@
    "조식다이어리"
   ],
   "intro": "20230905, #조식다이어리 837, 24도/흐림, 21분/운동(Y)\n양배추를 (1등급 한우1 +++ 안심 스테이크 200g 정도로 느낌으로 썰어서) 준비한다. 꿀과 후추로 잠깐 마리네이드한 뒤, 토마토소스를 바르고 모짜렐라 올린 뒤 에어프라이기에 넣어 180도 10분 굽는다. 모짜렐라 치즈가 녹아 제법 그럴싸하게 보인다. \n가만히 접시에 담고 파마산치즈, 실파 송송송 #양배추스테이크",
-  "ingredients": null,
-  "steps": "1. 통양배추를 2cm 두께로 썬 뒤 앞뒤에 꿀을 펴바른다. 후추 조금 뿌린다.  \n2. 2의 양배추에 토마토소스 바르고 모짜렐라치즈 넣는다. 꿀과 ㅇㅈ\n3. ",
+  "ingredients": "- 양배추 1/2개\n- 꿀 1T\n- 후추\n- 토마토소스 1T\n- 파마산치즈\n- 실파 ",
+  "steps": "1. 양배추를 2cm 두께로 썬 뒤 앞뒤에 꿀을 펴바른 후 후추 조금 뿌린다. 10분 정도 그대로 둔다.  \n2. 2의 양배추에 토마토소스 바르고 모짜렐라치즈 넣은 후 에어프라이어에서 180도 10분 굽는다. \n3. 접시에 담고 파마산치즈, 실파 얹는다. ",
   "raw": "20230905, #조식다이어리 837, 24도/흐림, 21분/운동(Y)\n\n양배추를 (1등급 한우1 +++ 안심 스테이크 200g 정도로 느낌으로 썰어서) 준비한다. 꿀과 후추로 잠깐 마리네이드한 뒤, 토마토소스를 바르고 모짜렐라 올린 뒤 에어프라이기에 넣어 180도 10분 굽는다. 모짜렐라 치즈가 녹아 제법 그럴싸하게 보인다. \n가만히 접시에 담고 파마산치즈, 실파 송송송 #양배추스테이크\n\n#조식 #레시피 #미라클모닝 #양배추",
   "image": "https://images.how-about-breakfast.com/images/837.jpg",
   "gallery": [
@@ -37956,11 +37996,11 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/837.mp4",
   "_en": {
-   "hash": "ffbff8ef85f2b9aa6876b5df24bff0fac8d79dea31e790daff852cfa51041479",
+   "hash": "d1ff2142999eb8a9790fe6eeb034e4abdbb53eac8eac7b80615a387c5bdc01fc",
    "title": "Cabbage Steak",
    "intro": "20230905 #breakfastdiary 837, 24°C/cloudy, 21min/exercise(Y)\nPrepare cabbage (sliced to feel like a 200g cut of grade-1+++ Korean beef tenderloin steak). Marinate briefly in honey and pepper, spread on tomato sauce, top with mozzarella, then air-fry at 180°C for 10 minutes. Once the mozzarella melts, it looks quite convincing.\nPlate it gently, and finish with parmesan cheese and finely chopped scallions. #cabbagesteak",
-   "ingredients": "",
-   "steps": "1. Cut a whole cabbage into 2cm-thick rounds and spread honey on both sides. Sprinkle on a little pepper.  \n2. Spread tomato sauce on the cabbage from step 1 and add mozzarella cheese. Honey too — noted.\n3. "
+   "ingredients": "- 1/2 cabbage\n- 1T honey\n- Pepper\n- 1T tomato sauce\n- Parmesan cheese\n- Scallions",
+   "steps": "1. Cut the cabbage into 2cm-thick rounds, spread honey on both sides, and sprinkle with a little pepper. Let sit for about 10 minutes.\n2. Spread tomato sauce on the cabbage from step 1, add mozzarella cheese, and air-fry at 180°C for 10 minutes.\n3. Plate and top with parmesan cheese and scallions."
   },
   "page_id": "양배추스테이크-양배추-2"
  },
@@ -51149,7 +51189,7 @@
   "weather": "18도/대체로맑음",
   "failed": false,
   "calories": null,
-  "title": "프로슈토브라타오픈샌드위치 샌드위치 프로슈토",
+  "title": "프로슈토 부라타 오픈샌드위치",
   "credit": null,
   "hashtags": [
    "brattacheese",
@@ -51170,9 +51210,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220907, #조식다이어리 536, 18도/대체로맑음\n달군 팬에 올리브오일, 식빵을 앞뒤로 바삭하게 굽는다. (사워도우나 바게트가 좋을 것 같다.) \n토마토소스를 바르고 세상에서 제일 예쁜 브라타치즈를 얹고 그 위에 프로슈토 두 장, 올리브오일과 후추후추후추 #프로슈토브라타오픈샌드위치\n그의 풍자시 제10편에 나오는 원문은 이렇다. “건강한 신체에 건강한 정신이 깃들기를 기원해야 하리라.” 유베날리스는 로마의 미풍이 사라지는 것을 아쉬워했고, 당시 세태는 그로 하여금 “풍자시를 쓰지 않을 수 없게” 만들었다고 한다. ‘건강한 육체와 건강한 정신이 함께한다면 얼마나 좋겠냐마는’ 한쪽에 치우치는 현실을 돌아보라고 했다. 그리스의 디아이타가 원래 의도했던 것이 삶의 균형이었듯이 유베날리스는 로마 사람들이 그 균형감을 상실해가는 것을 풍자했다.\n김용석, 다이어트: 균형잡힌 삶의 지혜는 간데없고\n체내에 칼로리를 저장하려는 욕구는 인간의 성욕(마저)도 압도한다고 하니 다이어트는 참으로 복잡다단한 일이다. 무리하게 섭식을 줄이기 보다 적당한 칼로리 소비를 통해 균형을 추구할 일이다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220907, #조식다이어리 536, 18도/대체로맑음\n달군 팬에 올리브오일, 식빵을 앞뒤로 바삭하게 굽는다. (사워도우나 바게트가 좋을 것 같다.) \n토마토소스를 바르고 세상에서 제일 예쁜 브라타치즈를 얹고 그 위에 프로슈토 두 장, 올리브오일과 후추후추후추 #프로슈토브라타오픈샌드위치\n\n그의 풍자시 제10편에 나오는 원문은 이렇다. “건강한 신체에 건강한 정신이 깃들기를 기원해야 하리라.” 유베날리스는 로마의 미풍이 사라지는 것을 아쉬워했고, 당시 세태는 그로 하여금 “풍자시를 쓰지 않을 수 없게” 만들었다고 한다. ‘건강한 육체와 건강한 정신이 함께한다면 얼마나 좋겠냐마는’ 한쪽에 치우치는 현실을 돌아보라고 했다. 그리스의 디아이타가 원래 의도했던 것이 삶의 균형이었듯이 유베날리스는 로마 사람들이 그 균형감을 상실해가는 것을 풍자했다.\n(김용석, 다이어트: 균형잡힌 삶의 지혜는 간데없고)\n\n체내에 칼로리를 저장하려는 욕구는 인간의 성욕(마저)도 압도한다고 하니 다이어트는 참으로 복잡다단한 일이다. 무리하게 섭식을 줄이기 보다 적당한 칼로리 소비를 통해 균형을 추구할 일이다.",
+  "ingredients": "- 식빵 1장(사워도우를 추천한다.)\n- 토마토소스 1T\n- 부라타치즈 1개\n- 프로슈토 2조각\n- 올리브오일\n- 후추",
+  "steps": "1. 식빵에 올리브오일 바르고 앞뒤로 바삭하게 굽는다. \n2. 1의 식빵에 토마토소스 바르고 부라타치즈 얹고 프로슈토 2장 가지런히 얹는다. 올리브오일과 후추 조금 뿌린다. ",
   "raw": "20220907, #조식다이어리 536, 18도/대체로맑음\n\n달군 팬에 올리브오일, 식빵을 앞뒤로 바삭하게 굽는다. (사워도우나 바게트가 좋을 것 같다.) \n토마토소스를 바르고 세상에서 제일 예쁜 브라타치즈를 얹고 그 위에 프로슈토 두 장, 올리브오일과 후추후추후추 #프로슈토브라타오픈샌드위치\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샌드위치 #프로슈토 #브라타치즈 \n#breakfast #sandwich #brattacheese #prosciutto #openfacedsandwich \n\n그의 풍자시 제10편에 나오는 원문은 이렇다. “건강한 신체에 건강한 정신이 깃들기를 기원해야 하리라.” 유베날리스는 로마의 미풍이 사라지는 것을 아쉬워했고, 당시 세태는 그로 하여금 “풍자시를 쓰지 않을 수 없게” 만들었다고 한다. ‘건강한 육체와 건강한 정신이 함께한다면 얼마나 좋겠냐마는’ 한쪽에 치우치는 현실을 돌아보라고 했다. 그리스의 디아이타가 원래 의도했던 것이 삶의 균형이었듯이 유베날리스는 로마 사람들이 그 균형감을 상실해가는 것을 풍자했다.\n김용석, 다이어트: 균형잡힌 삶의 지혜는 간데없고\n\n체내에 칼로리를 저장하려는 욕구는 인간의 성욕(마저)도 압도한다고 하니 다이어트는 참으로 복잡다단한 일이다. 무리하게 섭식을 줄이기 보다 적당한 칼로리 소비를 통해 균형을 추구할 일이다. ",
   "image": "https://images.how-about-breakfast.com/images/536.jpg",
   "gallery": [
@@ -51181,11 +51221,11 @@
    "https://images.how-about-breakfast.com/images/536_3.jpg"
   ],
   "_en": {
-   "hash": "837b15b18878f329dffb195a765794f884817c709d969fe5d1ba1d3b1f42739f",
-   "title": "Prosciutto Burrata Open Sandwich",
-   "intro": "20220907 #breakfastdiary 536, 18°C/mostly clear\nIn a heated pan with olive oil, toast bread on both sides until crisp. (Sourdough or baguette would probably work well.)\nSpread on tomato sauce, top with the prettiest burrata cheese in the world, then lay two slices of prosciutto over it, with olive oil and pepper pepper pepper. #prosciuttoburrataopensandwich\nThe original line from his tenth satire goes: 'One should pray for a healthy mind in a healthy body.' Juvenal lamented the disappearance of Rome's good old customs, and the state of the times, it's said, 'left him no choice but to write satire.' He was really saying, 'wouldn't it be wonderful if a healthy body and healthy mind went together' — and asking people to look back at how far things had tipped to one side. Just as the Greek dietai originally meant balance in life, Juvenal was satirizing how the Romans were losing that sense of balance.\nKim Yong-seok, Diet: The Wisdom of a Balanced Life, Nowhere to Be Found\nApparently the urge to store calories in the body can even overpower human sexual desire, which makes dieting a genuinely complicated business. Rather than cutting food intake too aggressively, it's better to pursue balance through a reasonable amount of calorie expenditure.",
-   "ingredients": "",
-   "steps": ""
+   "hash": "617dd40f326bc95f2b05975138ae2dac4919f0d342b58df7bde004a88b2a8f2c",
+   "title": "Prosciutto Burrata Open-Faced Sandwich",
+   "intro": "20220907 #breakfastdiary 536, 18°C/mostly clear\nHeat a pan with olive oil and toast bread until crisp on both sides. (Sourdough or baguette would work well.)\nSpread on tomato sauce, top with the prettiest burrata cheese in the world, then two slices of prosciutto, a drizzle of olive oil, and pepper, pepper, pepper — #prosciuttoburrataopensandwich\n\nThe original line from his tenth satire reads: \"One should pray for a healthy mind in a healthy body.\" Juvenal lamented the vanishing of Roman virtue, and it's said the times themselves left him \"unable not to write satire.\" 'Wouldn't it be wonderful if a healthy body and a healthy mind went together' — he was pointing to a reality tilted toward one side. Just as the Greek concept of diaita originally meant balance in life, Juvenal satirized how the Romans were losing that very sense of balance.\n(Kim Yong-seok, \"Diet: The Wisdom of a Balanced Life, Nowhere to Be Found\")\n\nThey say the body's urge to store calories overpowers even human sexual desire, so dieting really is a complicated business. Rather than cutting food intake drastically, it's better to pursue balance through moderate calorie expenditure.",
+   "ingredients": "- 1 slice bread (sourdough recommended)\n- 1T tomato sauce\n- 1 ball burrata cheese\n- 2 slices prosciutto\n- Olive oil\n- Pepper",
+   "steps": "1. Brush bread with olive oil and toast both sides until crisp.\n2. Spread tomato sauce on the bread from step 1, top with burrata cheese, and lay 2 slices of prosciutto neatly on top. Drizzle with a little olive oil and pepper."
   },
   "page_id": "프로슈토브라타오픈샌드위치-샌드위치-프로슈토"
  },
@@ -51196,7 +51236,7 @@
   "weather": "17도/소나기",
   "failed": false,
   "calories": null,
-  "title": "엘로떼 기상청 옥수수",
+  "title": "엘로떼(멕시코식 옥수수 구이)",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51218,9 +51258,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220906, #조식다이어리 535, 17도/소나기\n토치로 옥수수를 바삭하게 굽는다. 마요네즈를 바르고, 라면스프, 파마산 치즈, 파슬리 가루를 약간, #엘로떼\n\"지금 보여드리는 이 숫자들 하나하나에 많은 사람들의 슬픔과 회한이 담겨 있습니다. 이 슬픔과 회한이 다시 찾아오지 않도록 철저히 대비해 주시길 부탁드리고 부디 안전한 곳에 머무시길 부탁드리겠습니다.\"\n2002년 사망 209명, 실종 37명, 태풍 루사, 2003년 사망 119명, 실종 12명, 태풍 매미를 언급하는 #기상청 브리핑엔 진심이 느껴졌다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220906, #조식다이어리 535, 17도/소나기\n토치로 옥수수를 바삭하게 굽는다. 마요네즈를 바르고, 라면스프, 파마산 치즈, 파슬리 가루를 약간, #엘로떼\n\n\"지금 보여드리는 이 숫자들 하나하나에 많은 사람들의 슬픔과 회한이 담겨 있습니다. 이 슬픔과 회한이 다시 찾아오지 않도록 철저히 대비해 주시길 부탁드리고 부디 안전한 곳에 머무시길 부탁드리겠습니다.\"\n2002년 사망 209명, 실종 37명, 태풍 루사, 2003년 사망 119명, 실종 12명, 태풍 매미를 언급하는 #기상청 브리핑엔 진심이 느껴졌다.",
+  "ingredients": "- 찰옥수수 1개(엘로떼 elote 는 초당옥수수 같은 좀 더 단맛이 많이 나는 품종이 잘 어울린다.)\n- 마요네즈 1T\n- 파우더(라면수프, 파마산치즈, 파슬리 파우더를 같은 비율로 섞는다.)",
+  "steps": "1. 강원도 찰옥수수는 반으로 자른 뒤 토치로 겉을 굽는다. \n2. 라면수프, 파마산치즈, 파슬리 파우더를 같은 비율로 섞는다. \n3. 1의 찰옥수수에 마요네즈 골고루 바르고 2의 파우더를 골고루 뿌린다.  ",
   "raw": "20220906, #조식다이어리 535, 17도/소나기\n\n토치로 옥수수를 바삭하게 굽는다. 마요네즈를 바르고, 라면스프, 파마산 치즈, 파슬리 가루를 약간, #엘로떼\n\n\"지금 보여드리는 이 숫자들 하나하나에 많은 사람들의 슬픔과 회한이 담겨 있습니다. 이 슬픔과 회한이 다시 찾아오지 않도록 철저히 대비해 주시길 부탁드리고 부디 안전한 곳에 머무시길 부탁드리겠습니다.\"\n\n2002년 사망 209명, 실종 37명, 태풍 루사, 2003년 사망 119명, 실종 12명, 태풍 매미를 언급하는 #기상청 브리핑엔 진심이 느껴졌다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #옥수수 #파마산치즈 #breakfast #salad #corn #parmigianoreggiano #elote",
   "image": "https://images.how-about-breakfast.com/images/535.jpg",
   "gallery": [
@@ -51229,11 +51269,11 @@
    "https://images.how-about-breakfast.com/images/535_3.jpg"
   ],
   "_en": {
-   "hash": "af4ed509081e081e9455b2eb92f6c46301d50788352767fac9bbd777f5c882a5",
-   "title": "Elote (Mexican Street Corn)",
-   "intro": "20220906 #breakfastdiary 535, 17°C/showers\nChar the corn crisp with a torch. Brush on mayonnaise, then add a bit of ramen seasoning powder, parmesan cheese, and parsley flakes. #elote\n\"Every single number I'm showing you now carries the grief and regret of so many people. Please prepare thoroughly so this grief and regret never comes again, and please stay somewhere safe.\"\nThe #KoreaMeteorologicalAdministration's briefing, mentioning Typhoon Rusa in 2002 (209 dead, 37 missing) and Typhoon Maemi in 2003 (119 dead, 12 missing), felt genuinely heartfelt.",
-   "ingredients": "",
-   "steps": ""
+   "hash": "68e6fa1fa6bf3c8bd035434b83b861f269451b6ad4f67a08b08a043447ba61f7",
+   "title": "Elote (Mexican-Style Grilled Corn)",
+   "intro": "20220906 #breakfastdiary 535, 17°C/showers\nTorch the corn until crisp. Brush with mayonnaise, then top with ramen seasoning powder, parmesan cheese, and a little parsley powder — #elote\n\n\"Behind each and every number I'm showing you now lies the grief and regret of so many people. Please prepare thoroughly so this grief and regret never returns, and please stay somewhere safe.\"\nThe #KoreaMeteorologicalAdministration's briefing, citing 209 dead and 37 missing from Typhoon Rusa in 2002, and 119 dead and 12 missing from Typhoon Maemi in 2003, felt genuinely heartfelt.",
+   "ingredients": "- 1 waxy corn (a sweeter variety like Korean super-sweet corn suits elote well)\n- 1T mayonnaise\n- Powder (mix equal parts ramen seasoning powder, parmesan cheese, and parsley powder)",
+   "steps": "1. Cut a Gangwon-do waxy corn in half and torch the outside.\n2. Mix equal parts ramen seasoning powder, parmesan cheese, and parsley powder.\n3. Brush the corn from step 1 evenly with mayonnaise and sprinkle evenly with the powder from step 2."
   },
   "page_id": "엘로떼-기상청-옥수수"
  },
@@ -68757,7 +68797,7 @@
   "weather": "17도/비, 25분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "두부낫또샐러드 모닝리추얼 모닝루틴",
+  "title": "두부 낫토 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68780,9 +68820,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210907, #조식다이어리 203, 17도/비, 25분/운동하기\n어린잎채소, 두부, 낫또에 간장, 참기름 조금 #두부낫또샐러드 \nR.I.P. Jean-Paul Belmond",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210907, #조식다이어리 203, 17도/비, 25분/운동하기\n어린잎채소, 두부, 낫또에 간장, 참기름 조금 #두부낫또샐러드 \n\nR.I.P. Jean-Paul Belmond",
+  "ingredients": "- 어린잎채소 2~3컵\n- 두부 1/2모\n- 낫토 1개\n- 간장 1/2T\n- 참기름 1t",
+  "steps": "1. 흐르는 물에 어린잎채소 씻고 물기를 제거한다. \n2. 접시에 1의 어린잎채소 담고 큐브모양으로 썬 두부, 낫토 얹고 간장 1T, 참기름 1t 뿌린다. ",
   "raw": "20210907, #조식다이어리 203, 17도/비, 25분/운동하기\n\n어린잎채소, 두부, 낫또에 간장, 참기름 조금 #두부낫또샐러드 \n\nR.I.P. Jean-Paul Belmond\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #두부 #낫또\n#breakfast #salad #dubu #natto ",
   "image": "https://images.how-about-breakfast.com/images/203.jpg",
   "gallery": [
@@ -68791,11 +68831,11 @@
    "https://images.how-about-breakfast.com/images/203_3.jpg"
   ],
   "_en": {
-   "hash": "5496eced70e5af158abd174a44b18994af542b9688d7cd7b5b2bf64ad6c3505a",
-   "title": "Tofu Natto Salad, Morning Ritual, Morning Routine",
-   "intro": "20210907 #breakfastdiary 203, 17°C/rain, 25 min/workout\nBaby greens, tofu, and natto with a little soy sauce and sesame oil. #tofunattosalad \nR.I.P. Jean-Paul Belmondo",
-   "ingredients": "",
-   "steps": ""
+   "hash": "6d6de1e15afafc5e3d1758ac436a92bc9fc1fef087ecce8c07ca612fb104bbcf",
+   "title": "Tofu Natto Salad",
+   "intro": "20210907 #breakfastdiary 203, 17°C/rain, 25min/exercise\nBaby greens, tofu, and natto with a little soy sauce and sesame oil — #TofuNattoSalad\n\nR.I.P. Jean-Paul Belmondo",
+   "ingredients": "- 2-3 cups baby greens\n- 1/2 block tofu\n- 1 pack natto\n- 1/2T soy sauce\n- 1t sesame oil",
+   "steps": "1. Rinse the baby greens under running water and remove excess moisture.\n2. Plate the baby greens from step 1, top with cubed tofu and natto, and drizzle with 1T soy sauce and 1t sesame oil."
   },
   "page_id": "두부낫또샐러드-모닝리추얼-모닝루틴"
  },
@@ -68806,7 +68846,7 @@
   "weather": "21도/대체로흐림, 20분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "뇨끼샐러드 넷플릭스 모닝리추얼",
+  "title": "채소 뇨끼 샐러드",
   "credit": null,
   "hashtags": [
    "DP",
@@ -68836,9 +68876,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210906, #조식다이어리 202, 21도/대체로흐림, 20분/운동하기\n끓는 물에 데친 뇨끼를 건져 올리브 오일에 뒤섞뒤섞, 시금치, 토마토를 더하고 비네그레트 드레싱을 뿌린다. 하몽과 파마산 치즈, 후추후추후추 #뇨끼샐러드\n#넷플릭스 #DP 후반부, 그 동안 자신을 왜 그렇게 괴롭혔냐는 피해자의 질문에 가해자는 울부짖는다. \n“그렇게 해도 되는 줄 알았다”\n내 일상에서도 ‘그렇게 해도 되는 줄 알고’, ‘그렇게 해야 되는 줄 알고’ 눈을 감고 지나치는 것들이 많다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210906, #조식다이어리 202, 21도/대체로흐림, 20분/운동하기\n끓는 물에 데친 뇨끼를 건져 올리브 오일에 뒤섞뒤섞, 시금치, 토마토를 더하고 비네그레트 드레싱을 뿌린다. 하몽과 파마산 치즈, 후추후추후추 #뇨끼샐러드\n\n#넷플릭스 #DP 후반부, 그 동안 자신을 왜 그렇게 괴롭혔냐는 피해자의 질문에 가해자는 울부짖는다. \n“그렇게 해도 되는 줄 알았다”\n내 일상에서도 ‘그렇게 해도 되는 줄 알고’, ‘그렇게 해야 되는 줄 알고’ 눈을 감고 지나치는 것들이 많다.",
+  "ingredients": "- 뇨끼 1/2컵\n- 시금치 한 줌\n- 아스파라거스 3개\n- 방울토마토 5개\n- 하몽 3~4조각\n- 파마산치즈\n- 드레싱(올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 소금",
+  "steps": "1. 끓는 물에 뇨끼를 넣고 삶는다. 소금 1t 정도 넣는다.  \n2. 뇨끼가 수면 위로 떠오르면 건진 후 믹싱볼에 담고 올리브오일 뿌려서 섞는다. \n3. 뇨끼 삶은 물에 손질한 아스파라거스도 1~2분 데친다. \n4. 접시에 시금치, 반으로 썬 방울토마토, 3의 아스파라거스, 2의 뇨끼 담고 하몽과 파마산치즈를 그레이터로 잘라서 얹는다. 드레싱으로 마무리한다. ",
   "raw": "20210906, #조식다이어리 202, 21도/대체로흐림, 20분/운동하기\n\n끓는 물에 데친 뇨끼를 건져 올리브 오일에 뒤섞뒤섞, 시금치, 토마토를 더하고 비네그레트 드레싱을 뿌린다. 하몽과 파마산 치즈, 후추후추후추 #뇨끼샐러드\n\n#넷플릭스 #DP 후반부, 그 동안 자신을 왜 그렇게 괴롭혔냐는 피해자의 질문에 가해자는 울부짖는다. \n\n“그렇게 해도 되는 줄 알았다”\n\n내 일상에서도 ‘그렇게 해도 되는 줄 알고’, ‘그렇게 해야 되는 줄 알고’ 눈을 감고 지나치는 것들이 많다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #뇨끼 #토마토 #시금치 #하몽 #파마산치즈 \n#breakfast #salad #tomato #parmigianoreggiano #jamon #gnocchi",
   "image": "https://images.how-about-breakfast.com/images/202.jpg",
   "gallery": [
@@ -68846,11 +68886,11 @@
    "https://images.how-about-breakfast.com/images/202_2.jpg"
   ],
   "_en": {
-   "hash": "81de4d0b751b14b0e0151d07416e85b2176ca7acdafc07ada70ca1f2b125c8a5",
-   "title": "Gnocchi Salad, Netflix, Morning Ritual",
-   "intro": "20210906 #breakfastdiary 202, 21°C/mostly cloudy, 20 min/workout\nScoop out gnocchi blanched in boiling water and toss, toss with olive oil, add spinach and tomato, and drizzle with vinaigrette. Jamón, parmesan, pepper pepper pepper. #gnocchisalad\nToward the end of #Netflix’s #DP, when the victim asks why he tormented him for so long, the perpetrator cries out, \n“I thought it was okay to do that”\nIn my own daily life too, there’s a lot I let slide while telling myself ‘I thought that was okay’ or ‘I thought I was supposed to do that.’",
-   "ingredients": "",
-   "steps": ""
+   "hash": "cbb76f5343ffef07f34488eac1e010943e21c80c692ae247e43ab20f58e01935",
+   "title": "Vegetable Gnocchi Salad",
+   "intro": "20210906 #breakfastdiary 202, 21°C/mostly cloudy, 20min/exercise\nDrain gnocchi blanched in boiling water, toss with olive oil, add spinach and tomato, and drizzle with vinaigrette dressing. Top with jamón and parmesan cheese, and pepper, pepper, pepper — #GnocchiSalad\n\n#Netflix #DP — near the end, when the victim asks why he tormented him like that, the perpetrator cries out,\n\"I thought it was okay to do that.\"\nIn my own daily life too, there's a lot I look past with my eyes closed, 'thinking it was okay to do that,' or 'thinking I had to do that.'",
+   "ingredients": "- 1/2 cup gnocchi\n- A handful of spinach\n- 3 asparagus spears\n- 5 cherry tomatoes\n- 3-4 slices jamón\n- Parmesan cheese\n- Dressing (3T olive oil, 1T white wine vinegar, 1t whole grain mustard)\n- Salt",
+   "steps": "1. Boil the gnocchi in boiling water with about 1t salt.\n2. Once the gnocchi float to the surface, drain, put in a mixing bowl, drizzle with olive oil, and toss.\n3. Blanch the trimmed asparagus in the same gnocchi water for 1-2 minutes.\n4. Plate the spinach, halved cherry tomatoes, the asparagus from step 3, and the gnocchi from step 2, then grate jamón and parmesan cheese over the top. Finish with the dressing."
   },
   "page_id": "뇨끼샐러드-넷플릭스-모닝리추얼"
  },
@@ -85856,7 +85896,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 조식스타그램 15분완성",
+  "title": "15분 완성 브로콜리 샐러드",
   "credit": null,
   "hashtags": [
    "15분완성",
@@ -85865,17 +85905,17 @@
    "조식스타그램"
   ],
   "intro": "다른 날보다 더욱 분주한 월요일 아침, \n6:50 - 팬에 물 1.5cm 붓고, 파이어 온, 잠자던 브로콜리를 깨워 물에 헹구고 (길게) 자름\n6:52 - 물이 끓으면 브로콜리 투하\n6:55 - 브로콜리를 꺼내고 물을 버린 뒤, 달궈진 팬에 올리브 오일을 두르고 브로콜리 데침\n6:58 - 홀그레인 머스타드, 와인 식초, 올리브 오일, 양파 갈아 섞음\n6:58 - 브로콜리를 접시 위에 배치, 드레싱, 후추후추, 파마산 치즈 필링, 호랑이 기운으로 호두를 으깨서 흩뿌림\n7:05 - 냠냠 (출근 시간에 쫓겨 마심)",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 브로콜리 1/2개\n- 파마산치즈\n- 호두 1T\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 끓는 물에 소금 넣고 길게 썬 브로콜리를 넣고 1~2분 삶는다. \n2. 팬에 올리브오일 두르고 브로콜리를 데친다.\n3. 접시에 브로콜리 담고 드레싱 뿌린 뒤 그레이터로 파마산치즈 잘라서 얹고 후추와 호두 으깨서 얹는다.  ",
   "raw": "다른 날보다 더욱 분주한 월요일 아침, \n\n6:50 - 팬에 물 1.5cm 붓고, 파이어 온, 잠자던 브로콜리를 깨워 물에 헹구고 (길게) 자름\n6:52 - 물이 끓으면 브로콜리 투하\n6:55 - 브로콜리를 꺼내고 물을 버린 뒤, 달궈진 팬에 올리브 오일을 두르고 브로콜리 데침\n6:58 - 홀그레인 머스타드, 와인 식초, 올리브 오일, 양파 갈아 섞음\n6:58 - 브로콜리를 접시 위에 배치, 드레싱, 후추후추, 파마산 치즈 필링, 호랑이 기운으로 호두를 으깨서 흩뿌림\n7:05 - 냠냠 (출근 시간에 쫓겨 마심) \n\n#오늘의조식 #조식 #조식스타그램 #15분완성",
   "pre_label": "D-158",
   "image": "https://images.how-about-breakfast.com/images/pre-158.jpg",
   "_en": {
-   "hash": "f759185f8edc56946c653ab48099b12ca1466f5097d751747034f8953399a608",
-   "title": "Breakfast in 15 Minutes",
-   "intro": "A Monday morning even busier than usual —\n6:50 — Pour about 1.5cm of water into the pan, turn on the heat, wake up the broccoli, rinse it, and cut it into long pieces.\n6:52 — Once the water boils, drop in the broccoli.\n6:55 — Take the broccoli out, pour out the water, then heat olive oil in the same pan and sear the broccoli.\n6:58 — Whisk together whole grain mustard, wine vinegar, olive oil, and grated onion.\n6:58 — Arrange the broccoli on a plate, add the dressing, plenty of pepper, a shower of parmesan, and crushed walnuts sprinkled on with tiger-like energy.\n7:05 — Yum (gulped down while racing the clock to work).",
-   "ingredients": "",
-   "steps": ""
+   "hash": "3b95fd65c0d20a5ef85e1f6cbf1bf8828ced4d1871fafdfdc91abf47ee0c6d2b",
+   "title": "15-Minute Broccoli Salad",
+   "intro": "A Monday morning even more hectic than usual,\n6:50 - Pour 1.5cm of water into a pan, fire on, wake up the sleeping broccoli, rinse it, and cut it (lengthwise)\n6:52 - Once the water boils, drop in the broccoli\n6:55 - Take the broccoli out, discard the water, add olive oil to the heated pan, and sauté the broccoli\n6:58 - Mix whole grain mustard, wine vinegar, olive oil, and grated onion\n6:58 - Arrange broccoli on a plate, dressing, pepper pepper, parmesan cheese peeled over, and with tiger-strength, crush walnuts and scatter them\n7:05 - Yum yum (drunk down in a rush for work)",
+   "ingredients": "- 1/2 head broccoli\n- Parmesan cheese\n- 1T walnuts\n- Dressing (2T olive oil, 1T white wine vinegar, 1t whole grain mustard)\n- Olive oil\n- Salt\n- Pepper",
+   "steps": "1. Add salt to boiling water, add the broccoli cut into long pieces, and boil for 1-2 minutes.\n2. Heat olive oil in a pan and sauté the broccoli.\n3. Plate the broccoli, drizzle with the dressing, shave parmesan cheese over it with a grater, and top with pepper and crushed walnuts."
   },
   "page_id": "오늘의조식-조식스타그램-15분완성"
  },
@@ -85896,8 +85936,8 @@
    "조식스타그램"
   ],
   "intro": "팬에 구운 #당근 에 그릭요거트와 생강, 파슬리를 올려, 몇 개 남은 무화과에게 안녕을, #내년에만나 #조식 #오늘의조식 #조식스타그램",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 당근 1개\n- 그릭요거트 1T\n- 생강 1조각\n- 파슬리\n- 올리브오일\n- 소금\n- 후추\n- 핑크페퍼",
+  "steps": "1. 당근을 껍질째로 씻은 뒤 길게 썬다. \n2. 팬에 올리브오일 두르고 소금 뿌려서 1의 당근을 굽는다. 당근의 베타카로틴은 지용성이라 오일에 굽는 게 제일 좋다. \n3. 그릇에 그릭요거트 담고 2의 당근, 잘게 썬 생강과 다진 파슬리, 핑크페퍼 조금 얹는다.",
   "raw": "팬에 구운 #당근 에 그릭요거트와 생강, 파슬리를 올려, 몇 개 남은 무화과에게 안녕을, #내년에만나 #조식 #오늘의조식 #조식스타그램",
   "pre_label": "D-159",
   "image": "https://images.how-about-breakfast.com/images/pre-159.jpg",
@@ -85907,11 +85947,11 @@
    "https://images.how-about-breakfast.com/images/pre-159_3.jpg"
   ],
   "_en": {
-   "hash": "cb3f8dcc1d54fc6211fae43d75b75c210591afb181b66b41d2562fe52c965a83",
+   "hash": "cdef20dd15a9d6391800b06c1f7aee86fb2668aa7a5bd4b8776a7907e1c23016",
    "title": "Carrot Salad",
    "intro": "Carrots seared in a pan, topped with Greek yogurt, ginger, and parsley — a goodbye to the last few figs of the season. #seeyounextyear #breakfast #todaysbreakfast #breakfastgram",
-   "ingredients": "",
-   "steps": ""
+   "ingredients": "- 1 carrot\n- 1T Greek yogurt\n- 1 piece ginger\n- Parsley\n- Olive oil\n- Salt\n- Pepper\n- Pink pepper",
+   "steps": "1. Wash the carrot with the skin on and slice it lengthwise.\n2. Heat olive oil in a pan, sprinkle with salt, and sauté the carrot from step 1. Carrot's beta-carotene is fat-soluble, so cooking it in oil works best.\n3. Spoon Greek yogurt into a bowl, top with the carrot from step 2, finely chopped ginger and parsley, and a little pink pepper."
   },
   "page_id": "당근-샐러드"
  },
