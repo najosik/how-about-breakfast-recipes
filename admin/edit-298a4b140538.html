@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>게시물 편집 (관리자 전용)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <style>
   body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 16px; color: #222; }
@@ -87,6 +90,7 @@
 <div id="app" style="display:none">
   <div class="tabs">
     <button type="button" class="tab-btn active" data-tab="editTab">게시물 수정</button>
+    <button type="button" class="tab-btn" data-tab="otdTab">오늘의 조식</button>
     <button type="button" class="tab-btn" data-tab="missingTab">빠진 날짜</button>
     <button type="button" class="tab-btn" data-tab="voteTab">이달의 투표</button>
     <button type="button" class="tab-btn" data-tab="wcTab">월드컵 테스트</button>
@@ -123,6 +127,29 @@
       <input type="text" id="fCredit">
       <button type="submit" id="saveBtn">저장</button>
     </form>
+  </div>
+
+  <div id="otdTab" class="tabpage">
+    <p class="hint">날짜를 고르면 그 날짜에 실제 사이트의 "오늘의 조식"이 어떻게 보일지 미리 확인하고, 바로 그 게시물을 불러와 수정할 수 있습니다.</p>
+
+    <section class="otd-full-bleed" id="otdPreviewSection">
+      <div class="otd-inner">
+        <div class="section-head">
+          <div>
+            <p class="label">On this day</p>
+            <h2><span id="otdPreviewDatePrefix"></span>오늘의 조식들</h2>
+            <p class="desc">해마다 이 날짜에 만들었던 조식을 모아봤어요.</p>
+          </div>
+        </div>
+        <div class="otd-row" id="otdPreviewRow"></div>
+      </div>
+    </section>
+
+    <label for="otdDateInput">미리 볼 날짜</label>
+    <input type="text" id="otdDateInput" placeholder="YYYY-MM-DD (예: 2026-09-08)">
+
+    <label>이 날짜의 게시물 (연도별) — 선택하면 "게시물 수정" 탭으로 이동해 바로 편집합니다</label>
+    <ul id="otdCandidates" class="v-cand-results" style="max-height:none; border:1px solid #eee; border-radius:6px;"></ul>
   </div>
 
   <div id="missingTab" class="tabpage">
@@ -244,6 +271,11 @@
   var wcResultBox = document.getElementById('wcResultBox');
   var wcContainer = document.getElementById('wcContainer');
 
+  var otdDateInput = document.getElementById('otdDateInput');
+  var otdPreviewRow = document.getElementById('otdPreviewRow');
+  var otdPreviewDatePrefix = document.getElementById('otdPreviewDatePrefix');
+  var otdCandidates = document.getElementById('otdCandidates');
+
   var allRecords = [];
   var igIndex = null; // {date: {caption, images, ...}} from ig_index.json, or null if not built yet
   var igIndexMaxDate = null; // latest date key in igIndex - anything at/before this and absent genuinely isn't on Instagram
@@ -311,6 +343,7 @@
         allRecords = data;
         renderMissing();
         loadVoteRounds();
+        initOtdTab();
       })
       .catch(function (err) {
         showStatus('err', '게시물 목록을 불러오지 못했습니다: ' + err);
@@ -769,6 +802,165 @@
         voteRoundSaveBtn.textContent = '투표 라운드 등록';
       });
   });
+
+  // ---- 오늘의 조식 (On This Day) preview + quick-edit ----
+  // Mirrors home.js's renderOnThisDay() card markup/picking logic exactly
+  // (same CSS classes, same day_secondary/hasMedia tie-break) so the top
+  // preview here looks identical to the real site, but driven by an
+  // admin-chosen date instead of the real "today" - lets the admin check
+  // tomorrow's (or any future) On This Day row before it goes live.
+
+  var OTD_EMPTY_BANGS = ['앗!', '엇!', '이런!'];
+  var OTD_EMPTY_SUBS = ['조식이 없네요', '조식을 못 먹었어요', '조식을 건너 뛰었죠'];
+  function randomOtdEmptyMessage() {
+    var bang = OTD_EMPTY_BANGS[Math.floor(Math.random() * OTD_EMPTY_BANGS.length)];
+    var sub = OTD_EMPTY_SUBS[Math.floor(Math.random() * OTD_EMPTY_SUBS.length)];
+    return { bang: bang, sub: sub };
+  }
+
+  function otdHasMedia(r) { return !!(r.image || r.gallery || r.video); }
+
+  function otdIsExactMatch(r, mm, dd) {
+    if (r.failed) return false;
+    if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return false;
+    var parts = r.date.split('-');
+    return parseInt(parts[1], 10) === mm && parseInt(parts[2], 10) === dd;
+  }
+
+  function switchToTab(tabId) {
+    Array.prototype.forEach.call(document.querySelectorAll('.tab-btn'), function (b) { b.classList.remove('active'); });
+    Array.prototype.forEach.call(document.querySelectorAll('.tabpage'), function (p) { p.classList.remove('active'); });
+    var btn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
+    if (btn) btn.classList.add('active');
+    var page = document.getElementById(tabId);
+    if (page) page.classList.add('active');
+  }
+
+  function editFromOtd(r) {
+    if (!r) return;
+    loadRecord(r);
+    switchToTab('editTab');
+    editForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function initOtdTab() {
+    if (!otdDateInput.value) {
+      var today = new Date();
+      var pad0 = function (n) { return (n < 10 ? '0' : '') + n; };
+      otdDateInput.value = today.getFullYear() + '-' + pad0(today.getMonth() + 1) + '-' + pad0(today.getDate());
+    }
+    renderOtdPreview();
+  }
+
+  otdDateInput.addEventListener('input', renderOtdPreview);
+
+  function renderOtdPreview() {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(otdDateInput.value.trim());
+    if (!m) {
+      otdPreviewRow.innerHTML = '';
+      otdPreviewDatePrefix.textContent = '';
+      otdCandidates.innerHTML = '<li class="hint" style="cursor:default; list-style:none;">날짜를 YYYY-MM-DD 형식으로 입력해주세요.</li>';
+      return;
+    }
+    var mm = parseInt(m[2], 10);
+    var dd = parseInt(m[3], 10);
+    otdPreviewDatePrefix.textContent = mm + '.' + dd + '. ';
+
+    var byYear = {};
+    var matches = [];
+    allRecords.forEach(function (r) {
+      if (!otdIsExactMatch(r, mm, dd)) return;
+      matches.push(r);
+      var y = r.date.slice(0, 4);
+      var existing = byYear[y];
+      if (!existing || (existing.day_secondary && !r.day_secondary) || (!otdHasMedia(existing) && otdHasMedia(r) && !r.day_secondary)) {
+        byYear[y] = r;
+      }
+    });
+
+    var allDates = allRecords.map(function (r) { return r.date; })
+      .filter(function (d) { return d && /^\d{4}-\d{2}-\d{2}$/.test(d); })
+      .sort();
+
+    if (!allDates.length) {
+      otdPreviewRow.innerHTML = '';
+      otdCandidates.innerHTML = '<li class="hint" style="cursor:default; list-style:none;">게시물 목록을 아직 불러오지 못했습니다.</li>';
+      return;
+    }
+
+    var minDate = allDates[0];
+    var startYear = parseInt(minDate.slice(0, 4), 10);
+    var startMM = parseInt(minDate.slice(5, 7), 10);
+    var startDD = parseInt(minDate.slice(8, 10), 10);
+    var currentYear = new Date().getFullYear();
+
+    var years = [];
+    for (var y = startYear; y <= currentYear; y++) {
+      if (y === startYear && (mm < startMM || (mm === startMM && dd < startDD))) continue;
+      if (y === currentYear && !byYear[String(y)]) continue;
+      years.push(String(y));
+    }
+
+    otdPreviewRow.innerHTML = years.map(function (y) {
+      var r = byYear[y];
+      if (!r) {
+        var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+        var emptyDate = y + '-' + pad(mm) + '-' + pad(dd);
+        var emptyMsg = randomOtdEmptyMessage();
+        return (
+          '<div class="otd-card otd-empty">' +
+          '<div class="otd-empty-msg">' +
+          '<span class="otd-empty-bang">' + Shared.escapeHtml(emptyMsg.bang) + '</span>' +
+          '<span class="otd-empty-sub">' + Shared.escapeHtml(emptyMsg.sub) + '</span>' +
+          '</div>' +
+          '<div class="otd-year">' + y + '년</div>' +
+          '<h4 class="otd-title"><a href="https://brunch.co.kr/@howaboutbfast/4" target="_blank" rel="noopener noreferrer">별일이 있었나봐요</a></h4>' +
+          '<div class="otd-meta">' + emptyDate + '</div>' +
+          '</div>'
+        );
+      }
+      return (
+        '<a class="otd-card" href="../' + Shared.escapeHtml(Shared.recipeUrl(r)) + '" target="_blank" rel="noopener" data-year="' + y + '">' +
+        Shared.thumbHTML(r, 24) +
+        '<div class="otd-year">' + y + '년</div>' +
+        '<h4 class="otd-title">' + Shared.escapeHtml(r.title || '(제목 없음)') + '</h4>' +
+        '<div class="otd-meta">' + r.date + (r.calories ? ' · ' + r.calories + 'kcal' : '') + '</div>' +
+        '</a>'
+      );
+    }).join('');
+
+    Array.prototype.forEach.call(otdPreviewRow.querySelectorAll('.otd-card:not(.otd-empty)'), function (el) {
+      el.addEventListener('click', function (e) {
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        editFromOtd(byYear[el.getAttribute('data-year')]);
+      });
+    });
+
+    // Below the date input: every matching record for this month/day across
+    // all years (not just the one byYear picked to display) - so a shadowed
+    // day_secondary duplicate is still directly reachable to edit.
+    matches.sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    otdCandidates.innerHTML = '';
+    if (!matches.length) {
+      otdCandidates.innerHTML = '<li class="hint" style="cursor:default; list-style:none;">이 날짜에 게시물이 없습니다.</li>';
+      return;
+    }
+    matches.forEach(function (r) {
+      var li = document.createElement('li');
+      li.style.cssText = 'display:flex; justify-content:space-between; align-items:center; gap:8px; cursor:default;';
+      var label = document.createElement('span');
+      label.textContent = r.date + ' — ' + (r.title || '(제목 없음)') + (r.day_secondary ? ' (숨김)' : '');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = '수정';
+      btn.style.flexShrink = '0';
+      btn.addEventListener('click', function () { editFromOtd(r); });
+      li.appendChild(label);
+      li.appendChild(btn);
+      otdCandidates.appendChild(li);
+    });
+  }
 
   // World Cup bracket test harness: entirely client-side, nothing is sent
   // to any Worker or saved anywhere - just runs WorldCup.start() against
