@@ -33043,7 +33043,7 @@
   "weather": "7도/흐림",
   "failed": false,
   "calories": null,
-  "title": "문어샐러드 문어",
+  "title": "문어 샐러드",
   "credit": null,
   "hashtags": [
    "나의프랑스식샐러드",
@@ -33055,9 +33055,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20240215, #조식다이어리 975, 7도/흐림\n쿠바가 대한민국의 193번째 수교국이 됐다. 쿠바엘 가야겠다. \n오븐 온도는 180도, 미리 예열하고 문어를 깨끗하게 씻어 그릇에 담고 올리브오일, 허브, 레몬 1/2개 짜서 넣고 오븐에 30분 굽는다. \n먹기 전에 레몬 듬뿍, 손질해 둔 미나리 줄기를 올린다. \n먹고 나서 생각하니 참기름을 조금 넣어도 좋았을 것 같다. \n#나의프랑스식샐러드 레시피를 응용했습니다. \n-\n좋아하실 듯?",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240215, #조식다이어리 975, 7도/흐림\n쿠바가 대한민국의 193번째 수교국이 됐다. 쿠바엘 가야겠다. \n\n오븐 온도는 180도, 미리 예열하고 문어를 깨끗하게 씻어 그릇에 담고 올리브오일, 허브, 레몬 1/2개 짜서 넣고 오븐에 30분 굽는다. \n먹기 전에 레몬 듬뿍, 손질해 둔 미나리 줄기를 올린다. \n먹고 나서 생각하니 참기름을 조금 넣어도 좋았을 것 같다. \n#나의프랑스식샐러드 레시피를 응용했습니다. ",
+  "ingredients": "- 자숙문어 50g\n",
+  "steps": "1. 자숙문어는 깨끗하게 씻은 뒤 그릇에 담고 올리브오일, 허브, 레몬 1/4개 짜서 180도 오븐에 30분 굽는다. \n2. 오븐에서 꺼낸 뒤 레몬 1/4개 짜서 넣고 다진 미나리 얹는다. ",
   "raw": "20240215, #조식다이어리 975, 7도/흐림\n\n쿠바가 대한민국의 193번째 수교국이 됐다. 쿠바엘 가야겠다. \n\n#문어샐러드\n\n오븐 온도는 180도, 미리 예열하고 문어를 깨끗하게 씻어 그릇에 담고 올리브오일, 허브, 레몬 1/2개 짜서 넣고 오븐에 30분 굽는다. \n먹기 전에 레몬 듬뿍, 손질해 둔 미나리 줄기를 올린다. \n먹고 나서 생각하니 참기름을 조금 넣어도 좋았을 것 같다. \n\n#나의프랑스식샐러드 레시피를 응용했습니다. \n\n#조식 #레시피 #미라클모닝 #샐러드 #문어\n\n-\n\n좋아하실 듯? ",
   "image": "https://images.how-about-breakfast.com/images/975.jpg",
   "gallery": [
@@ -33066,13 +33066,6 @@
    "https://images.how-about-breakfast.com/images/975_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/975.mp4",
-  "_en": {
-   "hash": "19e4f176402a10cbb631424b60a0beb3fab8b1b6070a19a9a65d06f88543d372",
-   "title": "Octopus Salad",
-   "intro": "20240215, #breakfastdiary 975, 7°C/cloudy\nCuba just became South Korea's 193rd country with diplomatic ties. I should go to Cuba.\nPreheat the oven to 180°C. Rinse the octopus well, place it in a dish, drizzle with olive oil and herbs, squeeze in the juice of 1/2 a lemon, and roast in the oven for 30 minutes.\nBefore eating, top generously with lemon and the reserved minari stems.\nThinking about it after eating, a little sesame oil probably would have been nice too.\nAdapted from my own #MyFrenchStyleSalad recipe.\n-\nThink you'd like it?",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "문어샐러드-문어-2"
  },
  {
