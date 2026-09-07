@@ -43720,7 +43720,7 @@
   "weather": "0도/맑음, 21분/운동",
   "failed": false,
   "calories": null,
-  "title": "추종 요리여왕 알육수",
+  "title": "알육수로 만든 푸실리",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -43734,9 +43734,9 @@
    "추종",
    "푸실리"
   ],
-  "intro": "20230306, #조식다이어리 697, 0도/맑음, 21분/운동\n그럼에도 그동안 #추종 하느라 지친 대중은 폐쇄적인 SNS로 발길을 돌리게 될까? (야, 본디에 이제 아무도 없어, 란 얘기에 덧븥여,) \n물 500ml를 끓이고 #요리여왕 #알육수 를 넣어 소고기 육수를 만든다. \n팬에 올리브오일과 버터를 넣고 다진 양파를 볶는다. 양파가 투명해지면 적당히 삶은 푸실리를 넣고 데친다. \n푸실리에 육수 1/2을 붓고 끓이다가 졸아들면 나머지 육수를 넣고 뭉근해질 때까지 끓인다. 푸실리를 접시에 담고 다진 파슬리, 파마산치즈를 올린다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20230306, #조식다이어리 697, 0도/맑음, 21분/운동\n그럼에도 그동안 #추종 하느라 지친 대중은 폐쇄적인 SNS로 발길을 돌리게 될까? (야, 본디에 이제 아무도 없어, 란 얘기에 덧븥여,) \n\n물 500ml를 끓이고 #요리여왕 #알육수 를 넣어 소고기 육수를 만든다. \n팬에 올리브오일과 버터를 넣고 다진 양파를 볶는다. 양파가 투명해지면 적당히 삶은 푸실리를 넣고 데친다. \n푸실리에 육수 1/2을 붓고 끓이다가 졸아들면 나머지 육수를 넣고 뭉근해질 때까지 끓인다. 푸실리를 접시에 담고 다진 파슬리, 파마산치즈를 올린다.",
+  "ingredients": "- 푸실리 2컵\n- 알육수 1개\n- 양파 1/2개\n- 올리브오일 1T\n- 버터 5g\n- 파슬리 한 줌\n- 파마산치즈",
+  "steps": "1. 물 500ml에 알육수 1개와 푸실리 넣고 삶는다. \n2. 팬에 올리브오일과 버터 넣고 다진 양파를 볶는다. 양파가 투명해지면 1의 푸실리 넣고 데친다. \n3. 2에 육수를 조금씩 부어가며 뭉근해질 때까지 끓인다. \n4. 접시에 푸실리 담고 다진 파슬리, 파마산치즈 갈아서 얹는다. ",
   "raw": "20230306, #조식다이어리 697, 0도/맑음, 21분/운동\n\n그럼에도 그동안 #추종 하느라 지친 대중은 폐쇄적인 SNS로 발길을 돌리게 될까? (야, 본디에 이제 아무도 없어, 란 얘기에 덧븥여,) \n\n물 500ml를 끓이고 #요리여왕 #알육수 를 넣어 소고기 육수를 만든다. \n팬에 올리브오일과 버터를 넣고 다진 양파를 볶는다. 양파가 투명해지면 적당히 삶은 푸실리를 넣고 데친다. \n푸실리에 육수 1/2을 붓고 끓이다가 졸아들면 나머지 육수를 넣고 뭉근해질 때까지 끓인다. 푸실리를 접시에 담고 다진 파슬리, 파마산치즈를 올린다. \n\n#조식 #레시피 #미라클모닝 #푸실리 #메타셀러 #메타셀러챌린지 #요리여왕 #알육수 ",
   "image": "https://images.how-about-breakfast.com/images/697.jpg",
   "gallery": [
@@ -43744,13 +43744,6 @@
    "https://images.how-about-breakfast.com/images/697_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/697.mp4",
-  "_en": {
-   "hash": "ce93cedbe190ef98e9c84a765545395cbb03b9556a13730cdf1fe6dbcaa689ac",
-   "title": "Beef Broth Fusilli",
-   "intro": "20230306, #breakfastdiary 697, 0°C/sunny, 21min exercise\nStill, will the masses, worn out from years of #followingthecrowd, end up retreating to more closed-off social networks? (Adding to the rumor that 'no one's left on Bondee anymore.')\nBoil 500ml of water and add #cookingqueen #eggbrothcube to make a beef stock.\nHeat olive oil and butter in a pan and sauté the chopped onion. Once it turns translucent, add the parboiled fusilli and warm it through.\nPour half the stock over the fusilli and simmer; once it reduces, add the rest and let it simmer gently until it thickens. Plate the fusilli and top with chopped parsley and parmesan cheese.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "추종-요리여왕-알육수"
  },
  {
