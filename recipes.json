@@ -85814,7 +85814,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 시금치 브로콜리",
+  "title": "시금치 브로콜리 샐러드",
   "credit": null,
   "hashtags": [
    "그래놀라",
@@ -85826,18 +85826,11 @@
    "조식스타그램"
   ],
   "intro": "초록초록한 것이 사랑스러운 시절, #오늘의조식 은 #시금치 와 삶은 #브로콜리 를 팬에 구운 뒤, 올리브 오일, 화이트 와인 식초, 홀그레인 머스타드 드레싱에 언제나 즐겨 먹는 #그래잇데이 #그래놀라 #조식 #조식스타그램",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 시금치 2~3뿌리\n- 브로콜리 1/4개\n- 그래놀라 1T\n- 드레싱(올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)",
+  "steps": "1. 시금치는 흐르는 물에 씻은 후 물기를 제거한다. \n2. 팬에 올리브오일 두르고 줄기까지 길게 썬 브로콜리를 굽는다. \n3. 접시에 1의 시금치와 2의 브로콜리 얹고 그래놀라 얹은 뒤 드레싱 뿌린다.  ",
   "raw": "초록초록한 것이 사랑스러운 시절, #오늘의조식 은 #시금치 와 삶은 #브로콜리 를 팬에 구운 뒤, 올리브 오일, 화이트 와인 식초, 홀그레인 머스타드 드레싱에 언제나 즐겨 먹는 #그래잇데이 #그래놀라 #조식 #조식스타그램",
   "pre_label": "D-155",
   "image": "https://images.how-about-breakfast.com/images/pre-155.jpg",
-  "_en": {
-   "hash": "07eab725c1bc5708577495e14a07b1a896cc23b6fde9f8bb06cf190e63a439a1",
-   "title": "Spinach and Broccoli Breakfast",
-   "intro": "A season when everything green feels lovable — #todaysbreakfast is #spinach and boiled #broccoli, seared in a pan, with a dressing of olive oil, white wine vinegar, and whole grain mustard, plus my forever-favorite #greatday #granola. #breakfast #breakfastgram",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-시금치-브로콜리"
  },
  {
