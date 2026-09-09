@@ -52091,7 +52091,7 @@
   "weather": "24도/비",
   "failed": false,
   "calories": null,
-  "title": "문어파스타 모닝리추얼 모닝루틴",
+  "title": "문어 파스타",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -52117,9 +52117,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220813, #조식다이어리 522, 24도/비\n달군 팬에 올리브오일, 마늘, 양파를 볶는다. 손질해둔 문어와 토마토에 소금소금, 후추후추 볶는다. \n삶은 오징어먹물 스파게티에 면수 조금, 깻잎 페스토를 놓고 볶다가 준비해둔 재료를 추가하고 SSG SSG, 세상에서 제일 예쁜 깻잎으로 장식한 (오늘은 아침 겸 점심) #문어파스타 \n어떤 종류의 슬픔은 물기 없이 단단해서, 어떤 칼로도 연마되지 않는 원석(原石)과 같다.\n한강, 몇 개의 이야기 12\n훌륭한 작가들이 존경 받아야 하는 이유는 흔한 일상의 단어들만으로도 마음에 울림을 주기 때문이다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220813, #조식다이어리 522, 24도/비\n달군 팬에 올리브오일, 마늘, 양파를 볶는다. 손질해둔 문어와 토마토에 소금소금, 후추후추 볶는다. \n삶은 오징어먹물 스파게티에 면수 조금, 깻잎 페스토를 넣고 볶다가 준비해둔 재료를 추가하고 SSG SSG, 세상에서 제일 예쁜 깻잎으로 장식한 (오늘은 아침 겸 점심) #문어파스타 \n\n어떤 종류의 슬픔은 물기 없이 단단해서, 어떤 칼로도 연마 되지 않는 원석(原石)과 같다.\n(한강, 몇 개의 이야기 12)\n훌륭한 작가들이 존경 받아야 하는 이유는 흔한 일상의 단어들 만으로도 마음에 울림을 주기 때문이다.",
+  "ingredients": "- 오징어먹물 스파게티 1인분\n- 방울토마토 3~4개\n- 깻잎페스토 1T\n- 깻잎 2~3장\n- 올리브오일 \n- 소금\n- 후추",
+  "steps": "1. 끓는 물에 오징어먹물 스파게티와 소금 넣고 삶는다. \n2. 팬에 올리브오일 두르고 얇게 썬 마늘과 다진 양파를 볶는다. \n3. 2에 손질해 둔 자숙 문어와 반으로 썬 방울토마토, 소금, 후추 넣고 볶는다. \n4. 3에 1의 오징어먹물 스파게티와 면수 1/2컵, 깻잎 페스토를 넣고 만테까레한다. \n5. 접시에 담고 다진 깻잎 조금 얹는다. ",
   "raw": "20220813, #조식다이어리 522, 24도/비\n\n달군 팬에 올리브오일, 마늘, 양파를 볶는다. 손질해둔 문어와 토마토에 소금소금, 후추후추 볶는다. \n삶은 오징어먹물 스파게티에 면수 조금, 깻잎 페스토를 놓고 볶다가 준비해둔 재료를 추가하고 SSG SSG, 세상에서 제일 예쁜 깻잎으로 장식한 (오늘은 아침 겸 점심) #문어파스타 \n\n어떤 종류의 슬픔은 물기 없이 단단해서, 어떤 칼로도 연마되지 않는 원석(原石)과 같다.\n한강, 몇 개의 이야기 12\n\n훌륭한 작가들이 존경 받아야 하는 이유는 흔한 일상의 단어들만으로도 마음에 울림을 주기 때문이다. \n\n#직장인 #조식 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #파스타 #오징어먹물스파게티 #깻잎 #토마토 #문어\n#breakfast #squidinkpasta #tomato #octopus #octopuspasta #perillaleaf #pesto",
   "image": "https://images.how-about-breakfast.com/images/522.jpg",
   "gallery": [
@@ -52128,13 +52128,6 @@
    "https://images.how-about-breakfast.com/images/522_3.jpg",
    "https://images.how-about-breakfast.com/images/522_4.jpg"
   ],
-  "_en": {
-   "hash": "c3765835e5a0c2514ad05dafa27050e68ac6d621e9c36dd154e80203b3b301e1",
-   "title": "Octopus Pasta",
-   "intro": "20220813 #breakfastdiary 522, 24°C/rain\nHeat oil in a pan and sauté garlic and onion. Add the cleaned octopus and tomato, season with salt and plenty of pepper, and cook through.\nToss boiled squid-ink spaghetti with a splash of pasta water and perilla leaf pesto, add the prepared ingredients and mix well, then garnish with the prettiest perilla leaves in the world—today's breakfast doubling as lunch, #octopuspasta\nSome kinds of sorrow are dry and hard, like a raw stone that no blade can polish smooth.\nHan Kang, A Few Stories 12\nThe reason great writers deserve our respect is that they can move the heart using nothing but the ordinary words of everyday life.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "문어파스타-모닝리추얼-모닝루틴"
  },
  {
