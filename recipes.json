@@ -25289,7 +25289,7 @@
   "weather": "28도/대체로 맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "렌틸고구마샐러드 나의로컬푸드샐러드 렌틸",
+  "title": "렌틸 고구마 샐러드",
   "credit": "#나의로컬푸드샐러드",
   "hashtags": [
    "나의로컬푸드샐러드",
@@ -25300,9 +25300,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20240911 #조식다이어리 1176, 28도/대체로 맑음, 20분/운동(M) \n조금 늦은 조식, 평소보다 10분 정도 늦었을 뿐인데 식탁 위에 떨어지는 햇살이 경이롭다. \n렌틸 4, 고구마 작은 것 2개가 필요하다. 호밀크래커, 파슬리나 셀러리 잎 같은 게 있으면 좋다. \n렌틸은 물에 30분 담가 두었다가 끓는 물에 소금소금 10~15분 삶는다. \n우유 1 넣고 삶거나 구운 고구마 으깬다. 올리브오일 조금 얹는다. \n접시에 렌틸 담고 고구마를 얹는다. \n호밀크래커 으깨서 고구마 위에 얹는다. 아니 꽂는다. \n셀러리 잎 다져서 흩뿌린다. \n👆담백한 게 싫다면 비네그레트 드레싱 조금 얹어서 먹는다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240911 #조식다이어리 1176, 28도/대체로 맑음, 20분/운동(M) \n조금 늦은 조식, 평소보다 10분 정도 늦었을 뿐인데 식탁 위에 떨어지는 햇살이 경이롭다. \n\n렌틸 4, 고구마 작은 것 2개가 필요하다. 호밀크래커, 파슬리나 셀러리 잎 같은 게 있으면 좋다. \n렌틸은 물에 30분 담가 두었다가 끓는 물에 소금소금 10~15분 삶는다. \n우유 1 넣고 삶거나 구운 고구마 으깬다. 올리브오일 조금 얹는다. \n접시에 렌틸 담고 고구마를 얹는다. \n호밀크래커 으깨서 고구마 위에 얹는다. 아니 꽂는다. \n셀러리 잎 다져서 흩뿌린다. \n👆담백한 게 싫다면 비네그레트 드레싱 조금 얹어서 먹는다.",
+  "ingredients": "- 렌틸 4T\n- 작은 고구마 2개\n- 우유 1T\n- 호밀크래커 2~3개\n- 셀러리 잎\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 렌틸은 30분쯤 물에 담가두었다가 끓는 물에 소금 넣고 10분 삶는다. \n2. 고구마는 찜기에 넣고 삶는다. \n3. 믹싱볼에 껍질 벗긴 고구마와 우유 1T, 올리브오일 1/2T 넣고 고구마를 으깬다. \n4. 접시에 1의 렌틸 담고 3의 으깬 고구마를 얹는다. \n5. 호밀크래커 부셔서 4의 고구마 위에 꽂고 셀러리 잎 조금 얹는다. \n\n취향에 따라 비네그레트 드레싱 조금 얹는다. ",
   "raw": "20240911 #조식다이어리 1176, 28도/대체로 맑음, 20분/운동(M) \n\n조금 늦은 조식, 평소보다 10분 정도 늦었을 뿐인데 식탁 위에 떨어지는 햇살이 경이롭다. \n\n#렌틸고구마샐러드\n\n렌틸 4, 고구마 작은 것 2개가 필요하다. 호밀크래커, 파슬리나 셀러리 잎 같은 게 있으면 좋다. \n\n렌틸은 물에 30분 담가 두었다가 끓는 물에 소금소금 10~15분 삶는다. \n우유 1 넣고 삶거나 구운 고구마 으깬다. 올리브오일 조금 얹는다. \n접시에 렌틸 담고 고구마를 얹는다. \n호밀크래커 으깨서 고구마 위에 얹는다. 아니 꽂는다. \n셀러리 잎 다져서 흩뿌린다. \n\n👆담백한 게 싫다면 비네그레트 드레싱 조금 얹어서 먹는다. \n \nInspired by #나의로컬푸드샐러드\n\n#조식 #레시피 #미라클모닝 #렌틸",
   "image": "https://images.how-about-breakfast.com/images/1176.jpg",
   "gallery": [
@@ -25314,13 +25314,6 @@
    "https://images.how-about-breakfast.com/images/1176_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1176.mp4",
-  "_en": {
-   "hash": "4c736145b5d6770a60b28cc8196c92bba04c8bf27559053388289656b07742c3",
-   "title": "Lentil Sweet Potato Salad My Local Food Salad Lentil",
-   "intro": "20240911 #breakfastdiary 1176, 28°C/mostly clear, 20min/exercise(M)\nBreakfast a bit late today — only about 10 minutes later than usual, but the sunlight falling on the table is marvelous.\nYou need 4 lentils, 2 small sweet potatoes. Rye crackers and something like parsley or celery leaves are nice to have too.\nSoak the lentils in water for 30 minutes, then boil in salted water for 10-15 minutes.\nAdd 1 milk and mash the boiled or roasted sweet potatoes. Drizzle a little olive oil on top.\nPut the lentils on a plate and top with the sweet potato.\nCrush rye crackers and place on top of the sweet potato. Actually, stick them in.\nChop celery leaves and scatter over.\n👆If you don't like it plain, drizzle on a little vinaigrette dressing.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "렌틸고구마샐러드-나의로컬푸드샐러드-렌틸"
  },
  {
