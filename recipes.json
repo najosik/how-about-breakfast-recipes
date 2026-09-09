@@ -51153,7 +51153,7 @@
   "weather": "23도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "평정심 토마토뇨끼 뇨끼",
+  "title": "토마토 뇨끼",
   "credit": null,
   "hashtags": [
    "brattacheese",
@@ -51175,9 +51175,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220911, #조식다이어리 540, 23도/대체로흐림\n달군 팬에 올리브오일, 다진 양파와 마늘, 파프리카를 데친다. \n시판 토마토소스를 붓고 데우다가 뇨끼, 깻잎, 허브를 넣고 뒤섞뒤섞, 세상에서 제일 예쁜 브라타치즈 #토마토뇨끼\n남의 인생은 성공한 것처럼 보이고, 행복하며 멋져 보일 수 있다. 그러나 인생이 아무리 화려해 보여도 결국 우울한 종말이 찾아온다. 구내식당 점심 반찬이 잘 나온 것과 같은 사소한 일에라도 행복을 느끼지 않으면 견딜 수 없다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220911, #조식다이어리 540, 23도/대체로흐림\n달군 팬에 올리브오일, 다진 양파와 마늘, 파프리카를 데친다. \n시판 토마토소스를 붓고 데우다가 뇨끼, 깻잎, 허브를 넣고 뒤섞뒤섞, 세상에서 제일 예쁜 브라타치즈 #토마토뇨끼\n\n남의 인생은 성공한 것처럼 보이고, 행복하며 멋져 보일 수 있다. 그러나 인생이 아무리 화려해 보여도 결국 우울한 종말이 찾아온다. 구내식당 점심 반찬이 잘 나온 것과 같은 사소한 일에라도 행복을 느끼지 않으면 견딜 수 없다.",
+  "ingredients": "- 뇨끼 1컵\n- 양파 1/2개\n- 마늘 1개\n- 파프리카 1/2개\n- 깻잎 3~4장\n- 부라타치즈 1개\n- 올리브오일\n- 소금\n- 후추\n- 허브",
+  "steps": "1. 끓는 물에 소금 넣고 뇨끼를 삶는다. \n2. 양파, 마늘, 파프리카를 다진다. \n3. 달군 팬에 올리브오일 두르고 2의 양파와 마늘 그리고 파프리카 넣고 좀 더 볶는다. \n4. 1에 토마토소스 붓고 1의 뇨끼, 다진 깻잎와 허브 넣고 골고루 섞는다. \n5. 부라타치즈 찢어서 얹고 후추 조금 뿌린다. ",
   "raw": "20220911, #조식다이어리 540, 23도/대체로흐림\n\n#평정심\n\n달군 팬에 올리브오일, 다진 양파와 마늘, 파프리카를 데친다. \n시판 토마토소스를 붓고 데우다가 뇨끼, 깻잎, 허브를 넣고 뒤섞뒤섞, 세상에서 제일 예쁜 브라타치즈 #토마토뇨끼\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #뇨끼 #토마토 #브라타치즈\n#breakfast #gnocchi #tomato #brattacheese \n\n남의 인생은 성공한 것처럼 보이고, 행복하며 멋져 보일 수 있다. 그러나 인생이 아무리 화려해 보여도 결국 우울한 종말이 찾아온다. 구내식당 점심 반찬이 잘 나온 것과 같은 사소한 일에라도 행복을 느끼지 않으면 견딜 수 없다.\n#이국종",
   "image": "https://images.how-about-breakfast.com/images/540.jpg",
   "gallery": [
@@ -51185,13 +51185,6 @@
    "https://images.how-about-breakfast.com/images/540_2.jpg",
    "https://images.how-about-breakfast.com/images/540_3.jpg"
   ],
-  "_en": {
-   "hash": "4b24071f2e4332cae87381dc3537551046a3363f1a3c7bbb4460e4fbb2861a04",
-   "title": "Tomato Gnocchi",
-   "intro": "20220911 #breakfastdiary 540, 23°C/mostly cloudy\nIn a heated pan with olive oil, blanch chopped onion, garlic, and bell pepper.\nPour in store-bought tomato sauce, and once it's warmed through, add gnocchi, perilla leaves, and herbs, and toss together. Top with the prettiest burrata cheese in the world. #tomatognocchi\nOther people's lives can look successful, happy, and glamorous. But no matter how dazzling a life appears, a gloomy ending eventually comes for it. Without finding happiness in small things — like the cafeteria lunch side dish turning out well — it's hard to bear.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "평정심-토마토뇨끼-뇨끼"
  },
  {
