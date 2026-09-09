@@ -51148,7 +51148,7 @@
   "weather": "22도/대체로흐림, 25분/운동",
   "failed": false,
   "calories": null,
-  "title": "추석 브로콜리 아스파라거스",
+  "title": "브로콜리 아스파라거스 샐러드",
   "credit": null,
   "hashtags": [
    "asparagus",
@@ -51173,9 +51173,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220910, #조식다이어리 539, 22도/대체로흐림, 25분/운동\n팬에 올리브오일, 세상에서 제일 예쁜 브로콜리와 아스파라거스를 굽는다. 플레이팅하고 올리브오일, 소금, 후추후추, 홀그레인머스타드, 꿀, 레몬주스를 쉐낏, 허니 머스타드 글레이즈를 얹는다. \n며칠 전, 서울은 비교적 조용히 태풍이 지나간 것 같아서 ‘큰 피해 없이 태풍이 지나가서…’라고 공지사항을 썼다가 황급히 지웠었다. \n202209089\n20220909, #조식다이어리 538, 19도/대체로맑음, 24분/운동\n버터를 듬뿍 넣었더니 맛이 고급지다. \n달군 팬에 올리브오일, 레몬제스트, 레드페퍼, 소금소금, 후추후추 세상에서 제일 예쁜 브뤼셀 스프라우츠를 볶는다. \n브뤼셀 스프라우츠를 건져 낸 팬에 버터, 소금소금, 후추후추 뇨끼를 데친다. 준비해 둔 브뤼셀 스프라우츠를 넣고 뒤섞뒤섞, 플레이팅하고 파마산 치즈 #브뤼셀스프라우츠를곁들인크리스피한뇨끼",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220910, #조식다이어리 539, 22도/대체로흐림, 25분/운동\n팬에 올리브오일, 세상에서 제일 예쁜 브로콜리와 아스파라거스를 굽는다. 플레이팅하고 올리브오일, 소금, 후추후추, 홀그레인머스타드, 꿀, 레몬주스를 쉐낏, 허니 머스타드 드레싱을 얹는다. \n며칠 전, 서울은 비교적 조용히 태풍이 지나간 것 같아서 ‘큰 피해 없이 태풍이 지나가서…’라고 공지사항을 썼다가 황급히 지웠었다. ",
+  "ingredients": "- 브로콜리 1/2개\n- 아스파라거스 3개\n- 허니 머스터드 드레싱(올리브오일 2T, 소금과 후추 한 꼬집, 홀그레인 머스터드 1t, 꿀 1T, 레몬주스 1T)\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 브로콜리는 흐르는 물에 씻은 후 한 입 크기로 썬다. \n2. 아스파라거스는 그레이터로 줄기를 손질한다. \n3. 팬에 올리브오일 두르고 소금, 후추 넣고 1의 브로콜리와 2의 아스파라거스를 데친다. \n4. 3을 접시에 담고 허니 머스터드 드레싱을 얹는다. ",
   "raw": "20220910, #조식다이어리 539, 22도/대체로흐림, 25분/운동\n\n#추석 \n\n팬에 올리브오일, 세상에서 제일 예쁜 브로콜리와 아스파라거스를 굽는다. 플레이팅하고 올리브오일, 소금, 후추후추, 홀그레인머스타드, 꿀, 레몬주스를 쉐낏, 허니 머스타드 글레이즈를 얹는다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #브로콜리 #아스파라거스\n#breakfast #salad #asparagus #broccoli \n\n며칠 전, 서울은 비교적 조용히 태풍이 지나간 것 같아서 ‘큰 피해 없이 태풍이 지나가서…’라고 공지사항을 썼다가 황급히 지웠었다. \n\n202209089\n20220909, #조식다이어리 538, 19도/대체로맑음, 24분/운동\n\n버터를 듬뿍 넣었더니 맛이 고급지다. \n\n달군 팬에 올리브오일, 레몬제스트, 레드페퍼, 소금소금, 후추후추 세상에서 제일 예쁜 브뤼셀 스프라우츠를 볶는다. \n브뤼셀 스프라우츠를 건져 낸 팬에 버터, 소금소금, 후추후추 뇨끼를 데친다. 준비해 둔 브뤼셀 스프라우츠를 넣고 뒤섞뒤섞, 플레이팅하고 파마산 치즈 #브뤼셀스프라우츠를곁들인크리스피한뇨끼\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #뇨끼 #브뤼셀스프라우츠 \n#breakfast #salad #gnocchi #brusselssprouts ",
   "image": "https://images.how-about-breakfast.com/images/539.jpg",
   "gallery": [
@@ -51183,13 +51183,6 @@
    "https://images.how-about-breakfast.com/images/539_2.jpg",
    "https://images.how-about-breakfast.com/images/539_3.jpg"
   ],
-  "_en": {
-   "hash": "088acbee2364230da2f734f1acb17ba90eea4db58cac8896245c607046cec879",
-   "title": "Broccoli and Asparagus",
-   "intro": "20220910 #breakfastdiary 539, 22°C/mostly cloudy, 25min/exercise\nIn a pan with olive oil, roast the prettiest broccoli and asparagus in the world. Plate it and mix together olive oil, salt, pepper pepper, wholegrain mustard, honey, and lemon juice, then drizzle on a honey mustard glaze.\nA few days ago, it seemed like the typhoon had passed through Seoul relatively quietly, so I wrote in a notice, 'the typhoon passed without major damage…' then hastily deleted it.\n202209089\n20220909 #breakfastdiary 538, 19°C/mostly clear, 24min/exercise\nAdding plenty of butter made it taste luxurious.\nIn a heated pan with olive oil, lemon zest, red pepper, salt salt, pepper pepper, sauté the prettiest brussels sprouts in the world.\nIn the same pan where the brussels sprouts were cooked, add butter, salt salt, pepper pepper, and blanch gnocchi. Add the prepared brussels sprouts back in and toss together. Plate it with parmesan cheese. #crispygnocchiwithbrusselssprouts",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "추석-브로콜리-아스파라거스"
  },
  {
