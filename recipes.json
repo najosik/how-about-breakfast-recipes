@@ -25337,7 +25337,7 @@
   "weather": "27도/맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "과카몰리",
+  "title": "과카몰을 곁들인 고구마",
   "credit": null,
   "hashtags": [
    "과카몰리",
@@ -25347,8 +25347,8 @@
    "조식다이어리"
   ],
   "intro": "20240910 #조식다이어리 1175, 27도/맑음, 20분/운동(M) \n과카몰리 곁들인 구운 고구마. 둘 다 남아메리카가 본고장이니 잘 어울린다. \n아보카도 1개, 토마토 1개, 양파 1/4개, 마늘 1개, 올리브오일, 라임주스가 필요하다. \n믹싱볼에 고구마 넣고 물 조금, 비닐 씌우고 구멍내서 전자렌지에 2분 데운다. 꺼내서 에프에 넣고 올리브오일, 소금소금 200도, 10분 굽고 뒤집어서 반대편도 10분 굽는다. (이렇게 구우면 20분 만에 구울 수 있다. 게다가 껍질도 스르륵 벗겨진다.) 그 동안, \n믹싱볼에 아보카도, 씨 빼고 과육만 다진 토마토, 다진 양파와 마늘 넣고 라임주스 1, 소금소금, 후추후추 골고루 섞는다. (참, 양파는 다지기 전에 물에 담가둔다.) \n고구마를 반으로 가르고 과카몰리를 채워 넣는다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 고구마 1개\n- 과카몰(아보카도 1/2개, 과육만 다진 토마토 1/2개, 양파 1/2개, 마늘 1개, 라임주스 1T, 소금, 후추)\n- 올리브오일\n- 소금",
+  "steps": "1. 믹싱볼에 고구마 넣고 물 조금 부은 다음 랩 씌우고 구멍내서 전자레인지에 2분 데운다. \n2. 1의 고구마 꺼내서 올리브오일 바른 다음 소금 뿌리고 200도 에어프라이어에 한 면당 10분씩 굽는다. \n3. 양파는 썰어서 물에 담가둔다.\n4. 믹싱볼에 아보카도, 과육만 다진 토마토, 3의 양파 다지고, 다진 마늘, 라임주스, 소금, 후추 넣고 골고루 섞는다. \n5. 1의 고구마 꺼내서 반으로 가르고 3의 과카몰을 채워 넣는다. ",
   "raw": "20240910 #조식다이어리 1175, 27도/맑음, 20분/운동(M) \n\n과카몰리 곁들인 구운 고구마. 둘 다 남아메리카가 본고장이니 잘 어울린다. \n\n아보카도 1개, 토마토 1개, 양파 1/4개, 마늘 1개, 올리브오일, 라임주스가 필요하다. \n\n믹싱볼에 고구마 넣고 물 조금, 비닐 씌우고 구멍내서 전자렌지에 2분 데운다. 꺼내서 에프에 넣고 올리브오일, 소금소금 200도, 10분 굽고 뒤집어서 반대편도 10분 굽는다. (이렇게 구우면 20분 만에 구울 수 있다. 게다가 껍질도 스르륵 벗겨진다.) 그 동안, \n믹싱볼에 아보카도, 씨 빼고 과육만 다진 토마토, 다진 양파와 마늘 넣고 라임주스 1, 소금소금, 후추후추 골고루 섞는다. (참, 양파는 다지기 전에 물에 담가둔다.) \n고구마를 반으로 가르고 과카몰리를 채워 넣는다. \n\n#조식 #레시피 #미라클모닝 #과카몰리",
   "image": "https://images.how-about-breakfast.com/images/1175.jpg",
   "gallery": [
@@ -25358,13 +25358,6 @@
    "https://images.how-about-breakfast.com/images/1175_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1175.mp4",
-  "_en": {
-   "hash": "da304c0de91be203bb368e648d46be90a6b9f89cae28d91468e50728e1f1d77f",
-   "title": "Guacamole",
-   "intro": "20240910 #breakfastdiary 1175, 27°C/clear, 20min/exercise(M)\nRoasted sweet potato with guacamole. Both are originally from South America, so they pair well.\nYou need 1 avocado, 1 tomato, 1/4 onion, 1 clove garlic, olive oil, and lime juice.\nPut the sweet potato in a mixing bowl with a little water, cover with plastic wrap, poke holes, and microwave for 2 minutes. Take it out, put it in the air fryer with olive oil and salt, roast at 200°C for 10 minutes, flip, and roast the other side for another 10 minutes. (Roasting this way gets it done in 20 minutes. Plus the skin peels right off.) Meanwhile,\nIn a mixing bowl combine avocado, tomato (seeded, flesh only, chopped), chopped onion and garlic, then mix thoroughly with 1 lime juice, salt, and pepper. (By the way, soak the onion in water before chopping.)\nCut the sweet potato in half and fill with the guacamole.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "과카몰리"
  },
  {
