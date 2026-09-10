@@ -25306,7 +25306,7 @@
   "weather": "25도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "바나나스플릿 바나나",
+  "title": "바나나 스플릿",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25316,9 +25316,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "땅콩버터가 들어간 바나나스플릿을 다시 만들어 업로드~🍌\n-\n20240912 #조식다이어리 1177, 25도/흐림, 20분/운동(M) \n땅콩버터 빠진 땅콩버터 #바나나스플릿\n바나나, 사워크림, 집에 있는 각종 과일과 무엇보다 단단하게 부여잡은 정신줄이 필요하다. \n바나나 반으로 가른 후 접시에 담고 사워크림 얹는다.\n사과, 골드키위, 다진 피칸, 라즈베리 얹는다. 뭔가 이상한데 라며 여기까지 만든 다음 땅콩버터가 빠졌다는 사실을 깨달았다. 정신줄을 놓지 말자.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240912 #조식다이어리 1177, 25도/흐림, 20분/운동(M) \n땅콩버터 빠진 땅콩버터 #바나나스플릿\n바나나, 사워크림, 집에 있는 각종 과일과 무엇보다 단단하게 부여잡은 정신줄이 필요하다. \n바나나 반으로 가른 후 접시에 담고 사워크림 얹는다.\n사과, 골드키위, 다진 피칸, 라즈베리 얹는다. 뭔가 이상한데 라며 여기까지 만든 다음 땅콩버터가 빠졌다는 사실을 깨달았다. 정신줄을 놓지 말자.\n\n땅콩버터가 들어간 바나나스플릿을 다시 만들어 업로드~🍌",
+  "ingredients": "- 바나나 1개\n- 사워크림 2T\n- 피넛버터 1T\n- 피칸 0.5T\n- 라즈베리 1T",
+  "steps": "1. 바나나는 가로로 썬다. \n2. 접시에 1의 바나나 담고 그 위에 사워크림, 피넛버터, 다진 피칸, 라즈베리 얹는다. ",
   "raw": "땅콩버터가 들어간 바나나스플릿을 다시 만들어 업로드~🍌\n\n-\n\n20240912 #조식다이어리 1177, 25도/흐림, 20분/운동(M) \n\n땅콩버터 빠진 땅콩버터 #바나나스플릿\n\n바나나, 사워크림, 집에 있는 각종 과일과 무엇보다 단단하게 부여잡은 정신줄이 필요하다. \n\n바나나 반으로 가른 후 접시에 담고 사워크림 얹는다.\n사과, 골드키위, 다진 피칸, 라즈베리 얹는다. 뭔가 이상한데 라며 여기까지 만든 다음 땅콩버터가 빠졌다는 사실을 깨달았다. 정신줄을 놓지 말자.\n\n#조식 #레시피 #미라클모닝 #바나나",
   "image": "https://images.how-about-breakfast.com/images/1177.jpg",
   "gallery": [
@@ -25326,13 +25326,6 @@
    "https://images.how-about-breakfast.com/images/1177_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1177.mp4",
-  "_en": {
-   "hash": "e71dbcf7fb95db1a917e44bb70692773077e4e3ab48b2a77e2bef220648cccfc",
-   "title": "Banana Split Banana",
-   "intro": "Uploading again a banana split with peanut butter~🍌\n-\n20240912 #breakfastdiary 1177, 25°C/cloudy, 20min/exercise(M)\nPeanut butter-less peanut butter #bananasplit\nYou need banana, sour cream, whatever fruit is around the house, and above all, a firm grip on your sanity.\nCut the banana in half, place on a plate, and top with sour cream.\nAdd apple, gold kiwi, chopped pecans, and raspberries. Thought something felt off, and after getting this far realized I'd forgotten the peanut butter. Let's not lose our grip.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "바나나스플릿-바나나"
  },
  {
