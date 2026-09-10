@@ -37887,7 +37887,7 @@
   "weather": "21도/흐림, 21분/운동(Y)",
   "failed": false,
   "calories": null,
-  "title": "템페조림 템페",
+  "title": "간장 템페구이",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37897,9 +37897,9 @@
    "템페",
    "템페조림"
   ],
-  "intro": "20230912, #조식다이어리 843, 21도/흐림, 21분/운동(Y) \n모닝 요가 후, 탄수화물 섭취에 대한 죄책감을 덜어줄, 단백질로 똘똘 뭉친 이것은 #템페조림\n달군 팬에 올리브오일, 템페를 썰어 팬에 굽는다. 템페가 익으면 간장1, 맛술1, 설탕1, 물50ml를 넣고 졸인다. 접시에 깻잎을 다져서 깔고 템페를 올린다. 참기름, 들기름 뭐가 어울릴까?",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20230912, #조식다이어리 843, 21도/흐림, 21분/운동(Y) \n모닝 요가 후, 탄수화물 섭취에 대한 죄책감을 덜어줄, 단백질로 똘똘 뭉친 이것은 #템페조림\n\n달군 팬에 올리브오일, 템페를 썰어 팬에 굽는다. 템페가 익으면 간장1, 맛술1, 설탕1, 물50ml를 넣고 졸인다. 접시에 깻잎을 다져서 깔고 템페를 올린다. 참기름, 들기름 뭐가 어울릴까?",
+  "ingredients": "- 템페 1개\n- 소스(간장 1T, 맛술 1T, 설탕 1T에 물 50ml)\n- 깻잎 4~5장\n- 들기름 1T",
+  "steps": "1. 팬에 올리브오일 두르고 템페를 길게 썰어 앞뒤로 굽는다. \n2. 간장 1T, 맛술 1T, 설탕 1T에 물 50ml 섞어서 1의 템페에 붓는다. \n3. 접시에 깻잎 다져서 얹고 구운 템페 담은 뒤 들기름 조금 얹는다. ",
   "raw": "20230912, #조식다이어리 843, 21도/흐림, 21분/운동(Y) \n\n모닝 요가 후, 탄수화물 섭취에 대한 죄책감을 덜어줄, 단백질로 똘똘 뭉친 이것은 #템페조림\n\n달군 팬에 올리브오일, 템페를 썰어 팬에 굽는다. 템페가 익으면 간장1, 맛술1, 설탕1, 물50ml를 넣고 졸인다. 접시에 깻잎을 다져서 깔고 템페를 올린다. 참기름, 들기름 뭐가 어울릴까? \n\n#조식 #레시피 #미라클모닝 #템페",
   "image": "https://images.how-about-breakfast.com/images/843.jpg",
   "gallery": [
@@ -37907,13 +37907,6 @@
    "https://images.how-about-breakfast.com/images/843_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/843.mp4",
-  "_en": {
-   "hash": "6d18d19ddd3c2015afeb48a580edd9e145599a2a14a4bf86eb212806b7fea6c0",
-   "title": "Braised Tempeh",
-   "intro": "20230912 #breakfastdiary 843, 21°C/cloudy, 21min/exercise(Y)\nAfter morning yoga, here's something packed solid with protein to ease the guilt over carbs — #braisedtempeh.\nSlice tempeh and pan-fry it in olive oil in a heated pan. Once cooked, add soy sauce 1, mirin 1, sugar 1, and 50ml water, and simmer down. Lay chopped perilla leaves on a plate and top with the tempeh. Sesame oil or perilla oil — which would go better?",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "템페조림-템페"
  },
  {
