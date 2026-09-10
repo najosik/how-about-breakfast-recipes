@@ -63919,7 +63919,7 @@
   "weather": "4도/안개, 14분/운동",
   "failed": false,
   "calories": null,
-  "title": "옥수수샐러드 나의로컬푸드샐러드 오스카와일드",
+  "title": "옥수수 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -63945,21 +63945,14 @@
    "홈쿡"
   ],
   "intro": "20211215, #조식다이어리 296, 4도/안개, 14분/운동\n태국산. 옥수수를 알갱이만 발라낸다. 완두콩, 비네그레트 드레싱 #옥수수샐러드\n#나의로컬푸드샐러드 레시피\n아무것도 하지 않는 것이 세상에서 가장 어려운 일이다. 그것은 가장 어렵고도 가장 지적인 일이다.\n그는 아리스토텔레스가 신의 쾌락이라 얘기했던 ‘움직임 없는 부동의 고요’에 대해서 잘 알고 있었던 것 같다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 옥수수 1개\n- 완두콩 1/2컵\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, ",
+  "steps": "1. 옥수수는 칼로 썰어 알갱이를 발라낸다. \n2. 끓는 물에 2~3분 완두콩 삶는다. \n3. 접시에 1의 옥수수와 2의 완두콩 담고 드레싱 두른 뒤 향긋한 딜 얹는다. ",
   "raw": "20211215, #조식다이어리 296, 4도/안개, 14분/운동\n\n태국산. 옥수수를 알갱이만 발라낸다. 완두콩, 비네그레트 드레싱 #옥수수샐러드\n#나의로컬푸드샐러드 레시피\n\n아무것도 하지 않는 것이 세상에서 가장 어려운 일이다. 그것은 가장 어렵고도 가장 지적인 일이다.\n#오스카와일드 \n\n그는 아리스토텔레스가 신의 쾌락이라 얘기했던 ‘움직임 없는 부동의 고요’에 대해서 잘 알고 있었던 것 같다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #옥수수 #완두콩   \n#breakfast #salad #corn #pea ",
   "image": "https://images.how-about-breakfast.com/images/296.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/296.jpg",
    "https://images.how-about-breakfast.com/images/296_2.jpg"
   ],
-  "_en": {
-   "hash": "2776e913eb678dffa1b783efeaa3587e8d3cabfbfe8907bf94c4ede52ad00f7e",
-   "title": "Corn Salad",
-   "intro": "20211215 #breakfastdiary 296, 4°C/foggy, 14min/workout\nFrom Thailand. Strip the corn kernels off the cob. Add green peas and a vinaigrette dressing. #cornsalad\nA #mylocalfoodsalad recipe.\nTo do nothing at all is the most difficult thing in the world, the most difficult and the most intellectual.\nHe seems to have understood well the 'motionless, unmoved stillness' that Aristotle called the pleasure of God.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "옥수수샐러드-나의로컬푸드샐러드-오스카와일드"
  },
  {
