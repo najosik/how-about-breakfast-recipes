@@ -37951,7 +37951,7 @@
   "weather": "21도/이슬비, 21분/운동(Y)",
   "failed": false,
   "calories": null,
-  "title": "시트러스샐러드 자몽 오렌지",
+  "title": "시트러스 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37964,8 +37964,8 @@
    "조식다이어리"
   ],
   "intro": "20230913, #조식다이어리 844, 21도/이슬비, 21분/운동(Y) \n어머니가 보셨다면 ‘껍질을 그렇게 두껍게 자르면 먹을 게 뭐가 남니’라며 등짝 스매싱을 갈기셨겠지만, \n자몽 꼭지 부분과 빈대쪽을 잘라낸 뒤 껍질을 칼로 도려낸다. 오렌지도 같은 요령으로 껍질을 도려낸다. \n자몽과 오렌지를 접시에 담고 민트 조금, 피스타치오를 다져서 올린 뒤 올리브오일, #시트러스샐러드\n엄마 미안, 😃",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 자몽 1개\n- 오랜지 2개\n- 민트\n- 피스타치오 1T\n- 소금\n- 올리브오일",
+  "steps": "1. 자몽과 오렌지는 껍질 벗기고 가로로 썬다. \n2. 접시에 1의 자몽과 오렌지 담고 스매싱한 민트 얹는다. \n3. 다진 피스타치오 얹고 소금, 올리브오일 조금 뿌린다. ",
   "raw": "20230913, #조식다이어리 844, 21도/이슬비, 21분/운동(Y) \n\n어머니가 보셨다면 ‘껍질을 그렇게 두껍게 자르면 먹을 게 뭐가 남니’라며 등짝 스매싱을 갈기셨겠지만, \n\n자몽 꼭지 부분과 빈대쪽을 잘라낸 뒤 껍질을 칼로 도려낸다. 오렌지도 같은 요령으로 껍질을 도려낸다. \n자몽과 오렌지를 접시에 담고 민트 조금, 피스타치오를 다져서 올린 뒤 올리브오일, #시트러스샐러드\n\n엄마 미안, 😃 \n\n#조식 #레시피 #미라클모닝 #자몽 #오렌지 #시트러스",
   "image": "https://images.how-about-breakfast.com/images/844.jpg",
   "gallery": [
@@ -37973,13 +37973,6 @@
    "https://images.how-about-breakfast.com/images/844_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/844.mp4",
-  "_en": {
-   "hash": "17668e65b69dcea4646b7ac45742ae7035ed53262e322316a52a77da862d041c",
-   "title": "Citrus Salad",
-   "intro": "20230913 #breakfastdiary 844, 21°C/light drizzle, 21min/exercise(Y)\nIf my mother had seen this, she'd have smacked me on the back and said, 'Cut the peel that thick and what's even left to eat?' — but anyway,\nCut off the top and bottom of the grapefruit, then carve away the peel with a knife. Peel the orange the same way.\nPlate the grapefruit and orange, top with a little mint and chopped pistachios, then drizzle with olive oil. #citrussalad\nSorry, Mom. 😃",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "시트러스샐러드-자몽-오렌지"
  },
  {
