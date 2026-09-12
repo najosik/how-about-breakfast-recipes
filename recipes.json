@@ -25328,7 +25328,7 @@
   "weather": "23도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "가자미타코 타코",
+  "title": "가자미 타코",
   "credit": null,
   "hashtags": [
    "가자미타코",
@@ -25339,8 +25339,8 @@
    "타코"
   ],
   "intro": "20240913 #조식다이어리 1178, 23도/흐림, 20분/운동(M) \n보통 생선 타코엔 튀김옷을 입혀서 정성껏 만든 흰살 생선이 쓰이는데 시간이 한정되어 있으니 시판 생선으로 대체한다. \n시판 가자미(사실 고등어, 삼치, 어떤 생선이든 다 좋다.)양배추, 양파, 사워크림이 필요하다. 사워크림 대신 요거트도 좋다. \n양배추 채칼로 썰고 적양파 1/4개 썰어서 믹싱볼에 넣고 사워크림 1, 라임주스 1, 소금소금 섞는다. 컬러가 압도적이다. \n손질된 시판 가자미는 달군 팬에 오일 두르고 앞뒤로 굽는다. \n타코는 직화로 굽는다. 불맛이 난다고 생각했는데 탄맛 같기도 하다. \n접시에 탄맛 타코, 적양배추, 가자미 얹고 라임주스 조금, 고수가 없어서 다진 셀러리 잎~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 적양배추 1/8개\n- 적양파 1/4개\n- 드레싱(사워크림 1T, 라임주스 1T, 소금)\n- 가자미 1마리\n- 또띠아 1장\n- 라임주스 2t\n- 셀러리 잎",
+  "steps": "1. 적양배추는 채칼로 썰고 적양파는 길게 썬다. \n2. 믹싱볼에 1의 적양배추, 적양파, 사워크림 1T, 라임주스 1T, 소금 넣고 섞는다. \n3. 팬에 오일 두르고 손질된 가자미를 굽는다. \n4. 타코는 직화로 굽는다. \n5. 접시에 4의 타코, 2의 적양배추 샐러드, 3의 가자미 얹고 라임주스 2t, 셀러리 잎 얹는다. ",
   "raw": "20240913 #조식다이어리 1178, 23도/흐림, 20분/운동(M) \n\n보통 생선 타코엔 튀김옷을 입혀서 정성껏 만든 흰살 생선이 쓰이는데 시간이 한정되어 있으니 시판 생선으로 대체한다. \n\n#가자미타코\n\n시판 가자미(사실 고등어, 삼치, 어떤 생선이든 다 좋다.)양배추, 양파, 사워크림이 필요하다. 사워크림 대신 요거트도 좋다. \n\n양배추 채칼로 썰고 적양파 1/4개 썰어서 믹싱볼에 넣고 사워크림 1, 라임주스 1, 소금소금 섞는다. 컬러가 압도적이다. \n손질된 시판 가자미는 달군 팬에 오일 두르고 앞뒤로 굽는다. \n타코는 직화로 굽는다. 불맛이 난다고 생각했는데 탄맛 같기도 하다. \n접시에 탄맛 타코, 적양배추, 가자미 얹고 라임주스 조금, 고수가 없어서 다진 셀러리 잎~\n\n#조식 #레시피 #미라클모닝 #타코",
   "image": "https://images.how-about-breakfast.com/images/1178.jpg",
   "gallery": [
@@ -25349,13 +25349,6 @@
    "https://images.how-about-breakfast.com/images/1178_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1178.mp4",
-  "_en": {
-   "hash": "4aa96a7ba2c9ec752a8dbb3515113567e1dcb9c785e99f38867f5f756abe2e35",
-   "title": "Flounder Taco Taco",
-   "intro": "20240913 #breakfastdiary 1178, 23°C/cloudy, 20min/exercise(M)\nFish tacos usually use a carefully battered and fried white fish, but since time is limited, I substitute store-bought fish.\nYou need store-bought flounder (honestly mackerel or Spanish mackerel work fine too, any fish will do), cabbage, onion, and sour cream. Yogurt works instead of sour cream too.\nShred the cabbage with a mandoline, slice 1/4 of a red onion, put them in a mixing bowl with 1 sour cream, 1 lime juice, and salt, and mix. The color is overwhelming.\nPan-sear the prepped store-bought flounder in oiled hot pan on both sides.\nGrill the tortillas directly over the flame. I thought it tasted smoky, but it might just be burnt.\nOn a plate, layer the charred tortilla, red cabbage, flounder, a little lime juice, and since I had no cilantro, chopped celery leaves instead~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "가자미타코-타코"
  },
  {
