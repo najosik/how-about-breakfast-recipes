@@ -51172,7 +51172,7 @@
   "weather": "21도/대체로흐림, 22분/운동",
   "failed": false,
   "calories": null,
-  "title": "수퍼마리오브라더스 아스파라거스샐러드 토마토",
+  "title": "아스파라거스 샐러드",
   "credit": null,
   "hashtags": [
    "asparagus",
@@ -51191,9 +51191,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220913, #조식다이어리 542, 21도/대체로흐림, 22분/운동\n1985년 오늘, #수퍼마리오브라더스 출시, 거대한 신화의 시작\n올리브오일에 소금소금, 후추후추 아스파라거스를 굽는다. 다진 토마토, 올리브오일,,화이트발사믹, 레몬주스, 홀그레인머스타드 소스와 다진 호두, #아스파라거스샐러드",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220913, #조식다이어리 542, 21도/대체로흐림, 22분/운동\n1985년 오늘, #수퍼마리오브라더스 출시, 거대한 신화의 시작\n올리브오일에 소금소금, 후추후추 아스파라거스를 굽는다. 다진 토마토, 올리브오일, 화이트발사믹, 레몬주스, 홀그레인머스타드 소스와 다진 호두, #아스파라거스샐러드",
+  "ingredients": "- 아스파라거스 7~8개\n- 방울토마토 5개\n- 드레싱(위의 다진 방울토마토, 올리브오일 2T, 화이트 발사믹 1T, 레몬주스 1T, 홀그레인 머스터드 1t )\n- 호두 1T",
+  "steps": "1. 팬에 올리브오일 두르고 소금, 후추, 허브 넣고 손질한 아스파라거스를 노릇하게 굽는다. \n2. 방울토마토는 씨를 제거하고 잘게 다진다. \n3. 그릇에 2의 방울토마토, 올리브오일 2T, 화이트 발사믹 1T, 레몬주스 1T, 홀그레인 머스터드 1t 섞어서 드레싱 만든다. \n4. 그릇에 1의 아스파라거스 담고 3의 드레싱 붓고 다진 호두 얹는다. ",
   "raw": "20220913, #조식다이어리 542, 21도/대체로흐림, 22분/운동\n\n1985년 오늘, #수퍼마리오브라더스 출시, 거대한 신화의 시작\n\n올리브오일에 소금소금, 후추후추 아스파라거스를 굽는다. 다진 토마토, 올리브오일,,화이트발사믹, 레몬주스, 홀그레인머스타드 소스와 다진 호두, #아스파라거스샐러드\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #토마토 #아스파라거스 \n#breakfast #tomato #asparagus",
   "image": "https://images.how-about-breakfast.com/images/542.jpg",
   "gallery": [
@@ -51203,13 +51203,6 @@
    "https://images.how-about-breakfast.com/images/542_4.jpg",
    "https://images.how-about-breakfast.com/images/542_5.jpg"
   ],
-  "_en": {
-   "hash": "ae658982ff5976c991dc6de893cdc422ed152412b9ee5366f95c8a0490c5369e",
-   "title": "Asparagus Salad",
-   "intro": "20220913 #breakfastdiary 542, 21°C/mostly cloudy, 22min/exercise\nOn this day in 1985, #SuperMarioBros was released — the start of a giant legend.\nRoast asparagus in olive oil with salt salt, pepper pepper. Diced tomato, a sauce of olive oil, white balsamic, lemon juice, and wholegrain mustard, and chopped walnuts. #asparagussalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "수퍼마리오브라더스-아스파라거스샐러드-토마토"
  },
  {
