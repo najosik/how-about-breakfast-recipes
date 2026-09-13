@@ -27,7 +27,14 @@
    "https://images.how-about-breakfast.com/images/1861_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1861.mp4",
-  "page_id": "라임-소면"
+  "page_id": "라임-소면",
+  "_en": {
+   "hash": "4964b0059fcb2cbe6225078d25a85f42e7aa96dae4222438d5d37aeeff4e85a5",
+   "title": "Lime Somyeon",
+   "intro": "20260912 #breakfastdiary 1833, 18°C/cloudy\nBefore this summer is over - every year when summer comes, I make lime somyeon at least once, tweaking the recipe a little each time. This year I made the broth a bit simpler and added grated radish for extra crunch.\nAbout 400kcal (1 serving) Lime Somyeon",
+   "ingredients": "- Somyeon (thin wheat noodles)\n- 1 lime (for topping)\n- Broth (2t fish sauce, 1t tuna extract, 3t oligosaccharide syrup, 1t minced garlic, zest + juice of 1 lime, 350ml water)\n- 100g radish",
+   "steps": "1. Combine 2t fish sauce, 1t tuna extract, 3t oligosaccharide syrup, 1t minced garlic, the zest and juice of 1 lime, and 350ml water to make the broth.\n2. Grate 100g radish, press lightly by hand to remove moisture, and shape into a small round.\n3. Boil the somyeon, pouring in cold water about three times as it cooks. Rinse in cold water.\n4. Place the noodles in a bowl, pour over the broth from step 1, add lime slices, and top with the prepared radish."
+  }
  },
  {
   "date": "2026-09-11",
@@ -58,7 +65,14 @@
    "https://images.how-about-breakfast.com/images/1860_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1860.mp4",
-  "page_id": "연어-파로-샐러드"
+  "page_id": "연어-파로-샐러드",
+  "_en": {
+   "hash": "ebcbda04c5b00ee263d3c781794798f584c3ba86087116ff0bb8cdf77d0fd835",
+   "title": "Salmon Farro Salad",
+   "intro": "20260911 #breakfastdiary 1832, 16°C/clear\nFarro is called an ancient grain - a variety of wheat cultivated in close to its original form, with almost no breeding changes over the centuries. It's generally rich in fiber, plant protein, and antioxidants, making it a popular health food.\nFarro is said to have been cultivated since around 8,200 BCE (Korea's Jeulmun comb-pattern pottery appeared around 8,000 BCE), so today's breakfast may echo the table of some Homo sapiens in southeastern Turkey around 8,000 BCE - if breakfast tables existed back then.\nAbout 600kcal Salmon Farro Salad",
+   "ingredients": "- 250g salmon\n- Roasted salmon sauce (1/2T honey, 1/2T Dijon mustard, a pinch of salt and pepper, 1/2T garlic powder, 1/2T paprika powder)\n- Kale\n- 1T feta cheese\n- Olive oil\n- Salt\n- Pepper",
+   "steps": "1. In a pot, bring 350ml water, 1 cup farro, and a pinch of salt to a boil. Once boiling, reduce to low heat and simmer for about 20 minutes until the water is absorbed.\n2. Prepare 250g salmon; mix honey, Dijon mustard, salt, pepper, garlic powder, and paprika powder, coat the salmon, finish with olive oil, and bake at 200°C for 15 minutes.\n3. Heat olive oil in a pan and saute shredded kale with salt and pepper.\n4. Make a vinaigrette (2T olive oil, 1T white wine vinegar, 1/2T Dijon mustard, 1/2T maple syrup, salt, pepper, mixed together).\n5. On a plate, arrange the farro from step 1, the kale from step 3, feta cheese, and bite-sized pieces of salmon, then drizzle with the dressing from step 4."
+  }
  },
  {
   "date": "2026-09-10",
@@ -12612,7 +12626,14 @@
    "https://images.how-about-breakfast.com/images/1508_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1508.mp4",
-  "page_id": "구운-채소-바질페스토-슬랩-오픈샌드위치"
+  "page_id": "구운-채소-바질페스토-슬랩-오픈샌드위치",
+  "_en": {
+   "hash": "0c084c8cb4a253a1a3fa8a3f66e5671b525419dfed092151adea866e49dbf7aa",
+   "title": "Grilled Vegetable Slab Toast",
+   "intro": "20250914 #breakfastdiary 1508, 24°C/cloudy, 20min/exercise(M)\nI was short on ricotta so I mixed in half mascarpone instead - and (of course) it tastes great.\nAbout 530kcal Grilled Vegetable Basil Pesto Slab Open Sandwich",
+   "ingredients": "- 1 serving slab bread\n- 1/2 bell pepper\n- 1/2 zucchini\n- 0.5T ricotta cheese\n- 0.5T mascarpone cheese\n- Olive oil\n- Salt\n- Pepper\n- 1T basil pesto",
+   "steps": "1. Thaw the slab bread, brush with olive oil, and toast both sides until crisp.\n2. Wash the bell pepper, cut into quarters, drizzle with olive oil, season with salt and pepper, and grill on both sides.\n3. Slice the zucchini thin with a grater and grill alongside.\n4. Whip the ricotta and mascarpone with a little olive oil.\n5. Spread the whipped cheese from step 4 on the slab, top with the pepper and zucchini from steps 2-3, and finish with basil pesto."
+  }
  },
  {
   "date": "2025-09-13",
@@ -12642,7 +12663,14 @@
    "https://images.how-about-breakfast.com/images/1507_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1507.mp4",
-  "page_id": "땅콩호박-시금치-프리타타"
+  "page_id": "땅콩호박-시금치-프리타타",
+  "_en": {
+   "hash": "c90c50d0c0082d757ae4dc4f6dc393d157a1ef1072d8e2301dfddfe948b479e7",
+   "title": "Butternut Squash Spinach Frittata",
+   "intro": "20250913 #breakfastdiary 1507, 24°C/mostly cloudy\nA rather beautiful-looking, about 530kcal Butternut Squash Spinach Frittata.",
+   "ingredients": "- 1 small onion\n- 100g butternut squash\n- A handful of spinach\n- 2 eggs\n- 1/3 cup milk\n- 2T cheddar cheese\n- 1/2t whole grain mustard\n- Olive oil\n- Salt\n- Pepper",
+   "steps": "1. Heat olive oil in a pan, saute minced onion, and add a little basil powder.\n2. Add the butternut squash and saute for about 5 minutes until cooked. Add a handful of spinach, saute until wilted, then transfer to a loaf pan.\n3. Mix 2 eggs, 1/3 cup milk, 1T cheddar cheese, 1/2t whole grain mustard, salt, and pepper thoroughly. Pour over the mixture in the pan and top with the remaining 1T cheddar.\n4. Bake at 180°C for 25 minutes."
+  }
  },
  {
   "date": "2025-09-12",
@@ -25328,7 +25356,14 @@
    "https://images.how-about-breakfast.com/images/1179_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1179.mp4",
-  "page_id": "그린커리"
+  "page_id": "그린커리",
+  "_en": {
+   "hash": "a256286d85f139acf8e70ba0455db4eb0c3b36b92d75be70ea724d32d3d040d1",
+   "title": "Thai Green Curry",
+   "intro": "20240914 #breakfastdiary 1179, 23°C/clear, 30min/exercise(M)\nChuseok holiday begins - the taste of home, #greencurry\n📝 You'll need green curry paste, onion, snap peas, potato, okra, shrimp, tomato, and coconut milk. Add vegetables to taste, but include the coconut milk if you can - it makes all the difference in flavor.\nSaute onion in olive oil in a coated pot, add the green curry paste, and saute a bit more.\nPour in 300ml water, bring to a boil, then add whatever ingredients you like (snap peas, okra, boiled potato, shrimp, celery, prepped tomato) and simmer a bit longer. Taste and season with 1t seasoned salt and 1T oligosaccharide syrup.\nAdd 100ml coconut milk - the flavor gets a million times richer.\nServe in a bowl and top with a few slices of red chili.",
+   "ingredients": "- 2T green curry paste\n- 1/2 onion\n- Vegetables (snap peas, okra, boiled potato, shrimp, celery, tomato, etc.)\n- 1t seasoned salt\n- 1T oligosaccharide syrup\n- 1 cup coconut milk\n- Red chili",
+   "steps": "1. Heat olive oil in a pot, saute julienned onion, then add the green curry paste and saute a bit more.\n2. Add 300ml water and whatever vegetables you like to the pot from step 1, and simmer.\n3. Taste and season with the seasoned salt and oligosaccharide syrup.\n4. Simmer gently, then pour in 100ml coconut milk and bring to a light boil.\n5. Serve in a bowl and top with a few slices of red chili."
+  }
  },
  {
   "date": "2024-09-13",
@@ -25358,7 +25393,14 @@
    "https://images.how-about-breakfast.com/images/1178_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1178.mp4",
-  "page_id": "가자미타코-타코"
+  "page_id": "가자미타코-타코",
+  "_en": {
+   "hash": "3395f3e8d466122e2c558b715143faa04e8950fc2bb07d99a0294e1c2002019a",
+   "title": "Flounder Tacos",
+   "intro": "20240913 #breakfastdiary 1178, 23°C/cloudy, 20min/exercise(M)\nFish tacos usually call for carefully battered and fried white fish, but with limited time, I substitute store-bought fish instead.\nYou'll need store-bought flounder (honestly, mackerel, Spanish mackerel, any fish works), cabbage, onion, and sour cream. Yogurt works fine in place of sour cream too.\nShred the cabbage with a mandoline, slice 1/4 red onion, put them in a mixing bowl with 1 part sour cream, 1 part lime juice, and a pinch of salt - the color is overwhelming.\nPan-sear the prepped store-bought flounder in oil on both sides.\nGrill the tortilla directly over the flame - I meant for it to taste smoky, but it might just taste burnt.\nOn a plate, arrange the charred tortilla, red cabbage, and flounder, add a little lime juice, and since I had no cilantro - minced celery leaves instead.",
+   "ingredients": "- 1/8 red cabbage\n- 1/4 red onion\n- Dressing (1T sour cream, 1T lime juice, salt)\n- 1 flounder\n- 1 tortilla\n- 2t lime juice\n- Celery leaves",
+   "steps": "1. Shred the red cabbage with a mandoline and slice the red onion into long strips.\n2. In a mixing bowl, combine the red cabbage and onion from step 1 with 1T sour cream, 1T lime juice, and salt.\n3. Pan-sear the prepped flounder in oil.\n4. Grill the tortilla directly over the flame.\n5. On a plate, arrange the tortilla from step 4, the red cabbage salad from step 2, and the flounder from step 3, then top with 2t lime juice and celery leaves."
+  }
  },
  {
   "date": "2024-09-12",
@@ -37937,7 +37979,14 @@
    "https://images.how-about-breakfast.com/images/845.jpg",
    "https://images.how-about-breakfast.com/images/845_2.jpg"
   ],
-  "page_id": "기력자-자몽-시트러스"
+  "page_id": "기력자-자몽-시트러스",
+  "_en": {
+   "hash": "e67d4206926f976af6d3c2fa950a176207fe9c05046fe7617b8383a3865fae75",
+   "title": "Greek Yogurt with Grapefruit",
+   "intro": "20230914, #breakfastdiary 845, 20°C/mostly cloudy\nA breakfast for stamina, behold. Half a tub of Greek yogurt, one grapefruit.",
+   "ingredients": "- 1 grapefruit\n- 1/2 tub Greek yogurt\n- Mint",
+   "steps": "1. Cut off the outer peel of the grapefruit with a knife, peel away the inner pith by hand, and remove just the flesh.\n2. Place the grapefruit in a bowl with the Greek yogurt. Top with mint if you have some."
+  }
  },
  {
   "date": "2023-09-13",
@@ -37968,7 +38017,14 @@
    "https://images.how-about-breakfast.com/images/844_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/844.mp4",
-  "page_id": "시트러스샐러드-자몽-오렌지"
+  "page_id": "시트러스샐러드-자몽-오렌지",
+  "_en": {
+   "hash": "46a5795cd6aa18c158e7ae545a1b748ae87ab4b93333b97e36751088a109029d",
+   "title": "Citrus Salad",
+   "intro": "20230913, #breakfastdiary 844, 21°C/drizzle, 21min/exercise(Y)\nIf my mother had seen me slice the peel this thick, she'd have smacked me on the back for wasting so much of the fruit, but -\nCut off the top and bottom of the grapefruit, then carve away the peel with a knife. Do the same for the orange.\nArrange the grapefruit and orange on a plate, add a little mint, top with chopped pistachio, drizzle with olive oil. #citrussalad\nSorry, Mom. 😃",
+   "ingredients": "- 1 grapefruit\n- 2 oranges\n- Mint\n- 1T pistachio\n- Salt\n- Olive oil",
+   "steps": "1. Peel the grapefruit and orange and slice them crosswise.\n2. Arrange the grapefruit and orange from step 1 on a plate and top with torn mint.\n3. Sprinkle with chopped pistachio, a little salt, and olive oil."
+  }
  },
  {
   "date": "2023-09-12",
@@ -51144,7 +51200,14 @@
    "https://images.how-about-breakfast.com/images/543_3.jpg",
    "https://images.how-about-breakfast.com/images/543_4.jpg"
   ],
-  "page_id": "토르텔로니그린리코타스피니치-브로콜리크림토르텔로니-브로콜리"
+  "page_id": "토르텔로니그린리코타스피니치-브로콜리크림토르텔로니-브로콜리",
+  "_en": {
+   "hash": "96f66055ce71ff1984ee22c6b38b51b00b5f67b043ac269e5bb45782612300e7",
+   "title": "Creamy Broccoli Tortelloni",
+   "intro": "20220914, #breakfastdiary 543, 22°C/mostly cloudy, 32min/exercise\n.\nSaute minced broccoli in olive oil in a pan, then add cream and plenty of salt and pepper.\nToss in store-bought green ricotta-spinach tortelloni and mix well. #creamybroccolitortelloni",
+   "ingredients": "- 1/4 broccoli\n- 1/2 cup heavy cream\n- Tortelloni (store-bought) *small Italian dumplings\n- Olive oil\n- Salt\n- Pepper",
+   "steps": "1. Rinse the broccoli under running water and pat dry.\n2. Heat olive oil in a pan, add the broccoli from step 1 minced, and saute.\n3. Pour in the cream and season with salt and pepper.\n4. Add the tortelloni and toss gently.\n5. Serve in a bowl, grate over some ricotta cheese, and add a little lemon juice if you have it."
+  }
  },
  {
   "date": "2022-09-13",
@@ -51184,7 +51247,14 @@
    "https://images.how-about-breakfast.com/images/542_4.jpg",
    "https://images.how-about-breakfast.com/images/542_5.jpg"
   ],
-  "page_id": "수퍼마리오브라더스-아스파라거스샐러드-토마토"
+  "page_id": "수퍼마리오브라더스-아스파라거스샐러드-토마토",
+  "_en": {
+   "hash": "c6e3f0dbaeef296184f2ebccc6a88a8e6021baedffb0f7a01db022364a8fa5d6",
+   "title": "Asparagus Salad",
+   "intro": "20220913, #breakfastdiary 542, 21°C/mostly cloudy, 22min/exercise\nOn this day in 1985, Super Mario Bros. was released - the start of a giant legend.\nGrill asparagus in olive oil with salt and pepper. Make a sauce of minced tomato, olive oil, white balsamic, lemon juice, and whole grain mustard, then top with chopped walnuts. #asparagussalad",
+   "ingredients": "- 7-8 stalks asparagus\n- 5 cherry tomatoes\n- Dressing (the minced cherry tomatoes above, 2T olive oil, 1T white balsamic, 1T lemon juice, 1t whole grain mustard)\n- 1T walnuts",
+   "steps": "1. Heat olive oil in a pan, season with salt, pepper, and herbs, and grill the trimmed asparagus until golden.\n2. Deseed the cherry tomatoes and mince finely.\n3. In a bowl, mix the minced tomato from step 2 with 2T olive oil, 1T white balsamic, 1T lemon juice, and 1t whole grain mustard to make the dressing.\n4. Place the asparagus from step 1 in a bowl, pour over the dressing from step 3, and top with chopped walnuts."
+  }
  },
  {
   "date": "2022-09-12",
@@ -68719,7 +68789,14 @@
    "https://images.how-about-breakfast.com/images/210.jpg",
    "https://images.how-about-breakfast.com/images/210_2.jpg"
   ],
-  "page_id": "블루베리샐러드-모닝리추얼-모닝루틴"
+  "page_id": "블루베리샐러드-모닝리추얼-모닝루틴",
+  "_en": {
+   "hash": "0c66d89d2df1c8b74b38f49806040fb8a12056e68abb48ce7dcbdda74a406bc6",
+   "title": "Blueberry Salad",
+   "intro": "20210914, #breakfastdiary 210, 20°C/misty\nBaby greens and blueberries with feta cheese, olive oil, vinegar, and pepper. #blueberrysalad\n...",
+   "ingredients": "- 1 cup blueberries\n- 1/2 cup baby greens\n- 1T feta cheese\n- 1T olive oil\n- 1t white wine vinegar\n- Pepper",
+   "steps": "1. Wash the blueberries and baby greens thoroughly under running water.\n2. Place the blueberries and baby greens in a bowl.\n3. Crumble the feta cheese over the top and finish with olive oil, white wine vinegar, and pepper."
+  }
  },
  {
   "date": "2021-09-13",
@@ -68765,7 +68842,14 @@
    "https://images.how-about-breakfast.com/images/209.jpg",
    "https://images.how-about-breakfast.com/images/209_2.jpg"
   ],
-  "page_id": "라비올리-모닝리추얼-모닝루틴"
+  "page_id": "라비올리-모닝리추얼-모닝루틴",
+  "_en": {
+   "hash": "c517cc64e5df3b40899bae85091bc7c3c4059755d724ea3b365dd809cd8d7221",
+   "title": "Ravioli with Tomato Sauce",
+   "intro": "20210913, #breakfastdiary 209, 21°C/mostly clear, 20min/exercise\nMince shrimp and deseeded tomato, add chopped basil and dill, a pinch of salt and pepper, and toss together to make the ravioli filling. (If you have cream, add a little; if not, use starch to thicken.)\nSpoon the filling onto dumpling wrappers, telling myself 'I'm a ravioli artisan, this isn't a dumpling, it's ravioli,' fold with care, then blanch in boiling water. Trim the edges, plate, and finish with tomato sauce, parsley, and parmesan.\nProper ravioli dough should be paper-thin, but I didn't feel like going to that much trouble the night before work, so this #ravioli is made with store-bought dumpling wrappers and loaded with shrimp instead.",
+   "ingredients": "- 5 shrimp\n- 5 cherry tomatoes\n- Basil\n- Dill\n- 5-6 dumpling wrappers\n- 1T tomato sauce\n- Parmesan cheese\n- Salt\n- Pepper",
+   "steps": "1. Clean 5 shrimp and mince them.\n2. Deseed the cherry tomatoes and mince finely.\n3. In a mixing bowl, combine the shrimp from step 1, tomatoes from step 2, chopped basil and dill, a pinch of salt and pepper, and 1T starch slurry (starch and water 1:1) to make the ravioli filling.\n4. Spoon the filling from step 3 onto the dumpling wrappers, fold closed, and blanch briefly in boiling water.\n5. Plate the ravioli from step 4 and top with tomato sauce and parmesan cheese."
+  }
  },
  {
   "date": "2021-09-12",
@@ -85853,7 +85937,14 @@
   "raw": "일찍 일어났지만 그런데도 왠지 좀 더 분주한 아침, 당근, 월요일이다. 그래서 #오늘의조식 은 #당근라페 \n당근 반 개를 채쳐서 드레싱에 버무리고 (원래는 1시간 정도를 둬야 하지만 오늘은 당근 분주한 월요일이므로) 파슬리, 후추를 올리면 완성, #조식 #조식스타그램 \n\n*당근: 당연하고 근거있는 말. 한때 청소년들 사이에서 '당연하지' 대신에 쓰이던 속어. PC통신때 만들어진 말이다. 경상도 사투리로 '당연하지'는 '당그이지'인데, 이것이 다른 지방으로 퍼지는 과정에서 '당근이지'로 바뀌었다는 설이 있다. 줄여서 '당근!'이라고 줄여서 표현되기도 한다. (출처: 나무위키)",
   "pre_label": "D-151",
   "image": "https://images.how-about-breakfast.com/images/pre-151.jpg",
-  "page_id": "오늘의조식-당근라페-조식스타그램"
+  "page_id": "오늘의조식-당근라페-조식스타그램",
+  "_en": {
+   "hash": "78a7de7c656c10c12866fe2a5669ac28569f05274ba687259f67aa162cfdc3e7",
+   "title": "Carrot Rape",
+   "intro": "Woke up early, but somehow it's an even busier morning - carrot, it's Monday. So today's #breakfast is #carrotrape.\nShred half a carrot, toss it in the dressing (normally you'd let it sit for about an hour, but it's a busy Monday, so no time for that), top with parsley and pepper, and it's done. #breakfast #breakfaststagram\n\n*당근 (carrot): a Korean slang pun - 당근 also means \"of course\" in casual speech, originally coined in PC-communication-era slang from a dialect pronunciation of \"of course.\" Often shortened to just \"당근!\" (Source: Namuwiki)",
+   "ingredients": "- 1/2 carrot\n- Dressing (2T olive oil, 1T white wine vinegar, 1t whole grain mustard)\n- Parsley powder\n- Pepper\n- Pine nuts",
+   "steps": "1. Shred 1/2 carrot with a mandoline and toss with the dressing.\n2. Plate and top with parsley powder and pepper.\n3. If you have pine nuts, toasting and adding them would be nice too."
+  }
  },
  {
   "date": "2020-09-13",
@@ -85884,7 +85975,14 @@
    "https://images.how-about-breakfast.com/images/pre-152_2.jpg",
    "https://images.how-about-breakfast.com/images/pre-152_3.jpg"
   ],
-  "page_id": "아보카도-샐러드"
+  "page_id": "아보카도-샐러드",
+  "_en": {
+   "hash": "31f8af279e84192ec044484247bd0593dffdc38fc0fbb567562eb1773378da9a",
+   "title": "Avocado Salad",
+   "intro": "A rather late #breakfast.\n3. Scoop out the avocado, cube it, fill it back with colorful red, blue, and yellow #gummybears, garnish with #shrimpchips instead of grilled shrimp - a #weirdfooddessert finish\n2. Store-bought cream of mushroom soup\n1. Full-flavored #spinach, onion, and bell pepper with olive oil (2), white wine vinegar (1), whole grain mustard (1/2)",
+   "ingredients": "- 1 avocado\n- Gummy bears\n- Cream of mushroom soup (store-bought)\n- 1/4 onion\n- A handful of spinach\n- 1/4 bell pepper\n- Dressing (2T olive oil, 1T white wine vinegar, 1t whole grain mustard)",
+   "steps": "1. Scoop out the flesh of a ripened avocado and cube it. Mix with gummy bears and fill the avocado shell back up.\n2. Heat the cream of mushroom soup in the microwave.\n3. Rinse the onion and soak in water. In a bowl, combine spinach, onion, and bell pepper, and add the dressing."
+  }
  },
  {
   "date": "2020-09-12",
