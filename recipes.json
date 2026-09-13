@@ -85158,7 +85158,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "양파-조식-해장음식"
+  "page_id": "양파-조식-해장음식",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-05",
