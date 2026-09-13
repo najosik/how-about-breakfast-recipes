@@ -21,12 +21,13 @@ essay_candidate/essay_reviewed are boolean editorial flags (admin's "에세이
 후보" tool), both stored server-side so the "have I already decided about
 this post?" state is visible from any device, not just the browser that
 made the decision:
-  - essay_candidate: at most one live record may hold it per calendar day
-    (month-day, any year), building toward a 365-day "one essay-worthy
-    post per day of the year" set. Setting it true clears it from
-    whatever other record currently holds that same month-day - enforced
-    here (not just client-side) so the invariant holds regardless of
-    what the admin page sent. Setting it true also implies essay_reviewed.
+  - essay_candidate: a shortlist flag - any number of live records may
+    hold it, including several different years sharing the same
+    calendar day (month-day). No per-day limit is enforced here; the
+    admin reviews day by day first and shortlists freely, then later
+    goes back through same-day shortlisted groups to pick one final
+    winner per day (that final-pick step isn't built yet). Setting it
+    true also implies essay_reviewed.
   - essay_reviewed: true once a post has been looked at and a decision
     made either way ("저장함" or "저장 안 함"), with no per-day limit.
 
@@ -108,19 +109,9 @@ def main():
         elif target.get('gallery') and not target.get('image'):
             target['image'] = target['gallery'][0]
 
-    # At most one live record per calendar day (month-day, any year) may
-    # carry essay_candidate=True. Marking a new one clears whichever other
-    # record previously held that day - the admin page asks to confirm
-    # this client-side, but the invariant is enforced here regardless.
-    if patch.get('essay_candidate') is True and target.get('date') and len(target['date']) == 10:
-        month_day = target['date'][5:10]
-        for other in data:
-            if other is target or other.get('deleted'):
-                continue
-            if other.get('essay_candidate') and (other.get('date') or '')[5:10] == month_day:
-                other['essay_candidate'] = False
-                print(f"Cleared essay_candidate on {other.get('page_id')!r} (same day {month_day} as {page_id!r}).")
-        # Being chosen as the candidate is itself a completed review.
+    # Shortlisting a post is itself a completed review, regardless of
+    # whether other records already share its calendar day.
+    if patch.get('essay_candidate') is True:
         target['essay_reviewed'] = True
 
     if changed_translatable and target.get('_en'):

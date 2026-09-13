@@ -170,7 +170,7 @@
   </div>
 
   <div id="essayTab" class="tabpage">
-    <p class="hint">하루씩 훑어보면서 에세이로 남길 만한 글을 고릅니다. 월-일 기준(연도 무관)으로 하루에 하나만 고를 수 있고, 이미 고른 다른 해의 게시물이 있으면 교체할지 물어봅니다.</p>
+    <p class="hint">하루씩 훑어보면서 에세이로 남길 만한 글을 후보로 저장합니다. 같은 월-일(연도 무관)에 여러 해의 게시물을 동시에 후보로 저장할 수 있고, 그 중 최종 하나를 고르는 건 나중에 따로 합니다.</p>
 
     <div id="essayProgress"></div>
     <div id="essayReviewProgress" class="hint"></div>
@@ -1078,19 +1078,26 @@
     essayReviewProgress.textContent = '검토한 게시물: ' + seen + ' / ' + total;
   }
 
+  // Several different years can now share a month-day slot at once (the
+  // shortlist phase) - each cell holds an array, not a single record.
+  // Picking one final winner per day is a separate, not-yet-built step.
   function essayPicksMap() {
     var map = {};
     allRecords.forEach(function (r) {
       if (r.essay_candidate && r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date)) {
-        map[r.date.slice(5, 10)] = r;
+        var md = r.date.slice(5, 10);
+        (map[md] = map[md] || []).push(r);
       }
+    });
+    Object.keys(map).forEach(function (md) {
+      map[md].sort(function (a, b) { return a.date < b.date ? -1 : 1; });
     });
     return map;
   }
 
   function renderEssayMap() {
     var picks = essayPicksMap();
-    essayProgress.textContent = Object.keys(picks).length + ' / 365 선택됨';
+    essayProgress.textContent = '후보 있는 날짜: ' + Object.keys(picks).length + ' / 365';
 
     var html = '';
     for (var mo = 1; mo <= 12; mo++) {
@@ -1098,9 +1105,11 @@
       var days = ESSAY_MONTH_DAYS[mo - 1];
       for (var d = 1; d <= days; d++) {
         var md = essayPad(mo) + '-' + essayPad(d);
-        var pick = picks[md];
-        var title = pick ? (pick.date + ' — ' + (pick.title || '(제목 없음)')) : (md + ' (미선택)');
-        html += '<div class="essay-day' + (pick ? ' filled' : '') + '" data-md="' + md + '" title="' + title.replace(/"/g, '&quot;') + '"></div>';
+        var list = picks[md];
+        var title = list
+          ? list.map(function (r) { return r.date + ' — ' + (r.title || '(제목 없음)'); }).join('\n')
+          : (md + ' (후보 없음)');
+        html += '<div class="essay-day' + (list ? ' filled' : '') + '" data-md="' + md + '" title="' + title.replace(/"/g, '&quot;') + '"></div>';
       }
       html += '</div></div>';
     }
@@ -1108,9 +1117,9 @@
 
     Array.prototype.forEach.call(essayMap.querySelectorAll('.essay-day.filled'), function (el) {
       el.addEventListener('click', function () {
-        var pick = picks[el.getAttribute('data-md')];
-        if (!pick) return;
-        essayDateInput.value = pick.date;
+        var list = picks[el.getAttribute('data-md')];
+        if (!list || !list.length) return;
+        essayDateInput.value = list[0].date;
         renderEssayCard();
       });
     });
@@ -1209,23 +1218,14 @@
     loadEssayRecord(preselect);
   }
 
+  // Shortlisting: any number of different years may share a month-day at
+  // once, so this just toggles essay_candidate on the current record with
+  // no cross-record conflict check. Picking one final winner per day is a
+  // separate step, done later once every year's post for that day has
+  // been shortlisted.
   essaySaveBtn.addEventListener('click', function () {
     if (!essayCurrent) return;
     var next = !essayCurrent.essay_candidate;
-
-    if (next) {
-      var md = essayCurrent.date.slice(5, 10);
-      var other = allRecords.find(function (r) {
-        return r.essay_candidate && r.page_id !== essayCurrent.page_id && r.date && r.date.slice(5, 10) === md;
-      });
-      if (other) {
-        var ok = window.confirm(
-          '이 날짜(' + md + ')는 이미 다른 해의 게시물이 후보로 지정되어 있습니다:\n' +
-          other.date + ' — ' + (other.title || '(제목 없음)') + '\n\n교체할까요?'
-        );
-        if (!ok) return;
-      }
-    }
 
     var targetPageId = essayCurrent.page_id;
     var prevText = essaySaveBtn.textContent;
@@ -1245,15 +1245,7 @@
         // Optimistic local update so the map/progress/buttons reflect the
         // change immediately, without waiting for the ~1-2 min rebuild.
         essayCurrent.essay_candidate = next;
-        if (next) {
-          essayCurrent.essay_reviewed = true;
-          var md2 = essayCurrent.date.slice(5, 10);
-          allRecords.forEach(function (r) {
-            if (r.page_id !== targetPageId && r.essay_candidate && r.date && r.date.slice(5, 10) === md2) {
-              r.essay_candidate = false;
-            }
-          });
-        }
+        if (next) essayCurrent.essay_reviewed = true;
         showStatus('ok', '저장 요청 완료. 1~2분 후 사이트에 반영됩니다.');
         renderEssayMap();
         renderEssayReviewProgress();
