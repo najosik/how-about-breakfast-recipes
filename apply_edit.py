@@ -17,13 +17,18 @@ normal "any posts missing an English translation?" check instead of
 silently drifting out of sync with the edited Korean text. Media fields
 (image/gallery/video) are not translatable and never clear it.
 
-essay_candidate is a boolean editorial flag (admin's "에세이 후보" tool):
-at most one live record may hold it per calendar day (month-day, any
-year), building toward a 365-day "one essay-worthy post per day of the
-year" set. Setting it true on a record therefore clears it from whatever
-other record currently holds that same month-day - enforced here (not
-just client-side) so the invariant holds regardless of what the admin
-page sent.
+essay_candidate/essay_reviewed are boolean editorial flags (admin's "에세이
+후보" tool), both stored server-side so the "have I already decided about
+this post?" state is visible from any device, not just the browser that
+made the decision:
+  - essay_candidate: at most one live record may hold it per calendar day
+    (month-day, any year), building toward a 365-day "one essay-worthy
+    post per day of the year" set. Setting it true clears it from
+    whatever other record currently holds that same month-day - enforced
+    here (not just client-side) so the invariant holds regardless of
+    what the admin page sent. Setting it true also implies essay_reviewed.
+  - essay_reviewed: true once a post has been looked at and a decision
+    made either way ("저장함" or "저장 안 함"), with no per-day limit.
 
 Usage (set by the workflow, not run manually):
     PAGE_ID=... PATCH_JSON='{"title": "..."}' python apply_edit.py
@@ -35,11 +40,11 @@ import sys
 RECIPES_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'recipes.json')
 ALLOWED_FIELDS = {
     'title', 'intro', 'ingredients', 'steps', 'hashtags', 'credit',
-    'image', 'gallery', 'video', 'essay_candidate',
+    'image', 'gallery', 'video', 'essay_candidate', 'essay_reviewed',
 }
 TRANSLATABLE_FIELDS = {'title', 'intro', 'ingredients', 'steps'}
 LIST_FIELDS = {'hashtags', 'gallery'}
-BOOL_FIELDS = {'essay_candidate'}
+BOOL_FIELDS = {'essay_candidate', 'essay_reviewed'}
 
 
 def main():
@@ -115,6 +120,8 @@ def main():
             if other.get('essay_candidate') and (other.get('date') or '')[5:10] == month_day:
                 other['essay_candidate'] = False
                 print(f"Cleared essay_candidate on {other.get('page_id')!r} (same day {month_day} as {page_id!r}).")
+        # Being chosen as the candidate is itself a completed review.
+        target['essay_reviewed'] = True
 
     if changed_translatable and target.get('_en'):
         del target['_en']

@@ -82,7 +82,10 @@
   .essay-card-section { margin: 10px 0; }
   .essay-card-section label { display: block; margin-bottom: 2px; }
   .essay-card-section div { white-space: pre-wrap; font-size: 0.9rem; color: #333; }
-  #essayToggleBtn.is-candidate { background: #056b05; }
+  .essay-decision-row { display: flex; gap: 8px; margin-bottom: 14px; }
+  .essay-decision-row button { flex: 1; }
+  #essaySaveBtn.active { background: #056b05; }
+  #essaySkipBtn.active { background: #888; }
 </style>
 </head>
 <body>
@@ -179,13 +182,15 @@
       <button type="button" id="essayNextBtn">내일 ▶</button>
     </div>
 
-    <button type="button" id="essayToggleBtn" style="display:none; margin-bottom:14px; width:100%;"></button>
+    <div id="essayDecisionRow" class="essay-decision-row" style="display:none;">
+      <button type="button" id="essaySaveBtn">★ 후보로 저장</button>
+      <button type="button" id="essaySkipBtn">저장 안 함</button>
+    </div>
 
     <ul id="essayCandList" class="v-cand-results" style="max-height:none; border:1px solid #eee; border-radius:6px; display:none;"></ul>
 
     <div id="essayCard" style="display:none;">
-      <h2 id="essayCardTitle" style="font-size:1rem; margin-bottom:2px;"></h2>
-      <div id="essayReviewedTag" style="display:none; margin-bottom:8px; color:#888; font-size:0.85rem;">✓ 이미 확인한 게시물입니다</div>
+      <h2 id="essayCardTitle" style="font-size:1rem; margin-bottom:8px;"></h2>
       <div id="essayCardMedia" style="max-width:280px; margin-bottom:10px;"></div>
       <div class="essay-card-section"><label>본문(intro)</label><div id="essayCardIntro"></div></div>
       <div class="essay-card-section"><label>재료</label><div id="essayCardIngredients"></div></div>
@@ -320,7 +325,6 @@
 
   var essayProgress = document.getElementById('essayProgress');
   var essayReviewProgress = document.getElementById('essayReviewProgress');
-  var essayReviewedTag = document.getElementById('essayReviewedTag');
   var essayMap = document.getElementById('essayMap');
   var essayPrevBtn = document.getElementById('essayPrevBtn');
   var essayNextBtn = document.getElementById('essayNextBtn');
@@ -332,7 +336,9 @@
   var essayCardIntro = document.getElementById('essayCardIntro');
   var essayCardIngredients = document.getElementById('essayCardIngredients');
   var essayCardSteps = document.getElementById('essayCardSteps');
-  var essayToggleBtn = document.getElementById('essayToggleBtn');
+  var essayDecisionRow = document.getElementById('essayDecisionRow');
+  var essaySaveBtn = document.getElementById('essaySaveBtn');
+  var essaySkipBtn = document.getElementById('essaySkipBtn');
   var essayEmpty = document.getElementById('essayEmpty');
   var essayCurrent = null; // record currently shown in the essay card
 
@@ -1034,43 +1040,15 @@
 
   function essayPad(n) { return (n < 10 ? '0' : '') + n; }
 
-  // "Already reviewed" tracking is purely local (this browser only, via
-  // localStorage) - it's just a personal progress marker for browsing
-  // ~2000+ posts one at a time, not something that needs to sync across
-  // devices or survive as a permanent record, so there's no reason to pay
-  // for a server round-trip (a GitHub Action + commit) on every single
-  // day stepped through.
-  var ESSAY_REVIEWED_KEY = 'essayReviewedPageIds';
-
-  function essayLoadReviewedSet() {
-    try {
-      var raw = localStorage.getItem(ESSAY_REVIEWED_KEY);
-      return new Set(raw ? JSON.parse(raw) : []);
-    } catch (e) {
-      return new Set();
-    }
-  }
-
-  function essayMarkReviewed(pageId) {
-    if (!pageId) return;
-    var set = essayLoadReviewedSet();
-    if (set.has(pageId)) return;
-    set.add(pageId);
-    try {
-      localStorage.setItem(ESSAY_REVIEWED_KEY, JSON.stringify(Array.from(set)));
-    } catch (e) { /* storage unavailable - just skip persisting */ }
-  }
+  // "Already reviewed" (essay_reviewed) is stored server-side alongside
+  // essay_candidate, via the same edit action - so the decision ("저장함"
+  // or "저장 안 함") is visible from any device, not just the one that
+  // made it.
+  function essayIsReviewed(r) { return !!(r && (r.essay_reviewed || r.essay_candidate)); }
 
   function renderEssayReviewProgress() {
-    var reviewed = essayLoadReviewedSet();
-    // A post already chosen as a candidate counts as reviewed even if this
-    // browser's localStorage was cleared since - the server-side flag is
-    // proof enough it was looked at.
     var total = allRecords.length;
-    var seen = 0;
-    allRecords.forEach(function (r) {
-      if (r.essay_candidate || reviewed.has(r.page_id)) seen++;
-    });
+    var seen = allRecords.filter(essayIsReviewed).length;
     essayReviewProgress.textContent = '검토한 게시물: ' + seen + ' / ' + total;
   }
 
@@ -1139,34 +1117,28 @@
 
   function loadEssayRecord(r) {
     essayCurrent = r;
-    var reviewed = essayLoadReviewedSet();
-    var alreadyReviewed = reviewed.has(r.page_id) || !!r.essay_candidate;
     essayCardTitle.textContent = r.date + ' — ' + (r.title || '(제목 없음)');
-    essayReviewedTag.style.display = alreadyReviewed ? 'block' : 'none';
     essayCardMedia.innerHTML = (typeof Shared !== 'undefined') ? Shared.galleryHTML(r) : '';
     if (typeof Shared !== 'undefined') Shared.bindGallery(essayCardMedia, r);
     essayCardIntro.textContent = r.intro || '(내용 없음)';
     essayCardIngredients.textContent = r.ingredients || '(없음)';
     essayCardSteps.textContent = r.steps || '(없음)';
-    essayToggleBtn.textContent = r.essay_candidate ? '★ 에세이 후보 해제' : '☆ 에세이 후보로 지정';
-    essayToggleBtn.classList.toggle('is-candidate', !!r.essay_candidate);
-    essayToggleBtn.disabled = false;
-    essayToggleBtn.style.display = 'block';
+    essaySaveBtn.disabled = false;
+    essaySkipBtn.disabled = false;
+    essaySaveBtn.textContent = '★ 후보로 저장';
+    essaySkipBtn.textContent = '저장 안 함';
+    essaySaveBtn.classList.toggle('active', !!r.essay_candidate);
+    essaySkipBtn.classList.toggle('active', !!r.essay_reviewed && !r.essay_candidate);
+    essayDecisionRow.style.display = 'flex';
     essayCard.style.display = 'block';
     essayEmpty.style.display = 'none';
-
-    // Viewing it here is what "already looked at and passed over" means -
-    // mark it now rather than waiting for some separate confirmation step.
-    essayMarkReviewed(r.page_id);
-    renderEssayReviewProgress();
   }
 
   function renderEssayCard() {
     var dateStr = essayDateInput.value.trim();
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
       essayCurrent = null;
-      essayToggleBtn.style.display = 'none';
-      essayReviewedTag.style.display = 'none';
+      essayDecisionRow.style.display = 'none';
       essayCard.style.display = 'none';
       essayCandList.style.display = 'none';
       essayEmpty.style.display = 'block';
@@ -1178,8 +1150,7 @@
     var matches = allRecords.filter(function (r) { return r.date === dateStr; });
     if (!matches.length) {
       essayCurrent = null;
-      essayToggleBtn.style.display = 'none';
-      essayReviewedTag.style.display = 'none';
+      essayDecisionRow.style.display = 'none';
       essayCard.style.display = 'none';
       essayCandList.style.display = 'none';
       essayEmpty.style.display = 'block';
@@ -1196,13 +1167,11 @@
     // Same exact date has more than one record (e.g. a day_secondary
     // duplicate) - let the admin pick which one to review, defaulting to
     // whichever already holds the candidate flag, else the first.
-    var reviewedSet = essayLoadReviewedSet();
     essayCandList.style.display = 'block';
     essayCandList.innerHTML = '';
     matches.forEach(function (r) {
       var li = document.createElement('li');
-      var seen = reviewedSet.has(r.page_id) || !!r.essay_candidate;
-      li.textContent = (r.title || '(제목 없음)') + (r.essay_candidate ? ' ★' : '') + (r.day_secondary ? ' (숨김)' : '') + (seen ? ' ✓' : '');
+      li.textContent = (r.title || '(제목 없음)') + (r.essay_candidate ? ' ★' : '') + (r.day_secondary ? ' (숨김)' : '') + (essayIsReviewed(r) ? ' ✓' : '');
       li.addEventListener('click', function () { loadEssayRecord(r); });
       essayCandList.appendChild(li);
     });
@@ -1210,7 +1179,7 @@
     loadEssayRecord(preselect);
   }
 
-  essayToggleBtn.addEventListener('click', function () {
+  essaySaveBtn.addEventListener('click', function () {
     if (!essayCurrent) return;
     var next = !essayCurrent.essay_candidate;
 
@@ -1228,23 +1197,26 @@
       }
     }
 
-    essayToggleBtn.disabled = true;
-    essayToggleBtn.textContent = '저장 중...';
     var targetPageId = essayCurrent.page_id;
-    var wasCandidate = essayCurrent.essay_candidate;
+    var prevText = essaySaveBtn.textContent;
+    essaySaveBtn.disabled = true;
+    essaySkipBtn.disabled = true;
+    essaySaveBtn.textContent = '저장 중...';
 
     submitToWorker({ action: 'edit', page_id: targetPageId, fields: { essay_candidate: next } })
       .then(function (res) {
+        essaySaveBtn.disabled = false;
+        essaySkipBtn.disabled = false;
         if (!res.ok) {
           showStatus('err', '저장 실패: ' + res.detail);
-          essayToggleBtn.disabled = false;
-          essayToggleBtn.textContent = wasCandidate ? '★ 에세이 후보 해제' : '☆ 에세이 후보로 지정';
+          essaySaveBtn.textContent = prevText;
           return;
         }
-        // Optimistic local update so the map/progress/button reflect the
+        // Optimistic local update so the map/progress/buttons reflect the
         // change immediately, without waiting for the ~1-2 min rebuild.
         essayCurrent.essay_candidate = next;
         if (next) {
+          essayCurrent.essay_reviewed = true;
           var md2 = essayCurrent.date.slice(5, 10);
           allRecords.forEach(function (r) {
             if (r.page_id !== targetPageId && r.essay_candidate && r.date && r.date.slice(5, 10) === md2) {
@@ -1254,6 +1226,35 @@
         }
         showStatus('ok', '저장 요청 완료. 1~2분 후 사이트에 반영됩니다.');
         renderEssayMap();
+        renderEssayReviewProgress();
+        renderEssayCard();
+      });
+  });
+
+  essaySkipBtn.addEventListener('click', function () {
+    if (!essayCurrent) return;
+    if (essayCurrent.essay_reviewed && !essayCurrent.essay_candidate) return; // already exactly this state
+
+    var targetPageId = essayCurrent.page_id;
+    var prevText = essaySkipBtn.textContent;
+    essaySaveBtn.disabled = true;
+    essaySkipBtn.disabled = true;
+    essaySkipBtn.textContent = '저장 중...';
+
+    submitToWorker({ action: 'edit', page_id: targetPageId, fields: { essay_candidate: false, essay_reviewed: true } })
+      .then(function (res) {
+        essaySaveBtn.disabled = false;
+        essaySkipBtn.disabled = false;
+        if (!res.ok) {
+          showStatus('err', '저장 실패: ' + res.detail);
+          essaySkipBtn.textContent = prevText;
+          return;
+        }
+        essayCurrent.essay_candidate = false;
+        essayCurrent.essay_reviewed = true;
+        showStatus('ok', '저장 요청 완료. 1~2분 후 사이트에 반영됩니다.');
+        renderEssayMap();
+        renderEssayReviewProgress();
         renderEssayCard();
       });
   });
