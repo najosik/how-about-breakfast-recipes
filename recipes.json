@@ -85193,7 +85193,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "테슬라-뉴노멀-토마토샐러드"
+  "page_id": "테슬라-뉴노멀-토마토샐러드",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-04",
