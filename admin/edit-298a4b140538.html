@@ -170,6 +170,7 @@
     <p class="hint">하루씩 훑어보면서 에세이로 남길 만한 글을 고릅니다. 월-일 기준(연도 무관)으로 하루에 하나만 고를 수 있고, 이미 고른 다른 해의 게시물이 있으면 교체할지 물어봅니다.</p>
 
     <div id="essayProgress"></div>
+    <div id="essayReviewProgress" class="hint"></div>
     <div id="essayMap" class="essay-map"></div>
 
     <div class="essay-nav">
@@ -183,7 +184,8 @@
     <ul id="essayCandList" class="v-cand-results" style="max-height:none; border:1px solid #eee; border-radius:6px; display:none;"></ul>
 
     <div id="essayCard" style="display:none;">
-      <h2 id="essayCardTitle" style="font-size:1rem;"></h2>
+      <h2 id="essayCardTitle" style="font-size:1rem; margin-bottom:2px;"></h2>
+      <div id="essayReviewedTag" style="display:none; margin-bottom:8px; color:#888; font-size:0.85rem;">✓ 이미 확인한 게시물입니다</div>
       <div id="essayCardMedia" style="max-width:280px; margin-bottom:10px;"></div>
       <div class="essay-card-section"><label>본문(intro)</label><div id="essayCardIntro"></div></div>
       <div class="essay-card-section"><label>재료</label><div id="essayCardIngredients"></div></div>
@@ -317,6 +319,8 @@
   var otdCandidates = document.getElementById('otdCandidates');
 
   var essayProgress = document.getElementById('essayProgress');
+  var essayReviewProgress = document.getElementById('essayReviewProgress');
+  var essayReviewedTag = document.getElementById('essayReviewedTag');
   var essayMap = document.getElementById('essayMap');
   var essayPrevBtn = document.getElementById('essayPrevBtn');
   var essayNextBtn = document.getElementById('essayNextBtn');
@@ -1030,6 +1034,46 @@
 
   function essayPad(n) { return (n < 10 ? '0' : '') + n; }
 
+  // "Already reviewed" tracking is purely local (this browser only, via
+  // localStorage) - it's just a personal progress marker for browsing
+  // ~2000+ posts one at a time, not something that needs to sync across
+  // devices or survive as a permanent record, so there's no reason to pay
+  // for a server round-trip (a GitHub Action + commit) on every single
+  // day stepped through.
+  var ESSAY_REVIEWED_KEY = 'essayReviewedPageIds';
+
+  function essayLoadReviewedSet() {
+    try {
+      var raw = localStorage.getItem(ESSAY_REVIEWED_KEY);
+      return new Set(raw ? JSON.parse(raw) : []);
+    } catch (e) {
+      return new Set();
+    }
+  }
+
+  function essayMarkReviewed(pageId) {
+    if (!pageId) return;
+    var set = essayLoadReviewedSet();
+    if (set.has(pageId)) return;
+    set.add(pageId);
+    try {
+      localStorage.setItem(ESSAY_REVIEWED_KEY, JSON.stringify(Array.from(set)));
+    } catch (e) { /* storage unavailable - just skip persisting */ }
+  }
+
+  function renderEssayReviewProgress() {
+    var reviewed = essayLoadReviewedSet();
+    // A post already chosen as a candidate counts as reviewed even if this
+    // browser's localStorage was cleared since - the server-side flag is
+    // proof enough it was looked at.
+    var total = allRecords.length;
+    var seen = 0;
+    allRecords.forEach(function (r) {
+      if (r.essay_candidate || reviewed.has(r.page_id)) seen++;
+    });
+    essayReviewProgress.textContent = '검토한 게시물: ' + seen + ' / ' + total;
+  }
+
   function essayPicksMap() {
     var map = {};
     allRecords.forEach(function (r) {
@@ -1089,12 +1133,16 @@
       })();
     }
     renderEssayMap();
+    renderEssayReviewProgress();
     renderEssayCard();
   }
 
   function loadEssayRecord(r) {
     essayCurrent = r;
+    var reviewed = essayLoadReviewedSet();
+    var alreadyReviewed = reviewed.has(r.page_id) || !!r.essay_candidate;
     essayCardTitle.textContent = r.date + ' — ' + (r.title || '(제목 없음)');
+    essayReviewedTag.style.display = alreadyReviewed ? 'block' : 'none';
     essayCardMedia.innerHTML = (typeof Shared !== 'undefined') ? Shared.galleryHTML(r) : '';
     if (typeof Shared !== 'undefined') Shared.bindGallery(essayCardMedia, r);
     essayCardIntro.textContent = r.intro || '(내용 없음)';
@@ -1106,6 +1154,11 @@
     essayToggleBtn.style.display = 'block';
     essayCard.style.display = 'block';
     essayEmpty.style.display = 'none';
+
+    // Viewing it here is what "already looked at and passed over" means -
+    // mark it now rather than waiting for some separate confirmation step.
+    essayMarkReviewed(r.page_id);
+    renderEssayReviewProgress();
   }
 
   function renderEssayCard() {
@@ -1113,6 +1166,7 @@
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
       essayCurrent = null;
       essayToggleBtn.style.display = 'none';
+      essayReviewedTag.style.display = 'none';
       essayCard.style.display = 'none';
       essayCandList.style.display = 'none';
       essayEmpty.style.display = 'block';
@@ -1125,6 +1179,7 @@
     if (!matches.length) {
       essayCurrent = null;
       essayToggleBtn.style.display = 'none';
+      essayReviewedTag.style.display = 'none';
       essayCard.style.display = 'none';
       essayCandList.style.display = 'none';
       essayEmpty.style.display = 'block';
@@ -1141,11 +1196,13 @@
     // Same exact date has more than one record (e.g. a day_secondary
     // duplicate) - let the admin pick which one to review, defaulting to
     // whichever already holds the candidate flag, else the first.
+    var reviewedSet = essayLoadReviewedSet();
     essayCandList.style.display = 'block';
     essayCandList.innerHTML = '';
     matches.forEach(function (r) {
       var li = document.createElement('li');
-      li.textContent = (r.title || '(제목 없음)') + (r.essay_candidate ? ' ★' : '') + (r.day_secondary ? ' (숨김)' : '');
+      var seen = reviewedSet.has(r.page_id) || !!r.essay_candidate;
+      li.textContent = (r.title || '(제목 없음)') + (r.essay_candidate ? ' ★' : '') + (r.day_secondary ? ' (숨김)' : '') + (seen ? ' ✓' : '');
       li.addEventListener('click', function () { loadEssayRecord(r); });
       essayCandList.appendChild(li);
     });
