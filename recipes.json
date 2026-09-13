@@ -85491,7 +85491,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "조식-적채"
+  "page_id": "조식-적채",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-09-25",
