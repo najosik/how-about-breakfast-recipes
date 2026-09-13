@@ -85597,7 +85597,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "오늘의조식-아보카도-2"
+  "page_id": "오늘의조식-아보카도-2",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-09-22",
