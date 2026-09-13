@@ -84994,7 +84994,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "BTS유니버스-비타민-뿌셔뿌셔"
+  "page_id": "BTS유니버스-비타민-뿌셔뿌셔",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-09",
