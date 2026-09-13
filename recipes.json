@@ -1,5 +1,66 @@
 [
  {
+  "date": "2026-09-12",
+  "date_raw": "20260912",
+  "diary_no": 1861,
+  "weather": "18도/흐림",
+  "failed": false,
+  "calories": 400,
+  "title": "라임 소면",
+  "credit": null,
+  "hashtags": [
+   "라임",
+   "레시피",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20260912 #조식다이어리 1833, 18도/흐림\n이 여름이 가기 전에, \n해마다 여름이 오면 꼭 한 번씩 레시피를 조금씩 바꿔가며 라임 소면을 해 먹는다. 올해는 좀 더 간편하게 국물을 만들고 강판에 간 무를 풀어서 씹는 맛을 더한, \n1인분 약 400kcal 라임 소면",
+  "ingredients": "- 소면 \n- 라임 1개(토핑용)\n- 국물(피시소스 2t, 참치액 1t, 올리고당 3t, 다진 마늘 1t, 라임 1개 제스트 + 주스, 물 350ml)\n- 무 100g",
+  "steps": "1. 피시소스 2t, 참치액 1t, 올리고당 3t, 다진 마늘 1t, 라임 1개 제스트 + 주스, 물 350ml 부어 국물을 만든다. \n2. 강판에 무 100g 간 뒤 손으로 살짝 눌러 수분을 제거하고 동그랗게 만든다. \n3. 끓는 물에 소면 넣고 세 번 정도 찬물 부어가며 삶는다. 찬물에 헹군다. \n4. 그릇에 소면 담고 1의 국물 붓고 라임 1개 얹은 후 잘라서 얹는다. 준비한 무 얹는다.",
+  "raw": "20260912 #조식다이어리 1833, 18도/흐림\n\n이 여름이 가기 전에, \n\n해마다 여름이 오면 꼭 한 번씩 레시피를 조금씩 바꿔가며 라임 소면을 해 먹는다. 올해는 좀 더 간편하게 국물을 만들고 강판에 간 무를 풀어서 씹는 맛을 더한, \n\n1인분 약 400kcal 라임 소면\n\n👉재료(2인분)\n- 소면 \n- 라임 1개(토핑용)\n- 국물(피시소스 2t, 참치액 1t, 올리고당 3t, 다진 마늘 1t, 라임 1개 제스트 + 주스, 물 350ml)\n- 무 100g\n\n👉조리\n1. 피시소스 2t, 참치액 1t, 올리고당 3t, 다진 마늘 1t, 라임 1개 제스트 + 주스, 물 350ml 부어 국물을 만든다. \n2. 강판에 무 100g 간 뒤 손으로 살짝 눌러 수분을 제거하고 동그랗게 만든다. \n3. 끓는 물에 소면 넣고 세 번 정도 찬물 부어가며 삶는다. 찬물에 헹군다. \n4. 그릇에 소면 담고 1의 국물 붓고 라임 1개 얹은 후 잘라서 얹는다. 준비한 무 얹는다. \n\n#조식 #레시피 #라임",
+  "permalink": "https://www.instagram.com/p/DdLxeJWnVBk/",
+  "image": "https://images.how-about-breakfast.com/images/1861.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1861.jpg",
+   "https://images.how-about-breakfast.com/images/1861_2.jpg",
+   "https://images.how-about-breakfast.com/images/1861_3.jpg",
+   "https://images.how-about-breakfast.com/images/1861_4.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1861.mp4",
+  "page_id": "라임-소면"
+ },
+ {
+  "date": "2026-09-11",
+  "date_raw": "20260911",
+  "diary_no": 1860,
+  "weather": "16도/맑음",
+  "failed": false,
+  "calories": 600,
+  "title": "연어 파로 샐러드",
+  "credit": "@somethingnutritious",
+  "hashtags": [
+   "레시피",
+   "조식",
+   "조식다이어리",
+   "파로"
+  ],
+  "intro": "20260911 #조식다이어리 1832, 16도/맑음\n파로(Farro)는 밀의 한 품종으로 만든 고대 곡물(ancient grain)이라고 부른다. 지난 수백 년간 품종 개량을 거의 거치지 않고, 원래 형태에 가깝게 재배되어 온 곡물이란 뜻이다. 대체로 식이섬유, 식물성 단백질, 항산화물질이 풍부해서 건강식으로 많이 사용된다. \n파로는 기원전 8,200년 무렵부터 재배되었다고 하니(한반도의 빗살무늬토기 출현이 기원전 8,000년 경이다) 오늘 조식은 기원전 8,000년 경 터키 남동부의 어느 호모 사피엔스의 아침 식탁(이 있었을지 모르겠지만) 풍경이었을지도, \n약 600kcal 연어 파로 샐러드",
+  "ingredients": "- 연어 250g\n- 연어구이 소스(꿀 1/2T, 디종머스터드 1/2T, 소금과 후추 한 꼬집, 마늘파우더 1/2T, 파프리카파우더 1/2T)\n- 케일 \n- 페타치즈 1T\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 냄비에 물 350ml, 파로 1컵, 소금 한 꼬집 넣고 끓인다. 물이 끓으면 약불로 줄이고 물이 줄어들 때까지 20분 정도 끓인다. \n2. 연어 250g 준비하고 꿀, 디종머스터드, 소금, 후추, 마늘파우더, 파프리카파우더 섞어서 연어에 바른 후 올리브오일로 코팅하고 200도 오븐에 15분 굽는다. \n3. 팬에 올리브오일 두르고 채썬 케일, 소금, 후추 넣고 볶는다. \n4. 비네그레트 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 디종머스터드 1/2T, 메이플시럽 1/2T, 소금, 후추 넣고 섞는다.)\n5. 접시에 1의 파로, 3의 케일, 페타치즈와 먹기 좋은 크기로 연어 썰어서 넣고 4의 드레싱 뿌린다.",
+  "raw": "20260911 #조식다이어리 1832, 16도/맑음\n\n파로(Farro)는 밀의 한 품종으로 만든 고대 곡물(ancient grain)이라고 부른다. 지난 수백 년간 품종 개량을 거의 거치지 않고, 원래 형태에 가깝게 재배되어 온 곡물이란 뜻이다. 대체로 식이섬유, 식물성 단백질, 항산화물질이 풍부해서 건강식으로 많이 사용된다. \n\n파로는 기원전 8,200년 무렵부터 재배되었다고 하니(한반도의 빗살무늬토기 출현이 기원전 8,000년 경이다) 오늘 조식은 기원전 8,000년 경 터키 남동부의 어느 호모 사피엔스의 아침 식탁(이 있었을지 모르겠지만) 풍경이었을지도, \n\n약 600kcal 연어 파로 샐러드\n\n👉재료(2인분)\n- 연어 250g\n- 연어구이 소스(꿀 1/2T, 디종머스터드 1/2T, 소금과 후추 한 꼬집, 마늘파우더 1/2T, 파프리카파우더 1/2T)\n- 케일 \n- 페타치즈 1T\n- 올리브오일\n- 소금\n- 후추\n\n👉조리\n1. 냄비에 물 350ml, 파로 1컵, 소금 한 꼬집 넣고 끓인다. 물이 끓으면 약불로 줄이고 물이 줄어들 때까지 20분 정도 끓인다. \n2. 연어 250g 준비하고 꿀, 디종머스터드, 소금, 후추, 마늘파우더, 파프리카파우더 섞어서 연어에 바른 후 올리브오일로 코팅하고 200도 오븐에 15분 굽는다. \n3. 팬에 올리브오일 두르고 채썬 케일, 소금, 후추 넣고 볶는다. \n4. 비네그레트 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 디종머스터드 1/2T, 메이플시럽 1/2T, 소금, 후추 넣고 섞는다.)\n5. 접시에 1의 파로, 3의 케일, 페타치즈와 먹기 좋은 크기로 연어 썰어서 넣고 4의 드레싱 뿌린다. \n\nInspired by @somethingnutritious\n\n#조식 #레시피 #파로",
+  "permalink": "https://www.instagram.com/p/DdIEnWnk7lF/",
+  "image": "https://images.how-about-breakfast.com/images/1860.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1860.jpg",
+   "https://images.how-about-breakfast.com/images/1860_2.jpg",
+   "https://images.how-about-breakfast.com/images/1860_3.jpg",
+   "https://images.how-about-breakfast.com/images/1860_4.jpg",
+   "https://images.how-about-breakfast.com/images/1860_5.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1860.mp4",
+  "page_id": "연어-파로-샐러드"
+ },
+ {
   "date": "2026-09-10",
   "date_raw": "20260910",
   "diary_no": 1859,
@@ -12529,7 +12590,7 @@
   "weather": "24도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": 530,
-  "title": "구운 채소 바질페스토 슬랩 오픈샌드위치",
+  "title": "구운 채소를 얹은 슬랩 토스트",
   "credit": "@leosoulkitchen",
   "hashtags": [
    "레시피",
@@ -12538,8 +12599,8 @@
    "조식다이어리"
   ],
   "intro": "20250914 #조식다이어리 1508, 24도/흐림, 20분/운동(M)\n리코타치즈가 모자라서 마스카포네치즈를 절반 섞었더니 (당연히) 맛이 좋다. \n약 530kcal 구운 채소 바질페스토 슬랩 오픈샌드위치",
-  "ingredients": "슬랩 1인분, 파프리카 1/2개, 애호박 1/2개, 리코타치즈와 마스카포네치즈 각 0.5T, 올리브오일, 소금, 후추, 바질 페스토 1T",
-  "steps": "1. 슬랩은 해동 후 올리브오일 바르고 앞뒤로 굽는다. 바삭하게, \n2. 파프리카 씻어서 1/4조각 자르고 팬에 올리브오일 두른 후 소금, 후추 뿌려서 앞뒤로 굽는다. 애호박은 그레이터로 얇게 썬 다음 옆에서 굽는다. \n3. 리코타치즈와 마스카포네치즈에 올리브오일 조금 넣고 휘핑한다. \n4. 슬랩에 3의 치즈 얹고 2의 파르리카, 애호박 얹고 바질 페스토 얹는다.",
+  "ingredients": "- 슬랩 1인분\n- 파프리카 1/2개\n- 애호박 1/2개\n- 리코타치즈 0.5T\n- 마스카포네치즈 0.5T\n- 올리브오일\n- 소금 \n- 후추 \n- 바질 페스토 1T",
+  "steps": "1. 슬랩은 해동 후 올리브오일 바르고 앞뒤로 바삭하게 굽는다.\n2. 파프리카 씻어서 1/4조각 자르고 팬에 올리브오일 두른 후 소금, 후추 뿌려서 앞뒤로 굽는다. \n3. 애호박은 그레이터로 얇게 썬 다음 옆에서 굽는다. \n4. 리코타치즈와 마스카포네치즈에 올리브오일 조금 넣고 휘핑한다. \n5. 슬랩에 3의 치즈 얹고 2의 파프리카, 애호박 얹고 바질 페스토 얹는다.",
   "raw": "20250914 #조식다이어리 1508, 24도/흐림, 20분/운동(M)\n\n리코타치즈가 모자라서 마스카포네치즈를 절반 섞었더니 (당연히) 맛이 좋다. \n\n약 530kcal 구운 채소 바질페스토 슬랩 오픈샌드위치\n\n👉 재료\n슬랩 1인분, 파프리카 1/2개, 애호박 1/2개, 리코타치즈와 마스카포네치즈 각 0.5T, 올리브오일, 소금, 후추, 바질 페스토 1T\n\n👉 조리\n1. 슬랩은 해동 후 올리브오일 바르고 앞뒤로 굽는다. 바삭하게, \n2. 파프리카 씻어서 1/4조각 자르고 팬에 올리브오일 두른 후 소금, 후추 뿌려서 앞뒤로 굽는다. 애호박은 그레이터로 얇게 썬 다음 옆에서 굽는다. \n3. 리코타치즈와 마스카포네치즈에 올리브오일 조금 넣고 휘핑한다. \n4. 슬랩에 3의 치즈 얹고 2의 파르리카, 애호박 얹고 바질 페스토 얹는다. \n\nInspired by @leosoulkitchen\n\n#조식 #레시피 #슬랩\n\n-\n\nMango Salsa",
   "image": "https://images.how-about-breakfast.com/images/1508.jpg",
   "gallery": [
@@ -12551,13 +12612,6 @@
    "https://images.how-about-breakfast.com/images/1508_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1508.mp4",
-  "_en": {
-   "hash": "fe7948de5ea5cf8ad96006aefcd1316b110697466b2e6f33a3f7a43f72549610",
-   "title": "Roasted Vegetable Basil Pesto Slab Open-Faced Sandwich",
-   "intro": "20250914 #breakfastdiary day 1508, 24°C/cloudy, 20min/exercise (M)\nI was short on ricotta cheese so I mixed in half mascarpone cheese instead, and it tastes great (of course).\nApprox. 530kcal roasted vegetable basil pesto slab open-faced sandwich",
-   "ingredients": "1 serving slab bread, 1/2 bell pepper, 1/2 zucchini, 0.5T each ricotta cheese and mascarpone cheese, olive oil, salt, pepper, 1T basil pesto",
-   "steps": "1. Thaw the slab bread, brush with olive oil, and toast both sides until crisp.\n2. Wash the bell pepper, cut into quarters, drizzle with olive oil in a pan, sprinkle with salt and pepper, and grill both sides. Shave the zucchini thin with a grater and grill alongside.\n3. Whip the ricotta and mascarpone cheese with a little olive oil.\n4. Top the slab bread with the whipped cheese from step 3, the bell pepper and zucchini from step 2, and finish with basil pesto."
-  },
   "page_id": "구운-채소-바질페스토-슬랩-오픈샌드위치"
  },
  {
@@ -12576,7 +12630,7 @@
    "프리타타"
   ],
   "intro": "20250913 #조식다이어리 1507, 24도/대체로 흐림\n무척 아름다운 자태의 약 530kcal 땅콩호박 시금치 프리타타",
-  "ingredients": "작은 양파 1개, 버터넛 스쿼시 100g, 시금치 한 줌, 계란 2개, 우유 1/3컵, 체다치즈 2T, 홀그레인 머스터드1/2t, 올리브오일, 소금, 후추",
+  "ingredients": "- 작은 양파 1개\n- 버터넛 스쿼시 100g\n- 시금치 한 줌 \n- 계란 2개\n- 우유 1/3컵 \n- 체다치즈 2T \n- 홀그레인 머스터드1/2t\n- 올리브오일 \n- 소금\n- 후추",
   "steps": "1. 팬에 올리브오일 두르고 양파 다져서 볶는다. 바질 파우더 조금 넣는다. \n2. 버터넛 스쿼시 넣고 5분 정도 익을 때까지 볶는다. 시금치 한 줌 넣고 볶다가 숨이 죽으면 파운드 케이크틀에 담는다. \n3. 계란 2개, 우유 1/3컵, 체다치즈 1T, 홀그레인 머스터드1/2t, 소금, 후추 넣고 골고루 섞는다. 2에 붓고 나머지 체다치즈 1T 얹는다. \n4. 180도 오븐에 25분 굽는다.",
   "raw": "20250913 #조식다이어리 1507, 24도/대체로 흐림\n\n무척 아름다운 자태의 약 530kcal 땅콩호박 시금치 프리타타\n\n👉 재료\n작은 양파 1개, 버터넛 스쿼시 100g, 시금치 한 줌, 계란 2개, 우유 1/3컵, 체다치즈 2T, 홀그레인 머스터드1/2t, 올리브오일, 소금, 후추\n\n👉 조리\n1. 팬에 올리브오일 두르고 양파 다져서 볶는다. 바질 파우더 조금 넣는다. \n2. 버터넛 스쿼시 넣고 5분 정도 익을 때까지 볶는다. 시금치 한 줌 넣고 볶다가 숨이 죽으면 파운드 케이크틀에 담는다. \n3. 계란 2개, 우유 1/3컵, 체다치즈 1T, 홀그레인 머스터드1/2t, 소금, 후추 넣고 골고루 섞는다. 2에 붓고 나머지 체다치즈 1T 얹는다. \n4. 180도 오븐에 25분 굽는다. \n\n#조식 #레시피 #프리타타\n\n-\n\nMango Salsa",
   "image": "https://images.how-about-breakfast.com/images/1507.jpg",
@@ -12588,13 +12642,6 @@
    "https://images.how-about-breakfast.com/images/1507_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1507.mp4",
-  "_en": {
-   "hash": "0b34d4a8deef8f010bc09752edae46da6b4e6a2bdd83db39483d7c0a1ed30216",
-   "title": "Butternut Squash and Spinach Frittata",
-   "intro": "20250913 #breakfastdiary day 1507, 24°C/mostly cloudy\nA quite beautiful-looking approx. 530kcal butternut squash and spinach frittata",
-   "ingredients": "1 small onion, 100g butternut squash, a handful of spinach, 2 eggs, 1/3 cup milk, 2T cheddar cheese, 1/2t whole grain mustard, olive oil, salt, pepper",
-   "steps": "1. Heat olive oil in a pan and sauté the chopped onion. Add a little basil powder.\n2. Add the butternut squash and cook for about 5 minutes until done. Add the spinach, sauté until wilted, then transfer to a pound cake mold.\n3. Mix 2 eggs, 1/3 cup milk, 1T cheddar cheese, 1/2t whole grain mustard, salt, and pepper thoroughly. Pour over the mixture in step 2 and top with the remaining 1T cheddar cheese.\n4. Bake at 180°C for 25 minutes."
-  },
   "page_id": "땅콩호박-시금치-프리타타"
  },
  {
@@ -25261,7 +25308,7 @@
   "weather": "23도/맑음, 30분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "그린커리",
+  "title": "태국식 그린커리",
   "credit": null,
   "hashtags": [
    "그린커리",
@@ -25270,9 +25317,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20240914 #조식다이어리 1179, 23도/맑음, 30분/운동(M) \n추석 연휴 시작, 고향의 맛 #그린커리\n📝그린커리 페이스트, 양파, 완두콩, 감자, 오크라, 새우, 토마토, 코코넛 밀크가 필요하다. 야채는 취향대로 넣으면 된다. 하지만 코코넛 밀크는 가능한 한 넣자. 풍미가 다르다. \n코팅 냄비에 올리브오일 양파를 볶다가 그린커리 페이스트를 넣고 좀 더 볶는다. \n물 300ml 붓고 끓이다가 마음에 드는 재료 넣고 좀 더 끓인다. (완두콩, 오크라, 삶은 감자, 새우, 셀러리, 손질한 토마토) 맛을 보고 맛소금 1/4, 올리고당 1 넣는다. \n코코넛 밀크 100ml 넣는다. 풍미가 백만 배쯤 풍부해진다. \n그릇에 담고 홍고추 조금 잘라서 얹는다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240914 #조식다이어리 1179, 23도/맑음, 30분/운동(M) \n추석 연휴 시작, 고향의 맛 #그린커리\n📝그린커리 페이스트, 양파, 완두콩, 감자, 오크라, 새우, 토마토, 코코넛 밀크가 필요하다. 야채는 취향대로 넣으면 된다. 하지만 코코넛 밀크는 가능한 한 넣자. 풍미가 다르다. \n\n코팅 냄비에 올리브오일 양파를 볶다가 그린커리 페이스트를 넣고 좀 더 볶는다. \n물 300ml 붓고 끓이다가 마음에 드는 재료 넣고 좀 더 끓인다. (완두콩, 오크라, 삶은 감자, 새우, 셀러리, 손질한 토마토) 맛을 보고 맛소금 1t, 올리고당 1T 넣는다. \n코코넛밀크 100ml 넣는다. 풍미가 백만 배쯤 풍부해진다. \n그릇에 담고 홍고추 조금 잘라서 얹는다.",
+  "ingredients": "- 그린커리 페이스트 2T\n- 양파 1/2개\n- 채소(완두콩, 오크라, 삶은 감자, 새우, 셀러리, 토마토 등)\n- 맛소금 1t\n- 올리고당 1T\n- 코코넛밀크 1컵\n- 홍고추 ",
+  "steps": "1. 냄비에 올리브오일 두른 후 길게 썬 양파를 볶다가 그린커리 페이스트 넣고 좀 더 볶는다. \n2. 1의 냄비에 물 300ml와 원하는 채소를 넣고 끓인다. \n3. 맛을 보고 맛소금과 올리고당으로 간을 한다. \n4. 뭉근하게 끓인 뒤 코코넛밀크 100ml 붓고 살짝 끓인다. \n5. 그릇에 담고 홍고추 몇 조각 얹는다.  ",
   "raw": "20240914 #조식다이어리 1179, 23도/맑음, 30분/운동(M) \n\n추석 연휴 시작, 고향의 맛 #그린커리\n\n📝그린커리 페이스트, 양파, 완두콩, 감자, 오크라, 새우, 토마토, 코코넛 밀크가 필요하다. 야채는 취향대로 넣으면 된다. 하지만 코코넛 밀크는 가능한 한 넣자. 풍미가 다르다. \n\n코팅 냄비에 올리브오일 양파를 볶다가 그린커리 페이스트를 넣고 좀 더 볶는다. \n물 300ml 붓고 끓이다가 마음에 드는 재료 넣고 좀 더 끓인다. (완두콩, 오크라, 삶은 감자, 새우, 셀러리, 손질한 토마토) 맛을 보고 맛소금 1/4, 올리고당 1 넣는다. \n코코넛 밀크 100ml 넣는다. 풍미가 백만 배쯤 풍부해진다. \n그릇에 담고 홍고추 조금 잘라서 얹는다. \n\n#조식 #레시피 #미라클모닝 #그린커리",
   "image": "https://images.how-about-breakfast.com/images/1179.jpg",
   "gallery": [
@@ -25281,13 +25328,6 @@
    "https://images.how-about-breakfast.com/images/1179_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1179.mp4",
-  "_en": {
-   "hash": "4e69c4438ad0f8251d4747b3474138a5012a4c3f0f51153fd5fa0bef0d564858",
-   "title": "Green curry",
-   "intro": "20240914 #breakfastdiary 1179, 23°C/clear, 30 min/exercise(M) \nStart of Chuseok holiday, a taste of home: #greencurry \n📝You need green curry paste, onion, green peas, potato, okra, shrimp, tomato, and coconut milk. Add whatever vegetables you like. But use coconut milk if at all possible — it makes a real difference in flavor. \nSauté onion in olive oil in a coated pot, then add the green curry paste and sauté a bit more. \nPour in 300ml water and bring to a boil, then add whatever ingredients you like and simmer a bit more. (green peas, okra, boiled potato, shrimp, celery, prepped tomato) Taste it and add 1/4 seasoned salt, 1 oligosaccharide syrup. \nAdd 100ml coconut milk. The flavor gets about a million times richer. \nPlate it and top with a bit of sliced red chili pepper.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "그린커리"
  },
  {
@@ -25297,7 +25337,7 @@
   "weather": "23도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "가자미타코 타코",
+  "title": "가자미 타코",
   "credit": null,
   "hashtags": [
    "가자미타코",
@@ -25308,8 +25348,8 @@
    "타코"
   ],
   "intro": "20240913 #조식다이어리 1178, 23도/흐림, 20분/운동(M) \n보통 생선 타코엔 튀김옷을 입혀서 정성껏 만든 흰살 생선이 쓰이는데 시간이 한정되어 있으니 시판 생선으로 대체한다. \n시판 가자미(사실 고등어, 삼치, 어떤 생선이든 다 좋다.)양배추, 양파, 사워크림이 필요하다. 사워크림 대신 요거트도 좋다. \n양배추 채칼로 썰고 적양파 1/4개 썰어서 믹싱볼에 넣고 사워크림 1, 라임주스 1, 소금소금 섞는다. 컬러가 압도적이다. \n손질된 시판 가자미는 달군 팬에 오일 두르고 앞뒤로 굽는다. \n타코는 직화로 굽는다. 불맛이 난다고 생각했는데 탄맛 같기도 하다. \n접시에 탄맛 타코, 적양배추, 가자미 얹고 라임주스 조금, 고수가 없어서 다진 셀러리 잎~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 적양배추 1/8개\n- 적양파 1/4개\n- 드레싱(사워크림 1T, 라임주스 1T, 소금)\n- 가자미 1마리\n- 또띠아 1장\n- 라임주스 2t\n- 셀러리 잎",
+  "steps": "1. 적양배추는 채칼로 썰고 적양파는 길게 썬다. \n2. 믹싱볼에 1의 적양배추, 적양파, 사워크림 1T, 라임주스 1T, 소금 넣고 섞는다. \n3. 팬에 오일 두르고 손질된 가자미를 굽는다. \n4. 타코는 직화로 굽는다. \n5. 접시에 4의 타코, 2의 적양배추 샐러드, 3의 가자미 얹고 라임주스 2t, 셀러리 잎 얹는다. ",
   "raw": "20240913 #조식다이어리 1178, 23도/흐림, 20분/운동(M) \n\n보통 생선 타코엔 튀김옷을 입혀서 정성껏 만든 흰살 생선이 쓰이는데 시간이 한정되어 있으니 시판 생선으로 대체한다. \n\n#가자미타코\n\n시판 가자미(사실 고등어, 삼치, 어떤 생선이든 다 좋다.)양배추, 양파, 사워크림이 필요하다. 사워크림 대신 요거트도 좋다. \n\n양배추 채칼로 썰고 적양파 1/4개 썰어서 믹싱볼에 넣고 사워크림 1, 라임주스 1, 소금소금 섞는다. 컬러가 압도적이다. \n손질된 시판 가자미는 달군 팬에 오일 두르고 앞뒤로 굽는다. \n타코는 직화로 굽는다. 불맛이 난다고 생각했는데 탄맛 같기도 하다. \n접시에 탄맛 타코, 적양배추, 가자미 얹고 라임주스 조금, 고수가 없어서 다진 셀러리 잎~\n\n#조식 #레시피 #미라클모닝 #타코",
   "image": "https://images.how-about-breakfast.com/images/1178.jpg",
   "gallery": [
@@ -25318,13 +25358,6 @@
    "https://images.how-about-breakfast.com/images/1178_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1178.mp4",
-  "_en": {
-   "hash": "4aa96a7ba2c9ec752a8dbb3515113567e1dcb9c785e99f38867f5f756abe2e35",
-   "title": "Flounder Taco Taco",
-   "intro": "20240913 #breakfastdiary 1178, 23°C/cloudy, 20min/exercise(M)\nFish tacos usually use a carefully battered and fried white fish, but since time is limited, I substitute store-bought fish.\nYou need store-bought flounder (honestly mackerel or Spanish mackerel work fine too, any fish will do), cabbage, onion, and sour cream. Yogurt works instead of sour cream too.\nShred the cabbage with a mandoline, slice 1/4 of a red onion, put them in a mixing bowl with 1 sour cream, 1 lime juice, and salt, and mix. The color is overwhelming.\nPan-sear the prepped store-bought flounder in oiled hot pan on both sides.\nGrill the tortillas directly over the flame. I thought it tasted smoky, but it might just be burnt.\nOn a plate, layer the charred tortilla, red cabbage, flounder, a little lime juice, and since I had no cilantro, chopped celery leaves instead~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "가자미타코-타코"
  },
  {
@@ -37884,7 +37917,7 @@
   "weather": "20도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "기력자 자몽 시트러스",
+  "title": "자몽을 곁들인 그릭요거트",
   "credit": null,
   "hashtags": [
    "기력자",
@@ -37896,21 +37929,14 @@
    "조식다이어리"
   ],
   "intro": "20230914, #조식다이어리 845, 20도/대체로흐림\n남조선의 조식 #기력자 올시다. \n그릭요거트 반 통, 자몽 한 개",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 자몽 1개\n- 그릭요거트 1/2통\n- 민트",
+  "steps": "1. 자몽은 겉껍질은 칼로 썰고 속껍질은 손으로 벗겨 과육만 발라낸다. \n2. 그릇에 자몽 담고 그릭요거트 담는다. 민트가 있으면 얹는다. ",
   "raw": "20230914, #조식다이어리 845, 20도/대체로흐림\n\n남조선의 조식 #기력자 올시다. \n\n그릭요거트 반 통, 자몽 한 개 \n\n#조식 #레시피 #미라클모닝 #자몽 #시트러스",
   "image": "https://images.how-about-breakfast.com/images/845.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/845.jpg",
    "https://images.how-about-breakfast.com/images/845_2.jpg"
   ],
-  "_en": {
-   "hash": "fc5c05e3c48bd843d1995119c139772fcc532f23059b217aaaa9c83909d903bd",
-   "title": "Energy-Boost Grapefruit Bowl",
-   "intro": "20230914 #breakfastdiary 845, 20°C/mostly cloudy\nBehold, a South Korean ('Namjoseon') breakfast #energybooster.\nHalf a tub of Greek yogurt, one grapefruit.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "기력자-자몽-시트러스"
  },
  {
@@ -37920,7 +37946,7 @@
   "weather": "21도/이슬비, 21분/운동(Y)",
   "failed": false,
   "calories": null,
-  "title": "시트러스샐러드 자몽 오렌지",
+  "title": "시트러스 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -37933,8 +37959,8 @@
    "조식다이어리"
   ],
   "intro": "20230913, #조식다이어리 844, 21도/이슬비, 21분/운동(Y) \n어머니가 보셨다면 ‘껍질을 그렇게 두껍게 자르면 먹을 게 뭐가 남니’라며 등짝 스매싱을 갈기셨겠지만, \n자몽 꼭지 부분과 빈대쪽을 잘라낸 뒤 껍질을 칼로 도려낸다. 오렌지도 같은 요령으로 껍질을 도려낸다. \n자몽과 오렌지를 접시에 담고 민트 조금, 피스타치오를 다져서 올린 뒤 올리브오일, #시트러스샐러드\n엄마 미안, 😃",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 자몽 1개\n- 오랜지 2개\n- 민트\n- 피스타치오 1T\n- 소금\n- 올리브오일",
+  "steps": "1. 자몽과 오렌지는 껍질 벗기고 가로로 썬다. \n2. 접시에 1의 자몽과 오렌지 담고 스매싱한 민트 얹는다. \n3. 다진 피스타치오 얹고 소금, 올리브오일 조금 뿌린다. ",
   "raw": "20230913, #조식다이어리 844, 21도/이슬비, 21분/운동(Y) \n\n어머니가 보셨다면 ‘껍질을 그렇게 두껍게 자르면 먹을 게 뭐가 남니’라며 등짝 스매싱을 갈기셨겠지만, \n\n자몽 꼭지 부분과 빈대쪽을 잘라낸 뒤 껍질을 칼로 도려낸다. 오렌지도 같은 요령으로 껍질을 도려낸다. \n자몽과 오렌지를 접시에 담고 민트 조금, 피스타치오를 다져서 올린 뒤 올리브오일, #시트러스샐러드\n\n엄마 미안, 😃 \n\n#조식 #레시피 #미라클모닝 #자몽 #오렌지 #시트러스",
   "image": "https://images.how-about-breakfast.com/images/844.jpg",
   "gallery": [
@@ -37942,13 +37968,6 @@
    "https://images.how-about-breakfast.com/images/844_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/844.mp4",
-  "_en": {
-   "hash": "17668e65b69dcea4646b7ac45742ae7035ed53262e322316a52a77da862d041c",
-   "title": "Citrus Salad",
-   "intro": "20230913 #breakfastdiary 844, 21°C/light drizzle, 21min/exercise(Y)\nIf my mother had seen this, she'd have smacked me on the back and said, 'Cut the peel that thick and what's even left to eat?' — but anyway,\nCut off the top and bottom of the grapefruit, then carve away the peel with a knife. Peel the orange the same way.\nPlate the grapefruit and orange, top with a little mint and chopped pistachios, then drizzle with olive oil. #citrussalad\nSorry, Mom. 😃",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "시트러스샐러드-자몽-오렌지"
  },
  {
@@ -51095,7 +51114,7 @@
   "weather": "22도/대체로흐림, 32분/운동",
   "failed": false,
   "calories": null,
-  "title": "토르텔로니그린리코타스피니치 브로콜리크림토르텔로니 브로콜리",
+  "title": "크림 브로콜리 토르텔로니",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51115,8 +51134,8 @@
    "홈쿡"
   ],
   "intro": "20220914, #조식다이어리 543, 22도/대체로흐림, 32분/운동\n.\n팬에 올리브오일, 브로콜리를 다져 넣고 볶다가 생크림, 소금소금소금, 후추후추후추\n시판 #토르텔로니그린리코타스피니치 를 넣고 뒤섞뒤섞 #브로콜리크림토르텔로니",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 브로콜리 1/4개\n- 생크림 1/2컵\n- 토르텔로니(시판) *작은 이탈리아 만두\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 흐르는 물에 브로콜리 씻고 물기를 제거한다. \n2. 팬에 올리브오일 두르고 1의 브로콜리 다져서 넣고 볶는다. \n3. 2에 생크림 붓고 소금, 후추 넣는다. \n4. 3에 토르텔로니를 넣고 가볍게 섞는다. \n5. 그릇에 담고 리코타치즈 갈아서 얹는다. 레몬주스 있으면 조금 얹는다. ",
   "raw": "20220914, #조식다이어리 543, 22도/대체로흐림, 32분/운동\n\n.\n\n팬에 올리브오일, 브로콜리를 다져 넣고 볶다가 생크림, 소금소금소금, 후추후추후추\n시판 #토르텔로니그린리코타스피니치 를 넣고 뒤섞뒤섞 #브로콜리크림토르텔로니\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #브로콜리 #토르텔리니 \n#breakfast #broccoli #tortellini ",
   "image": "https://images.how-about-breakfast.com/images/543.jpg",
   "gallery": [
@@ -51125,13 +51144,6 @@
    "https://images.how-about-breakfast.com/images/543_3.jpg",
    "https://images.how-about-breakfast.com/images/543_4.jpg"
   ],
-  "_en": {
-   "hash": "161f67de31895b5450f06abc1bd167dc2aac46eee9cf74f1085cfc934ea42d1f",
-   "title": "Broccoli Cream Tortelloni",
-   "intro": "20220914 #breakfastdiary 543, 22°C/mostly cloudy, 32min/exercise\n.\nIn a pan with olive oil, sauté chopped broccoli, then add cream, salt salt salt, pepper pepper pepper.\nAdd store-bought #greenricottaspinachtortelloni and toss together. #broccolicreamtortelloni",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "토르텔로니그린리코타스피니치-브로콜리크림토르텔로니-브로콜리"
  },
  {
@@ -51141,7 +51153,7 @@
   "weather": "21도/대체로흐림, 22분/운동",
   "failed": false,
   "calories": null,
-  "title": "수퍼마리오브라더스 아스파라거스샐러드 토마토",
+  "title": "아스파라거스 샐러드",
   "credit": null,
   "hashtags": [
    "asparagus",
@@ -51160,9 +51172,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220913, #조식다이어리 542, 21도/대체로흐림, 22분/운동\n1985년 오늘, #수퍼마리오브라더스 출시, 거대한 신화의 시작\n올리브오일에 소금소금, 후추후추 아스파라거스를 굽는다. 다진 토마토, 올리브오일,,화이트발사믹, 레몬주스, 홀그레인머스타드 소스와 다진 호두, #아스파라거스샐러드",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220913, #조식다이어리 542, 21도/대체로흐림, 22분/운동\n1985년 오늘, #수퍼마리오브라더스 출시, 거대한 신화의 시작\n올리브오일에 소금소금, 후추후추 아스파라거스를 굽는다. 다진 토마토, 올리브오일, 화이트발사믹, 레몬주스, 홀그레인머스타드 소스와 다진 호두, #아스파라거스샐러드",
+  "ingredients": "- 아스파라거스 7~8개\n- 방울토마토 5개\n- 드레싱(위의 다진 방울토마토, 올리브오일 2T, 화이트 발사믹 1T, 레몬주스 1T, 홀그레인 머스터드 1t )\n- 호두 1T",
+  "steps": "1. 팬에 올리브오일 두르고 소금, 후추, 허브 넣고 손질한 아스파라거스를 노릇하게 굽는다. \n2. 방울토마토는 씨를 제거하고 잘게 다진다. \n3. 그릇에 2의 방울토마토, 올리브오일 2T, 화이트 발사믹 1T, 레몬주스 1T, 홀그레인 머스터드 1t 섞어서 드레싱 만든다. \n4. 그릇에 1의 아스파라거스 담고 3의 드레싱 붓고 다진 호두 얹는다. ",
   "raw": "20220913, #조식다이어리 542, 21도/대체로흐림, 22분/운동\n\n1985년 오늘, #수퍼마리오브라더스 출시, 거대한 신화의 시작\n\n올리브오일에 소금소금, 후추후추 아스파라거스를 굽는다. 다진 토마토, 올리브오일,,화이트발사믹, 레몬주스, 홀그레인머스타드 소스와 다진 호두, #아스파라거스샐러드\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #토마토 #아스파라거스 \n#breakfast #tomato #asparagus",
   "image": "https://images.how-about-breakfast.com/images/542.jpg",
   "gallery": [
@@ -51172,13 +51184,6 @@
    "https://images.how-about-breakfast.com/images/542_4.jpg",
    "https://images.how-about-breakfast.com/images/542_5.jpg"
   ],
-  "_en": {
-   "hash": "ae658982ff5976c991dc6de893cdc422ed152412b9ee5366f95c8a0490c5369e",
-   "title": "Asparagus Salad",
-   "intro": "20220913 #breakfastdiary 542, 21°C/mostly cloudy, 22min/exercise\nOn this day in 1985, #SuperMarioBros was released — the start of a giant legend.\nRoast asparagus in olive oil with salt salt, pepper pepper. Diced tomato, a sauce of olive oil, white balsamic, lemon juice, and wholegrain mustard, and chopped walnuts. #asparagussalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "수퍼마리오브라더스-아스파라거스샐러드-토마토"
  },
  {
@@ -68682,7 +68687,7 @@
   "weather": "20도/실안개",
   "failed": false,
   "calories": null,
-  "title": "블루베리샐러드 모닝리추얼 모닝루틴",
+  "title": "블루베리 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68706,21 +68711,14 @@
    "홈쿡"
   ],
   "intro": "20210914, #조식다이어리 210, 20도/실안개\n어린잎채소, 블루베리에 페타치즈, 올리브오일, 비니거, 후추 #블루베리샐러드\n…",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 블루베리 1컵\n- 어린잎채소 1/2컵\n- 페타치즈 1T\n- 올리브오일 1T\n- 화이트와인 비니거 1t\n- 후추",
+  "steps": "1. 블루베리와 어린잎채소는 흐르는 물에 깨끗하게 씻는다. \n2. 그릇에 블루베리와 어린잎채소 담는다. \n3. 페타치즈 으깨서 얹고 올리브오일, 화이트와인 비니거, 후추 얹는다. ",
   "raw": "20210914, #조식다이어리 210, 20도/실안개\n\n어린잎채소, 블루베리에 페타치즈, 올리브오일, 비니거, 후추 #블루베리샐러드\n\n…\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #블루베리 #페타치즈\n#breakfast #recipe #salad #fetacheese ",
   "image": "https://images.how-about-breakfast.com/images/210.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/210.jpg",
    "https://images.how-about-breakfast.com/images/210_2.jpg"
   ],
-  "_en": {
-   "hash": "340c95d31acb8d063fb1fb67ceb4cc2d28e3a3283c6623d845500f4d67e00fee",
-   "title": "Blueberry Salad, Morning Ritual, Morning Routine",
-   "intro": "20210914 #breakfastdiary 210, 20°C/light fog\nBaby greens and blueberries with feta cheese, olive oil, vinegar, and pepper. #blueberrysalad\n…",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "블루베리샐러드-모닝리추얼-모닝루틴"
  },
  {
@@ -68730,7 +68728,7 @@
   "weather": "21도/대체로맑음, 20분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "라비올리 모닝리추얼 모닝루틴",
+  "title": "토마토소스를 곁들인 라비올리",
   "credit": null,
   "hashtags": [
    "basil",
@@ -68759,21 +68757,14 @@
    "홈쿡"
   ],
   "intro": "20210913, #조식다이어리 209, 21도/대체로맑음, 20분/운동하기\n다진 새우, 씨를 발라낸 토마토에 바질과 딜을 다져 넣고 소금, 후추 약간 쉐낏, 라비올리에 들어갈 소를 만든다. \n(생크림이 있으면 조금, 없다면 전분으로 농도를 잡는다.)\n만두피에 소를 올리며 ‘나는 라비올리 장인, 이건 만두가 아니라 라비올리다’라는 생각을 가지고 정성껏 빚은 후 끓는 물에 데친다. 가장자리를 잘라내고 플레이팅, 토마토소스, 파슬리, 파마산치즈 \n무릇 라비올리 반죽은 얇디 얇아야 하거늘 출근 전날 그렇게까지 수고하긴 싫어서 고향만두피로 만든 대체로 새우가 많이 들어간 #라비올리",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 새우 5마리\n- 방울토마토 5개\n- 바질\n- 딜\n- 만두피 5~6장\n- 토마토소스 1T\n- 파마산치즈\n- 소금\n- 후추",
+  "steps": "1. 새우 5마리 손질한 뒤 다진다.  \n2. 방울토마토는 씨를 발라내고 잘게 다진다. \n3. 믹싱볼에 1의 새우, 2의 방울토마토, 다진 바질과 딜, 소금과 후추 한 꼬집, 전분물 1T(전분과 물 1:1) 넣고 섞어서 라비올리 소를 만든다. \n4. 만두피에 3의 소를 얹고 접은 후 끓는 물에 살짝 데친다.\n5. 접시에 4의 라비올리를 담고 토마토소스, 파마산치즈 얹는다. ",
   "raw": "20210913, #조식다이어리 209, 21도/대체로맑음, 20분/운동하기\n\n다진 새우, 씨를 발라낸 토마토에 바질과 딜을 다져 넣고 소금, 후추 약간 쉐낏, 라비올리에 들어갈 소를 만든다. \n(생크림이 있으면 조금, 없다면 전분으로 농도를 잡는다.)\n만두피에 소를 올리며 ‘나는 라비올리 장인, 이건 만두가 아니라 라비올리다’라는 생각을 가지고 정성껏 빚은 후 끓는 물에 데친다. 가장자리를 잘라내고 플레이팅, 토마토소스, 파슬리, 파마산치즈 \n\n무릇 라비올리 반죽은 얇디 얇아야 하거늘 출근 전날 그렇게까지 수고하긴 싫어서 고향만두피로 만든 대체로 새우가 많이 들어간 #라비올리\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #라비올리 #토마토 #새우 #파마산치즈 #바질 #딜\n#breakfast #recipe #ravioli #tomato #basil #parmigianoreggiano #dill ",
   "image": "https://images.how-about-breakfast.com/images/209.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/209.jpg",
    "https://images.how-about-breakfast.com/images/209_2.jpg"
   ],
-  "_en": {
-   "hash": "a1a8b2a7c838c1280129dfa17711be97e156c6f546d9d394046836f377a5dc7e",
-   "title": "Ravioli, Morning Ritual, Morning Routine",
-   "intro": "20210913 #breakfastdiary 209, 21°C/mostly clear, 20 min/workout\nChop up shrimp and seeded tomato with basil and dill, season with a little salt and pepper, and toss to make the ravioli filling. \n(A splash of heavy cream if you have it — otherwise thicken with a little starch.)\nSpoon the filling onto dumpling wrappers, telling myself ‘I am a ravioli artisan, this is ravioli, not mandu,’ and fold each one with care before blanching in boiling water. Trim the edges, then plate with tomato sauce, parsley, and parmesan. \nRavioli dough is supposed to be paper-thin, but I didn’t feel like going to that much trouble the night before work, so this is mostly-shrimp #ravioli made with store-bought mandu wrappers.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "라비올리-모닝리추얼-모닝루틴"
  },
  {
@@ -85848,7 +85839,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 당근라페 조식스타그램",
+  "title": "당근 라페",
   "credit": null,
   "hashtags": [
    "당근라페",
@@ -85856,19 +85847,12 @@
    "조식",
    "조식스타그램"
   ],
-  "intro": "일찍 일어났지만 그런데도 왠지 좀 더 분주한 아침, 당근, 월요일이다. 그래서 #오늘의조식 은 #당근라페 \n당근 반 개를 채쳐서 드레싱에 버무리고 (원래는 1시간 정도를 둬야 하지만 오늘은 당근 분주한 월요일이므로) 파슬리, 후추를 올리면 완성, #조식 #조식스타그램 \n*당근: 당연하고 근거있는 말. 한때 청소년들 사이에서 '당연하지' 대신에 쓰이던 속어. PC통신때 만들어진 말이다. 경상도 사투리로 '당연하지'는 '당그이지'인데, 이것이 다른 지방으로 퍼지는 과정에서 '당근이지'로 바뀌었다는 설이 있다. 줄여서 '당근!'이라고 줄여서 표현되기도 한다. (출처: 나무위키)",
-  "ingredients": null,
-  "steps": null,
+  "intro": "일찍 일어났지만 그런데도 왠지 좀 더 분주한 아침, 당근, 월요일이다. 그래서 #오늘의조식 은 #당근라페 \n당근 반 개를 채쳐서 드레싱에 버무리고 (원래는 1시간 정도를 둬야 하지만 오늘은 당근 분주한 월요일이므로) 파슬리, 후추를 올리면 완성, #조식 #조식스타그램 \n\n*당근: 당연하고 근거있는 말. 한때 청소년들 사이에서 '당연하지' 대신에 쓰이던 속어. PC통신때 만들어진 말이다. 경상도 사투리로 '당연하지'는 '당그이지'인데, 이것이 다른 지방으로 퍼지는 과정에서 '당근이지'로 바뀌었다는 설이 있다. 줄여서 '당근!'이라고 줄여서 표현되기도 한다. (출처: 나무위키)",
+  "ingredients": "- 당근 1/2개\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 파슬리 파우더\n- 후추\n- 잣",
+  "steps": "1. 당근 1/2개 채칼로 썬 뒤 드레싱에 버무린다. \n2. 접시에 담고 파슬리 파우더, 후추 얹는다. \n3. 잣이 있다면 팬에 구워서 얹어도 좋을 것 같다. ",
   "raw": "일찍 일어났지만 그런데도 왠지 좀 더 분주한 아침, 당근, 월요일이다. 그래서 #오늘의조식 은 #당근라페 \n당근 반 개를 채쳐서 드레싱에 버무리고 (원래는 1시간 정도를 둬야 하지만 오늘은 당근 분주한 월요일이므로) 파슬리, 후추를 올리면 완성, #조식 #조식스타그램 \n\n*당근: 당연하고 근거있는 말. 한때 청소년들 사이에서 '당연하지' 대신에 쓰이던 속어. PC통신때 만들어진 말이다. 경상도 사투리로 '당연하지'는 '당그이지'인데, 이것이 다른 지방으로 퍼지는 과정에서 '당근이지'로 바뀌었다는 설이 있다. 줄여서 '당근!'이라고 줄여서 표현되기도 한다. (출처: 나무위키)",
   "pre_label": "D-151",
   "image": "https://images.how-about-breakfast.com/images/pre-151.jpg",
-  "_en": {
-   "hash": "6ec520a72ec355640803f0ec237da73d397387324e0ace991ea12ed50d02405f",
-   "title": "Carrot Rapée for Breakfast",
-   "intro": "Woke up early today but somehow still felt extra rushed — carrot of a Monday, as they say. So #todaysbreakfast is #carrotrape.\nGrate half a carrot, toss it in the dressing (ideally you'd let it sit for about an hour, but today's a rushed carrot Monday, so no time for that), top with parsley and pepper, and it's done. #breakfast #breakfastgram\n*A note on the wordplay: in Korean, 당근 (carrot) sounds just like 당근 (of course) — a slang term born on old PC-communication boards, from a Gyeongsang-dialect way of saying \"of course.\" Koreans still shorten it to just \"carrot!\" to mean \"of course!\" (Source: Namu Wiki)",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-당근라페-조식스타그램"
  },
  {
@@ -85890,8 +85874,8 @@
    "괴식디저트"
   ],
   "intro": "다소 늦은 #오늘의조식\n3. 아보카도 속을 파내고 깍둑썰기한 후, 빨강, 파랑, 노랑 다채로운 컬러의 #꼬마곰젤리 와 함께 속을 채운 후, 구운 새우 대신 #새우깡 으로 장식한 #괴식디저트 로 마무리\n2. 베누 양송이 크림 스프 \n1. 풀맛 가득 #시금치 , 양파, 파프리카에 올리브 오일(2), 화이트 와인 식초(1), 홀그레인 머스타드(1/2)",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 아보카도 1개\n- 꼬마곰젤리\n- (시판) 양송이수프\n- 양파 1/4개\n- 시금치 한 줌\n- 파프리카 1/4개\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)",
+  "steps": "1. 후숙한 아보카도 속을 파낸 후 깍둑썰기한다. 꼬마곰젤리와 섞은 후 아보카도를 채운다. \n2. 양송이수프를 전자레인지에 넣고 데운다. \n3. 양파는 씻은 후 물에 담가 놓는다. 그릇에 시금치, 양파, 파프리카 담고 드레싱 얹는다. ",
   "raw": "다소 늦은 #오늘의조식\n\n3. 아보카도 속을 파내고 깍둑썰기한 후, 빨강, 파랑, 노랑 다채로운 컬러의 #꼬마곰젤리 와 함께 속을 채운 후, 구운 새우 대신 #새우깡 으로 장식한 #괴식디저트 로 마무리\n\n2. 베누 양송이 크림 스프 \n\n1. 풀맛 가득 #시금치 , 양파, 파프리카에 올리브 오일(2), 화이트 와인 식초(1), 홀그레인 머스타드(1/2) \n\n#조식 #조식스타그램",
   "pre_label": "D-152",
   "image": "https://images.how-about-breakfast.com/images/pre-152.jpg",
@@ -85900,13 +85884,6 @@
    "https://images.how-about-breakfast.com/images/pre-152_2.jpg",
    "https://images.how-about-breakfast.com/images/pre-152_3.jpg"
   ],
-  "_en": {
-   "hash": "6fdfac5f56403bf0bd8e033ac42a3325cf2699198f0921de21652f7513156c54",
-   "title": "Avocado Salad",
-   "intro": "A rather late #todaysbreakfast\n3. Scoop out and dice the avocado, fill it back up with colorful red, blue, and yellow #babybearjellies, then top it off — instead of grilled shrimp — with #shrimpchips for a truly #weirdfooddessert finish\n2. Venu's cream of mushroom soup\n1. Grassy, green #spinach, onion, and paprika with olive oil (2), white wine vinegar (1), and whole grain mustard (1/2)",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "아보카도-샐러드"
  },
  {
