@@ -84792,7 +84792,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "루꼴라-치커리-아보카도"
+  "page_id": "루꼴라-치커리-아보카도",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-15",
