@@ -85530,7 +85530,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "기후행동의날-조식플렉스-그래잇데이"
+  "page_id": "기후행동의날-조식플렉스-그래잇데이",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-09-24",
