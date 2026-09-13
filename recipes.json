@@ -25315,7 +25315,7 @@
   "weather": "23도/맑음, 30분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "그린커리",
+  "title": "태국식 그린커리",
   "credit": null,
   "hashtags": [
    "그린커리",
@@ -25324,9 +25324,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20240914 #조식다이어리 1179, 23도/맑음, 30분/운동(M) \n추석 연휴 시작, 고향의 맛 #그린커리\n📝그린커리 페이스트, 양파, 완두콩, 감자, 오크라, 새우, 토마토, 코코넛 밀크가 필요하다. 야채는 취향대로 넣으면 된다. 하지만 코코넛 밀크는 가능한 한 넣자. 풍미가 다르다. \n코팅 냄비에 올리브오일 양파를 볶다가 그린커리 페이스트를 넣고 좀 더 볶는다. \n물 300ml 붓고 끓이다가 마음에 드는 재료 넣고 좀 더 끓인다. (완두콩, 오크라, 삶은 감자, 새우, 셀러리, 손질한 토마토) 맛을 보고 맛소금 1/4, 올리고당 1 넣는다. \n코코넛 밀크 100ml 넣는다. 풍미가 백만 배쯤 풍부해진다. \n그릇에 담고 홍고추 조금 잘라서 얹는다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240914 #조식다이어리 1179, 23도/맑음, 30분/운동(M) \n추석 연휴 시작, 고향의 맛 #그린커리\n📝그린커리 페이스트, 양파, 완두콩, 감자, 오크라, 새우, 토마토, 코코넛 밀크가 필요하다. 야채는 취향대로 넣으면 된다. 하지만 코코넛 밀크는 가능한 한 넣자. 풍미가 다르다. \n\n코팅 냄비에 올리브오일 양파를 볶다가 그린커리 페이스트를 넣고 좀 더 볶는다. \n물 300ml 붓고 끓이다가 마음에 드는 재료 넣고 좀 더 끓인다. (완두콩, 오크라, 삶은 감자, 새우, 셀러리, 손질한 토마토) 맛을 보고 맛소금 1t, 올리고당 1T 넣는다. \n코코넛밀크 100ml 넣는다. 풍미가 백만 배쯤 풍부해진다. \n그릇에 담고 홍고추 조금 잘라서 얹는다.",
+  "ingredients": "- 그린커리 페이스트 2T\n- 양파 1/2개\n- 채소(완두콩, 오크라, 삶은 감자, 새우, 셀러리, 토마토 등)\n- 맛소금 1t\n- 올리고당 1T\n- 코코넛밀크 1컵\n- 홍고추 ",
+  "steps": "1. 냄비에 올리브오일 두른 후 길게 썬 양파를 볶다가 그린커리 페이스트 넣고 좀 더 볶는다. \n2. 1의 냄비에 물 300ml와 원하는 채소를 넣고 끓인다. \n3. 맛을 보고 맛소금과 올리고당으로 간을 한다. \n4. 뭉근하게 끓인 뒤 코코넛밀크 100ml 붓고 살짝 끓인다. \n5. 그릇에 담고 홍고추 몇 조각 얹는다.  ",
   "raw": "20240914 #조식다이어리 1179, 23도/맑음, 30분/운동(M) \n\n추석 연휴 시작, 고향의 맛 #그린커리\n\n📝그린커리 페이스트, 양파, 완두콩, 감자, 오크라, 새우, 토마토, 코코넛 밀크가 필요하다. 야채는 취향대로 넣으면 된다. 하지만 코코넛 밀크는 가능한 한 넣자. 풍미가 다르다. \n\n코팅 냄비에 올리브오일 양파를 볶다가 그린커리 페이스트를 넣고 좀 더 볶는다. \n물 300ml 붓고 끓이다가 마음에 드는 재료 넣고 좀 더 끓인다. (완두콩, 오크라, 삶은 감자, 새우, 셀러리, 손질한 토마토) 맛을 보고 맛소금 1/4, 올리고당 1 넣는다. \n코코넛 밀크 100ml 넣는다. 풍미가 백만 배쯤 풍부해진다. \n그릇에 담고 홍고추 조금 잘라서 얹는다. \n\n#조식 #레시피 #미라클모닝 #그린커리",
   "image": "https://images.how-about-breakfast.com/images/1179.jpg",
   "gallery": [
@@ -25335,13 +25335,6 @@
    "https://images.how-about-breakfast.com/images/1179_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1179.mp4",
-  "_en": {
-   "hash": "4e69c4438ad0f8251d4747b3474138a5012a4c3f0f51153fd5fa0bef0d564858",
-   "title": "Green curry",
-   "intro": "20240914 #breakfastdiary 1179, 23°C/clear, 30 min/exercise(M) \nStart of Chuseok holiday, a taste of home: #greencurry \n📝You need green curry paste, onion, green peas, potato, okra, shrimp, tomato, and coconut milk. Add whatever vegetables you like. But use coconut milk if at all possible — it makes a real difference in flavor. \nSauté onion in olive oil in a coated pot, then add the green curry paste and sauté a bit more. \nPour in 300ml water and bring to a boil, then add whatever ingredients you like and simmer a bit more. (green peas, okra, boiled potato, shrimp, celery, prepped tomato) Taste it and add 1/4 seasoned salt, 1 oligosaccharide syrup. \nAdd 100ml coconut milk. The flavor gets about a million times richer. \nPlate it and top with a bit of sliced red chili pepper.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "그린커리"
  },
  {
