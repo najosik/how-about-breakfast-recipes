@@ -174,6 +174,7 @@
 
     <div id="essayProgress"></div>
     <div id="essayReviewProgress" class="hint"></div>
+    <button type="button" id="essayResumeBtn" style="width:100%; margin:8px 0;">↷ 다른 기기에서 이어서 검토하기</button>
     <div id="essayMap" class="essay-map"></div>
 
     <div class="essay-nav">
@@ -325,6 +326,7 @@
 
   var essayProgress = document.getElementById('essayProgress');
   var essayReviewProgress = document.getElementById('essayReviewProgress');
+  var essayResumeBtn = document.getElementById('essayResumeBtn');
   var essayMap = document.getElementById('essayMap');
   var essayPrevBtn = document.getElementById('essayPrevBtn');
   var essayNextBtn = document.getElementById('essayNextBtn');
@@ -1046,6 +1048,30 @@
   // made it.
   function essayIsReviewed(r) { return !!(r && (r.essay_reviewed || r.essay_candidate)); }
 
+  // The one thing that lets "이어서 검토하기" work on a device that has
+  // never opened this tab before: walk the diary in date order and find
+  // the earliest live post nobody has decided on yet, using only the
+  // server-synced essay_candidate/essay_reviewed flags already in
+  // allRecords - no reliance on this browser's own history.
+  function essayFirstUnreviewedDate() {
+    var sorted = allRecords
+      .filter(function (r) { return r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date) && !r.failed; })
+      .slice()
+      .sort(function (a, b) { return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
+    var found = sorted.find(function (r) { return !essayIsReviewed(r); });
+    return found ? found.date : null;
+  }
+
+  essayResumeBtn.addEventListener('click', function () {
+    var d = essayFirstUnreviewedDate();
+    if (!d) {
+      showStatus('ok', '모든 게시물을 검토했습니다!');
+      return;
+    }
+    essayDateInput.value = d;
+    renderEssayCard();
+  });
+
   function renderEssayReviewProgress() {
     var total = allRecords.length;
     var seen = allRecords.filter(essayIsReviewed).length;
@@ -1104,7 +1130,11 @@
 
   function initEssayTab() {
     if (!essayDateInput.value) {
-      essayDateInput.value = localStorage.getItem('essayReviewDate') || (function () {
+      // A device that's never opened this tab has no localStorage
+      // position to fall back on - resume at the server's actual
+      // frontier (first unreviewed post) instead of always restarting
+      // from day one.
+      essayDateInput.value = localStorage.getItem('essayReviewDate') || essayFirstUnreviewedDate() || (function () {
         var dates = allRecords.map(function (r) { return r.date; })
           .filter(function (d) { return d && /^\d{4}-\d{2}-\d{2}$/.test(d); }).sort();
         return dates.length ? dates[0] : '';
