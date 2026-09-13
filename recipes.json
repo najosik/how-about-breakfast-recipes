@@ -68715,7 +68715,7 @@
   "weather": "20도/실안개",
   "failed": false,
   "calories": null,
-  "title": "블루베리샐러드 모닝리추얼 모닝루틴",
+  "title": "블루베리 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68739,21 +68739,14 @@
    "홈쿡"
   ],
   "intro": "20210914, #조식다이어리 210, 20도/실안개\n어린잎채소, 블루베리에 페타치즈, 올리브오일, 비니거, 후추 #블루베리샐러드\n…",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 블루베리 1컵\n- 어린잎채소 1/2컵\n- 페타치즈 1T\n- 올리브오일 1T\n- 화이트와인 비니거 1t\n- 후추",
+  "steps": "1. 블루베리와 어린잎채소는 흐르는 물에 깨끗하게 씻는다. \n2. 그릇에 블루베리와 어린잎채소 담는다. \n3. 페타치즈 으깨서 얹고 올리브오일, 화이트와인 비니거, 후추 얹는다. ",
   "raw": "20210914, #조식다이어리 210, 20도/실안개\n\n어린잎채소, 블루베리에 페타치즈, 올리브오일, 비니거, 후추 #블루베리샐러드\n\n…\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #블루베리 #페타치즈\n#breakfast #recipe #salad #fetacheese ",
   "image": "https://images.how-about-breakfast.com/images/210.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/210.jpg",
    "https://images.how-about-breakfast.com/images/210_2.jpg"
   ],
-  "_en": {
-   "hash": "340c95d31acb8d063fb1fb67ceb4cc2d28e3a3283c6623d845500f4d67e00fee",
-   "title": "Blueberry Salad, Morning Ritual, Morning Routine",
-   "intro": "20210914 #breakfastdiary 210, 20°C/light fog\nBaby greens and blueberries with feta cheese, olive oil, vinegar, and pepper. #blueberrysalad\n…",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "블루베리샐러드-모닝리추얼-모닝루틴"
  },
  {
