@@ -84416,7 +84416,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "다수결-숙의-토마토"
+  "page_id": "다수결-숙의-토마토",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-26",
