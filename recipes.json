@@ -85224,7 +85224,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "마이크로어그레션-파프리카-조식"
+  "page_id": "마이크로어그레션-파프리카-조식",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-03",
