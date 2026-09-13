@@ -84729,7 +84729,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "오픈하우스서울-브릭웰-엔다이브"
+  "page_id": "오픈하우스서울-브릭웰-엔다이브",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-17",
