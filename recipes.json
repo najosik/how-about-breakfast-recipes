@@ -37931,7 +37931,7 @@
   "weather": "20도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "기력자 자몽 시트러스",
+  "title": "자몽 그릭요거트 샐러드",
   "credit": null,
   "hashtags": [
    "기력자",
@@ -37943,21 +37943,14 @@
    "조식다이어리"
   ],
   "intro": "20230914, #조식다이어리 845, 20도/대체로흐림\n남조선의 조식 #기력자 올시다. \n그릭요거트 반 통, 자몽 한 개",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 자몽 1개\n- 그릭요거트 1/2통\n- 민트",
+  "steps": "1. 자몽은 겉껍질은 칼로 썰고 속껍질은 손으로 벗겨 과육만 발라낸다. \n2. 그릇에 자몽 담고 그릭요거트 담는다. 민트가 있으면 얹는다. ",
   "raw": "20230914, #조식다이어리 845, 20도/대체로흐림\n\n남조선의 조식 #기력자 올시다. \n\n그릭요거트 반 통, 자몽 한 개 \n\n#조식 #레시피 #미라클모닝 #자몽 #시트러스",
   "image": "https://images.how-about-breakfast.com/images/845.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/845.jpg",
    "https://images.how-about-breakfast.com/images/845_2.jpg"
   ],
-  "_en": {
-   "hash": "fc5c05e3c48bd843d1995119c139772fcc532f23059b217aaaa9c83909d903bd",
-   "title": "Energy-Boost Grapefruit Bowl",
-   "intro": "20230914 #breakfastdiary 845, 20°C/mostly cloudy\nBehold, a South Korean ('Namjoseon') breakfast #energybooster.\nHalf a tub of Greek yogurt, one grapefruit.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "기력자-자몽-시트러스"
  },
  {
