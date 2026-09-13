@@ -85286,7 +85286,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "애호박-미라클모닝-샐러드"
+  "page_id": "애호박-미라클모닝-샐러드",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-01",
