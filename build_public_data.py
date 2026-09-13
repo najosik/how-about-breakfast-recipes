@@ -146,6 +146,7 @@ INDEX_FIELDS = [
     'date', 'diary_no', 'pre_label', 'weather', 'failed', 'calories',
     'title', 'credit', 'hashtags', 'intro', 'ingredients', 'steps',
     'image', 'gallery', 'video', 'permalink', 'day_secondary',
+    'essay_candidate',
 ]
 
 

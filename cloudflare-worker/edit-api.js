@@ -35,7 +35,7 @@
  */
 
 const ALLOWED_FIELDS = {
-  edit: ['title', 'intro', 'ingredients', 'steps', 'hashtags', 'credit', 'image', 'gallery', 'video'],
+  edit: ['title', 'intro', 'ingredients', 'steps', 'hashtags', 'credit', 'image', 'gallery', 'video', 'essay_candidate'],
   add: ['title', 'intro', 'ingredients', 'steps', 'hashtags', 'credit', 'weather', 'calories', 'image', 'gallery', 'failed'],
 };
 
