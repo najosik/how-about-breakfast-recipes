@@ -84927,7 +84927,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "치커리-사과-모닝루틴"
+  "page_id": "치커리-사과-모닝루틴",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-11",
