@@ -84549,7 +84549,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "건강검진"
+  "page_id": "건강검진",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-22",
