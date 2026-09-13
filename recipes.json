@@ -85874,7 +85874,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 당근라페 조식스타그램",
+  "title": "당근 라페",
   "credit": null,
   "hashtags": [
    "당근라페",
@@ -85882,19 +85882,12 @@
    "조식",
    "조식스타그램"
   ],
-  "intro": "일찍 일어났지만 그런데도 왠지 좀 더 분주한 아침, 당근, 월요일이다. 그래서 #오늘의조식 은 #당근라페 \n당근 반 개를 채쳐서 드레싱에 버무리고 (원래는 1시간 정도를 둬야 하지만 오늘은 당근 분주한 월요일이므로) 파슬리, 후추를 올리면 완성, #조식 #조식스타그램 \n*당근: 당연하고 근거있는 말. 한때 청소년들 사이에서 '당연하지' 대신에 쓰이던 속어. PC통신때 만들어진 말이다. 경상도 사투리로 '당연하지'는 '당그이지'인데, 이것이 다른 지방으로 퍼지는 과정에서 '당근이지'로 바뀌었다는 설이 있다. 줄여서 '당근!'이라고 줄여서 표현되기도 한다. (출처: 나무위키)",
-  "ingredients": null,
-  "steps": null,
+  "intro": "일찍 일어났지만 그런데도 왠지 좀 더 분주한 아침, 당근, 월요일이다. 그래서 #오늘의조식 은 #당근라페 \n당근 반 개를 채쳐서 드레싱에 버무리고 (원래는 1시간 정도를 둬야 하지만 오늘은 당근 분주한 월요일이므로) 파슬리, 후추를 올리면 완성, #조식 #조식스타그램 \n\n*당근: 당연하고 근거있는 말. 한때 청소년들 사이에서 '당연하지' 대신에 쓰이던 속어. PC통신때 만들어진 말이다. 경상도 사투리로 '당연하지'는 '당그이지'인데, 이것이 다른 지방으로 퍼지는 과정에서 '당근이지'로 바뀌었다는 설이 있다. 줄여서 '당근!'이라고 줄여서 표현되기도 한다. (출처: 나무위키)",
+  "ingredients": "- 당근 1/2개\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 파슬리 파우더\n- 후추\n- 잣",
+  "steps": "1. 당근 1/2개 채칼로 썬 뒤 드레싱에 버무린다. \n2. 접시에 담고 파슬리 파우더, 후추 얹는다. \n3. 잣이 있다면 팬에 구워서 얹어도 좋을 것 같다. ",
   "raw": "일찍 일어났지만 그런데도 왠지 좀 더 분주한 아침, 당근, 월요일이다. 그래서 #오늘의조식 은 #당근라페 \n당근 반 개를 채쳐서 드레싱에 버무리고 (원래는 1시간 정도를 둬야 하지만 오늘은 당근 분주한 월요일이므로) 파슬리, 후추를 올리면 완성, #조식 #조식스타그램 \n\n*당근: 당연하고 근거있는 말. 한때 청소년들 사이에서 '당연하지' 대신에 쓰이던 속어. PC통신때 만들어진 말이다. 경상도 사투리로 '당연하지'는 '당그이지'인데, 이것이 다른 지방으로 퍼지는 과정에서 '당근이지'로 바뀌었다는 설이 있다. 줄여서 '당근!'이라고 줄여서 표현되기도 한다. (출처: 나무위키)",
   "pre_label": "D-151",
   "image": "https://images.how-about-breakfast.com/images/pre-151.jpg",
-  "_en": {
-   "hash": "6ec520a72ec355640803f0ec237da73d397387324e0ace991ea12ed50d02405f",
-   "title": "Carrot Rapée for Breakfast",
-   "intro": "Woke up early today but somehow still felt extra rushed — carrot of a Monday, as they say. So #todaysbreakfast is #carrotrape.\nGrate half a carrot, toss it in the dressing (ideally you'd let it sit for about an hour, but today's a rushed carrot Monday, so no time for that), top with parsley and pepper, and it's done. #breakfast #breakfastgram\n*A note on the wordplay: in Korean, 당근 (carrot) sounds just like 당근 (of course) — a slang term born on old PC-communication boards, from a Gyeongsang-dialect way of saying \"of course.\" Koreans still shorten it to just \"carrot!\" to mean \"of course!\" (Source: Namu Wiki)",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-당근라페-조식스타그램"
  },
  {
