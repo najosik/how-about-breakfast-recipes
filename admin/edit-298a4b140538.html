@@ -178,6 +178,8 @@
       <button type="button" id="essayNextBtn">내일 ▶</button>
     </div>
 
+    <button type="button" id="essayToggleBtn" style="display:none; margin-bottom:14px; width:100%;"></button>
+
     <ul id="essayCandList" class="v-cand-results" style="max-height:none; border:1px solid #eee; border-radius:6px; display:none;"></ul>
 
     <div id="essayCard" style="display:none;">
@@ -186,7 +188,6 @@
       <div class="essay-card-section"><label>본문(intro)</label><div id="essayCardIntro"></div></div>
       <div class="essay-card-section"><label>재료</label><div id="essayCardIngredients"></div></div>
       <div class="essay-card-section"><label>조리 순서</label><div id="essayCardSteps"></div></div>
-      <button type="button" id="essayToggleBtn"></button>
     </div>
     <div id="essayEmpty" class="hint" style="display:none;">이 날짜엔 게시물이 없습니다.</div>
   </div>
@@ -1102,6 +1103,7 @@
     essayToggleBtn.textContent = r.essay_candidate ? '★ 에세이 후보 해제' : '☆ 에세이 후보로 지정';
     essayToggleBtn.classList.toggle('is-candidate', !!r.essay_candidate);
     essayToggleBtn.disabled = false;
+    essayToggleBtn.style.display = 'block';
     essayCard.style.display = 'block';
     essayEmpty.style.display = 'none';
   }
@@ -1110,6 +1112,7 @@
     var dateStr = essayDateInput.value.trim();
     if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
       essayCurrent = null;
+      essayToggleBtn.style.display = 'none';
       essayCard.style.display = 'none';
       essayCandList.style.display = 'none';
       essayEmpty.style.display = 'block';
@@ -1121,6 +1124,7 @@
     var matches = allRecords.filter(function (r) { return r.date === dateStr; });
     if (!matches.length) {
       essayCurrent = null;
+      essayToggleBtn.style.display = 'none';
       essayCard.style.display = 'none';
       essayCandList.style.display = 'none';
       essayEmpty.style.display = 'block';
