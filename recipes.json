@@ -85709,7 +85709,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "애호박-샐러드"
+  "page_id": "애호박-샐러드",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-09-20",
