@@ -84826,7 +84826,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "스크린타임-넷플릭스-소셜딜레마"
+  "page_id": "스크린타임-넷플릭스-소셜딜레마",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-14",
