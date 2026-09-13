@@ -84589,7 +84589,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "블루베리-클랜베리-라즈베리"
+  "page_id": "블루베리-클랜베리-라즈베리",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-21",
