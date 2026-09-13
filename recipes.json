@@ -85095,7 +85095,9 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "양송이-양송이샐러드-모닝"
+  "page_id": "양송이-양송이샐러드-모닝",
+  "essay_candidate": true,
+  "essay_reviewed": true
  },
  {
   "date": "2020-10-07",
