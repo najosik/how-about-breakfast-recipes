@@ -176,6 +176,7 @@
     });
 
     var recordByDate = {};
+    var postCounts = {}; // real (non-failed) post count per date, for the "+N" badge on days with more than one
     all.forEach(function (r) {
       if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return;
       // prefer a successful entry over a failed one when a day has both,
@@ -184,6 +185,7 @@
       if (!existing || (existing.failed && !r.failed) || (existing.day_secondary && !r.day_secondary)) {
         recordByDate[r.date] = r;
       }
+      if (!r.failed) postCounts[r.date] = (postCounts[r.date] || 0) + 1;
     });
 
     var dated = Array.from(postedDates).concat(Array.from(failedDates)).sort();
@@ -252,6 +254,8 @@
     function showTooltip(cell, day) {
       if (day.status !== 'posted' || !day.key) return;
       var label = labelFor[day.status] || '';
+      var n = postCounts[day.key] || 0;
+      if (n > 1) label += ' · ' + (lang === 'en' ? n + ' posts' : n + '개');
       tooltip.textContent = formatDate(day.key) + ' · ' + label;
       tooltip.classList.remove('hidden');
       var wrapRect = document.getElementById('ledgerWrap').getBoundingClientRect();
@@ -269,6 +273,12 @@
       w.forEach(function (day) {
         var cell = document.createElement('div');
         cell.className = 'ledger-cell' + (day.status === 'posted' ? ' posted' : '');
+        if (day.status === 'posted' && (postCounts[day.key] || 0) > 1) {
+          var countBadge = document.createElement('span');
+          countBadge.className = 'ledger-count';
+          countBadge.textContent = postCounts[day.key];
+          cell.appendChild(countBadge);
+        }
         if (day.status !== 'pad' && day.key) {
           cell.addEventListener('mouseenter', function () { showTooltip(cell, day); });
           cell.addEventListener('mouseleave', hideTooltip);
