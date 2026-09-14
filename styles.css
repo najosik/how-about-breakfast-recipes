@@ -383,10 +383,11 @@ section.mag-section + section.mag-section{margin-top:0; border-top:1px solid var
 .ledger{border:1px solid var(--line); background:var(--paper-raised); border-radius:3px; padding:22px 24px; overflow-x:auto; position:relative;}
 .ledger-grid{display:grid; grid-auto-flow:column; grid-auto-columns:14px; gap:3px;}
 .ledger-col{display:grid; grid-template-rows:repeat(7,14px); gap:3px;}
-.ledger-cell{width:14px; height:14px; border-radius:2px; background:rgba(28,28,26,0.06); transition:transform .1s;}
+.ledger-cell{width:14px; height:14px; border-radius:2px; background:rgba(28,28,26,0.06); transition:transform .1s; display:flex; align-items:center; justify-content:center;}
 .ledger-cell.posted{background:var(--teal);}
 .ledger-cell.clickable{cursor:pointer;}
 .ledger-cell.clickable:hover{transform:scale(1.35); outline:1.5px solid var(--ink); z-index:2; position:relative;}
+.ledger-count{font-size:8px; line-height:1; font-weight:700; color:#fff; text-shadow:0 0 2px rgba(0,0,0,0.55); pointer-events:none; user-select:none;}
 .ledger-tooltip{
   position:absolute; transform:translate(-50%,-100%); background:var(--ink); color:var(--paper);
   font-size:12px; padding:5px 10px; border-radius:3px; white-space:nowrap; pointer-events:none;

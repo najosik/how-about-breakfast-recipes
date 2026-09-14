@@ -17,6 +17,20 @@ normal "any posts missing an English translation?" check instead of
 silently drifting out of sync with the edited Korean text. Media fields
 (image/gallery/video) are not translatable and never clear it.
 
+essay_candidate/essay_reviewed are boolean editorial flags (admin's "에세이
+후보" tool), both stored server-side so the "have I already decided about
+this post?" state is visible from any device, not just the browser that
+made the decision:
+  - essay_candidate: a shortlist flag - any number of live records may
+    hold it, including several different years sharing the same
+    calendar day (month-day). No per-day limit is enforced here; the
+    admin reviews day by day first and shortlists freely, then later
+    goes back through same-day shortlisted groups to pick one final
+    winner per day (that final-pick step isn't built yet). Setting it
+    true also implies essay_reviewed.
+  - essay_reviewed: true once a post has been looked at and a decision
+    made either way ("저장함" or "저장 안 함"), with no per-day limit.
+
 Usage (set by the workflow, not run manually):
     PAGE_ID=... PATCH_JSON='{"title": "..."}' python apply_edit.py
 """
@@ -27,10 +41,11 @@ import sys
 RECIPES_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'recipes.json')
 ALLOWED_FIELDS = {
     'title', 'intro', 'ingredients', 'steps', 'hashtags', 'credit',
-    'image', 'gallery', 'video',
+    'image', 'gallery', 'video', 'essay_candidate', 'essay_reviewed',
 }
 TRANSLATABLE_FIELDS = {'title', 'intro', 'ingredients', 'steps'}
 LIST_FIELDS = {'hashtags', 'gallery'}
+BOOL_FIELDS = {'essay_candidate', 'essay_reviewed'}
 
 
 def main():
@@ -76,6 +91,8 @@ def main():
                 print(f'{key} must be a list of strings.', file=sys.stderr)
                 sys.exit(1)
             value = [str(v) for v in value if str(v).strip()]
+        elif key in BOOL_FIELDS:
+            value = bool(value)
         else:
             value = str(value) if value not in (None, '') else None
         if target.get(key) != value:
@@ -91,6 +108,11 @@ def main():
             target['gallery'] = [target['image']]
         elif target.get('gallery') and not target.get('image'):
             target['image'] = target['gallery'][0]
+
+    # Shortlisting a post is itself a completed review, regardless of
+    # whether other records already share its calendar day.
+    if patch.get('essay_candidate') is True:
+        target['essay_reviewed'] = True
 
     if changed_translatable and target.get('_en'):
         del target['_en']

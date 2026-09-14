@@ -70,6 +70,22 @@
   #voteRoundsList .vrr-cands { margin: 6px 0; color: #444; }
   #voteRoundsList .vrr-cands div { display: flex; justify-content: space-between; padding: 2px 0; }
   #voteRoundsList button { padding: 6px 10px; font-size: 0.85rem; margin-top: 6px; }
+
+  .essay-nav { display: flex; align-items: center; gap: 8px; margin: 14px 0; }
+  .essay-nav input { margin: 0; flex: 1; }
+  .essay-map { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 4px; padding: 10px; background: #f7f7f7; border-radius: 6px; }
+  .essay-month-label { font-size: 0.7rem; color: #888; margin-bottom: 3px; text-align: center; }
+  .essay-days { display: grid; grid-template-columns: repeat(7, 9px); gap: 2px; }
+  .essay-day { width: 9px; height: 9px; border-radius: 2px; background: rgba(43,42,37,0.1); }
+  .essay-day.filled { background: #056b05; cursor: pointer; }
+  #essayProgress { font-weight: 600; }
+  .essay-card-section { margin: 10px 0; }
+  .essay-card-section label { display: block; margin-bottom: 2px; }
+  .essay-card-section div { white-space: pre-wrap; font-size: 0.9rem; color: #333; }
+  .essay-decision-row { display: flex; gap: 8px; margin-bottom: 14px; }
+  .essay-decision-row button { flex: 1; }
+  #essaySaveBtn.active { background: #056b05; }
+  #essaySkipBtn.active { background: #888; }
 </style>
 </head>
 <body>
@@ -91,6 +107,7 @@
   <div class="tabs">
     <button type="button" class="tab-btn active" data-tab="editTab">게시물 수정</button>
     <button type="button" class="tab-btn" data-tab="otdTab">오늘의 조식</button>
+    <button type="button" class="tab-btn" data-tab="essayTab">에세이 후보</button>
     <button type="button" class="tab-btn" data-tab="missingTab">빠진 날짜</button>
     <button type="button" class="tab-btn" data-tab="voteTab">이달의 투표</button>
     <button type="button" class="tab-btn" data-tab="wcTab">월드컵 테스트</button>
@@ -150,6 +167,37 @@
 
     <label>이 날짜의 게시물 (연도별) — 선택하면 "게시물 수정" 탭으로 이동해 바로 편집합니다</label>
     <ul id="otdCandidates" class="v-cand-results" style="max-height:none; border:1px solid #eee; border-radius:6px;"></ul>
+  </div>
+
+  <div id="essayTab" class="tabpage">
+    <p class="hint">하루씩 훑어보면서 에세이로 남길 만한 글을 후보로 저장합니다. 같은 월-일(연도 무관)에 여러 해의 게시물을 동시에 후보로 저장할 수 있고, 그 중 최종 하나를 고르는 건 나중에 따로 합니다.</p>
+
+    <div id="essayProgress"></div>
+    <div id="essayReviewProgress" class="hint"></div>
+    <button type="button" id="essayResumeBtn" style="width:100%; margin:8px 0;">↷ 다른 기기에서 이어서 검토하기</button>
+    <div id="essayMap" class="essay-map"></div>
+
+    <div class="essay-nav">
+      <button type="button" id="essayPrevBtn">◀ 어제</button>
+      <input type="text" id="essayDateInput" placeholder="YYYY-MM-DD">
+      <button type="button" id="essayNextBtn">내일 ▶</button>
+    </div>
+
+    <div id="essayDecisionRow" class="essay-decision-row" style="display:none;">
+      <button type="button" id="essaySaveBtn">★ 후보로 저장</button>
+      <button type="button" id="essaySkipBtn">저장 안 함</button>
+    </div>
+
+    <ul id="essayCandList" class="v-cand-results" style="max-height:none; border:1px solid #eee; border-radius:6px; display:none;"></ul>
+
+    <div id="essayCard" style="display:none;">
+      <h2 id="essayCardTitle" style="font-size:1rem; margin-bottom:8px;"></h2>
+      <div id="essayCardMedia" style="max-width:280px; margin-bottom:10px;"></div>
+      <div class="essay-card-section"><label>본문(intro)</label><div id="essayCardIntro"></div></div>
+      <div class="essay-card-section"><label>재료</label><div id="essayCardIngredients"></div></div>
+      <div class="essay-card-section"><label>조리 순서</label><div id="essayCardSteps"></div></div>
+    </div>
+    <div id="essayEmpty" class="hint" style="display:none;">이 날짜엔 게시물이 없습니다.</div>
   </div>
 
   <div id="missingTab" class="tabpage">
@@ -276,6 +324,26 @@
   var otdPreviewDatePrefix = document.getElementById('otdPreviewDatePrefix');
   var otdCandidates = document.getElementById('otdCandidates');
 
+  var essayProgress = document.getElementById('essayProgress');
+  var essayReviewProgress = document.getElementById('essayReviewProgress');
+  var essayResumeBtn = document.getElementById('essayResumeBtn');
+  var essayMap = document.getElementById('essayMap');
+  var essayPrevBtn = document.getElementById('essayPrevBtn');
+  var essayNextBtn = document.getElementById('essayNextBtn');
+  var essayDateInput = document.getElementById('essayDateInput');
+  var essayCandList = document.getElementById('essayCandList');
+  var essayCard = document.getElementById('essayCard');
+  var essayCardTitle = document.getElementById('essayCardTitle');
+  var essayCardMedia = document.getElementById('essayCardMedia');
+  var essayCardIntro = document.getElementById('essayCardIntro');
+  var essayCardIngredients = document.getElementById('essayCardIngredients');
+  var essayCardSteps = document.getElementById('essayCardSteps');
+  var essayDecisionRow = document.getElementById('essayDecisionRow');
+  var essaySaveBtn = document.getElementById('essaySaveBtn');
+  var essaySkipBtn = document.getElementById('essaySkipBtn');
+  var essayEmpty = document.getElementById('essayEmpty');
+  var essayCurrent = null; // record currently shown in the essay card
+
   var allRecords = [];
   var igIndex = null; // {date: {caption, images, ...}} from ig_index.json, or null if not built yet
   var igIndexMaxDate = null; // latest date key in igIndex - anything at/before this and absent genuinely isn't on Instagram
@@ -344,6 +412,7 @@
         renderMissing();
         loadVoteRounds();
         initOtdTab();
+        initEssayTab();
       })
       .catch(function (err) {
         showStatus('err', '게시물 목록을 불러오지 못했습니다: ' + err);
@@ -961,6 +1030,256 @@
       otdCandidates.appendChild(li);
     });
   }
+
+  // ---- 에세이 후보 (Essay Candidate) picker ----
+  // Browse the diary one calendar day at a time (like flipping through a
+  // stack of cards) and flag posts worth reading as an essay rather than
+  // a recipe. At most one flagged post per month-day (any year) - the
+  // 365-day map below fills in as candidates are picked, and picking a
+  // day that's already taken (by a different year's post) asks to swap.
+
+  var ESSAY_MONTH_DAYS = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // Feb=29 so a leap-day pick still has a cell
+
+  function essayPad(n) { return (n < 10 ? '0' : '') + n; }
+
+  // "Already reviewed" (essay_reviewed) is stored server-side alongside
+  // essay_candidate, via the same edit action - so the decision ("저장함"
+  // or "저장 안 함") is visible from any device, not just the one that
+  // made it.
+  function essayIsReviewed(r) { return !!(r && (r.essay_reviewed || r.essay_candidate)); }
+
+  // The one thing that lets "이어서 검토하기" work on a device that has
+  // never opened this tab before: walk the diary in date order and find
+  // the earliest live post nobody has decided on yet, using only the
+  // server-synced essay_candidate/essay_reviewed flags already in
+  // allRecords - no reliance on this browser's own history.
+  function essayFirstUnreviewedDate() {
+    var sorted = allRecords
+      .filter(function (r) { return r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date) && !r.failed; })
+      .slice()
+      .sort(function (a, b) { return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
+    var found = sorted.find(function (r) { return !essayIsReviewed(r); });
+    return found ? found.date : null;
+  }
+
+  essayResumeBtn.addEventListener('click', function () {
+    var d = essayFirstUnreviewedDate();
+    if (!d) {
+      showStatus('ok', '모든 게시물을 검토했습니다!');
+      return;
+    }
+    essayDateInput.value = d;
+    renderEssayCard();
+  });
+
+  function renderEssayReviewProgress() {
+    var total = allRecords.length;
+    var seen = allRecords.filter(essayIsReviewed).length;
+    essayReviewProgress.textContent = '검토한 게시물: ' + seen + ' / ' + total;
+  }
+
+  // Several different years can now share a month-day slot at once (the
+  // shortlist phase) - each cell holds an array, not a single record.
+  // Picking one final winner per day is a separate, not-yet-built step.
+  function essayPicksMap() {
+    var map = {};
+    allRecords.forEach(function (r) {
+      if (r.essay_candidate && r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date)) {
+        var md = r.date.slice(5, 10);
+        (map[md] = map[md] || []).push(r);
+      }
+    });
+    Object.keys(map).forEach(function (md) {
+      map[md].sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+    });
+    return map;
+  }
+
+  function renderEssayMap() {
+    var picks = essayPicksMap();
+    essayProgress.textContent = '후보 있는 날짜: ' + Object.keys(picks).length + ' / 365';
+
+    var html = '';
+    for (var mo = 1; mo <= 12; mo++) {
+      html += '<div class="essay-month"><div class="essay-month-label">' + mo + '월</div><div class="essay-days">';
+      var days = ESSAY_MONTH_DAYS[mo - 1];
+      for (var d = 1; d <= days; d++) {
+        var md = essayPad(mo) + '-' + essayPad(d);
+        var list = picks[md];
+        var title = list
+          ? list.map(function (r) { return r.date + ' — ' + (r.title || '(제목 없음)'); }).join('\n')
+          : (md + ' (후보 없음)');
+        html += '<div class="essay-day' + (list ? ' filled' : '') + '" data-md="' + md + '" title="' + title.replace(/"/g, '&quot;') + '"></div>';
+      }
+      html += '</div></div>';
+    }
+    essayMap.innerHTML = html;
+
+    Array.prototype.forEach.call(essayMap.querySelectorAll('.essay-day.filled'), function (el) {
+      el.addEventListener('click', function () {
+        var list = picks[el.getAttribute('data-md')];
+        if (!list || !list.length) return;
+        essayDateInput.value = list[0].date;
+        renderEssayCard();
+      });
+    });
+  }
+
+  function essayShiftDate(delta) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(essayDateInput.value.trim())) return;
+    var d = new Date(essayDateInput.value.trim() + 'T00:00:00');
+    d.setDate(d.getDate() + delta);
+    essayDateInput.value = d.getFullYear() + '-' + essayPad(d.getMonth() + 1) + '-' + essayPad(d.getDate());
+    renderEssayCard();
+  }
+
+  essayPrevBtn.addEventListener('click', function () { essayShiftDate(-1); });
+  essayNextBtn.addEventListener('click', function () { essayShiftDate(1); });
+  essayDateInput.addEventListener('input', renderEssayCard);
+
+  function initEssayTab() {
+    if (!essayDateInput.value) {
+      // A device that's never opened this tab has no localStorage
+      // position to fall back on - resume at the server's actual
+      // frontier (first unreviewed post) instead of always restarting
+      // from day one.
+      essayDateInput.value = localStorage.getItem('essayReviewDate') || essayFirstUnreviewedDate() || (function () {
+        var dates = allRecords.map(function (r) { return r.date; })
+          .filter(function (d) { return d && /^\d{4}-\d{2}-\d{2}$/.test(d); }).sort();
+        return dates.length ? dates[0] : '';
+      })();
+    }
+    renderEssayMap();
+    renderEssayReviewProgress();
+    renderEssayCard();
+  }
+
+  function loadEssayRecord(r) {
+    essayCurrent = r;
+    essayCardTitle.textContent = r.date + ' — ' + (r.title || '(제목 없음)');
+    essayCardMedia.innerHTML = (typeof Shared !== 'undefined') ? Shared.galleryHTML(r) : '';
+    if (typeof Shared !== 'undefined') Shared.bindGallery(essayCardMedia, r);
+    essayCardIntro.textContent = r.intro || '(내용 없음)';
+    essayCardIngredients.textContent = r.ingredients || '(없음)';
+    essayCardSteps.textContent = r.steps || '(없음)';
+    essaySaveBtn.disabled = false;
+    essaySkipBtn.disabled = false;
+    essaySaveBtn.textContent = '★ 후보로 저장';
+    essaySkipBtn.textContent = '저장 안 함';
+    essaySaveBtn.classList.toggle('active', !!r.essay_candidate);
+    essaySkipBtn.classList.toggle('active', !!r.essay_reviewed && !r.essay_candidate);
+    essayDecisionRow.style.display = 'flex';
+    essayCard.style.display = 'block';
+    essayEmpty.style.display = 'none';
+  }
+
+  function renderEssayCard() {
+    var dateStr = essayDateInput.value.trim();
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+      essayCurrent = null;
+      essayDecisionRow.style.display = 'none';
+      essayCard.style.display = 'none';
+      essayCandList.style.display = 'none';
+      essayEmpty.style.display = 'block';
+      essayEmpty.textContent = '날짜를 YYYY-MM-DD 형식으로 입력해주세요.';
+      return;
+    }
+    localStorage.setItem('essayReviewDate', dateStr);
+
+    var matches = allRecords.filter(function (r) { return r.date === dateStr; });
+    if (!matches.length) {
+      essayCurrent = null;
+      essayDecisionRow.style.display = 'none';
+      essayCard.style.display = 'none';
+      essayCandList.style.display = 'none';
+      essayEmpty.style.display = 'block';
+      essayEmpty.textContent = '이 날짜엔 게시물이 없습니다.';
+      return;
+    }
+
+    if (matches.length === 1) {
+      essayCandList.style.display = 'none';
+      loadEssayRecord(matches[0]);
+      return;
+    }
+
+    // Same exact date has more than one record (e.g. a day_secondary
+    // duplicate) - let the admin pick which one to review, defaulting to
+    // whichever already holds the candidate flag, else the first.
+    essayCandList.style.display = 'block';
+    essayCandList.innerHTML = '';
+    matches.forEach(function (r) {
+      var li = document.createElement('li');
+      li.textContent = (r.title || '(제목 없음)') + (r.essay_candidate ? ' ★' : '') + (r.day_secondary ? ' (숨김)' : '') + (essayIsReviewed(r) ? ' ✓' : '');
+      li.addEventListener('click', function () { loadEssayRecord(r); });
+      essayCandList.appendChild(li);
+    });
+    var preselect = matches.find(function (r) { return r.essay_candidate; }) || matches[0];
+    loadEssayRecord(preselect);
+  }
+
+  // Shortlisting: any number of different years may share a month-day at
+  // once, so this just toggles essay_candidate on the current record with
+  // no cross-record conflict check. Picking one final winner per day is a
+  // separate step, done later once every year's post for that day has
+  // been shortlisted.
+  essaySaveBtn.addEventListener('click', function () {
+    if (!essayCurrent) return;
+    var next = !essayCurrent.essay_candidate;
+
+    var targetPageId = essayCurrent.page_id;
+    var prevText = essaySaveBtn.textContent;
+    essaySaveBtn.disabled = true;
+    essaySkipBtn.disabled = true;
+    essaySaveBtn.textContent = '저장 중...';
+
+    submitToWorker({ action: 'edit', page_id: targetPageId, fields: { essay_candidate: next } })
+      .then(function (res) {
+        essaySaveBtn.disabled = false;
+        essaySkipBtn.disabled = false;
+        if (!res.ok) {
+          showStatus('err', '저장 실패: ' + res.detail);
+          essaySaveBtn.textContent = prevText;
+          return;
+        }
+        // Optimistic local update so the map/progress/buttons reflect the
+        // change immediately, without waiting for the ~1-2 min rebuild.
+        essayCurrent.essay_candidate = next;
+        if (next) essayCurrent.essay_reviewed = true;
+        showStatus('ok', '저장 요청 완료. 1~2분 후 사이트에 반영됩니다.');
+        renderEssayMap();
+        renderEssayReviewProgress();
+        renderEssayCard();
+      });
+  });
+
+  essaySkipBtn.addEventListener('click', function () {
+    if (!essayCurrent) return;
+    if (essayCurrent.essay_reviewed && !essayCurrent.essay_candidate) return; // already exactly this state
+
+    var targetPageId = essayCurrent.page_id;
+    var prevText = essaySkipBtn.textContent;
+    essaySaveBtn.disabled = true;
+    essaySkipBtn.disabled = true;
+    essaySkipBtn.textContent = '저장 중...';
+
+    submitToWorker({ action: 'edit', page_id: targetPageId, fields: { essay_candidate: false, essay_reviewed: true } })
+      .then(function (res) {
+        essaySaveBtn.disabled = false;
+        essaySkipBtn.disabled = false;
+        if (!res.ok) {
+          showStatus('err', '저장 실패: ' + res.detail);
+          essaySkipBtn.textContent = prevText;
+          return;
+        }
+        essayCurrent.essay_candidate = false;
+        essayCurrent.essay_reviewed = true;
+        showStatus('ok', '저장 요청 완료. 1~2분 후 사이트에 반영됩니다.');
+        renderEssayMap();
+        renderEssayReviewProgress();
+        renderEssayCard();
+      });
+  });
 
   // World Cup bracket test harness: entirely client-side, nothing is sent
   // to any Worker or saved anywhere - just runs WorldCup.start() against
