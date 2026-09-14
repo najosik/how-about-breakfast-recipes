@@ -25328,7 +25328,7 @@
   "weather": "26도/부분적으로 흐림, 26분/운동(S, M)",
   "failed": false,
   "calories": null,
-  "title": "오이샐러드 오이",
+  "title": "오이 샐러드",
   "credit": "@healthyeating.guide",
   "hashtags": [
    "레시피",
@@ -25339,8 +25339,8 @@
    "조식다이어리"
   ],
   "intro": "20240915 #조식다이어리 1180, 26도/부분적으로 흐림, 26분/운동(S, M) \n풍요로운 한가위, 관리가 필요한 한가위 #오이샐러드 를 추천한다. \n땅콩버터는 땅콩 100%를 사용한다. 최근 건강식으로 각광받고 있는 바로 그것이다. \n오이, 셀러리 잎이나 고수, 견과류, 피넛버터 등이 필요하다. \n피넛버터 3, 간장 1, 레몬주스, 메이플 시럽 1/4, 물 1 넣고 섞어서 드레싱을 만든다. \n오이 잘라서 다진 셀러리 잎, 다진 피칸, 참깨 넣고 섞는다. \n드레싱 붓고 골고루 섞고 접시에 담아 고추기름 조금~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 오이 1개\n- 드레싱(피넛버터 3T, 간장 1T, 레몬주스 1T, 메이플 시럽 1/4T, 물 1T)\n- 셀러리 잎 한 줌\n- 피칸 1T\n- 참깨 1t\n- 고추기름 1t",
+  "steps": "1. 피넛버터 3T, 간장 1T, 레몬주스 1T, 메이플 시럽 1/4T, 물 1T 섞어서 드레싱을 만든다. \n2. 오이는 먹기 좋은 크기로 숭덩숭덩 썬다. \n3. 믹싱볼에 2의 오이, 셀러리 잎, 다진 피칸, 참깨 넣고 1의 드레싱 뿌린 다음 골고루 섞는다. \n4. 접시에 담고 고추기름 조금 얹는다. ",
   "raw": "20240915 #조식다이어리 1180, 26도/부분적으로 흐림, 26분/운동(S, M) \n\n풍요로운 한가위, 관리가 필요한 한가위 #오이샐러드 를 추천한다. \n땅콩버터는 땅콩 100%를 사용한다. 최근 건강식으로 각광받고 있는 바로 그것이다. \n\n오이, 셀러리 잎이나 고수, 견과류, 피넛버터 등이 필요하다. \n\n피넛버터 3, 간장 1, 레몬주스, 메이플 시럽 1/4, 물 1 넣고 섞어서 드레싱을 만든다. \n오이 잘라서 다진 셀러리 잎, 다진 피칸, 참깨 넣고 섞는다. \n드레싱 붓고 골고루 섞고 접시에 담아 고추기름 조금~\n\nInspired by @healthyeating.guide\n\n#조식 #레시피 #미라클모닝 #오이",
   "image": "https://images.how-about-breakfast.com/images/1180.jpg",
   "gallery": [
@@ -25351,13 +25351,6 @@
    "https://images.how-about-breakfast.com/images/1180_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1180.mp4",
-  "_en": {
-   "hash": "24cf6d8598dacf4aeba8bc57bf98809a2838f0f520daad6e3d8dd82b13abab25",
-   "title": "Cucumber salad, cucumber",
-   "intro": "20240915 #breakfastdiary 1180, 26°C/partly cloudy, 26 min/exercise(S, M) \nAn abundant Chuseok is also a Chuseok that needs some upkeep — I recommend this #cucumbersalad. \nUse 100% peanut peanut butter. It's the very thing getting attention lately as a health food. \nYou need cucumber, celery leaves or cilantro, nuts, and peanut butter, etc. \nMix 3 peanut butter, 1 soy sauce, lemon juice, 1/4 maple syrup, and 1 water to make the dressing. \nCut the cucumber and mix with chopped celery leaves, chopped pecans, and sesame seeds. \nPour on the dressing, mix well, plate it, and finish with a little chili oil~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오이샐러드-오이"
  },
  {
