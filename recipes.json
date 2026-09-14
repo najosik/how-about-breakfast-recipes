@@ -51155,7 +51155,7 @@
   "weather": "22도/흐림, 16분/운동",
   "failed": false,
   "calories": null,
-  "title": "장뤽고다르 토마토계란볶음 토마토",
+  "title": "토마토 계란 볶음",
   "credit": null,
   "hashtags": [
    "RIP",
@@ -51176,8 +51176,8 @@
    "홈쿡"
   ],
   "intro": "20220915, #조식다이어리 544, 22도/흐림, 16분/운동\n#장뤽고다르 그 답게 안락사로 별세 #RIP\n계란 두 개 풀고 소금소금, 후추후추, 굴소스 넣어 팬에 볶는다. 토마토 넣고 볶볶 #토마토계란볶음",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 계란 2개\n- 토마토 1개\n- 올리브오일\n- 소금\n- 후추\n- 굴소스 ",
+  "steps": "1. 그릇에 계란 2개 풀고 소금, 후추, 굴소스 1t 넣고 올리브오일 두른 팬에 볶는다. \n2. 1의 계란이 촉촉한 상태에서 웻지모양으로 썬 토마토 넣고 살짝 볶은 뒤 접시에 담는다. ",
   "raw": "20220915, #조식다이어리 544, 22도/흐림, 16분/운동\n\n#장뤽고다르 그 답게 안락사로 별세 #RIP\n\n계란 두 개 풀고 소금소금, 후추후추, 굴소스 넣어 팬에 볶는다. 토마토 넣고 볶볶 #토마토계란볶음\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #토마토 #계란\n#breakfast #tomato #eggs",
   "image": "https://images.how-about-breakfast.com/images/544.jpg",
   "gallery": [
@@ -51185,13 +51185,6 @@
    "https://images.how-about-breakfast.com/images/544_2.jpg",
    "https://images.how-about-breakfast.com/images/544_3.jpg"
   ],
-  "_en": {
-   "hash": "18133958acd9d36dfb299c3794da46ba463bed8f99a9cdb51f99a0f827190f58",
-   "title": "Stir-Fried Tomato and Egg",
-   "intro": "20220915 #breakfastdiary 544, 22°C/cloudy, 16min/exercise\nFittingly for #JeanLucGodard, he passed away by assisted death #RIP\nBeat two eggs, add salt salt, pepper pepper, and oyster sauce, and stir-fry in a pan. Add tomato and stir-fry some more. #stirfriedtomatoandegg",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "장뤽고다르-토마토계란볶음-토마토"
  },
  {
