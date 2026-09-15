@@ -25290,7 +25290,7 @@
   "weather": "29도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "똠얌파스타 똠얌",
+  "title": "똠얌 파스타",
   "credit": null,
   "hashtags": [
    "똠얌",
@@ -25300,9 +25300,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20240917 #조식다이어리 1182, 29도/흐림, 20분/운동(M) \n추석이다. 명절엔 역시 고향의 음식. 똠얌 수프를 끓이려고 했는데 다른 재료가 마땅치 않아 똠얌 페이스트와 코코넛밀크 넣어서 #똠얌파스타 를 만들었다. \n똠얌 페이스트, 엊그제 사용하고 남은 코코넛 밀크(우유, 생크림 대체 가능하나 코코넛밀크의 풍미와는…), 스파게티, 양파, 파슬리가 필요하다. \n끓는 물에 새우를 데친다.\n끓는 물에 소금소금 스파게티를 삶는다. \n팬에 오일 두르고 양파 1/4개를 볶다가 양파가 투명해지면 코코넛밀크 1컵, 똠얌 페이스트(2~3인분 용)를 넣는다. 맛을 보고 면수 1/2컵 붓는다. 다진 파슬리 넣는다. \n스파게티 넣고 불 끄고 만테까레, 소스가 스며들 수 있도록 새우 넣고 좀 더 섞는다. \n접시에 담고 새우 얹고 다진 파슬리 조금 얹는다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240917 #조식다이어리 1182, 29도/흐림, 20분/운동(M) \n추석이다. 명절엔 역시 고향의 음식. 똠얌 수프를 끓이려고 했는데 다른 재료가 마땅치 않아 똠얌 페이스트와 코코넛밀크 넣어서 #똠얌파스타 를 만들었다. \n똠얌 페이스트, 엊그제 사용하고 남은 코코넛 밀크(우유, 생크림 대체 가능하나 코코넛밀크의 풍미와는…), 스파게티, 양파, 파슬리가 필요하다. \n\n끓는 물에 새우를 데친다.\n끓는 물에 소금소금 스파게티를 삶는다. \n팬에 오일 두르고 양파 1/4개를 볶다가 양파가 투명해지면 코코넛밀크 1컵, 똠얌 페이스트(2~3인분 용)를 넣는다. 맛을 보고 면수 1/2컵 붓는다.\n스파게티 넣고 불 끄고 만테까레, 소스가 스며들 수 있도록 새우 넣고 좀 더 섞는다. \n접시에 담고 새우 얹고 다진 파슬리 조금 얹는다.",
+  "ingredients": "- 스파게티 1인분\n- 양파 1/4개\n- 코코넛밀크 1컵\n- 똠얌 페이스트(3~4인분)\n- 새우 3마리\n- 파슬리 ",
+  "steps": "1. 끓는 물에 소금 넣고 스파게티를 삶는다. \n2. 팬에 올리브오일 두르고 양파 1/4개 길게 썰어 볶는다. \n3. 양파가 투명해지면 2에 코코넛밀크 1컵, 똠얌 페이스트(2~3인분), 면수 1/2컵 붓는다. \n4. 스파게티와 끓는 물에 데친 새우 넣고 골고루 섞은 다음 불 끄고 만테까레한다. \n5. 접시에 스파게티 담고 새우와 다진 파슬리 조금 얹는다. ",
   "raw": "20240917 #조식다이어리 1182, 29도/흐림, 20분/운동(M) \n\n추석이다. 명절엔 역시 고향의 음식. 똠얌 수프를 끓이려고 했는데 다른 재료가 마땅치 않아 똠얌 페이스트와 코코넛밀크 넣어서 #똠얌파스타 를 만들었다. \n\n똠얌 페이스트, 엊그제 사용하고 남은 코코넛 밀크(우유, 생크림 대체 가능하나 코코넛밀크의 풍미와는…), 스파게티, 양파, 파슬리가 필요하다. \n\n끓는 물에 새우를 데친다.\n끓는 물에 소금소금 스파게티를 삶는다. \n팬에 오일 두르고 양파 1/4개를 볶다가 양파가 투명해지면 코코넛밀크 1컵, 똠얌 페이스트(2~3인분 용)를 넣는다. 맛을 보고 면수 1/2컵 붓는다. 다진 파슬리 넣는다. \n스파게티 넣고 불 끄고 만테까레, 소스가 스며들 수 있도록 새우 넣고 좀 더 섞는다. \n접시에 담고 새우 얹고 다진 파슬리 조금 얹는다. \n\n#조식 #레시피 #미라클모닝 #똠얌",
   "image": "https://images.how-about-breakfast.com/images/1182.jpg",
   "gallery": [
@@ -25314,13 +25314,6 @@
    "https://images.how-about-breakfast.com/images/1182_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1182.mp4",
-  "_en": {
-   "hash": "aaa1e1ba13abd7da14d5863b023f10a4b58273f1f6a9f527aa2acefc005093c9",
-   "title": "Tom yum pasta, tom yum",
-   "intro": "20240917 #breakfastdiary 1182, 29°C/cloudy, 20 min/exercise(M) \nChuseok. Holidays call for hometown flavors. I meant to make tom yum soup but didn't have the right other ingredients on hand, so I made #tomyumpasta with tom yum paste and coconut milk instead. \nYou need tom yum paste, coconut milk left over from a couple days ago (milk or heavy cream can substitute, but it's just not the same as coconut milk's flavor…), spaghetti, onion, and parsley. \nBlanch the shrimp in boiling water. \nBoil the spaghetti in salted water. \nHeat oil in a pan and sauté 1/4 onion; once translucent, add 1 cup coconut milk and tom yum paste (enough for 2-3 servings). Taste and add 1/2 cup pasta water. Add chopped parsley. \nAdd the spaghetti, turn off the heat, mantecare, then add the shrimp and mix a bit more so the sauce soaks in. \nPlate it, top with shrimp, and add a bit of chopped parsley.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "똠얌파스타-똠얌"
  },
  {
