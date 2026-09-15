@@ -37953,7 +37953,7 @@
   "weather": "25도/흐림, 38분/운동(Y, L)",
   "failed": false,
   "calories": null,
-  "title": "대파구이 대파",
+  "title": "구운 대파 샐러드",
   "credit": null,
   "hashtags": [
    "대파",
@@ -37964,21 +37964,14 @@
    "조식다이어리"
   ],
   "intro": "20230917, #조식다이어리 847, 25도/흐림, 38분/운동(Y, L)\n달군 팬에 올리브오일 두르고 소금소금, 후추후추 대파를 굽는다. \n접시에 그릭요거트, 구운 대파와 드라이드 토마토를 다져서 올린다. 마무리 후추는 국룰이다. #대파구이",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 대파 2뿌리\n- 그릭요거트 2T\n- 드라이드 토마토 1T\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 대파는 흐르는 물에 씻고 20cm 정도로 자른다. 물기를 닦아낸다. \n2. 올리브오일 두른 팬에 소금, 후추 뿌려서 대파를 굽는다. \n3. 접시에 그릭요거트, 2의 대파와 다진 드라이드 토마토 얹는다. 후추 듬뿍 뿌린다. ",
   "raw": "20230917, #조식다이어리 847, 25도/흐림, 38분/운동(Y, L)\n\n달군 팬에 올리브오일 두르고 소금소금, 후추후추 대파를 굽는다. \n접시에 그릭요거트, 구운 대파와 드라이드 토마토를 다져서 올린다. 마무리 후추는 국룰이다. #대파구이\n\n#조식 #레시피 #미라클모닝 #대파",
   "image": "https://images.how-about-breakfast.com/images/9987.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/9987.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/847.mp4",
-  "_en": {
-   "hash": "ef3ca5613eb3be0507cf36345f20c0ae6f6ff71c670e5fb03c3f6cc7086ffb13",
-   "title": "Grilled Scallions",
-   "intro": "20230917 #breakfastdiary 847, 25°C/cloudy, 38min/exercise(Y, L)\nHeat olive oil in a pan, salt it up, pepper it up, and grill the scallions.\nPlate Greek yogurt, top with the grilled scallions and chopped sun-dried tomatoes. A finishing dash of pepper is the #goldenrule. #grilledscallions",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "대파구이-대파-2"
  },
  {
