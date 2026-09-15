@@ -85938,11 +85938,12 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "산시엔미펀"
+  "page_id": "산시엔미펀",
+  "deleted": true
  },
  {
-  "date": "2020-09-16",
-  "date_raw": "20200916",
+  "date": "2020-09-17",
+  "date_raw": "20200917",
   "diary_no": null,
   "weather": null,
   "failed": false,
@@ -85965,20 +85966,20 @@
   "ingredients": null,
   "steps": null,
   "raw": "내게 #루꼴라 알러지가 있다는 걸 알게된 건 최근의 일이다. 모든 풀을 사랑하지만 이제 더 이상 사랑할 수 없게된, 요샛말로 하면 거리두기를 해야 할 사이가 된 것이다. #오늘의조식 엔 루꼴라 대신 시금치가 등장한 이유\n\n오늘의 메인 #조식 은 #시금치 를 깨끗이 씻어 바닥에 깔고, 냉장고 한 켠에 넣어둔 #아보카도 꺼내 올리브 오일, 발사믹을 적당히, 후추후추, 레드페퍼로 마무리\n\n디저트는 종이 타월로 #파인애플 의 물기를 제거한 뒤 팬에 살짝 구워 그릭요거트와 #그래잇데이 #그래놀라 를 곁들여\n\n#나의프랑스식샐러드 #조식스타그램",
-  "pre_label": "D-149",
+  "pre_label": "D-148",
   "image": "https://images.how-about-breakfast.com/images/pre-149.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/pre-149.jpg",
    "https://images.how-about-breakfast.com/images/pre-149_2.jpg"
   ],
-  "deleted": true,
   "_en": {
    "hash": "7093a605b4a15fb03b899cf1f0a72a1ab9bdaadd38d92496506714be5ebe4731",
    "title": "Spinach and Avocado Salad",
    "intro": "I only recently discovered I'm allergic to #arugula. I still love greens of every kind, but that's one I can no longer enjoy — these days people might call it \"social distancing\" from arugula. That's the reason spinach stands in for arugula in #todaysbreakfast.\nToday's main #breakfast: freshly washed #spinach spread across the plate, topped with #avocado pulled from the fridge, a generous drizzle of olive oil and balsamic, plenty of pepper, and a finish of red pepper flakes.\nFor dessert, I patted the moisture off some #pineapple with a paper towel, gave it a light sear in the pan, and served it with Greek yogurt and #greatday #granola.",
    "ingredients": "",
    "steps": ""
-  }
+  },
+  "page_id": "시금치-아보카도-샐러드"
  },
  {
   "date": "2020-09-16",
@@ -85993,7 +85994,7 @@
   "ingredients": null,
   "steps": null,
   "diary_no": null,
-  "pre_label": "D-147",
+  "pre_label": "D-149",
   "page_id": "애호박-샐러드-2",
   "image": "https://images.how-about-breakfast.com/images/9988.jpg",
   "gallery": [
