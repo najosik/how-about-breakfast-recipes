@@ -25319,7 +25319,7 @@
   "weather": "28도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "매시드포테이토 감자",
+  "title": "마늘 매시드 포테이토",
   "credit": null,
   "hashtags": [
    "감자",
@@ -25329,9 +25329,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20240918 #조식다이어리 1183, 28도/흐림, 20분/운동(M) \niOS 18로 업데이트했다. 사진앱의 UI가 대폭 바뀌었고 다소 혼란스럽다. 배경지우기 기능이 유용해 보이는데 아이폰 15 이상 지원이 가능하다니 그림의 떡이다. \n마늘과 허브를 잔뜩 넣은 #매시드포테이토 \n감자와 마늘, 우유, 버터, 허브가 필요하다. 허브는 취향대로 혹은 파슬리도 좋다. \n그릇에 통마늘과 마늘, 허브 넣고 종이호일 씌워서 200도 오븐에 30분 굽는다. \n감자 4개 껍질 벗겨서 소금소금 끓는 물에 삶는다. \n팬에 감자 넣고 으깬 뒤 통마늘과 버터 2, 우유 1/2컵 넣고 골고루 섞는다. 후추추후, 파슬리와 타임 다져서 넣고 소금으로 간을 한다.   \n그릇에 담고 마늘, 허브 조금 얹는다. \n-\n연휴 마지막 날이다. 개학 전날인데 방학 숙제를 하지 않은 느낌이다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20240918 #조식다이어리 1183, 28도/흐림, 20분/운동(M) \niOS 18로 업데이트했다. 사진앱의 UI가 대폭 바뀌었고 다소 혼란스럽다. 배경지우기 기능이 유용해 보이는데 아이폰 15 이상 지원이 가능하다니 그림의 떡이다. \n마늘과 허브를 잔뜩 넣은 #매시드포테이토 \n감자와 마늘, 우유, 버터, 허브가 필요하다. 허브는 취향대로 혹은 파슬리도 좋다. \n그릇에 통마늘과 허브 넣고 종이호일 씌워서 200도 오븐에 30분 굽는다. \n감자 4개 껍질 벗겨서 소금소금 끓는 물에 삶는다. \n팬에 감자 넣고 으깬 뒤 통마늘과 버터 2, 우유 1/2컵 넣고 골고루 섞는다. 후추추후, 파슬리와 타임 다져서 넣고 소금으로 간을 한다.   \n그릇에 담고 마늘, 허브 조금 얹는다. \n\n연휴 마지막 날이다. 개학 전날인데 방학 숙제를 하지 않은 느낌이다.",
+  "ingredients": "- 감자 4개\n- 통마늘 1개\n- 버터 2T\n- 우유 1/2컵\n- 파슬리\n- 타임\n- 소금\n- 후추",
+  "steps": "1. 작은 팬에 통마늘과 허브 넣고 포일 씌워서 200도 오븐에 30분 굽는다. \n2. 감자 4개 껍질 벗긴 후 소금 넣고 끓는 물에 삶는다. \n3. 밧드에 2의 감자 넣고 매셔로 으깬 뒤 1의 통마늘, 버터 2T, 우유 1/2컵 넣고 섞는다. 후추, 다진 파슬리, 타임, 소금 2t 넣고 좀 더 섞는다. (간을 보고 소금 추가한다.)\n4. 그릇에 담고 통마늘, 허브 조금 얹는다. ",
   "raw": "20240918 #조식다이어리 1183, 28도/흐림, 20분/운동(M) \n\niOS 18로 업데이트했다. 사진앱의 UI가 대폭 바뀌었고 다소 혼란스럽다. 배경지우기 기능이 유용해 보이는데 아이폰 15 이상 지원이 가능하다니 그림의 떡이다. \n\n마늘과 허브를 잔뜩 넣은 #매시드포테이토 \n\n감자와 마늘, 우유, 버터, 허브가 필요하다. 허브는 취향대로 혹은 파슬리도 좋다. \n\n그릇에 통마늘과 마늘, 허브 넣고 종이호일 씌워서 200도 오븐에 30분 굽는다. \n감자 4개 껍질 벗겨서 소금소금 끓는 물에 삶는다. \n팬에 감자 넣고 으깬 뒤 통마늘과 버터 2, 우유 1/2컵 넣고 골고루 섞는다. 후추추후, 파슬리와 타임 다져서 넣고 소금으로 간을 한다.   \n그릇에 담고 마늘, 허브 조금 얹는다. \n\n#조식 #레시피 #미라클모닝 #감자\n\n-\n\n연휴 마지막 날이다. 개학 전날인데 방학 숙제를 하지 않은 느낌이다. ",
   "image": "https://images.how-about-breakfast.com/images/1183.jpg",
   "gallery": [
@@ -25343,13 +25343,6 @@
    "https://images.how-about-breakfast.com/images/1183_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1183.mp4",
-  "_en": {
-   "hash": "c9d58723635c3a9ec05a708895cd046329de6484ab25e698600decc5614bcee7",
-   "title": "Mashed potato, potato",
-   "intro": "20240918 #breakfastdiary 1183, 28°C/cloudy, 20 min/exercise(M) \nUpdated to iOS 18. The Photos app UI changed drastically and it's a bit confusing. The background-removal feature looks useful, but it's only supported on iPhone 15 and up, so it's just a pipe dream for me. \n#Mashedpotato loaded with garlic and herbs \nYou need potatoes, garlic, milk, butter, and herbs. Use whatever herbs you like, or parsley works too. \nPut whole garlic cloves, garlic, and herbs in a dish, cover with parchment paper, and roast in a 200°C oven for 30 minutes. \nPeel 4 potatoes and boil in salted water. \nMash the potatoes in a pan, then add the roasted garlic, 2 butter, and 1/2 cup milk and mix well. Add pepper, chopped parsley and thyme, and season with salt. \nPlate it and top with a bit of garlic and herbs. \n-\nLast day of the holiday. It's like the day before school starts and I haven't done my vacation homework.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "매시드포테이토-감자"
  },
  {
