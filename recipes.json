@@ -86018,7 +86018,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "산시엔미펀 우리의계절은",
+  "title": "산시엔 미펀(三鮮米粉)",
   "credit": null,
   "hashtags": [
    "산시엔미펀",
@@ -86026,9 +86026,9 @@
    "조식",
    "조식스타그램"
   ],
-  "intro": "어제 퇴근길 마주친 바람에 따뜻한 국물이 떠올랐다. 주말에 사다 놓은 재료도 남았으니까. \n마오의 고향, 후난성 사람들은 #산시엔미펀 한 그릇으로 아침을 시작한다고 하던데, 이건 #우리의계절은 탓이 크지 않을까 싶기도 하다. ‘한국 사람들은 쌀밥과 뜨끈한 국으로 하루를 시작합니다’라는 얘기가 현실성 없는 얘기인 것처럼 말이다. 반면, 후난성은 중국 내에서 매운 음식의 본 고장으로 포지셔닝하고 있다고. (쓰촨성 꺼져) \n어젯 밤 자기 전에 끓여 놓은 육수(말린 표고, 양파, 파, 표고 우린 물, 그리고 주인공 치킨스톡) 확인하고 간 돼지고기에 후추후추, 소금소금, 그리고 청경채, 실파, 표고버섯을 준비, 쌀국수 면을 삶아 그릇에 담고 준비한 재료와 그릇 가득 육수를 붓는다. \n맵지 않은 아기맛 단계 #산시엔미펀 이다. #조식 #조식스타그램",
-  "ingredients": null,
-  "steps": null,
+  "intro": "어제 퇴근길 마주친 바람에 따뜻한 국물이 떠올랐다. 주말에 사다 놓은 재료도 남았으니까. \n마오의 고향, 후난성 사람들은 #산시엔미펀 한 그릇으로 아침을 시작한다고 하던데, 이건 #우리의계절은 탓이 크지 않을까 싶기도 하다. ‘한국 사람들은 쌀밥과 뜨끈한 국으로 하루를 시작합니다’라는 얘기가 현실성 없는 얘기인 것처럼 말이다. 반면, 후난성은 중국 내에서 매운 음식의 본 고장으로 포지셔닝하고 있다고. (쓰촨성 꺼져) \n\n어젯 밤 자기 전에 끓여 놓은 육수(말린 표고, 양파, 파, 표고 우린 물, 그리고 주인공 치킨스톡) 확인하고 간 돼지고기에 후추후추, 소금소금, 그리고 청경채, 실파, 표고버섯을 준비, 쌀국수 면을 삶아 그릇에 담고 준비한 재료와 그릇 가득 육수를 붓는다. \n맵지 않은 아기맛 단계 #산시엔미펀 이다. #조식 #조식스타그램",
+  "ingredients": "- 쌀국수 2인분\n- 육수(물 700ml, 말린 표고 1개, 양파 1/2개, 대파 1개, 치킨스톡 1/2T)\n- 돼지고기 200g\n- 청경채\n- 쪽파\n- 표고버섯 2~3개\n- 오일\n- 소금\n- 후추",
+  "steps": "1. 잠들기 전에 육수 끓인다. (물 700ml, 말린 표고 1개, 양파 1/2개, 대파 1개, 치킨스톡 1/2T)\n2. 팬에 오일 두르고 돼지고기 200g, 소금, 후추 한 꼬집 넣고 볶는다.\n3. 믹싱볼에 물 붓고 쌀국수 2인분 불린다.\n4. 그릇에 청경채, 다진 쪽파, 삶은 표고버섯 담고 3의 쌀국수 담은 뒤 1의 육수 끓여서 붓는다.",
   "raw": "어제 퇴근길 마주친 바람에 따뜻한 국물이 떠올랐다. 주말에 사다 놓은 재료도 남았으니까. \n\n마오의 고향, 후난성 사람들은 #산시엔미펀 한 그릇으로 아침을 시작한다고 하던데, 이건 #우리의계절은 탓이 크지 않을까 싶기도 하다. ‘한국 사람들은 쌀밥과 뜨끈한 국으로 하루를 시작합니다’라는 얘기가 현실성 없는 얘기인 것처럼 말이다. 반면, 후난성은 중국 내에서 매운 음식의 본 고장으로 포지셔닝하고 있다고. (쓰촨성 꺼져) \n\n어젯 밤 자기 전에 끓여 놓은 육수(말린 표고, 양파, 파, 표고 우린 물, 그리고 주인공 치킨스톡) 확인하고 간 돼지고기에 후추후추, 소금소금, 그리고 청경채, 실파, 표고버섯을 준비, 쌀국수 면을 삶아 그릇에 담고 준비한 재료와 그릇 가득 육수를 붓는다. \n맵지 않은 아기맛 단계 #산시엔미펀 이다. #조식 #조식스타그램",
   "pre_label": "D-147",
   "image": "https://images.how-about-breakfast.com/images/pre-147.jpg",
@@ -86036,13 +86036,6 @@
    "https://images.how-about-breakfast.com/images/pre-147.jpg",
    "https://images.how-about-breakfast.com/images/pre-147_2.jpg"
   ],
-  "_en": {
-   "hash": "4cc7b9da3a6008342d310410b5d7f0fd3405abd6882734d41ecbdc44f76c3761",
-   "title": "Sanxian Mifen and Our Seasons",
-   "intro": "Yesterday's walk home met a breeze that made me crave a warm bowl of soup, and there were still ingredients left over from the weekend shopping. \nApparently people in Hunan — Mao's hometown — start their day with a bowl of #sanxianmifen. Maybe that's just down to #ourseasons — about as unrealistic as saying \"Koreans start every day with rice and hot soup.\" Hunan, meanwhile, positions itself as the true home of spicy food within China. (Move aside, Sichuan.) \nI checked the broth I'd simmered the night before going to bed (dried shiitake, onion, scallion, the shiitake soaking water, and the real star, chicken stock), seasoned some pork with plenty of pepper and salt, and got the bok choy, chives, and shiitake mushrooms ready. I boiled rice noodles, piled them in a bowl with the prepared ingredients, and poured the broth generously over the top. \nA mild, kid-friendly version of #sanxianmifen. #breakfast #breakfastgram",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "산시엔미펀-우리의계절은"
  },
  {
