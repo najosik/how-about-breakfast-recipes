@@ -68707,7 +68707,7 @@
   "weather": "21도/맑음, 35분/운동",
   "failed": false,
   "calories": null,
-  "title": "완두콩샐러드 나의로컬푸드샐러드 모닝리추얼",
+  "title": "완두콩 샐러드 ",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68736,8 +68736,8 @@
    "홈쿡"
   ],
   "intro": "20210918, #조식다이어리 214, 21도/맑음, 35분/운동\n소금 조금 넣고 완두콩을 삶는다. 수란과 하몽을 곁들이고 비네그레트 드레싱, 완두콩을 너무 많이 넣은 #완두콩샐러드\n좋은 책이 나왔다. 우리나라 제철 재료로 만드는 프랑스식 샐러드 #나의로컬푸드샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 완두콩 1컵\n- 하몽 2~3조각\n- 계란 1개\n- 식초\n- 소금\n- 후추",
+  "steps": "1. 끓는 물에 식초 1t 넣고 불을 끈후 계란을 넣어 수란을 만든다. \n2. 팬에 물을 조금 붓고 소금 넣고 완두콩을 삶는다. \n3. 접시에 2의 완두콩 담고 1의 수란과 하몽, 드레싱 얹는다. ",
   "raw": "20210918, #조식다이어리 214, 21도/맑음, 35분/운동\n\n소금 조금 넣고 완두콩을 삶는다. 수란과 하몽을 곁들이고 비네그레트 드레싱, 완두콩을 너무 많이 넣은 #완두콩샐러드\n\n좋은 책이 나왔다. 우리나라 제철 재료로 만드는 프랑스식 샐러드 #나의로컬푸드샐러드\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #완두콩 #수란 #하몽 #비네그레트드레싱  \n#breakfast #recipe #salad #pea #porchedegg #vinaigrette ",
   "image": "https://images.how-about-breakfast.com/images/214.jpg",
   "gallery": [
@@ -68745,13 +68745,6 @@
    "https://images.how-about-breakfast.com/images/214_2.jpg",
    "https://images.how-about-breakfast.com/images/214_3.jpg"
   ],
-  "_en": {
-   "hash": "e3e5ca19641d72c60a3dc21df2f6a51d67ba858ddacfeecc2d8cabcce6036547",
-   "title": "Green Pea Salad, My Local Food Salad, Morning Ritual",
-   "intro": "20210918 #breakfastdiary 214, 21°C/clear, 35 min/workout\nBoil green peas with a little salt. Add a poached egg and jamón, drizzle with vinaigrette — a #greenpeasalad with maybe too many peas.\nA great book just came out — French-style salads made with seasonal Korean ingredients. #mylocalfoodsalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "완두콩샐러드-나의로컬푸드샐러드-모닝리추얼"
  },
  {
