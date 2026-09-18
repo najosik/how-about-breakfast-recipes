@@ -25370,7 +25370,7 @@
   "weather": "24도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "칼몬드파스타 칼몬드",
+  "title": "칼몬드 파스타",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25381,8 +25381,8 @@
    "칼몬드파스타"
   ],
   "intro": "20240919 #조식다이어리 1184, 24도/흐림, 20분/운동(M) \n며칠 전에 사먹었던 합정 카린지/린가네 스넥바의 #칼몬드파스타 다. 마늘쫑이 들어가던데 없어서 냉동 그린빈으로 대체했다. \n사고 보니 칼몬드가 아니라 김이 추가된 김스칼몬드였다. \n스파게티, 마늘, 페페론치노, 칼몬드가 필요하다. \n끓는 물에 소금소금 스파게티를 삶는다. \n달군 팬에 올리브오일 두르고 얇게 썬 마늘을 볶다가 다진 페페론치노 2개 넣고 멸치액젓 1, 오늘의 킥 칼몬드 2, 스파게티 넣고 면수 1/2컵 붓고 볶다가 그린빈 넣고 좀 더 볶는다. \n불 끄고 만테까레한다. \n접시에 스파게티 담고 칼몬드 조금~\n👆파는 맛을 재현하려면 멸치액젓 1, 슴슴한 맛을 선호한다면 멸치액젓은 생략하거나 1/2만, 김스칼몬드가 충분히 짜다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 스파게티 1인분\n- 칼몬드 3T\n- 마늘 2개\n- 페페론치노 2개\n- 멸치액젓\n- 그린빈\n- 올리브오일\n- 소금",
+  "steps": "1. 끓는 물에 소금 넣고 스파게티를 삶는다. \n2. 팬에 올리브오일 두르고 얇게 썬 마늘을 볶다가 다진 페페론치노 2개, 멸치액젓 2t, 칼몬드 2T를 순서대로 넣고 볶는다. \n3. 2에 면수 1/2컵과 스파게티, 그린빈 넣고 볶다가 불 끄고 만테까레한다. \n4. 접시에 담고 칼몬드 토핑한다. ",
   "raw": "20240919 #조식다이어리 1184, 24도/흐림, 20분/운동(M) \n\n며칠 전에 사먹었던 합정 카린지/린가네 스넥바의 #칼몬드파스타 다. 마늘쫑이 들어가던데 없어서 냉동 그린빈으로 대체했다. \n사고 보니 칼몬드가 아니라 김이 추가된 김스칼몬드였다. \n\n스파게티, 마늘, 페페론치노, 칼몬드가 필요하다. \n\n끓는 물에 소금소금 스파게티를 삶는다. \n달군 팬에 올리브오일 두르고 얇게 썬 마늘을 볶다가 다진 페페론치노 2개 넣고 멸치액젓 1, 오늘의 킥 칼몬드 2, 스파게티 넣고 면수 1/2컵 붓고 볶다가 그린빈 넣고 좀 더 볶는다. \n불 끄고 만테까레한다. \n접시에 스파게티 담고 칼몬드 조금~\n\n👆파는 맛을 재현하려면 멸치액젓 1, 슴슴한 맛을 선호한다면 멸치액젓은 생략하거나 1/2만, 김스칼몬드가 충분히 짜다. \n\n#조식 #레시피 #미라클모닝 #칼몬드",
   "image": "https://images.how-about-breakfast.com/images/1184.jpg",
   "gallery": [
@@ -25392,13 +25392,6 @@
    "https://images.how-about-breakfast.com/images/1184_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1184.mp4",
-  "_en": {
-   "hash": "a8c885e87d70d8e4c852c799de3fa05fb50ee1716ed87bd6725c9c8ffc9a5c82",
-   "title": "Calmond pasta, calmond",
-   "intro": "20240919 #breakfastdiary 1184, 24°C/cloudy, 20 min/exercise(M) \nThis is the #calmondpasta I bought a few days ago from Karinji/Ringane Snack Bar in Hapjeong. It apparently has garlic scapes in it, but I didn't have any so I substituted frozen green beans. \nTurns out after buying it that it wasn't actually plain calmond but \"gimscalmond\" with seaweed added. \nYou need spaghetti, garlic, pepperoncino, and calmond. \nBoil the spaghetti in salted water. \nHeat olive oil in a pan and sauté thinly sliced garlic, then add 2 chopped pepperoncinos, 1 fish sauce, today's kick — 2 calmond, the spaghetti, and 1/2 cup pasta water, sauté, then add green beans and sauté a bit more. \nTurn off the heat and mantecare. \nPlate the spaghetti and top with a little calmond~\n👆To recreate the store-bought taste, use 1 fish sauce; if you prefer a milder taste, skip the fish sauce or use only 1/2 — the gimscalmond is plenty salty on its own.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "칼몬드파스타-칼몬드"
  },
  {
