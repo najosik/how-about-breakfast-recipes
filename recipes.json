@@ -51129,7 +51129,7 @@
   "weather": "23도/대체로흐림, 14분/운동",
   "failed": false,
   "calories": null,
-  "title": "톳면 톳국수 새우",
+  "title": "구운 새우를 곁들인 톳면 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51152,16 +51152,9 @@
    "홈쿡"
   ],
   "intro": "20220919, #조식다이어리 548, 23도/대체로흐림, 14분/운동\n톳으로 만든 면에 팬에 구운 새우, 그린올리브, 비네그레트 드레싱",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 톳면 1봉지\n- 그린올리브 5개\n- 새우 3개\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 팬에 올리브오일, 소금, 후추 뿌리고 새우를 굽는다. \n2. 톳으로 만든 면은 흐르는 물에 헹구고 물기를 제거한 다음 접시에 담는다. \n3. 1의 새우, 그린올리브 얹고 드레싱 뿌린다. ",
   "raw": "20220919, #조식다이어리 548, 23도/대체로흐림, 14분/운동\n\n톳으로 만든 면에 팬에 구운 새우, 그린올리브, 비네그레트 드레싱 \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #톳면 #톳국수 #새우 \n#breakfast #shrimp #noodles #salad #hyijiki #hijikinoodles\n ",
-  "_en": {
-   "hash": "512c3466eb0deaf98cb3b0700b8d6b6af2ed214e15da45b3464189a2ede0c42a",
-   "title": "Sea Fennel Noodles with Shrimp",
-   "intro": "20220919 #breakfastdiary 548, 23°C/mostly cloudy, 14min/exercise\nNoodles made from tot (sea fennel) with pan-seared shrimp, green olives, and vinaigrette",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "톳면-톳국수-새우"
  },
  {
