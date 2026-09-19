@@ -25332,7 +25332,7 @@
   "weather": "25도/비, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "옥수수갈비 옥수수",
+  "title": "갈릭 파프리카 옥수수 구이",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25343,8 +25343,8 @@
    "조식다이어리"
   ],
   "intro": "20240920 #조식다이어리 1185, 25도/비, 20분/운동(M) \n튀김가루 입혀서 기름에 튀기면 더 맛있겠지만 내 몸에 조식으로 추천하고 싶지는 않아서 기름 없이 에어프라이어에 굽고 치즈 대신에 아몬드 갈아서 올린 #옥수수갈비 🌽\n옥수수 2개 썰어서 믹싱볼에 담고 올리브오일 1 넣고 섞는다. 소금 1/4, 갈릭파우더 1, 파프리카 파우더 1 섞어서 넣고 섞는다. 200도 에프에 중간중간 뒤집어 가며 15분 굽는다. \n접시에 구운 옥수수 담고 다진 파슬리, 그레이터로 아몬드 갈아서 얹고 라임주스로 마무리~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 옥수수 2개\n- 소스(올리브오일 1T, 소금 1/4t, 갈릭파우더 1t, 파프리카 파우더 1t)\n- 파슬리\n- 아몬드\n- 라임 1조각 ",
+  "steps": "1. 동그란 옥수수는 반으로 썬 뒤 세워서 1/4 토막으로 썬다.\n2. 믹싱볼에 옥수수 넣고 올리브오일 1T 넣고 한 번 섞은 뒤 소금 1/4t, 갈릭파우더 1t, 파프리카 파우더 1t 넣고 골고루 섞는다. \n3. 200도 에어프라이어에 넣고 총 15분 굽는다. (중간에 한두 번 뒤집는다.)\n4. 접시에 구운 옥수수 담고 파슬리, 그레이터로 아몬드 갈아서 얹고 라임주스 뿌린다. ",
   "raw": "20240920 #조식다이어리 1185, 25도/비, 20분/운동(M) \n\n튀김가루 입혀서 기름에 튀기면 더 맛있겠지만 내 몸에 조식으로 추천하고 싶지는 않아서 기름 없이 에어프라이어에 굽고 치즈 대신에 아몬드 갈아서 올린 #옥수수갈비 🌽\n\n옥수수 2개 썰어서 믹싱볼에 담고 올리브오일 1 넣고 섞는다. 소금 1/4, 갈릭파우더 1, 파프리카 파우더 1 섞어서 넣고 섞는다. 200도 에프에 중간중간 뒤집어 가며 15분 굽는다. \n접시에 구운 옥수수 담고 다진 파슬리, 그레이터로 아몬드 갈아서 얹고 라임주스로 마무리~\n\n#조식 #레시피 #미라클모닝 #옥수수",
   "image": "https://images.how-about-breakfast.com/images/1185.jpg",
   "gallery": [
@@ -25354,13 +25354,6 @@
    "https://images.how-about-breakfast.com/images/1185_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1185.mp4",
-  "_en": {
-   "hash": "3236aabfe0ac578ddd7e108e53ec61cea4722ad822354253d0ae35e5ee65219d",
-   "title": "Corn ribs, corn",
-   "intro": "20240920 #breakfastdiary 1185, 25°C/rain, 20 min/exercise(M) \nCoating it in batter and deep-frying would probably taste even better, but I couldn't recommend that to my body for breakfast, so instead: air-fried with no oil, topped with grated almonds instead of cheese — #cornribs 🌽\nCut 2 ears of corn, put in a mixing bowl, add 1 olive oil, and mix. Mix in 1/4 salt, 1 garlic powder, 1 paprika powder. Air-fry at 200°C for 15 minutes, flipping partway through. \nPlate the roasted corn, top with chopped parsley and grated almonds using a grater, and finish with lime juice~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "옥수수갈비-옥수수"
  },
  {
