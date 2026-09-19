@@ -263,9 +263,13 @@ var Shared = (function () {
     ensureModalDom();
     var overlay = document.getElementById('overlay');
     var modalContent = document.getElementById('modalContent');
-    var prevRec = (nav && nav.index > 0) ? nav.list[nav.index - 1] : null;
-    var nextRec = (nav && nav.index < nav.list.length - 1) ? nav.list[nav.index + 1] : null;
-    var navHTML = nav ? (
+    // nav.list/nav.index (day-by-day nav) are optional independently of
+    // nav.siblingsByDate (same-day switcher) - a caller with no chronological
+    // list of its own (e.g. the "오늘의 조식들" year strip) can pass just the
+    // latter, so this only renders when a list actually came with it.
+    var prevRec = (nav && nav.list && nav.index > 0) ? nav.list[nav.index - 1] : null;
+    var nextRec = (nav && nav.list && nav.index < nav.list.length - 1) ? nav.list[nav.index + 1] : null;
+    var navHTML = (nav && nav.list) ? (
       '<div class="modal-nav">' +
       '<button type="button" class="modal-nav-btn modal-nav-prev"' + (prevRec ? '' : ' disabled') + '>' +
       '← ' + L('modal_prev_day') + (prevRec ? '<span class="modal-nav-date">' + escapeHtml(prevRec.date) + '</span>' : '') +
@@ -348,7 +352,7 @@ var Shared = (function () {
         }, lang);
       });
     }
-    if (nav) {
+    if (nav && nav.list) {
       var prevBtn = modalContent.querySelector('.modal-nav-prev');
       var nextBtn = modalContent.querySelector('.modal-nav-next');
       if (prevRec) prevBtn.addEventListener('click', function () { openModal(prevRec, { list: nav.list, index: nav.index - 1, siblingsByDate: nav.siblingsByDate }); });

@@ -67,13 +67,27 @@
     console.error(err);
   });
 
+  // All real (non-failed) posts sharing a date, in feed order - shared by
+  // the ledger heatmap and the "오늘의 조식들" year strip, both of which can
+  // open a record whose date has more than one post and need the same
+  // same-day switcher in the modal.
+  function buildSiblingsByDate(all) {
+    var siblingsByDate = {};
+    all.forEach(function (r) {
+      if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date) || r.failed) return;
+      (siblingsByDate[r.date] = siblingsByDate[r.date] || []).push(r);
+    });
+    return siblingsByDate;
+  }
+
   function renderAll(all) {
     I18N.applyStaticI18n();
     syncBetaToggleLabel();
     randomizeSearchPlaceholder();
+    var siblingsByDate = buildSiblingsByDate(all);
     renderMasthead(all);
-    renderLedger(all);
-    renderOnThisDay(all);
+    renderLedger(all, siblingsByDate);
+    renderOnThisDay(all, siblingsByDate);
     renderCollections(all);
   }
 
@@ -166,7 +180,7 @@
     document.getElementById('streakText').innerHTML = streakHTML;
   }
 
-  function renderLedger(all) {
+  function renderLedger(all, siblingsByDate) {
     var lang = I18N.getLang();
     var postedDates = new Set();
     var failedDates = new Set();
@@ -177,7 +191,7 @@
 
     var recordByDate = {};
     var postCounts = {}; // real (non-failed) post count per date, for the "+N" badge on days with more than one
-    var siblingsByDate = {}; // all real posts sharing a date, in feed order, for the modal's same-day switcher
+    Object.keys(siblingsByDate).forEach(function (d) { postCounts[d] = siblingsByDate[d].length; });
     all.forEach(function (r) {
       if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return;
       // prefer a successful entry over a failed one when a day has both,
@@ -185,10 +199,6 @@
       var existing = recordByDate[r.date];
       if (!existing || (existing.failed && !r.failed) || (existing.day_secondary && !r.day_secondary)) {
         recordByDate[r.date] = r;
-      }
-      if (!r.failed) {
-        postCounts[r.date] = (postCounts[r.date] || 0) + 1;
-        (siblingsByDate[r.date] = siblingsByDate[r.date] || []).push(r);
       }
     });
 
@@ -354,7 +364,7 @@
     requestAnimationFrame(function () { ledgerWrap.scrollLeft = ledgerWrap.scrollWidth; });
   }
 
-  function renderOnThisDay(all) {
+  function renderOnThisDay(all, siblingsByDate) {
     var lang = I18N.getLang();
     var today = new Date();
     var mm = today.getMonth() + 1;
@@ -452,10 +462,12 @@
       var titleHtml = Shared.hasStaticEn(r, 'title')
         ? '<h4 class="otd-title">' + Shared.escapeHtml(Shared.localizedText(r, 'title')) + '</h4>'
         : '<h4 class="otd-title i18n-dyn" data-ko="' + Shared.escapeHtml(koTitle) + '">' + Shared.escapeHtml(koTitle) + '</h4>';
+      var siblingCount = (siblingsByDate[r.date] || []).length;
+      var yearLabelHtml = yearLabel + (siblingCount > 1 ? ' · ' + (lang === 'en' ? siblingCount + ' posts' : siblingCount + '개') : '');
       return (
         '<a class="otd-card" href="' + Shared.escapeHtml(Shared.recipeUrl(r)) + '" data-year="' + y + '">' +
         Shared.thumbHTML(r, 24) +
-        '<div class="otd-year">' + yearLabel + '</div>' +
+        '<div class="otd-year">' + yearLabelHtml + '</div>' +
         titleHtml +
         '<div class="otd-meta">' + r.date + (r.calories ? ' · ' + r.calories + 'kcal' : '') + '</div>' +
         '</a>'
@@ -467,7 +479,7 @@
       el.addEventListener('click', function (e) {
         if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault();
-        Shared.openModal(byYear[y]);
+        Shared.openModal(byYear[y], { siblingsByDate: siblingsByDate });
       });
     });
     I18N.applyDynamicTranslations(row);
