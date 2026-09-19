@@ -12612,7 +12612,7 @@
   "weather": "21도/흐림",
   "failed": false,
   "calories": 465,
-  "title": "#아사이보울 을 먹으면서 같이 먹을 친구를 생각했는데 아무래도 아사이보울은 혼자 먹는 게 좋을 것 같다.",
+  "title": "아사이볼",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -12622,7 +12622,7 @@
    "조식다이어리"
   ],
   "intro": "20250920 #조식다이어리 1514, 21도/흐림\n게다가 빙수는 협동과 우정의 디저트. 첫째, 얼음산의 사방을 숟가락으로 살살 달래가며 퍼먹어야 하고 둘째, 내용물을 그릇 밖으로 흘리는 불상사가 없어야 하며 셋째, 재료와 얼음의 조합이 마지막 한 숟갈까지 딱 맞게 끝나야 한다. 얼음만 남아서 심심한 맛으로 스테이지를 마무리하게 되면 무척 아쉽기 때문! 앞서 이야기한 모든 사항을 별다른 말 없이, 눈빛만으로 함께 해낼 친구가 있다면, 그 친구가 바로 지란지교!\n(빙수, 여름어사전)\n@achimdal.books 의 #여름어사전 을 읽고 있다.  \n빙수는 아니지만 빙수 같은 느낌적인 느낌이 있는 약 465kcal #아사이보울 을 먹으면서 같이 먹을 친구를 생각했는데 아무래도 아사이보울은 혼자 먹는 게 좋을 것 같다.",
-  "ingredients": "(베이스) 그릭요거트 1/2컵, 아사이베리 파우더 1T, 바나나 1, 햄프시드 1t, 치아시드 1t, 호두 1t, (토핑) 그래놀라, (냉동)블루베리와 딸기, 샤인머스캣, 바나나와 피넛버터 등 원하는 것은 무엇이든 토핑할 수 있다.",
+  "ingredients": "- 베이스(그릭요거트 1/2컵, 아사이베리 파우더 1T, 바나나 1, 햄프시드 1t, 치아시드 1t, 호두 1t) \n- 토핑(그래놀라, (냉동)블루베리와 딸기, 샤인머스캣, 바나나와 피넛버터 등)",
   "steps": "1. 그릭요거트 1/2컵, 아사이베리 파우더 1T, 바나나 1개, 햄프시드 1t, 치아시드 1t, 호두 1t 넣고 갈아서 그룻에 담는다. \n2. 그래놀라, 블루베리, 딸기, 샤인머스캣, 바나나와 피넛버터 얹는다.",
   "raw": "20250920 #조식다이어리 1514, 21도/흐림\n\n게다가 빙수는 협동과 우정의 디저트. 첫째, 얼음산의 사방을 숟가락으로 살살 달래가며 퍼먹어야 하고 둘째, 내용물을 그릇 밖으로 흘리는 불상사가 없어야 하며 셋째, 재료와 얼음의 조합이 마지막 한 숟갈까지 딱 맞게 끝나야 한다. 얼음만 남아서 심심한 맛으로 스테이지를 마무리하게 되면 무척 아쉽기 때문! 앞서 이야기한 모든 사항을 별다른 말 없이, 눈빛만으로 함께 해낼 친구가 있다면, 그 친구가 바로 지란지교!\n(빙수, 여름어사전)\n\n@achimdal.books 의 #여름어사전 을 읽고 있다.  \n\n빙수는 아니지만 빙수 같은 느낌적인 느낌이 있는 약 465kcal #아사이보울 을 먹으면서 같이 먹을 친구를 생각했는데 아무래도 아사이보울은 혼자 먹는 게 좋을 것 같다. \n\n👉 재료\n(베이스) 그릭요거트 1/2컵, 아사이베리 파우더 1T, 바나나 1, 햄프시드 1t, 치아시드 1t, 호두 1t, (토핑) 그래놀라, (냉동)블루베리와 딸기, 샤인머스캣, 바나나와 피넛버터 등 원하는 것은 무엇이든 토핑할 수 있다. \n\n👉 조리\n1. 그릭요거트 1/2컵, 아사이베리 파우더 1T, 바나나 1개, 햄프시드 1t, 치아시드 1t, 호두 1t 넣고 갈아서 그룻에 담는다. \n2. 그래놀라, 블루베리, 딸기, 샤인머스캣, 바나나와 피넛버터 얹는다. \n \n#조식 #레시피 #아사이보울",
   "image": "https://images.how-about-breakfast.com/images/1514.jpg",
@@ -12634,13 +12634,6 @@
    "https://images.how-about-breakfast.com/images/1514_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1514.mp4",
-  "_en": {
-   "hash": "6a16d22dae11ddf30ffa610ffffe088e1cfae8c973cf3e7d5ff1d71c42a09855",
-   "title": "While eating my #AcaiBowl, I thought about a friend to share it with — but I think acai bowls are probably better enjoyed alone.",
-   "intro": "20250920 #breakfastdiary day 1514, 21°C/cloudy\nBesides, patbingsu is a dessert of cooperation and friendship. First, you have to gently coax and scoop from all sides of the ice mountain with your spoon; second, there must be no mishap of spilling the contents outside the bowl; and third, the ratio of toppings to ice must run out perfectly together down to the very last spoonful. If only ice is left and the stage ends on a bland note, that's such a letdown! If you have a friend who can get through all of the above with you, without a word, just through eye contact alone — that friend is a true soulmate!\n('Patbingsu,' Summer Dictionary)\nI've been reading @achimdal.books's #SummerDictionary.\nNot patbingsu, but with a similar bingsu-like feel, an approx. 465kcal #acaibowl — while eating it I thought about a friend to share it with, but I think acai bowls are probably better enjoyed alone.",
-   "ingredients": "(base) 1/2 cup Greek yogurt, 1T acai berry powder, 1 banana, 1t hemp seeds, 1t chia seeds, 1t walnuts, (toppings) granola, (frozen) blueberries and strawberries, shine muscat grapes, banana and peanut butter — top with whatever you like",
-   "steps": "1. Blend 1/2 cup Greek yogurt, 1T acai berry powder, 1 banana, 1t hemp seeds, 1t chia seeds, and 1t walnuts, and pour into a bowl.\n2. Top with granola, blueberries, strawberries, shine muscat, banana, and peanut butter."
-  },
   "page_id": "아사이보울-을-먹으면서-같이-먹을-친구를-생각했는데-아무래도-아사이보울은-혼자-먹는-게-좋을-것-같다"
  },
  {
