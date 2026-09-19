@@ -86011,16 +86011,16 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "애호박 샐러드",
+  "title": "적채 샐러드와 샤인머스캣",
   "credit": null,
   "hashtags": [
    "오늘의조식",
    "조식",
    "조식스타그램"
   ],
-  "intro": "#오늘의조식 은 애호박을 팬에 굽고 토마토, 생모짜렐라, 올리브에 엔초비 드레싱(엔초비 약간, 다진 마늘, 올리브 오일, 다진 파슬리, 레몬 반 개 스퀴즈~)",
-  "ingredients": null,
-  "steps": null,
+  "intro": "#오늘의조식 은 세상에서 제일 예쁘고 멋진 #샤인머스캣을 모짜렐라 치즈와 함께 #조식 #조식스타그램\n\n적채를 한 입 크기로 자르고, 비트를 깍둑썰기해서 뿌린 후, 올리브오일, 발사믹을 곁들여,",
+  "ingredients": "(샤인머스캣)\n- 샤인머스캣 1컵\n- 모짜렐라 치즈 1/2컵\n- 올리브오일\n- 후추\n\n(적채샐러드)\n- 적채 1/4개\n- 비트 1/4개\n- 어린잎\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1t, 홀그레인 머스터드 1t)\n- 후추 ",
+  "steps": "(샤인머스캣)\n1. 샤인머스캣은 반으로 잘라서 접시에 담은 뒤 모짜렐라 치즈 뜯어서 얹는다. \n2. 올리브오일과 후추 조금 뿌린다. \n\n(적채 샐러드)\n1. 적채는 한 입 크기로 자르고 비트는 깍둑썰기한다, \n2. 적재와 비트를 접시에 담고 어린잎과 드레싱, 후추 뿌린다. ",
   "raw": "#오늘의조식 은 애호박을 팬에 굽고 토마토, 생모짜렐라, 올리브에 엔초비 드레싱(엔초비 약간, 다진 마늘, 올리브 오일, 다진 파슬리, 레몬 반 개 스퀴즈~)\n\n#조식 #조식스타그램",
   "pre_label": "2020-09-20-1",
   "image": "https://images.how-about-breakfast.com/images/9980.jpg",
@@ -86028,13 +86028,6 @@
    "https://images.how-about-breakfast.com/images/9980.jpg",
    "https://images.how-about-breakfast.com/images/9980_2.jpg"
   ],
-  "_en": {
-   "hash": "b2f9bb6d290bac05c4363f8f0bde93a95155f981bfe16561a0535c8bbc448159",
-   "title": "Zucchini Salad",
-   "intro": "#todaysbreakfast is zucchini seared in a pan with tomato, fresh mozzarella, and olives, in an anchovy dressing (a little anchovy, minced garlic, olive oil, chopped parsley, and a squeeze of half a lemon~)",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "애호박-샐러드",
   "essay_candidate": true,
   "essay_reviewed": true
