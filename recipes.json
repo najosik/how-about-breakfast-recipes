@@ -38075,6 +38075,13 @@
   "gallery": [
    "https://images.how-about-breakfast.com/images/9982.jpg"
   ],
+  "_en": {
+   "hash": "638c8dcf9c9ca60f3c7f526f8f90627f45508d587adf47d3f9ee64170e88d79e",
+   "title": "Super-Easy Quesadilla",
+   "intro": "20230919 #breakfastdiary 849, 21°C/mostly cloudy\nSpread mozzarella cheese in a circle in a heated pan and crack two eggs on top. Wash spinach well, layer it over the eggs, and cover with a tortilla.\nOnce the mozzarella has melted through and the eggs look mostly set, flip it over, fold in half, and cut into four pieces.",
+   "ingredients": "- 1 tortilla\n- 4 tbsp mozzarella cheese\n- 3-4 spinach stems\n- 2 eggs\n- Salt\n- Pepper",
+   "steps": "1. Spread mozzarella cheese in a circle in a heated pan.\n2. Once the cheese from step 1 has melted, crack 2 eggs on top and spread evenly. Sprinkle with salt and pepper.\n3. Layer spinach on top of step 2, then cover with a tortilla.\n4. Once the eggs are fully set, flip it over, fold in half, and cut into four pieces."
+  },
   "page_id": "초간단퀘사디아-퀘사디아"
  },
  {
@@ -68783,6 +68790,13 @@
    "https://images.how-about-breakfast.com/images/215.jpg",
    "https://images.how-about-breakfast.com/images/215_2.jpg"
   ],
+  "_en": {
+   "hash": "d2f38360677395dfaed1ea66046364e996a573b874020d123fd5f4a4a8508488",
+   "title": "Fig Mozzarella Salad",
+   "intro": "20210919 #breakfastdiary 215, 27°C/mostly cloudy\nFigs and mozzarella with olive oil and pepper #figsalad\nThis is probably the last fig salad of the year. What a fortunate thing it is, to know the last one while it's happening.",
+   "ingredients": "- 5 figs\n- 9 mozzarella bocconcini\n- 1 tbsp olive oil\n- Pepper",
+   "steps": "1. Trim the stems off the figs, cut into wedges for texture, and arrange on a plate.\n2. Add the mozzarella bocconcini, then drizzle with olive oil and sprinkle with pepper."
+  },
   "page_id": "무화과샐러드-모닝리추얼-모닝루틴"
  },
  {
