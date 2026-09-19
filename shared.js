@@ -275,6 +275,28 @@ var Shared = (function () {
       '</button>' +
       '</div>'
     ) : '';
+    // Same-day sibling switcher: kept separate from the prev/next day nav
+    // above so "다음 날짜" always means "move a calendar day", never "the
+    // other post from today" - that would silently change content while the
+    // date label stays put, which reads as broken rather than as navigation.
+    // Derived fresh from the date of whichever record is being shown (not
+    // carried over from the previous call), since prev/next day lands on a
+    // different date with its own, unrelated sibling group.
+    var siblings = (nav && nav.siblingsByDate) ? nav.siblingsByDate[r.date] : null;
+    var siblingIndex = siblings ? siblings.indexOf(r) : -1;
+    var siblingNavHTML = (siblings && siblings.length > 1) ? (
+      '<div class="modal-sibling-nav">' +
+      '<span class="modal-sibling-label">' + L('modal_same_day_posts') + '</span>' +
+      '<div class="modal-sibling-list">' +
+      siblings.map(function (sib, i) {
+        var sibTitle = hasStaticEn(sib, 'title') ? localizedText(sib, 'title') : (sib.title || L('untitled_fallback'));
+        return '<button type="button" class="modal-sibling-btn' + (i === siblingIndex ? ' active' : '') +
+          '" data-idx="' + i + '" title="' + escapeHtml(sibTitle) + '"' +
+          (i === siblingIndex ? ' aria-current="true"' : '') + '>' + (i + 1) + '</button>';
+      }).join('') +
+      '</div>' +
+      '</div>'
+    ) : '';
     var tagsHtml = (r.hashtags || []).map(function (h) {
       var label = (typeof I18N !== 'undefined') ? I18N.tagLabel(h) : h;
       return '<a href="archive.html?tag=' + encodeURIComponent(h) + '">#' + escapeHtml(label) + '</a>';
@@ -300,6 +322,7 @@ var Shared = (function () {
     modalContent.innerHTML =
       '<button class="modal-close" aria-label="' + escapeHtml(L('modal_close')) + '">✕</button>' +
       navHTML +
+      siblingNavHTML +
       galleryHTML(r) +
       '<div class="modal-stamp-row">' +
       '<span class="stamp">' + stampLabel(r) + '</span>' +
@@ -328,8 +351,17 @@ var Shared = (function () {
     if (nav) {
       var prevBtn = modalContent.querySelector('.modal-nav-prev');
       var nextBtn = modalContent.querySelector('.modal-nav-next');
-      if (prevRec) prevBtn.addEventListener('click', function () { openModal(prevRec, { list: nav.list, index: nav.index - 1 }); });
-      if (nextRec) nextBtn.addEventListener('click', function () { openModal(nextRec, { list: nav.list, index: nav.index + 1 }); });
+      if (prevRec) prevBtn.addEventListener('click', function () { openModal(prevRec, { list: nav.list, index: nav.index - 1, siblingsByDate: nav.siblingsByDate }); });
+      if (nextRec) nextBtn.addEventListener('click', function () { openModal(nextRec, { list: nav.list, index: nav.index + 1, siblingsByDate: nav.siblingsByDate }); });
+    }
+    if (siblings && siblings.length > 1) {
+      Array.prototype.forEach.call(modalContent.querySelectorAll('.modal-sibling-btn'), function (btn) {
+        btn.addEventListener('click', function () {
+          var idx = Number(btn.getAttribute('data-idx'));
+          if (idx === siblingIndex) return;
+          openModal(siblings[idx], { list: nav.list, index: nav.index, siblingsByDate: nav.siblingsByDate });
+        });
+      });
     }
     bindGallery(modalContent, r);
     overlay.classList.remove('hidden');

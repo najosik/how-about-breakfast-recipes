@@ -177,6 +177,7 @@
 
     var recordByDate = {};
     var postCounts = {}; // real (non-failed) post count per date, for the "+N" badge on days with more than one
+    var siblingsByDate = {}; // all real posts sharing a date, in feed order, for the modal's same-day switcher
     all.forEach(function (r) {
       if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return;
       // prefer a successful entry over a failed one when a day has both,
@@ -185,7 +186,10 @@
       if (!existing || (existing.failed && !r.failed) || (existing.day_secondary && !r.day_secondary)) {
         recordByDate[r.date] = r;
       }
-      if (!r.failed) postCounts[r.date] = (postCounts[r.date] || 0) + 1;
+      if (!r.failed) {
+        postCounts[r.date] = (postCounts[r.date] || 0) + 1;
+        (siblingsByDate[r.date] = siblingsByDate[r.date] || []).push(r);
+      }
     });
 
     var dated = Array.from(postedDates).concat(Array.from(failedDates)).sort();
@@ -319,7 +323,7 @@
             cell.classList.add('clickable');
             cell.addEventListener('click', function () {
               hideTooltip();
-              Shared.openModal(rec, { list: sortedRecords, index: dateIndex[day.key] });
+              Shared.openModal(rec, { list: sortedRecords, index: dateIndex[day.key], siblingsByDate: siblingsByDate });
             });
           }
         }
