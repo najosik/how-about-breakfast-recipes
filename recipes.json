@@ -38056,7 +38056,7 @@
   "weather": "21도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "초간단퀘사디아 퀘사디아",
+  "title": "초간단 퀘사디아",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38067,21 +38067,14 @@
    "퀘사디아"
   ],
   "intro": "20230919, #조식다이어리 849, 21도/대체로흐림\n달군 팬에 모짜렐라 치즈를 동그렇게 펼쳐서 깔고 계란 두 개 까서 올린다. 시금치 잘 씻어서 계란 위에 깔고 또띠아로 덮는다. \n모짜렐라 치즈가 충분히 녹고 계란이 어느 정도 익었겠다 싶으면 반대로 뒤집고 반으로 접어서 네 조각으로 자른다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 또띠아 1장\n- 모짜렐라 치즈 4T\n- 시금치 3~4뿌리\n- 계란 2개\n- 소금\n- 후추",
+  "steps": "1. 달군 팬 위에 모짜렐라 치즈를 동그랗게 깐다. \n2. 1의 치즈가 녹으면 계란 2개 까서 얹고 골고루 펼친다. 소금, 후추 뿌린다. \n3. 2의 위에 시금치를 얹은 후 또띠아로 덮는다. \n4. 2의 계란이 충분히 익은 것을 확인하고 뒤집은 후 반으로 접고 네 조각으로 자른다. ",
   "raw": "20230919, #조식다이어리 849, 21도/대체로흐림\n\n#초간단퀘사디아\n\n달군 팬에 모짜렐라 치즈를 동그렇게 펼쳐서 깔고 계란 두 개 까서 올린다. 시금치 잘 씻어서 계란 위에 깔고 또띠아로 덮는다. \n모짜렐라 치즈가 충분히 녹고 계란이 어느 정도 익었겠다 싶으면 반대로 뒤집고 반으로 접어서 네 조각으로 자른다. \n\n#조식 #레시피 #미라클모닝 #퀘사디아",
   "video": "https://images.how-about-breakfast.com/images/849.mp4",
   "image": "https://images.how-about-breakfast.com/images/9982.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/9982.jpg"
   ],
-  "_en": {
-   "hash": "161e523806ecf655b03939697d3733789e18219234bfdeaec46340ebc5cffc2a",
-   "title": "Super-Easy Quesadilla",
-   "intro": "20230919 #breakfastdiary 849, 21°C/mostly cloudy\nSpread mozzarella cheese in a circle in a heated pan and crack two eggs on top. Wash spinach well, layer it over the eggs, and cover with a tortilla.\nOnce the mozzarella has melted through and the eggs look mostly set, flip it over, fold in half, and cut into four pieces.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "초간단퀘사디아-퀘사디아"
  },
  {
@@ -68757,7 +68750,7 @@
   "weather": "27도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "무화과샐러드 모닝리추얼 모닝루틴",
+  "title": "무화과 모짜렐라 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68790,14 +68783,7 @@
    "https://images.how-about-breakfast.com/images/215.jpg",
    "https://images.how-about-breakfast.com/images/215_2.jpg"
   ],
-  "page_id": "무화과샐러드-모닝리추얼-모닝루틴",
-  "_en": {
-   "hash": "a34b7fff855e75fa3a472ce3de7f521e2eb499a6dd299f6ebd634a76d1c34b6d",
-   "title": "Fig Salad",
-   "intro": "20210919, #breakfastdiary 215, 27°C/mostly cloudy\nFigs and mozzarella cheese with olive oil and pepper. #figsalad\nProbably the last fig salad of the year. How lucky it is to know a last time was the last time, right when it happens?",
-   "ingredients": "- 5 figs\n- 9 bocconcini mozzarella\n- 1T olive oil\n- Pepper",
-   "steps": "1. Trim the stems off the figs, cut into wedges for texture, and plate.\n2. Add the bocconcini mozzarella and drizzle with olive oil and pepper."
-  }
+  "page_id": "무화과샐러드-모닝리추얼-모닝루틴"
  },
  {
   "date": "2021-09-18",
