@@ -12612,7 +12612,7 @@
   "weather": "21도/흐림",
   "failed": false,
   "calories": 465,
-  "title": "#아사이보울 을 먹으면서 같이 먹을 친구를 생각했는데 아무래도 아사이보울은 혼자 먹는 게 좋을 것 같다.",
+  "title": "아사이볼",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -12622,7 +12622,7 @@
    "조식다이어리"
   ],
   "intro": "20250920 #조식다이어리 1514, 21도/흐림\n게다가 빙수는 협동과 우정의 디저트. 첫째, 얼음산의 사방을 숟가락으로 살살 달래가며 퍼먹어야 하고 둘째, 내용물을 그릇 밖으로 흘리는 불상사가 없어야 하며 셋째, 재료와 얼음의 조합이 마지막 한 숟갈까지 딱 맞게 끝나야 한다. 얼음만 남아서 심심한 맛으로 스테이지를 마무리하게 되면 무척 아쉽기 때문! 앞서 이야기한 모든 사항을 별다른 말 없이, 눈빛만으로 함께 해낼 친구가 있다면, 그 친구가 바로 지란지교!\n(빙수, 여름어사전)\n@achimdal.books 의 #여름어사전 을 읽고 있다.  \n빙수는 아니지만 빙수 같은 느낌적인 느낌이 있는 약 465kcal #아사이보울 을 먹으면서 같이 먹을 친구를 생각했는데 아무래도 아사이보울은 혼자 먹는 게 좋을 것 같다.",
-  "ingredients": "(베이스) 그릭요거트 1/2컵, 아사이베리 파우더 1T, 바나나 1, 햄프시드 1t, 치아시드 1t, 호두 1t, (토핑) 그래놀라, (냉동)블루베리와 딸기, 샤인머스캣, 바나나와 피넛버터 등 원하는 것은 무엇이든 토핑할 수 있다.",
+  "ingredients": "- 베이스(그릭요거트 1/2컵, 아사이베리 파우더 1T, 바나나 1, 햄프시드 1t, 치아시드 1t, 호두 1t) \n- 토핑(그래놀라, (냉동)블루베리와 딸기, 샤인머스캣, 바나나와 피넛버터 등)",
   "steps": "1. 그릭요거트 1/2컵, 아사이베리 파우더 1T, 바나나 1개, 햄프시드 1t, 치아시드 1t, 호두 1t 넣고 갈아서 그룻에 담는다. \n2. 그래놀라, 블루베리, 딸기, 샤인머스캣, 바나나와 피넛버터 얹는다.",
   "raw": "20250920 #조식다이어리 1514, 21도/흐림\n\n게다가 빙수는 협동과 우정의 디저트. 첫째, 얼음산의 사방을 숟가락으로 살살 달래가며 퍼먹어야 하고 둘째, 내용물을 그릇 밖으로 흘리는 불상사가 없어야 하며 셋째, 재료와 얼음의 조합이 마지막 한 숟갈까지 딱 맞게 끝나야 한다. 얼음만 남아서 심심한 맛으로 스테이지를 마무리하게 되면 무척 아쉽기 때문! 앞서 이야기한 모든 사항을 별다른 말 없이, 눈빛만으로 함께 해낼 친구가 있다면, 그 친구가 바로 지란지교!\n(빙수, 여름어사전)\n\n@achimdal.books 의 #여름어사전 을 읽고 있다.  \n\n빙수는 아니지만 빙수 같은 느낌적인 느낌이 있는 약 465kcal #아사이보울 을 먹으면서 같이 먹을 친구를 생각했는데 아무래도 아사이보울은 혼자 먹는 게 좋을 것 같다. \n\n👉 재료\n(베이스) 그릭요거트 1/2컵, 아사이베리 파우더 1T, 바나나 1, 햄프시드 1t, 치아시드 1t, 호두 1t, (토핑) 그래놀라, (냉동)블루베리와 딸기, 샤인머스캣, 바나나와 피넛버터 등 원하는 것은 무엇이든 토핑할 수 있다. \n\n👉 조리\n1. 그릭요거트 1/2컵, 아사이베리 파우더 1T, 바나나 1개, 햄프시드 1t, 치아시드 1t, 호두 1t 넣고 갈아서 그룻에 담는다. \n2. 그래놀라, 블루베리, 딸기, 샤인머스캣, 바나나와 피넛버터 얹는다. \n \n#조식 #레시피 #아사이보울",
   "image": "https://images.how-about-breakfast.com/images/1514.jpg",
@@ -12635,11 +12635,11 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/1514.mp4",
   "_en": {
-   "hash": "6a16d22dae11ddf30ffa610ffffe088e1cfae8c973cf3e7d5ff1d71c42a09855",
-   "title": "While eating my #AcaiBowl, I thought about a friend to share it with — but I think acai bowls are probably better enjoyed alone.",
-   "intro": "20250920 #breakfastdiary day 1514, 21°C/cloudy\nBesides, patbingsu is a dessert of cooperation and friendship. First, you have to gently coax and scoop from all sides of the ice mountain with your spoon; second, there must be no mishap of spilling the contents outside the bowl; and third, the ratio of toppings to ice must run out perfectly together down to the very last spoonful. If only ice is left and the stage ends on a bland note, that's such a letdown! If you have a friend who can get through all of the above with you, without a word, just through eye contact alone — that friend is a true soulmate!\n('Patbingsu,' Summer Dictionary)\nI've been reading @achimdal.books's #SummerDictionary.\nNot patbingsu, but with a similar bingsu-like feel, an approx. 465kcal #acaibowl — while eating it I thought about a friend to share it with, but I think acai bowls are probably better enjoyed alone.",
-   "ingredients": "(base) 1/2 cup Greek yogurt, 1T acai berry powder, 1 banana, 1t hemp seeds, 1t chia seeds, 1t walnuts, (toppings) granola, (frozen) blueberries and strawberries, shine muscat grapes, banana and peanut butter — top with whatever you like",
-   "steps": "1. Blend 1/2 cup Greek yogurt, 1T acai berry powder, 1 banana, 1t hemp seeds, 1t chia seeds, and 1t walnuts, and pour into a bowl.\n2. Top with granola, blueberries, strawberries, shine muscat, banana, and peanut butter."
+   "hash": "50e5bc18d796f2da5845d74743f2accd2a9de43d65a115e31a16ce23341674eb",
+   "title": "Acai Bowl",
+   "intro": "20250920 #breakfastdiary 1514, 21°C/cloudy\nAnd bingsu (shaved ice) is a dessert of cooperation and friendship. First, you have to coax your way around every side of the ice mountain with a spoon; second, there must be no mishap of spilling the contents outside the bowl; third, the balance of ingredients and ice has to come out exactly even down to the very last spoonful. Because if only plain ice is left to finish the stage with a bland taste, that's deeply disappointing! If you have a friend who can pull off everything just described together with you, wordlessly, through eye contact alone — that friend is a true soulmate!\n(Bingsu, Summer Dictionary of Words)\nI'm reading #summerdictionaryofwords by @achimdal.books.\nIt's not bingsu, but while eating this about-465-kcal #acaibowl that has a bingsu-like vibe to it, I thought about a friend to share it with — but I think an acai bowl is probably better eaten alone.",
+   "ingredients": "- Base (1/2 cup Greek yogurt, 1 tbsp acai berry powder, 1 banana, 1 tsp hemp seeds, 1 tsp chia seeds, 1 tsp walnuts)\n- Toppings (granola, (frozen) blueberries and strawberries, shine muscat grapes, banana and peanut butter, etc.)",
+   "steps": "1. Blend 1/2 cup Greek yogurt, 1 tbsp acai berry powder, 1 banana, 1 tsp hemp seeds, 1 tsp chia seeds, and 1 tsp walnuts together and pour into a bowl.\n2. Top with granola, blueberries, strawberries, shine muscat grapes, banana, and peanut butter."
   },
   "page_id": "아사이보울-을-먹으면서-같이-먹을-친구를-생각했는데-아무래도-아사이보울은-혼자-먹는-게-좋을-것-같다"
  },
@@ -25332,7 +25332,7 @@
   "weather": "25도/비, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "옥수수갈비 옥수수",
+  "title": "갈릭 파프리카 옥수수 구이",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25343,8 +25343,8 @@
    "조식다이어리"
   ],
   "intro": "20240920 #조식다이어리 1185, 25도/비, 20분/운동(M) \n튀김가루 입혀서 기름에 튀기면 더 맛있겠지만 내 몸에 조식으로 추천하고 싶지는 않아서 기름 없이 에어프라이어에 굽고 치즈 대신에 아몬드 갈아서 올린 #옥수수갈비 🌽\n옥수수 2개 썰어서 믹싱볼에 담고 올리브오일 1 넣고 섞는다. 소금 1/4, 갈릭파우더 1, 파프리카 파우더 1 섞어서 넣고 섞는다. 200도 에프에 중간중간 뒤집어 가며 15분 굽는다. \n접시에 구운 옥수수 담고 다진 파슬리, 그레이터로 아몬드 갈아서 얹고 라임주스로 마무리~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 옥수수 2개\n- 소스(올리브오일 1T, 소금 1/4t, 갈릭파우더 1t, 파프리카 파우더 1t)\n- 파슬리\n- 아몬드\n- 라임 1조각 ",
+  "steps": "1. 동그란 옥수수는 반으로 썬 뒤 세워서 1/4 토막으로 썬다.\n2. 믹싱볼에 옥수수 넣고 올리브오일 1T 넣고 한 번 섞은 뒤 소금 1/4t, 갈릭파우더 1t, 파프리카 파우더 1t 넣고 골고루 섞는다. \n3. 200도 에어프라이어에 넣고 총 15분 굽는다. (중간에 한두 번 뒤집는다.)\n4. 접시에 구운 옥수수 담고 파슬리, 그레이터로 아몬드 갈아서 얹고 라임주스 뿌린다. ",
   "raw": "20240920 #조식다이어리 1185, 25도/비, 20분/운동(M) \n\n튀김가루 입혀서 기름에 튀기면 더 맛있겠지만 내 몸에 조식으로 추천하고 싶지는 않아서 기름 없이 에어프라이어에 굽고 치즈 대신에 아몬드 갈아서 올린 #옥수수갈비 🌽\n\n옥수수 2개 썰어서 믹싱볼에 담고 올리브오일 1 넣고 섞는다. 소금 1/4, 갈릭파우더 1, 파프리카 파우더 1 섞어서 넣고 섞는다. 200도 에프에 중간중간 뒤집어 가며 15분 굽는다. \n접시에 구운 옥수수 담고 다진 파슬리, 그레이터로 아몬드 갈아서 얹고 라임주스로 마무리~\n\n#조식 #레시피 #미라클모닝 #옥수수",
   "image": "https://images.how-about-breakfast.com/images/1185.jpg",
   "gallery": [
@@ -25355,11 +25355,11 @@
   ],
   "video": "https://images.how-about-breakfast.com/images/1185.mp4",
   "_en": {
-   "hash": "3236aabfe0ac578ddd7e108e53ec61cea4722ad822354253d0ae35e5ee65219d",
-   "title": "Corn ribs, corn",
-   "intro": "20240920 #breakfastdiary 1185, 25°C/rain, 20 min/exercise(M) \nCoating it in batter and deep-frying would probably taste even better, but I couldn't recommend that to my body for breakfast, so instead: air-fried with no oil, topped with grated almonds instead of cheese — #cornribs 🌽\nCut 2 ears of corn, put in a mixing bowl, add 1 olive oil, and mix. Mix in 1/4 salt, 1 garlic powder, 1 paprika powder. Air-fry at 200°C for 15 minutes, flipping partway through. \nPlate the roasted corn, top with chopped parsley and grated almonds using a grater, and finish with lime juice~",
-   "ingredients": "",
-   "steps": ""
+   "hash": "b70408907b40dea5fdd87cb2ba5956ca8c21da823fb905164b250fab6aa6a85e",
+   "title": "Garlic Paprika Grilled Corn",
+   "intro": "20240920 #breakfastdiary 1185, 25°C/rainy, 20 min exercise (M)\nIt would probably taste even better breaded and deep-fried, but I didn't want to recommend that to my body as breakfast, so I air-fried it with no oil and topped it with grated almond instead of cheese — #cornribs 🌽\nCut 2 ears of corn, put them in a mixing bowl, add 1 tbsp olive oil and mix. Add and mix in 1/4 tsp salt, 1 tsp garlic powder, and 1 tsp paprika powder. Air-fry at 200°C (390°F) for 15 minutes, flipping occasionally.\nPlate the grilled corn, top with chopped parsley and grated almond, and finish with a squeeze of lime juice~",
+   "ingredients": "- 2 ears corn\n- Sauce (1 tbsp olive oil, 1/4 tsp salt, 1 tsp garlic powder, 1 tsp paprika powder)\n- Parsley\n- Almond\n- 1 wedge lime",
+   "steps": "1. Cut the corn in half crosswise, then stand each half up and cut into quarters lengthwise.\n2. Put the corn in a mixing bowl, add 1 tbsp olive oil and mix once, then add 1/4 tsp salt, 1 tsp garlic powder, and 1 tsp paprika powder and mix evenly.\n3. Air-fry at 200°C (390°F) for a total of 15 minutes (flipping once or twice partway through).\n4. Plate the grilled corn, top with parsley and grated almond, and drizzle with lime juice."
   },
   "page_id": "옥수수갈비-옥수수"
  },
@@ -38024,7 +38024,7 @@
   "weather": "21도/비, 21분/운동(U)",
   "failed": false,
   "calories": null,
-  "title": "국룰 병아리콩",
+  "title": "병아리콩 시금치 샐러드",
   "credit": null,
   "hashtags": [
    "국룰",
@@ -38036,8 +38036,8 @@
    "조식다이어리"
   ],
   "intro": "20230920, #조식다이어리 850, 21도/비, 21분/운동(U) \n이것의 이름은 병아리콩시금치양파토마토샐러드(가나다 순) \n1. 어젯 밤 잠들기 전에 불린 병아리콩을 끓는 물에 삶는다. (잘 익었나 맛보니, 맛있구나,) \n2. 달군 팬에 올리브오일, 양파 데치다가 방울토마토, 시금치, 병아리콩 순으로 넣고 함께 데친다. (양파는 오래 데치면 물러지니 따로 데치고 나중에 합.체.하는 것도 좋겠다. 방울토마토에 칼집을 내면 조리시간을 줄일 수 있다. 드레싱이 기다리고 있으므로 소금간은 하지 않고 후추 정도) \n3. 올리브오일3, 와인비니거1, 홀그레인 머스타드 기분대로(보통 1/4정도 넣는다.) 섞어서 드레싱 올리고, #국룰 후추로 마무리한다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 병아리콩 1컵\n- 양파 1/2개\n- 방울토마토 10개\n- 시금치 2~3뿌리\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 올리브오일\n- 후추",
+  "steps": "1. 병아리콩은 전날 밤에 미리 물에 담가 불린다. \n2. 냄비에 물 붓고 병아리콩 넣고 삶는다. \n3. 팬에 올리브오일 두르고 길게 썬 양파 볶다가 방울토마토, 시금치, 병아리콩 순서로 넣고 좀 더 볶는다. 후추 조금 뿌린다. \n4. 접시에 3을 담고 드레싱 뿌린다. ",
   "raw": "20230920, #조식다이어리 850, 21도/비, 21분/운동(U) \n\n이것의 이름은 병아리콩시금치양파토마토샐러드(가나다 순) \n\n1. 어젯 밤 잠들기 전에 불린 병아리콩을 끓는 물에 삶는다. (잘 익었나 맛보니, 맛있구나,) \n\n2. 달군 팬에 올리브오일, 양파 데치다가 방울토마토, 시금치, 병아리콩 순으로 넣고 함께 데친다. (양파는 오래 데치면 물러지니 따로 데치고 나중에 합.체.하는 것도 좋겠다. 방울토마토에 칼집을 내면 조리시간을 줄일 수 있다. 드레싱이 기다리고 있으므로 소금간은 하지 않고 후추 정도) \n\n3. 올리브오일3, 와인비니거1, 홀그레인 머스타드 기분대로(보통 1/4정도 넣는다.) 섞어서 드레싱 올리고, #국룰 후추로 마무리한다. \n\n#조식 #레시피 #미라클모닝 #병아리콩 #샐러드",
   "video": "https://images.how-about-breakfast.com/images/850.mp4",
   "image": "https://images.how-about-breakfast.com/images/9981.jpg",
@@ -38045,11 +38045,11 @@
    "https://images.how-about-breakfast.com/images/9981.jpg"
   ],
   "_en": {
-   "hash": "a3414dc2f7407896e4e77e16a48abe15d74d2cb4ff252a80ed5493ecb4b05fef",
-   "title": "Classic Chickpea Salad",
+   "hash": "367d40376c95fad93dcbb3917da672aa2a1a5f49c43c9c82aa12766e825f7a1e",
+   "title": "Chickpea Spinach Salad",
    "intro": "20230920 #breakfastdiary 850, 21°C/rainy, 21min/exercise(U)\nThe name of this dish is Chickpea-Spinach-Onion-Tomato Salad (in alphabetical order).\n1. Boil chickpeas that were soaked overnight before bed. (Tasted one to check — yep, delicious.)\n2. In a heated pan with olive oil, blanch the onion, then add cherry tomatoes, spinach, and chickpeas in that order and blanch together. (Onion turns mushy if blanched too long, so it might be better to blanch it separately and com·bine them later. Scoring the cherry tomatoes cuts down the cooking time. Since the dressing is waiting in the wings, skip the salt here and just add a little pepper.)\n3. Mix olive oil 3, wine vinegar 1, and whole-grain mustard to taste (usually about 1/4) for the dressing, drizzle it on, and finish with pepper, the #goldenrule.",
-   "ingredients": "",
-   "steps": ""
+   "ingredients": "- 1 cup chickpeas\n- 1/2 onion\n- 10 cherry tomatoes\n- 2-3 spinach stems\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole-grain mustard)\n- Olive oil\n- Pepper",
+   "steps": "1. Soak the chickpeas in water the night before.\n2. Add water and the chickpeas to a pot and boil.\n3. Heat olive oil in a pan, sauté thinly sliced onion, then add cherry tomatoes, spinach, and chickpeas in that order and sauté a bit more. Sprinkle with a little pepper.\n4. Plate step 3 and drizzle with the dressing."
   },
   "page_id": "국룰-병아리콩"
  },
@@ -68708,7 +68708,7 @@
   "weather": "23도/한때흐림",
   "failed": false,
   "calories": null,
-  "title": "토마토아보카도바질샐러드 금정연 기억에눈이부셔서",
+  "title": "토마토 아보카도 바질 샐러드",
   "credit": null,
   "hashtags": [
    "avocado",
@@ -68736,9 +68736,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210920, #조식다이어리 216, 23도/한때흐림\n냉장고에 남은 닭가슴살 소시지, 토마토, 아보카도, 세상에서 제일 예쁜 바질에 레몬즙, 올리브오일, 소금, 후추 #토마토아보카도바질샐러드\n날씨에 무척 민감했던 바르트는 콜레주 드 프랑스에서 열린 마지막 해의 강의에서 날씨는 삶과 기억의 본질과도 같다고 말했다. 날씨는 우리를 소통하게 해주고 접촉하게 해주는 일종의 공백 상태, 무의미라고 할 수 있지만 바로 그렇기 때문에 그 안에는 말로 표현할 수 없는 섬세한 뉘앙스가 담길 수 있다나 뭐라나. 다시 말하자면 섬세한 뉘앙스를 만드는 건 바로 날씨일 수 있다. \n코로나19 덕분(이 경우는 ‘때문’이 아니라 ‘덕분’이 적합하다.)에 2021년 9월, 더 없이 맑은  가을 하늘을 만날 수 있게 됐다. 인스타에 하늘, 구름 사진이 넘쳐난다. \n감나무 아래 앉아, 살랑거리는 바람 덕분에 이마에 이따금씩 햇살이 떨어지는 상상을 한다. 날씨가 삶과 기억의 본질인 이유를 알 것도 같다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210920, #조식다이어리 216, 23도/한때흐림\n냉장고에 남은 닭가슴살 소시지, 토마토, 아보카도, 세상에서 제일 예쁜 바질에 레몬즙, 올리브오일, 소금, 후추 #토마토아보카도바질샐러드\n\n날씨에 무척 민감했던 바르트는 콜레주 드 프랑스에서 열린 마지막 해의 강의에서 날씨는 삶과 기억의 본질과도 같다고 말했다. 날씨는 우리를 소통하게 해주고 접촉하게 해주는 일종의 공백 상태, 무의미라고 할 수 있지만 바로 그렇기 때문에 그 안에는 말로 표현할 수 없는 섬세한 뉘앙스가 담길 수 있다나 뭐라나. 다시 말하자면 섬세한 뉘앙스를 만드는 건 바로 날씨일 수 있다. \n코로나19 덕분(이 경우는 ‘때문’이 아니라 ‘덕분’이 적합하다.)에 2021년 9월, 더 없이 맑은  가을 하늘을 만날 수 있게 됐다. 인스타에 하늘, 구름 사진이 넘쳐난다. \n감나무 아래 앉아, 살랑거리는 바람 덕분에 이마에 이따금씩 햇살이 떨어지는 상상을 한다. 날씨가 삶과 기억의 본질인 이유를 알 것도 같다.",
+  "ingredients": "- 닭가슴살 소시지 2개\n- 아보카도 1/2개\n- 토마토 1개\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 작은 레몬 1조각\n- 후추",
+  "steps": "1. 닭가슴살 소시지는 먹기 좋게 썬 후 전자레인지 2분 굽는다. \n2. 아보카도와 토마토는 웻지 모양으로 썬다. \n3. 접시에 1의 닭가슴살 소시지, 2의 아보카도와 토마토 담고 바질도 얹는다. \n4. 드레싱과 레몬주스, 후추 조금 뿌린다.   ",
   "raw": "20210920, #조식다이어리 216, 23도/한때흐림\n\n냉장고에 남은 닭가슴살 소시지, 토마토, 아보카도, 세상에서 제일 예쁜 바질에 레몬즙, 올리브오일, 소금, 후추 #토마토아보카도바질샐러드\n\n날씨에 무척 민감했던 바르트는 콜레주 드 프랑스에서 열린 마지막 해의 강의에서 날씨는 삶과 기억의 본질과도 같다고 말했다. 날씨는 우리를 소통하게 해주고 접촉하게 해주는 일종의 공백 상태, 무의미라고 할 수 있지만 바로 그렇기 때문에 그 안에는 말로 표현할 수 없는 섬세한 뉘앙스가 담길 수 있다나 뭐라나. 다시 말하자면 섬세한 뉘앙스를 만드는 건 바로 날씨일 수 있다. \n#금정연, #기억에눈이부셔서\n\n코로나19 덕분(이 경우는 ‘때문’이 아니라 ‘덕분’이 적합하다.)에 2021년 9월, 더 없이 맑은  가을 하늘을 만날 수 있게 됐다. 인스타에 하늘, 구름 사진이 넘쳐난다. \n감나무 아래 앉아, 살랑거리는 바람 덕분에 이마에 이따금씩 햇살이 떨어지는 상상을 한다. 날씨가 삶과 기억의 본질인 이유를 알 것도 같다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #토마토 #바질 #아보카도 \n#breakfast #recipe #salad #tomato #basil #avocado ",
   "image": "https://images.how-about-breakfast.com/images/216.jpg",
   "gallery": [
@@ -68746,11 +68746,11 @@
    "https://images.how-about-breakfast.com/images/216_2.jpg"
   ],
   "_en": {
-   "hash": "da49ccfcf0a0c2105c7b3b376b3cb2095c27725519e0a291c06f7cb4bcc09c5b",
-   "title": "Tomato Avocado Basil Salad, Geum Jeong-yeon's Dazzled by Memory",
-   "intro": "20210920, #breakfastdiary 216, 23°C/occasionally cloudy\nLeftover chicken breast sausage from the fridge, tomato, avocado, and the prettiest basil in the world, with lemon juice, olive oil, salt, and pepper #tomatoavocadobasilsalad\nBarthes, who was famously sensitive to weather, said in his final year of lectures at the Collège de France that weather is like the very essence of life and memory. Weather is a kind of blank state, a meaninglessness that lets us communicate and make contact with one another — and precisely because of that, it can hold subtle nuances words can't capture, or so the idea goes. Put another way, it may be weather itself that produces those delicate nuances. \nThanks to COVID-19 (in this case 'thanks to' really is the right phrase, not 'because of'), September 2021 has brought us the clearest autumn skies imaginable. Instagram is flooded with photos of sky and clouds. \nSitting beneath a persimmon tree, I imagine sunlight occasionally falling on my forehead, carried by a gentle breeze. I think I understand now why weather is the essence of life and memory.",
-   "ingredients": "",
-   "steps": ""
+   "hash": "ba29fe982667d09eb503bfba5eb3541c23f5a28fa3f37c2832a88a1d2d046858",
+   "title": "Tomato Avocado Basil Salad",
+   "intro": "20210920 #breakfastdiary 216, 23°C/occasionally cloudy\nLeftover chicken breast sausage from the fridge, tomato, avocado, and the prettiest basil in the world, with lemon juice, olive oil, salt, and pepper #tomatoavocadobasilsalad\n\nBarthes, who was extremely sensitive to weather, said in his final year of lectures at the Collège de France that weather is like the essence of life and memory. Weather is a kind of blank state, a meaninglessness that lets us communicate and make contact with one another — but precisely because of that, it can hold subtle nuances that words can't express, or something like that. In other words, it may be weather itself that creates those subtle nuances.\nThanks to COVID-19 (in this case, \"thanks to\" rather than \"because of\" is the fitting phrase), September 2021 brought impossibly clear autumn skies. Instagram is flooded with photos of sky and clouds.\nSitting under a persimmon tree, I imagine sunlight occasionally falling on my forehead thanks to a gentle breeze. I think I understand a little why weather is the essence of life and memory.",
+   "ingredients": "- 2 chicken breast sausages\n- 1/2 avocado\n- 1 tomato\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole-grain mustard)\n- 1 small lemon wedge\n- Pepper",
+   "steps": "1. Cut the chicken breast sausage into bite-sized pieces and microwave for 2 minutes.\n2. Cut the avocado and tomato into wedges.\n3. Plate the sausage from step 1 and the avocado and tomato from step 2, then top with basil.\n4. Drizzle with the dressing and lemon juice, and finish with a little pepper."
   },
   "page_id": "토마토아보카도바질샐러드-금정연-기억에눈이부셔서"
  },
