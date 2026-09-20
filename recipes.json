@@ -38016,7 +38016,7 @@
   "weather": "15도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "간장드레싱카펠리니 카페리니",
+  "title": "간장드레싱 카펠리니",
   "credit": null,
   "hashtags": [
    "간장드레싱카펠리니",
@@ -38026,18 +38026,11 @@
    "조식다이어리",
    "카페리니"
   ],
-  "intro": "20230922, #조식다이어리 852, 15도/대체로흐림\n문제는 말글살이라는 게 복잡하고 섬세한 사람살이의 영향권 아래에 있다는 점이다. 행위 주체를 명확히 밝히는 일이 무례해 보일 수도 있고 괜한 낭패를 당할 수도 있다. 행위 주체를 모를 경우도 있다. 독자에게 익숙한 정보가 주체보다는 대상인 경우도 있고, 당하는 대상에 초점을 맞추고 싶을 때도 있다. ‘해양생태계가 파괴되었다’고 하는 게 ‘일본 정부가 해양생태계를 파괴했다’보다 더 슬플 수 있다.\n(김진해, 피동형을 즐겨라) \n이오덕 선생의 책을 읽으며, 학보사 선배로부터, 늘 문장은 가능한 한 능동태로 써야한다고 배웠건만, 피동형이 힘을 가지는 문장도 있구나라고 생각하며 오늘의 레시피를 피동형으로 적어보려 했으나 실패, \n끓는 물에 카펠리니를 삶는다. 면발이 얇아서 금새 익는다. \n간장3, 쯔유1, 올리고당1, 설탕1, 참기름1, 다진마늘1/2, 참깨를 섞어 드레싱 만든다. \n카펠리니를 접시에 담고 다진 실파 듬뿍, 드레싱과 계란노른자를 올린다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20230922, #조식다이어리 852, 15도/대체로흐림\n문제는 말글살이라는 게 복잡하고 섬세한 사람살이의 영향권 아래에 있다는 점이다. 행위 주체를 명확히 밝히는 일이 무례해 보일 수도 있고 괜한 낭패를 당할 수도 있다. 행위 주체를 모를 경우도 있다. 독자에게 익숙한 정보가 주체보다는 대상인 경우도 있고, 당하는 대상에 초점을 맞추고 싶을 때도 있다. ‘해양생태계가 파괴되었다’고 하는 게 ‘일본 정부가 해양생태계를 파괴했다’ 보다 더 슬플 수 있다.\n(김진해, 피동형을 즐겨라) \n\n이오덕 선생의 책을 읽으며, 학보사 선배로부터, 늘 문장은 가능한 한 능동태로 써야한다고 배웠건만, 피동형이 힘을 가지는 문장도 있구나라고 생각하며 오늘의 레시피를 피동형으로 적어보려 했으나 실패, \n\n끓는 물에 카펠리니를 삶는다. 면발이 얇아서 금새 익는다. \n간장3, 쯔유1, 올리고당1, 설탕1, 참기름1, 다진마늘1/2, 참깨를 섞어 드레싱 만든다. \n카펠리니를 접시에 담고 다진 실파 듬뿍, 드레싱과 계란노른자를 올린다.",
+  "ingredients": "- 카펠리니 1인분\n- 드레싱(간장 3T, 올리고당 1T, 설탕 1T, 참기름 1T, 다진마늘 1/2t, 참깨 1t)\n- 실파 한 줌\n- 계란 1개",
+  "steps": "1. 끓는 물에 소금 넣고 카펠리니를 삶는다. \n2. 간장 3T, 올리고당 1T, 설탕 1T, 참기름 1T, 다진마늘 1/2t, 참깨 1t 섞어서 드레싱을 만든다. \n3. 카펠리니를 접시에 담고 다진 실파, 드레싱과 계란노른자 얹는다. ",
   "raw": "20230922, #조식다이어리 852, 15도/대체로흐림\n\n문제는 말글살이라는 게 복잡하고 섬세한 사람살이의 영향권 아래에 있다는 점이다. 행위 주체를 명확히 밝히는 일이 무례해 보일 수도 있고 괜한 낭패를 당할 수도 있다. 행위 주체를 모를 경우도 있다. 독자에게 익숙한 정보가 주체보다는 대상인 경우도 있고, 당하는 대상에 초점을 맞추고 싶을 때도 있다. ‘해양생태계가 파괴되었다’고 하는 게 ‘일본 정부가 해양생태계를 파괴했다’보다 더 슬플 수 있다.\n(김진해, 피동형을 즐겨라) \n\n이오덕 선생의 책을 읽으며, 학보사 선배로부터, 늘 문장은 가능한 한 능동태로 써야한다고 배웠건만, 피동형이 힘을 가지는 문장도 있구나라고 생각하며 오늘의 레시피를 피동형으로 적어보려 했으나 실패, \n\n#간장드레싱카펠리니\n\n끓는 물에 카펠리니를 삶는다. 면발이 얇아서 금새 익는다. \n간장3, 쯔유1, 올리고당1, 설탕1, 참기름1, 다진마늘1/2, 참깨를 섞어 드레싱 만든다. \n카펠리니를 접시에 담고 다진 실파 듬뿍, 드레싱과 계란노른자를 올린다. \n\n#조식 #레시피 #미라클모닝 #카페리니 ",
   "video": "https://images.how-about-breakfast.com/images/852.mp4",
-  "_en": {
-   "hash": "235fbbb7135d048530c445ca5606100a0fc1cdd5928c85509a6127ffa6caae80",
-   "title": "Soy Dressing Capellini",
-   "intro": "20230922 #breakfastdiary 852, 15°C/mostly cloudy\nThe trouble is that language and writing live under the influence of complicated, delicate human relationships. Naming the subject of an action too clearly can seem rude, or land you in trouble for no good reason. Sometimes you simply don't know who the subject is. Sometimes the object is more familiar to the reader than the subject, or you want the focus to fall on whoever is affected. Saying 'the marine ecosystem was destroyed' can feel sadder than 'the Japanese government destroyed the marine ecosystem.'\n(Kim Jin-hae, Embrace the Passive Voice)\nReading Lee O-deok's books, and having learned from a senior at the campus newspaper that sentences should always be written in the active voice as much as possible, I thought, well, there are sentences where the passive voice carries real force — and tried to write today's recipe in the passive voice. I failed.\nBoil capellini in bubbling water. The strands are thin, so they cook in no time.\nMix soy sauce 3, tsuyu 1, oligosaccharide syrup 1, sugar 1, sesame oil 1, minced garlic 1/2, and sesame seeds to make the dressing.\nPlate the capellini, top generously with chopped scallions, the dressing, and an egg yolk.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "간장드레싱카펠리니-카페리니"
  },
  {
