@@ -68659,7 +68659,7 @@
   "weather": "21도/한때흐림",
   "failed": false,
   "calories": null,
-  "title": "바질페스토피자 모닝리추얼 모닝루틴",
+  "title": "바질페스토 모짜렐라 피자",
   "credit": null,
   "hashtags": [
    "basil",
@@ -68685,22 +68685,15 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210922, #조식다이어리 218, 21도/한때흐림\n시판 또띠아에 바질 페스토 듬뿍 바르고 모짜렐라를 약간 올려 180도 오븐에 10분, 세상에서 제일 예쁜 바질과 올리브 오일을 곁들여 #바질페스토피자 \n어쩌면 추석은 한해를 마무리하기 전에 다시 한번, 올 한해를 뒤돌아 보며 부족한 것을 바로잡고 미처 마무리 하지 못한 것을 챙겨보라는, 마지막 기회같은 시기일 수도 있겠다는 생각을 했다. 올해도 채 100일이 남지 않았다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210922, #조식다이어리 218, 21도/한때흐림\n시판 또띠아에 바질 페스토 듬뿍 바르고 모짜렐라를 약간 올려 180도 오븐에 10분, 세상에서 제일 예쁜 바질과 올리브 오일을 곁들여 #바질페스토피자 \n\n어쩌면 추석은 한해를 마무리하기 전에 다시 한번, 올 한해를 뒤돌아 보며 부족한 것을 바로잡고 미처 마무리 하지 못한 것을 챙겨보라는, 마지막 기회같은 시기일 수도 있겠다는 생각을 했다. 올해도 채 100일이 남지 않았다.",
+  "ingredients": "- 또띠아 1장\n- 모짜렐라치즈 1T\n- 바질\n- 올리브오일",
+  "steps": "1. 또띠아에 바질페스토 바르고 모짜렐라치즈를 얹은 후 180도 오븐에 10분 굽는다. \n2. 바질 듬뿍 얹고 올리브오일 뿌린다. ",
   "raw": "20210922, #조식다이어리 218, 21도/한때흐림\n\n시판 또띠아에 바질 페스토 듬뿍 바르고 모짜렐라를 약간 올려 180도 오븐에 10분, 세상에서 제일 예쁜 바질과 올리브 오일을 곁들여 #바질페스토피자 \n\n어쩌면 추석은 한해를 마무리하기 전에 다시 한번, 올 한해를 뒤돌아 보며 부족한 것을 바로잡고 미처 마무리 하지 못한 것을 챙겨보라는, 마지막 기회같은 시기일 수도 있겠다는 생각을 했다. 올해도 채 100일이 남지 않았다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #피자 #바질 #바질페스토 #모짜렐라 \n#breakfast #recipe #pizza #basil #basilpesto #mozzarella ",
   "image": "https://images.how-about-breakfast.com/images/218.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/218.jpg",
    "https://images.how-about-breakfast.com/images/218_2.jpg"
   ],
-  "_en": {
-   "hash": "e35b69786ea026a083705de366f0ed8847494d4d8ededc99ccf13b560b069b9a",
-   "title": "Basil Pesto Pizza, Morning Ritual, Morning Routine",
-   "intro": "20210922, #breakfastdiary 218, 21°C/occasionally cloudy\nSpread basil pesto generously over a store-bought tortilla, add a little mozzarella, and bake for 10 minutes in a 180°C oven, finished with the prettiest basil in the world and olive oil #basilpestopizza \nIt occurred to me that Chuseok might be a last chance of sorts — one more opportunity, before the year winds down, to look back on the year so far, fix what's lacking, and tend to what's still unfinished. There are fewer than 100 days left in the year.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "바질페스토피자-모닝리추얼-모닝루틴"
  },
  {
