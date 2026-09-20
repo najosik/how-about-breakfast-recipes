@@ -85992,7 +85992,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 조식 조식스타그램",
+  "title": "극단적 그린 샐러드",
   "credit": null,
   "hashtags": [
    "오늘의조식",
@@ -86000,8 +86000,8 @@
    "조식스타그램"
   ],
   "intro": "과거 서양에선 녹색이 불행을 초래한다는 미신이 있었고, 한때는 악마의 색으로 치부되기도 했었다고. 하지만 좀 더 들여다 보면 녹색은 도박판, 경기장 등 행운과 불운이 오가는 그 지점에 있었다. 헐크, 로키의 코스튬이 녹색이라는 건 그들이 선과 악의 교차 지점에 있기 때문이 아닐까 싶기도, 한편, \n식탁 위에서 오늘의 행운과 불운을 예상해 보고자, 보이진 않지만 마지막 남은 청경채를 깔고, 새싹채소, 샤인머스캣, 그린올리브, 아보카도, 브로콜리에 올리브 오일, 발사믹, 후추까지, 극단적 녹색을 추구한 #오늘의조식 #조식 #조식스타그램 \n*이 조합의 맛을 상상하면서 잠들었는데 단짠 재료가 다 있어서, 기대했던 대로 특별한 드레싱이 필요없는 조합",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 청경채 100g(한 줌 50g)\n- 새싹잎 1컵\n- 샤인머스캣 1/2컵\n- 그린올리브 1T\n- 브로콜리 1/2컵\n- 아보카도 1/2개\n- 드레싱(올리브오리 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 후추",
+  "steps": "1. 접시 바닥에는 먹기 좋게 썬 청경채를 담는다. 새싹잎, 반으로 썬 샤인머스캣, 그린올리브, 끓는 물에 데친 브로콜리, 아보카도를 담는다. \n2. 드레싱과 후추 조금 뿌린다. ",
   "raw": "과거 서양에선 녹색이 불행을 초래한다는 미신이 있었고, 한때는 악마의 색으로 치부되기도 했었다고. 하지만 좀 더 들여다 보면 녹색은 도박판, 경기장 등 행운과 불운이 오가는 그 지점에 있었다. 헐크, 로키의 코스튬이 녹색이라는 건 그들이 선과 악의 교차 지점에 있기 때문이 아닐까 싶기도, 한편, \n\n식탁 위에서 오늘의 행운과 불운을 예상해 보고자, 보이진 않지만 마지막 남은 청경채를 깔고, 새싹채소, 샤인머스캣, 그린올리브, 아보카도, 브로콜리에 올리브 오일, 발사믹, 후추까지, 극단적 녹색을 추구한 #오늘의조식 #조식 #조식스타그램 \n\n*이 조합의 맛을 상상하면서 잠들었는데 단짠 재료가 다 있어서, 기대했던 대로 특별한 드레싱이 필요없는 조합",
   "pre_label": "D-143",
   "image": "https://images.how-about-breakfast.com/images/pre-143.jpg",
@@ -86010,13 +86010,6 @@
    "https://images.how-about-breakfast.com/images/pre-143_2.jpg",
    "https://images.how-about-breakfast.com/images/pre-143_3.jpg"
   ],
-  "_en": {
-   "hash": "31503bfb13367a948116cdcbbcdfd69806da8eae46d18d4a73e7ba58d3290ff5",
-   "title": "Today's Breakfast, Breakfaststagram",
-   "intro": "In old Western superstition, green was once thought to bring misfortune, even branded as the devil's color at one point. But look closer and green sits right where luck and misfortune change hands — the gambling table, the racetrack. Maybe that's why Hulk's and Loki's costumes are green — they stand right at the crossing point of good and evil. Meanwhile,\nhoping to read today's luck and misfortune at the table, I laid down the last of the bok choy (unseen but there), then piled on sprouts, Shine Muscat grapes, green olives, avocado, and broccoli, with olive oil, balsamic, and a good crack of pepper — an all-out pursuit of green for #todaysbreakfast #breakfast #breakfaststagram\n*I fell asleep imagining how this combination would taste, and it turned out to have every sweet-and-salty element already in it, so — just as I'd hoped — it needed no special dressing at all.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-조식-조식스타그램",
   "essay_candidate": true,
   "essay_reviewed": true
