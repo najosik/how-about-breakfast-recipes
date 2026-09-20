@@ -25329,7 +25329,7 @@
   "weather": "19도/이슬비, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "애호박샐러드 애호박",
+  "title": "그릭요거트 딥을 곁들인 애호박 샐러드",
   "credit": "@_pasqualecannata",
   "hashtags": [
    "레시피",
@@ -25340,8 +25340,8 @@
    "조식다이어리"
   ],
   "intro": "20240921 #조식다이어리 1186, 19도/이슬비, 20분/운동(M) \n예상치 못한 오전 일정으로 조식이 아닌 중식이 됐다. \n마트에 들러 그릭요거트를 사왔는데 집에 와서 보니 요거트다. ‘요거트는 요거트대로 맛이 있겠지’라고 생각한다. \n애호박, 페타치즈, 그릭요거트, 페스토가 필요하다. \n애호박은 채칼로 얇게 썰어서 믹싱볼에 담고 올리브오일, 소금소금 섞어서 팬에 굽는다. \n그릭요거트 2, 페타치즈 1, 파슬리 조금 다져서 넣고 골고루 섞어서 접시에 담는다. (일반 요거트라면 5 정도) \n구운 애호박 얹고 페스토 얹는다. 후추로 마무리~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 애호박 1개\n- 그릭요거트 딥(그릭요거트 2T, 페타치즈 1T, 다진 파슬리 1T)\n- 바질페스토 1T\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 애호박은 채칼로 얇게 썬 뒤 믹싱볼에 담고 올리브오일, 소금 뿌려서 팬에서 굽는다. \n2. 믹싱볼에 그릭요거트 2T, 페타치즈 1T, 다진 파슬리 1T 넣고 골고루 섞어서 딥을 만든다. \n3. 접시에 2의 그릭요거트 담고 1의 애호박, 바질 페스토 얹는다. 후추 조금 뿌린다. ",
   "raw": "20240921 #조식다이어리 1186, 19도/이슬비, 20분/운동(M) \n\n예상치 못한 오전 일정으로 조식이 아닌 중식이 됐다. \n마트에 들러 그릭요거트를 사왔는데 집에 와서 보니 요거트다. ‘요거트는 요거트대로 맛이 있겠지’라고 생각한다. \n\n#애호박샐러드\n\n애호박, 페타치즈, 그릭요거트, 페스토가 필요하다. \n\n애호박은 채칼로 얇게 썰어서 믹싱볼에 담고 올리브오일, 소금소금 섞어서 팬에 굽는다. \n그릭요거트 2, 페타치즈 1, 파슬리 조금 다져서 넣고 골고루 섞어서 접시에 담는다. (일반 요거트라면 5 정도) \n구운 애호박 얹고 페스토 얹는다. 후추로 마무리~\n\nInspired by @_pasqualecannata\n\n#조식 #레시피 #미라클모닝 #애호박",
   "image": "https://images.how-about-breakfast.com/images/1186.jpg",
   "gallery": [
@@ -25353,13 +25353,6 @@
    "https://images.how-about-breakfast.com/images/1186_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1186.mp4",
-  "_en": {
-   "hash": "766c3c941fbf86cf07e624a15974d8ef55494b57b982e7a7407188d9cf6fd628",
-   "title": "Zucchini salad, zucchini",
-   "intro": "20240921 #breakfastdiary 1186, 19°C/drizzle, 20 min/exercise(M) \nAn unexpected morning schedule turned this into lunch instead of breakfast. \nStopped by the mart to buy Greek yogurt, but got home and realized it was just regular yogurt. \"Well, regular yogurt will taste good in its own way too,\" I figure. \nYou need zucchini, feta cheese, Greek yogurt, and pesto. \nSlice the zucchini thin with a mandoline, put in a mixing bowl, toss with olive oil and salt, then grill in a pan. \nMix in 2 parts Greek yogurt, 1 part feta cheese, and a bit of chopped parsley, then plate it. (If it's regular yogurt, use about 5 parts.) \nTop with the grilled zucchini and pesto. Finish with pepper~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "애호박샐러드-애호박"
  },
  {
