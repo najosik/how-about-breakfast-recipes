@@ -38029,7 +38029,7 @@
   "weather": "18도/흐림, 21분/운동(Y)",
   "failed": false,
   "calories": null,
-  "title": "벌크업 살크업 그릭요거트",
+  "title": "올리브빵 에그 그릭요거트 플레이트",
   "credit": null,
   "hashtags": [
    "그릭요거트",
@@ -38041,21 +38041,14 @@
    "조식다이어리"
   ],
   "intro": "20230921, #조식다이어리 851, 18도/흐림, 21분/운동(Y)\n요새 너무 몸이 #벌크업 되는 느낌이 있어서 (음식을) 좀 자제하려고, 라고 했더니 동료들이 말했다. \n#살크업 이겠죠,\n살크업 감소를 위한 맞춤 식단, 그릭요거트에 레몬제스트, 반숙란과 올리브 빵\n이대로는 싱거우니 레몬제스트 외에도 소금과 레드페퍼, 페페론치노, 올리브오일 둘러서 드시는 것을 추천",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 올리브빵 1조각\n- 그릭요거트 4T\n- 계란 2개\n- 레몬 1/2개",
+  "steps": "1. 올리브빵은 전자레인지에 30초 데운다. \n2. 계란은 반숙으로 삶는다. \n3. 그릭요거트에 레몬제스트 얹는다. (레몬제스트는 레몬 1/2개 분량) *취향에 따라 레몬제스트 외에 칠리 플레이크, 올리브오일을 얹는다. \n4. 올리브빵에 3의 반숙 계란과 그릭요거트 얹어서 먹는다. ",
   "raw": "20230921, #조식다이어리 851, 18도/흐림, 21분/운동(Y)\n\n요새 너무 몸이 #벌크업 되는 느낌이 있어서 (음식을) 좀 자제하려고, 라고 했더니 동료들이 말했다. \n\n#살크업 이겠죠,\n\n살크업 감소를 위한 맞춤 식단, 그릭요거트에 레몬제스트, 반숙란과 올리브 빵\n\n이대로는 싱거우니 레몬제스트 외에도 소금과 레드페퍼, 페페론치노, 올리브오일 둘러서 드시는 것을 추천\n\n#조식 #레시피 #미라클모닝 #그릭요거트",
   "video": "https://images.how-about-breakfast.com/images/851.mp4",
   "image": "https://images.how-about-breakfast.com/images/9979.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/9979.jpg"
   ],
-  "_en": {
-   "hash": "283c0412768e1e89158e3e8f20988c158924b227660dafffaa12a3e5cb1d6b70",
-   "title": "Greek Yogurt Bulk-Up",
-   "intro": "20230921 #breakfastdiary 851, 18°C/cloudy, 21min/exercise(Y)\nI told my coworkers I've been feeling too #bulkedup lately, so I'm trying to cut back a little (on food). They said:\nYou mean #flabbedup, right?\nA tailored menu for cutting the flab-up: Greek yogurt with lemon zest, a soft-boiled egg, and olive bread.\nThis is a bit bland as is, so besides the lemon zest, I'd recommend adding salt, red pepper flakes, peperoncino, and a drizzle of olive oil.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "벌크업-살크업-그릭요거트"
  },
  {
