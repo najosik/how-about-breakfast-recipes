@@ -51126,7 +51126,7 @@
   "weather": "12도/맑음, 11분/운동",
   "failed": false,
   "calories": null,
-  "title": "당근라페베이글 베이글 당근라페",
+  "title": "당근라페 베이글",
   "credit": null,
   "hashtags": [
    "bagel",
@@ -51148,8 +51148,8 @@
    "홈쿡"
   ],
   "intro": "20220921, #조식다이어리 550, 12도/맑음, 11분/운동\n안경에 서리는 김에서 계절이 바뀌고 있음을 느낀다. \n마스카포네 치즈는 티라미수 만들 때 쓰이지만 빵에 발라 먹어도 좋다. 베이글 반을 갈라 마스카포네 치즈와 하룻밤 재워 둔 당근라페 듬뿍 #당근라페베이글",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 베이글 1개\n- 당근 라페(당근 1/2개, 올리브오일 1T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t) \n- 마스카포네치즈 2T",
+  "steps": "1. (전날 밤) 당근 1/2개 채칼로 썰고 올리브오일 1T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t 넣고 골고루 섞는다. 하룻밤 숙성시킨다. \n2. 베이글은 반으로 자르고 전자레인지에 30초 데운다. \n3. 베이글에 마스카포네치즈 듬뿍 바르고 1의 당근 라페 얹는다. ",
   "raw": "20220921, #조식다이어리 550, 12도/맑음, 11분/운동\n\n안경에 서리는 김에서 계절이 바뀌고 있음을 느낀다. \n\n마스카포네 치즈는 티라미수 만들 때 쓰이지만 빵에 발라 먹어도 좋다. 베이글 반을 갈라 마스카포네 치즈와 하룻밤 재워 둔 당근라페 듬뿍 #당근라페베이글 \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #베이글 #당근라페 #마스카포네치즈 \n#breakfast #bagel #carrotrapees #rapees #mascarpone\n ",
   "image": "https://images.how-about-breakfast.com/images/550.jpg",
   "gallery": [
@@ -51157,13 +51157,6 @@
    "https://images.how-about-breakfast.com/images/550_2.jpg",
    "https://images.how-about-breakfast.com/images/550_3.jpg"
   ],
-  "_en": {
-   "hash": "7f53bc381152dd9abac28f5fb9f33bb2010fe03f0134a4e83b0146c36f1f76fe",
-   "title": "Carrot Rapé Bagel",
-   "intro": "20220921 #breakfastdiary 550, 12°C/clear, 11min/exercise\nI can feel the season changing in the way my glasses fog up.\nMascarpone cheese is usually used for tiramisu, but it's also great spread on bread. Split a bagel in half and pile on mascarpone cheese and carrot rapé that's been marinating overnight. #carrotrapebagel",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "당근라페베이글-베이글-당근라페"
  },
  {
