@@ -1,5 +1,34 @@
 [
  {
+  "date": "2026-09-22",
+  "date_raw": "20260922",
+  "diary_no": 1871,
+  "weather": "19도/대체로 흐림",
+  "failed": false,
+  "calories": 175,
+  "title": "팽이버섯 낫토무침",
+  "credit": "@masashi_ichiban",
+  "hashtags": [
+   "레시피",
+   "조식",
+   "조식다이어리",
+   "팽이버섯"
+  ],
+  "intro": "20260922 #조식다이어리 1843, 19도/대체로 흐림\n소면 같지만 팽이버섯, 낫토에 마요네즈를 넣어 비비는 게 킥인데 죄책감이 든다면 낫토 대신 그릭요거트를 넣자. \n약 175kcal 팽이버섯 낫토무침",
+  "ingredients": "- 팽이버섯 130g(잡았을 때 지름 5cm 정도)\n- 낫토 1개\n- 마요네즈 1T(혹은 그릭요거트 1T)\n- 대파\n- 참기름 1T",
+  "steps": "1. 팽이버섯은 찢어서 그릇에 담고 랩 씌운 후 구멍 내고 전자레인지에 1분 데운다. \n2. 낫토 1개에 (낫토에 포함된) 겨자, 마요네즈(혹은 그릭요거트) 1T 넣고 골고루 섞는다. \n3. 1의 팽이버섯 위에 2의 마요네즈 섞은 낫토, 얇게 썬 대파, (낫토에 포함된) 간장과 참기름 1t 뿌린다.",
+  "raw": "20260922 #조식다이어리 1843, 19도/대체로 흐림\n\n소면 같지만 팽이버섯, 낫토에 마요네즈를 넣어 비비는 게 킥인데 죄책감이 든다면 낫토 대신 그릭요거트를 넣자. \n\n약 175kcal 팽이버섯 낫토무침\n\n👉재료\n- 팽이버섯 130g(잡았을 때 지름 5cm 정도)\n- 낫토 1개\n- 마요네즈 1T(혹은 그릭요거트 1T)\n- 대파\n- 참기름 1T\n\n👉조리\n1. 팽이버섯은 찢어서 그릇에 담고 랩 씌운 후 구멍 내고 전자레인지에 1분 데운다. \n2. 낫토 1개에 (낫토에 포함된) 겨자, 마요네즈(혹은 그릭요거트) 1T 넣고 골고루 섞는다. \n3. 1의 팽이버섯 위에 2의 마요네즈 섞은 낫토, 얇게 썬 대파, (낫토에 포함된) 간장과 참기름 1t 뿌린다. \n\nInspired by @masashi_ichiban\n\n#조식 #레시피 #팽이버섯",
+  "permalink": "https://www.instagram.com/p/DdlbxEJnXa5/",
+  "image": "https://images.how-about-breakfast.com/images/1871.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1871.jpg",
+   "https://images.how-about-breakfast.com/images/1871_2.jpg",
+   "https://images.how-about-breakfast.com/images/1871_3.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1871.mp4",
+  "page_id": "팽이버섯-낫토무침"
+ },
+ {
   "date": "2026-09-21",
   "date_raw": "20260921",
   "diary_no": 1870,
