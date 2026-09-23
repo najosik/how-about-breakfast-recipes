@@ -1,0 +1,58 @@
+name: Instagram insights collect
+
+# Collects account/post insights into the PRIVATE insights R2 bucket (see
+# insights/README.md). This repo is public, so this job never commits and
+# never uploads artifacts - the data only ever goes to that bucket, and the
+# collector's log lines are counts only.
+
+on:
+  schedule:
+    # 21:30 UTC = 06:30 KST, so "yesterday" is complete in Instagram's numbers
+    - cron: '30 21 * * *'
+  push:
+    # dashboard file changes -> just re-upload the dashboard
+    branches: [main]
+    paths: ['insights/dashboard/**']
+  workflow_dispatch:
+    inputs:
+      full:
+        description: "Refresh every post's insights (slower)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: insights-collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install boto3
+
+      - name: Collect insights
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          INSIGHTS_R2_ENDPOINT: ${{ secrets.INSIGHTS_R2_ENDPOINT }}
+          INSIGHTS_R2_ACCESS_KEY_ID: ${{ secrets.INSIGHTS_R2_ACCESS_KEY_ID }}
+          INSIGHTS_R2_SECRET_ACCESS_KEY: ${{ secrets.INSIGHTS_R2_SECRET_ACCESS_KEY }}
+          INSIGHTS_R2_BUCKET: ${{ secrets.INSIGHTS_R2_BUCKET }}
+          MODE: ${{ github.event_name == 'push' && 'assets' || (inputs.full && 'full' || 'daily') }}
+        run: |
+          case "$MODE" in
+            assets) python insights/collect_insights.py --assets-only ;;
+            full)   python insights/collect_insights.py --full ;;
+            *)      python insights/collect_insights.py ;;
+          esac
