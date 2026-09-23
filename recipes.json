@@ -1,5 +1,80 @@
 [
  {
+  "date": "2026-09-22",
+  "date_raw": "20260922",
+  "diary_no": 1871,
+  "weather": "19도/대체로 흐림",
+  "failed": false,
+  "calories": 175,
+  "title": "팽이버섯 낫토무침",
+  "credit": "@masashi_ichiban",
+  "hashtags": [
+   "레시피",
+   "조식",
+   "조식다이어리",
+   "팽이버섯"
+  ],
+  "intro": "20260922 #조식다이어리 1843, 19도/대체로 흐림\n소면 같지만 팽이버섯, 낫토에 마요네즈를 넣어 비비는 게 킥인데 죄책감이 든다면 낫토 대신 그릭요거트를 넣자. \n약 175kcal 팽이버섯 낫토무침",
+  "ingredients": "- 팽이버섯 130g(잡았을 때 지름 5cm 정도)\n- 낫토 1개\n- 마요네즈 1T(혹은 그릭요거트 1T)\n- 대파\n- 참기름 1T",
+  "steps": "1. 팽이버섯은 찢어서 그릇에 담고 랩 씌운 후 구멍 내고 전자레인지에 1분 데운다. \n2. 낫토 1개에 (낫토에 포함된) 겨자, 마요네즈(혹은 그릭요거트) 1T 넣고 골고루 섞는다. \n3. 1의 팽이버섯 위에 2의 마요네즈 섞은 낫토, 얇게 썬 대파, (낫토에 포함된) 간장과 참기름 1t 뿌린다.",
+  "raw": "20260922 #조식다이어리 1843, 19도/대체로 흐림\n\n소면 같지만 팽이버섯, 낫토에 마요네즈를 넣어 비비는 게 킥인데 죄책감이 든다면 낫토 대신 그릭요거트를 넣자. \n\n약 175kcal 팽이버섯 낫토무침\n\n👉재료\n- 팽이버섯 130g(잡았을 때 지름 5cm 정도)\n- 낫토 1개\n- 마요네즈 1T(혹은 그릭요거트 1T)\n- 대파\n- 참기름 1T\n\n👉조리\n1. 팽이버섯은 찢어서 그릇에 담고 랩 씌운 후 구멍 내고 전자레인지에 1분 데운다. \n2. 낫토 1개에 (낫토에 포함된) 겨자, 마요네즈(혹은 그릭요거트) 1T 넣고 골고루 섞는다. \n3. 1의 팽이버섯 위에 2의 마요네즈 섞은 낫토, 얇게 썬 대파, (낫토에 포함된) 간장과 참기름 1t 뿌린다. \n\nInspired by @masashi_ichiban\n\n#조식 #레시피 #팽이버섯",
+  "permalink": "https://www.instagram.com/p/DdlbxEJnXa5/",
+  "image": "https://images.how-about-breakfast.com/images/1871.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1871.jpg",
+   "https://images.how-about-breakfast.com/images/1871_2.jpg",
+   "https://images.how-about-breakfast.com/images/1871_3.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1871.mp4",
+  "_en": {
+   "hash": "b99d3e4c56127ddc4e3d916b749c2f479de55b4eb21149890f55a043d39903da",
+   "title": "Enoki Mushroom Natto Mix",
+   "intro": "20260922 #breakfastdiary 1843, 19°C/mostly cloudy\nLooks like somen noodles, but it's enoki mushrooms — the kick is mixing in natto with mayonnaise, and if that feels like too much, swap the natto for Greek yogurt.\nAn about-175 kcal enoki mushroom natto mix.",
+   "ingredients": "- 130g enoki mushrooms (about 5cm diameter when bunched)\n- 1 pack natto\n- 1 tbsp mayonnaise (or 1 tbsp Greek yogurt)\n- Scallion\n- 1 tbsp sesame oil",
+   "steps": "1. Tear apart the enoki mushrooms, put them in a bowl, cover with plastic wrap, poke a hole in it, and microwave for 1 minute.\n2. Mix the natto pack with its included mustard packet and 1 tbsp mayonnaise (or Greek yogurt).\n3. Over the enoki mushrooms from step 1, top with the mayonnaise-mixed natto from step 2, thinly sliced scallion, the natto's included soy sauce, and 1 tsp sesame oil."
+  },
+  "page_id": "팽이버섯-낫토무침"
+ },
+ {
+  "date": "2026-09-21",
+  "date_raw": "20260921",
+  "diary_no": 1870,
+  "weather": "17도//청명함",
+  "failed": false,
+  "calories": 250,
+  "title": "케일 버터빈 샐러드볼",
+  "credit": null,
+  "hashtags": [
+   "레시피",
+   "조식",
+   "조식다이어리",
+   "케일"
+  ],
+  "intro": "20260921 #조식다이어리 1842, 17도//청명함\n녹황색 채소 가운데 루테인 함량 최상위권 케일과 단백질 비율이 월등하게 높은 버터빈으로 1인분 250kcal 케일 버터빈 샐러드볼",
+  "ingredients": "- 케일 100g(한 줌 50g)\n- 버터빈 200g(캔)\n- 파마산치즈\n- 레몬 1/4개\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 팬에 올리브오일 두르고 얇게 썬 마늘을 살짝 볶는다. \n2. 1에 물기를 제거한 버터빈 넣고 가볍게 으깨면서 2~3분 데운다. \n3. 케일은 잎만 뜯어서 넣고 1분 정도 볶는다. \n4. 불을 끄고 레몬주스(레몬 1/4개 분량) 섞은 뒤 소금과 후추로 간하고 섞는다. \n5. 접시에 담고 파마산치즈 얹는다.",
+  "raw": "20260921 #조식다이어리 1842, 17도//청명함\n\n녹황색 채소 가운데 루테인 함량 최상위권 케일과 단백질 비율이 월등하게 높은 버터빈으로 1인분 250kcal 케일 버터빈 샐러드볼\n\n👉재료(2인분)\n- 케일 100g(한 줌 50g)\n- 버터빈 200g(캔)\n- 파마산치즈\n- 레몬 1/4개\n- 올리브오일\n- 소금\n- 후추\n\n👉조리\n1. 팬에 올리브오일 두르고 얇게 썬 마늘을 살짝 볶는다. \n2. 1에 물기를 제거한 버터빈 넣고 가볍게 으깨면서 2~3분 데운다. \n3. 케일은 잎만 뜯어서 넣고 1분 정도 볶는다. \n4. 불을 끄고 레몬주스(레몬 1/4개 분량) 섞은 뒤 소금과 후추로 간하고 섞는다. \n5. 접시에 담고 파마산치즈 얹는다. \n\n#조식 #레시피 #케일",
+  "permalink": "https://www.instagram.com/p/DdjGw5lHbwE/",
+  "image": "https://images.how-about-breakfast.com/images/1870.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1870.jpg",
+   "https://images.how-about-breakfast.com/images/1870_2.jpg",
+   "https://images.how-about-breakfast.com/images/1870_3.jpg",
+   "https://images.how-about-breakfast.com/images/1870_4.jpg",
+   "https://images.how-about-breakfast.com/images/1870_5.jpg",
+   "https://images.how-about-breakfast.com/images/1870_6.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1870.mp4",
+  "_en": {
+   "hash": "722f2575f04346835fc6a09db471e2229f796632ffff4123f1afcbae6335651c",
+   "title": "Kale Butter Bean Salad Bowl",
+   "intro": "20260921 #breakfastdiary 1842, 17°C/clear\nA 250 kcal single-serving kale butter bean salad bowl, made with kale — among the highest in lutein of all green-yellow vegetables — and butter beans, which are exceptionally high in protein.",
+   "ingredients": "- 100g kale (a handful, 50g)\n- 200g butter beans (canned)\n- Parmesan cheese\n- 1/4 lemon\n- Olive oil\n- Salt\n- Pepper",
+   "steps": "1. Heat olive oil in a pan and lightly sauté thinly sliced garlic.\n2. Add the drained butter beans and warm for 2-3 minutes, lightly mashing as you go.\n3. Tear off just the kale leaves, add them in, and sauté for about a minute.\n4. Turn off the heat, mix in lemon juice (from 1/4 lemon), then season with salt and pepper and mix.\n5. Plate and top with Parmesan cheese."
+  },
+  "page_id": "케일-버터빈-샐러드볼"
+ },
+ {
   "date": "2026-09-20",
   "date_raw": "20260920",
   "diary_no": 1869,
@@ -51026,7 +51101,7 @@
   "weather": "21도/대체로맑음",
   "failed": false,
   "calories": null,
-  "title": "한입마스카포네치즈피스타치오민트청무화과샐러드 청무화과 무화과",
+  "title": "마스카포네치즈와 피스타치오를 곁들인 청무화과 샐러드",
   "credit": null,
   "hashtags": [
    "applemint",
@@ -51053,8 +51128,8 @@
    "홈쿡"
   ],
   "intro": "20220924, #조식다이어리 553, 21도/대체로맑음\n성공에는 운이 작용하지만, 실패하지 않는 것에는 실력이 필요하다는 생각이 들었습니다. \n이림(이미커피 대표) 롱블랙 @longblack.co \n혹시나 성공할까봐, 성공하는 사람들의 일곱 가지 습관 따위 읽지 않았지만, 실패하고 싶지는 않으니 실력이 필요하다. \n세상에서 제일 예쁜 제철 청무화과를 씻어, 꼭지를 자른다. 가로세로 칼집을 낸 뒤 마스카포네 치즈를 채워 넣고 피스타치오, 애플민트를 잘게 다져 올린다. 먹기 전에 꿀이나 올리고당을 휘익 #한입마스카포네치즈피스타치오민트청무화과샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 청무화과 7개\n- 마스카포네치즈 2T\n- 피스타치오 1T\n- 애플민트 ",
+  "steps": "1. 청무화과는 깨끗하게 씻은 뒤 꼭지를 자른다. \n2. 꼭지 자른 부위에 가로, 세로 칼집을 낸 뒤 마스카포네치즈를 채워넣고 다진 피스타치오, 애플민트를 다져서 얹는다. 꿀이나 올리고당, 메이플시럽을 얹어서 먹으면 좋을 것 같다. ",
   "raw": "20220924, #조식다이어리 553, 21도/대체로맑음\n\n성공에는 운이 작용하지만, 실패하지 않는 것에는 실력이 필요하다는 생각이 들었습니다. \n이림(이미커피 대표) 롱블랙 @longblack.co \n\n혹시나 성공할까봐, 성공하는 사람들의 일곱 가지 습관 따위 읽지 않았지만, 실패하고 싶지는 않으니 실력이 필요하다. \n\n세상에서 제일 예쁜 제철 청무화과를 씻어, 꼭지를 자른다. 가로세로 칼집을 낸 뒤 마스카포네 치즈를 채워 넣고 피스타치오, 애플민트를 잘게 다져 올린다. 먹기 전에 꿀이나 올리고당을 휘익 #한입마스카포네치즈피스타치오민트청무화과샐러드\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #청무화과 #무화과 #마스카포네치즈 #피스타치오 #애플민트\n#breakfast #figs #salad #figsalad #mascarpone #applemint #pistachio ",
   "image": "https://images.how-about-breakfast.com/images/553.jpg",
   "gallery": [
@@ -51064,11 +51139,11 @@
    "https://images.how-about-breakfast.com/images/553_4.jpg"
   ],
   "_en": {
-   "hash": "a8b07f8368c739516dd8bc19c263413881ee41689f56c50ff3b74da6add56a9d",
-   "title": "One-Bite Green Fig with Mascarpone, Pistachio, and Mint",
-   "intro": "20220924 #breakfastdiary 553, 21°C/mostly clear\nIt occurred to me that luck plays a part in success, but avoiding failure takes real skill.\nYi Rim (CEO of Imi Coffee), Longblack, @longblack.co\nI never read The 7 Habits of Highly Effective People for fear it might jinx my chances of success, but since I don't want to fail, skill is what's needed.\nWash the prettiest green figs of the season and trim the stems. Score them crosswise, fill with mascarpone cheese, and top with finely chopped pistachios and apple mint. A quick drizzle of honey or oligosaccharide syrup right before eating. #onebitemascarponepistachiomintgreenfigsalad",
-   "ingredients": "",
-   "steps": ""
+   "hash": "b56f312cc458bfbb7d468ea98fc75e74ad280dd465bf2505874dfe0634ea057f",
+   "title": "Green Fig Salad with Mascarpone and Pistachio",
+   "intro": "20220924 #breakfastdiary 553, 21°C/mostly clear\nLuck plays a part in success, but not failing takes real skill — that's the thought I had.\nLee Rim (CEO of Yimi Coffee), Long Black @longblack.co\nNot because I was worried about succeeding did I skip reading things like The 7 Habits of Highly Effective People — but since I don't want to fail, skill is what's needed.\nWash the prettiest, most in-season green figs in the world and trim the stems. Score them crosswise, fill with mascarpone cheese, and top with finely chopped pistachio and apple mint. A drizzle of honey or oligosaccharide syrup right before eating #onebitemascarponepistachiomintgreenfigsalad",
+   "ingredients": "- 7 green figs\n- 2 tbsp mascarpone cheese\n- 1 tbsp pistachio\n- Apple mint",
+   "steps": "1. Wash the green figs well and trim the stems.\n2. Score the trimmed end crosswise, fill with mascarpone cheese, and top with chopped pistachio and apple mint. A drizzle of honey, oligosaccharide syrup, or maple syrup on top would be nice."
   },
   "page_id": "한입마스카포네치즈피스타치오민트청무화과샐러드-청무화과-무화과"
  },
@@ -68589,7 +68664,7 @@
   "weather": "17도/맑음, 29분/운동",
   "failed": false,
   "calories": null,
-  "title": "두부샐러드 아이폰15 모닝리추얼",
+  "title": "버섯 두부 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68616,9 +68691,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210924, #조식다이어리 220, 17도/맑음, 29분/운동\n끓는 물에 두부를 넣어 따뜻하게 데운다. 속까지 따뜻해지려면 한참 데워야 한다. 물에서 꺼낸 두부는 물이 흐르니 키친타월 위에 잠시 둔다.\n두부를 접시에 올리고 속을 파낸 뒤 한쪽에는 올리브오일에 데친 버섯을, 다른 한쪽에는 올리브오일과 발사믹, 파슬리와 후추후추 #두부샐러드\n@b.read_book 의 ‘나의 로컬 푸드 샐러드’ 레시피입니다. 이선혜 선생님의 샐러드 트릴로지의 완결편입니다. 나조식 타임라인의 절반 정도는 이 트릴로지에서 기원합니다. \n#아이폰15 의 변화 가운데 하나는 집중모드다. 수면, 업무, 피트니스 등의 상황에서 외부의 연락으로부터 방해받지 않을 자유를 보장해주는 집중모드가 강화됐다. \n직장인들에겐 외부나 동료 특히 상사의 호출로부터 자유로울 1~2시간 정도 덩어리의 시간이 필요하다는 글을 읽은 적이 있다. \n아이폰은 늘 생활 속 작은 부분을 파고 든다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210924, #조식다이어리 220, 17도/맑음, 29분/운동\n끓는 물에 두부를 넣어 따뜻하게 데운다. 속까지 따뜻해지려면 한참 데워야 한다. 물에서 꺼낸 두부는 물이 흐르니 키친타월 위에 잠시 둔다.\n두부를 접시에 올리고 속을 파낸 뒤 한쪽에는 올리브오일에 데친 버섯을, 다른 한쪽에는 올리브오일과 발사믹, 파슬리와 후추후추 #두부샐러드\n(@b.read_book 의 ‘나의 로컬 푸드 샐러드’ 레시피입니다. 이선혜 선생님의 샐러드 트릴로지의 완결편입니다. 나조식 타임라인의 절반 정도는 이 트릴로지에서 기원합니다.)\n\n#아이폰15 의 변화 가운데 하나는 집중모드다. 수면, 업무, 피트니스 등의 상황에서 외부의 연락으로부터 방해받지 않을 자유를 보장해주는 집중모드가 강화됐다. \n직장인들에겐 외부나 동료 특히 상사의 호출로부터 자유로울 1~2시간 정도 덩어리의 시간이 필요하다는 글을 읽은 적이 있다. \n아이폰은 늘 생활 속 작은 부분을 파고 든다.",
+  "ingredients": "- 두부 1모\n- 느타리버섯 1컵\n- 올리브오일\n- 발사믹\n- 소금\n- 후추",
+  "steps": "1. 끓는 물에 두부 1모를 넣어 따뜻하게 데운다. \n2. 팬에 올리브오일 두르고 소금, 후추 뿌려서 느타리버섯을 볶는다. \n3. 두부를 접시에 담고 반으로 자르고 속을 파낸다음 한쪽에는 2의 버섯을, 다른 한쪽에는 올리브오일, 발사믹, 다진 파슬리와 후추 뿌린다.  ",
   "raw": "20210924, #조식다이어리 220, 17도/맑음, 29분/운동\n\n끓는 물에 두부를 넣어 따뜻하게 데운다. 속까지 따뜻해지려면 한참 데워야 한다. 물에서 꺼낸 두부는 물이 흐르니 키친타월 위에 잠시 둔다.\n두부를 접시에 올리고 속을 파낸 뒤 한쪽에는 올리브오일에 데친 버섯을, 다른 한쪽에는 올리브오일과 발사믹, 파슬리와 후추후추 #두부샐러드\n@b.read_book 의 ‘나의 로컬 푸드 샐러드’ 레시피입니다. 이선혜 선생님의 샐러드 트릴로지의 완결편입니다. 나조식 타임라인의 절반 정도는 이 트릴로지에서 기원합니다. \n\n#아이폰15 의 변화 가운데 하나는 집중모드다. 수면, 업무, 피트니스 등의 상황에서 외부의 연락으로부터 방해받지 않을 자유를 보장해주는 집중모드가 강화됐다. \n직장인들에겐 외부나 동료 특히 상사의 호출로부터 자유로울 1~2시간 정도 덩어리의 시간이 필요하다는 글을 읽은 적이 있다. \n아이폰은 늘 생활 속 작은 부분을 파고 든다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #두부 #버섯 #나의로컬푸드샐러드 \n#breakfast #recipe #salad #dubu #tofu #mushroom   ",
   "image": "https://images.how-about-breakfast.com/images/220.jpg",
   "gallery": [
@@ -68627,11 +68702,11 @@
    "https://images.how-about-breakfast.com/images/220_3.jpg"
   ],
   "_en": {
-   "hash": "d73918ad6291c6c6ebe011a9753c35eeaa2b0df257b2955ca789674ad4b31974",
-   "title": "Tofu Salad, iPhone 15, Morning Ritual",
-   "intro": "20210924, #breakfastdiary 220, 17°C/clear, 29min/exercise\nWarm the tofu in boiling water. It takes quite a while for the warmth to reach the center. Once it's out of the water, let it sit briefly on a paper towel to drain. \nPlate the tofu, scoop out the center, and fill one side with mushrooms blanched in olive oil, the other with olive oil, balsamic, parsley, and pepperpepper #tofusalad\nThis is @b.read_book's 'My Local Food Salad' recipe — the final chapter of Teacher Lee Sun-hye's salad trilogy. About half of my breakfast diary timeline traces back to this trilogy. \nOne of the changes with the #iphone15 is Focus mode. It's been strengthened to guarantee freedom from outside interruptions during sleep, work, fitness, and other situations. \nI once read that office workers need a solid one- to two-hour block of time free from outside calls, especially from colleagues — bosses above all. \nThe iPhone always finds its way into the small corners of everyday life.",
-   "ingredients": "",
-   "steps": ""
+   "hash": "496d19144ae9a6f08478958deb713fe71696dcf6f9790b1b807c33fcc580cf31",
+   "title": "Mushroom Tofu Salad",
+   "intro": "20210924 #breakfastdiary 220, 17°C/clear, 29 min exercise\nWarm the tofu in boiling water. It takes a good while for the warmth to reach the center. Once out of the water, the tofu will drip, so set it briefly on a paper towel.\nPlate the tofu, scoop out the center, and on one side put mushrooms blanched in olive oil, and on the other, olive oil and balsamic, parsley, and plenty of pepper #tofusalad\n(This is @b.read_book's 'My Local Food Salad' recipe. It's the final installment of teacher Lee Seon-hye's salad trilogy — roughly half of the Najosik timeline traces back to this trilogy.)\n\nOne of the changes in the #iPhone15 is Focus mode. It's been strengthened to guarantee freedom from outside interruptions during sleep, work, fitness, and other situations.\nI once read that office workers need a solid one-to-two-hour block of time free from calls from the outside world or from colleagues — especially from a boss.\nThe iPhone always digs into the small corners of daily life.",
+   "ingredients": "- 1 block tofu\n- 1 cup oyster mushrooms\n- Olive oil\n- Balsamic vinegar\n- Salt\n- Pepper",
+   "steps": "1. Warm the block of tofu in boiling water.\n2. Heat olive oil in a pan, season with salt and pepper, and sauté the oyster mushrooms.\n3. Plate the tofu, cut it in half, scoop out the center, then top one side with the mushrooms from step 2, and the other with olive oil, balsamic vinegar, chopped parsley, and pepper."
   },
   "page_id": "두부샐러드-아이폰15-모닝리추얼"
  },
@@ -85957,15 +86032,15 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 아보카도",
+  "title": "시금치 아보카도 샐러드",
   "credit": null,
   "hashtags": [
    "아보카도",
    "오늘의조식"
   ],
   "intro": "#오늘의조식 으로 올리브 오일을 두른 팬에 양파, 호두, 시금치를 살짝 데친 후, 아보카도를 곁들여 먹었는데,\n#아보카도 가 기후위기에 미치는 영향에 대해서 떠올려 보니 자괴감 들고, 그래서 내일 (그리고 앞으로 지속적으로) 전지구적 ‘기후행동의 날’에 나는 어떻게 참여할 것인가에 대한 생각 중,\n*출처: 연합뉴스",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 시금치 2~3뿌리\n- 양파 1/2개\n- 아보카도 1/2개\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 파마산치즈\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 팬에 올리브오일 두른 후 길게 썬 양파와 볶는다. \n2. 1에 손질한 시금치를 넣고 1분 내외로 데친다. \n3. 접시에 2의 시금치, 양파 담고 아보카도 썰어서 얹는다. \n4. 파마산치즈 잘라서 얹은 다음 드레싱과 후추 뿌린다. ",
   "raw": "#오늘의조식 으로 올리브 오일을 두른 팬에 양파, 호두, 시금치를 살짝 데친 후, 아보카도를 곁들여 먹었는데,\n\n#아보카도 가 기후위기에 미치는 영향에 대해서 떠올려 보니 자괴감 들고, 그래서 내일 (그리고 앞으로 지속적으로) 전지구적 ‘기후행동의 날’에 나는 어떻게 참여할 것인가에 대한 생각 중,\n*출처: 연합뉴스",
   "pre_label": "D-141",
   "image": "https://images.how-about-breakfast.com/images/pre-141.jpg",
@@ -85976,11 +86051,11 @@
    "https://images.how-about-breakfast.com/images/pre-141_4.jpg"
   ],
   "_en": {
-   "hash": "32086414d32e8eb8b2881a789b250aa316787afcbc08da7547a2ea40c3d26228",
-   "title": "Today's Breakfast: Avocado",
-   "intro": "For #todaysbreakfast, I sautéed onion, walnut, and spinach lightly in a pan with olive oil and served it with avocado —\nbut then I thought about avocado's impact on the climate crisis and felt a pang of guilt, so now I'm thinking about how I'll take part in tomorrow's (and going forward, ongoing) global 'Climate Action Day.'\n*Source: Yonhap News",
-   "ingredients": "",
-   "steps": ""
+   "hash": "74b27b744f9e3ee3c0a11165304bcaeee7291db64149dcb5725940fb28a0d21e",
+   "title": "Spinach Avocado Salad",
+   "intro": "For #todaysbreakfast, I lightly sautéed onion, walnut, and spinach in an olive-oiled pan, then had it with avocado —\nbut thinking about the climate impact of #avocado left me feeling a pang of guilt, so I've been thinking about how I'll take part in tomorrow's (and going forward, ongoing) global 'Climate Action Day.'\n*Source: Yonhap News",
+   "ingredients": "- 2-3 spinach stems\n- 1/2 onion\n- 1/2 avocado\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole-grain mustard)\n- Parmesan cheese\n- Olive oil\n- Salt\n- Pepper",
+   "steps": "1. Heat olive oil in a pan and sauté long-sliced onion.\n2. Add the trimmed spinach to step 1 and blanch for about a minute.\n3. Plate the spinach and onion from step 2 and top with sliced avocado.\n4. Shave Parmesan cheese on top, then drizzle with the dressing and pepper."
   },
   "page_id": "오늘의조식-아보카도",
   "essay_candidate": true,
