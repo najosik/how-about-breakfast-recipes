@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 외부 스크립트·인라인 스크립트 금지, 이미지는 https만 허용 -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>What's On in Seoul · 서울에서 지금 뭐하지</title>
+  <meta name="description" content="Concerts, exhibitions, festivals and other culture events happening in Seoul today, this weekend and this month.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div>
+        <h1 id="site-title">What's On in Seoul</h1>
+        <p id="site-sub" class="sub"></p>
+      </div>
+      <button id="lang-toggle" class="lang-btn" type="button">한국어</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p id="demo-banner" class="banner" hidden></p>
+
+    <section class="filters" aria-label="Filters">
+      <div class="filter-row">
+        <span class="filter-label" id="lbl-when"></span>
+        <div id="when-chips" class="chips" role="group" aria-labelledby="lbl-when"></div>
+      </div>
+      <div class="filter-row">
+        <span class="filter-label" id="lbl-type"></span>
+        <div id="cat-chips" class="chips" role="group" aria-labelledby="lbl-type"></div>
+      </div>
+      <div class="filter-row controls">
+        <label class="field">
+          <span id="lbl-search" class="visually-hidden"></span>
+          <input id="q" type="search" maxlength="50" autocomplete="off">
+        </label>
+        <label class="field">
+          <span id="lbl-district" class="visually-hidden"></span>
+          <select id="district"></select>
+        </label>
+        <label class="field">
+          <span id="lbl-sort" class="visually-hidden"></span>
+          <select id="sort"></select>
+        </label>
+        <label class="check">
+          <input id="free" type="checkbox">
+          <span id="lbl-free"></span>
+        </label>
+      </div>
+    </section>
+
+    <div class="result-bar">
+      <p id="count" aria-live="polite"></p>
+      <button id="reset" class="link-btn" type="button"></button>
+    </div>
+    <p id="ko-note" class="note"></p>
+
+    <ul id="list" class="grid"></ul>
+    <p id="empty" class="empty" hidden></p>
+    <div class="more-wrap"><button id="more" class="more-btn" type="button" hidden></button></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p id="updated"></p>
+      <p id="source"></p>
+    </div>
+  </footer>
+
+  <dialog id="detail" aria-labelledby="d-title">
+    <article class="detail">
+      <button id="d-close" class="close-btn" type="button" aria-label="Close">×</button>
+      <div id="d-body"></div>
+    </article>
+  </dialog>
+
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
