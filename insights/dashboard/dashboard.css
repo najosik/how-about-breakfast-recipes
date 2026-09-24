@@ -144,3 +144,13 @@ table.data img.thumb { width: 40px; height: 40px; object-fit: cover; border-radi
 .summary:empty { display: none; }
 table.data tr.highlight td { background: var(--grid); font-weight: 600; }
 #tab-analysis > .card { margin-bottom: 12px; }
+.strategy { display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-top: 1px solid var(--grid); }
+.strategy:first-child { border-top: 0; padding-top: 0; }
+.strategy-rank { flex: none; width: 24px; height: 24px; border-radius: 50%; border: 1px solid var(--accent); display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; }
+.sub-head { font-size: 13px; color: var(--text-secondary); margin: 12px 0 4px; }
+table.data.factor td.bar-cell { min-width: 150px; }
+.bar-track { display: inline-block; width: 100px; height: 8px; background: var(--grid); border-radius: 4px; vertical-align: middle; margin-right: 8px; overflow: hidden; }
+.bar-fill { display: block; height: 100%; background: var(--series-1); border-radius: 4px; }
+.bar-value { font-variant-numeric: tabular-nums; }
+table.data tr.small-n td { color: var(--text-muted); }
+table.data tr.small-n .bar-fill { opacity: .45; }
