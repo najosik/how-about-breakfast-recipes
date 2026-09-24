@@ -25328,7 +25328,7 @@
   "weather": "19도/대체로 맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "흑백요리사 라면",
+  "title": "안성재 셰프의 마늘 라면",
   "credit": null,
   "hashtags": [
    "라면",
@@ -25339,8 +25339,8 @@
    "흑백요리사"
   ],
   "intro": "20240925 #조식다이어리 1190, 19도/대체로 맑음, 20분/운동(M) \n넷플릭스 #흑백요리사 가 화제몰이 중인 가운데 심사위원으로 출연했던 안성재 셰프의 인터뷰 영상을 흥미롭게 봤다. 국내 최초 미슐랭 3스타 셰프라고 하니 모든 걸 한 번에 이루었을 것 같지만 세상에 그렇게 쉽게 되는 건 없다. \n아무튼 그가 백종원씨 유튜브 채널에 출연해서 가볍게 선보인 통마늘이 들어간 라면이 흥미로웠다. 무려 미슐랭 3스타 셰프의 라면 레시피다. \n마늘 덕분에 의외로 구수해진 국물이 매력적인 라면이 됐다. \n단, 조식으로 라면을 먹으려면 미리 마운틴 클라이머 100개 정도 하고 빈 속을 셀러리 같은 녹색 야채로 잔뜩 채워줘야 한다.",
-  "ingredients": "빽라면(물론 일반 라면도 된다.)\n통마늘 2개\n홍고추 1개\n\n👉이렇게\n통마늘은 윗부분 잘라내고 200도 에프에 20분 굽는다.   \n냄비에 물 500ml 붓고 구운 마늘 넣고 끓인다. 물이 끓으면 마늘만 발라내고 으깬다. \n스프 넣고 면 넣고 취향대로 끓인다.\n그릇에 담고 재미난 식감을 위해 라면 봉지에 남은 라면 부스러기 얹는다. \n허전해서 홍고추 잘라서 얹었다. \n\n#조식 #레시피 #미라클모닝 #라면",
-  "steps": null,
+  "ingredients": "- 빽라면(물론 일반 라면도 된다.) 1개\n- 통마늘 2개\n- 홍고추 1개",
+  "steps": "1. 통마늘은 윗부분 잘라내고 200도 에프에 20분 굽는다.   \n2. 냄비에 물 500ml 붓고 1의 구운 마늘 으깨서 넣고 끓인다.\n3. 라면수프와 면 넣고 취향대로 라면을 끓인다.\n4. 라면을 그릇에 담고 재미난 식감을 위해 라면 봉지에 남은 라면 부스러기 얹는다. \n5. 허전해서 홍고추 잘라서 얹었다. ",
   "raw": "20240925 #조식다이어리 1190, 19도/대체로 맑음, 20분/운동(M) \n\n넷플릭스 #흑백요리사 가 화제몰이 중인 가운데 심사위원으로 출연했던 안성재 셰프의 인터뷰 영상을 흥미롭게 봤다. 국내 최초 미슐랭 3스타 셰프라고 하니 모든 걸 한 번에 이루었을 것 같지만 세상에 그렇게 쉽게 되는 건 없다. \n아무튼 그가 백종원씨 유튜브 채널에 출연해서 가볍게 선보인 통마늘이 들어간 라면이 흥미로웠다. 무려 미슐랭 3스타 셰프의 라면 레시피다. \n마늘 덕분에 의외로 구수해진 국물이 매력적인 라면이 됐다. \n\n단, 조식으로 라면을 먹으려면 미리 마운틴 클라이머 100개 정도 하고 빈 속을 셀러리 같은 녹색 야채로 잔뜩 채워줘야 한다. \n\n👉재료는\n빽라면(물론 일반 라면도 된다.)\n통마늘 2개\n홍고추 1개\n\n👉이렇게\n통마늘은 윗부분 잘라내고 200도 에프에 20분 굽는다.   \n냄비에 물 500ml 붓고 구운 마늘 넣고 끓인다. 물이 끓으면 마늘만 발라내고 으깬다. \n스프 넣고 면 넣고 취향대로 끓인다.\n그릇에 담고 재미난 식감을 위해 라면 봉지에 남은 라면 부스러기 얹는다. \n허전해서 홍고추 잘라서 얹었다. \n\n#조식 #레시피 #미라클모닝 #라면",
   "image": "https://images.how-about-breakfast.com/images/1190.jpg",
   "gallery": [
@@ -25349,13 +25349,6 @@
    "https://images.how-about-breakfast.com/images/1190_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1190.mp4",
-  "_en": {
-   "hash": "d88c269a7042898aac9b62dd5ed2927a2a768c7345c3f6f80550aebaa53bd161",
-   "title": "Culinary Class Wars ramyeon",
-   "intro": "20240925 #breakfastdiary 1190, 19°C/mostly clear, 20 min/exercise(M) \nWhile Netflix's #CulinaryClassWars is making waves, I watched an interview clip of Chef Sung-jae Ahn, who appeared as a judge, with interest. Being Korea's first Michelin 3-star chef, you'd think everything came easily to him, but nothing in the world comes that easily. \nAnyway, the whole-garlic ramyeon he casually made on Baek Jong-won's YouTube channel caught my interest. This is, after all, a ramyeon recipe from a Michelin 3-star chef. \nThanks to the garlic, the broth turns unexpectedly savory, making for an appealing ramyeon. \nThough, if you want to eat ramyeon for breakfast, you'd better do about 100 mountain climbers beforehand and fill your empty stomach with plenty of green vegetables like celery.",
-   "ingredients": "Baek's ramyeon (regular ramyeon works fine too)\nWhole garlic cloves, 2\nRed chili pepper, 1\n\n👉Like this\nCut the top off the whole garlic cloves and roast at 200°C for 20 minutes.\nPour 500ml water into a pot, add the roasted garlic, and bring to a boil. Once boiling, remove just the garlic and mash it.\nAdd the soup base, add the noodles, and cook to taste.\nPlate it, and for a fun texture, sprinkle on the ramyeon crumbs left in the bag.\nFelt like something was missing, so I sliced up a red chili pepper and added it.\n\n#breakfast #recipe #miraclemorning #ramyeon",
-   "steps": ""
-  },
   "page_id": "흑백요리사-라면"
  },
  {
