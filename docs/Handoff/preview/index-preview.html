@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<base href="../../../">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>[검토용 시안] 날마다 조식 — 메인 리뉴얼 (B안 아침 잡지)</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@400;500;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  /* Renewal(B안) 전용 토큰 — 기존 --teal 계열과 별도로 두어, 이 페이지가
+     그대로 재사용하는 모달(Shared.openModal)의 기존 배색을 건드리지 않는다. */
+  :root{
+    --pv-green:#55795E;
+    --pv-green-dark:#3F5E47;
+    --pv-green-deep:#3A5541;
+    --pv-mint:#EBF1EA;
+    --pv-mint-skip:#D4DDD3;
+    --pv-paper:#FBFBF8;
+    --pv-ink:#1C1C1A;
+    --pv-text-2:#4A4943;
+    --pv-text-3:#6B695F;
+    --pv-rule:#D9D8D2;
+  }
+  .pv-banner{
+    background:#3A3934; color:#F5E9C9; font-size:13px; text-align:center;
+    padding:8px 16px; position:sticky; top:0; z-index:50;
+  }
+  .pv-page{
+    background:var(--pv-paper); color:var(--pv-ink);
+    font-family:'Noto Sans KR','Apple SD Gothic Neo',sans-serif; word-break:keep-all;
+  }
+  .pv-page a{ color:var(--pv-green-dark); text-decoration:none; }
+  .pv-page a:hover{ color:var(--pv-green-deep); }
+  .pv-page h1, .pv-page h2{ font-family:'Noto Serif KR', serif; margin:0; }
+  .pv-num{ font-family:'Fraunces', serif; }
+  .pv-wrap{ max-width:1280px; margin:0 auto; padding:0 24px; }
+
+  /* header */
+  .pv-header{ padding:16px 24px 0; max-width:1280px; margin:0 auto; }
+  .pv-navrow{ display:flex; align-items:center; justify-content:space-between; height:44px; font-size:13.5px; }
+  .pv-nav{ display:flex; gap:22px; flex-wrap:wrap; }
+  .pv-nav a{ color:var(--pv-ink); }
+  .pv-nav a:hover{ color:var(--pv-green-dark); text-decoration:underline; }
+  .pv-langtoggle{ display:flex; align-items:center; gap:12px; }
+  .pv-langtoggle button{ border:0; background:transparent; font:inherit; font-size:13.5px; color:var(--pv-text-3); cursor:pointer; padding:6px; min-height:44px; }
+  .pv-langtoggle button.active{ color:var(--pv-ink); font-weight:700; }
+  .pv-langtoggle span{ color:#B5B3AA; }
+  .pv-titleblock{
+    border-top:3px solid var(--pv-ink); border-bottom:1px solid var(--pv-ink);
+    padding:16px 0 12px; display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap;
+  }
+  .pv-logo a{ font-size:64px; font-weight:900; line-height:0.95; letter-spacing:-0.03em; color:var(--pv-ink); }
+  .pv-kicker{ display:flex; flex-direction:column; align-items:flex-end; gap:4px; font-size:13.5px; color:var(--pv-text-2); text-align:right; padding-bottom:6px; }
+  .pv-kicker-en{ font-family:'Fraunces', serif; font-style:italic; font-size:17px; color:var(--pv-ink); }
+  .pv-kicker-total b{ color:var(--pv-green-dark); }
+  .pv-search{ display:flex; align-items:center; gap:14px; border-bottom:1px solid var(--pv-ink); height:64px; }
+  .pv-search svg{ flex:0 0 auto; }
+  .pv-search-label{ font-family:'Noto Serif KR', serif; font-weight:700; font-size:16px; white-space:nowrap; }
+  .pv-search input{ flex:1 1 auto; min-width:0; height:100%; border:0; background:transparent; font:inherit; font-size:16px; color:var(--pv-ink); }
+  .pv-search input:focus{ outline:2px solid var(--pv-green); outline-offset:-2px; }
+  .pv-search-btn{ height:44px; padding:0 22px; border:0; background:var(--pv-green); color:#fff; font:inherit; font-size:14px; font-weight:700; cursor:pointer; }
+  .pv-search-btn:hover{ background:var(--pv-green-dark); }
+
+  /* cover + otd list */
+  .pv-cover-grid{ max-width:1280px; margin:0 auto; padding:40px 24px 56px; display:grid; grid-template-columns:7fr 5fr; gap:32px; }
+  .pv-cover-photo{ position:relative; }
+  .pv-cover-photo img{ display:block; width:100%; height:420px; object-fit:cover; background:var(--pv-mint); }
+  .pv-cover-stamp{
+    position:absolute; left:-12px; bottom:-22px; background:var(--pv-paper);
+    padding:12px 18px 0 12px; display:flex; align-items:flex-end; gap:10px;
+  }
+  .pv-cover-stamp .pv-num{ font-size:88px; font-weight:800; line-height:0.8; color:var(--pv-green); }
+  .pv-cover-stamp span.pv-cover-stamp-label{ font-size:12px; line-height:1.4; color:var(--pv-text-2); }
+  .pv-cover-body{ padding-top:32px; display:flex; flex-direction:column; gap:8px; }
+  .pv-cover-eyebrow{ font-size:12.5px; letter-spacing:0.12em; color:var(--pv-green-dark); font-weight:700; }
+  .pv-cover-title{ font-size:32px; font-weight:900; line-height:1.25; }
+  .pv-cover-link{ font-size:14px; font-weight:500; }
+  .pv-cover-empty{ padding:32px 0; color:var(--pv-text-3); font-size:15px; }
+
+  .pv-otdlist{ display:flex; flex-direction:column; border-top:3px solid var(--pv-ink); }
+  .pv-otdlist-head{ padding:14px 0; display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--pv-ink); }
+  .pv-otdlist-head h2{ font-size:21px; font-weight:900; }
+  .pv-otdlist-head span{ font-size:12.5px; color:var(--pv-text-3); }
+  .pv-otd-row{ min-height:84px; display:flex; align-items:center; gap:16px; border-bottom:1px solid var(--pv-rule); text-decoration:none; color:var(--pv-ink); padding:8px 0; }
+  .pv-otd-row:hover{ background:var(--pv-mint); }
+  .pv-otd-row.is-cover .pv-otd-year{ color:var(--pv-green); }
+  .pv-otd-year{ flex:0 0 auto; white-space:nowrap; font-size:20px; font-weight:800; color:#B5B3AA; }
+  .pv-otd-title{ flex:1 1 auto; font-family:'Noto Serif KR', serif; font-size:16px; font-weight:700; line-height:1.4; }
+  .pv-otd-sib{ font-family:'Noto Sans KR',sans-serif; font-size:12px; font-weight:400; color:var(--pv-text-3); margin-left:6px; white-space:nowrap; }
+  .pv-otd-row img{ width:60px; height:60px; object-fit:cover; flex:0 0 auto; }
+  .pv-otd-empty .pv-otd-title{ color:var(--pv-text-3); font-family:inherit; font-weight:400; font-size:14px; }
+
+  /* editor's note */
+  .pv-editor{ max-width:1280px; margin:0 auto; padding:48px 24px; border-top:1px solid var(--pv-ink); display:grid; grid-template-columns:220px 1fr; gap:24px; }
+  .pv-editor-label{ font-size:12.5px; letter-spacing:0.12em; font-weight:700; color:var(--pv-green-dark); }
+  .pv-editor-quote{ margin:0 0 16px; font-family:'Noto Serif KR', serif; font-size:26px; line-height:1.55; font-weight:400; }
+  .pv-editor-actions{ display:flex; align-items:center; gap:16px; }
+  .pv-editor-byline{ font-size:14px; color:var(--pv-text-2); }
+  .pv-editor-toggle{ min-height:44px; padding:0 16px; border:1px solid var(--pv-ink); background:transparent; font:inherit; font-size:13.5px; color:var(--pv-ink); cursor:pointer; }
+  .pv-editor-toggle:hover{ background:var(--pv-mint); }
+  .pv-editor-more{ margin-top:16px; font-size:15px; line-height:1.85; color:#3A3934; }
+  .pv-editor-more p{ margin:0 0 12px; }
+  .pv-editor-more p:last-child{ margin-bottom:0; }
+
+  /* heatmap */
+  .pv-ledger{ background:var(--pv-mint); padding:56px 24px 64px; }
+  .pv-ledger-inner{ max-width:1280px; margin:0 auto; display:flex; flex-direction:column; gap:24px; }
+  .pv-ledger-head{ display:flex; align-items:flex-end; justify-content:space-between; gap:24px; flex-wrap:wrap; border-bottom:1px solid var(--pv-ink); padding-bottom:16px; }
+  .pv-ledger-stat{ display:flex; align-items:flex-end; gap:20px; }
+  .pv-ledger-pct{ font-size:60px; font-weight:800; line-height:0.8; color:var(--pv-green); }
+  .pv-ledger-head h2{ font-size:21px; font-weight:900; margin-bottom:4px; }
+  .pv-ledger-sub{ font-size:13.5px; color:var(--pv-text-2); }
+  .pv-year-tabs{ display:flex; gap:2px; flex-wrap:wrap; }
+  .pv-year-tabs button{ min-height:44px; padding:0 10px; border:0; background:transparent; font-family:'Fraunces', serif; font-size:15px; color:var(--pv-text-3); cursor:pointer; text-underline-offset:8px; text-decoration-thickness:2px; }
+  .pv-year-tabs button.active{ color:var(--pv-ink); font-weight:700; text-decoration:underline; }
+  .pv-ledger-scroll{ overflow-x:auto; padding-bottom:4px; }
+  .pv-month-labels{ display:flex; justify-content:space-between; padding-left:32px; font-size:11px; color:var(--pv-text-2); min-width:940px; }
+  .pv-ledger-body{ display:flex; gap:10px; min-width:940px; }
+  .pv-weekday-labels{ display:grid; grid-template-rows:repeat(7,16px); gap:2px; font-size:10px; color:var(--pv-text-2); width:20px; flex:0 0 auto; }
+  .pv-ledger-grid{ display:flex; gap:2px; }
+  .pv-ledger-col{ display:grid; grid-template-rows:repeat(7,16px); gap:2px; }
+  .pv-ledger-cell{ width:16px; height:16px; box-sizing:border-box; background:transparent; color:#fff; font-size:8px; font-weight:700; display:flex; align-items:center; justify-content:center; position:relative; }
+  .pv-ledger-cell.posted{ background:var(--pv-green); cursor:pointer; }
+  .pv-ledger-cell.posted.multi{ background:var(--pv-green-deep); }
+  .pv-ledger-cell.missed{ background:var(--pv-mint-skip); }
+  .pv-ledger-cell.today{ border:2px solid var(--pv-ink); }
+  .pv-ledger-cell.dim{ opacity:0.25; }
+  .pv-ledger-legend{ display:flex; gap:20px; flex-wrap:wrap; padding-left:32px; font-size:12.5px; color:var(--pv-text-2); }
+  .pv-ledger-legend span{ display:flex; align-items:center; gap:6px; }
+  .pv-ledger-legend i{ width:11px; height:11px; display:inline-block; }
+  .pv-swatch-today{ box-sizing:border-box; border:2px solid var(--pv-ink); }
+
+  /* tags + cta */
+  .pv-bottom-grid{ max-width:1280px; margin:0 auto; padding:64px 24px 80px; display:grid; grid-template-columns:7fr 5fr; gap:32px; }
+  .pv-tags{ border-top:3px solid var(--pv-ink); }
+  .pv-tags-head{ padding:14px 0; display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--pv-ink); }
+  .pv-tags-head h2{ font-size:21px; font-weight:900; }
+  .pv-tags-head a{ font-size:13.5px; }
+  .pv-tags-list{ display:grid; grid-template-columns:1fr 1fr; column-gap:28px; }
+  .pv-tag-row{ min-height:60px; display:flex; align-items:center; gap:16px; border-bottom:1px solid var(--pv-rule); }
+  .pv-tag-no{ font-family:'Fraunces', serif; font-size:14px; color:var(--pv-text-3); width:24px; }
+  .pv-tag-name{ flex:1 1 auto; font-family:'Noto Serif KR', serif; font-size:18px; font-weight:700; }
+  .pv-tag-count{ font-size:12.5px; color:var(--pv-text-3); }
+  .pv-cta{ min-height:340px; box-sizing:border-box; padding:32px; background:var(--pv-green); color:#fff; display:flex; flex-direction:column; justify-content:space-between; gap:16px; }
+  .pv-cta:hover{ background:var(--pv-green-dark); color:#fff; }
+  .pv-cta-eyebrow{ font-size:12.5px; letter-spacing:0.12em; font-weight:700; opacity:0.85; }
+  .pv-cta-title{ font-family:'Noto Serif KR', serif; font-size:42px; font-weight:900; line-height:1.15; }
+  .pv-cta-desc{ font-size:15px; line-height:1.6; opacity:0.92; }
+  .pv-cta-btn{ align-self:flex-start; min-height:48px; padding:0 20px; background:var(--pv-paper); color:var(--pv-ink); display:flex; align-items:center; font-size:15px; font-weight:700; }
+
+  /* footer */
+  .pv-footer{ max-width:1280px; margin:0 auto; padding:24px 24px 40px; border-top:3px solid var(--pv-ink); display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; font-size:13.5px; color:var(--pv-text-2); }
+  .pv-footer-links{ display:flex; gap:20px; }
+  .pv-footer-links a{ color:var(--pv-text-2); }
+
+  @media (max-width:760px){
+    .pv-header{ padding:10px 18px 0; }
+    .pv-logo a{ font-size:38px; }
+    .pv-kicker{ align-items:flex-start; text-align:left; }
+    .pv-cover-grid, .pv-bottom-grid{ grid-template-columns:1fr; padding-left:18px; padding-right:18px; }
+    .pv-cover-photo img{ height:280px; }
+    .pv-editor{ grid-template-columns:1fr; padding-left:18px; padding-right:18px; }
+    .pv-ledger{ padding-left:18px; padding-right:18px; }
+    .pv-tags-list{ grid-template-columns:1fr; }
+    .pv-cta-title{ font-size:32px; }
+    .pv-footer{ padding-left:18px; padding-right:18px; flex-direction:column; align-items:flex-start; }
+  }
+</style>
+</head>
+<body>
+<div class="pv-banner">검토용 시안입니다 — 실제 배포되지 않으며 검색엔진에도 노출되지 않습니다. 실제 데이터로 렌더링되지만 세부 인터랙션(모바일 캘린더 등)은 승인 후 다듬습니다.</div>
+<div class="pv-page">
+
+  <header class="pv-header">
+    <div class="pv-navrow">
+      <nav class="pv-nav" aria-label="주요 메뉴">
+        <a href="archive.html">아카이브</a>
+        <a href="vote.html">명예의 전당</a>
+        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">브런치북</a>
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+      </nav>
+      <div class="pv-langtoggle" id="langToggle" role="group" aria-label="Language">
+        <button type="button" data-lang="ko" class="active">한국어</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+    </div>
+    <div class="pv-titleblock">
+      <h1 class="pv-logo"><a href="./">날마다, 조식</a></h1>
+      <div class="pv-kicker">
+        <span class="pv-kicker-en">daily breakfast journal</span>
+        <span id="kickerVolDate">Vol. — · —</span>
+        <span class="pv-kicker-total">누적 기록 <b id="kickerCount">—</b>편 · Beta</span>
+      </div>
+    </div>
+    <form class="pv-search" id="homeSearchForm" role="search">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+      <label for="pvSearchInput" class="pv-search-label">무엇이 남았나요?</label>
+      <input id="pvSearchInput" type="search" data-i18n-placeholder="search_placeholder" placeholder="재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)">
+      <button type="submit" class="pv-search-btn" data-i18n="home_search_btn">검색</button>
+    </form>
+  </header>
+
+  <section class="pv-cover-grid" id="coverSection" aria-label="커버 스토리와 해마다 오늘의 조식">
+    <div class="pv-cover" id="coverCol"></div>
+    <div class="pv-otdlist" id="otdListCol"></div>
+  </section>
+
+  <section class="pv-editor">
+    <span class="pv-editor-label">EDITOR&rsquo;S NOTE</span>
+    <div class="pv-editor-body">
+      <p class="pv-editor-quote">&ldquo;재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 떠오르지 않을 때, 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때.&rdquo;</p>
+      <div class="pv-editor-actions">
+        <span class="pv-editor-byline">— 나조식</span>
+        <button type="button" class="pv-editor-toggle" id="betaMoreToggle" aria-expanded="false" data-i18n="home_beta_more">더보기</button>
+      </div>
+      <div class="pv-editor-more hidden" id="betaCaveat">
+        <p data-i18n="home_beta_note">안녕하세요? 나조식입니다.</p>
+        <p data-i18n="home_beta_caveat">주의! 20년~22년 게시물 가운데 일부분은...</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="pv-ledger" id="ledgerSection">
+    <div class="pv-ledger-inner">
+      <div class="pv-ledger-head">
+        <div class="pv-ledger-stat">
+          <span class="pv-ledger-pct" id="ledgerPct">—%</span>
+          <div>
+            <h2 data-i18n="ledger_title">한눈에 보는 조식 아카이브</h2>
+            <span class="pv-ledger-sub" id="ledgerSub">—</span>
+          </div>
+        </div>
+        <div class="pv-year-tabs" id="yearTabs"></div>
+      </div>
+      <div class="pv-ledger-scroll">
+        <div class="pv-month-labels" id="monthLabels"></div>
+        <div class="pv-ledger-body">
+          <div class="pv-weekday-labels"><span></span><span>월</span><span></span><span>수</span><span></span><span>금</span><span></span></div>
+          <div class="pv-ledger-grid" id="ledgerGrid"></div>
+        </div>
+      </div>
+      <div class="pv-ledger-legend">
+        <span><i style="background:var(--pv-green)"></i><span data-i18n="legend_posted">조식</span></span>
+        <span><i style="background:var(--pv-mint-skip)"></i><span data-i18n="legend_skipped">건너뜀</span></span>
+        <span><i style="background:var(--pv-green-deep)"></i>하루 여러 편</span>
+        <span><i class="pv-swatch-today"></i>오늘</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pv-bottom-grid">
+    <div class="pv-tags">
+      <div class="pv-tags-head">
+        <h2 data-i18n="col_title">소재로 골라 먹기</h2>
+        <a href="archive.html" data-i18n="col_more">전체 검색으로 보기 →</a>
+      </div>
+      <div class="pv-tags-list" id="tagsList"></div>
+    </div>
+    <a href="#" class="pv-cta" id="shuffleCta">
+      <span class="pv-cta-eyebrow">SURPRISE ME</span>
+      <span class="pv-cta-title" data-i18n="shuffle_title">오늘 뭐 먹지?</span>
+      <span class="pv-cta-desc" id="shuffleDesc">—</span>
+      <span class="pv-cta-btn" data-i18n="shuffle_btn">랜덤으로 꺼내 먹기</span>
+    </a>
+  </section>
+
+  <footer class="pv-footer">
+    <span data-i18n="footer_copyright">© how.about.breakfast 2020-2026. All rights reserved.</span>
+    <div class="pv-footer-links">
+      <a href="vote.html" data-i18n="footer_vote">명예의 전당</a>
+      <a href="privacy.html" data-i18n="footer_privacy">개인정보처리방침</a>
+    </div>
+  </footer>
+
+</div>
+
+<div class="overlay hidden" id="overlay">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script src="i18n.js"></script>
+<script src="shared.js"></script>
+<script src="cookmode.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  // 커버 스토리 선정 규칙 - HANDOFF.md 2절 "선정 규칙은 설정값으로 분리" 요구사항.
+  // 'latest' = 온디스데이(같은 달/일) 기록 중 가장 최근 연도의 기록을 고른다.
+  var HERO_SELECTION_RULE = 'latest';
+
+  var allData = null;
+  var selectedYear = null; // 히트맵 연도 탭 필터 상태
+
+  bindSearch();
+
+  Shared.loadData().then(function (all) {
+    allData = all;
+    I18N.setCount(all.length);
+    var ready = I18N.getLang() === 'en' ? Shared.ensureEnMerged(all) : Promise.resolve(all);
+    ready.then(function () { renderAll(all); bindLangToggle(all); });
+  }).catch(function (err) {
+    document.getElementById('coverCol').innerHTML = '<div class="pv-cover-empty">데이터를 불러오지 못했습니다.</div>';
+    console.error(err);
+  });
+
+  function bindSearch() {
+    var form = document.getElementById('homeSearchForm');
+    var input = document.getElementById('pvSearchInput');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var q = input.value.trim();
+      window.location.href = 'archive.html' + (q ? '?q=' + encodeURIComponent(q) : '');
+    });
+  }
+
+  function bindLangToggle(all) {
+    var box = document.getElementById('langToggle');
+    var lang = I18N.getLang();
+    Array.prototype.forEach.call(box.querySelectorAll('button'), function (btn) {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      btn.addEventListener('click', function () {
+        var newLang = btn.getAttribute('data-lang');
+        I18N.setLang(newLang);
+        Array.prototype.forEach.call(box.querySelectorAll('button'), function (b) {
+          b.classList.toggle('active', b === btn);
+        });
+        var ready = newLang === 'en' ? Shared.ensureEnMerged(allData) : Promise.resolve(allData);
+        ready.then(renderAll);
+      });
+    });
+  }
+
+  function buildSiblingsByDate(all) {
+    var siblingsByDate = {};
+    all.forEach(function (r) {
+      if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date) || r.failed) return;
+      (siblingsByDate[r.date] = siblingsByDate[r.date] || []).push(r);
+    });
+    return siblingsByDate;
+  }
+
+  function renderAll(all) {
+    I18N.applyStaticI18n();
+    var siblingsByDate = buildSiblingsByDate(all);
+    renderMasthead(all);
+    renderBetaToggle();
+    var otd = computeOnThisDay(all);
+    renderCoverAndList(otd, siblingsByDate);
+    renderLedger(all, siblingsByDate);
+    renderTags(all);
+    renderCta(all);
+  }
+
+  function renderMasthead(all) {
+    var dated = all.filter(function (r) { return r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date); });
+    var sorted = dated.slice().sort(function (a, b) { return a.date.localeCompare(b.date); });
+    var first = sorted[0].date;
+    var lang = I18N.getLang();
+    var now = new Date();
+    var dateStr = lang === 'en'
+      ? now.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })
+      : now.toLocaleDateString('ko-KR', { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' });
+    document.getElementById('kickerVolDate').textContent = 'Vol. ' + all.length + ' · ' + dateStr;
+    document.getElementById('kickerCount').textContent = all.length.toLocaleString();
+  }
+
+  function renderBetaToggle() {
+    var btn = document.getElementById('betaMoreToggle');
+    var caveat = document.getElementById('betaCaveat');
+    if (btn.dataset.bound) return;
+    btn.dataset.bound = '1';
+    btn.addEventListener('click', function () {
+      var expanded = caveat.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+      btn.textContent = I18N.t(expanded ? 'home_beta_less' : 'home_beta_more');
+    });
+  }
+
+  // renderOnThisDay()와 동일한 "같은 달/일" 매칭 + 형제 레코드 우선순위 로직
+  // (home.js와 동일 - 승인 후 실제 반영 시 공용 함수로 합친다).
+  function computeOnThisDay(all) {
+    var today = new Date();
+    var mm = today.getMonth() + 1;
+    var dd = today.getDate();
+
+    function isExactMatch(r) {
+      if (r.failed) return false;
+      if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return false;
+      var parts = r.date.split('-');
+      return parseInt(parts[1], 10) === mm && parseInt(parts[2], 10) === dd;
+    }
+    function hasMedia(r) { return !!(r.image || r.gallery || r.video); }
+
+    var byYear = {};
+    all.forEach(function (r) {
+      if (!isExactMatch(r)) return;
+      var y = r.date.slice(0, 4);
+      var existing = byYear[y];
+      if (!existing || (existing.day_secondary && !r.day_secondary) || (!hasMedia(existing) && hasMedia(r) && !r.day_secondary)) {
+        byYear[y] = r;
+      }
+    });
+
+    var allDates = all.map(function (r) { return r.date; })
+      .filter(function (d) { return d && /^\d{4}-\d{2}-\d{2}$/.test(d); }).sort();
+    if (!allDates.length) return { years: [], byYear: {}, mm: mm, dd: dd };
+    var minDate = allDates[0];
+    var startYear = parseInt(minDate.slice(0, 4), 10);
+    var startMM = parseInt(minDate.slice(5, 7), 10);
+    var startDD = parseInt(minDate.slice(8, 10), 10);
+    var currentYear = today.getFullYear();
+
+    var years = [];
+    for (var y = startYear; y <= currentYear; y++) {
+      if (y === startYear && (mm < startMM || (mm === startMM && dd < startDD))) continue;
+      if (y === currentYear && !byYear[String(y)]) continue;
+      years.push(String(y));
+    }
+    return { years: years, byYear: byYear, mm: mm, dd: dd };
+  }
+
+  function pickHero(otd) {
+    if (HERO_SELECTION_RULE === 'latest') {
+      for (var i = otd.years.length - 1; i >= 0; i--) {
+        if (otd.byYear[otd.years[i]]) return otd.years[i];
+      }
+    }
+    return null;
+  }
+
+  function renderCoverAndList(otd, siblingsByDate) {
+    var lang = I18N.getLang();
+    var coverCol = document.getElementById('coverCol');
+    var listCol = document.getElementById('otdListCol');
+
+    if (!otd.years.length) {
+      coverCol.innerHTML = '<div class="pv-cover-empty">표시할 기록이 없습니다.</div>';
+      listCol.innerHTML = '';
+      return;
+    }
+
+    var heroYear = pickHero(otd);
+    var hero = heroYear ? otd.byYear[heroYear] : null;
+
+    if (hero) {
+      var dd = String(otd.dd);
+      var monthShort = hero.date.slice(5, 7);
+      var monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+      var mLabel = monthNames[parseInt(monthShort, 10) - 1];
+      var heroTitle = Shared.hasStaticEn(hero, 'title') ? Shared.localizedText(hero, 'title') : (hero.title || I18N.t('untitled_fallback'));
+      coverCol.innerHTML =
+        '<div class="pv-cover-photo">' + Shared.thumbHTML(hero, 32) +
+        '<div class="pv-cover-stamp"><span class="pv-num">' + dd + '</span>' +
+        '<span class="pv-cover-stamp-label">' + mLabel + '<br>ON THIS DAY</span></div></div>' +
+        '<div class="pv-cover-body">' +
+        '<span class="pv-cover-eyebrow">' + heroYear + (lang === 'en' ? ' · Cover story' : ' · 커버 스토리') + '</span>' +
+        '<h2 class="pv-cover-title">' + Shared.escapeHtml(heroTitle) + '</h2>' +
+        '<a class="pv-cover-link" href="' + Shared.escapeHtml(Shared.recipeUrl(hero)) + '">' + (lang === 'en' ? 'View recipe →' : '레시피 보기 →') + '</a>' +
+        '</div>';
+      var photo = coverCol.querySelector('.pv-cover-photo img');
+      if (photo) photo.setAttribute('fetchpriority', 'high');
+    } else {
+      coverCol.innerHTML = '<div class="pv-cover-empty">오늘 날짜의 지난 기록이 아직 없습니다.</div>';
+    }
+
+    var count = otd.years.filter(function (y) { return otd.byYear[y]; }).length;
+    var rows = otd.years.map(function (y) {
+      var r = otd.byYear[y];
+      var yearLabel = lang === 'en' ? y : (y + '년');
+      if (!r) {
+        return '<div class="pv-otd-row pv-otd-empty"><span class="pv-otd-year">' + y.slice(2) + '</span>' +
+          '<span class="pv-otd-title">' + (lang === 'en' ? 'No breakfast that day' : '조식이 없었어요') + '</span></div>';
+      }
+      var isCover = y === heroYear;
+      var title = Shared.hasStaticEn(r, 'title') ? Shared.localizedText(r, 'title') : (r.title || I18N.t('untitled_fallback'));
+      var siblingCount = (siblingsByDate[r.date] || []).length;
+      var sibHtml = siblingCount > 1
+        ? '<span class="pv-otd-sib">· ' + (lang === 'en' ? siblingCount + ' posts' : siblingCount + '개') + '</span>'
+        : '';
+      return '<a class="pv-otd-row' + (isCover ? ' is-cover' : '') + '" href="' + Shared.escapeHtml(Shared.recipeUrl(r)) + '" data-year="' + y + '">' +
+        '<span class="pv-otd-year">' + Shared.escapeHtml(yearLabel) + '</span>' +
+        '<span class="pv-otd-title">' + Shared.escapeHtml(title) + sibHtml + '</span>' +
+        (r.image ? '<img src="' + Shared.escapeHtml(r.image) + '" alt="" loading="lazy">' : '') +
+        '</a>';
+    }).join('');
+
+    listCol.innerHTML =
+      '<div class="pv-otdlist-head"><h2 data-i18n="otd_title">해마다 오늘의 조식</h2>' +
+      '<span>' + count + (lang === 'en' ? ' posts' : '편') + '</span></div>' + rows;
+
+    Array.prototype.forEach.call(listCol.querySelectorAll('.pv-otd-row:not(.pv-otd-empty)'), function (el) {
+      var y = el.getAttribute('data-year');
+      el.addEventListener('click', function (e) {
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        Shared.openModal(otd.byYear[y], { siblingsByDate: siblingsByDate });
+      });
+    });
+  }
+
+  function renderLedger(all, siblingsByDate) {
+    var lang = I18N.getLang();
+    var postedDates = new Set();
+    var failedDates = new Set();
+    all.forEach(function (r) {
+      if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return;
+      if (r.failed) failedDates.add(r.date); else postedDates.add(r.date);
+    });
+
+    var recordByDate = {};
+    var postCounts = {};
+    Object.keys(siblingsByDate).forEach(function (d) { postCounts[d] = siblingsByDate[d].length; });
+    all.forEach(function (r) {
+      if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return;
+      var existing = recordByDate[r.date];
+      if (!existing || (existing.failed && !r.failed) || (existing.day_secondary && !r.day_secondary)) {
+        recordByDate[r.date] = r;
+      }
+    });
+
+    var dated = Array.from(postedDates).concat(Array.from(failedDates)).sort();
+    if (!dated.length) return;
+
+    var sortedDates = Object.keys(recordByDate).filter(function (d) { return !recordByDate[d].failed; }).sort();
+    var start = new Date(dated[0] + 'T00:00:00');
+    var end = new Date();
+    var startAligned = new Date(start);
+    startAligned.setDate(startAligned.getDate() - startAligned.getDay());
+
+    var weeks = [];
+    var cur = new Date(startAligned);
+    var week = [];
+    while (cur <= end) {
+      var key = cur.getFullYear() + '-' + String(cur.getMonth() + 1).padStart(2, '0') + '-' + String(cur.getDate()).padStart(2, '0');
+      var status = 'empty';
+      if (cur >= start && cur <= end) status = postedDates.has(key) ? 'posted' : 'missed';
+      else status = 'pad';
+      var isToday = key === (end.getFullYear() + '-' + String(end.getMonth() + 1).padStart(2, '0') + '-' + String(end.getDate()).padStart(2, '0'));
+      week.push({ key: key, status: status, year: cur.getFullYear(), month: cur.getMonth(), isToday: isToday });
+      if (week.length === 7) { weeks.push(week); week = []; }
+      cur.setDate(cur.getDate() + 1);
+    }
+    if (week.length) { while (week.length < 7) week.push({ key: '', status: 'pad', year: null }); weeks.push(week); }
+
+    // 연도 탭
+    var years = [];
+    for (var y = start.getFullYear(); y <= end.getFullYear(); y++) years.push(String(y));
+    if (selectedYear === null) selectedYear = String(end.getFullYear());
+    var tabsEl = document.getElementById('yearTabs');
+    tabsEl.innerHTML = years.map(function (y) {
+      return '<button type="button" data-year="' + y + '" class="' + (y === selectedYear ? 'active' : '') + '">' + y + '</button>';
+    }).join('');
+    Array.prototype.forEach.call(tabsEl.querySelectorAll('button'), function (btn) {
+      btn.addEventListener('click', function () {
+        selectedYear = btn.getAttribute('data-year');
+        renderLedger(all, siblingsByDate);
+      });
+    });
+
+    // 월 라벨(선택 연도 기준 12개월 고정 라벨)
+    var monthNames = lang === 'en'
+      ? ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+      : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+    document.getElementById('monthLabels').innerHTML = monthNames.map(function (m) { return '<span>' + m + '</span>'; }).join('');
+
+    var gridEl = document.getElementById('ledgerGrid');
+    gridEl.innerHTML = '';
+    var tooltip = document.getElementById('pvLedgerTooltip');
+    if (!tooltip) {
+      tooltip = document.createElement('div');
+      tooltip.id = 'pvLedgerTooltip';
+      tooltip.className = 'ledger-tooltip hidden';
+      document.getElementById('ledgerSection').appendChild(tooltip);
+    }
+
+    function formatDate(key) {
+      var parts = key.split('-');
+      return parts[0] + '.' + Number(parts[1]) + '.' + Number(parts[2]) + '.';
+    }
+
+    var postedInYear = 0, totalInYear = 0;
+    weeks.forEach(function (w) {
+      var col = document.createElement('div');
+      col.className = 'pv-ledger-col';
+      w.forEach(function (day) {
+        var cell = document.createElement('div');
+        var inSelectedYear = day.year === parseInt(selectedYear, 10);
+        var n = day.key ? (postCounts[day.key] || 0) : 0;
+        var cls = 'pv-ledger-cell';
+        if (day.status === 'posted') cls += n > 1 ? ' posted multi' : ' posted';
+        else if (day.status === 'missed') cls += ' missed';
+        if (day.isToday) cls += ' today';
+        if (day.year != null && !inSelectedYear) cls += ' dim';
+        cell.className = cls;
+        if (day.status === 'posted' && n > 1) cell.textContent = n;
+        if (day.year === parseInt(selectedYear, 10)) { totalInYear++; if (day.status === 'posted') postedInYear++; }
+
+        if (day.status === 'posted' && day.key) {
+          var rec = recordByDate[day.key];
+          cell.title = formatDate(day.key);
+          cell.addEventListener('click', function () {
+            Shared.openModal(rec, { siblingsByDate: siblingsByDate });
+          });
+        }
+        col.appendChild(cell);
+      });
+      gridEl.appendChild(col);
+    });
+
+    var pct = totalInYear ? Math.round((postedInYear / totalInYear) * 100) : 0;
+    document.getElementById('ledgerPct').textContent = pct + '%';
+    document.getElementById('ledgerSub').textContent = lang === 'en'
+      ? (selectedYear + ' · ' + postedInYear + ' of ' + totalInYear + ' days')
+      : (selectedYear + '년 ' + totalInYear + '일 가운데 ' + postedInYear + '일, 아침을 만들었습니다.');
+
+    var scrollWrap = document.querySelector('.pv-ledger-scroll');
+    requestAnimationFrame(function () { scrollWrap.scrollLeft = scrollWrap.scrollWidth; });
+  }
+
+  function renderTags(all) {
+    var COLLECTIONS = [
+      { label: '토마토 앓이', tag: '토마토' }, { label: '아보카도 중독', tag: '아보카도' },
+      { label: '면치기의 정석', tag: '파스타' }, { label: '감자, 무한변신', tag: '감자' },
+      { label: '계란이면 다 돼', tag: '계란' }, { label: '샌드위치 아카이브', tag: '샌드위치' },
+      { label: '샐러드 탐구생활', tag: '샐러드' }, { label: '가지의 재발견', tag: '가지' }
+    ];
+    var counts = {};
+    all.forEach(function (r) { (r.hashtags || []).forEach(function (h) { counts[h] = (counts[h] || 0) + 1; }); });
+    var lang = I18N.getLang();
+    var html = COLLECTIONS.map(function (c, i) {
+      var n = counts[c.tag] || 0;
+      return '<a class="pv-tag-row" href="archive.html?tag=' + encodeURIComponent(c.tag) + '">' +
+        '<span class="pv-tag-no">0' + (i + 1) + '</span>' +
+        '<span class="pv-tag-name">' + Shared.escapeHtml(I18N.collectionLabel(c.label)) + '</span>' +
+        '<span class="pv-tag-count">' + n + (lang === 'en' ? ' posts' : '편') + '</span></a>';
+    }).join('');
+    document.getElementById('tagsList').innerHTML = html;
+  }
+
+  function renderCta(all) {
+    var pickable = all.filter(function (r) { return !r.failed; });
+    document.getElementById('shuffleDesc').textContent = I18N.t('shuffle_desc').replace('{count}', all.length.toLocaleString());
+    var cta = document.getElementById('shuffleCta');
+    cta.addEventListener('click', function (e) {
+      e.preventDefault();
+      var pick = pickable[Math.floor(Math.random() * pickable.length)];
+      Shared.openModal(pick, {});
+    });
+  }
+})();
+</script>
+</body>
+</html>
