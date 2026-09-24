@@ -610,11 +610,14 @@
   function renderAnalysis() {
     const posts = analysisPosts();
     document.getElementById('an-count').textContent = `분석 대상 ${fmt(posts.length)}개 게시물 (인사이트가 있는 게시물만)`;
-    document.getElementById('an-tiles').replaceChildren(...SIGNALS.map((sig) => {
+    document.getElementById('an-tiles').replaceChildren(...[SIGNALS[0], SIGNALS[1], SIGNALS[4]].map((sig) => {
       const vals = posts.map(sig.value).filter((v) => v !== null);
-      return tile(sig.label, sig.format(median(vals)), `중앙값 · ${fmt(vals.length)}개`);
+      return el('div', { class: 'side-tile' }, [
+        el('div', {}, [el('span', { text: `${sig.label} 중앙값` }), el('strong', { text: sig.format(median(vals)) })]),
+        el('span', { class: 'muted', text: `${fmt(vals.length)}개` }),
+      ]);
     }));
-    renderSignalCompare(posts);
+    renderKeyInsight(posts, renderSignalCompare(posts));
     const grid = document.getElementById('an-bins');
     grid.replaceChildren();
     for (const sig of SIGNALS) {
@@ -628,6 +631,9 @@
 
   // Paired bars per signal: top-20% vs bottom-20% posts, scaled per signal
   // so the gap reads at a glance; the two biggest gaps are highlighted.
+  // Paired bars per signal: top-20% vs bottom-20% posts, scaled per signal
+  // so the gap reads at a glance; the two biggest gaps are highlighted.
+  // Returns those two for the key-insight card.
   function renderSignalCompare(posts) {
     const holder = document.getElementById('an-compare');
     const summary = document.getElementById('an-summary');
@@ -636,7 +642,7 @@
     if (n < 5) {
       summary.textContent = '';
       holder.replaceChildren(el('p', { class: 'empty', text: '비교하려면 게시물이 25개 이상 필요합니다. 기간을 넓혀 보세요.' }));
-      return;
+      return { strongest: [], top: [] };
     }
     const top = ranked.slice(0, n), bottom = ranked.slice(-n);
     const rows = SIGNALS.map((sig) => {
@@ -650,11 +656,11 @@
     const bar = (v, max, cls) => {
       const fill = el('span', { class: `pair-fill ${cls}` });
       fill.style.width = `${max ? Math.max(2, (v / max) * 100) : 0}%`;
-      return el('span', { class: 'pair-track' }, fill);
+      return fill;
     };
     holder.replaceChildren(
       el('div', { class: 'legend' }, [
-        el('span', {}, [el('span', { class: 'swatch', bg: 'var(--series-1)' }), `확산 상위 20% (${n}개)`]),
+        el('span', {}, [el('span', { class: 'swatch', bg: 'var(--accent)' }), `확산 상위 20% · ${n}개`]),
         el('span', {}, [el('span', { class: 'swatch', bg: 'var(--grid-strong)' }), '하위 20%']),
       ]),
       ...rows.map((r) => {
@@ -662,9 +668,34 @@
         return el('div', { class: `pair-row${strongest.includes(r) ? ' highlight' : ''}` }, [
           el('div', { class: 'pair-label' }, [el('strong', { text: r.sig.label }), el('span', { class: 'muted', text: `${r.sig.format(r.t)} vs ${r.sig.format(r.b)}` })]),
           el('div', { class: 'pair-bars' }, [bar(r.t || 0, max, 'top'), bar(r.b || 0, max, 'bottom')]),
-          el('div', { class: 'pair-ratio', text: fmtRatio(r.ratio) }),
+          el('strong', { class: 'pair-ratio', text: fmtRatio(r.ratio) }),
         ]);
       }),
+    );
+    return { strongest, top };
+  }
+
+  // The dark "key insight" card next to the weekly plan: the two signals that
+  // separated spread from non-spread posts, plus the share/save rates to aim
+  // for (medians of the top-20% posts).
+  function renderKeyInsight(posts, { strongest, top }) {
+    const box = document.getElementById('an-insight');
+    const head = el('span', { class: 'ins-label', text: '이번 기간 핵심' });
+    if (!strongest.length) {
+      box.replaceChildren(head, el('strong', { class: 'ins-main', text: '데이터가 더 쌓이면 핵심 요약이 나타나요.' }));
+      return;
+    }
+    const sendsLead = strongest.some((r) => r.sig.key === 'share');
+    box.replaceChildren(
+      head,
+      el('strong', { class: 'ins-main', text: `잘 퍼진 게시물은 ${strongest.map((r) => `${r.sig.label}이 ${fmtRatio(r.ratio)}`).join(', ')} 높았어요.` }),
+      el('p', { text: sendsLead
+        ? '비팔로워 확산의 핵심 신호인 공유가 차이를 만들었어요. 캡션 끝에 자연스러운 공유 문구를 계속 시험해 보세요.'
+        : '비팔로워 확산의 핵심은 공유(보내기)예요. 이번 주는 캡션 끝에 자연스러운 공유 문구를 시험해 보세요.' }),
+      el('div', { class: 'ins-targets' }, [
+        el('div', {}, [el('span', { text: '목표 공유율' }), el('strong', { text: fmtPct(median(top.map(SIGNALS[0].value))) })]),
+        el('div', {}, [el('span', { text: '목표 저장율' }), el('strong', { text: fmtPct(median(top.map(SIGNALS[1].value))) })]),
+      ]),
     );
   }
 
@@ -826,25 +857,24 @@
     });
   }
 
-  function barCell(value, max) {
-    const fill = el('span', { class: 'bar-fill' });
-    fill.style.width = `${max ? Math.max(2, Math.min(100, (value / max) * 100)) : 0}%`;
-    return el('td', { class: 'left bar-cell' }, [el('span', { class: 'bar-track' }, fill), el('span', { class: 'bar-value', text: fmtRatio(value) })]);
-  }
-
   // Compact bar list: label · bar (relative reach) · post count. Share and
   // save rates live in the tooltip-free "details" of the signals section.
-  function factorTable(rows, firstHead, minN = MIN_GROUP) {
+  // Compact bar list: label · bar (relative reach) · ratio (· post count).
+  // The best group's bar takes the accent; groups under minN are dimmed.
+  function factorTable(rows, firstHead, minN = MIN_GROUP, showN = false) {
     const max = Math.max(...rows.map((r) => r.rel || 0));
     const eligible = rows.filter((r) => r.n >= minN && r.rel !== null);
     const best = eligible.length > 1 ? eligible.reduce((a, b) => (b.rel > a.rel ? b : a)) : null;
-    return el('table', { class: 'data factor', 'aria-label': firstHead }, [
-      el('tbody', {}, rows.map((r) => el('tr', { class: [r === best ? 'highlight' : '', r.n < minN ? 'small-n' : ''].join(' ').trim() || null }, [
-        el('td', { class: 'left f-label', text: r.label }),
-        r.rel === null ? el('td', { class: 'left', text: '—' }) : barCell(r.rel, max),
-        el('td', { class: 'f-n', text: `${fmt(r.n)}개` }),
-      ]))),
-    ]);
+    return el('div', { class: `frows${showN ? ' with-n' : ''}`, role: 'list', 'aria-label': firstHead }, rows.map((r) => {
+      const fill = el('span', { class: 'bar-fill' });
+      fill.style.width = `${r.rel && max ? Math.max(2, Math.min(100, (r.rel / max) * 100)) : 0}%`;
+      return el('div', { class: ['frow', r === best ? 'best' : '', r.n < minN ? 'small-n' : ''].join(' ').trim(), role: 'listitem', title: `${fmt(r.n)}개 게시물` }, [
+        el('span', { class: 'f-label', text: r.label }),
+        el('span', { class: 'bar-track' }, fill),
+        el('strong', { class: 'f-rel', text: fmtRatio(r.rel) }),
+        showN ? el('span', { class: 'f-n', text: `${fmt(r.n)}개` }) : null,
+      ]);
+    }));
   }
 
   function renderFactors(posts) {
@@ -855,7 +885,7 @@
       const rows = groupStats(posts, f.group, f.order);
       results.push({ factor: f, rows });
       grid.append(el('section', { class: 'card factor-card' }, [
-        el('h2', { text: f.title }),
+        el('h3', { text: f.title }),
         rows.length ? el('div', { class: 'table-wrap' }, factorTable(rows, f.title)) : el('p', { class: 'empty', text: '데이터가 없습니다.' }),
       ]));
     }
@@ -875,8 +905,8 @@
     const top = rows.slice(0, 10), bottom = rows.length > 15 ? rows.slice(-5).reverse() : [];
     holder.replaceChildren(
       el('div', { class: 'topic-cols' }, [
-        el('div', {}, [el('h3', { class: 'sub-head', text: '▲ 잘 퍼진 소재' }), factorTable(top, '잘 퍼진 소재', minN)]),
-        bottom.length ? el('div', {}, [el('h3', { class: 'sub-head', text: '▼ 덜 퍼진 소재' }), factorTable(bottom, '덜 퍼진 소재', minN)]) : null,
+        el('div', {}, [el('h4', { class: 'topic-head good', text: '잘 퍼진 소재' }), factorTable(top, '잘 퍼진 소재', minN, true)]),
+        bottom.length ? el('div', { class: 'low' }, [el('h4', { class: 'topic-head warn', text: '덜 퍼진 소재' }), factorTable(bottom, '덜 퍼진 소재', minN, true)]) : null,
       ]),
     );
     return rows;
@@ -903,12 +933,17 @@
       holder.replaceChildren(el('p', { class: 'empty', text: '뚜렷하게 앞서는 요인이 아직 없습니다.' }));
       return;
     }
-    holder.replaceChildren(...picked.map((c) => el('div', { class: 's-tile' }, [
-      el('span', { class: 's-kind', text: c.kind }),
-      el('strong', { class: 's-value', text: c.value }),
-      el('span', { class: 's-lift', text: fmtRatio(c.rel) }),
-      el('span', { class: 's-n', text: `평소 대비 · ${fmt(c.n)}개` }),
-    ])));
+    const maxRel = Math.max(...picked.map((c) => c.rel));
+    holder.replaceChildren(...picked.map((c) => {
+      const fill = el('span', { class: 's-fill' });
+      fill.style.width = `${Math.round((c.rel / (maxRel * 1.25)) * 100)}%`;
+      return el('div', { class: 's-tile' }, [
+        el('span', { class: 's-kind', text: c.kind }),
+        el('strong', { class: 's-value', text: c.value }),
+        el('div', { class: 's-row' }, [el('span', { class: 's-lift', text: fmtRatio(c.rel) }), el('span', { class: 's-n', text: `${fmt(c.n)}개` })]),
+        el('span', { class: 's-track' }, fill),
+      ]);
+    }));
   }
 
   function renderPhase2(posts) {
@@ -973,9 +1008,9 @@
 
     // Only conditions with a clear winner become chips - no chip means
     // "no difference", which keeps each card short.
-    const chip = (icon, label, g, fmtBase) => {
+    const chip = (label, g, fmtBase) => {
       if (!g || g.only || (fmtBase && g.rel < fmtBase * 1.05)) return null;
-      return el('span', { class: 'chip', title: `평소 대비 ${fmtRatio(g.rel)}` }, [el('span', { class: 'chip-icon', 'aria-hidden': 'true', text: icon }), `${label} ${g.label}`]);
+      return el('span', { class: 'chip', title: `평소 대비 ${fmtRatio(g.rel)}` }, `${label} · ${g.label}`);
     };
     holder.replaceChildren(...picked.map((c, i) => {
       const fmtPosts = posts.filter((p) => formatLabel(p) === c.format);
@@ -986,10 +1021,10 @@
       const targetShare = median(topFmt.map(SIGNALS[0].value)), targetSave = median(topFmt.map(SIGNALS[1].value));
       const examples = c.posts.slice().sort((a, b) => b._relReach - a._relReach).slice(0, 2);
       const chips = [
-        chip('📅', '', g('dow'), fmtBase), chip('⏰', '', g('hour'), fmtBase),
-        chip('✍', '첫 문장', g('hook'), fmtBase), chip('📣', '유도 문구', g('cta'), fmtBase),
-        chip('📏', '캡션', g('length'), fmtBase), chip('🥣', '레시피', g('recipe'), fmtBase),
-        c.format === '캐러셀' ? chip('🖼', '', g('slides', Math.min(minN, 8)), fmtBase) : null,
+        chip('요일', g('dow'), fmtBase), chip('시간', g('hour'), fmtBase),
+        chip('첫 문장', g('hook'), fmtBase), chip('유도 문구', g('cta'), fmtBase),
+        chip('캡션', g('length'), fmtBase), chip('레시피', g('recipe'), fmtBase),
+        c.format === '캐러셀' ? chip('장수', g('slides', Math.min(minN, 8)), fmtBase) : null,
       ].filter(Boolean);
       return el('article', { class: 'pb-card' }, [
         el('div', { class: 'pb-top' }, [
@@ -1008,12 +1043,11 @@
             : el('span', { class: 'pb-thumb' }, [img, cap]);
         })),
         chips.length ? el('div', { class: 'chips' }, chips) : el('p', { class: 'hint', text: '시점·캡션은 조건별 차이가 뚜렷하지 않음' }),
-        el('div', { class: 'pb-target' }, [
-          el('span', { text: '목표' }),
-          el('strong', { text: `공유 ${fmtPct2(targetShare)}` }),
-          el('strong', { text: `저장 ${fmtPct2(targetSave)}` }),
+        el('div', { class: 'pb-foot' }, [
+          el('span', {}, ['공유 ', el('strong', { text: fmtPct(targetShare) })]),
+          el('span', {}, ['저장 ', el('strong', { text: fmtPct(targetSave) })]),
+          el('span', { class: 'muted', text: `${fmt(c.posts.length)}개` }),
         ]),
-        el('span', { class: 's-n', text: `과거 ${fmt(c.posts.length)}개 게시물 기준` }),
       ]);
     }));
   }
@@ -1081,9 +1115,10 @@
     } else if (t && t.expires_estimate) {
       const left = Math.round((Date.parse(t.expires_estimate) - Date.parse(daysAgo(0))) / 86400000);
       if (left <= 0) level = 'bad'; else if (left <= 14) level = 'warn';
-      msgs.push(`인스타그램 토큰 만료 예정 ${t.expires_estimate} (${left > 0 ? `D-${left}` : '만료됨'})`
-        + (left <= 14 ? ' · 지금 갱신해 주세요' : '')
-        + (t.issued_known ? '' : ' · 발급일을 몰라 첫 수집일 기준으로 추정했습니다. 실제 만료는 더 빠를 수 있어요'));
+      msgs.push(`토큰 만료까지 ${left > 0 ? `D-${left}` : '만료됨'}${t.issued_known ? '' : ' (추정)'}`
+        + (left <= 14 ? ' · 지금 갱신해 주세요' : ''));
+      box.title = `만료 예정 ${t.expires_estimate}`
+        + (t.issued_known ? '' : ' · 발급일을 몰라 첫 수집일 기준으로 추정했습니다. 실제 만료는 더 빠를 수 있어요');
     }
     if (meta.last_run) {
       const age = (Date.now() - Date.parse(meta.last_run)) / 3600000;
@@ -1135,8 +1170,25 @@
     document.getElementById('ov-range').addEventListener('change', renderOverview);
     for (const id of ['an-range', 'an-format']) document.getElementById(id).addEventListener('change', renderAnalysis);
     // In-tab shortcuts scroll instead of changing the hash (the hash picks the tab).
-    for (const b of document.querySelectorAll('[data-jump]')) {
-      b.addEventListener('click', () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    const jumps = document.querySelectorAll('[data-jump]');
+    for (const b of jumps) {
+      b.addEventListener('click', () => {
+        for (const x of jumps) x.setAttribute('aria-pressed', String(x === b));
+        document.getElementById(b.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+    // Segmented buttons drive the (hidden) selects the renderers read.
+    for (const box of document.querySelectorAll('.seg-box[data-for]')) {
+      const select = document.getElementById(box.dataset.for);
+      const sync = () => { for (const b of box.querySelectorAll('button')) b.setAttribute('aria-pressed', String(b.dataset.value === select.value)); };
+      box.addEventListener('click', (e) => {
+        const b = e.target.closest('button[data-value]');
+        if (!b || b.dataset.value === select.value) return;
+        select.value = b.dataset.value;
+        sync();
+        select.dispatchEvent(new Event('change'));
+      });
+      sync();
     }
     for (const id of ['ps-range', 'ps-format']) {
       document.getElementById(id).addEventListener('change', () => { state.postsShown = PAGE_SIZE; renderPosts(); });
