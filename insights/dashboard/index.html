@@ -89,16 +89,61 @@
     </section>
 
     <section id="tab-analysis" role="tabpanel" data-panel="analysis" hidden>
-      <div class="card">
-        <h2>심화 분석 (추가 개발 예정)</h2>
-        <p>팔로워가 아닌 사람에게 닿은 게시물의 공통점을 찾는 분석 탭이 이곳에 추가될 예정입니다.</p>
+      <section class="card principles">
+        <h2>인스타그램이 확산을 결정할 때 보는 신호</h2>
+        <p class="card-sub">아래 분석은 이 원칙을 기준으로 내 게시물을 비교합니다. <span class="badge official">공식</span>은 인스타그램 대표(아담 모세리)가 직접 밝힌 내용, <span class="badge external">외부 분석</span>은 분석 업체들의 측정 결과입니다.</p>
         <ul>
-          <li>소재별 비교: 재료 태그, 계절, 실패기 여부</li>
-          <li>캡션 요인: 길이, 첫 줄 유형, 해시태그 수, 레시피 포함 여부</li>
-          <li>형식과 시점: 릴스 여부, 게시 요일·시간, 시청 시간</li>
+          <li><span class="badge official">공식</span> 가장 중요한 신호 3가지는 <strong>시청 시간</strong>, <strong>도달 대비 좋아요</strong>, <strong>도달 대비 공유(DM 보내기)</strong>입니다 (2025년 1월).</li>
+          <li><span class="badge official">공식</span> <strong>팔로워가 아닌 사람에게 퍼지는 데는 공유(보내기)</strong>가, 팔로워에게 보이는 데는 좋아요가 더 크게 작용합니다.</li>
+          <li><span class="badge official">공식</span> <strong>독창적인 콘텐츠</strong>를 우대하고, 남의 콘텐츠를 다시 올리는 비중이 큰 계정은 추천에서 제외될 수 있습니다.</li>
+          <li><span class="badge official">공식</span> <strong>체험용 릴스(Trial Reels)</strong>로 비팔로워에게 먼저 보여주고 반응을 시험할 수 있습니다 (공개 계정, 팔로워 1,000명 이상).</li>
+          <li><span class="badge external">외부 분석</span> 릴스는 비팔로워 도달에 유리하고, 캐러셀은 도달 대비 참여율이 높은 편입니다. 추천 노출은 3분 이하 릴스 위주라는 분석이 많습니다.</li>
         </ul>
-        <p class="hint" id="an-status"></p>
+        <p class="hint">출처:
+          <a href="https://www.dataslayer.ai/blog/instagram-algorithm-2025-complete-guide-for-marketers" target="_blank" rel="noopener noreferrer">Dataslayer</a> ·
+          <a href="https://www.socialpilot.co/blog/instagram-reels-algorithm" target="_blank" rel="noopener noreferrer">SocialPilot</a> ·
+          <a href="https://metricool.com/press-release-instagram-study-2026/" target="_blank" rel="noopener noreferrer">Metricool</a>
+          (모세리 발언을 정리한 2차 자료)</p>
+      </section>
+
+      <div class="filters">
+        <label>기간
+          <select id="an-range">
+            <option value="90">최근 90일</option>
+            <option value="365" selected>최근 1년</option>
+            <option value="0">전체</option>
+          </select>
+        </label>
+        <label>형식
+          <select id="an-format">
+            <option value="">전체</option>
+            <option value="REELS">릴스</option>
+            <option value="FEED">사진·캐러셀</option>
+          </select>
+        </label>
+        <span class="hint" id="an-count"></span>
       </div>
+
+      <div class="tiles" id="an-tiles"></div>
+
+      <section class="card">
+        <h2>확산된 게시물은 무엇이 달랐나</h2>
+        <p class="card-sub">평소 대비 도달 = 그 게시물의 도달 ÷ 앞뒤 30개 게시물의 도달 중앙값. 팔로워 수가 늘어난 효과를 빼고 "평소보다 얼마나 더 퍼졌나"를 봅니다. 상위 20%와 하위 20%의 신호를 비교하고, 차이가 가장 큰 두 신호를 강조합니다.</p>
+        <p class="summary" id="an-summary"></p>
+        <div class="table-wrap" id="an-compare"></div>
+      </section>
+
+      <h2 class="section-title">신호별로 보면</h2>
+      <p class="hint section-sub">막대가 오른쪽으로 갈수록 높아지면, 그 신호가 높은 게시물일수록 평소보다 더 퍼졌다는 뜻입니다. 순위 상관은 -1~1 사이 값이고, 0.2 이상이면 관계가 있다고 봅니다.</p>
+      <div class="grid" id="an-bins"></div>
+
+      <section class="card">
+        <h2>비팔로워에게 가장 많이 닿은 날</h2>
+        <p class="card-sub">계정 전체 기준의 일별 데이터라, 그날 올린 게시물 외에 이전 게시물의 영향도 섞여 있습니다. 거의 매일 한 건씩 올리시니 그날 게시물의 영향이 가장 큽니다. 데이터는 수집을 시작한 날부터 쌓입니다.</p>
+        <div class="table-wrap" id="an-days"></div>
+      </section>
+
+      <p class="hint" id="an-status"></p>
     </section>
   </main>
 

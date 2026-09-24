@@ -145,17 +145,17 @@
     return holder;
   }
 
-  function tableView(labels, series) {
+  function tableView(labels, series, labelHead = '날짜', valueFormat = fmt) {
     const table = el('table', { class: 'data' }, [
-      el('thead', {}, el('tr', {}, [el('th', { class: 'left', text: '날짜' }), ...series.map((s) => el('th', { text: s.name }))])),
+      el('thead', {}, el('tr', {}, [el('th', { class: 'left', text: labelHead }), ...series.map((s) => el('th', { text: s.name }))])),
       el('tbody', {}, labels.map((d, i) => el('tr', {}, [
-        el('td', { class: 'left', text: d }), ...series.map((s) => el('td', { text: fmt(s.values[i]) })),
+        el('td', { class: 'left', text: d }), ...series.map((s) => el('td', { text: valueFormat(s.values[i]) })),
       ]))),
     ]);
     return el('details', { class: 'as-table' }, [el('summary', { text: '표로 보기' }), el('div', { class: 'table-wrap' }, table)]);
   }
 
-  function axes(root, geom, yMax) {
+  function axes(root, geom, yMax, tickFormat = fmtCompact) {
     const { left, top, plotW, plotH } = geom;
     const g = svg('g', { class: 'axis' });
     for (let i = 0; i <= 4; i++) {
@@ -163,20 +163,20 @@
       const y = top + plotH - (plotH * i) / 4;
       g.append(svg('line', { class: i === 0 ? 'baseline' : 'gridline', x1: left, x2: left + plotW, y1: y, y2: y }));
       const t = svg('text', { x: left - 6, y: y + 4, 'text-anchor': 'end' });
-      t.textContent = fmtCompact(v);
+      t.textContent = tickFormat(v);
       g.append(t);
     }
     root.append(g);
   }
 
-  function xLabels(root, geom, labels, xAt) {
+  function xLabels(root, geom, labels, xAt, xFormat = shortDate) {
     const g = svg('g', { class: 'axis' });
     const step = Math.max(1, Math.ceil(labels.length / Math.max(2, Math.floor(geom.plotW / 70))));
     labels.forEach((d, i) => {
       if (i % step !== 0 && i !== labels.length - 1) return;
       if (i !== labels.length - 1 && labels.length - 1 - i < step / 2) return;
       const t = svg('text', { x: xAt(i), y: geom.top + geom.plotH + 16, 'text-anchor': 'middle' });
-      t.textContent = shortDate(d);
+      t.textContent = xFormat(d);
       g.append(t);
     });
     root.append(g);
@@ -195,18 +195,22 @@
     return `M${x},${y + h}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h}Z`;
   }
 
-  function columnChart(container, { title, subtitle, labels, series, emptyText }) {
+  // labels are dates unless xFormat/labelHead say otherwise (e.g. bins).
+  function columnChart(container, {
+    title, subtitle, labels, series, emptyText,
+    xFormat = shortDate, valueFormat = fmt, tickFormat = fmtCompact, labelHead = '날짜', height = 220,
+  }) {
     const holder = chartFrame(container, title, subtitle, series);
     const hasData = series.some((s) => s.values.some((v) => typeof v === 'number'));
     if (!labels.length || !hasData) {
       holder.append(el('p', { class: 'empty', text: emptyText || '아직 데이터가 없습니다.' }));
       return;
     }
-    const geom = makeGeom(holder, 220);
+    const geom = makeGeom(holder, height);
     const root = svg('svg', { viewBox: `0 0 ${geom.width} ${geom.height}`, height: geom.height, role: 'img', 'aria-label': title });
     const totals = labels.map((_, i) => series.reduce((a, s) => a + (s.values[i] || 0), 0));
     const yMax = niceMax(Math.max(...totals));
-    axes(root, geom, yMax);
+    axes(root, geom, yMax, tickFormat);
     const band = geom.plotW / labels.length;
     const barW = Math.max(2, Math.min(24, band * 0.7));
     const xAt = (i) => geom.left + band * i + band / 2;
@@ -233,14 +237,14 @@
         root.append(shape);
         acc += v;
       });
-      const rows = series.map((s) => ({ label: s.name, value: fmt(s.values[i]), color: `var(${s.color})` }));
-      if (series.length > 1) rows.push({ label: '합계', value: fmt(totals[i]) });
+      const rows = series.map((s) => ({ label: s.name, value: valueFormat(s.values[i]), color: `var(${s.color})` }));
+      if (series.length > 1) rows.push({ label: '합계', value: valueFormat(totals[i]) });
       hit.addEventListener('mousemove', (e) => { hit.classList.add('active'); showTooltip(e, d, rows); });
       hit.addEventListener('mouseleave', () => { hit.classList.remove('active'); hideTooltip(); });
     });
-    xLabels(root, geom, labels, xAt);
+    xLabels(root, geom, labels, xAt, xFormat);
     holder.append(root);
-    container.append(tableView(labels, series));
+    container.append(tableView(labels, series, labelHead, valueFormat));
   }
 
   function lineChart(container, { title, subtitle, labels, series, emptyText }) {
@@ -522,6 +526,192 @@
   }
 
   // ------------------------------------------------------------------
+  // Analysis tab (phase 1): the signals Instagram says drive distribution
+  // ------------------------------------------------------------------
+
+  const NEIGHBOR_WINDOW = 15; // posts on each side of the "usual reach" baseline
+  const BIN_LABELS = ['하위 20%', '20~40%', '40~60%', '60~80%', '상위 20%'];
+
+  function median(values) {
+    const nums = values.filter((v) => typeof v === 'number' && Number.isFinite(v)).sort((a, b) => a - b);
+    if (!nums.length) return null;
+    const mid = nums.length >> 1;
+    return nums.length % 2 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+  }
+
+  // Reach relative to the median reach of the ~30 posts around it. Unlike
+  // reach / followers this needs no follower history (which only starts on
+  // the first collection day) and cancels slow drifts such as account growth
+  // or algorithm eras, so posts from different years compare fairly.
+  function computeRelativeReach(posts) {
+    const list = posts.filter((p) => p.insights && p.insights.reach > 0)
+      .sort((a, b) => (a.timestamp < b.timestamp ? -1 : 1));
+    list.forEach((p, i) => {
+      const around = [];
+      for (let k = Math.max(0, i - NEIGHBOR_WINDOW); k < Math.min(list.length, i + NEIGHBOR_WINDOW + 1); k++) {
+        if (k !== i) around.push(list[k].insights.reach);
+      }
+      const base = median(around);
+      p._relReach = base ? p.insights.reach / base : null;
+    });
+  }
+
+  const fmtPct2 = (v) => (v === null || v === undefined || !Number.isFinite(v) ? '—' : `${(v * 100).toFixed(2)}%`);
+  const fmtSec = (v) => (v === null || v === undefined || !Number.isFinite(v) ? '—' : `${v.toFixed(1)}초`);
+  const fmtTimes = (v) => `${Number(v.toFixed(2))}×`;
+  const perReach = (k) => (p) => {
+    const i = p.insights || {};
+    return typeof i[k] === 'number' && i.reach > 0 ? i[k] / i.reach : null;
+  };
+  const SIGNALS = [
+    { key: 'share', label: '공유율', desc: '도달 대비 공유(DM 보내기 포함)', value: perReach('shares'), format: fmtPct2 },
+    { key: 'save', label: '저장율', desc: '도달 대비 저장', value: perReach('saved'), format: fmtPct2 },
+    { key: 'like', label: '좋아요율', desc: '도달 대비 좋아요', value: perReach('likes'), format: fmtPct2 },
+    { key: 'comment', label: '댓글율', desc: '도달 대비 댓글', value: perReach('comments'), format: fmtPct2 },
+    {
+      key: 'watch', label: '릴스 평균 시청 시간', desc: '릴스 1회 재생당 평균 시청 시간', format: fmtSec,
+      value: (p) => {
+        const v = p.insights && p.insights.ig_reels_avg_watch_time;
+        return p.media_product_type === 'REELS' && typeof v === 'number' && v > 0 ? v / 1000 : null;
+      },
+    },
+  ];
+
+  // Spearman rank correlation: does a higher signal go with higher reach?
+  function spearman(pairs) {
+    const rank = (vals) => {
+      const order = vals.map((v, i) => [v, i]).sort((a, b) => a[0] - b[0]);
+      const r = new Array(vals.length);
+      for (let i = 0; i < order.length;) {
+        let j = i;
+        while (j + 1 < order.length && order[j + 1][0] === order[i][0]) j++;
+        for (let k = i; k <= j; k++) r[order[k][1]] = (i + j) / 2;
+        i = j + 1;
+      }
+      return r;
+    };
+    const rx = rank(pairs.map((p) => p[0])), ry = rank(pairs.map((p) => p[1]));
+    const mx = mean(rx), my = mean(ry);
+    let num = 0, dx = 0, dy = 0;
+    for (let i = 0; i < rx.length; i++) {
+      num += (rx[i] - mx) * (ry[i] - my); dx += (rx[i] - mx) ** 2; dy += (ry[i] - my) ** 2;
+    }
+    return dx && dy ? num / Math.sqrt(dx * dy) : null;
+  }
+
+  function analysisPosts() {
+    const range = Number(document.getElementById('an-range').value);
+    const format = document.getElementById('an-format').value;
+    const from = range ? daysAgo(range) : '';
+    return state.posts.filter((p) => p.date >= from && p._relReach !== undefined && p._relReach !== null
+      && (!format || p.media_product_type === format));
+  }
+
+  function renderAnalysis() {
+    const posts = analysisPosts();
+    document.getElementById('an-count').textContent = `분석 대상 ${fmt(posts.length)}개 게시물 (인사이트가 있는 게시물만)`;
+    document.getElementById('an-tiles').replaceChildren(...SIGNALS.map((sig) => {
+      const vals = posts.map(sig.value).filter((v) => v !== null);
+      return tile(`${sig.label} (중앙값)`, sig.format(median(vals)), vals.length ? `${sig.desc} · ${fmt(vals.length)}개` : sig.desc);
+    }));
+    renderSignalCompare(posts);
+    const grid = document.getElementById('an-bins');
+    grid.replaceChildren();
+    for (const sig of SIGNALS) {
+      const card = el('figure', { class: 'card' });
+      grid.append(card);
+      renderSignalBins(card, sig, posts);
+    }
+    renderNonFollowerDays();
+  }
+
+  function renderSignalCompare(posts) {
+    const holder = document.getElementById('an-compare');
+    const summary = document.getElementById('an-summary');
+    const ranked = posts.slice().sort((a, b) => b._relReach - a._relReach);
+    const n = Math.floor(ranked.length / 5);
+    if (n < 5) {
+      summary.textContent = '';
+      holder.replaceChildren(el('p', { class: 'empty', text: '비교하려면 게시물이 25개 이상 필요합니다. 기간을 넓혀 보세요.' }));
+      return;
+    }
+    const top = ranked.slice(0, n), bottom = ranked.slice(-n);
+    const rows = SIGNALS.map((sig) => {
+      const t = median(top.map(sig.value)), b = median(bottom.map(sig.value)), all = median(posts.map(sig.value));
+      return { sig, t, b, all, ratio: t !== null && b ? t / b : null };
+    });
+    const strongest = rows.filter((r) => r.ratio !== null).sort((a, b) => b.ratio - a.ratio).slice(0, 2);
+    summary.textContent = strongest.length
+      ? `확산이 잘 된 상위 20% 게시물은 하위 20%보다 ${strongest.map((r) => `${r.sig.label}이 ${fmtRatio(r.ratio)}`).join(', ')} 높았습니다.`
+      : '';
+    holder.replaceChildren(el('table', { class: 'data' }, [
+      el('thead', {}, el('tr', {}, ['신호', `확산 상위 20% (${n}개)`, `확산 하위 20% (${n}개)`, '전체', '상위 ÷ 하위']
+        .map((h, i) => el('th', { class: i === 0 ? 'left' : null, text: h })))),
+      el('tbody', {}, rows.map((r) => el('tr', { class: strongest.includes(r) ? 'highlight' : null }, [
+        el('td', { class: 'left' }, [r.sig.label, el('div', { class: 'muted', text: r.sig.desc })]),
+        el('td', { text: r.sig.format(r.t) }),
+        el('td', { text: r.sig.format(r.b) }),
+        el('td', { text: r.sig.format(r.all) }),
+        el('td', { text: fmtRatio(r.ratio) }),
+      ]))),
+    ]));
+  }
+
+  function renderSignalBins(card, sig, posts) {
+    const list = posts.map((p) => [sig.value(p), p._relReach]).filter((x) => x[0] !== null)
+      .sort((a, b) => a[0] - b[0]);
+    const title = `${sig.label} 구간별 평소 대비 도달`;
+    if (list.length < 25) {
+      columnChart(card, { title, labels: [], series: [], emptyText: '게시물이 25개 이상 필요합니다.' });
+      return;
+    }
+    const groups = BIN_LABELS.map(() => []);
+    list.forEach((x, i) => groups[Math.floor((i * 5) / list.length)].push(x));
+    const rho = spearman(list);
+    const strength = rho === null ? '' : Math.abs(rho) >= 0.4 ? '뚜렷한 관계' : Math.abs(rho) >= 0.2 ? '약한 관계' : '관계 거의 없음';
+    columnChart(card, {
+      title,
+      subtitle: `${sig.label}이 낮은 게시물부터 높은 게시물까지 5개 구간으로 나눈 뒤, 구간마다 평소 대비 도달의 중앙값을 보여줍니다. `
+        + `게시물 ${fmt(list.length)}개 · 순위 상관 ${rho === null ? '—' : (Math.abs(rho) < 0.005 ? 0 : rho).toFixed(2)} (${strength})`,
+      labels: BIN_LABELS,
+      series: [{ name: '평소 대비 도달', color: '--series-1', values: groups.map((g) => median(g.map((x) => x[1]))) }],
+      xFormat: (d) => d, labelHead: `${sig.label} 구간`, valueFormat: fmtRatio, tickFormat: fmtTimes, height: 200,
+    });
+  }
+
+  function renderNonFollowerDays() {
+    const holder = document.getElementById('an-days');
+    const byDate = {};
+    for (const p of state.posts) (byDate[p.date] = byDate[p.date] || []).push(p);
+    const days = Object.keys(state.account)
+      .map((d) => ({ date: d, ...state.account[d] }))
+      .filter((r) => typeof r.reach_non_follower === 'number' && typeof r.reach_follower === 'number')
+      .map((r) => ({ ...r, share: r.reach_follower + r.reach_non_follower ? r.reach_non_follower / (r.reach_follower + r.reach_non_follower) : null }))
+      .sort((a, b) => b.reach_non_follower - a.reach_non_follower)
+      .slice(0, 10);
+    if (!days.length) {
+      holder.replaceChildren(el('p', { class: 'empty', text: '계정 일별 데이터가 아직 없습니다.' }));
+      return;
+    }
+    holder.replaceChildren(el('table', { class: 'data' }, [
+      el('thead', {}, el('tr', {}, ['날짜', '그날 올린 게시물', '형식', '비팔로워 도달', '비팔로워 비율', '공유율', '평소 대비 도달']
+        .map((h, i) => el('th', { class: i < 3 ? 'left' : null, text: h })))),
+      el('tbody', {}, days.map((r) => {
+        const p = (byDate[r.date] || [])[0];
+        return el('tr', {}, [
+          el('td', { class: 'left', text: r.date }),
+          el('td', { class: 'left title' }, p ? linkCell(p) : el('span', { class: 'muted', text: '게시물 없음' })),
+          el('td', { class: 'left' }, p ? COLS.format.show(p) : ''),
+          el('td', { text: fmt(r.reach_non_follower) }),
+          el('td', { text: fmtPct(r.share) }),
+          el('td', { text: p ? fmtPct2(SIGNALS[0].value(p)) : '—' }),
+          el('td', { text: p ? fmtRatio(p._relReach) : '—' }),
+        ]);
+      })),
+    ]));
+  }
+
+  // ------------------------------------------------------------------
   // Tabs, loading, wiring
   // ------------------------------------------------------------------
 
@@ -531,6 +721,7 @@
     for (const p of document.querySelectorAll('[role="tabpanel"]')) p.hidden = p.dataset.panel !== name;
     if (name === 'overview') renderOverview();
     if (name === 'posts') renderPosts();
+    if (name === 'analysis') renderAnalysis();
   }
 
   async function loadJson(name, fallback) {
@@ -552,6 +743,7 @@
       box.hidden = false;
     }
     profileDates = Object.keys(state.profile).sort();
+    computeRelativeReach(state.posts);
     const meta = state.meta;
     const parts = [];
     if (meta.username) parts.push(`@${meta.username}`);
@@ -567,6 +759,7 @@
       b.addEventListener('click', () => { history.replaceState(null, '', `#${b.dataset.tab}`); selectTab(b.dataset.tab); });
     }
     document.getElementById('ov-range').addEventListener('change', renderOverview);
+    for (const id of ['an-range', 'an-format']) document.getElementById(id).addEventListener('change', renderAnalysis);
     for (const id of ['ps-range', 'ps-format']) {
       document.getElementById(id).addEventListener('change', () => { state.postsShown = PAGE_SIZE; renderPosts(); });
     }
@@ -581,7 +774,10 @@
       if (window.innerWidth === lastWidth) return;
       lastWidth = window.innerWidth;
       clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(() => { if (!document.getElementById('tab-overview').hidden) renderOverview(); }, 150);
+      resizeTimer = setTimeout(() => {
+        if (!document.getElementById('tab-overview').hidden) renderOverview();
+        if (!document.getElementById('tab-analysis').hidden) renderAnalysis();
+      }, 150);
     });
     window.addEventListener('hashchange', () => selectTab(location.hash.slice(1)));
     selectTab(location.hash.slice(1));
