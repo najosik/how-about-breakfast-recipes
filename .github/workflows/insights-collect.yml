@@ -45,6 +45,8 @@ jobs:
         env:
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          # optional repo variable (not a secret): the day the token was issued
+          IG_TOKEN_ISSUED_AT: ${{ vars.IG_TOKEN_ISSUED_AT }}
           INSIGHTS_R2_ENDPOINT: ${{ secrets.INSIGHTS_R2_ENDPOINT }}
           INSIGHTS_R2_ACCESS_KEY_ID: ${{ secrets.INSIGHTS_R2_ACCESS_KEY_ID }}
           INSIGHTS_R2_SECRET_ACCESS_KEY: ${{ secrets.INSIGHTS_R2_SECRET_ACCESS_KEY }}

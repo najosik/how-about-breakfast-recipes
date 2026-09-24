@@ -48,6 +48,7 @@ Required environment variables:
 """
 import argparse
 import datetime
+import hashlib
 import json
 import mimetypes
 import os
@@ -101,6 +102,12 @@ MEDIA_METRICS = {
 # children{id} only to count a carousel's slides (a carousel holds at most 20)
 MEDIA_FIELDS = 'id,caption,media_type,media_product_type,timestamp,permalink,children{id}'
 DIARY_NO_RE = re.compile(r'#조식다이어리\s*(\d+)')
+# Instagram long-lived tokens last 60 days and the API does not say when a
+# token was issued, so the collector notes the day it first sees a new token
+# (by fingerprint - the token itself is never stored) and counts from there.
+# IG_TOKEN_ISSUED_AT (repo variable, YYYY-MM-DD) overrides it when known.
+TOKEN_LIFETIME_DAYS = 60
+
 # Metrics kept in post_history.json (the per-day growth curve of a post).
 HISTORY_METRICS = ('reach', 'views', 'likes', 'comments', 'saved', 'shares',
                    'total_interactions', 'follows', 'profile_visits')
@@ -416,6 +423,24 @@ def upload_dashboard(store):
 # Main
 # --------------------------------------------------------------------------
 
+def update_token_status(meta, token, today):
+    fingerprint = hashlib.sha256(token.encode()).hexdigest()[:12]
+    prev = meta.get('token') or {}
+    if prev.get('fingerprint') != fingerprint:
+        # A change between two daily runs means it was issued within a day
+        # of today; the very first token we see has an unknown issue date.
+        prev = {'fingerprint': fingerprint, 'first_seen': today.isoformat(),
+                'issued_known': bool(prev.get('fingerprint'))}
+    override = os.environ.get('IG_TOKEN_ISSUED_AT', '').strip()
+    issued = prev['first_seen']
+    if re.fullmatch(r'\d{4}-\d{2}-\d{2}', override):
+        issued, prev['issued_known'] = override, True
+    prev['issued_at'] = issued
+    prev['expires_estimate'] = (datetime.date.fromisoformat(issued)
+                                + datetime.timedelta(days=TOKEN_LIFETIME_DAYS)).isoformat()
+    meta['token'] = prev
+
+
 def run(store, client, force_full):
     now = datetime.datetime.now(KST)
     today = now.date()
@@ -428,7 +453,17 @@ def run(store, client, force_full):
     refused_media = {}
 
     # 1. Profile snapshot (the only source of long-term follower history)
-    prof = client.profile()
+    update_token_status(meta, client.access_token, today)
+    try:
+        prof = client.profile()
+    except ApiError as e:
+        # 190 = invalid/expired token: record it so the dashboard can say so
+        # (the rest of this run can't collect anything).
+        if e.code == 190:
+            meta['token']['error'] = {'at': now.isoformat(timespec='seconds'), 'message': str(e)[:200]}
+            put_json(store, 'data/meta.json', meta)
+        raise
+    meta['token'].pop('error', None)
     profile_daily[today.isoformat()] = {
         k: prof.get(k) for k in ('followers_count', 'follows_count', 'media_count')
     }

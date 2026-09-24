@@ -933,11 +933,16 @@
     return `${g.label} (평소 대비 ${fmtRatio(g.rel)})`;
   }
 
+  const PLAN_FORMATS = ['캐러셀', '사진'];
+
   function renderPlaybooks() {
     const holder = document.getElementById('an-playbooks');
     const range = Number(document.getElementById('an-range').value);
     const from = range ? daysAgo(range) : '';
-    const posts = state.posts.filter((p) => p.date >= from && p._relReach !== undefined && p._relReach !== null && formatLabel(p));
+    // Feed posts only: the reels are re-edits of older posts, so they are not
+    // something to plan a topic/day for.
+    const posts = state.posts.filter((p) => p.date >= from && p._relReach !== undefined && p._relReach !== null
+      && PLAN_FORMATS.includes(formatLabel(p)));
     const base = median(posts.map((p) => p._relReach));
     const minCombo = posts.length >= 600 ? 6 : 4;
 
@@ -954,7 +959,7 @@
     // Spread the five picks over formats (at most two each) and never reuse
     // a topic; relax the per-format cap if that leaves fewer than five.
     const picked = [];
-    for (const cap of [2, 5]) {
+    for (const cap of [3, 5]) {
       for (const c of ranked) {
         if (picked.length >= 5) break;
         if (picked.includes(c) || picked.some((x) => x.tag === c.tag)) continue;
@@ -965,8 +970,10 @@
     picked.sort((a, b) => b.rel - a.rel);
     if (!picked.length) {
       holder.replaceChildren(el('p', { class: 'empty', text: `평소보다 뚜렷하게 잘 퍼진 형식 × 소재 조합(게시물 ${minCombo}개 이상)이 아직 없습니다. 기간을 넓혀 보세요.` }));
+      renderWeekPlan(posts, []);
       return;
     }
+    renderWeekPlan(posts, picked);
 
     holder.replaceChildren(...picked.map((c, i) => {
       const fmtPosts = posts.filter((p) => formatLabel(p) === c.format);
@@ -1001,6 +1008,41 @@
     }));
   }
 
+  // Weekly plan: the best playbook goes on the weekday where feed posts have
+  // spread best, the second on the next best, and so on; leftover days become
+  // slots for testing a share/save call-to-action, which the account has
+  // barely tried and which feeds the strongest non-follower signal.
+  function renderWeekPlan(posts, picked) {
+    const holder = document.getElementById('an-weekplan');
+    const dowFactor = FACTORS.find((f) => f.key === 'dow');
+    const rankFor = (list) => groupStats(list, dowFactor.group, dowFactor.order)
+      .filter((r) => r.n >= 5 && r.rel !== null).sort((a, b) => b.rel - a.rel);
+    const ranking = rankFor(posts);
+    const overall = Object.fromEntries(ranking.map((r) => [r.label, r]));
+    if (!ranking.length) {
+      holder.replaceChildren(el('p', { class: 'empty', text: '요일별로 비교할 게시물이 부족합니다. 기간을 넓혀 보세요.' }));
+      return;
+    }
+    const plan = {};
+    picked.forEach((c, i) => { if (ranking[i]) plan[ranking[i].label] = c; });
+    const days = dowFactor.order.slice(1).concat(dowFactor.order[0]); // 월요일 first
+    holder.replaceChildren(el('table', { class: 'data' }, [
+      el('thead', {}, el('tr', {}, ['요일', '이 요일 게시물 (평소 대비)', '추천 발행', '포인트']
+        .map((h, i) => el('th', { class: i !== 1 ? 'left' : null, text: h })))),
+      el('tbody', {}, days.map((d) => {
+        const c = plan[d], stat = overall[d];
+        return el('tr', { class: c ? null : 'small-n' }, [
+          el('td', { class: 'left', text: d }),
+          el('td', { text: stat ? `${fmtRatio(stat.rel)} · ${fmt(stat.n)}개` : '—' }),
+          el('td', { class: 'left' }, c ? el('strong', { text: `${c.format} × #${c.tag}` }) : '자유 소재'),
+          el('td', { class: 'left title', text: c
+            ? `모범 답안 ${picked.indexOf(c) + 1}번 참고 · 과거 평소 대비 ${fmtRatio(c.rel)}`
+            : '캡션 끝에 공유·저장 유도 문구를 넣어 시험 ("필요한 친구에게 보내주세요")' }),
+        ]);
+      })),
+    ]));
+  }
+
   // ------------------------------------------------------------------
   // Tabs, loading, wiring
   // ------------------------------------------------------------------
@@ -1012,6 +1054,35 @@
     if (name === 'overview') renderOverview();
     if (name === 'posts') renderPosts();
     if (name === 'analysis') renderAnalysis();
+  }
+
+  // Token expiry (the collector's estimate) and data freshness, shown under
+  // the title so a renewal is never missed.
+  function renderTokenStatus(meta) {
+    const box = document.getElementById('token-status');
+    const t = meta.token;
+    const msgs = [];
+    let level = 'ok';
+    if (t && t.error) {
+      level = 'bad';
+      msgs.push(`인스타그램 토큰 오류로 수집이 멈췄습니다 (${t.error.at.slice(0, 10)}). 토큰을 새로 발급해 GitHub Secrets와 Cloudflare Worker의 IG_ACCESS_TOKEN을 교체해 주세요.`);
+    } else if (t && t.expires_estimate) {
+      const left = Math.round((Date.parse(t.expires_estimate) - Date.parse(daysAgo(0))) / 86400000);
+      if (left <= 0) level = 'bad'; else if (left <= 14) level = 'warn';
+      msgs.push(`인스타그램 토큰 만료 예정 ${t.expires_estimate} (${left > 0 ? `D-${left}` : '만료됨'})`
+        + (left <= 14 ? ' · 지금 갱신해 주세요' : '')
+        + (t.issued_known ? '' : ' · 발급일을 몰라 첫 수집일 기준으로 추정했습니다. 실제 만료는 더 빠를 수 있어요'));
+    }
+    if (meta.last_run) {
+      const age = (Date.now() - Date.parse(meta.last_run)) / 3600000;
+      if (age > 36) {
+        if (level === 'ok') level = 'warn';
+        msgs.push(`마지막 수집이 ${Math.floor(age / 24)}일 전입니다. GitHub Actions의 수집 기록을 확인해 주세요.`);
+      }
+    }
+    box.textContent = msgs.join(' · ');
+    box.className = `token-status ${level}`;
+    box.hidden = !msgs.length;
   }
 
   async function loadJson(name, fallback) {
@@ -1040,6 +1111,7 @@
     if (meta.last_run) parts.push(`마지막 수집 ${meta.last_run.replace('T', ' ').slice(0, 16)}`);
     if (meta.collecting_since) parts.push(`${meta.collecting_since}부터 수집 중`);
     document.getElementById('account-line').textContent = parts.join(' · ') || '수집된 데이터가 없습니다.';
+    renderTokenStatus(meta);
     const missing = Object.keys(meta.refused_account_metrics || {}).concat(Object.keys(meta.refused_media_metrics || {}));
     document.getElementById('an-status').textContent = missing.length
       ? `API가 제공하지 않은 지표: ${missing.join(', ')}`
