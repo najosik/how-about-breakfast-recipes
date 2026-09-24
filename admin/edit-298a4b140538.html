@@ -7,85 +7,165 @@
 <title>게시물 편집 (관리자 전용)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 16px; color: #222; }
-  h1 { font-size: 1.1rem; }
+  /* This page reuses the public site's design tokens (--paper, --ink, --teal,
+     --clay, --line, --radius, etc.) from ../styles.css rather than defining
+     its own palette, so the admin tool reads as part of the same site instead
+     of a bare, unstyled form. */
+  body {
+    font-family: 'Noto Sans KR', -apple-system, sans-serif;
+    max-width: 760px; margin: 0 auto; padding: 40px 20px 72px;
+    color: var(--ink); background: var(--paper); line-height: 1.65;
+  }
+  h1 {
+    font-family: 'Nanum Myeongjo', serif; font-size: 1.55rem; margin: 0 0 8px;
+    color: var(--teal-deep);
+  }
+  .hint { color: var(--ink-faint); font-size: 0.85rem; line-height: 1.55; margin: 0 0 22px; }
   input, textarea, button { font-size: 16px; font-family: inherit; }
   input[type="text"], input[type="password"], textarea {
-    width: 100%; box-sizing: border-box; padding: 8px; margin: 4px 0 12px;
-    border: 1px solid #ccc; border-radius: 6px;
+    width: 100%; box-sizing: border-box; padding: 10px 12px; margin: 4px 0 16px;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    background: var(--paper-raised); color: var(--ink); transition: border-color .12s;
+  }
+  input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+    outline: 2px solid var(--teal); outline-offset: 1px;
   }
   textarea { min-height: 80px; resize: vertical; overflow: hidden; }
-  label { font-weight: 600; font-size: 0.9rem; }
+  label {
+    display: block; font-weight: 600; font-size: 0.8rem; color: var(--ink-soft);
+    margin-top: 4px; letter-spacing: .01em;
+  }
   button {
-    padding: 10px 16px; border-radius: 6px; border: none;
-    background: #222; color: #fff; cursor: pointer;
+    padding: 10px 18px; border-radius: var(--radius); border: 1px solid var(--teal-deep);
+    background: var(--teal-deep); color: #fff; cursor: pointer; font-weight: 600;
+    transition: background .12s, border-color .12s, color .12s;
   }
-  button:disabled { background: #999; cursor: default; }
-  #results { list-style: none; padding: 0; margin: 8px 0; max-height: 240px; overflow-y: auto; border: 1px solid #eee; border-radius: 6px; }
-  #results li { padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; }
-  #results li:hover { background: #f5f5f5; }
-  #status { margin-top: 12px; padding: 10px; border-radius: 6px; }
-  #status.ok { background: #e6f7e6; }
-  #status.err { background: #fde8e8; }
-  #editForm { display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #eee; }
-  .hint { color: #777; font-size: 0.85rem; }
-  .quicklinks { display: flex; gap: 8px; margin: 12px 0 16px; flex-wrap: wrap; }
+  button:hover { background: var(--teal); border-color: var(--teal); }
+  button:disabled {
+    background: var(--paper-raised); border-color: var(--line-strong); color: var(--ink-faint);
+    cursor: default;
+  }
+
+  .quicklinks { display: flex; gap: 8px; margin: 0 0 30px; flex-wrap: wrap; }
   .quicklinks a {
-    display: inline-block; padding: 6px 12px; border: 1px solid #ccc; border-radius: 6px;
-    color: #222; text-decoration: none; font-size: 0.85rem;
+    display: inline-flex; align-items: center; padding: 6px 14px; border: 1px solid var(--line-strong);
+    border-radius: var(--radius); color: var(--ink-soft); text-decoration: none;
+    font-size: 0.8rem; font-weight: 600; background: var(--paper-raised);
+    transition: border-color .12s, color .12s;
   }
-  .quicklinks a:hover { border-color: #222; }
-  .tabs { display: flex; gap: 8px; margin: 16px 0; border-bottom: 1px solid #ddd; }
+  .quicklinks a:hover { border-color: var(--teal); color: var(--teal-deep); }
+
+  #lockScreen {
+    max-width: 320px; margin: 15vh auto 0; padding: 28px 24px; text-align: center;
+    background: var(--paper-raised); border: 1px solid var(--line-strong); border-radius: 8px;
+  }
+  #lockScreen label { text-align: left; }
+  #lockScreen button { width: 100%; margin-top: 6px; }
+
+  .tabs {
+    display: flex; gap: 0; margin: 8px 0 26px; border-bottom: 1px solid var(--line);
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+  }
   .tabs button {
-    background: none; color: #777; border-radius: 0; padding: 8px 4px; margin-right: 16px;
-    border-bottom: 2px solid transparent;
+    background: none; color: var(--ink-faint); border: none; border-radius: 0;
+    padding: 10px 4px; margin-right: 22px; border-bottom: 2px solid transparent;
+    font-weight: 600; font-size: 0.85rem; white-space: nowrap; flex-shrink: 0;
   }
-  .tabs button.active { color: #222; border-bottom-color: #222; font-weight: 600; }
+  .tabs button:hover { background: none; color: var(--ink-soft); }
+  .tabs button.active { color: var(--teal-deep); border-bottom-color: var(--teal); }
   .tabpage { display: none; }
   .tabpage.active { display: block; }
-  #missingList { list-style: none; padding: 0; margin: 8px 0; }
-  #missingList li { padding: 10px 8px; border-bottom: 1px solid #eee; }
+
+  #results, #missingList {
+    list-style: none; padding: 0; margin: 8px 0 20px;
+    border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  #results { max-height: 240px; overflow-y: auto; }
+  #results li, #missingList li { padding: 10px 12px; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+  #results li:last-child, #missingList li:last-child { border-bottom: none; }
+  #results li { cursor: pointer; }
+  #results li:hover { background: var(--teal-pale); }
   #missingList .missing-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
   #missingList .missing-actions { display: flex; gap: 6px; flex-shrink: 0; }
-  .preview-box { margin-top: 10px; padding: 10px; background: #f7f7f7; border-radius: 6px; font-size: 0.85rem; display: none; }
-  .preview-box img { max-width: 120px; border-radius: 6px; margin: 6px 0; display: block; }
-  .preview-box .preview-caption { white-space: pre-wrap; color: #444; max-height: 160px; overflow-y: auto; margin: 6px 0; }
-  .preview-box .preview-meta { color: #888; }
-  #missingList button { padding: 6px 10px; font-size: 0.85rem; }
-  #missingList .skip-btn { background: #999; }
-  #missingCount { color: #777; font-size: 0.85rem; margin: 8px 0; }
-  .v-cand-slot { margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px dashed #eee; }
-  .v-cand-results { list-style: none; padding: 0; margin: 4px 0; max-height: 160px; overflow-y: auto; }
-  .v-cand-results li { padding: 6px 8px; border: 1px solid #eee; border-top: none; cursor: pointer; font-size: 0.85rem; }
-  .v-cand-results li:first-child { border-top: 1px solid #eee; }
-  .v-cand-results li:hover { background: #f5f5f5; }
-  .v-cand-picked { font-size: 0.85rem; padding: 6px 0; color: #222; }
-  .v-cand-picked.filled { color: #056b05; font-weight: 600; }
-  #voteRoundsList .vote-round-row { padding: 10px 8px; border: 1px solid #eee; border-radius: 6px; margin-bottom: 8px; font-size: 0.85rem; }
-  #voteRoundsList .vote-round-row .vrr-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-weight: 600; }
-  #voteRoundsList .vrr-status { font-weight: 400; color: #777; }
-  #voteRoundsList .vrr-cands { margin: 6px 0; color: #444; }
-  #voteRoundsList .vrr-cands div { display: flex; justify-content: space-between; padding: 2px 0; }
-  #voteRoundsList button { padding: 6px 10px; font-size: 0.85rem; margin-top: 6px; }
+  #missingList button { padding: 6px 12px; font-size: 0.8rem; }
+  #missingList .skip-btn { background: var(--paper); border-color: var(--line-strong); color: var(--ink-soft); }
+  #missingList .skip-btn:hover { background: var(--paper-raised); border-color: var(--ink-faint); }
+  #missingCount { color: var(--ink-faint); font-size: 0.85rem; margin: 0 0 8px; }
 
-  .essay-nav { display: flex; align-items: center; gap: 8px; margin: 14px 0; }
+  #status { margin-top: 16px; padding: 12px 14px; border-radius: var(--radius); font-size: 0.9rem; }
+  #status.ok { background: var(--teal-pale); color: var(--teal-deep); }
+  #status.err { background: var(--clay-pale); color: var(--clay); }
+
+  #editForm { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+  #editingTitle, #addingTitle {
+    font-family: 'Nanum Myeongjo', serif; font-size: 1.15rem; color: var(--ink); margin: 0 0 14px;
+  }
+
+  .preview-box {
+    margin-top: 12px; padding: 12px; background: var(--paper-raised);
+    border: 1px solid var(--line); border-radius: var(--radius); font-size: 0.85rem; display: none;
+  }
+  .preview-box img { max-width: 120px; border-radius: var(--radius); margin: 6px 0; display: block; }
+  .preview-box .preview-caption {
+    white-space: pre-wrap; color: var(--ink-soft); max-height: 160px; overflow-y: auto; margin: 6px 0;
+  }
+  .preview-box .preview-meta { color: var(--ink-faint); }
+
+  .v-cand-slot { margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
+  .v-cand-results {
+    list-style: none; padding: 0; margin: 4px 0; max-height: 180px; overflow-y: auto;
+    border-radius: var(--radius);
+  }
+  .v-cand-results li { padding: 8px 10px; border: 1px solid var(--line); border-top: none; cursor: pointer; font-size: 0.85rem; }
+  .v-cand-results li:first-child { border-top: 1px solid var(--line); }
+  .v-cand-results li:hover { background: var(--teal-pale); }
+  .v-cand-picked { font-size: 0.85rem; padding: 6px 0; color: var(--ink-soft); }
+  .v-cand-picked.filled { color: var(--teal-deep); font-weight: 600; }
+
+  #voteRoundsList .vote-round-row {
+    padding: 12px; border: 1px solid var(--line); border-radius: var(--radius);
+    margin-bottom: 10px; font-size: 0.85rem;
+  }
+  #voteRoundsList .vote-round-row .vrr-head {
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    font-weight: 600; color: var(--ink);
+  }
+  #voteRoundsList .vrr-status { font-weight: 400; color: var(--ink-faint); }
+  #voteRoundsList .vrr-cands { margin: 8px 0; color: var(--ink-soft); }
+  #voteRoundsList .vrr-cands div { display: flex; justify-content: space-between; padding: 3px 0; }
+  #voteRoundsList button { padding: 6px 12px; font-size: 0.8rem; margin-top: 8px; }
+
+  .essay-nav { display: flex; align-items: center; gap: 8px; margin: 16px 0; }
   .essay-nav input { margin: 0; flex: 1; }
-  .essay-map { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 4px; padding: 10px; background: #f7f7f7; border-radius: 6px; }
-  .essay-month-label { font-size: 0.7rem; color: #888; margin-bottom: 3px; text-align: center; }
+  .essay-map {
+    display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 6px; padding: 12px;
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .essay-month { display: flex; flex-direction: column; align-items: center; }
+  .essay-month-label { font-size: 0.68rem; color: var(--ink-faint); margin-bottom: 4px; text-align: center; }
   .essay-days { display: grid; grid-template-columns: repeat(7, 9px); gap: 2px; }
-  .essay-day { width: 9px; height: 9px; border-radius: 2px; background: rgba(43,42,37,0.1); }
-  .essay-day.filled { background: #056b05; cursor: pointer; }
-  #essayProgress { font-weight: 600; }
-  .essay-card-section { margin: 10px 0; }
-  .essay-card-section label { display: block; margin-bottom: 2px; }
-  .essay-card-section div { white-space: pre-wrap; font-size: 0.9rem; color: #333; }
-  .essay-decision-row { display: flex; gap: 8px; margin-bottom: 14px; }
-  .essay-decision-row button { flex: 1; }
-  #essaySaveBtn.active { background: #056b05; }
-  #essaySkipBtn.active { background: #888; }
+  .essay-day { width: 9px; height: 9px; border-radius: 2px; background: var(--line-strong); }
+  .essay-day.filled { background: var(--teal); cursor: pointer; }
+  #essayProgress { font-weight: 600; color: var(--ink); }
+  #essayReviewProgress { margin-bottom: 8px; }
+  #essayResumeBtn {
+    width: 100%; margin: 10px 0; background: var(--paper-raised);
+    border-color: var(--line-strong); color: var(--ink-soft);
+  }
+  #essayResumeBtn:hover { border-color: var(--teal); color: var(--teal-deep); background: var(--teal-pale); }
+  .essay-card-section { margin: 12px 0; }
+  .essay-card-section label { margin-bottom: 4px; }
+  .essay-card-section div { white-space: pre-wrap; font-size: 0.9rem; color: var(--ink); line-height: 1.6; }
+  .essay-decision-row { display: flex; gap: 8px; margin-bottom: 16px; }
+  .essay-decision-row button {
+    flex: 1; background: var(--paper); border: 1px solid var(--line-strong); color: var(--ink-soft);
+  }
+  .essay-decision-row button:hover { border-color: var(--ink-faint); background: var(--paper); }
+  #essaySaveBtn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+  #essaySkipBtn.active { background: var(--ink-faint); border-color: var(--ink-faint); color: #fff; }
 </style>
 </head>
 <body>
@@ -260,6 +340,7 @@
   <div id="status" style="display:none"></div>
 </div>
 
+<script src="../i18n.js"></script>
 <script src="../shared.js"></script>
 <script src="../worldcup.js"></script>
 <script>
