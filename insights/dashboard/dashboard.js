@@ -604,7 +604,7 @@
     const format = document.getElementById('an-format').value;
     const from = range ? daysAgo(range) : '';
     return state.posts.filter((p) => p.date >= from && p._relReach !== undefined && p._relReach !== null
-      && (!format || p.media_product_type === format));
+      && (!format || formatLabel(p) === format));
   }
 
   function renderAnalysis() {
