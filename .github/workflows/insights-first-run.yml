@@ -1,0 +1,35 @@
+name: Insights first run (temporary)
+
+# One-off full collection from this branch so the dashboard has data before
+# the branch is merged (scheduled runs only fire on main). Logs are counts only.
+on:
+  push:
+    branches: [claude/instagram-analytics-dashboard-sf1tc2]
+    paths: ['.github/workflows/insights-first-run.yml']
+
+permissions:
+  contents: read
+
+concurrency:
+  group: insights-collect
+  cancel-in-progress: false
+
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install boto3
+      - name: Collect insights (full)
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          INSIGHTS_R2_ENDPOINT: ${{ secrets.INSIGHTS_R2_ENDPOINT }}
+          INSIGHTS_R2_ACCESS_KEY_ID: ${{ secrets.INSIGHTS_R2_ACCESS_KEY_ID }}
+          INSIGHTS_R2_SECRET_ACCESS_KEY: ${{ secrets.INSIGHTS_R2_SECRET_ACCESS_KEY }}
+          INSIGHTS_R2_BUCKET: ${{ secrets.INSIGHTS_R2_BUCKET }}
+        run: python insights/collect_insights.py --full
