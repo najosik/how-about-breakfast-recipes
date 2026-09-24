@@ -720,6 +720,9 @@
   const GENERIC_TAGS = new Set(['조식', '조식다이어리', '미라클모닝', '레시피', '아침밥', '직장인', '아침밥상', '혼밥', '집밥',
     '홈쿡', '모닝루틴', '모닝리추얼', '먹스타그램', '요리스타그램', '오늘의조식', '조식스타그램', '아침', '아침식사',
     '브런치', '건강식', '다이어트', '맛스타그램', '요리', '일상', '데일리']);
+  // Series / campaign names (#나의프랑스식샐러드, #나의로컬푸드샐러드,
+  // #나의프랑스식오븐요리, #그래잇데이 ...) name a column, not a topic.
+  const SERIES_TAG = /^나의|^그래잇데이$/;
   const WEEKDAYS = ['일', '월', '화', '수', '목', '금', '토'];
   const MIN_GROUP = 15; // groups smaller than this are shown but never drive a strategy card
 
@@ -736,7 +739,8 @@
     const tags = new Set();
     for (const m of (p.caption || '').matchAll(/#([^\s#.,!?]+)/g)) tags.add(m[1]);
     for (const t of (p.recipe && p.recipe.hashtags) || []) tags.add(String(t));
-    p._tags = [...tags].filter((t) => /[가-힣]/.test(t) && !GENERIC_TAGS.has(t) && !/^조식다이어리\d*$/.test(t));
+    p._tags = [...tags].filter((t) => /[가-힣]/.test(t) && !GENERIC_TAGS.has(t) && !/^조식다이어리\d*$/.test(t)
+      && !SERIES_TAG.test(t));
     return p._tags;
   }
 
@@ -857,7 +861,7 @@
     const rows = groupStats(posts, postTags).filter((r) => r.n >= minN && r.rel !== null)
       .sort((a, b) => b.rel - a.rel);
     document.getElementById('an-topics-sub').textContent =
-      `해시태그를 소재로 보고, ${minN}개 이상 게시물에 쓰인 소재끼리 비교합니다. 매번 붙이는 공통 태그(#조식, #레시피 등)는 뺐습니다.`;
+      `해시태그를 소재로 보고, ${minN}개 이상 게시물에 쓰인 소재끼리 비교합니다. 매번 붙이는 공통 태그(#조식, #레시피 등)와 시리즈 이름(#나의프랑스식샐러드 등)은 뺐습니다.`;
     if (rows.length < 4) {
       holder.replaceChildren(el('p', { class: 'empty', text: '비교할 만큼 자주 쓰인 소재가 없습니다. 기간을 넓혀 보세요.' }));
       return rows;
