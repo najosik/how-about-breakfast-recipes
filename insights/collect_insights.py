@@ -98,7 +98,8 @@ MEDIA_METRICS = {
     'FEED': COMMON_MEDIA_METRICS + ['follows', 'profile_visits'],
 }
 
-MEDIA_FIELDS = 'id,caption,media_type,media_product_type,timestamp,permalink'
+# children{id} only to count a carousel's slides (a carousel holds at most 20)
+MEDIA_FIELDS = 'id,caption,media_type,media_product_type,timestamp,permalink,children{id}'
 DIARY_NO_RE = re.compile(r'#조식다이어리\s*(\d+)')
 # Metrics kept in post_history.json (the per-day growth curve of a post).
 HISTORY_METRICS = ('reach', 'views', 'likes', 'comments', 'saved', 'shares',
@@ -467,6 +468,8 @@ def run(store, client, force_full):
             'media_type': media.get('media_type'),
             'media_product_type': media.get('media_product_type'),
             'permalink': media.get('permalink'),
+            'carousel_count': (len(media.get('children', {}).get('data', []))
+                               if media.get('media_type') == 'CAROUSEL_ALBUM' else None),
             'caption': media.get('caption') or '',
             'diary_no': diary_no,
             'recipe': recipe,

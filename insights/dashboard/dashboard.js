@@ -740,7 +740,25 @@
     return p._tags;
   }
 
-  const hashtagCount = (p) => ((p.caption || '').match(/#[^\s#]+/g) || []).length;
+  // Mosseri: hashtags label what a post is about (used above as topics) but
+  // do not drive reach, and posts are now capped at five - so hashtag count
+  // is not a factor. These caption traits map onto the signals that do.
+  const CTA_RE = /저장\s*(해\s*(두|놓)|하세요|하시|필수|각)|공유\s*(해|하세요|부탁)|보내\s*(주세요|줘|보세요)|친구(에게|한테|를)?\s*(보내|태그|공유|알려)|태그\s*(해|하세요)|댓글로|\bDM\b|디엠|save (this|it)|share (this|it|with)|send (this|it)|tag (a|your) friend/i;
+  function hookLine(p) {
+    const lines = (p.caption || '').split('\n').map((l) => l.trim()).filter(Boolean);
+    // The diary's first line is metadata ("20260817 #조식다이어리 1810, 날씨")
+    const body = lines.filter((l, i) => !(i === 0 && (/^\d{8}/.test(l) || /#조식다이어리/.test(l))));
+    return body[0] || '';
+  }
+  function hookType(p) {
+    const line = hookLine(p);
+    if (!line) return null;
+    if (/\?|？|(까요|나요|을까|는지|ㄹ까)\s*[.!]*$/.test(line)) return '질문형';
+    // "5분", "3가지", "2단계" - a number with a counter word, not a calorie tag
+    if (/\d+\s*(가지|분|초|단계|번|배|%|퍼센트|인분|개|년|시간)(?![a-z])/i.test(line.replace(/\d+\s*kcal/gi, ''))) return '숫자·정보형';
+    if (/[!♥❤😍🤤😋🥰]/u.test(line)) return '감탄·감성형';
+    return '일반 서술형';
+  }
   const bin = (v, edges, labels) => { for (let i = 0; i < edges.length; i++) if (v < edges[i]) return labels[i]; return labels[labels.length - 1]; };
   const formatLabel = (p) => (p.media_product_type === 'REELS' ? '릴스' : FORMAT_LABELS[p.media_type] || null);
 
@@ -750,9 +768,11 @@
       key: 'length', title: '캡션 길이', order: ['300자 미만', '300~600자', '600~1,000자', '1,000자 이상'],
       group: (p) => bin((p.caption || '').length, [300, 600, 1000], ['300자 미만', '300~600자', '600~1,000자', '1,000자 이상']),
     },
+    { key: 'hook', title: '캡션 첫 문장 유형', order: ['질문형', '숫자·정보형', '감탄·감성형', '일반 서술형'], group: hookType },
+    { key: 'cta', title: '공유·저장 유도 문구', order: ['있음', '없음'], group: (p) => (CTA_RE.test(p.caption || '') ? '있음' : '없음') },
     {
-      key: 'tags', title: '해시태그 수', order: ['0~5개', '6~10개', '11~20개', '21개 이상'],
-      group: (p) => bin(hashtagCount(p), [6, 11, 21], ['0~5개', '6~10개', '11~20개', '21개 이상']),
+      key: 'slides', title: '캐러셀 장수', order: ['2~3장', '4~6장', '7장 이상'],
+      group: (p) => (p.media_type === 'CAROUSEL_ALBUM' && p.carousel_count ? bin(p.carousel_count, [4, 7], ['2~3장', '4~6장', '7장 이상']) : null),
     },
     { key: 'recipe', title: '캡션에 레시피(재료)', order: ['있음', '없음'], group: (p) => (/재료/.test(p.caption || '') ? '있음' : '없음') },
     { key: 'kcal', title: '칼로리 표기', order: ['있음', '없음'], group: (p) => (/kcal/i.test(p.caption || '') ? '있음' : '없음') },
@@ -953,7 +973,9 @@
       const minN = fmtPosts.length >= 150 ? 15 : 8;
       const fmtBase = median(fmtPosts.map((p) => p._relReach));
       const dow = bestGroup(fmtPosts, 'dow', minN), hour = bestGroup(fmtPosts, 'hour', minN);
-      const length = bestGroup(fmtPosts, 'length', minN), tags = bestGroup(fmtPosts, 'tags', minN), recipe = bestGroup(fmtPosts, 'recipe', minN);
+      const length = bestGroup(fmtPosts, 'length', minN), hook = bestGroup(fmtPosts, 'hook', minN);
+      const cta = bestGroup(fmtPosts, 'cta', minN), recipe = bestGroup(fmtPosts, 'recipe', minN);
+      const slides = c.format === '캐러셀' ? bestGroup(fmtPosts, 'slides', Math.min(minN, 8)) : null;
       const topFmt = fmtPosts.slice().sort((a, b) => b._relReach - a._relReach).slice(0, Math.max(1, Math.floor(fmtPosts.length / 5)));
       const targetShare = median(topFmt.map(SIGNALS[0].value)), targetSave = median(topFmt.map(SIGNALS[1].value));
       const examples = c.posts.slice().sort((a, b) => b._relReach - a._relReach).slice(0, 2);
@@ -968,7 +990,8 @@
         ]),
         el('ul', { class: 'pb-list' }, [
           item('언제', `요일 ${describeBest(dow, '데이터 부족', fmtBase)} · 시간대 ${describeBest(hour, '데이터 부족', fmtBase)}`),
-          item('캡션', `길이 ${describeBest(length, '—', fmtBase)} · 해시태그 ${describeBest(tags, '—', fmtBase)} · 레시피 ${describeBest(recipe, '—', fmtBase)}`),
+          item('캡션', `첫 문장 ${describeBest(hook, '—', fmtBase)} · 공유·저장 유도 ${describeBest(cta, '—', fmtBase)} · 길이 ${describeBest(length, '—', fmtBase)} · 레시피 ${describeBest(recipe, '—', fmtBase)}`),
+          c.format === '캐러셀' ? item('장수', describeBest(slides, '장수 데이터가 쌓이는 중', fmtBase)) : null,
           item('목표 신호', `공유율 ${fmtPct2(targetShare)} · 저장율 ${fmtPct2(targetSave)} 이상 (이 형식에서 잘 퍼진 상위 20% 게시물의 중앙값)`),
           item('본보기 게시물', el('span', {}, examples.map((p, k) => el('span', { class: 'pb-example' }, [
             k ? ' · ' : '', ...[].concat(linkCell(p)[0]), ` (${p.date}, 평소 대비 ${fmtRatio(p._relReach)})`,
