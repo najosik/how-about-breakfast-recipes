@@ -891,6 +891,91 @@
     const factorResults = renderFactors(posts);
     const topicRows = renderTopics(posts);
     renderStrategy(posts, factorResults, topicRows);
+    renderPlaybooks();
+  }
+
+  // Playbooks: the "format × topic" combinations that spread best, each with
+  // the timing and caption habits that worked best *for that format* and
+  // the past posts to use as a model. Only the period filter applies - the
+  // playbooks are meant to span formats.
+  function bestGroup(posts, factorKey, minN) {
+    const f = FACTORS.find((x) => x.key === factorKey);
+    const rows = groupStats(posts, f.group, f.order).filter((r) => r.n >= minN && r.rel !== null);
+    if (!rows.length) return null;
+    const best = rows.reduce((a, b) => (b.rel > a.rel ? b : a));
+    return { ...best, only: rows.length === 1 };
+  }
+
+  function describeBest(g, fallback, base) {
+    if (!g) return fallback;
+    if (g.only) return `${g.label} (대부분 이 조건으로 올려서 비교 불가)`;
+    if (base && g.rel < base * 1.05) return '조건별로 뚜렷한 차이 없음';
+    return `${g.label} (평소 대비 ${fmtRatio(g.rel)})`;
+  }
+
+  function renderPlaybooks() {
+    const holder = document.getElementById('an-playbooks');
+    const range = Number(document.getElementById('an-range').value);
+    const from = range ? daysAgo(range) : '';
+    const posts = state.posts.filter((p) => p.date >= from && p._relReach !== undefined && p._relReach !== null && formatLabel(p));
+    const base = median(posts.map((p) => p._relReach));
+    const minCombo = posts.length >= 600 ? 6 : 4;
+
+    const combos = {};
+    for (const p of posts) {
+      for (const tag of postTags(p)) (combos[`${formatLabel(p)}|${tag}`] = combos[`${formatLabel(p)}|${tag}`] || []).push(p);
+    }
+    const ranked = Object.entries(combos)
+      .filter(([, list]) => list.length >= minCombo)
+      .map(([k, list]) => { const [format, tag] = k.split('|'); return { format, tag, posts: list, rel: median(list.map((p) => p._relReach)) }; })
+      .filter((c) => base && c.rel >= base * 1.1)
+      .sort((a, b) => b.rel - a.rel);
+
+    // Spread the five picks over formats (at most two each) and never reuse
+    // a topic; relax the per-format cap if that leaves fewer than five.
+    const picked = [];
+    for (const cap of [2, 5]) {
+      for (const c of ranked) {
+        if (picked.length >= 5) break;
+        if (picked.includes(c) || picked.some((x) => x.tag === c.tag)) continue;
+        if (picked.filter((x) => x.format === c.format).length >= cap) continue;
+        picked.push(c);
+      }
+    }
+    picked.sort((a, b) => b.rel - a.rel);
+    if (!picked.length) {
+      holder.replaceChildren(el('p', { class: 'empty', text: `평소보다 뚜렷하게 잘 퍼진 형식 × 소재 조합(게시물 ${minCombo}개 이상)이 아직 없습니다. 기간을 넓혀 보세요.` }));
+      return;
+    }
+
+    holder.replaceChildren(...picked.map((c, i) => {
+      const fmtPosts = posts.filter((p) => formatLabel(p) === c.format);
+      const minN = fmtPosts.length >= 150 ? 15 : 8;
+      const fmtBase = median(fmtPosts.map((p) => p._relReach));
+      const dow = bestGroup(fmtPosts, 'dow', minN), hour = bestGroup(fmtPosts, 'hour', minN);
+      const length = bestGroup(fmtPosts, 'length', minN), tags = bestGroup(fmtPosts, 'tags', minN), recipe = bestGroup(fmtPosts, 'recipe', minN);
+      const topFmt = fmtPosts.slice().sort((a, b) => b._relReach - a._relReach).slice(0, Math.max(1, Math.floor(fmtPosts.length / 5)));
+      const targetShare = median(topFmt.map(SIGNALS[0].value)), targetSave = median(topFmt.map(SIGNALS[1].value));
+      const examples = c.posts.slice().sort((a, b) => b._relReach - a._relReach).slice(0, 2);
+      const item = (label, value) => el('li', {}, [el('span', { class: 'pb-label', text: label }), value]);
+      return el('article', { class: 'playbook' }, [
+        el('div', { class: 'pb-head' }, [
+          el('span', { class: 'strategy-rank', text: String(i + 1) }),
+          el('div', {}, [
+            el('strong', { text: `${c.format} × #${c.tag}` }),
+            el('div', { class: 'muted', text: `과거 ${fmt(c.posts.length)}개 게시물의 평소 대비 도달 ${fmtRatio(c.rel)} (이 기간 전체 ${fmtRatio(base)})` }),
+          ]),
+        ]),
+        el('ul', { class: 'pb-list' }, [
+          item('언제', `요일 ${describeBest(dow, '데이터 부족', fmtBase)} · 시간대 ${describeBest(hour, '데이터 부족', fmtBase)}`),
+          item('캡션', `길이 ${describeBest(length, '—', fmtBase)} · 해시태그 ${describeBest(tags, '—', fmtBase)} · 레시피 ${describeBest(recipe, '—', fmtBase)}`),
+          item('목표 신호', `공유율 ${fmtPct2(targetShare)} · 저장율 ${fmtPct2(targetSave)} 이상 (이 형식에서 잘 퍼진 상위 20% 게시물의 중앙값)`),
+          item('본보기 게시물', el('span', {}, examples.map((p, k) => el('span', { class: 'pb-example' }, [
+            k ? ' · ' : '', ...[].concat(linkCell(p)[0]), ` (${p.date}, 평소 대비 ${fmtRatio(p._relReach)})`,
+          ])))),
+        ]),
+      ]);
+    }));
   }
 
   // ------------------------------------------------------------------
