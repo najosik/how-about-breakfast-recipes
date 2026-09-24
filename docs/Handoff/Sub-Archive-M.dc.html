@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>아카이브 검색 — 모바일</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,800;1,9..144,400&amp;display=swap">
+<style>
+body{margin:0;background:#FBFBF8}
+a{color:#3F5E47}a:hover{color:#2C4533}
+</style>
+</helmet>
+<div style="width: 390px; height: 1720px; box-sizing: border-box; background: #FBFBF8; color: #1C1C1A; font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; display: flex; flex-direction: column">
+
+<header style="margin: 0 20px; height: 60px; border-bottom: 3px solid #1C1C1A; display: flex; align-items: center; justify-content: space-between">
+<a href="B-Mobile.dc.html" style="font-family: 'Noto Serif KR', serif; font-size: 24px; font-weight: 900; letter-spacing: -0.04em; color: #1C1C1A; text-decoration: none">날마다, 조식</a>
+<button aria-label="메뉴" style="width: 44px; height: 44px; margin-right: -10px; border: 0; background: transparent; color: #1C1C1A; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></button>
+</header>
+
+<section style="padding: 28px 20px 0; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 12px; letter-spacing: 0.14em; font-weight: 700; color: #3F5E47">THE ARCHIVE · 2,109</span>
+<h1 style="margin: -8px 0 0; font-family: 'Noto Serif KR', serif; font-size: 36px; font-weight: 900; letter-spacing: -0.02em">전체 아카이브</h1>
+<form role="search" style="display: flex; align-items: center; gap: 10px; border-top: 1px solid #1C1C1A; border-bottom: 1px solid #1C1C1A; height: 60px">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1C1C1A" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+<input id="qArcM" type="search" aria-label="아카이브 검색" placeholder="재료, 메뉴명, 키워드" style="flex-grow: 1; min-width: 0; height: 52px; border: 0; background: transparent; font-family: 'Noto Serif KR', serif; font-size: 18px; color: #1C1C1A">
+</form>
+</section>
+
+<div style="padding: 14px 20px; display: flex; gap: 8px; overflow: hidden; border-bottom: 1px solid #D9D8D2">
+<button style="flex-shrink: 0; height: 40px; padding: 0 14px; border: 1px solid #1C1C1A; background: transparent; color: #1C1C1A; font: inherit; font-size: 14px; font-weight: 700; display: flex; align-items: center; gap: 6px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M7 12h10M10 18h4"></path></svg>필터 1</button>
+<button style="flex-shrink: 0; height: 40px; padding: 0 14px; border: 1px solid #1C1C1A; background: #1C1C1A; color: #FBFBF8; font: inherit; font-size: 14px">9월 25일 ✕</button>
+<button style="flex-shrink: 0; height: 40px; padding: 0 14px; border: 1px solid #C9C8C0; background: transparent; color: #1C1C1A; font: inherit; font-size: 14px">칼로리</button>
+<button style="flex-shrink: 0; height: 40px; padding: 0 14px; border: 1px solid #C9C8C0; background: transparent; color: #1C1C1A; font: inherit; font-size: 14px">연도</button>
+<button style="flex-shrink: 0; height: 40px; padding: 0 14px; border: 1px solid #C9C8C0; background: transparent; color: #1C1C1A; font: inherit; font-size: 14px">재료</button>
+</div>
+
+<section style="padding: 16px 20px 40px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; justify-content: space-between">
+<p style="margin: 0; font-size: 14px; color: #4A4943" aria-live="polite"><b style="font-family: 'Fraunces', serif; font-size: 22px; color: #1C1C1A">6</b> 편</p>
+<label style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: #4A4943">정렬
+<select style="height: 40px; padding: 0 8px; border: 1px solid #1C1C1A; background: #FBFBF8; font: inherit; font-size: 13px"><option>최신순</option><option>오래된순</option><option>칼로리 낮은순</option></select></label>
+</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 14px">
+<sc-for list="{{results}}" as="r" hint-placeholder-count="6">
+<a href="Sub-Recipe-M.dc.html" style="display: flex; flex-direction: column; gap: 8px; text-decoration: none; color: #1C1C1A">
+<sc-if value="{{r.img}}" hint-placeholder-val="{{true}}">
+<img src="{{r.img}}" alt="{{r.title}}" style="display: block; width: 100%; height: 150px; object-fit: cover">
+</sc-if>
+<sc-if value="{{r.noImg}}" hint-placeholder-val="{{false}}">
+<div style="height: 150px; background: #EBF1EA; display: flex; align-items: center; justify-content: center; font-size: 13px; color: #4A4943">[사진]</div>
+</sc-if>
+<span style="font-family: 'Fraunces', serif; font-size: 12px; color: #4A4943; border-top: 1px solid #1C1C1A; padding-top: 6px">{{r.date}}</span>
+<span style="font-family: 'Noto Serif KR', serif; font-size: 16px; font-weight: 700; line-height: 1.4">{{r.title}}</span>
+</a>
+</sc-for>
+</div>
+</section>
+
+<footer style="margin: auto 20px 0; padding: 20px 0 32px; border-top: 3px solid #1C1C1A; display: flex; flex-direction: column; gap: 10px; font-size: 13px; color: #4A4943">
+<div style="display: flex; gap: 16px"><a href="Sub-Hall-M.dc.html" style="color: #4A4943">명예의 전당</a><a href="Sub-Privacy-D.dc.html" style="color: #4A4943">개인정보처리방침</a></div>
+<span>© how.about.breakfast 2020–2026</span>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":1720}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var r = [
+      ['2025-09-25', '[2025년 메뉴명]', ''],
+      ['2024-09-25', '안성재 셰프의 마늘 라면', '/_blob/e3ed829b81e8a0acef4a993bc7807854'],
+      ['2023-09-25', '아보카도 에그 타코', '/_blob/ed68926960f352fccf62f5d6755bcd99'],
+      ['2022-09-25', '하몽 아스파라거스 플레이트', '/_blob/c1f0061bd6d287c5c36a16149380fe45'],
+      ['2021-09-25', '양송이버섯 에그 토스트', '/_blob/96c1c827fdb43e15fda89c89cd04fda2'],
+      ['2020-09-25', '소시지를 곁들인 대파 샐러드', '/_blob/2a06941a827d07ca0f23e685bfc956e1']
+    ].map(function (a) { return { date: a[0], title: a[1], img: a[2], noImg: !a[2] }; });
+    return { results: r };
+  }
+}
+</script>
+</body>
+</html>
