@@ -24,3 +24,6 @@ images/
 # local-only content review tool (not part of the deployed site)
 review.html
 review.js
+
+# private insights data pulled locally with collect_insights.py --local - never commit
+insights/_local/
