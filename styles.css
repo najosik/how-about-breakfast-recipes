@@ -14,6 +14,19 @@
   --line: rgba(28,28,26,0.10);
   --line-strong: rgba(28,28,26,0.22);
   --radius: 2px;
+
+  /* Renewal(B안 "아침 잡지") 토큰 - docs/Handoff/HANDOFF.md 1절.
+     기존 --teal 계열과 값이 미묘히 다르고, 다른 페이지(아카이브/명예의 전당/
+     레시피 상세/모달)는 아직 --teal을 쓰므로 별도 이름으로 추가한다.
+     페이지별 리뉴얼이 끝나면 --teal 쪽을 이 값으로 통합할지 다시 검토한다. */
+  --green:#55795E;
+  --green-dark:#3F5E47;
+  --green-deep:#3A5541;
+  --mint:#EBF1EA;
+  --mint-skip:#D4DDD3;
+  --text-2:#4A4943;
+  --text-3:#6B695F;
+  --rule:#D9D8D2;
 }
 *{box-sizing:border-box;}
 .hidden{display:none !important;}
@@ -347,165 +360,134 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
   text-align:center; font-size:12px; color:rgba(255,255,255,0.45);
 }
 
-/* ============ Homepage-only components ============ */
+/* ============ Homepage-only components (Renewal B안 "아침 잡지") ============
+   admin/edit-298a4b140538.html의 "빠진 날짜" 미리보기 탭이 .otd-*/.section-head
+   클래스를 그대로 재사용하므로 그 클래스들은 여기서 건드리지 않는다 - 새 홈페이지
+   요소는 전부 home- 접두사를 붙인 새 클래스로 만든다. */
 
-.masthead{padding:32px 0 24px; text-align:center; border-bottom:1px solid var(--line); margin-bottom:40px;}
-.home-search{width:100%; min-width:200px; max-width:320px; margin:0 auto 32px; display:flex; gap:8px;}
-.home-search .search-box{flex:1;}
-.home-search .home-search-btn{padding:0 18px; font-size:14px; white-space:nowrap;}
-.masthead .eyebrow{justify-content:center;}
-.masthead .kicker{
-  display:flex; justify-content:center; gap:18px; font-size:12px; color:var(--ink-faint);
-  letter-spacing:0.06em; text-transform:uppercase; margin-bottom:14px;
-}
-.masthead h1{
-  font-family:'Nanum Myeongjo',serif; font-weight:800; font-size:58px; margin:0 0 16px;
-  color:var(--teal-deep); letter-spacing:-0.01em;
-}
-.masthead .tagline{font-size:15.5px; color:var(--ink-soft); max-width:520px; margin:0 auto 12px;}
-.beta-more-toggle{
-  display:block; width:100%; margin:0 0 12px; background:none; border:none; padding:0;
-  font-size:12px; color:var(--teal-deep); text-decoration:underline; cursor:pointer; text-align:center;
-}
-.beta-more-toggle:hover{color:var(--teal);}
-.masthead .beta-details{max-width:480px; margin:0 auto 24px;}
-.masthead .beta-details .beta-note{font-size:13px; color:var(--ink-faint); line-height:1.6; white-space:pre-line; margin:0 0 10px;}
-.masthead .beta-details .beta-note:last-child{margin-bottom:0;}
-.masthead .streak{
-  display:inline-flex; align-items:baseline; gap:8px; font-family:'Nanum Myeongjo',serif;
-  font-size:20px; color:var(--teal-deep); background:var(--teal-pale); padding:10px 22px;
-  border-radius:4px;
-}
-.masthead .streak b{font-size:30px;}
+.home-masthead{padding:20px 0 0;}
+.home-logo{font-family:'Noto Serif KR',serif; font-weight:900; font-size:52px; line-height:0.95; letter-spacing:-0.02em; margin:0; border-top:3px solid var(--ink); padding-top:16px;}
+.home-logo a{color:var(--ink); text-decoration:none;}
+.home-kicker{display:flex; flex-wrap:wrap; gap:6px 16px; align-items:baseline; justify-content:space-between; font-size:13.5px; color:var(--text-2); padding:10px 0 14px; border-bottom:1px solid var(--ink);}
+.home-kicker-en{font-family:'Fraunces',serif; font-style:italic; font-size:16px; color:var(--ink);}
+.home-kicker-total b{color:var(--green-dark);}
+.home-search{display:flex; align-items:center; gap:14px; height:60px; border-bottom:1px solid var(--ink);}
+.home-search svg{flex:0 0 auto; color:var(--ink);}
+.home-search-label{font-family:'Noto Serif KR',serif; font-weight:700; font-size:15px; white-space:nowrap;}
+.home-search input{flex:1 1 auto; min-width:0; height:100%; border:0; background:transparent; font:inherit; font-size:15.5px; color:var(--ink);}
+.home-search input:focus{outline:2px solid var(--green); outline-offset:-2px;}
+.home-search-btn{height:40px; padding:0 20px; border:0; background:var(--green); color:#fff; font:inherit; font-size:13.5px; font-weight:700; cursor:pointer;}
+.home-search-btn:hover{background:var(--green-dark);}
 
-section.mag-section{margin:60px 0;}
-section.mag-section + section.mag-section{margin-top:0; border-top:1px solid var(--line);}
-.section-head{display:flex; align-items:baseline; justify-content:space-between; margin-bottom:20px; gap:16px; flex-wrap:wrap;}
-.section-head .label{
-  font-size:12px; letter-spacing:0.12em; text-transform:uppercase; color:var(--teal); font-weight:600;
-}
-.section-head h2{font-family:'Nanum Myeongjo',serif; font-size:27px; margin:4px 0 0; color:var(--ink);}
-.section-head .desc{font-size:13.5px; color:var(--ink-faint); margin-top:4px; max-width:480px;}
-.section-head .more-link{font-size:13px; color:var(--teal-deep); text-decoration:none; white-space:nowrap; font-weight:600;}
-.section-head .more-link:hover{text-decoration:underline;}
+/* Cover story + 해마다 오늘의 조식 */
+.home-cover-grid{max-width:1080px; margin:0 auto; padding:36px 20px 48px; display:grid; grid-template-columns:7fr 5fr; gap:28px;}
+.home-cover-photo{position:relative;}
+.home-cover-photo .card-photo{width:100%; aspect-ratio:auto; height:360px; margin:0; background:var(--mint);}
+.home-cover-photo img,.home-cover-photo .card-thumb{display:block; width:100%; height:360px; object-fit:cover; background:var(--mint);}
+.home-cover-stamp{position:absolute; left:-10px; bottom:-20px; background:var(--paper); padding:10px 16px 0 10px; display:flex; align-items:flex-end; gap:8px;}
+.home-cover-stamp .num{font-family:'Fraunces',serif; font-size:72px; font-weight:800; line-height:0.8; color:var(--green);}
+.home-cover-stamp .label{font-size:11px; line-height:1.4; color:var(--text-2);}
+.home-cover-body{padding-top:26px; display:flex; flex-direction:column; gap:8px;}
+.home-cover-eyebrow{font-size:12px; letter-spacing:0.12em; color:var(--green-dark); font-weight:700;}
+.home-cover-title{font-family:'Noto Serif KR',serif; font-size:28px; font-weight:900; line-height:1.25; margin:0;}
+.home-cover-link{font-size:14px; font-weight:500; color:var(--green-dark);}
+.home-cover-empty{padding:24px 0; color:var(--text-3); font-size:14.5px;}
 
-/* Ledger / heatmap */
-.ledger{border:1px solid var(--line); background:var(--paper-raised); border-radius:3px; padding:22px 24px; overflow-x:auto; position:relative;}
-.ledger-grid{display:grid; grid-auto-flow:column; grid-auto-columns:14px; gap:3px;}
-.ledger-col{display:grid; grid-template-rows:repeat(7,14px); gap:3px;}
-.ledger-cell{width:14px; height:14px; border-radius:2px; background:rgba(28,28,26,0.06); transition:transform .1s; display:flex; align-items:center; justify-content:center;}
-.ledger-cell.posted{background:var(--teal);}
-.ledger-cell.clickable{cursor:pointer;}
-.ledger-cell.clickable:hover{transform:scale(1.35); outline:1.5px solid var(--ink); z-index:2; position:relative;}
-.ledger-count{font-size:8px; line-height:1; font-weight:700; color:#fff; text-shadow:0 0 2px rgba(0,0,0,0.55); pointer-events:none; user-select:none;}
-.ledger-tooltip{
-  position:absolute; transform:translate(-50%,-100%); background:var(--ink); color:var(--paper);
-  font-size:12px; padding:5px 10px; border-radius:3px; white-space:nowrap; pointer-events:none;
-  z-index:10; box-shadow:0 4px 12px rgba(0,0,0,0.2);
-}
-.ledger-tooltip::after{
-  content:""; position:absolute; top:100%; left:50%; transform:translateX(-50%);
-  border:5px solid transparent; border-top-color:var(--ink);
-}
-.ledger-months{display:flex; gap:0; font-size:11px; color:var(--ink-faint); margin-bottom:6px; position:relative; height:14px;}
-.ledger-legend{display:flex; align-items:center; gap:14px; margin-top:14px; font-size:12px; color:var(--ink-faint);}
-.ledger-legend .sw{display:inline-block; width:11px; height:11px; border-radius:2px; margin-right:5px; vertical-align:-1px;}
+.home-otdlist{display:flex; flex-direction:column; border-top:3px solid var(--ink);}
+.home-otdlist-head{padding:12px 0; display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--ink);}
+.home-otdlist-head h2{font-family:'Noto Serif KR',serif; font-size:19px; font-weight:900; margin:0;}
+.home-otdlist-head span{font-size:12px; color:var(--text-3);}
+.home-otd-row{min-height:76px; display:flex; align-items:center; gap:14px; border-bottom:1px solid var(--rule); text-decoration:none; color:var(--ink); padding:6px 0;}
+.home-otd-row:hover{background:var(--mint);}
+.home-otd-row.is-cover .home-otd-year{color:var(--green);}
+.home-otd-year{flex:0 0 auto; white-space:nowrap; font-family:'Fraunces',serif; font-size:18px; font-weight:800; color:#B5B3AA;}
+.home-otd-title{flex:1 1 auto; font-family:'Noto Serif KR',serif; font-size:15px; font-weight:700; line-height:1.4;}
+.home-otd-sib{font-family:'Noto Sans KR',sans-serif; font-size:11.5px; font-weight:400; color:var(--text-3); margin-left:6px; white-space:nowrap;}
+.home-otd-row .card-photo{width:52px; height:52px; aspect-ratio:1; margin:0; flex:0 0 auto;}
+.home-otd-row img,.home-otd-row .card-thumb{width:52px; height:52px; object-fit:cover; flex:0 0 auto;}
+.home-otd-row.otd-empty-row .home-otd-title{color:var(--text-3); font-family:inherit; font-weight:400; font-size:13.5px;}
 
-/* On-this-day row */
-.wrap:has(+ .otd-full-bleed){padding-bottom:0;}
-.otd-full-bleed{
-  background:var(--teal-pale);
-  padding:60px 0;
-}
-.otd-inner{max-width:1080px; margin:0 auto; padding:0 20px;}
-.otd-row{display:flex; gap:16px; overflow-x:auto; padding-bottom:8px; scroll-snap-type:x proximity;}
-.otd-card{
-  min-width:180px; scroll-snap-align:start; background:transparent; border:none;
-  border-radius:0; padding:0; cursor:pointer; transition:transform .16s;
-  display:block; text-decoration:none; color:inherit;
-}
-.otd-card:hover{transform:translateY(-2px);}
-.otd-card.otd-empty{cursor:default;}
-.otd-card.otd-empty:hover{transform:none;}
-.otd-year{font-family:'Nanum Myeongjo',serif; font-size:13px; color:var(--teal); font-weight:700; margin-bottom:8px;}
-.otd-card .card-thumb{width:40px; height:40px; margin-bottom:10px;}
-.otd-title{font-family:'Nanum Myeongjo',serif; font-size:15px; margin:0 0 6px; line-height:1.3; color:var(--teal-deep);}
-.otd-meta{font-size:11.5px; color:var(--ink-faint);}
-.otd-empty-msg{
-  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
-  width:100%; aspect-ratio:4/5; box-sizing:border-box; color:var(--ink-faint);
-  padding:16px; margin-bottom:10px; border:1px solid var(--teal); border-radius:2px;
-}
-.otd-empty-bang{font-family:'Nanum Myeongjo',serif; font-size:42px; line-height:1; margin-bottom:8px;}
-.otd-empty-sub{font-size:14px;}
-.otd-empty .otd-title a{color:inherit; text-decoration:underline; text-underline-offset:2px;}
+/* Editor's note */
+.home-editor{max-width:1080px; margin:0 auto; padding:40px 20px; border-top:1px solid var(--ink); display:grid; grid-template-columns:180px 1fr; gap:20px;}
+.home-editor-label{font-size:12px; letter-spacing:0.12em; font-weight:700; color:var(--green-dark);}
+.home-editor-quote{margin:0 0 14px; font-family:'Noto Serif KR',serif; font-size:22px; line-height:1.55; font-weight:400;}
+.home-editor-actions{display:flex; align-items:center; gap:14px;}
+.home-editor-byline{font-size:13.5px; color:var(--text-2);}
+.home-editor-toggle{min-height:40px; padding:0 14px; border:1px solid var(--ink); background:transparent; font:inherit; font-size:13px; color:var(--ink); cursor:pointer;}
+.home-editor-toggle:hover{background:var(--mint);}
+.home-editor-more{margin-top:14px; font-size:14px; line-height:1.85; color:#3A3934;}
+.home-editor-more p{margin:0 0 12px;}
+.home-editor-more p:last-child{margin-bottom:0;}
 
-/* Collections */
-.collection-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:16px;}
-.collection-card{
-  position:relative; border-radius:3px; padding:22px 20px; min-height:120px;
-  display:flex; flex-direction:column; justify-content:flex-end; text-decoration:none;
-  border:none; overflow:hidden; transition:transform .16s;
-}
-.collection-card:hover{transform:translateY(-3px);}
-.collection-card .big{font-family:'Nanum Myeongjo',serif; font-size:22px; color:var(--paper); margin-bottom:4px;}
-.collection-card .sub{font-size:14px; color:rgba(255,255,255,0.9); margin-bottom:6px;}
-.collection-card .count{font-size:12px; color:rgba(255,255,255,0.85);}
-.collection-icon{display:inline-block; margin-bottom:10px;}
-.collection-icon .card-thumb{
-  background:rgba(255,255,255,0.16) !important; color:var(--paper) !important; margin-bottom:0;
-}
-.c-teal{background:linear-gradient(135deg,var(--teal),var(--teal-deep));}
-.c-clay{background:linear-gradient(135deg,var(--clay),#7d3f22);}
-.c-ink{background:linear-gradient(135deg,#4a473c,var(--ink));}
+/* Heatmap */
+.home-ledger{background:var(--mint); padding:44px 20px 52px;}
+.home-ledger-head{max-width:1080px; margin:0 auto; display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap; border-bottom:1px solid var(--ink); padding-bottom:14px;}
+.home-ledger-stat{display:flex; align-items:flex-end; gap:16px;}
+.home-ledger-pct{font-family:'Fraunces',serif; font-size:48px; font-weight:800; line-height:0.8; color:var(--green); font-variant-numeric:tabular-nums;}
+.home-ledger-head h2{font-family:'Noto Serif KR',serif; font-size:19px; font-weight:900; margin:0 0 4px;}
+.home-ledger-sub{font-size:13px; color:var(--text-2);}
+.home-year-tabs{display:flex; gap:2px; flex-wrap:wrap;}
+.home-year-tabs button{min-height:40px; padding:0 8px; border:0; background:transparent; font-family:'Fraunces',serif; font-size:14px; color:var(--text-3); cursor:pointer; text-underline-offset:7px; text-decoration-thickness:2px;}
+.home-year-tabs button.active{color:var(--ink); font-weight:700; text-decoration:underline;}
+.home-ledger-scroll{max-width:1080px; margin:16px auto 0; overflow-x:auto; padding-bottom:4px;}
+.home-month-labels{display:flex; justify-content:space-between; padding-left:30px; font-size:10.5px; color:var(--text-2); min-width:820px;}
+.home-ledger-body{display:flex; gap:8px; min-width:820px;}
+.home-weekday-labels{display:grid; grid-template-rows:repeat(7,14px); gap:2px; font-size:9.5px; color:var(--text-2); width:18px; flex:0 0 auto;}
+.home-ledger-grid{display:flex; gap:2px;}
+.home-ledger-col{display:grid; grid-template-rows:repeat(7,14px); gap:2px;}
+.home-ledger-cell{width:14px; height:14px; box-sizing:border-box; background:transparent; color:#fff; font-size:7px; font-weight:700; display:flex; align-items:center; justify-content:center;}
+.home-ledger-cell.posted{background:var(--green); cursor:pointer;}
+.home-ledger-cell.posted.multi{background:var(--green-deep);}
+.home-ledger-cell.missed{background:var(--mint-skip);}
+.home-ledger-cell.today{border:2px solid var(--ink);}
+.home-ledger-cell.dim{opacity:0.25;}
+.home-ledger-legend{max-width:1080px; margin:14px auto 0; display:flex; gap:18px; flex-wrap:wrap; padding-left:0; font-size:12px; color:var(--text-2);}
+.home-ledger-legend span{display:flex; align-items:center; gap:6px;}
+.home-ledger-legend i{width:10px; height:10px; display:inline-block;}
+.home-swatch-today{box-sizing:border-box; border:2px solid var(--ink);}
 
-/* Shuffle */
-.shuffle-box{
-  border:1px solid var(--line); background:var(--paper-raised); border-radius:3px;
-  padding:32px; text-align:center;
-}
-.shuffle-box p{color:var(--ink-soft); font-size:14px; margin:0 0 16px;}
-.btn-primary{
-  font-family:'Nanum Myeongjo',serif; font-weight:700; font-size:16px;
-  padding:14px 32px; border-radius:4px; border:none; background:var(--teal); color:#fff;
-  cursor:pointer; transition:background .12s;
-}
-.btn-primary:hover{background:var(--teal-deep);}
-.shuffle-result{margin-top:24px; max-width:280px; margin-left:auto; margin-right:auto; text-align:left;}
-.shuffle-result .card{pointer-events:none;}
-.shuffle-result.shuffle-flicker .card{opacity:0.85; filter:blur(0.3px);}
-.shuffle-result.shuffle-land .card{
-  pointer-events:auto;
-  animation:shuffleLand .42s cubic-bezier(.22,1.4,.36,1);
-}
-@keyframes shuffleLand{
-  0%{ transform:scale(0.9) rotate(-1.5deg); opacity:0.4; }
-  55%{ transform:scale(1.04) rotate(0.5deg); opacity:1; }
-  100%{ transform:scale(1) rotate(0deg); }
-}
-.btn-primary.spinning{opacity:0.85; cursor:default;}
-.btn-primary.spinning::after{
-  content:""; display:inline-block; width:12px; height:12px; margin-left:8px;
-  border:2px solid rgba(255,255,255,0.5); border-top-color:#fff; border-radius:50%;
-  animation:btnSpin .6s linear infinite; vertical-align:-1px;
-}
-@keyframes btnSpin{ to{ transform:rotate(360deg); } }
+/* 소재로 골라 먹기 + Surprise me */
+.home-bottom-grid{padding:48px 0 56px; display:grid; grid-template-columns:7fr 5fr; gap:28px;}
+.home-tags{border-top:3px solid var(--ink);}
+.home-tags-head{padding:12px 0; display:flex; justify-content:space-between; align-items:baseline; border-bottom:1px solid var(--ink);}
+.home-tags-head h2{font-family:'Noto Serif KR',serif; font-size:19px; font-weight:900; margin:0;}
+.home-tags-head a{font-size:13px; color:var(--green-dark); text-decoration:none;}
+.home-tags-head a:hover{text-decoration:underline;}
+.home-tags-list{display:grid; grid-template-columns:1fr 1fr; column-gap:24px;}
+.home-tag-row{min-height:52px; display:flex; align-items:center; gap:14px; border-bottom:1px solid var(--rule); text-decoration:none; color:var(--ink);}
+.home-tag-row:hover{color:var(--green-dark);}
+.home-tag-no{font-family:'Fraunces',serif; font-size:13px; color:var(--text-3); width:22px;}
+.home-tag-name{flex:1 1 auto; font-family:'Noto Serif KR',serif; font-size:16px; font-weight:700;}
+.home-tag-count{font-size:12px; color:var(--text-3);}
 
-.cta-archive{
-  display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap;
-  border:1px solid var(--line-strong); border-radius:3px; padding:28px 30px; background:var(--teal-pale);
-}
-.cta-archive h3{font-family:'Nanum Myeongjo',serif; margin:0 0 6px; font-size:20px; color:var(--teal-deep);}
-.cta-archive p{margin:0; font-size:13.5px; color:var(--ink-soft);}
-.cta-archive a.btn-primary{text-decoration:none; display:inline-block;}
+.home-cta{min-height:280px; box-sizing:border-box; padding:28px; background:var(--green); color:#fff; display:flex; flex-direction:column; justify-content:space-between; gap:14px; cursor:pointer; border:0; text-align:left; width:100%; font-family:inherit;}
+.home-cta:hover{background:var(--green-dark);}
+.home-cta-eyebrow{font-size:12px; letter-spacing:0.12em; font-weight:700; opacity:0.85;}
+.home-cta-title{font-family:'Noto Serif KR',serif; font-size:34px; font-weight:900; line-height:1.15; color:#fff;}
+.home-cta-desc{font-size:14px; line-height:1.6; opacity:0.92; color:#fff;}
+.home-cta-btn{align-self:flex-start; min-height:44px; padding:0 18px; background:var(--paper); color:var(--ink); display:flex; align-items:center; font-size:14px; font-weight:700;}
+
+/* 새 홈페이지 전용 푸터 - 2163개 레시피 페이지가 공유하는 .site-footer와는
+   별개(그 페이지들의 어두운 통짜 푸터는 이번 단계에서 건드리지 않는다). */
+.home-footer{max-width:1080px; margin:0 auto; padding:20px 20px 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
+.home-footer-links{display:flex; gap:18px;}
+.home-footer-links a{color:var(--text-2); text-decoration:none;}
+.home-footer-links a:hover{text-decoration:underline;}
 
 @media (max-width:640px){
   h1.title{font-size:32px;}
-  .masthead h1{font-size:38px;}
+  .home-logo{font-size:32px;}
+  .home-kicker{flex-direction:column; align-items:flex-start;}
+  .home-cover-grid,.home-bottom-grid{grid-template-columns:1fr;}
+  .home-cover-photo .card-photo{height:240px;}
+  .home-cover-photo img,.home-cover-photo .card-thumb{height:240px;}
+  .home-editor{grid-template-columns:1fr;}
+  .home-tags-list{grid-template-columns:1fr;}
+  .home-cta-title{font-size:26px;}
+  .home-footer{flex-direction:column; align-items:flex-start;}
   .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:22px 14px;}
   .search-row{flex-wrap:wrap;}
   select#sortSel{width:100%;}
-  .cta-archive{flex-direction:column; align-items:flex-start;}
   .nav-right{flex-wrap:wrap; justify-content:flex-end;}
   .tag-cloud{flex-basis:100%;}
   .vote-timeline{gap:3px;}
