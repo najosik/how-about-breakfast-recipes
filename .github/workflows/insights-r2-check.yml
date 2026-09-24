@@ -1,0 +1,60 @@
+name: Insights R2 check (temporary)
+
+# One-off check that the INSIGHTS_R2_* secrets can write/read/delete in the
+# private bucket and are scoped to it. Prints only OK / error codes.
+on:
+  push:
+    branches: [claude/instagram-analytics-dashboard-sf1tc2]
+    paths: ['.github/workflows/insights-r2-check.yml']
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: pip install boto3
+      - name: Check R2 access
+        env:
+          INSIGHTS_R2_ENDPOINT: ${{ secrets.INSIGHTS_R2_ENDPOINT }}
+          INSIGHTS_R2_ACCESS_KEY_ID: ${{ secrets.INSIGHTS_R2_ACCESS_KEY_ID }}
+          INSIGHTS_R2_SECRET_ACCESS_KEY: ${{ secrets.INSIGHTS_R2_SECRET_ACCESS_KEY }}
+          INSIGHTS_R2_BUCKET: ${{ secrets.INSIGHTS_R2_BUCKET }}
+        shell: python
+        run: |
+          import os, re
+          import boto3
+          from botocore.config import Config
+          from botocore.exceptions import ClientError, BotoCoreError
+
+          env = {k: os.environ.get(k, '') for k in (
+              'INSIGHTS_R2_ENDPOINT', 'INSIGHTS_R2_ACCESS_KEY_ID',
+              'INSIGHTS_R2_SECRET_ACCESS_KEY', 'INSIGHTS_R2_BUCKET')}
+          for k, v in env.items():
+              print(f"[{'OK' if v.strip() else 'FAIL'}]   secret {k} {'set' if v.strip() else 'is EMPTY'}"
+                    + ('  (has leading/trailing spaces!)' if v != v.strip() else ''))
+          ep = env['INSIGHTS_R2_ENDPOINT'].strip()
+          ep_ok = re.fullmatch(r'https://[0-9a-f]{32}\.r2\.cloudflarestorage\.com/?', ep)
+          print(f"[{'OK' if ep_ok else 'WARN'}]   endpoint format")
+
+          s3 = boto3.client('s3', endpoint_url=ep,
+                            aws_access_key_id=env['INSIGHTS_R2_ACCESS_KEY_ID'].strip(),
+                            aws_secret_access_key=env['INSIGHTS_R2_SECRET_ACCESS_KEY'].strip(),
+                            config=Config(signature_version='s3v4', retries={'max_attempts': 1}),
+                            region_name='auto')
+          bucket, key = env['INSIGHTS_R2_BUCKET'].strip(), 'healthcheck/ping.txt'
+
+          def step(label, fn, expect_fail=False):
+              try:
+                  fn()
+                  print(f"[{'WARN' if expect_fail else 'OK'}]   {label}" + ('  (token is broader than needed)' if expect_fail else ''))
+              except (ClientError, BotoCoreError) as e:
+                  code = getattr(e, 'response', {}).get('Error', {}).get('Code', type(e).__name__)
+                  print(f"[{'OK' if expect_fail else 'FAIL'}]   {label}: {code}" + ('  (expected - token is scoped)' if expect_fail else ''))
+
+          step('write object', lambda: s3.put_object(Bucket=bucket, Key=key, Body=b'ok', ContentType='text/plain'))
+          step('read object', lambda: s3.get_object(Bucket=bucket, Key=key)['Body'].read())
+          step('delete object', lambda: s3.delete_object(Bucket=bucket, Key=key))
+          step('list all buckets (should be denied)', lambda: s3.list_buckets(), expect_fail=True)
