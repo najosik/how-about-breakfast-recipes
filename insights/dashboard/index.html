@@ -90,87 +90,96 @@
     </section>
 
     <section id="tab-analysis" role="tabpanel" data-panel="analysis" hidden>
-      <nav class="subnav" aria-label="심화 분석 바로가기">
-        <button type="button" data-jump="an-sec-summary">한눈에 보기</button>
-        <button type="button" data-jump="an-sec-signals">신호</button>
-        <button type="button" data-jump="an-sec-factors">요인</button>
-        <button type="button" data-jump="an-sec-principles">원칙</button>
-      </nav>
-
-      <div class="filters">
-        <label>기간
-          <select id="an-range">
-            <option value="90">최근 90일</option>
-            <option value="365" selected>최근 1년</option>
-            <option value="0">전체</option>
-          </select>
-        </label>
-        <label>형식
-          <select id="an-format">
-            <option value="">전체</option>
-            <option value="릴스">릴스</option>
-            <option value="캐러셀">캐러셀</option>
-            <option value="사진">사진</option>
-          </select>
-        </label>
-        <span class="hint" id="an-count"></span>
+      <div class="an-toolbar">
+        <nav class="seg" aria-label="심화 분석 바로가기">
+          <button type="button" data-jump="an-sec-summary" aria-pressed="true">한눈에 보기</button>
+          <button type="button" data-jump="an-sec-signals">신호</button>
+          <button type="button" data-jump="an-sec-factors">요인</button>
+          <button type="button" data-jump="an-sec-principles">원칙</button>
+        </nav>
+        <div class="an-filters">
+          <span class="seg-label">기간</span>
+          <div class="seg-box" data-for="an-range" role="group" aria-label="기간">
+            <button type="button" data-value="90">90일</button>
+            <button type="button" data-value="365">1년</button>
+            <button type="button" data-value="0">전체</button>
+          </div>
+          <span class="seg-label">형식</span>
+          <div class="seg-box" data-for="an-format" role="group" aria-label="형식">
+            <button type="button" data-value="">전체</button>
+            <button type="button" data-value="릴스">릴스</button>
+            <button type="button" data-value="캐러셀">캐러셀</button>
+            <button type="button" data-value="사진">사진</button>
+          </div>
+          <span class="hint" id="an-count"></span>
+        </div>
+        <!-- the segmented buttons drive these (the rest of the code reads them) -->
+        <select id="an-range" hidden aria-hidden="true" tabindex="-1">
+          <option value="90">90</option><option value="365" selected>365</option><option value="0">0</option>
+        </select>
+        <select id="an-format" hidden aria-hidden="true" tabindex="-1">
+          <option value="" selected></option><option value="릴스"></option><option value="캐러셀"></option><option value="사진"></option>
+        </select>
       </div>
 
       <section id="an-sec-summary" class="an-section">
-        <h2 class="section-title">한눈에 보기</h2>
+        <div class="sec-head"><h2>한눈에 보기</h2><span>평소보다 잘 퍼진 조건 · 1×가 평소 수준</span></div>
         <div class="strategy-tiles" id="an-strategy"></div>
-
+        <div class="an-row">
+          <section class="card span-2">
+            <div class="card-head"><h3>이번 주 발행 계획</h3><span class="hint">게시물 · 잘 퍼진 요일부터 모범 답안 배치</span>
+              <div class="legend-scale" aria-hidden="true"><span>평소보다</span><i class="lvl-0"></i><i class="lvl-1"></i><i class="lvl-2"></i><i class="lvl-3"></i><span>잘 퍼짐</span></div>
+            </div>
+            <div id="an-weekplan"></div>
+          </section>
+          <section class="insight-card" id="an-insight" aria-live="polite"></section>
+        </div>
         <section class="card">
-          <div class="card-head"><h2>이번 주 발행 계획</h2><span class="hint">게시물 · 잘 퍼진 요일 순으로 배치</span></div>
-          <div id="an-weekplan"></div>
-          <div class="legend-scale" aria-hidden="true"><span>평소보다</span><i class="lvl-0"></i><i class="lvl-1"></i><i class="lvl-2"></i><i class="lvl-3"></i><span>잘 퍼진 요일</span></div>
-        </section>
-
-        <section class="card">
-          <div class="card-head"><h2>모범 답안 5가지</h2><span class="hint">캐러셀·사진 · 기간 필터만 적용</span></div>
+          <div class="card-head"><h3>모범 답안 5가지</h3><span class="hint">캐러셀·사진 · 과거에 평소보다 잘 퍼진 형식 × 소재 · 기간 필터만 적용</span></div>
           <div class="playbook-grid" id="an-playbooks"></div>
         </section>
       </section>
 
       <section id="an-sec-signals" class="an-section">
-        <h2 class="section-title">신호: 확산된 게시물은 무엇이 달랐나</h2>
-        <div class="tiles" id="an-tiles"></div>
-        <section class="card">
-          <p class="summary" id="an-summary"></p>
-          <div id="an-compare"></div>
-          <p class="hint">평소 대비 도달 = 도달 ÷ 앞뒤 30개 게시물의 도달 중앙값 · 상위 20%와 하위 20% 게시물의 중앙값 비교</p>
-        </section>
-        <details class="card fold">
-          <summary>신호 구간별 그래프 보기</summary>
-          <div class="grid" id="an-bins"></div>
-        </details>
-        <details class="card fold">
-          <summary>비팔로워에게 가장 많이 닿은 날 보기</summary>
-          <p class="hint">계정 전체의 일별 데이터라 이전 게시물의 영향도 섞여 있습니다.</p>
-          <div class="table-wrap" id="an-days"></div>
-        </details>
+        <div class="sec-head"><h2>신호</h2><span>확산 상위 20% 게시물과 하위 20% 게시물 비교</span></div>
+        <div class="an-row">
+          <section class="card span-2">
+            <p class="summary" id="an-summary"></p>
+            <div id="an-compare"></div>
+          </section>
+          <div class="side-stack">
+            <div class="side-tiles" id="an-tiles"></div>
+            <details class="card fold">
+              <summary>구간별 그래프 · 비팔로워 많이 닿은 날</summary>
+              <div class="grid" id="an-bins"></div>
+              <h3 class="detail-head">비팔로워에게 가장 많이 닿은 날</h3>
+              <p class="hint">계정 전체의 일별 데이터라 이전 게시물의 영향도 섞여 있습니다.</p>
+              <div class="table-wrap" id="an-days"></div>
+            </details>
+          </div>
+        </div>
+        <p class="hint">평소 대비 도달 = 게시물 도달 ÷ 앞뒤 30개 게시물의 도달 중앙값</p>
       </section>
 
       <section id="an-sec-factors" class="an-section">
-        <h2 class="section-title">요인: 무엇을, 어떻게, 언제</h2>
-        <p class="hint section-sub">막대 = 평소 대비 도달 (1×가 평소) · 강조 = 가장 잘 퍼진 그룹 · 흐림 = 게시물 15개 미만</p>
+        <div class="sec-head"><h2>요인</h2><span>막대 = 평소 대비 도달 · 진한 막대 = 가장 잘 퍼진 그룹 · 흐림 = 게시물 15개 미만</span></div>
         <section class="card">
-          <div class="card-head"><h2>소재</h2><span class="hint" id="an-topics-sub"></span></div>
-          <div class="table-wrap" id="an-topics"></div>
+          <div class="card-head"><h3>소재</h3><span class="hint" id="an-topics-sub"></span></div>
+          <div id="an-topics"></div>
         </section>
-        <div class="grid" id="an-factors"></div>
+        <div class="factor-grid" id="an-factors"></div>
       </section>
 
       <section id="an-sec-principles" class="an-section">
-        <h2 class="section-title">원칙: 인스타그램이 보는 신호</h2>
+        <div class="sec-head"><h2>원칙</h2><span>인스타그램 대표가 밝힌 핵심 신호 3가지</span></div>
         <div class="key-signals">
-          <div class="key-signal"><span class="ks-icon" aria-hidden="true">⏱</span><strong>시청 시간</strong><span>끝까지, 다시 보게</span></div>
-          <div class="key-signal"><span class="ks-icon" aria-hidden="true">♥</span><strong>도달 대비 좋아요</strong><span>팔로워에게 보이는 데 중요</span></div>
-          <div class="key-signal accent"><span class="ks-icon" aria-hidden="true">➤</span><strong>도달 대비 공유</strong><span>비팔로워 확산의 핵심</span></div>
+          <div class="key-signal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="13" r="8"></circle><path d="M12 9v4l2.5 2.5"></path><path d="M9 2h6"></path></svg><div><strong>시청 시간</strong><span>끝까지, 다시 보게</span></div></div>
+          <div class="key-signal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21.5l8.8-8.8a5 5 0 0 0 0-7.1z"></path></svg><div><strong>도달 대비 좋아요</strong><span>팔로워에게 보이는 데 중요</span></div></div>
+          <div class="key-signal accent"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"></path><path d="M22 2 15 22l-4-9-9-4 20-7z"></path></svg><div><strong>도달 대비 공유</strong><span>비팔로워 확산의 핵심</span></div></div>
         </div>
         <div class="avoid">
           <strong>추천에서 빠지는 것</strong>
-          <span class="chip">참여 유도 미끼</span><span class="chip">낚시성 제목</span><span class="chip">재업로드·워터마크</span><span class="chip">저품질</span><span class="chip">과장된 건강 주장</span>
+          <span class="chip avoid-chip">참여 유도 미끼</span><span class="chip avoid-chip">낚시성 제목</span><span class="chip avoid-chip">재업로드·워터마크</span><span class="chip avoid-chip">저품질</span><span class="chip avoid-chip">과장된 건강 주장</span>
         </div>
         <details class="card fold">
           <summary>자세히 보기 (공식 문서 · CEO 발언 · 외부 분석 · 추천 가이드라인)</summary>
