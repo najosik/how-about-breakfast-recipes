@@ -276,19 +276,23 @@ def collect_media_insights(client, media, refused_media):
         return {item['name']: parse_metric(item)[0] for item in data}, None
     except ApiError:
         pass
-    out, last_error = {}, None
+    out, errors = {}, {}
     for m in metrics:
         try:
             data = client.get(f"{media['id']}/insights", {'metric': m}).get('data', [])
             if data:
                 out[m] = parse_metric(data[0])[0]
         except ApiError as e:
-            last_error = str(e)
-            # Only mark a metric unsupported for the whole kind when the error
-            # is a parameter error, not something specific to this post.
-            if e.code == 100:
-                refused_media.setdefault(f'{kind}:{m}', str(e))
-    return out, (last_error if not out else None)
+            errors[m] = e
+    if not out:
+        # Every metric failed: the post itself has no insights (e.g. posted
+        # before the account became a professional account) - not a sign
+        # that the metrics are unsupported for this kind of post.
+        return {}, str(next(iter(errors.values()))) if errors else None
+    for m, e in errors.items():
+        if e.code == 100:
+            refused_media.setdefault(f'{kind}:{m}', str(e))
+    return out, None
 
 
 def load_recipe_index():
