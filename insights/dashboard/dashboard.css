@@ -154,3 +154,11 @@ table.data.factor td.bar-cell { min-width: 150px; }
 .bar-value { font-variant-numeric: tabular-nums; }
 table.data tr.small-n td { color: var(--text-muted); }
 table.data tr.small-n .bar-fill { opacity: .45; }
+.playbook { padding: 12px 0; border-top: 1px solid var(--grid); }
+.playbook:first-child { border-top: 0; padding-top: 0; }
+.pb-head { display: flex; gap: 12px; align-items: flex-start; }
+.pb-list { list-style: none; margin: 8px 0 0 36px; padding: 0; font-size: 14px; }
+.pb-list li { margin: 4px 0; }
+.pb-label { display: inline-block; min-width: 88px; color: var(--text-secondary); font-size: 13px; }
+.pb-list a { color: var(--text-primary); }
+@media (max-width: 760px) { .pb-list { margin-left: 0; } .pb-label { display: block; } }
