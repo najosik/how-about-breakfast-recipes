@@ -131,3 +131,16 @@ table.data img.thumb { width: 40px; height: 40px; object-fit: cover; border-radi
 .tooltip .tt-title { font-weight: 600; margin-bottom: 4px; }
 .tooltip .tt-row { display: flex; justify-content: space-between; gap: 12px; }
 .tooltip .tt-row .swatch { display: inline-block; width: 8px; height: 8px; border-radius: 2px; margin-right: 6px; }
+
+/* analysis tab */
+.principles ul { margin: 0 0 8px; padding-left: 18px; }
+.principles li { margin: 6px 0; }
+.principles a { color: var(--text-secondary); }
+.badge.official { border-color: var(--accent); color: var(--text-primary); }
+.badge.external { border-style: dashed; }
+.section-title { font-size: 16px; margin: 20px 0 4px; }
+.section-sub { margin-bottom: 12px; }
+.summary { font-weight: 600; margin: 0 0 10px; }
+.summary:empty { display: none; }
+table.data tr.highlight td { background: var(--grid); font-weight: 600; }
+#tab-analysis > .card { margin-bottom: 12px; }
