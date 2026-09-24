@@ -14,6 +14,7 @@
       <div>
         <h1>인스타그램 인사이트</h1>
         <p class="sub" id="account-line">불러오는 중…</p>
+        <p class="token-status" id="token-status" role="status" hidden></p>
       </div>
       <nav class="tabs" role="tablist" aria-label="대시보드 탭">
         <button role="tab" data-tab="overview" aria-selected="true">개요</button>
@@ -132,9 +133,12 @@
       </section>
 
       <section class="card">
-        <h2>추천 발행 모범 답안 5가지</h2>
-        <p class="card-sub">과거에 평소보다 잘 퍼진 "형식 × 소재" 조합을 고르고, 그 형식에서 가장 잘 통했던 요일·시간·캡션 습관, 목표로 삼을 신호, 본보기 게시물을 붙였습니다. 형식 필터와 관계없이 기간 필터만 적용됩니다. 과거 경향에서 뽑은 가설이니, 발행한 뒤 결과를 이 화면에서 다시 확인하세요.</p>
+        <h2>추천 발행 모범 답안 5가지 (게시물)</h2>
+        <p class="card-sub">캐러셀·사진 게시물 중 과거에 평소보다 잘 퍼진 "형식 × 소재" 조합을 고르고, 그 형식에서 가장 잘 통했던 요일·시간·캡션 습관, 목표로 삼을 신호, 본보기 게시물을 붙였습니다. 릴스는 예전 게시물을 다시 편집해 올리는 용도라 계획에서 뺐습니다. 형식 필터와 관계없이 기간 필터만 적용됩니다. 과거 경향에서 뽑은 가설이니, 발행한 뒤 결과를 이 화면에서 다시 확인하세요.</p>
         <div id="an-playbooks"></div>
+        <h3 class="sub-head">요일별 발행 계획</h3>
+        <p class="hint">게시물이 가장 잘 퍼진 요일부터 1번 모범 답안을 차례로 배치했습니다. 남는 요일은 공유·저장 유도 문구를 시험하는 날로 두었습니다.</p>
+        <div class="table-wrap" id="an-weekplan"></div>
       </section>
 
       <div class="tiles" id="an-tiles"></div>

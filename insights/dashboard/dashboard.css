@@ -162,3 +162,8 @@ table.data tr.small-n .bar-fill { opacity: .45; }
 .pb-label { display: inline-block; min-width: 88px; color: var(--text-secondary); font-size: 13px; }
 .pb-list a { color: var(--text-primary); }
 @media (max-width: 760px) { .pb-list { margin-left: 0; } .pb-label { display: block; } }
+.token-status { margin: 4px 0 0; font-size: 13px; color: var(--text-secondary); }
+.token-status.warn { color: var(--text-primary); font-weight: 600; }
+.token-status.warn::before { content: "⚠ "; }
+.token-status.bad { color: var(--bad); font-weight: 600; }
+.token-status.bad::before { content: "⛔ "; }
