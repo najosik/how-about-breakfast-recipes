@@ -51116,7 +51116,7 @@
   "weather": "20도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "아스파라거스 브로콜리 하몽",
+  "title": "하몽 아스파라거스 플레이트",
   "credit": null,
   "hashtags": [
    "asparagus",
@@ -51133,9 +51133,9 @@
    "조식다이어리",
    "하몽"
   ],
-  "intro": "20220925, #조식다이어리 554, 20도/대체로흐림\n의학적으론 의식과 기력이 떨어져 음식을 섭취할 수 없을 정도로 쇠약해지면 자연스럽게 죽음에 이른다. 이 과정에서 탈수가 발생하고 피가 산성화하면서 고통 대신 행복감을 느낀다. \n(출처: 박중철, 말기환자 지켜온 의사 \"내가 본 가장 친절했던 죽음은...\")\n자연적인 죽음은 잠이다. 자연스레 긴 잠에 빠져 죽음을 맞이하는 것이다. 그런 죽음이 가능할까 생각한다. \n수명을 다해가는 브로콜리, 아스파라거스, 하몽과 며칠 전에 만들어 둔 당근 라페",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220925, #조식다이어리 554, 20도/대체로흐림\n의학적으론 의식과 기력이 떨어져 음식을 섭취할 수 없을 정도로 쇠약해지면 자연스럽게 죽음에 이른다. 이 과정에서 탈수가 발생하고 피가 산성화하면서 고통 대신 행복감을 느낀다. \n(출처: 박중철, 말기환자 지켜온 의사 \"내가 본 가장 친절했던 죽음은...\")\n\n자연적인 죽음은 잠이다. 자연스레 긴 잠에 빠져 죽음을 맞이하는 것이다. 그런 죽음이 가능할까 생각한다. \n수명을 다해가는 브로콜리, 아스파라거스, 하몽과 며칠 전에 만들어 둔 당근 라페",
+  "ingredients": "- 아스파라거스 3개\n- 하몽 3~4조각\n- 브로콜리 1/4개\n- 당근라페\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 아스파라거스 다듬고 하몽을 감은 뒤 올리브오일 두른 팬에 굽는다. \n2. 끓는 물에 살짝 데친 브로콜리는 물기를 제거하고 팬에 굽는다. \n3. 접시에 1의 아스파라거스, 2의 브로콜리와 당근라페 담는다. \n\n당근라페 - 당근 1개 채칼로 썰고 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t) 부어 골고루 섞는다. 1~2일 숙성시킨 후 먹는다.  ",
   "raw": "20220925, #조식다이어리 554, 20도/대체로흐림\n\n의학적으론 의식과 기력이 떨어져 음식을 섭취할 수 없을 정도로 쇠약해지면 자연스럽게 죽음에 이른다. 이 과정에서 탈수가 발생하고 피가 산성화하면서 고통 대신 행복감을 느낀다. \n(출처: 박중철, 말기환자 지켜온 의사 \"내가 본 가장 친절했던 죽음은...\")\n\n자연적인 죽음은 잠이다. 자연스레 긴 잠에 빠져 죽음을 맞이하는 것이다. 그런 죽음이 가능할까 생각한다. \n\n수명을 다해가는 브로콜리, 아스파라거스, 하몽과 며칠 전에 만들어 둔 당근 라페 \n\n#조식 #아침밥 #샐러드 #아스파라거스 #브로콜리 #하몽 #당근라페 \n#breakfast #jamon #broccoli #carrotrapees #asparagus ",
   "image": "https://images.how-about-breakfast.com/images/554.jpg",
   "gallery": [
@@ -51145,13 +51145,6 @@
    "https://images.how-about-breakfast.com/images/554_4.jpg",
    "https://images.how-about-breakfast.com/images/554_5.jpg"
   ],
-  "_en": {
-   "hash": "bb0c610d44a9ebf89a1b18831580a4244770f724c5b6bd690d66d7fedf4e0b22",
-   "title": "Asparagus, Broccoli, and Jamón",
-   "intro": "20220925 #breakfastdiary 554, 20°C/mostly cloudy\nMedically speaking, when consciousness and strength decline to the point that a person can no longer eat, death follows naturally. In the process, dehydration sets in and the blood turns acidic, and instead of pain, one feels a sense of happiness.\n(Source: Park Jung-chul, a doctor who has watched over terminal patients, \"The kindest death I've seen was...\")\nA natural death is like sleep — falling gently into a long sleep and meeting death that way. I wonder if such a death is possible.\nBroccoli and asparagus nearing the end of their shelf life, jamón, and carrot rapé I made a few days ago",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "아스파라거스-브로콜리-하몽"
  },
  {
