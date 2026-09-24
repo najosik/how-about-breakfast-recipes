@@ -612,7 +612,7 @@
     document.getElementById('an-count').textContent = `분석 대상 ${fmt(posts.length)}개 게시물 (인사이트가 있는 게시물만)`;
     document.getElementById('an-tiles').replaceChildren(...SIGNALS.map((sig) => {
       const vals = posts.map(sig.value).filter((v) => v !== null);
-      return tile(`${sig.label} (중앙값)`, sig.format(median(vals)), vals.length ? `${sig.desc} · ${fmt(vals.length)}개` : sig.desc);
+      return tile(sig.label, sig.format(median(vals)), `중앙값 · ${fmt(vals.length)}개`);
     }));
     renderSignalCompare(posts);
     const grid = document.getElementById('an-bins');
@@ -626,6 +626,8 @@
     renderPhase2(posts);
   }
 
+  // Paired bars per signal: top-20% vs bottom-20% posts, scaled per signal
+  // so the gap reads at a glance; the two biggest gaps are highlighted.
   function renderSignalCompare(posts) {
     const holder = document.getElementById('an-compare');
     const summary = document.getElementById('an-summary');
@@ -638,30 +640,38 @@
     }
     const top = ranked.slice(0, n), bottom = ranked.slice(-n);
     const rows = SIGNALS.map((sig) => {
-      const t = median(top.map(sig.value)), b = median(bottom.map(sig.value)), all = median(posts.map(sig.value));
-      return { sig, t, b, all, ratio: t !== null && b ? t / b : null };
+      const t = median(top.map(sig.value)), b = median(bottom.map(sig.value));
+      return { sig, t, b, ratio: t !== null && b ? t / b : null };
     });
     const strongest = rows.filter((r) => r.ratio !== null).sort((a, b) => b.ratio - a.ratio).slice(0, 2);
     summary.textContent = strongest.length
-      ? `확산이 잘 된 상위 20% 게시물은 하위 20%보다 ${strongest.map((r) => `${r.sig.label}이 ${fmtRatio(r.ratio)}`).join(', ')} 높았습니다.`
+      ? `잘 퍼진 게시물은 ${strongest.map((r) => `${r.sig.label} ${fmtRatio(r.ratio)}`).join(', ')}로 가장 크게 달랐습니다.`
       : '';
-    holder.replaceChildren(el('table', { class: 'data' }, [
-      el('thead', {}, el('tr', {}, ['신호', `확산 상위 20% (${n}개)`, `확산 하위 20% (${n}개)`, '전체', '상위 ÷ 하위']
-        .map((h, i) => el('th', { class: i === 0 ? 'left' : null, text: h })))),
-      el('tbody', {}, rows.map((r) => el('tr', { class: strongest.includes(r) ? 'highlight' : null }, [
-        el('td', { class: 'left' }, [r.sig.label, el('div', { class: 'muted', text: r.sig.desc })]),
-        el('td', { text: r.sig.format(r.t) }),
-        el('td', { text: r.sig.format(r.b) }),
-        el('td', { text: r.sig.format(r.all) }),
-        el('td', { text: fmtRatio(r.ratio) }),
-      ]))),
-    ]));
+    const bar = (v, max, cls) => {
+      const fill = el('span', { class: `pair-fill ${cls}` });
+      fill.style.width = `${max ? Math.max(2, (v / max) * 100) : 0}%`;
+      return el('span', { class: 'pair-track' }, fill);
+    };
+    holder.replaceChildren(
+      el('div', { class: 'legend' }, [
+        el('span', {}, [el('span', { class: 'swatch', bg: 'var(--series-1)' }), `확산 상위 20% (${n}개)`]),
+        el('span', {}, [el('span', { class: 'swatch', bg: 'var(--grid-strong)' }), '하위 20%']),
+      ]),
+      ...rows.map((r) => {
+        const max = Math.max(r.t || 0, r.b || 0);
+        return el('div', { class: `pair-row${strongest.includes(r) ? ' highlight' : ''}` }, [
+          el('div', { class: 'pair-label' }, [el('strong', { text: r.sig.label }), el('span', { class: 'muted', text: `${r.sig.format(r.t)} vs ${r.sig.format(r.b)}` })]),
+          el('div', { class: 'pair-bars' }, [bar(r.t || 0, max, 'top'), bar(r.b || 0, max, 'bottom')]),
+          el('div', { class: 'pair-ratio', text: fmtRatio(r.ratio) }),
+        ]);
+      }),
+    );
   }
 
   function renderSignalBins(card, sig, posts) {
     const list = posts.map((p) => [sig.value(p), p._relReach]).filter((x) => x[0] !== null)
       .sort((a, b) => a[0] - b[0]);
-    const title = `${sig.label} 구간별 평소 대비 도달`;
+    const title = `${sig.label}이 높을수록 더 퍼졌나`;
     if (list.length < 25) {
       columnChart(card, { title, labels: [], series: [], emptyText: '게시물이 25개 이상 필요합니다.' });
       return;
@@ -672,11 +682,10 @@
     const strength = rho === null ? '' : Math.abs(rho) >= 0.4 ? '뚜렷한 관계' : Math.abs(rho) >= 0.2 ? '약한 관계' : '관계 거의 없음';
     columnChart(card, {
       title,
-      subtitle: `${sig.label}이 낮은 게시물부터 높은 게시물까지 5개 구간으로 나눈 뒤, 구간마다 평소 대비 도달의 중앙값을 보여줍니다. `
-        + `게시물 ${fmt(list.length)}개 · 순위 상관 ${rho === null ? '—' : (Math.abs(rho) < 0.005 ? 0 : rho).toFixed(2)} (${strength})`,
+      subtitle: `${strength} · 순위 상관 ${rho === null ? '—' : (Math.abs(rho) < 0.005 ? 0 : rho).toFixed(2)} · ${fmt(list.length)}개`,
       labels: BIN_LABELS,
       series: [{ name: '평소 대비 도달', color: '--series-1', values: groups.map((g) => median(g.map((x) => x[1]))) }],
-      xFormat: (d) => d, labelHead: `${sig.label} 구간`, valueFormat: fmtRatio, tickFormat: fmtTimes, height: 200,
+      xFormat: (d) => d, labelHead: `${sig.label} 구간`, valueFormat: fmtRatio, tickFormat: fmtTimes, height: 170,
     });
   }
 
@@ -823,19 +832,17 @@
     return el('td', { class: 'left bar-cell' }, [el('span', { class: 'bar-track' }, fill), el('span', { class: 'bar-value', text: fmtRatio(value) })]);
   }
 
-  function factorTable(rows, firstHead) {
+  // Compact bar list: label · bar (relative reach) · post count. Share and
+  // save rates live in the tooltip-free "details" of the signals section.
+  function factorTable(rows, firstHead, minN = MIN_GROUP) {
     const max = Math.max(...rows.map((r) => r.rel || 0));
-    const eligible = rows.filter((r) => r.n >= MIN_GROUP && r.rel !== null);
+    const eligible = rows.filter((r) => r.n >= minN && r.rel !== null);
     const best = eligible.length > 1 ? eligible.reduce((a, b) => (b.rel > a.rel ? b : a)) : null;
-    return el('table', { class: 'data factor' }, [
-      el('thead', {}, el('tr', {}, [firstHead, '게시물', '평소 대비 도달 (중앙값)', '공유율', '저장율']
-        .map((h, i) => el('th', { class: i === 0 || i === 2 ? 'left' : null, text: h })))),
-      el('tbody', {}, rows.map((r) => el('tr', { class: [r === best ? 'highlight' : '', r.n < MIN_GROUP ? 'small-n' : ''].join(' ').trim() || null }, [
-        el('td', { class: 'left', text: r.label }),
-        el('td', { text: r.n < MIN_GROUP ? `${fmt(r.n)} (적음)` : fmt(r.n) }),
+    return el('table', { class: 'data factor', 'aria-label': firstHead }, [
+      el('tbody', {}, rows.map((r) => el('tr', { class: [r === best ? 'highlight' : '', r.n < minN ? 'small-n' : ''].join(' ').trim() || null }, [
+        el('td', { class: 'left f-label', text: r.label }),
         r.rel === null ? el('td', { class: 'left', text: '—' }) : barCell(r.rel, max),
-        el('td', { text: fmtPct2(r.share) }),
-        el('td', { text: fmtPct2(r.save) }),
+        el('td', { class: 'f-n', text: `${fmt(r.n)}개` }),
       ]))),
     ]);
   }
@@ -847,7 +854,7 @@
     for (const f of FACTORS) {
       const rows = groupStats(posts, f.group, f.order);
       results.push({ factor: f, rows });
-      grid.append(el('section', { class: 'card' }, [
+      grid.append(el('section', { class: 'card factor-card' }, [
         el('h2', { text: f.title }),
         rows.length ? el('div', { class: 'table-wrap' }, factorTable(rows, f.title)) : el('p', { class: 'empty', text: '데이터가 없습니다.' }),
       ]));
@@ -860,23 +867,25 @@
     const minN = posts.length >= 600 ? 15 : 8;
     const rows = groupStats(posts, postTags).filter((r) => r.n >= minN && r.rel !== null)
       .sort((a, b) => b.rel - a.rel);
-    document.getElementById('an-topics-sub').textContent =
-      `해시태그를 소재로 보고, ${minN}개 이상 게시물에 쓰인 소재끼리 비교합니다. 매번 붙이는 공통 태그(#조식, #레시피 등)와 시리즈 이름(#나의프랑스식샐러드 등)은 뺐습니다.`;
+    document.getElementById('an-topics-sub').textContent = `해시태그 기준 · ${minN}개 이상 · 공통·시리즈 태그 제외`;
     if (rows.length < 4) {
       holder.replaceChildren(el('p', { class: 'empty', text: '비교할 만큼 자주 쓰인 소재가 없습니다. 기간을 넓혀 보세요.' }));
       return rows;
     }
     const top = rows.slice(0, 10), bottom = rows.length > 15 ? rows.slice(-5).reverse() : [];
     holder.replaceChildren(
-      el('h3', { class: 'sub-head', text: '평소보다 잘 퍼진 소재' }), factorTable(top, '소재'),
-      bottom.length ? el('h3', { class: 'sub-head', text: '상대적으로 덜 퍼진 소재' }) : null,
-      bottom.length ? factorTable(bottom, '소재') : null,
+      el('div', { class: 'topic-cols' }, [
+        el('div', {}, [el('h3', { class: 'sub-head', text: '▲ 잘 퍼진 소재' }), factorTable(top, '잘 퍼진 소재', minN)]),
+        bottom.length ? el('div', {}, [el('h3', { class: 'sub-head', text: '▼ 덜 퍼진 소재' }), factorTable(bottom, '덜 퍼진 소재', minN)]) : null,
+      ]),
     );
     return rows;
   }
 
   // Strategy cards: the groups that beat the posts' own median by the most,
   // only from groups big enough (MIN_GROUP) to not be a fluke.
+  // Strategy tiles: the conditions whose group beat the posts' own median
+  // by the most, from groups big enough (MIN_GROUP) to not be a fluke.
   function renderStrategy(posts, factorResults, topicRows) {
     const holder = document.getElementById('an-strategy');
     const base = median(posts.map((p) => p._relReach));
@@ -885,29 +894,20 @@
       const ok = rows.filter((r) => r.n >= MIN_GROUP && r.rel !== null);
       if (ok.length < 2) continue;
       const best = ok.reduce((a, b) => (b.rel > a.rel ? b : a));
-      const worst = ok.reduce((a, b) => (b.rel < a.rel ? b : a));
-      cards.push({
-        lift: best.rel / base,
-        head: `${factor.title}: ‘${best.label}’ 쪽이 가장 잘 퍼졌습니다`,
-        body: `평소 대비 도달 ${fmtRatio(best.rel)} (게시물 ${fmt(best.n)}개) · 가장 낮은 ‘${worst.label}’은 ${fmtRatio(worst.rel)}`,
-      });
+      cards.push({ lift: best.rel / base, rel: best.rel, kind: factor.title, value: best.label, n: best.n });
     }
     const topTopic = topicRows.find((r) => r.n >= MIN_GROUP);
-    if (topTopic) {
-      cards.push({
-        lift: topTopic.rel / base,
-        head: `소재: #${topTopic.label} 게시물이 평소보다 잘 퍼졌습니다`,
-        body: `평소 대비 도달 ${fmtRatio(topTopic.rel)} (게시물 ${fmt(topTopic.n)}개) · 공유율 ${fmtPct2(topTopic.share)}`,
-      });
-    }
+    if (topTopic) cards.push({ lift: topTopic.rel / base, rel: topTopic.rel, kind: '소재', value: `#${topTopic.label}`, n: topTopic.n });
     const picked = cards.filter((c) => c.lift >= 1.1).sort((a, b) => b.lift - a.lift).slice(0, 5);
     if (!picked.length) {
-      holder.replaceChildren(el('p', { class: 'empty', text: '뚜렷하게 앞서는 요인이 아직 없습니다. 기간을 넓히거나 데이터가 더 쌓인 뒤 다시 보세요.' }));
+      holder.replaceChildren(el('p', { class: 'empty', text: '뚜렷하게 앞서는 요인이 아직 없습니다.' }));
       return;
     }
-    holder.replaceChildren(...picked.map((c, i) => el('div', { class: 'strategy' }, [
-      el('span', { class: 'strategy-rank', text: String(i + 1) }),
-      el('div', {}, [el('strong', { text: c.head }), el('div', { class: 'muted', text: c.body })]),
+    holder.replaceChildren(...picked.map((c) => el('div', { class: 's-tile' }, [
+      el('span', { class: 's-kind', text: c.kind }),
+      el('strong', { class: 's-value', text: c.value }),
+      el('span', { class: 's-lift', text: fmtRatio(c.rel) }),
+      el('span', { class: 's-n', text: `평소 대비 · ${fmt(c.n)}개` }),
     ])));
   }
 
@@ -928,13 +928,6 @@
     if (!rows.length) return null;
     const best = rows.reduce((a, b) => (b.rel > a.rel ? b : a));
     return { ...best, only: rows.length === 1 };
-  }
-
-  function describeBest(g, fallback, base) {
-    if (!g) return fallback;
-    if (g.only) return `${g.label} (대부분 이 조건으로 올려서 비교 불가)`;
-    if (base && g.rel < base * 1.05) return '조건별로 뚜렷한 차이 없음';
-    return `${g.label} (평소 대비 ${fmtRatio(g.rel)})`;
   }
 
   const PLAN_FORMATS = ['캐러셀', '사진'];
@@ -960,7 +953,7 @@
       .filter((c) => base && c.rel >= base * 1.1)
       .sort((a, b) => b.rel - a.rel);
 
-    // Spread the five picks over formats (at most two each) and never reuse
+    // Spread the five picks over formats (at most three each) and never reuse
     // a topic; relax the per-format cap if that leaves fewer than five.
     const picked = [];
     for (const cap of [3, 5]) {
@@ -972,42 +965,55 @@
       }
     }
     picked.sort((a, b) => b.rel - a.rel);
+    renderWeekPlan(posts, picked);
     if (!picked.length) {
       holder.replaceChildren(el('p', { class: 'empty', text: `평소보다 뚜렷하게 잘 퍼진 형식 × 소재 조합(게시물 ${minCombo}개 이상)이 아직 없습니다. 기간을 넓혀 보세요.` }));
-      renderWeekPlan(posts, []);
       return;
     }
-    renderWeekPlan(posts, picked);
 
+    // Only conditions with a clear winner become chips - no chip means
+    // "no difference", which keeps each card short.
+    const chip = (icon, label, g, fmtBase) => {
+      if (!g || g.only || (fmtBase && g.rel < fmtBase * 1.05)) return null;
+      return el('span', { class: 'chip', title: `평소 대비 ${fmtRatio(g.rel)}` }, [el('span', { class: 'chip-icon', 'aria-hidden': 'true', text: icon }), `${label} ${g.label}`]);
+    };
     holder.replaceChildren(...picked.map((c, i) => {
       const fmtPosts = posts.filter((p) => formatLabel(p) === c.format);
       const minN = fmtPosts.length >= 150 ? 15 : 8;
       const fmtBase = median(fmtPosts.map((p) => p._relReach));
-      const dow = bestGroup(fmtPosts, 'dow', minN), hour = bestGroup(fmtPosts, 'hour', minN);
-      const length = bestGroup(fmtPosts, 'length', minN), hook = bestGroup(fmtPosts, 'hook', minN);
-      const cta = bestGroup(fmtPosts, 'cta', minN), recipe = bestGroup(fmtPosts, 'recipe', minN);
-      const slides = c.format === '캐러셀' ? bestGroup(fmtPosts, 'slides', Math.min(minN, 8)) : null;
+      const g = (key, n = minN) => bestGroup(fmtPosts, key, n);
       const topFmt = fmtPosts.slice().sort((a, b) => b._relReach - a._relReach).slice(0, Math.max(1, Math.floor(fmtPosts.length / 5)));
       const targetShare = median(topFmt.map(SIGNALS[0].value)), targetSave = median(topFmt.map(SIGNALS[1].value));
       const examples = c.posts.slice().sort((a, b) => b._relReach - a._relReach).slice(0, 2);
-      const item = (label, value) => el('li', {}, [el('span', { class: 'pb-label', text: label }), value]);
-      return el('article', { class: 'playbook' }, [
-        el('div', { class: 'pb-head' }, [
+      const chips = [
+        chip('📅', '', g('dow'), fmtBase), chip('⏰', '', g('hour'), fmtBase),
+        chip('✍', '첫 문장', g('hook'), fmtBase), chip('📣', '유도 문구', g('cta'), fmtBase),
+        chip('📏', '캡션', g('length'), fmtBase), chip('🥣', '레시피', g('recipe'), fmtBase),
+        c.format === '캐러셀' ? chip('🖼', '', g('slides', Math.min(minN, 8)), fmtBase) : null,
+      ].filter(Boolean);
+      return el('article', { class: 'pb-card' }, [
+        el('div', { class: 'pb-top' }, [
           el('span', { class: 'strategy-rank', text: String(i + 1) }),
-          el('div', {}, [
-            el('strong', { text: `${c.format} × #${c.tag}` }),
-            el('div', { class: 'muted', text: `과거 ${fmt(c.posts.length)}개 게시물의 평소 대비 도달 ${fmtRatio(c.rel)} (이 기간 전체 ${fmtRatio(base)})` }),
-          ]),
+          el('span', { class: 'badge', text: c.format }),
+          el('span', { class: 'pb-lift', text: fmtRatio(c.rel) }),
         ]),
-        el('ul', { class: 'pb-list' }, [
-          item('언제', `요일 ${describeBest(dow, '데이터 부족', fmtBase)} · 시간대 ${describeBest(hour, '데이터 부족', fmtBase)}`),
-          item('캡션', `첫 문장 ${describeBest(hook, '—', fmtBase)} · 공유·저장 유도 ${describeBest(cta, '—', fmtBase)} · 길이 ${describeBest(length, '—', fmtBase)} · 레시피 ${describeBest(recipe, '—', fmtBase)}`),
-          c.format === '캐러셀' ? item('장수', describeBest(slides, '장수 데이터가 쌓이는 중', fmtBase)) : null,
-          item('목표 신호', `공유율 ${fmtPct2(targetShare)} · 저장율 ${fmtPct2(targetSave)} 이상 (이 형식에서 잘 퍼진 상위 20% 게시물의 중앙값)`),
-          item('본보기 게시물', el('span', {}, examples.map((p, k) => el('span', { class: 'pb-example' }, [
-            k ? ' · ' : '', ...[].concat(linkCell(p)[0]), ` (${p.date}, 평소 대비 ${fmtRatio(p._relReach)})`,
-          ])))),
+        el('strong', { class: 'pb-topic', text: `#${c.tag}` }),
+        el('div', { class: 'pb-thumbs' }, examples.map((p) => {
+          const src = p.recipe && typeof p.recipe.image === 'string' && p.recipe.image.startsWith(IMAGE_ORIGIN) ? p.recipe.image : null;
+          const href = typeof p.permalink === 'string' && p.permalink.startsWith(PERMALINK_ORIGIN) ? p.permalink : null;
+          const img = src ? el('img', { src, alt: titleOf(p), loading: 'lazy' }) : el('span', { class: 'pb-noimg', text: titleOf(p) });
+          if (src) img.addEventListener('error', () => img.replaceWith(el('span', { class: 'pb-noimg', text: titleOf(p) })));
+          const cap = el('span', { class: 'pb-cap', text: fmtRatio(p._relReach) });
+          return href ? el('a', { class: 'pb-thumb', href, target: '_blank', rel: 'noopener noreferrer', title: titleOf(p) }, [img, cap])
+            : el('span', { class: 'pb-thumb' }, [img, cap]);
+        })),
+        chips.length ? el('div', { class: 'chips' }, chips) : el('p', { class: 'hint', text: '시점·캡션은 조건별 차이가 뚜렷하지 않음' }),
+        el('div', { class: 'pb-target' }, [
+          el('span', { text: '목표' }),
+          el('strong', { text: `공유 ${fmtPct2(targetShare)}` }),
+          el('strong', { text: `저장 ${fmtPct2(targetSave)}` }),
         ]),
+        el('span', { class: 's-n', text: `과거 ${fmt(c.posts.length)}개 게시물 기준` }),
       ]);
     }));
   }
@@ -1016,35 +1022,37 @@
   // spread best, the second on the next best, and so on; leftover days become
   // slots for testing a share/save call-to-action, which the account has
   // barely tried and which feeds the strongest non-follower signal.
+  // Weekly plan as a 7-day strip: the best playbook on the weekday where
+  // feed posts spread best, the next on the next best, and so on; leftover
+  // days are slots for testing a natural share prompt. Cell shade = how well
+  // that weekday's feed posts spread.
   function renderWeekPlan(posts, picked) {
     const holder = document.getElementById('an-weekplan');
     const dowFactor = FACTORS.find((f) => f.key === 'dow');
-    const rankFor = (list) => groupStats(list, dowFactor.group, dowFactor.order)
+    const ranking = groupStats(posts, dowFactor.group, dowFactor.order)
       .filter((r) => r.n >= 5 && r.rel !== null).sort((a, b) => b.rel - a.rel);
-    const ranking = rankFor(posts);
     const overall = Object.fromEntries(ranking.map((r) => [r.label, r]));
     if (!ranking.length) {
       holder.replaceChildren(el('p', { class: 'empty', text: '요일별로 비교할 게시물이 부족합니다. 기간을 넓혀 보세요.' }));
       return;
     }
     const plan = {};
-    picked.forEach((c, i) => { if (ranking[i]) plan[ranking[i].label] = c; });
+    picked.forEach((c, i) => { if (ranking[i]) plan[ranking[i].label] = { c, rank: i + 1 }; });
+    const level = (rel) => (rel === undefined ? 0 : rel >= 1.3 ? 3 : rel >= 1.1 ? 2 : rel >= 0.95 ? 1 : 0);
     const days = dowFactor.order.slice(1).concat(dowFactor.order[0]); // 월요일 first
-    holder.replaceChildren(el('table', { class: 'data' }, [
-      el('thead', {}, el('tr', {}, ['요일', '이 요일 게시물 (평소 대비)', '추천 발행', '포인트']
-        .map((h, i) => el('th', { class: i !== 1 ? 'left' : null, text: h })))),
-      el('tbody', {}, days.map((d) => {
-        const c = plan[d], stat = overall[d];
-        return el('tr', { class: c ? null : 'small-n' }, [
-          el('td', { class: 'left', text: d }),
-          el('td', { text: stat ? `${fmtRatio(stat.rel)} · ${fmt(stat.n)}개` : '—' }),
-          el('td', { class: 'left' }, c ? el('strong', { text: `${c.format} × #${c.tag}` }) : '자유 소재'),
-          el('td', { class: 'left title', text: c
-            ? `모범 답안 ${picked.indexOf(c) + 1}번 참고 · 과거 평소 대비 ${fmtRatio(c.rel)}`
-            : '캡션 끝에 자연스러운 공유 문구를 넣어 시험 ("이 레시피가 필요한 친구에게 보내주세요") · 좋아요·댓글을 조건으로 거는 문구는 추천에서 빠질 수 있으니 피하기' }),
-        ]);
-      })),
-    ]));
+    holder.replaceChildren(el('div', { class: 'week' }, days.map((d) => {
+      const slot = plan[d], stat = overall[d];
+      return el('div', { class: `day lvl-${level(stat && stat.rel)}${slot ? '' : ' free'}` }, [
+        el('div', { class: 'day-head' }, [el('strong', { text: d.replace('요일', '') }), el('span', { text: stat ? fmtRatio(stat.rel) : '—' })]),
+        slot
+          ? el('div', { class: 'day-body' }, [
+            el('span', { class: 'strategy-rank', text: String(slot.rank) }),
+            el('span', { class: 'day-format', text: slot.c.format }),
+            el('strong', { class: 'day-topic', text: `#${slot.c.tag}` }),
+          ])
+          : el('div', { class: 'day-body' }, [el('span', { class: 'day-format', text: '자유 소재' }), el('span', { class: 'day-test', text: '공유 문구 시험' })]),
+      ]);
+    })));
   }
 
   // ------------------------------------------------------------------
@@ -1126,6 +1134,10 @@
     }
     document.getElementById('ov-range').addEventListener('change', renderOverview);
     for (const id of ['an-range', 'an-format']) document.getElementById(id).addEventListener('change', renderAnalysis);
+    // In-tab shortcuts scroll instead of changing the hash (the hash picks the tab).
+    for (const b of document.querySelectorAll('[data-jump]')) {
+      b.addEventListener('click', () => document.getElementById(b.dataset.jump).scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    }
     for (const id of ['ps-range', 'ps-format']) {
       document.getElementById(id).addEventListener('change', () => { state.postsShown = PAGE_SIZE; renderPosts(); });
     }
