@@ -1,0 +1,591 @@
+/* Private Instagram insights dashboard.
+ * Reads the JSON files insights/collect_insights.py writes, served by
+ * cloudflare-worker/insights-dashboard.js. Every value from the data files
+ * is inserted with textContent / setAttribute - never innerHTML - so a
+ * caption can never inject markup. */
+(function () {
+  'use strict';
+
+  const SVG_NS = 'http://www.w3.org/2000/svg';
+  const IMAGE_ORIGIN = 'https://images.how-about-breakfast.com/';
+  const PERMALINK_ORIGIN = 'https://www.instagram.com/';
+  const FORMAT_LABELS = { REELS: '릴스', CAROUSEL_ALBUM: '캐러셀', IMAGE: '사진', VIDEO: '동영상' };
+  const PAGE_SIZE = 50;
+
+  const state = {
+    profile: {}, account: {}, posts: [], meta: {},
+    postsShown: PAGE_SIZE, sortKey: 'date', sortDir: -1,
+  };
+
+  // ------------------------------------------------------------------
+  // Helpers
+  // ------------------------------------------------------------------
+
+  function el(tag, attrs, children) {
+    const node = document.createElement(tag);
+    for (const [k, v] of Object.entries(attrs || {})) {
+      if (v === null || v === undefined || v === false) continue;
+      if (k === 'text') node.textContent = v;
+      else if (k === 'class') node.className = v;
+      // CSSOM, not a style attribute: the CSP forbids inline style attributes
+      else if (k === 'bg') node.style.background = v;
+      else node.setAttribute(k, v);
+    }
+    for (const c of [].concat(children || [])) {
+      if (c === null || c === undefined) continue;
+      node.append(c instanceof Node ? c : document.createTextNode(String(c)));
+    }
+    return node;
+  }
+
+  // fill/stroke go through CSSOM so var(--token) works in every browser
+  // (and dark mode repaints without a re-render).
+  function svg(tag, attrs) {
+    const node = document.createElementNS(SVG_NS, tag);
+    for (const [k, v] of Object.entries(attrs || {})) {
+      if (k === 'fill' || k === 'stroke') node.style[k] = v;
+      else node.setAttribute(k, v);
+    }
+    return node;
+  }
+
+  const numFmt = new Intl.NumberFormat('ko-KR');
+  const compactFmt = new Intl.NumberFormat('ko-KR', { notation: 'compact', maximumFractionDigits: 1 });
+  const fmt = (v) => (v === null || v === undefined || Number.isNaN(v) ? '—' : numFmt.format(Math.round(v)));
+  const fmtCompact = (v) => (v === null || v === undefined || Number.isNaN(v) ? '—' : compactFmt.format(v));
+  const fmtPct = (v) => (v === null || v === undefined || !Number.isFinite(v) ? '—' : `${(v * 100).toFixed(1)}%`);
+  const fmtRatio = (v) => (v === null || v === undefined || !Number.isFinite(v) ? '—' : `${v.toFixed(2)}×`);
+  const shortDate = (d) => `${Number(d.slice(5, 7))}/${Number(d.slice(8, 10))}`;
+
+  function isoDay(date) {
+    // Calendar date in KST, matching the collector's day keys.
+    const kst = new Date(date.getTime() + 9 * 3600 * 1000);
+    return kst.toISOString().slice(0, 10);
+  }
+  function daysAgo(n) {
+    return isoDay(new Date(Date.now() - n * 86400 * 1000));
+  }
+  function sum(values) {
+    let total = 0, any = false;
+    for (const v of values) if (typeof v === 'number') { total += v; any = true; }
+    return any ? total : null;
+  }
+  function mean(values) {
+    const nums = values.filter((v) => typeof v === 'number' && Number.isFinite(v));
+    return nums.length ? nums.reduce((a, b) => a + b, 0) / nums.length : null;
+  }
+
+  // Followers on a given day: the latest snapshot on or before it, falling
+  // back to the earliest snapshot for posts older than the collection start.
+  let profileDates = [];
+  function followersAt(date) {
+    if (!profileDates.length) return null;
+    let found = null;
+    for (const d of profileDates) {
+      if (d <= date) found = d; else break;
+    }
+    return state.profile[found || profileDates[0]].followers_count || null;
+  }
+
+  function spreadIndex(post) {
+    const reach = post.insights && post.insights.reach;
+    const f = followersAt(post.date);
+    return typeof reach === 'number' && f ? reach / f : null;
+  }
+  function engagementRate(post) {
+    const i = post.insights || {};
+    return typeof i.total_interactions === 'number' && i.reach ? i.total_interactions / i.reach : null;
+  }
+
+  // ------------------------------------------------------------------
+  // Tooltip
+  // ------------------------------------------------------------------
+
+  const tooltip = document.getElementById('tooltip');
+  function showTooltip(evt, title, rows) {
+    tooltip.replaceChildren(el('div', { class: 'tt-title', text: title }));
+    for (const r of rows) {
+      tooltip.append(el('div', { class: 'tt-row' }, [
+        el('span', {}, [r.color ? el('span', { class: 'swatch', bg: r.color }) : null, r.label]),
+        el('strong', { text: r.value }),
+      ]));
+    }
+    tooltip.hidden = false;
+    const pad = 14;
+    const { innerWidth: w, innerHeight: h } = window;
+    const rect = tooltip.getBoundingClientRect();
+    let x = evt.clientX + pad, y = evt.clientY + pad;
+    if (x + rect.width > w - 8) x = evt.clientX - rect.width - pad;
+    if (y + rect.height > h - 8) y = evt.clientY - rect.height - pad;
+    tooltip.style.left = `${Math.max(8, x)}px`;
+    tooltip.style.top = `${Math.max(8, y)}px`;
+  }
+  function hideTooltip() { tooltip.hidden = true; }
+
+  // ------------------------------------------------------------------
+  // Charts (hand-rolled SVG: no third-party script in a private page)
+  // ------------------------------------------------------------------
+
+  function niceMax(v) {
+    if (!v || v <= 0) return 1;
+    const mag = Math.pow(10, Math.floor(Math.log10(v)));
+    for (const m of [1, 2, 2.5, 5, 10]) if (m * mag >= v) return m * mag;
+    return 10 * mag;
+  }
+
+  function chartFrame(container, title, subtitle, series) {
+    container.replaceChildren(el('h2', { text: title }));
+    if (subtitle) container.append(el('p', { class: 'card-sub', text: subtitle }));
+    if (series.length > 1) {
+      container.append(el('div', { class: 'legend' }, series.map((s) =>
+        el('span', {}, [el('span', { class: 'swatch', bg: `var(${s.color})` }), s.name]))));
+    }
+    const holder = el('div', { class: 'chart' });
+    container.append(holder);
+    return holder;
+  }
+
+  function tableView(labels, series) {
+    const table = el('table', { class: 'data' }, [
+      el('thead', {}, el('tr', {}, [el('th', { class: 'left', text: '날짜' }), ...series.map((s) => el('th', { text: s.name }))])),
+      el('tbody', {}, labels.map((d, i) => el('tr', {}, [
+        el('td', { class: 'left', text: d }), ...series.map((s) => el('td', { text: fmt(s.values[i]) })),
+      ]))),
+    ]);
+    return el('details', { class: 'as-table' }, [el('summary', { text: '표로 보기' }), el('div', { class: 'table-wrap' }, table)]);
+  }
+
+  function axes(root, geom, yMax) {
+    const { left, top, plotW, plotH } = geom;
+    const g = svg('g', { class: 'axis' });
+    for (let i = 0; i <= 4; i++) {
+      const v = (yMax * i) / 4;
+      const y = top + plotH - (plotH * i) / 4;
+      g.append(svg('line', { class: i === 0 ? 'baseline' : 'gridline', x1: left, x2: left + plotW, y1: y, y2: y }));
+      const t = svg('text', { x: left - 6, y: y + 4, 'text-anchor': 'end' });
+      t.textContent = fmtCompact(v);
+      g.append(t);
+    }
+    root.append(g);
+  }
+
+  function xLabels(root, geom, labels, xAt) {
+    const g = svg('g', { class: 'axis' });
+    const step = Math.max(1, Math.ceil(labels.length / Math.max(2, Math.floor(geom.plotW / 70))));
+    labels.forEach((d, i) => {
+      if (i % step !== 0 && i !== labels.length - 1) return;
+      if (i !== labels.length - 1 && labels.length - 1 - i < step / 2) return;
+      const t = svg('text', { x: xAt(i), y: geom.top + geom.plotH + 16, 'text-anchor': 'middle' });
+      t.textContent = shortDate(d);
+      g.append(t);
+    });
+    root.append(g);
+  }
+
+  function makeGeom(holder, height) {
+    const width = Math.max(280, holder.clientWidth || 600);
+    const geom = { width, height, left: 44, right: 12, top: 10, bottom: 24 };
+    geom.plotW = width - geom.left - geom.right;
+    geom.plotH = height - geom.top - geom.bottom;
+    return geom;
+  }
+
+  function roundedTopPath(x, y, w, h, r) {
+    r = Math.min(r, w / 2, h);
+    return `M${x},${y + h}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h}Z`;
+  }
+
+  function columnChart(container, { title, subtitle, labels, series, emptyText }) {
+    const holder = chartFrame(container, title, subtitle, series);
+    const hasData = series.some((s) => s.values.some((v) => typeof v === 'number'));
+    if (!labels.length || !hasData) {
+      holder.append(el('p', { class: 'empty', text: emptyText || '아직 데이터가 없습니다.' }));
+      return;
+    }
+    const geom = makeGeom(holder, 220);
+    const root = svg('svg', { viewBox: `0 0 ${geom.width} ${geom.height}`, height: geom.height, role: 'img', 'aria-label': title });
+    const totals = labels.map((_, i) => series.reduce((a, s) => a + (s.values[i] || 0), 0));
+    const yMax = niceMax(Math.max(...totals));
+    axes(root, geom, yMax);
+    const band = geom.plotW / labels.length;
+    const barW = Math.max(2, Math.min(24, band * 0.7));
+    const xAt = (i) => geom.left + band * i + band / 2;
+    const yScale = (v) => (geom.plotH * v) / yMax;
+    const base = geom.top + geom.plotH;
+
+    labels.forEach((d, i) => {
+      const hit = svg('rect', { class: 'hit', x: geom.left + band * i, y: geom.top, width: band, height: geom.plotH });
+      root.append(hit);
+      let acc = 0;
+      const parts = series.map((s) => s.values[i] || 0);
+      const topIdx = parts.reduce((t, v, k) => (v > 0 ? k : t), -1);
+      parts.forEach((v, k) => {
+        if (v <= 0) return;
+        const gap = acc > 0 ? 2 : 0;
+        const h = Math.max(1, yScale(v) - gap);
+        const y = base - yScale(acc) - gap - h;
+        const x = xAt(i) - barW / 2;
+        const shape = k === topIdx
+          ? svg('path', { d: roundedTopPath(x, y, barW, h, 4) })
+          : svg('rect', { x, y, width: barW, height: h });
+        shape.style.fill = `var(${series[k].color})`;
+        shape.setAttribute('pointer-events', 'none');
+        root.append(shape);
+        acc += v;
+      });
+      const rows = series.map((s) => ({ label: s.name, value: fmt(s.values[i]), color: `var(${s.color})` }));
+      if (series.length > 1) rows.push({ label: '합계', value: fmt(totals[i]) });
+      hit.addEventListener('mousemove', (e) => { hit.classList.add('active'); showTooltip(e, d, rows); });
+      hit.addEventListener('mouseleave', () => { hit.classList.remove('active'); hideTooltip(); });
+    });
+    xLabels(root, geom, labels, xAt);
+    holder.append(root);
+    container.append(tableView(labels, series));
+  }
+
+  function lineChart(container, { title, subtitle, labels, series, emptyText }) {
+    const holder = chartFrame(container, title, subtitle, series);
+    const s = series[0];
+    const points = labels.map((d, i) => [i, s.values[i]]).filter((p) => typeof p[1] === 'number');
+    if (points.length < 2) {
+      holder.append(el('p', { class: 'empty', text: emptyText || '아직 데이터가 없습니다.' }));
+      return;
+    }
+    const geom = makeGeom(holder, 220);
+    const root = svg('svg', { viewBox: `0 0 ${geom.width} ${geom.height}`, height: geom.height, role: 'img', 'aria-label': title });
+    const vals = points.map((p) => p[1]);
+    // Follower counts move slowly - start the axis near the data, not at 0,
+    // but label it clearly via the tick values.
+    const lo = Math.min(...vals), hi = Math.max(...vals);
+    const span = niceMax(Math.max(hi - lo, 1) * 1.25);
+    const yMin = Math.max(0, Math.floor(lo / (span / 4)) * (span / 4));
+    const yMax = yMin + span;
+    const g = svg('g', { class: 'axis' });
+    for (let i = 0; i <= 4; i++) {
+      const v = yMin + (span * i) / 4;
+      const y = geom.top + geom.plotH - (geom.plotH * i) / 4;
+      g.append(svg('line', { class: i === 0 ? 'baseline' : 'gridline', x1: geom.left, x2: geom.left + geom.plotW, y1: y, y2: y }));
+      const t = svg('text', { x: geom.left - 6, y: y + 4, 'text-anchor': 'end' });
+      t.textContent = fmtCompact(v);
+      g.append(t);
+    }
+    root.append(g);
+    const xAt = (i) => geom.left + (labels.length === 1 ? geom.plotW / 2 : (geom.plotW * i) / (labels.length - 1));
+    const yAt = (v) => geom.top + geom.plotH - (geom.plotH * (v - yMin)) / (yMax - yMin);
+    const d = points.map((p, k) => `${k ? 'L' : 'M'}${xAt(p[0])},${yAt(p[1])}`).join('');
+    root.append(svg('path', { d, fill: 'none', stroke: `var(${s.color})`, 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }));
+    const last = points[points.length - 1];
+    root.append(svg('circle', { cx: xAt(last[0]), cy: yAt(last[1]), r: 4, fill: `var(${s.color})`, stroke: 'var(--surface-1)', 'stroke-width': 2 }));
+    const endLabel = svg('text', { class: 'end-label', x: xAt(last[0]) - 8, y: yAt(last[1]) - 10, 'text-anchor': 'end' });
+    endLabel.textContent = fmt(last[1]);
+    root.append(endLabel);
+    xLabels(root, geom, labels, xAt);
+
+    const cross = svg('line', { class: 'crosshair', y1: geom.top, y2: geom.top + geom.plotH, visibility: 'hidden' });
+    const dot = svg('circle', { r: 4, fill: `var(${s.color})`, stroke: 'var(--surface-1)', 'stroke-width': 2, visibility: 'hidden' });
+    const overlay = svg('rect', { x: geom.left, y: geom.top, width: geom.plotW, height: geom.plotH, fill: 'transparent' });
+    root.append(cross, dot, overlay);
+    overlay.addEventListener('mousemove', (e) => {
+      const box = root.getBoundingClientRect();
+      const x = ((e.clientX - box.left) / box.width) * geom.width;
+      let best = points[0];
+      for (const p of points) if (Math.abs(xAt(p[0]) - x) < Math.abs(xAt(best[0]) - x)) best = p;
+      const cx = xAt(best[0]);
+      cross.setAttribute('x1', cx); cross.setAttribute('x2', cx); cross.setAttribute('visibility', 'visible');
+      dot.setAttribute('cx', cx); dot.setAttribute('cy', yAt(best[1])); dot.setAttribute('visibility', 'visible');
+      showTooltip(e, labels[best[0]], [{ label: s.name, value: fmt(best[1]), color: `var(${s.color})` }]);
+    });
+    overlay.addEventListener('mouseleave', () => {
+      cross.setAttribute('visibility', 'hidden'); dot.setAttribute('visibility', 'hidden'); hideTooltip();
+    });
+    holder.append(root);
+    container.append(tableView(labels, series));
+  }
+
+  // ------------------------------------------------------------------
+  // Overview tab
+  // ------------------------------------------------------------------
+
+  function accountRows(rangeDays) {
+    const dates = Object.keys(state.account).sort();
+    const from = rangeDays ? daysAgo(rangeDays) : '';
+    const today = daysAgo(0);
+    return dates.filter((d) => d >= from && d < today).map((d) => ({ date: d, ...state.account[d] }));
+  }
+
+  function tile(label, value, delta, deltaClass) {
+    return el('div', { class: 'tile' }, [
+      el('div', { class: 'label', text: label }),
+      el('div', { class: 'value', text: value }),
+      delta ? el('div', { class: `delta ${deltaClass || ''}`, text: delta }) : null,
+    ]);
+  }
+
+  function renderOverview() {
+    const range = Number(document.getElementById('ov-range').value);
+    const rows = accountRows(range);
+    const labels = rows.map((r) => r.date);
+    const col = (k) => rows.map((r) => (typeof r[k] === 'number' ? r[k] : null));
+
+    const current = profileDates.length ? state.profile[profileDates[profileDates.length - 1]].followers_count : null;
+    const newFollowers = sum(col('follower_count'));
+    const reachF = sum(col('reach_follower'));
+    const reachNF = sum(col('reach_non_follower'));
+    const nfShare = reachF !== null && reachNF !== null && reachF + reachNF > 0 ? reachNF / (reachF + reachNF) : null;
+
+    document.getElementById('ov-range-hint').textContent = labels.length
+      ? `${labels[0]} ~ ${labels[labels.length - 1]} (${labels.length}일치 데이터)`
+      : '이 기간의 계정 인사이트가 아직 없습니다.';
+
+    document.getElementById('ov-tiles').replaceChildren(
+      tile('팔로워', fmt(current), newFollowers !== null ? `기간 중 신규 +${fmt(newFollowers)}` : null, newFollowers ? 'up' : ''),
+      tile('도달 (일별 합계)', fmtCompact(sum(col('reach')))),
+      tile('비팔로워 도달 비율', fmtPct(nfShare), nfShare !== null ? `비팔로워 ${fmtCompact(reachNF)}명` : null),
+      tile('조회 (일별 합계)', fmtCompact(sum(col('views')))),
+      tile('참여 (좋아요·댓글·저장·공유)', fmtCompact(sum(col('total_interactions')))),
+    );
+
+    const hasSplit = rows.some((r) => typeof r.reach_non_follower === 'number');
+    columnChart(document.getElementById('ch-reach'), {
+      title: '일별 도달',
+      subtitle: hasSplit ? '팔로워와 비팔로워로 나눠 보여줍니다. 비팔로워 막대가 큰 날의 게시물이 확산된 게시물입니다.' : '팔로워/비팔로워 구분 데이터가 없어 전체 도달만 표시합니다.',
+      labels,
+      series: hasSplit
+        ? [{ name: '팔로워', color: '--series-1', values: col('reach_follower') },
+          { name: '비팔로워', color: '--series-2', values: col('reach_non_follower') }]
+        : [{ name: '도달', color: '--series-1', values: col('reach') }],
+    });
+
+    const from = range ? daysAgo(range) : '';
+    const pDates = profileDates.filter((d) => d >= from);
+    lineChart(document.getElementById('ch-followers'), {
+      title: '팔로워 수',
+      subtitle: '매일 수집할 때 기록한 값입니다.',
+      labels: pDates,
+      series: [{ name: '팔로워', color: '--series-1', values: pDates.map((d) => state.profile[d].followers_count) }],
+      emptyText: '팔로워 수는 수집을 시작한 날부터 쌓입니다. 이틀 이상 쌓이면 그래프가 나타납니다.',
+    });
+    columnChart(document.getElementById('ch-new-followers'), {
+      title: '일별 신규 팔로워', labels, series: [{ name: '신규 팔로워', color: '--series-1', values: col('follower_count') }],
+    });
+    columnChart(document.getElementById('ch-interactions'), {
+      title: '일별 참여', subtitle: '좋아요·댓글·저장·공유 합계', labels,
+      series: [{ name: '참여', color: '--series-1', values: col('total_interactions') }],
+    });
+    columnChart(document.getElementById('ch-views'), {
+      title: '일별 조회', labels, series: [{ name: '조회', color: '--series-1', values: col('views') }],
+    });
+
+    const posts = state.posts.filter((p) => p.date >= from && p.insights);
+    renderFormatTable(posts);
+    renderTopTable(posts);
+  }
+
+  function renderFormatTable(posts) {
+    const groups = {};
+    for (const p of posts) (groups[p.media_type] = groups[p.media_type] || []).push(p);
+    const keys = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length);
+    const holder = document.getElementById('ov-formats');
+    if (!keys.length) {
+      holder.replaceChildren(el('p', { class: 'empty', text: '이 기간에 인사이트가 있는 게시물이 없습니다.' }));
+      return;
+    }
+    const m = (list, k) => mean(list.map((p) => p.insights[k]));
+    holder.replaceChildren(el('table', { class: 'data' }, [
+      el('thead', {}, el('tr', {}, ['형식', '게시물', '평균 도달', '평균 조회', '평균 저장', '평균 공유', '평균 참여율', '평균 확산 지수']
+        .map((h, i) => el('th', { class: i === 0 ? 'left' : null, text: h })))),
+      el('tbody', {}, keys.map((k) => {
+        const list = groups[k];
+        return el('tr', {}, [
+          el('td', { class: 'left', text: FORMAT_LABELS[k] || k }),
+          el('td', { text: fmt(list.length) }),
+          el('td', { text: fmt(m(list, 'reach')) }),
+          el('td', { text: fmt(m(list, 'views')) }),
+          el('td', { text: fmt(m(list, 'saved')) }),
+          el('td', { text: fmt(m(list, 'shares')) }),
+          el('td', { text: fmtPct(mean(list.map(engagementRate))) }),
+          el('td', { text: fmtRatio(mean(list.map(spreadIndex))) }),
+        ]);
+      })),
+    ]));
+  }
+
+  function renderTopTable(posts) {
+    const top = posts.filter((p) => spreadIndex(p) !== null)
+      .sort((a, b) => spreadIndex(b) - spreadIndex(a)).slice(0, 5);
+    const holder = document.getElementById('ov-top');
+    if (!top.length) {
+      holder.replaceChildren(el('p', { class: 'empty', text: '표시할 게시물이 없습니다.' }));
+      return;
+    }
+    holder.replaceChildren(postTable(top, [
+      COLS.date, COLS.thumb, COLS.title, COLS.format, COLS.reach, COLS.shares, COLS.saved, COLS.follows, COLS.spread,
+    ], false));
+  }
+
+  // ------------------------------------------------------------------
+  // Posts tab
+  // ------------------------------------------------------------------
+
+  function titleOf(p) {
+    if (p.recipe && p.recipe.title) return p.recipe.title;
+    const first = (p.caption || '').split('\n').find((line) => line.trim()) || '(캡션 없음)';
+    return first.length > 40 ? `${first.slice(0, 40)}…` : first;
+  }
+
+  function linkCell(p) {
+    const title = titleOf(p);
+    const href = typeof p.permalink === 'string' && p.permalink.startsWith(PERMALINK_ORIGIN) ? p.permalink : null;
+    const content = href ? el('a', { href, target: '_blank', rel: 'noopener noreferrer', text: title }) : title;
+    const extra = p.diary_no ? el('div', { class: 'muted', text: `#조식다이어리 ${p.diary_no}` }) : null;
+    return [content, extra];
+  }
+
+  const ins = (k) => (p) => (p.insights ? p.insights[k] : null);
+  const COLS = {
+    date: { key: 'date', label: '날짜', left: true, value: (p) => p.date, show: (p) => p.date },
+    thumb: {
+      key: 'thumb', label: '', left: true, value: null,
+      show: (p) => {
+        const src = p.recipe && typeof p.recipe.image === 'string' && p.recipe.image.startsWith(IMAGE_ORIGIN) ? p.recipe.image : null;
+        if (!src) return '';
+        const img = el('img', { class: 'thumb', src, alt: '', loading: 'lazy' });
+        img.addEventListener('error', () => img.remove());
+        return img;
+      },
+    },
+    title: { key: 'title', label: '게시물', left: true, cls: 'title', value: titleOf, show: linkCell },
+    format: { key: 'format', label: '형식', left: true, value: (p) => p.media_type, show: (p) => el('span', { class: 'badge', text: FORMAT_LABELS[p.media_type] || p.media_type || '—' }) },
+    reach: { key: 'reach', label: '도달', value: ins('reach'), show: (p) => fmt(ins('reach')(p)) },
+    views: { key: 'views', label: '조회', value: ins('views'), show: (p) => fmt(ins('views')(p)) },
+    likes: { key: 'likes', label: '좋아요', value: ins('likes'), show: (p) => fmt(ins('likes')(p)) },
+    comments: { key: 'comments', label: '댓글', value: ins('comments'), show: (p) => fmt(ins('comments')(p)) },
+    saved: { key: 'saved', label: '저장', value: ins('saved'), show: (p) => fmt(ins('saved')(p)) },
+    shares: { key: 'shares', label: '공유', value: ins('shares'), show: (p) => fmt(ins('shares')(p)) },
+    follows: { key: 'follows', label: '팔로우', value: ins('follows'), show: (p) => fmt(ins('follows')(p)) },
+    engagement: { key: 'engagement', label: '참여율', value: engagementRate, show: (p) => fmtPct(engagementRate(p)) },
+    spread: { key: 'spread', label: '확산 지수', value: spreadIndex, show: (p) => fmtRatio(spreadIndex(p)) },
+  };
+  const POST_COLUMNS = ['date', 'thumb', 'title', 'format', 'reach', 'views', 'likes', 'comments', 'saved', 'shares', 'follows', 'engagement', 'spread'].map((k) => COLS[k]);
+
+  function postTable(posts, cols, sortable) {
+    const head = el('tr', {}, cols.map((c) => {
+      const th = el('th', { class: [c.left ? 'left' : '', sortable && c.value ? 'sortable' : ''].join(' ').trim() || null, text: c.label });
+      if (sortable && c.value) {
+        th.setAttribute('tabindex', '0');
+        if (state.sortKey === c.key) th.setAttribute('aria-sort', state.sortDir < 0 ? 'descending' : 'ascending');
+        const toggle = () => {
+          if (state.sortKey === c.key) state.sortDir = -state.sortDir;
+          else { state.sortKey = c.key; state.sortDir = -1; }
+          renderPosts();
+        };
+        th.addEventListener('click', toggle);
+        th.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+      }
+      return th;
+    }));
+    const body = el('tbody', {}, posts.map((p) => el('tr', {}, cols.map((c) =>
+      el('td', { class: [c.left ? 'left' : '', c.cls || ''].join(' ').trim() || null }, c.show(p))))));
+    return el('table', { class: 'data' }, [el('thead', {}, head), body]);
+  }
+
+  function filteredPosts() {
+    const range = Number(document.getElementById('ps-range').value);
+    const format = document.getElementById('ps-format').value;
+    const q = document.getElementById('ps-search').value.trim().toLowerCase();
+    const from = range ? daysAgo(range) : '';
+    return state.posts.filter((p) => {
+      if (p.date < from) return false;
+      if (format && p.media_type !== format) return false;
+      if (q) {
+        const hay = [titleOf(p), p.caption, ...((p.recipe && p.recipe.hashtags) || [])].join(' ').toLowerCase();
+        if (!hay.includes(q)) return false;
+      }
+      return true;
+    });
+  }
+
+  function renderPosts() {
+    const col = COLS[state.sortKey] || COLS.date;
+    const list = filteredPosts().sort((a, b) => {
+      const va = col.value(a), vb = col.value(b);
+      if (va === vb) return 0;
+      if (va === null || va === undefined) return 1;
+      if (vb === null || vb === undefined) return -1;
+      return (va < vb ? -1 : 1) * state.sortDir;
+    });
+    document.getElementById('ps-count').textContent =
+      `${fmt(list.length)}개 게시물 · 열 제목을 누르면 정렬됩니다. 확산 지수는 게시 당시 팔로워 수 기준 (수집 시작 전 게시물은 수집 첫날 팔로워 수로 계산해 실제보다 낮게 나올 수 있습니다).`;
+    const table = postTable(list.slice(0, state.postsShown), POST_COLUMNS, true);
+    document.getElementById('ps-table').replaceWith(Object.assign(table, { id: 'ps-table' }));
+    document.getElementById('ps-more').hidden = list.length <= state.postsShown;
+  }
+
+  // ------------------------------------------------------------------
+  // Tabs, loading, wiring
+  // ------------------------------------------------------------------
+
+  function selectTab(name) {
+    if (!['overview', 'posts', 'analysis'].includes(name)) name = 'overview';
+    for (const b of document.querySelectorAll('[role="tab"]')) b.setAttribute('aria-selected', String(b.dataset.tab === name));
+    for (const p of document.querySelectorAll('[role="tabpanel"]')) p.hidden = p.dataset.panel !== name;
+    if (name === 'overview') renderOverview();
+    if (name === 'posts') renderPosts();
+  }
+
+  async function loadJson(name, fallback) {
+    const resp = await fetch(`/data/${name}.json`, { credentials: 'same-origin', cache: 'no-store' });
+    if (resp.status === 404) return fallback;
+    if (!resp.ok) throw new Error(`${name}: HTTP ${resp.status}`);
+    return resp.json();
+  }
+
+  async function init() {
+    try {
+      const [profile, account, posts, meta] = await Promise.all([
+        loadJson('profile_daily', {}), loadJson('account_daily', {}), loadJson('posts', []), loadJson('meta', {}),
+      ]);
+      Object.assign(state, { profile, account, posts, meta });
+    } catch (e) {
+      const box = document.getElementById('load-error');
+      box.textContent = `데이터를 불러오지 못했습니다 (${e.message}). 수집기가 한 번 이상 실행됐는지 확인해주세요.`;
+      box.hidden = false;
+    }
+    profileDates = Object.keys(state.profile).sort();
+    const meta = state.meta;
+    const parts = [];
+    if (meta.username) parts.push(`@${meta.username}`);
+    if (meta.last_run) parts.push(`마지막 수집 ${meta.last_run.replace('T', ' ').slice(0, 16)}`);
+    if (meta.collecting_since) parts.push(`${meta.collecting_since}부터 수집 중`);
+    document.getElementById('account-line').textContent = parts.join(' · ') || '수집된 데이터가 없습니다.';
+    const missing = Object.keys(meta.refused_account_metrics || {}).concat(Object.keys(meta.refused_media_metrics || {}));
+    document.getElementById('an-status').textContent = missing.length
+      ? `API가 제공하지 않은 지표: ${missing.join(', ')}`
+      : '';
+
+    for (const b of document.querySelectorAll('[role="tab"]')) {
+      b.addEventListener('click', () => { history.replaceState(null, '', `#${b.dataset.tab}`); selectTab(b.dataset.tab); });
+    }
+    document.getElementById('ov-range').addEventListener('change', renderOverview);
+    for (const id of ['ps-range', 'ps-format']) {
+      document.getElementById(id).addEventListener('change', () => { state.postsShown = PAGE_SIZE; renderPosts(); });
+    }
+    let searchTimer;
+    document.getElementById('ps-search').addEventListener('input', () => {
+      clearTimeout(searchTimer);
+      searchTimer = setTimeout(() => { state.postsShown = PAGE_SIZE; renderPosts(); }, 200);
+    });
+    document.getElementById('ps-more').addEventListener('click', () => { state.postsShown += PAGE_SIZE; renderPosts(); });
+    let resizeTimer, lastWidth = window.innerWidth;
+    window.addEventListener('resize', () => {
+      if (window.innerWidth === lastWidth) return;
+      lastWidth = window.innerWidth;
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => { if (!document.getElementById('tab-overview').hidden) renderOverview(); }, 150);
+    });
+    window.addEventListener('hashchange', () => selectTab(location.hash.slice(1)));
+    selectTab(location.hash.slice(1));
+  }
+
+  init();
+})();

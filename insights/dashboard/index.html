@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>인스타그램 인사이트</title>
+  <link rel="stylesheet" href="/app/dashboard.css">
+</head>
+<body>
+  <header class="top">
+    <div class="top-inner">
+      <div>
+        <h1>인스타그램 인사이트</h1>
+        <p class="sub" id="account-line">불러오는 중…</p>
+      </div>
+      <nav class="tabs" role="tablist" aria-label="대시보드 탭">
+        <button role="tab" data-tab="overview" aria-selected="true">개요</button>
+        <button role="tab" data-tab="posts" aria-selected="false">게시물</button>
+        <button role="tab" data-tab="analysis" aria-selected="false">심화 분석</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p class="notice" id="load-error" hidden></p>
+
+    <section id="tab-overview" role="tabpanel" data-panel="overview">
+      <div class="filters">
+        <label>기간
+          <select id="ov-range">
+            <option value="7">최근 7일</option>
+            <option value="28" selected>최근 28일</option>
+            <option value="90">최근 90일</option>
+            <option value="0">전체</option>
+          </select>
+        </label>
+        <span class="hint" id="ov-range-hint"></span>
+      </div>
+      <div class="tiles" id="ov-tiles"></div>
+      <div class="grid">
+        <figure class="card wide" id="ch-reach"></figure>
+        <figure class="card" id="ch-followers"></figure>
+        <figure class="card" id="ch-new-followers"></figure>
+        <figure class="card" id="ch-interactions"></figure>
+        <figure class="card" id="ch-views"></figure>
+      </div>
+      <div class="grid">
+        <section class="card wide">
+          <h2>형식별 성과</h2>
+          <p class="card-sub">선택한 기간에 올린 게시물의 평균입니다. 확산 지수 = 도달 ÷ 게시 당시 팔로워 수 (1 이상이면 팔로워보다 많은 사람에게 닿았다는 뜻)</p>
+          <div class="table-wrap" id="ov-formats"></div>
+        </section>
+        <section class="card wide">
+          <h2>확산이 잘 된 게시물 TOP 5</h2>
+          <p class="card-sub">확산 지수 기준. 자세한 비교는 게시물 탭에서 볼 수 있습니다.</p>
+          <div class="table-wrap" id="ov-top"></div>
+        </section>
+      </div>
+    </section>
+
+    <section id="tab-posts" role="tabpanel" data-panel="posts" hidden>
+      <div class="filters">
+        <label>기간
+          <select id="ps-range">
+            <option value="30">최근 30일</option>
+            <option value="90" selected>최근 90일</option>
+            <option value="365">최근 1년</option>
+            <option value="0">전체</option>
+          </select>
+        </label>
+        <label>형식
+          <select id="ps-format">
+            <option value="">전체</option>
+            <option value="REELS">릴스</option>
+            <option value="CAROUSEL_ALBUM">캐러셀</option>
+            <option value="IMAGE">사진</option>
+            <option value="VIDEO">동영상</option>
+          </select>
+        </label>
+        <label class="grow">검색
+          <input id="ps-search" type="search" placeholder="제목·캡션·해시태그" maxlength="50">
+        </label>
+      </div>
+      <p class="hint" id="ps-count"></p>
+      <div class="card table-wrap"><table class="data" id="ps-table"></table></div>
+      <button class="more" id="ps-more" hidden>더 보기</button>
+    </section>
+
+    <section id="tab-analysis" role="tabpanel" data-panel="analysis" hidden>
+      <div class="card">
+        <h2>심화 분석 (추가 개발 예정)</h2>
+        <p>팔로워가 아닌 사람에게 닿은 게시물의 공통점을 찾는 분석 탭이 이곳에 추가될 예정입니다.</p>
+        <ul>
+          <li>소재별 비교: 재료 태그, 계절, 실패기 여부</li>
+          <li>캡션 요인: 길이, 첫 줄 유형, 해시태그 수, 레시피 포함 여부</li>
+          <li>형식과 시점: 릴스 여부, 게시 요일·시간, 시청 시간</li>
+        </ul>
+        <p class="hint" id="an-status"></p>
+      </div>
+    </section>
+  </main>
+
+  <div class="tooltip" id="tooltip" role="status" hidden></div>
+  <script src="/app/dashboard.js"></script>
+</body>
+</html>

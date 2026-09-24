@@ -21,6 +21,7 @@
 - `build_public_data.py` — `recipes.json` → `recipes-index.json` + `recipes/*.html` + `sitemap.xml` 생성 스크립트. **`recipes.json`을 고칠 때마다(직접 또는 `review.html`로) 배포 전에 꼭 다시 실행**
 - `parse.py` — 원본 텍스트 → `recipes.json` 변환 스크립트 (데이터 갱신 시 재사용)
 - `merge_instagram_export.py` — 인스타그램 공식 내보내기(사진 포함)를 병합하는 스크립트
+- `insights/` — **비공개** 인스타그램 인사이트 대시보드(수집기·화면). 데이터는 이 저장소가 아닌 비공개 R2 버킷에만 저장됨. 설정 방법은 `insights/README.md`
 
 ## 페이지 이동
 홈(`index.html`)의 "소재로 골라 먹기" 카드나 "전체 검색으로 보기" 링크를 누르면
