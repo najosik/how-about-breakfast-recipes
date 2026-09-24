@@ -167,3 +167,5 @@ table.data tr.small-n .bar-fill { opacity: .45; }
 .token-status.warn::before { content: "⚠ "; }
 .token-status.bad { color: var(--bad); font-weight: 600; }
 .token-status.bad::before { content: "⛔ "; }
+.badge.doc { border-color: var(--text-primary); color: var(--text-primary); font-weight: 600; }
+.principles .sub-head { margin-top: 14px; }
