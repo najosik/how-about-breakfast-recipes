@@ -20,6 +20,11 @@ user's id, name or comment text is ever requested or saved):
   data/posts.json          one record per post: media fields, lifetime
                            insights, and the matching recipes.json record
                            (title/hashtags - the "소재" for later analysis)
+  data/post_history.json   {post_id: {date: {metric: value}}} a daily snapshot
+                           of each post's cumulative insights while it is
+                           young (first RECENT_POST_DAYS days), so later
+                           analysis can see how fast a post spread - the
+                           API only ever returns the current totals
   data/meta.json           last run time, api version, metrics the API
                            refused (so the dashboard can say what is missing)
   app/*                    the dashboard's static files (insights/dashboard/)
@@ -95,7 +100,9 @@ MEDIA_METRICS = {
 
 MEDIA_FIELDS = 'id,caption,media_type,media_product_type,timestamp,permalink'
 DIARY_NO_RE = re.compile(r'#조식다이어리\s*(\d+)')
-DATA_KEYS = ('profile_daily', 'account_daily', 'posts', 'meta')
+# Metrics kept in post_history.json (the per-day growth curve of a post).
+HISTORY_METRICS = ('reach', 'views', 'likes', 'comments', 'saved', 'shares',
+                   'total_interactions', 'follows', 'profile_visits')
 
 
 class ApiError(Exception):
@@ -415,6 +422,7 @@ def run(store, client, force_full):
     profile_daily = store.get_json('data/profile_daily.json', {})
     account_daily = store.get_json('data/account_daily.json', {})
     posts = {p['id']: p for p in store.get_json('data/posts.json', [])}
+    post_history = store.get_json('data/post_history.json', {})
     refused = {}
     refused_media = {}
 
@@ -469,6 +477,9 @@ def run(store, client, force_full):
                 insights, error = collect_media_insights(client, media, refused_media)
                 if insights:
                     post['insights'] = insights
+                    if age_days <= RECENT_POST_DAYS:
+                        post_history.setdefault(media['id'], {})[today.isoformat()] = {
+                            k: insights[k] for k in HISTORY_METRICS if k in insights}
                     post['insights_at'] = now.isoformat(timespec='seconds')
                     post.pop('insights_error', None)
                     refreshed += 1
@@ -499,6 +510,7 @@ def run(store, client, force_full):
     put_json(store, 'data/profile_daily.json', profile_daily)
     put_json(store, 'data/account_daily.json', account_daily)
     put_json(store, 'data/posts.json', sorted(posts.values(), key=lambda p: p.get('timestamp') or ''))
+    put_json(store, 'data/post_history.json', post_history)
     put_json(store, 'data/meta.json', meta)
     print(f'Saved. API calls this run: {client.calls}.')
 
