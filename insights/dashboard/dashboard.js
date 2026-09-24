@@ -623,6 +623,7 @@
       renderSignalBins(card, sig, posts);
     }
     renderNonFollowerDays();
+    renderPhase2(posts);
   }
 
   function renderSignalCompare(posts) {
@@ -709,6 +710,187 @@
         ]);
       })),
     ]));
+  }
+
+  // ------------------------------------------------------------------
+  // Analysis tab (phase 2): topic, caption, format and timing factors
+  // ------------------------------------------------------------------
+
+  // Hashtags that appear on nearly every post say nothing about the topic.
+  const GENERIC_TAGS = new Set(['조식', '조식다이어리', '미라클모닝', '레시피', '아침밥', '직장인', '아침밥상', '혼밥', '집밥',
+    '홈쿡', '모닝루틴', '모닝리추얼', '먹스타그램', '요리스타그램', '오늘의조식', '조식스타그램', '아침', '아침식사',
+    '브런치', '건강식', '다이어트', '맛스타그램', '요리', '일상', '데일리']);
+  const WEEKDAYS = ['일', '월', '화', '수', '목', '금', '토'];
+  const MIN_GROUP = 15; // groups smaller than this are shown but never drive a strategy card
+
+  function kstParts(p) {
+    // Safari cannot parse "+0000" offsets, so add the colon first.
+    const t = Date.parse(String(p.timestamp || '').replace(/([+-]\d{2})(\d{2})$/, '$1:$2'));
+    if (Number.isNaN(t)) return null;
+    const d = new Date(t + 9 * 3600 * 1000);
+    return { dow: d.getUTCDay(), hour: d.getUTCHours(), month: d.getUTCMonth() + 1 };
+  }
+
+  function postTags(p) {
+    if (p._tags) return p._tags;
+    const tags = new Set();
+    for (const m of (p.caption || '').matchAll(/#([^\s#.,!?]+)/g)) tags.add(m[1]);
+    for (const t of (p.recipe && p.recipe.hashtags) || []) tags.add(String(t));
+    p._tags = [...tags].filter((t) => /[가-힣]/.test(t) && !GENERIC_TAGS.has(t) && !/^조식다이어리\d*$/.test(t));
+    return p._tags;
+  }
+
+  const hashtagCount = (p) => ((p.caption || '').match(/#[^\s#]+/g) || []).length;
+  const bin = (v, edges, labels) => { for (let i = 0; i < edges.length; i++) if (v < edges[i]) return labels[i]; return labels[labels.length - 1]; };
+  const formatLabel = (p) => (p.media_product_type === 'REELS' ? '릴스' : FORMAT_LABELS[p.media_type] || null);
+
+  const FACTORS = [
+    { key: 'format', title: '형식', order: ['릴스', '캐러셀', '사진', '동영상'], group: formatLabel },
+    {
+      key: 'length', title: '캡션 길이', order: ['300자 미만', '300~600자', '600~1,000자', '1,000자 이상'],
+      group: (p) => bin((p.caption || '').length, [300, 600, 1000], ['300자 미만', '300~600자', '600~1,000자', '1,000자 이상']),
+    },
+    {
+      key: 'tags', title: '해시태그 수', order: ['0~5개', '6~10개', '11~20개', '21개 이상'],
+      group: (p) => bin(hashtagCount(p), [6, 11, 21], ['0~5개', '6~10개', '11~20개', '21개 이상']),
+    },
+    { key: 'recipe', title: '캡션에 레시피(재료)', order: ['있음', '없음'], group: (p) => (/재료/.test(p.caption || '') ? '있음' : '없음') },
+    { key: 'kcal', title: '칼로리 표기', order: ['있음', '없음'], group: (p) => (/kcal/i.test(p.caption || '') ? '있음' : '없음') },
+    {
+      key: 'english', title: '제목 영어 병기', order: ['영어 병기', '한글만'],
+      group: (p) => (/[A-Za-z]{3,}/.test(titleOf(p)) ? '영어 병기' : '한글만'),
+    },
+    { key: 'failed', title: '실패기', order: ['실패기', '일반'], group: (p) => (p.recipe ? (p.recipe.failed ? '실패기' : '일반') : null) },
+    {
+      key: 'dow', title: '게시 요일', order: WEEKDAYS.map((d) => `${d}요일`),
+      group: (p) => { const k = kstParts(p); return k ? `${WEEKDAYS[k.dow]}요일` : null; },
+    },
+    {
+      key: 'hour', title: '게시 시간대', order: ['새벽 (0~6시)', '아침 (6~9시)', '오전 (9~12시)', '오후 (12~18시)', '저녁 (18~24시)'],
+      group: (p) => { const k = kstParts(p); return k ? bin(k.hour, [6, 9, 12, 18], ['새벽 (0~6시)', '아침 (6~9시)', '오전 (9~12시)', '오후 (12~18시)', '저녁 (18~24시)']) : null; },
+    },
+    {
+      key: 'season', title: '계절', order: ['봄', '여름', '가을', '겨울'],
+      group: (p) => { const k = kstParts(p); return k ? ['겨울', '겨울', '봄', '봄', '봄', '여름', '여름', '여름', '가을', '가을', '가을', '겨울'][k.month - 1] : null; },
+    },
+  ];
+
+  function groupStats(posts, keyFn, order) {
+    const groups = {};
+    for (const p of posts) {
+      const keys = [].concat(keyFn(p) || []);
+      for (const k of keys) (groups[k] = groups[k] || []).push(p);
+    }
+    const labels = order ? order.filter((l) => groups[l]) : Object.keys(groups);
+    return labels.map((label) => {
+      const list = groups[label];
+      return {
+        label, n: list.length,
+        rel: median(list.map((p) => p._relReach)),
+        share: median(list.map(SIGNALS[0].value)),
+        save: median(list.map(SIGNALS[1].value)),
+      };
+    });
+  }
+
+  function barCell(value, max) {
+    const fill = el('span', { class: 'bar-fill' });
+    fill.style.width = `${max ? Math.max(2, Math.min(100, (value / max) * 100)) : 0}%`;
+    return el('td', { class: 'left bar-cell' }, [el('span', { class: 'bar-track' }, fill), el('span', { class: 'bar-value', text: fmtRatio(value) })]);
+  }
+
+  function factorTable(rows, firstHead) {
+    const max = Math.max(...rows.map((r) => r.rel || 0));
+    const eligible = rows.filter((r) => r.n >= MIN_GROUP && r.rel !== null);
+    const best = eligible.length > 1 ? eligible.reduce((a, b) => (b.rel > a.rel ? b : a)) : null;
+    return el('table', { class: 'data factor' }, [
+      el('thead', {}, el('tr', {}, [firstHead, '게시물', '평소 대비 도달 (중앙값)', '공유율', '저장율']
+        .map((h, i) => el('th', { class: i === 0 || i === 2 ? 'left' : null, text: h })))),
+      el('tbody', {}, rows.map((r) => el('tr', { class: [r === best ? 'highlight' : '', r.n < MIN_GROUP ? 'small-n' : ''].join(' ').trim() || null }, [
+        el('td', { class: 'left', text: r.label }),
+        el('td', { text: r.n < MIN_GROUP ? `${fmt(r.n)} (적음)` : fmt(r.n) }),
+        r.rel === null ? el('td', { class: 'left', text: '—' }) : barCell(r.rel, max),
+        el('td', { text: fmtPct2(r.share) }),
+        el('td', { text: fmtPct2(r.save) }),
+      ]))),
+    ]);
+  }
+
+  function renderFactors(posts) {
+    const grid = document.getElementById('an-factors');
+    grid.replaceChildren();
+    const results = [];
+    for (const f of FACTORS) {
+      const rows = groupStats(posts, f.group, f.order);
+      results.push({ factor: f, rows });
+      grid.append(el('section', { class: 'card' }, [
+        el('h2', { text: f.title }),
+        rows.length ? el('div', { class: 'table-wrap' }, factorTable(rows, f.title)) : el('p', { class: 'empty', text: '데이터가 없습니다.' }),
+      ]));
+    }
+    return results;
+  }
+
+  function renderTopics(posts) {
+    const holder = document.getElementById('an-topics');
+    const minN = posts.length >= 600 ? 15 : 8;
+    const rows = groupStats(posts, postTags).filter((r) => r.n >= minN && r.rel !== null)
+      .sort((a, b) => b.rel - a.rel);
+    document.getElementById('an-topics-sub').textContent =
+      `해시태그를 소재로 보고, ${minN}개 이상 게시물에 쓰인 소재끼리 비교합니다. 매번 붙이는 공통 태그(#조식, #레시피 등)는 뺐습니다.`;
+    if (rows.length < 4) {
+      holder.replaceChildren(el('p', { class: 'empty', text: '비교할 만큼 자주 쓰인 소재가 없습니다. 기간을 넓혀 보세요.' }));
+      return rows;
+    }
+    const top = rows.slice(0, 10), bottom = rows.length > 15 ? rows.slice(-5).reverse() : [];
+    holder.replaceChildren(
+      el('h3', { class: 'sub-head', text: '평소보다 잘 퍼진 소재' }), factorTable(top, '소재'),
+      bottom.length ? el('h3', { class: 'sub-head', text: '상대적으로 덜 퍼진 소재' }) : null,
+      bottom.length ? factorTable(bottom, '소재') : null,
+    );
+    return rows;
+  }
+
+  // Strategy cards: the groups that beat the posts' own median by the most,
+  // only from groups big enough (MIN_GROUP) to not be a fluke.
+  function renderStrategy(posts, factorResults, topicRows) {
+    const holder = document.getElementById('an-strategy');
+    const base = median(posts.map((p) => p._relReach));
+    const cards = [];
+    for (const { factor, rows } of factorResults) {
+      const ok = rows.filter((r) => r.n >= MIN_GROUP && r.rel !== null);
+      if (ok.length < 2) continue;
+      const best = ok.reduce((a, b) => (b.rel > a.rel ? b : a));
+      const worst = ok.reduce((a, b) => (b.rel < a.rel ? b : a));
+      cards.push({
+        lift: best.rel / base,
+        head: `${factor.title}: ‘${best.label}’ 쪽이 가장 잘 퍼졌습니다`,
+        body: `평소 대비 도달 ${fmtRatio(best.rel)} (게시물 ${fmt(best.n)}개) · 가장 낮은 ‘${worst.label}’은 ${fmtRatio(worst.rel)}`,
+      });
+    }
+    const topTopic = topicRows.find((r) => r.n >= MIN_GROUP);
+    if (topTopic) {
+      cards.push({
+        lift: topTopic.rel / base,
+        head: `소재: #${topTopic.label} 게시물이 평소보다 잘 퍼졌습니다`,
+        body: `평소 대비 도달 ${fmtRatio(topTopic.rel)} (게시물 ${fmt(topTopic.n)}개) · 공유율 ${fmtPct2(topTopic.share)}`,
+      });
+    }
+    const picked = cards.filter((c) => c.lift >= 1.1).sort((a, b) => b.lift - a.lift).slice(0, 5);
+    if (!picked.length) {
+      holder.replaceChildren(el('p', { class: 'empty', text: '뚜렷하게 앞서는 요인이 아직 없습니다. 기간을 넓히거나 데이터가 더 쌓인 뒤 다시 보세요.' }));
+      return;
+    }
+    holder.replaceChildren(...picked.map((c, i) => el('div', { class: 'strategy' }, [
+      el('span', { class: 'strategy-rank', text: String(i + 1) }),
+      el('div', {}, [el('strong', { text: c.head }), el('div', { class: 'muted', text: c.body })]),
+    ])));
+  }
+
+  function renderPhase2(posts) {
+    const factorResults = renderFactors(posts);
+    const topicRows = renderTopics(posts);
+    renderStrategy(posts, factorResults, topicRows);
   }
 
   // ------------------------------------------------------------------
