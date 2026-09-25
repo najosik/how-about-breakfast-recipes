@@ -2,7 +2,6 @@
   'use strict';
 
   var CAL_MIN = 0, CAL_MAX = 900, CAL_STEP = 50;
-  var MONTH_DAYS = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // Feb 29 to allow any leap-year date
 
   var state = {
     all: [],
@@ -10,7 +9,10 @@
     query: '',
     activeTags: new Set(),
     excludedYears: new Set(), // years unchecked in the sidebar (default: none, i.e. all included)
-    dateFilter: null, // { mm, dd } or null - "이 날짜만" 필터 (연도 무관하게 월-일 매칭)
+    // { mm, dd } or null - no sidebar control for this anymore, but recipe
+    // pages' "다른 해 같은 날" widget still deep-links to archive.html?date=
+    // MM-DD, so the ?date= param is still honored on load.
+    dateFilter: null,
     calOn: false,
     calMin: CAL_MIN,
     calMax: CAL_MAX,
@@ -36,10 +38,6 @@
   var calMaxLabel = document.getElementById('calMaxLabel');
   var calFill = document.getElementById('calFill');
   var langToggle = document.getElementById('langToggle');
-  var dateMonthSel = document.getElementById('dateMonthSel');
-  var dateDaySel = document.getElementById('dateDaySel');
-  var dateApplyBtn = document.getElementById('dateApplyBtn');
-  var dateChipRow = document.getElementById('dateChipRow');
   var yearChecksEl = document.getElementById('yearChecks');
   var clearFiltersBtn = document.getElementById('clearFiltersBtn');
   var viewGridBtn = document.getElementById('viewGridBtn');
@@ -74,7 +72,6 @@
   function init() {
     I18N.applyStaticI18n();
     bindLangToggle();
-    populateDateSelects();
     renderCountMeta();
     renderYearChecks();
     renderTagCloud();
@@ -107,8 +104,6 @@
     yearsExcluded.forEach(function (y) { state.excludedYears.add(y); });
 
     updateCalUI();
-    syncDateSelectsToFilter();
-    renderDateChip();
 
     applyFilters();
     if (tagParams.length) {
@@ -153,9 +148,6 @@
           b.classList.toggle('active', b === btn);
         });
         I18N.applyStaticI18n();
-        populateDateSelects();
-        syncDateSelectsToFilter();
-        renderDateChip();
         renderCountMeta();
         renderYearChecks();
         renderTagCloud();
@@ -234,52 +226,6 @@
     applyFilters();
   }
 
-  function populateDateSelects() {
-    var lang = I18N.getLang();
-    var monthNames = lang === 'en'
-      ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-      : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
-    var curMonth = dateMonthSel.value ? parseInt(dateMonthSel.value, 10) : (new Date().getMonth() + 1);
-    dateMonthSel.innerHTML = monthNames.map(function (m, i) {
-      return '<option value="' + (i + 1) + '">' + m + '</option>';
-    }).join('');
-    dateMonthSel.value = String(curMonth);
-    fillDaySelect(curMonth);
-  }
-
-  function fillDaySelect(mm) {
-    var curDay = dateDaySel.value ? parseInt(dateDaySel.value, 10) : (new Date().getDate());
-    var maxDay = MONTH_DAYS[mm - 1];
-    var lang = I18N.getLang();
-    var opts = [];
-    for (var d = 1; d <= maxDay; d++) opts.push('<option value="' + d + '">' + d + (lang === 'en' ? '' : '일') + '</option>');
-    dateDaySel.innerHTML = opts.join('');
-    dateDaySel.value = String(Math.min(curDay, maxDay));
-  }
-
-  function syncDateSelectsToFilter() {
-    if (!state.dateFilter) return;
-    dateMonthSel.value = String(state.dateFilter.mm);
-    fillDaySelect(state.dateFilter.mm);
-    dateDaySel.value = String(state.dateFilter.dd);
-  }
-
-  function renderDateChip() {
-    var lang = I18N.getLang();
-    if (!state.dateFilter) { dateChipRow.innerHTML = ''; return; }
-    var label = lang === 'en'
-      ? (dateMonthSel.options[state.dateFilter.mm - 1].text + ' ' + state.dateFilter.dd)
-      : (state.dateFilter.mm + '월 ' + state.dateFilter.dd + '일');
-    dateChipRow.innerHTML = '<button type="button" class="arc-chip" id="dateChipRemove">' + Shared.escapeHtml(label) + ' ✕</button>';
-    document.getElementById('dateChipRemove').addEventListener('click', function () {
-      state.dateFilter = null;
-      renderDateChip();
-      state.page = 0;
-      applyFilters();
-      renderMobileChips();
-    });
-  }
-
   function updateCalUI() {
     if (state.calMin > state.calMax) state.calMin = state.calMax;
     calMinRange.value = String(state.calMin);
@@ -295,14 +241,7 @@
   }
 
   function renderMobileChips() {
-    var lang = I18N.getLang();
     var chips = [];
-    if (state.dateFilter) {
-      var label = lang === 'en'
-        ? (dateMonthSel.options[state.dateFilter.mm - 1].text + ' ' + state.dateFilter.dd)
-        : (state.dateFilter.mm + '월 ' + state.dateFilter.dd + '일');
-      chips.push({ key: 'date', label: label });
-    }
     if (state.calOn) chips.push({ key: 'cal', label: state.calMin + '–' + state.calMax + 'kcal' });
     state.activeTags.forEach(function (t) { chips.push({ key: 'tag:' + t, label: '#' + I18N.tagLabel(t) }); });
 
@@ -312,8 +251,7 @@
     Array.prototype.forEach.call(mobileChips.querySelectorAll('button'), function (btn) {
       btn.addEventListener('click', function () {
         var key = btn.getAttribute('data-chip');
-        if (key === 'date') { state.dateFilter = null; renderDateChip(); }
-        else if (key === 'cal') { state.calOn = false; updateCalUI(); }
+        if (key === 'cal') { state.calOn = false; updateCalUI(); }
         else if (key.indexOf('tag:') === 0) { toggleTag(key.slice(4)); return; }
         state.page = 0;
         applyFilters();
@@ -348,7 +286,6 @@
 
     renderTagCloud();
     Array.prototype.forEach.call(yearChecksEl.querySelectorAll('input'), function (cb) { cb.checked = true; });
-    renderDateChip();
     updateCalUI();
     renderMobileChips();
     applyFilters();
@@ -401,15 +338,6 @@
     });
     calMinRange.addEventListener('change', renderMobileChips);
     calMaxRange.addEventListener('change', renderMobileChips);
-
-    dateMonthSel.addEventListener('change', function () { fillDaySelect(parseInt(dateMonthSel.value, 10)); });
-    dateApplyBtn.addEventListener('click', function () {
-      state.dateFilter = { mm: parseInt(dateMonthSel.value, 10), dd: parseInt(dateDaySel.value, 10) };
-      renderDateChip();
-      renderMobileChips();
-      state.page = 0;
-      applyFilters();
-    });
 
     clearFiltersBtn.addEventListener('click', clearAllFilters);
 

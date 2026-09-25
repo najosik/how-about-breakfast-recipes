@@ -149,11 +149,6 @@ p.subtitle{margin:0; color:var(--ink-soft); font-size:15px; max-width:560px;}
 .arc-sheet-head{display:none;}
 .arc-field{margin:0 0 26px; padding:0; border:0;}
 .arc-field legend{padding:0 0 10px; width:100%; font-family:'Noto Serif KR',serif; font-size:15px; font-weight:900; border-bottom:1px solid var(--ink); color:var(--ink);}
-.arc-date-picker{display:flex; gap:8px; align-items:center;}
-.arc-date-picker select{height:38px; padding:0 8px; border:1px solid var(--line-strong); background:var(--paper-raised); font:inherit; font-size:13px; color:var(--ink);}
-.arc-date-apply{height:38px; padding:0 12px; border:1px solid var(--ink); background:transparent; font:inherit; font-size:13px; color:var(--ink); cursor:pointer;}
-.arc-date-apply:hover{background:var(--mint);}
-.arc-chip-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;}
 .arc-chip{display:inline-flex; align-items:center; gap:8px; height:36px; padding:0 12px; border:1px solid var(--ink); background:var(--ink); color:var(--paper); font-size:13px; cursor:pointer;}
 .arc-chip:hover{background:var(--green-dark); border-color:var(--green-dark);}
 .arc-year-checks{display:flex; flex-direction:column; gap:8px;}
