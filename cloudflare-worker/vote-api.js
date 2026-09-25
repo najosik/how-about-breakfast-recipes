@@ -52,6 +52,21 @@ export default {
 };
 
 async function handleVote(request, env, cors) {
+  // The CORS response header above only controls whether a *browser*
+  // lets a cross-origin page *read* the response - it does nothing to
+  // stop that page's script from firing the POST in the first place
+  // (fetch() cross-origin still reaches this handler; only the reply is
+  // opaque to it). Without this check, any other site could quietly
+  // spend a visitor's one-vote-per-IP-per-day slot, or stuff votes for
+  // whichever candidate it likes, using that visitor's own IP and no
+  // interaction from them. A same-origin POST from vote.js always
+  // carries a matching Origin (browsers send it on state-changing
+  // requests regardless of same/cross-origin), so this doesn't affect
+  // real traffic - only requests that didn't come from the site itself.
+  if (!hasAllowedOrigin(request, env)) {
+    return json({ error: 'forbidden' }, 403, cors);
+  }
+
   let body;
   try {
     body = await request.json();
@@ -137,6 +152,17 @@ function kstDateString(date) {
 async function sha256Hex(text) {
   const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(text));
   return Array.from(new Uint8Array(buf)).map((b) => b.toString(16).padStart(2, '0')).join('');
+}
+
+function hasAllowedOrigin(request, env) {
+  const allowed = env.ALLOWED_ORIGIN || 'https://how-about-breakfast.com';
+  const origin = request.headers.get('Origin');
+  if (origin) return origin === allowed;
+  // A same-origin request some clients omit Origin on (e.g. a plain form
+  // submit, or certain older browsers) still carries Referer - fall back
+  // to that before giving up rather than trusting a request with neither.
+  const referer = request.headers.get('Referer');
+  return !!referer && (referer === allowed || referer.startsWith(allowed + '/'));
 }
 
 function corsHeaders(env) {

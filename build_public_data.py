@@ -69,34 +69,50 @@ LABELS = {
     'ko': {
         'site_name': '날마다, 조식',
         'title_suffix': '날마다 조식',
-        'archive_back': '← 전체 아카이브',
+        'archive_back': '아카이브',
+        'hall': '명예의 전당', 'brunch': '브런치북',
         'notes': '메모', 'ingredients': '재료', 'steps': '조리',
         'credit': '원본 크레딧', 'tags': '태그',
         'failed_badge': '실패기',
         'share_label': '링크 복사', 'share_copied': '복사됨!',
-        'ig_link': '인스타그램에서 크게 보기 →',
+        'ig_link': '인스타그램 원문 ↗', 'ig_link_short': '원문 ↗',
         'switch_label': 'EN',
         'recipe_word': '레시피',
         'prev_fallback': '이전', 'next_fallback': '다음',
+        'prev_prefix': '← 전날', 'next_suffix': '다음날 →',
         'footer_privacy': '개인정보처리방침',
         'medal_label': '이달의 조식',
         'cook_start': '요리하기',
+        'kcal_label': '1인분 열량',
+        'no_checklist_note': '',
+        'checklist_note': '장 볼 때 체크해 두면 표시가 남아요.',
+        'other_years_title': '다른 해의 {date}',
+        'other_years_more': '모두 보기 →',
+        'mobile_jump': '재료로 이동',
     },
     'en': {
         'site_name': 'Breakfast, Every Day',
         'title_suffix': 'Breakfast, Every Day',
-        'archive_back': '← Full Archive',
+        'archive_back': 'Archive',
+        'hall': 'Hall of Fame', 'brunch': 'Brunch',
         'notes': 'Notes', 'ingredients': 'Ingredients', 'steps': 'Steps',
         'credit': 'Original Credit', 'tags': 'Tags',
         'failed_badge': 'Failed attempt',
         'share_label': 'Copy link', 'share_copied': 'Copied!',
-        'ig_link': 'View larger on Instagram →',
+        'ig_link': 'Original on Instagram ↗', 'ig_link_short': 'Original ↗',
         'switch_label': 'KO',
         'recipe_word': 'recipe',
         'prev_fallback': 'Previous', 'next_fallback': 'Next',
+        'prev_prefix': '← Previous', 'next_suffix': 'Next →',
         'footer_privacy': 'Privacy Policy',
         'medal_label': 'Breakfast of the Month',
         'cook_start': 'Start Cooking',
+        'kcal_label': 'Calories (per serving)',
+        'no_checklist_note': '',
+        'checklist_note': 'Check items off while grocery shopping - it’s remembered here.',
+        'other_years_title': 'Other years, {date}',
+        'other_years_more': 'See all →',
+        'mobile_jump': 'Jump to ingredients',
     },
 }
 
@@ -286,6 +302,87 @@ def stamp_label(r):
     return r.get('pre_label') or '#?'
 
 
+MONTH_NAMES = {
+    'ko': ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+    'en': ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+}
+WEEKDAY_NAMES_EN = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+
+
+def parse_date_parts(date):
+    """('2022-09-25', 'ko'/'en') -> (year, month, day) ints, or None."""
+    if not date or not re.match(r'^\d{4}-\d{2}-\d{2}$', date):
+        return None
+    y, m, d = date.split('-')
+    return int(y), int(m), int(d)
+
+
+def month_day_label(date, lang):
+    parts = parse_date_parts(date)
+    if not parts:
+        return date or ''
+    y, m, d = parts
+    if lang == 'en':
+        return f'{MONTH_NAMES["en"][m - 1]} {d}'
+    return f'{m}월 {d}일'
+
+
+def full_date_label(date, lang):
+    """Recipe hero's 'No. 0000 / SUN, SEP 25, 2022' style right-hand date.
+    A handful of very old records carry a malformed but regex-shaped date
+    (day 00, Feb 29 on a non-leap year, Apr 31...) - real calendar math
+    on those raises, so fall back to the date without a weekday instead
+    of crashing the whole build over a handful of legacy typos."""
+    parts = parse_date_parts(date)
+    if not parts:
+        return date or ''
+    y, m, d = parts
+    if lang == 'en':
+        import datetime
+        try:
+            wd = WEEKDAY_NAMES_EN[datetime.date(y, m, d).weekday()]
+            return f'{wd.upper()}, {MONTH_NAMES["en"][m - 1].upper()} {d}, {y}'
+        except ValueError:
+            return f'{MONTH_NAMES["en"][m - 1].upper()} {d}, {y}'
+    return f'{y}년 {m}월 {d}일'
+
+
+def parse_ingredient_lines(text):
+    """Mirrors cookmode.js's parseIngredientLines() so the build-time
+    checklist and the client-side cook-mode overlay split the same free
+    text the same way."""
+    if not text:
+        return []
+    lines = [l.strip() for l in text.split('\n') if l.strip()]
+    if any(re.match(r'^[-•]', l) for l in lines):
+        return [re.sub(r'^[-•]\s*', '', l) for l in lines]
+    return [s.strip() for s in text.split(',') if s.strip()]
+
+
+def parse_step_lines(text):
+    """Mirrors cookmode.js's parseStepLines()."""
+    if not text:
+        return []
+    lines = [l.strip() for l in text.split('\n') if l.strip()]
+    return [re.sub(r'^\d+\.\s*', '', l) for l in lines]
+
+
+def find_other_years(live, include, idx, limit=4):
+    """Other (non-failed, same-language-available) records sharing this
+    record's month-day across different years, most recent first - the
+    build-time equivalent of home.js's on-this-day matching, scoped to
+    just this one date instead of "today"."""
+    date = live[idx].get('date')
+    parts = parse_date_parts(date)
+    if not parts:
+        return []
+    mmdd = date[5:]
+    matches = [j for j in include if j != idx and live[j].get('date', '')[5:] == mmdd
+               and re.match(r'^\d{4}-\d{2}-\d{2}$', live[j].get('date', ''))]
+    matches.sort(key=lambda j: live[j]['date'], reverse=True)
+    return matches[:limit]
+
+
 def share_btn_html(lang='ko'):
     return (
         f'<button type="button" class="recipe-share-btn" id="shareBtn" aria-label="{LABELS[lang]["share_label"]}">'
@@ -418,84 +515,159 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 {ad_verify_script}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{rel}/styles.css">
 <style>
-  .recipe-page{{max-width:640px; margin:0 auto; padding:40px 0 20px;}}
-  .recipe-photo{{width:100%; aspect-ratio:3/4; max-width:360px; border-radius:2px; overflow:hidden; margin-bottom:14px; background:var(--line);}}
+  .recipe-page{{max-width:1080px; margin:0 auto; padding:0 20px 20px;}}
+  .recipe-breadcrumb{{max-width:1080px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; color:var(--text-2); border-bottom:1px solid var(--rule);}}
+  .recipe-breadcrumb-path{{display:flex; gap:8px; align-items:center;}}
+  .recipe-breadcrumb-path a{{color:var(--text-2); text-decoration:none;}}
+  .recipe-breadcrumb-path a:hover{{color:var(--green-dark); text-decoration:underline;}}
+  .recipe-breadcrumb-path .current{{color:var(--ink);}}
+  .recipe-breadcrumb-actions{{display:flex; gap:8px; flex-wrap:wrap;}}
+  .recipe-hero-grid{{padding:32px 0; display:grid; grid-template-columns:7fr 5fr; gap:40px;}}
+  .recipe-hero-media{{position:relative;}}
+  .recipe-photo{{width:100%; aspect-ratio:3/4; border-radius:2px; overflow:hidden; margin-bottom:0; background:var(--line);}}
   .recipe-photo img{{width:100%; height:100%; object-fit:cover; display:block;}}
-  .recipe-video{{width:100%; max-width:360px; display:block; border-radius:2px; margin-bottom:10px;}}
-  .recipe-ig-link{{display:inline-block; font-size:12.5px; color:var(--teal-deep); text-decoration:none; margin:-6px 0 12px;}}
+  .recipe-video{{width:100%; display:block; border-radius:2px; margin-top:10px;}}
+  .recipe-ig-link{{display:inline-block; font-size:12.5px; color:var(--green-dark); text-decoration:none; margin-top:8px;}}
   .recipe-ig-link:hover{{text-decoration:underline;}}
-  .recipe-thumbs{{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px;}}
+  .recipe-thumbs{{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}}
   .recipe-thumbs img{{width:64px; height:64px; object-fit:cover; border-radius:2px;}}
-  .recipe-page h1{{font-family:'Nanum Myeongjo',serif; font-size:26px; color:var(--teal-deep); margin:10px 0 6px;}}
-  .recipe-meta{{font-size:13px; color:var(--ink-faint); margin-bottom:22px;}}
+  .recipe-hero-info{{display:flex; flex-direction:column; gap:18px; border-top:3px solid var(--ink); padding-top:18px;}}
+  .recipe-hero-topline{{display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; font-family:'Fraunces',serif; font-size:14px; color:var(--text-2);}}
+  .recipe-hero-topline .stamp{{margin-bottom:0;}}
+  .recipe-page h1{{font-family:'Noto Serif KR',serif; font-weight:900; font-size:36px; line-height:1.2; letter-spacing:-0.01em; margin:0; color:var(--ink);}}
+  .recipe-kcal-block{{display:flex; flex-direction:column; gap:2px; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); padding:14px 0;}}
+  .recipe-kcal-block .label{{font-size:12.5px; color:var(--text-2);}}
+  .recipe-kcal-block .value{{font-family:'Fraunces',serif; font-size:34px; font-weight:800; color:var(--green); line-height:1;}}
+  .recipe-kcal-block .value small{{font-size:15px; font-weight:400; color:var(--text-2);}}
+  .recipe-tags{{display:flex; gap:8px; flex-wrap:wrap;}}
+  .recipe-tags span{{height:32px; padding:0 12px; display:inline-flex; align-items:center; border:1px solid var(--line-strong); font-size:12.5px; color:var(--ink);}}
+  .cook-start-btn{{align-self:flex-start; height:44px; padding:0 22px; border:0; background:var(--green); color:#fff; font:inherit; font-size:14px; font-weight:700; cursor:pointer;}}
+  .cook-start-btn:hover{{background:var(--green-dark);}}
   .recipe-page section{{margin-bottom:22px;}}
-  .recipe-page section h2{{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin:0 0 8px; font-weight:600;}}
+  .recipe-page section h2{{font-family:'Noto Serif KR',serif; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--green); margin:0 0 8px; font-weight:600;}}
   .recipe-body{{white-space:pre-line; font-size:14.5px; color:var(--ink); line-height:1.75;}}
-  .recipe-tags{{display:flex; gap:6px; flex-wrap:wrap;}}
-  .recipe-tags span{{font-size:12px; color:var(--teal-deep); background:var(--teal-pale); padding:3px 9px; border-radius:4px;}}
-  .recipe-nav{{display:flex; justify-content:space-between; gap:10px; margin:32px 0 0; padding-top:18px; border-top:1px solid var(--line); font-size:13px;}}
-  .recipe-nav a{{color:var(--ink-soft); text-decoration:none;}}
-  .recipe-nav a:hover{{color:var(--teal-deep); text-decoration:underline;}}
-  .recipe-stamp-row{{display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;}}
-  .recipe-stamp-row .stamp, .recipe-stamp-row .fail-badge{{margin-bottom:0;}}
-  .medal-badge{{display:inline-flex; align-items:center; gap:4px; font-size:12px; font-weight:700; color:#8a6100; background:#fff3cf; border:1px solid #e8c465; border-radius:20px; padding:3px 11px;}}
+  .recipe-cook-grid{{padding:44px 0; border-top:1px solid var(--ink); display:grid; grid-template-columns:4fr 8fr; gap:44px;}}
+  .recipe-cook-col h2{{margin:0; font-family:'Noto Serif KR',serif; font-size:22px; font-weight:900; border-bottom:3px solid var(--ink); padding-bottom:10px; display:flex; justify-content:space-between; align-items:baseline;}}
+  .recipe-cook-col h2 span{{font-size:13px; font-family:'Noto Sans KR',sans-serif; font-weight:400; color:var(--text-2);}}
+  .recipe-ing-list{{margin:0; padding:0; list-style:none; display:flex; flex-direction:column;}}
+  .recipe-ing-list li{{min-height:44px; display:flex; align-items:center; gap:12px; border-bottom:1px solid var(--rule); font-size:15.5px;}}
+  .recipe-ing-list label{{flex:1 1 auto; display:flex; align-items:center; gap:12px; cursor:pointer;}}
+  .recipe-ing-list input{{width:19px; height:19px; accent-color:var(--green); flex:0 0 auto;}}
+  .recipe-ing-list label.checked-off .recipe-ing-name{{text-decoration:line-through; color:var(--text-3);}}
+  .recipe-checklist-note{{font-size:12.5px; color:var(--text-2); margin-top:8px;}}
+  .recipe-step-list{{margin:0; padding:0; list-style:none; display:flex; flex-direction:column;}}
+  .recipe-step-list li{{padding:18px 0; display:flex; gap:20px; border-bottom:1px solid var(--rule);}}
+  .recipe-step-num{{width:44px; flex:0 0 auto; font-family:'Fraunces',serif; font-size:32px; font-weight:800; line-height:0.9; color:var(--green);}}
+  .recipe-step-text{{margin:0; font-family:'Noto Serif KR',serif; font-size:16.5px; line-height:1.75; color:var(--ink);}}
+  .recipe-other-years{{padding:44px 20px; margin:0 -20px 22px; background:var(--mint);}}
+  .recipe-other-years-head{{display:flex; align-items:baseline; justify-content:space-between; border-bottom:1px solid var(--ink); padding-bottom:12px; margin-bottom:20px;}}
+  .recipe-other-years-head h2{{margin:0; font-family:'Noto Serif KR',serif; font-size:20px; font-weight:900; text-transform:none; letter-spacing:0; color:var(--ink);}}
+  .recipe-other-years-head a{{font-size:13px; color:var(--green-dark); text-decoration:none;}}
+  .recipe-other-years-head a:hover{{text-decoration:underline;}}
+  .recipe-other-years-grid{{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;}}
+  .recipe-other-years-grid a{{display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--ink);}}
+  .recipe-other-years-grid img,.recipe-other-years-grid .card-thumb{{width:100%; aspect-ratio:1; object-fit:cover; margin-bottom:0;}}
+  .recipe-other-years-grid .oy-year{{font-family:'Fraunces',serif; font-size:16px; font-weight:800; color:var(--green);}}
+  .recipe-other-years-grid .oy-title{{font-family:'Noto Serif KR',serif; font-size:14.5px; font-weight:700; line-height:1.4;}}
+  .recipe-daynav{{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); border-top:1px solid var(--ink); border-bottom:1px solid var(--ink); margin-bottom:22px;}}
+  .recipe-daynav a{{min-height:88px; padding:18px 0; display:flex; flex-direction:column; justify-content:center; gap:4px; text-decoration:none; color:var(--ink);}}
+  .recipe-daynav-prev{{border-right:1px solid var(--ink);}}
+  .recipe-daynav-next{{align-items:flex-end; text-align:right;}}
+  .recipe-daynav .meta{{font-size:12.5px; color:var(--text-2);}}
+  .recipe-daynav .title{{font-family:'Noto Serif KR',serif; font-size:18px; font-weight:700;}}
+  .recipe-daynav a:hover .title{{color:var(--green-dark);}}
   .recipe-share-btn{{display:inline-flex; align-items:center; gap:6px; flex:0 0 auto; white-space:nowrap; border:1px solid var(--line-strong); background:var(--paper); border-radius:20px; padding:5px 12px; font-size:12.5px; color:var(--ink-soft); cursor:pointer; font-family:inherit;}}
-  .recipe-share-btn:hover{{border-color:var(--teal); color:var(--teal-deep);}}
-  .recipe-share-btn.copied{{border-color:var(--teal); color:var(--teal-deep); background:var(--teal-pale);}}
+  .recipe-share-btn:hover{{border-color:var(--green); color:var(--green-dark);}}
+  .recipe-share-btn.copied{{border-color:var(--green); color:var(--green-dark); background:var(--mint);}}
   .ad-slot{{margin:22px 0 0;}}
-  .lang-switch{{font-size:12px; font-weight:600; border:1px solid var(--line-strong); border-radius:20px; padding:3px 10px;}}
+  .lang-switch{{font-size:12px; font-weight:600; border:1px solid var(--line-strong); border-radius:20px; padding:3px 10px; text-decoration:none; color:var(--ink);}}
+  .recipe-mobile-bar{{display:none;}}
+  @media (max-width:760px){{
+    .recipe-hero-grid{{grid-template-columns:1fr; padding:20px 0;}}
+    .recipe-page h1{{font-size:26px;}}
+    .recipe-cook-grid{{grid-template-columns:1fr; gap:8px; padding:28px 0;}}
+    .recipe-other-years-grid{{grid-template-columns:repeat(2,minmax(0,1fr));}}
+    .recipe-page{{padding-bottom:96px;}}
+    .recipe-mobile-bar{{
+      display:flex; align-items:center; gap:10px; position:fixed; left:0; right:0; bottom:0; z-index:20;
+      height:76px; padding:0 20px calc(0px + env(safe-area-inset-bottom,0px)); box-sizing:border-box;
+      background:var(--paper); border-top:1px solid var(--ink);
+    }}
+    .recipe-mobile-jump{{flex:1 1 auto; height:50px; background:var(--green); color:#fff; display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:700; text-decoration:none;}}
+    .recipe-mobile-ig{{height:50px; padding:0 16px; border:1px solid var(--ink); display:flex; align-items:center; font-size:14px; color:var(--ink); text-decoration:none; white-space:nowrap;}}
+  }}
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="nav-bar">
-    <a href="{rel}/archive.html">{archive_back_label}</a>
+  <header class="site-header">
+    <a href="{rel}/index.html" class="site-header-logo">{site_name}</a>
+    <nav class="site-header-nav" aria-label="주요 메뉴">
+      <a href="{rel}/archive.html">{archive_back_label}</a>
+      <a href="{rel}/vote.html">{hall_label}</a>
+      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">{brunch_label}</a>
+    </nav>
     {lang_switch_html}
+  </header>
+</div>
+
+<nav aria-label="위치" class="recipe-breadcrumb">
+  <div class="recipe-breadcrumb-path">
+    <a href="{rel}/archive.html">{archive_back_label}</a><span>/</span><span>{year_label}</span><span>/</span><span class="current">{month_day_label}</span>
   </div>
+  <div class="recipe-breadcrumb-actions">
+    {share_btn}
+    {ig_link_top}
+  </div>
+</nav>
+
+<div class="wrap">
   <div class="recipe-page">
-    {media}
-    <div class="recipe-stamp-row">
-      <span class="stamp">{stamp}</span>
-      {fail_badge}
-      {medal_badge}
-      {share_btn}
+    <div class="recipe-hero-grid">
+      <div class="recipe-hero-media">{media}</div>
+      <div class="recipe-hero-info">
+        <div class="recipe-hero-topline">
+          <span class="stamp">{stamp}</span>
+          {fail_badge}
+          {medal_badge}
+          <span>{full_date_label}</span>
+        </div>
+        <h1>{title}</h1>
+        {kcal_block}
+        {tags_section}
+        {cook_section}
+      </div>
     </div>
-    <h1>{title}</h1>
-    <div class="recipe-meta">{meta_line}</div>
+
     {intro_section}
-    {ingredients_section}
-    {steps_section}
-    {cook_section}
+
+    {cook_grid_section}
+
+    {other_years_section}
+
+    <nav aria-label="이전·다음 기록" class="recipe-daynav">
+      <a href="{prev_href}" class="recipe-daynav-prev">{prev_block}</a>
+      <a href="{next_href}" class="recipe-daynav-next">{next_block}</a>
+    </nav>
+
     {credit_section}
-    {tags_section}
-    <div class="recipe-nav">
-      <a href="{prev_href}">{prev_label}</a>
-      <a href="{next_href}">{next_label}</a>
-    </div>
     {ad_slot}
   </div>
 </div>
 
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <div class="site-footer-social">
-      <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="site-footer-links"><a href="{privacy_href}">{footer_privacy_label}</a></div>
-    <div class="site-footer-bottom">© how.about.breakfast 2020-2026. All rights reserved.</div>
-  </div>
+<footer class="page-footer">
+  <span>© how.about.breakfast 2020-2026. All rights reserved.</span>
+  <div class="page-footer-links"><a href="{privacy_href}">{footer_privacy_label}</a></div>
 </footer>
+
+{mobile_bar_html}
 
 {json_ld}
 <script src="{rel}/cookmode.js"></script>
+<script src="{rel}/recipe.js"></script>
 <script>
 (function () {{
   var btn = document.getElementById('shareBtn');
@@ -591,21 +763,55 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
         og_image = f'<meta property="og:image" content="{esc(imgs[0])}">' if imgs else ''
         twitter_image = f'<meta name="twitter:image" content="{esc(imgs[0])}">' if imgs else ''
 
-        meta_bits = [b for b in [r.get('date'), weather, f'{r["calories"]}kcal' if r.get('calories') else None] if b]
-        meta_line = ' · '.join(esc(b) for b in meta_bits)
+        year_label = (r.get('date') or '')[:4]
+        month_day = month_day_label(r.get('date'), lang)
+        full_date = full_date_label(r.get('date'), lang)
 
         intro_section = (
             f'<section><h2>{labels["notes"]}</h2><div class="recipe-body">{esc(intro)}</div></section>'
             if intro else ''
         )
-        ingredients_section = (
-            f'<section><h2>{labels["ingredients"]}</h2><div class="recipe-body">{esc(ingredients)}</div></section>'
-            if ingredients else ''
+
+        kcal_block = (
+            f'<div class="recipe-kcal-block"><span class="label">{labels["kcal_label"]}</span>'
+            f'<span class="value">{r["calories"]}<small> kcal</small></span></div>'
+            if r.get('calories') else ''
         )
-        steps_section = (
-            f'<section><h2>{labels["steps"]}</h2><div class="recipe-body">{esc(steps)}</div></section>'
-            if steps else ''
+
+        ing_lines = parse_ingredient_lines(ingredients)
+        if ing_lines:
+            ing_items = ''.join(
+                f'<li><label><input type="checkbox" class="recipe-ing-check" data-idx="{i}">'
+                f'<span class="recipe-ing-name">{esc(name)}</span></label></li>'
+                for i, name in enumerate(ing_lines)
+            )
+            ingredients_section = (
+                f'<div class="recipe-cook-col"><h2>{labels["ingredients"]}</h2>'
+                f'<ul class="recipe-ing-list" id="ingList" data-recipe-id="{esc(pid)}">{ing_items}</ul>'
+                f'<p class="recipe-checklist-note">{labels["checklist_note"]}</p></div>'
+            )
+        else:
+            ingredients_section = ''
+
+        step_lines = parse_step_lines(steps)
+        if step_lines:
+            step_items = ''.join(
+                f'<li><span class="recipe-step-num">{i + 1:02d}</span><p class="recipe-step-text">{esc(text)}</p></li>'
+                for i, text in enumerate(step_lines)
+            )
+            steps_section = f'<div class="recipe-cook-col"><h2>{labels["steps"]}</h2><ol class="recipe-step-list">{step_items}</ol></div>'
+        else:
+            steps_section = ''
+
+        cook_grid_section = (
+            f'<section class="recipe-cook-grid" id="cookGrid">{ingredients_section}{steps_section}</section>'
+            if ingredients_section or steps_section else ''
         )
+        mobile_jump_html = (
+            f'<a href="#cookGrid" class="recipe-mobile-jump">{labels["mobile_jump"]}</a>'
+            if ingredients_section or steps_section else ''
+        )
+
         cook_section = (
             f'<button type="button" class="cook-start-btn" id="cookStartBtn">{labels["cook_start"]}</button>'
             f'<script type="application/json" id="cookData">'
@@ -619,24 +825,71 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
         )
         tags_section = ''
         if r.get('hashtags'):
-            tags_section = f'<section><h2>{labels["tags"]}</h2><div class="recipe-tags">' + ''.join(
+            tags_section = f'<div class="recipe-tags">' + ''.join(
                 f'<span>#{esc(h)}</span>' for h in r['hashtags']
-            ) + '</div></section>'
+            ) + '</div>'
+
+        ig_link_top = (
+            f'<a href="{esc(r["permalink"])}" target="_blank" rel="noopener" class="recipe-share-btn">{labels["ig_link"]}</a>'
+            if r.get('permalink') else ''
+        )
+        mobile_ig_link = (
+            f'<a href="{esc(r["permalink"])}" target="_blank" rel="noopener" class="recipe-mobile-ig">{labels["ig_link_short"]}</a>'
+            if r.get('permalink') else ''
+        )
+        mobile_bar_html = (
+            f'<div class="recipe-mobile-bar">{mobile_jump_html}{mobile_ig_link}</div>'
+            if mobile_jump_html or mobile_ig_link else ''
+        )
+
+        other_year_idxs = find_other_years(live, include, idx)
+        if other_year_idxs:
+            oy_cards = []
+            for j in other_year_idxs:
+                other_r = live[j]
+                other_en = other_r.get('_en') or {}
+                other_title = (other_en.get('title') or display_title(other_r)) if lang == 'en' else display_title(other_r)
+                other_imgs = other_r.get('gallery') or ([other_r['image']] if other_r.get('image') else [])
+                thumb_html = f'<img src="{esc(other_imgs[0])}" alt="" loading="lazy">' if other_imgs else '<div class="card-thumb"></div>'
+                oy_cards.append(
+                    f'<a href="{esc(ids[j])}.html">{thumb_html}'
+                    f'<span class="oy-year">{esc(other_r.get("date", "")[:4])}</span>'
+                    f'<span class="oy-title">{esc(other_title)}</span></a>'
+                )
+            mm_dd = r['date'][5:7] + '-' + r['date'][8:10]
+            other_years_section = (
+                f'<section class="recipe-other-years"><div class="recipe-other-years-head">'
+                f'<h2>{labels["other_years_title"].format(date=month_day)}</h2>'
+                f'<a href="{rel}/archive.html?date={mm_dd}">{labels["other_years_more"]}</a>'
+                f'</div><div class="recipe-other-years-grid">{"".join(oy_cards)}</div></section>'
+            )
+        else:
+            other_years_section = ''
 
         if pos > 0:
             prev_idx = include[pos - 1]
             prev_r = live[prev_idx]
             prev_href = f'{ids[prev_idx]}.html'
-            prev_label = '← ' + (prev_r.get('date') or labels['prev_fallback'])
+            prev_title = (prev_r.get('_en') or {}).get('title') if lang == 'en' else None
+            prev_title = prev_title or display_title(prev_r)
+            prev_block = (
+                f'<span class="meta">{labels["prev_prefix"]} · {esc(prev_r.get("date") or labels["prev_fallback"])}</span>'
+                f'<span class="title">{esc(prev_title)}</span>'
+            )
         else:
-            prev_href, prev_label = '#', ''
+            prev_href, prev_block = '#', ''
         if pos < len(include) - 1:
             next_idx = include[pos + 1]
             next_r = live[next_idx]
             next_href = f'{ids[next_idx]}.html'
-            next_label = (next_r.get('date') or labels['next_fallback']) + ' →'
+            next_title = (next_r.get('_en') or {}).get('title') if lang == 'en' else None
+            next_title = next_title or display_title(next_r)
+            next_block = (
+                f'<span class="meta">{esc(next_r.get("date") or labels["next_fallback"])} · {labels["next_suffix"]}</span>'
+                f'<span class="title">{esc(next_title)}</span>'
+            )
         else:
-            next_href, next_label = '#', ''
+            next_href, next_block = '#', ''
 
         hreflang_tags = f'<link rel="alternate" hreflang="ko" href="{ko_url}">'
         if en:
@@ -660,17 +913,20 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
             title=esc(title), description=esc(description), url=url, rel=rel,
             hreflang_tags=hreflang_tags, robots_meta=robots_meta, lang_switch_html=lang_switch_html,
             archive_back_label=labels['archive_back'],
+            hall_label=labels['hall'], brunch_label=labels['brunch'],
+            year_label=esc(year_label), month_day_label=esc(month_day), full_date_label=esc(full_date),
             privacy_href=privacy_href, footer_privacy_label=labels['footer_privacy'],
             og_image=og_image, twitter_image=twitter_image, ad_verify_script=AD_VERIFY_SCRIPT,
             media=media_html(r, title, lang), stamp=esc(stamp_label(r)),
             fail_badge=f'<span class="fail-badge">{labels["failed_badge"]}</span>' if r.get('failed') else '',
             medal_badge=medal_badge,
             share_btn=share_btn_html(lang), share_copied_label=labels['share_copied'],
-            meta_line=meta_line,
-            intro_section=intro_section, ingredients_section=ingredients_section,
-            steps_section=steps_section, cook_section=cook_section,
+            ig_link_top=ig_link_top, mobile_bar_html=mobile_bar_html,
+            kcal_block=kcal_block,
+            intro_section=intro_section, cook_grid_section=cook_grid_section, cook_section=cook_section,
+            other_years_section=other_years_section,
             credit_section=credit_section, tags_section=tags_section,
-            prev_href=prev_href, prev_label=prev_label, next_href=next_href, next_label=next_label,
+            prev_href=prev_href, prev_block=prev_block, next_href=next_href, next_block=next_block,
             json_ld=json_ld(r, url, title, intro=intro, ingredients=ingredients, steps=steps, lang=lang),
             ad_slot=ad_slot_html('recipe-bottom') if ad_eligible(r) else '',
         )
