@@ -409,9 +409,14 @@
       var col = document.createElement('div');
       col.className = 'home-ledger-col';
       w.forEach(function (day) {
-        var cell = document.createElement('div');
-        var inSelectedYear = day.year === parseInt(selectedYear, 10);
         var n = day.key ? (postCounts[day.key] || 0) : 0;
+        // Only an actual post is a real control - a real <button> gets
+        // keyboard focus + activation for free, where a plain <div> with
+        // just a click handler is invisible to keyboard/screen-reader users.
+        var isActionable = day.status === 'posted';
+        var cell = document.createElement(isActionable ? 'button' : 'div');
+        if (isActionable) cell.type = 'button';
+        var inSelectedYear = day.year === parseInt(selectedYear, 10);
         var cls = 'home-ledger-cell';
         if (day.status === 'posted') cls += n > 1 ? ' posted multi' : ' posted';
         else if (day.status === 'missed') cls += ' missed';
@@ -441,8 +446,13 @@
           cell.addEventListener('touchmove', function () { clearTimeout(longPressTimer); longPressFired = false; hideTooltip(); });
           cell.addEventListener('touchcancel', function () { clearTimeout(longPressTimer); longPressFired = false; hideTooltip(); });
 
-          if (day.status === 'posted') {
+          if (isActionable) {
             var rec = recordByDate[day.key];
+            var label = labelFor[day.status] || '';
+            if (n > 1) label += ' · ' + (lang === 'en' ? n + ' posts' : n + '개');
+            cell.setAttribute('aria-label', formatDate(day.key) + ' · ' + label);
+            cell.addEventListener('focus', function () { showTooltip(cell, day.key, day.status, n); });
+            cell.addEventListener('blur', hideTooltip);
             cell.addEventListener('click', function () {
               hideTooltip();
               Shared.openModal(rec, { siblingsByDate: siblingsByDate });
@@ -510,19 +520,27 @@
     var gridEl = document.getElementById('calGrid');
     gridEl.innerHTML = '';
     cells.forEach(function (c) {
-      var cell = document.createElement('div');
-      if (!c) { cell.className = 'home-calendar-cell empty'; gridEl.appendChild(cell); return; }
+      if (!c) {
+        var pad = document.createElement('div');
+        pad.className = 'home-calendar-cell empty';
+        gridEl.appendChild(pad);
+        return;
+      }
       var cellDate = new Date(c.key + 'T00:00:00');
       var inRange = cellDate >= minDate && cellDate <= today;
       var n = postCounts[c.key] || 0;
+      var isActionable = inRange && postedDates.has(c.key);
+      var cell = document.createElement(isActionable ? 'button' : 'div');
+      if (isActionable) cell.type = 'button';
       var cls = 'home-calendar-cell';
       if (inRange) cls += postedDates.has(c.key) ? (n > 1 ? ' posted multi' : ' posted') : ' missed';
       if (c.key === todayKey) cls += ' today';
       cell.className = cls;
       cell.textContent = n > 1 ? n : c.day;
-      if (n > 1) cell.title = String(c.day);
-      if (inRange && postedDates.has(c.key)) {
+      if (isActionable) {
         var rec = recordByDate[c.key];
+        var label = n > 1 ? (lang === 'en' ? n + ' posts' : n + '개') : (lang === 'en' ? 'Made it' : '조식');
+        cell.setAttribute('aria-label', c.key + ' · ' + label);
         cell.addEventListener('click', function () { Shared.openModal(rec, { siblingsByDate: siblingsByDate }); });
       }
       gridEl.appendChild(cell);
