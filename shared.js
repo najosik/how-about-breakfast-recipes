@@ -14,6 +14,16 @@ var Shared = (function () {
     '<path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>' +
     '</svg>';
 
+  // Full-history chronological order for the modal's prev/next-day nav,
+  // set once by the page after it loads its data (see setRecords()).
+  // Sorted ascending by date so index-1 is always the earlier day.
+  var chronoRecords = [];
+  function setRecords(all) {
+    chronoRecords = all.slice().sort(function (a, b) {
+      return a.date < b.date ? -1 : a.date > b.date ? 1 : 0;
+    });
+  }
+
   function escapeHtml(s) {
     return String(s || '').replace(/[&<>"']/g, function (c) {
       return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
@@ -263,13 +273,13 @@ var Shared = (function () {
     ensureModalDom();
     var overlay = document.getElementById('overlay');
     var modalContent = document.getElementById('modalContent');
-    // nav.list/nav.index (day-by-day nav) are optional independently of
-    // nav.siblingsByDate (same-day switcher) - a caller with no chronological
-    // list of its own (e.g. the "오늘의 조식들" year strip) can pass just the
-    // latter, so this only renders when a list actually came with it.
-    var prevRec = (nav && nav.list && nav.index > 0) ? nav.list[nav.index - 1] : null;
-    var nextRec = (nav && nav.list && nav.index < nav.list.length - 1) ? nav.list[nav.index + 1] : null;
-    var navHTML = (nav && nav.list) ? (
+    // Prev/next-day nav always walks the full chronological history
+    // (chronoRecords, set once via setRecords()), regardless of which list
+    // or tab the modal happened to be opened from.
+    var idx = chronoRecords.indexOf(r);
+    var prevRec = idx > 0 ? chronoRecords[idx - 1] : null;
+    var nextRec = (idx !== -1 && idx < chronoRecords.length - 1) ? chronoRecords[idx + 1] : null;
+    var navHTML = chronoRecords.length ? (
       '<div class="modal-nav">' +
       '<button type="button" class="modal-nav-btn modal-nav-prev"' + (prevRec ? '' : ' disabled') + '>' +
       '← ' + L('modal_prev_day') + (prevRec ? '<span class="modal-nav-date">' + escapeHtml(prevRec.date) + '</span>' : '') +
@@ -305,16 +315,43 @@ var Shared = (function () {
       var label = (typeof I18N !== 'undefined') ? I18N.tagLabel(h) : h;
       return '<a href="archive.html?tag=' + encodeURIComponent(h) + '">#' + escapeHtml(label) + '</a>';
     }).join('');
-    var ingSection = r.ingredients
-      ? '<section><h4>' + L('modal_ingredients') + '</h4>' + bodyTextHtml(r, 'ingredients') + '</section>' : '';
-    var stepSection = r.steps
-      ? '<section><h4>' + L('modal_steps') + '</h4>' + bodyTextHtml(r, 'steps') + '</section>' : '';
+
+    // Every record with ingredients/steps already has a matching static EN
+    // translation for those two fields (unlike title/intro, where some
+    // older posts still rely on lazy machine translation), so it's safe to
+    // always read them through localizedText() and split them into a real
+    // checklist/step list - no plain-text fallback path needed here.
+    var hasCookMode = typeof CookMode !== 'undefined';
+    var ingItems = (r.ingredients && hasCookMode) ? CookMode.parseIngredientLines(localizedText(r, 'ingredients')) : [];
+    var stepItems = (r.steps && hasCookMode) ? CookMode.parseStepLines(localizedText(r, 'steps')) : [];
+    var cookGridHTML = (ingItems.length || stepItems.length) ? (
+      '<div class="modal-cook-grid">' +
+      (ingItems.length ? (
+        '<div class="modal-cook-col"><h3>' + L('modal_ingredients') + '</h3><ul class="modal-ing-list">' +
+        ingItems.map(function (it, i) { return '<li><label><input type="checkbox" data-idx="' + i + '"><span>' + escapeHtml(it) + '</span></label></li>'; }).join('') +
+        '</ul></div>'
+      ) : '') +
+      (stepItems.length ? (
+        '<div class="modal-cook-col"><h3>' + L('modal_steps') + '</h3><ol class="modal-step-list">' +
+        stepItems.map(function (it) { return '<li>' + escapeHtml(it) + '</li>'; }).join('') +
+        '</ol></div>'
+      ) : '') +
+      '</div>'
+    ) : '';
+
     var introSection = r.intro
       ? '<section><h4>' + (r.ingredients ? L('modal_notes') : L('modal_fulltext')) + '</h4>' + bodyTextHtml(r, 'intro') + '</section>' : '';
     var creditSection = r.credit
       ? '<section><h4>' + L('modal_credit') + '</h4><div class="credit">Inspired by ' + escapeHtml(r.credit) + '</div></section>' : '';
-    var cookSection = (r.ingredients && r.steps && typeof CookMode !== 'undefined')
+    var cookBtnHTML = (ingItems.length && stepItems.length && typeof CookMode !== 'undefined')
       ? '<button type="button" class="cook-start-btn modal-cook-btn">' + escapeHtml(L('cook_start')) + '</button>' : '';
+    // A failed/no-record day never gets a static recipe page built for it
+    // (see build_public_data.py's build_pages()), so linking out there
+    // would 404 - only real recipes get this link.
+    var viewFullHTML = !r.failed
+      ? '<a class="modal-view-full" href="' + escapeHtml(recipeUrl(r)) + '">' + escapeHtml(L('modal_view_full')) + '</a>' : '';
+    var footerHTML = (cookBtnHTML || viewFullHTML)
+      ? '<div class="modal-footer">' + (cookBtnHTML || '<span></span>') + viewFullHTML + '</div>' : '';
 
     var shareBtnHtml = '<button class="modal-share-btn" type="button" aria-label="' + escapeHtml(L('modal_copy_link')) + '">' + LINK_ICON_SVG + '<span class="modal-share-label">' + L('modal_copy_link') + '</span></button>';
 
@@ -325,19 +362,26 @@ var Shared = (function () {
 
     modalContent.innerHTML =
       '<button class="modal-close" aria-label="' + escapeHtml(L('modal_close')) + '">✕</button>' +
-      navHTML +
-      siblingNavHTML +
-      galleryHTML(r) +
-      '<div class="modal-stamp-row">' +
+      '<div class="modal-topbar">' + navHTML + siblingNavHTML + '</div>' +
+      '<div class="modal-hero">' +
+      '<div class="modal-hero-media">' + galleryHTML(r) + '</div>' +
+      '<div class="modal-hero-info">' +
+      '<div class="modal-eyebrow-row">' +
       '<span class="stamp">' + stampLabel(r) + '</span>' +
+      '<span class="modal-date">' + escapeHtml(r.date || '') + '</span>' +
+      (r.weather ? '<span class="modal-weather">' + escapeHtml(r.weather) + '</span>' : '') +
       (r.failed ? '<span class="fail-badge">' + L('badge_failed') + '</span>' : '') +
       (r.medal ? '<span class="medal-badge">🥇 ' + escapeHtml(L('medal_label')) + '</span>' : '') +
       shareBtnHtml +
       '</div>' +
       titleHtml +
-      '<div class="modal-meta">' + [r.date, r.weather, r.calories ? r.calories + 'kcal' : null].filter(Boolean).map(escapeHtml).join(' · ') + '</div>' +
-      introSection + ingSection + stepSection + cookSection + creditSection +
-      (tagsHtml ? '<section><h4>' + L('modal_tags') + '</h4><div class="tag-list">' + tagsHtml + '</div></section>' : '');
+      (r.calories ? '<div class="modal-kcal-block"><span class="label">' + escapeHtml(L('modal_kcal_label')) + '</span><span class="value">' + r.calories + '<small>kcal</small></span></div>' : '') +
+      (tagsHtml ? '<div class="tag-list">' + tagsHtml + '</div>' : '') +
+      '</div></div>' +
+      introSection +
+      cookGridHTML +
+      creditSection +
+      footerHTML;
 
     modalContent.querySelector('.modal-close').addEventListener('click', closeModal);
     bindShareButton(modalContent.querySelector('.modal-share-btn'), r, L);
@@ -347,23 +391,21 @@ var Shared = (function () {
         var lang = (typeof I18N !== 'undefined') ? I18N.getLang() : 'ko';
         CookMode.open({
           title: hasStaticEn(r, 'title') ? localizedText(r, 'title') : koTitle,
-          ingredients: hasStaticEn(r, 'ingredients') ? localizedText(r, 'ingredients') : r.ingredients,
-          steps: hasStaticEn(r, 'steps') ? localizedText(r, 'steps') : r.steps,
+          ingredients: localizedText(r, 'ingredients'),
+          steps: localizedText(r, 'steps'),
         }, lang);
       });
     }
-    if (nav && nav.list) {
-      var prevBtn = modalContent.querySelector('.modal-nav-prev');
-      var nextBtn = modalContent.querySelector('.modal-nav-next');
-      if (prevRec) prevBtn.addEventListener('click', function () { openModal(prevRec, { list: nav.list, index: nav.index - 1, siblingsByDate: nav.siblingsByDate }); });
-      if (nextRec) nextBtn.addEventListener('click', function () { openModal(nextRec, { list: nav.list, index: nav.index + 1, siblingsByDate: nav.siblingsByDate }); });
-    }
+    var prevBtn = modalContent.querySelector('.modal-nav-prev');
+    var nextBtn = modalContent.querySelector('.modal-nav-next');
+    if (prevRec) prevBtn.addEventListener('click', function () { openModal(prevRec, nav); });
+    if (nextRec) nextBtn.addEventListener('click', function () { openModal(nextRec, nav); });
     if (siblings && siblings.length > 1) {
       Array.prototype.forEach.call(modalContent.querySelectorAll('.modal-sibling-btn'), function (btn) {
         btn.addEventListener('click', function () {
-          var idx = Number(btn.getAttribute('data-idx'));
-          if (idx === siblingIndex) return;
-          openModal(siblings[idx], { list: nav.list, index: nav.index, siblingsByDate: nav.siblingsByDate });
+          var i = Number(btn.getAttribute('data-idx'));
+          if (i === siblingIndex) return;
+          openModal(siblings[i], nav);
         });
       });
     }
@@ -458,6 +500,7 @@ var Shared = (function () {
     escapeHtml: escapeHtml,
     foodTags: foodTags,
     loadData: loadData,
+    setRecords: setRecords,
     ensureEnMerged: ensureEnMerged,
     localizedText: localizedText,
     hasStaticEn: hasStaticEn,
