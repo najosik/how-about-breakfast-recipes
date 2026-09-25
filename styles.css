@@ -553,10 +553,11 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
 .home-search-btn:hover{background:var(--green-dark);}
 
 /* Cover story + 해마다 오늘의 조식 */
-.home-cover-grid{max-width:1080px; margin:0 auto; padding:36px 20px 48px; display:grid; grid-template-columns:7fr 5fr; gap:28px;}
+.home-cover-grid{max-width:1080px; margin:0 auto; padding:36px 20px 48px; display:grid; grid-template-columns:5fr 7fr; gap:28px;}
 .home-cover-photo{position:relative;}
-.home-cover-photo .card-photo{width:100%; aspect-ratio:auto; height:360px; margin:0; background:var(--mint);}
-.home-cover-photo img,.home-cover-photo .card-thumb{display:block; width:100%; height:360px; object-fit:cover; background:var(--mint);}
+.home-cover-photo .card-photo{width:100%; aspect-ratio:3/4; height:auto; margin:0; background:var(--mint);}
+.home-cover-photo .card-thumb{width:100%; aspect-ratio:3/4; height:auto;}
+.home-cover-photo img{display:block; width:100%; height:100%; object-fit:cover; background:var(--mint);}
 .home-cover-stamp{position:absolute; left:-10px; bottom:-20px; background:var(--paper); padding:10px 16px 0 10px; display:flex; align-items:flex-end; gap:8px;}
 .home-cover-stamp .num{font-family:'Fraunces',serif; font-size:72px; font-weight:800; line-height:0.8; color:var(--green);}
 .home-cover-stamp .label{font-size:11px; line-height:1.4; color:var(--text-2);}
@@ -658,8 +659,6 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
   .home-logo{font-size:32px;}
   .home-kicker{flex-direction:column; align-items:flex-start;}
   .home-cover-grid,.home-bottom-grid{grid-template-columns:1fr;}
-  .home-cover-photo .card-photo{height:240px;}
-  .home-cover-photo img,.home-cover-photo .card-thumb{height:240px;}
   .home-editor{grid-template-columns:1fr;}
   .home-year-tabs,.home-ledger-scroll{display:none;}
   .home-calendar{display:block; max-width:1080px; margin:16px auto 0;}
