@@ -125,7 +125,7 @@ p.subtitle{margin:0; color:var(--ink-soft); font-size:15px; max-width:560px;}
 .site-header-nav a{color:var(--ink); text-decoration:none;}
 .site-header-nav a:hover{color:var(--green-dark); text-decoration:underline;}
 .site-header-nav a[aria-current="page"]{font-weight:700; text-decoration:underline; text-decoration-color:var(--green); text-decoration-thickness:3px; text-underline-offset:8px;}
-.page-footer{max-width:1080px; margin:0 auto; padding:24px 20px 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
+.page-footer{max-width:1040px; margin:0 auto; padding:24px 20px 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
 .page-footer-links{display:flex; gap:18px;}
 .page-footer-links a{color:var(--text-2); text-decoration:none;}
 .page-footer-links a:hover{text-decoration:underline;}
@@ -649,7 +649,7 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
 
 /* 새 홈페이지 전용 푸터 - 2163개 레시피 페이지가 공유하는 .site-footer와는
    별개(그 페이지들의 어두운 통짜 푸터는 이번 단계에서 건드리지 않는다). */
-.home-footer{max-width:1080px; margin:0 auto; padding:20px 20px 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
+.home-footer{max-width:1040px; margin:0 auto; padding:20px 20px 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
 .home-footer-links{display:flex; gap:18px;}
 .home-footer-links a{color:var(--text-2); text-decoration:none;}
 .home-footer-links a:hover{text-decoration:underline;}

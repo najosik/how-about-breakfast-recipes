@@ -514,7 +514,9 @@
       requestAnimationFrame(function () {
         if (scrollMode === 'year') {
           var targetCol = gridEl.querySelector('.home-ledger-col[data-year="' + selectedYear + '"]');
-          scrollWrap.scrollLeft = targetCol ? Math.max(0, targetCol.offsetLeft - 20) : scrollWrap.scrollWidth;
+          scrollWrap.scrollLeft = targetCol
+            ? Math.max(0, targetCol.offsetLeft - (scrollWrap.clientWidth - targetCol.offsetWidth) / 2)
+            : scrollWrap.scrollWidth;
         } else {
           scrollWrap.scrollLeft = scrollWrap.scrollWidth;
         }
