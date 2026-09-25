@@ -115,13 +115,20 @@
 <body>
 <div class="wrap">
   <header class="site-header">
-    <a href="../index.html" class="site-header-logo">날마다 조식</a>
     <nav class="site-header-nav" aria-label="주요 메뉴">
-      <a href="../archive.html">아카이브</a>
-      <a href="../vote.html">명예의 전당</a>
-      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">브런치북</a>
+      <a href="../index.html">← 홈으로</a>
     </nav>
-    <a href="https://how-about-breakfast.com/en/recipes/오디-토스트.html" class="lang-switch">EN</a>
+    <div class="nav-right">
+      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="channel-links" id="channelLinks">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
+      </div>
+      <a href="https://how-about-breakfast.com/en/recipes/오디-토스트.html" class="lang-switch">EN</a>
+    </div>
   </header>
 </div>
 
@@ -179,6 +186,7 @@
 <div class="recipe-mobile-bar"><a href="#cookGrid" class="recipe-mobile-jump">재료로 이동</a></div>
 
 <script type="application/ld+json">{"@context": "https://schema.org/", "@type": "Recipe", "name": "오디 토스트", "url": "https://how-about-breakfast.com/recipes/오디-토스트.html", "image": ["https://images.how-about-breakfast.com/images/1415.jpg", "https://images.how-about-breakfast.com/images/1415_2.jpg", "https://images.how-about-breakfast.com/images/1415_3.jpg", "https://images.how-about-breakfast.com/images/1415_4.jpg"], "author": {"@type": "Person", "name": "나조식", "sameAs": ["https://www.instagram.com/how.about.breakfast/", "https://www.youtube.com/@How.about.breakfast"]}, "recipeYield": "1인분", "datePublished": "2025-06-02", "description": "상전벽해(桑田碧海), 뽕나무(桑) 밭이 푸른 바다로 변할 만큼 오랜 시간이 흐르고 많이 변했다는 뜻으로 쓰인다. 왜 하필 뽕나무일까 싶어서 조금 찾아봤는데 과거 뽕나무는 쓸모 없는 땅, 습지나 늪지 인근에 심는 경우가 많았다고. 아무튼 오디는 은근한 단맛이 매력적이다.", "recipeIngredient": ["사워도우 1조각", "리코타치즈 2T", "오디 1컵", "피스타치오 조금", "민트(있으면 좋은데 없어도 괜찮다)"], "recipeInstructions": [{"@type": "HowToStep", "text": "사워도우에 올리브오일 바르고 앞뒤로 바삭하게 굽는다."}, {"@type": "HowToStep", "text": "사워도우는 한김 식히고 리코타치즈 바른 뒤 오디와 다진 피스타치오 얹는다. 꿀을 조금 얹으면 더 맛있겠지만 오늘은 여기까지만~"}], "keywords": "레시피, 미라클모닝, 오디, 조식, 조식다이어리", "nutrition": {"@type": "NutritionInformation", "calories": "315 kcal"}}</script>
+<script src="../shared.js"></script>
 <script src="../cookmode.js"></script>
 <script src="../recipe.js"></script>
 <script>

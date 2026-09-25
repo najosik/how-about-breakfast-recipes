@@ -70,7 +70,7 @@ LABELS = {
         'site_name': '날마다 조식',
         'title_suffix': '날마다 조식',
         'archive_back': '아카이브',
-        'hall': '명예의 전당', 'brunch': '브런치북',
+        'nav_home': '← 홈으로',
         'notes': '메모', 'ingredients': '재료', 'steps': '조리',
         'credit': '원본 크레딧', 'tags': '태그',
         'failed_badge': '실패기',
@@ -94,7 +94,7 @@ LABELS = {
         'site_name': 'Breakfast, Every Day',
         'title_suffix': 'Breakfast, Every Day',
         'archive_back': 'Archive',
-        'hall': 'Hall of Fame', 'brunch': 'Brunch',
+        'nav_home': '← Home',
         'notes': 'Notes', 'ingredients': 'Ingredients', 'steps': 'Steps',
         'credit': 'Original Credit', 'tags': 'Tags',
         'failed_badge': 'Failed attempt',
@@ -604,13 +604,20 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <body>
 <div class="wrap">
   <header class="site-header">
-    <a href="{rel}/index.html" class="site-header-logo">{site_name}</a>
     <nav class="site-header-nav" aria-label="주요 메뉴">
-      <a href="{rel}/archive.html">{archive_back_label}</a>
-      <a href="{rel}/vote.html">{hall_label}</a>
-      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">{brunch_label}</a>
+      <a href="{rel}/index.html">{nav_home_label}</a>
     </nav>
-    {lang_switch_html}
+    <div class="nav-right">
+      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="channel-links" id="channelLinks">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
+      </div>
+      {lang_switch_html}
+    </div>
   </header>
 </div>
 
@@ -666,6 +673,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 {mobile_bar_html}
 
 {json_ld}
+<script src="{rel}/shared.js"></script>
 <script src="{rel}/cookmode.js"></script>
 <script src="{rel}/recipe.js"></script>
 <script>
@@ -913,7 +921,7 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
             title=esc(title), description=esc(description), url=url, rel=rel,
             hreflang_tags=hreflang_tags, robots_meta=robots_meta, lang_switch_html=lang_switch_html,
             archive_back_label=labels['archive_back'],
-            hall_label=labels['hall'], brunch_label=labels['brunch'],
+            nav_home_label=labels['nav_home'],
             year_label=esc(year_label), month_day_label=esc(month_day), full_date_label=esc(full_date),
             privacy_href=privacy_href, footer_privacy_label=labels['footer_privacy'],
             og_image=og_image, twitter_image=twitter_image, ad_verify_script=AD_VERIFY_SCRIPT,
