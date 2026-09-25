@@ -290,7 +290,8 @@
         var emptyMsg = lang === 'en' ? (I18N.t('otd_empty_bang') + ' ' + I18N.t('otd_empty_sub')) : randomOtdEmptyMessage();
         return '<a class="home-otd-row otd-empty-row" href="https://brunch.co.kr/@howaboutbfast/4" target="_blank" rel="noopener noreferrer">' +
           '<span class="home-otd-year">' + Shared.escapeHtml(yearLabel) + '</span>' +
-          '<span class="home-otd-title">' + Shared.escapeHtml(emptyMsg) + '</span></a>';
+          '<span class="home-otd-title">' + Shared.escapeHtml(emptyMsg) +
+          '<span class="home-otd-sib">· ' + Shared.escapeHtml(I18N.t('otd_empty_hint')) + '</span></span></a>';
       }
       var isCover = y === heroYear;
       var koTitle = r.title || I18N.t('untitled_fallback');
