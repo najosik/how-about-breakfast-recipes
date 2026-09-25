@@ -86105,25 +86105,18 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "조식 적채",
+  "title": "적양배추 샐러드",
   "credit": null,
   "hashtags": [
    "적채",
    "조식"
   ],
   "intro": "식재료를 생각하고, 사서 다듬고, 데치거나, 구워서 플레이팅한 후 먹고 바로 설겆이, 여기까지가 #조식 의 진정한 완성 \n세상에서 제일 예쁜 #적채 는 팬에 구우면 구울 수록 단맛이 올라온다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 적양배추 1/2개\n- 양파 1/4개\n- 마늘 3개\n- 올리브\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 올리브오일\n- 후추",
+  "steps": "1. 팬에 올리브오일 두르고 길게 썬 양파와 얇게 썬 마늘을 구운 후 덜어둔다. \n2. 적양배추는 웻지모양으로 썰어서 올리브오일 두른 팬에 앞뒤로 굽는다. \n3. 접시에 2의 적양배추 담고 1의 양파와 마늘, 올리브 얹는다. \n4. 드레싱 붓고 후추 조금 얹는다. ",
   "raw": "식재료를 생각하고, 사서 다듬고, 데치거나, 구워서 플레이팅한 후 먹고 바로 설겆이, 여기까지가 #조식 의 진정한 완성 \n\n세상에서 제일 예쁜 #적채 는 팬에 구우면 구울 수록 단맛이 올라온다.",
   "pre_label": "D-139",
   "image": "https://images.how-about-breakfast.com/images/pre-139.jpg",
-  "_en": {
-   "hash": "fdc0a515631dd504021e35cdee38232034eaf283ad446d4c7706c6243c70cc41",
-   "title": "Breakfast: Red Cabbage",
-   "intro": "Think about the ingredients, buy them, trim them, blanch or sear them, plate them, eat, and go straight to the dishes — only then is #breakfast truly complete.\nThe prettiest #redcabbage in the world gets sweeter the longer you sear it in the pan.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "조식-적채",
   "essay_candidate": true,
   "essay_reviewed": true
