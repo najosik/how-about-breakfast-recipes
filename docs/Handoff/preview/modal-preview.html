@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>모달 리뉴얼 시안 (검토용) — 날마다 조식</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../../styles.css">
+<style>
+  body{background:#EDEBE4;}
+  .rm-banner{position:sticky; top:0; z-index:80; background:var(--ink); color:#fff; font-size:13px; padding:10px 16px; text-align:center;}
+  .rm-launcher{max-width:900px; margin:0 auto; padding:32px 16px 80px;}
+  .rm-launcher h1{font-family:'Noto Serif KR',serif; font-size:26px; margin:0 0 6px;}
+  .rm-launcher p{font-size:14px; color:var(--text-2); margin:0 0 24px;}
+  .rm-launch-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px;}
+  .rm-launch-card{text-align:left; border:1px solid var(--ink); background:#fff; padding:16px; cursor:pointer; font-family:inherit;}
+  .rm-launch-card .k{display:block; font-size:11px; letter-spacing:0.08em; color:var(--green-dark); font-weight:700; margin-bottom:6px;}
+  .rm-launch-card .t{display:block; font-family:'Noto Serif KR',serif; font-size:16px; font-weight:700; margin-bottom:4px;}
+  .rm-launch-card .d{display:block; font-size:12.5px; color:var(--text-2); line-height:1.5;}
+  .rm-launch-card:hover{border-color:var(--green);}
+
+  /* ---- redesigned modal (new class names, separate from legacy .modal so this
+     preview never collides with the site's current styles.css rules) ---- */
+  .rm-overlay{position:fixed; inset:0; background:rgba(20,20,17,0.6); z-index:100; display:none; align-items:flex-start; justify-content:center; padding:32px 16px; overflow-y:auto;}
+  .rm-overlay.open{display:flex;}
+  .rm-modal{background:var(--paper); max-width:820px; width:100%; margin-bottom:40px; position:relative; box-shadow:0 24px 70px rgba(0,0,0,0.28);}
+  .rm-close{position:absolute; top:16px; right:16px; width:36px; height:36px; border-radius:50%; border:1px solid var(--ink); background:#fff; cursor:pointer; font-size:16px; color:var(--ink); line-height:1; z-index:5;}
+  .rm-close:hover{background:var(--ink); color:#fff;}
+
+  .rm-topbar{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:14px 60px 14px 20px; border-bottom:1px solid var(--rule);}
+  .rm-nav{display:flex; gap:6px;}
+  .rm-nav-btn{display:flex; flex-direction:column; align-items:flex-start; gap:1px; border:1px solid var(--rule); background:#fff; padding:5px 10px; font-size:11.5px; color:var(--text-2); cursor:pointer; line-height:1.3; font-family:inherit;}
+  .rm-nav-btn:hover:not(:disabled){border-color:var(--green); color:var(--green-dark);}
+  .rm-nav-btn:disabled{opacity:0.3; cursor:default;}
+  .rm-nav-date{font-size:10.5px; color:var(--text-3);}
+  .rm-siblings{display:flex; align-items:center; gap:8px; font-size:11.5px; color:var(--text-2);}
+  .rm-sibling-list{display:flex; gap:5px;}
+  .rm-sibling-btn{min-width:24px; height:24px; padding:0 5px; border:1px solid var(--rule); background:#fff; border-radius:12px; font-size:11.5px; color:var(--text-2); cursor:pointer;}
+  .rm-sibling-btn:hover{border-color:var(--green); color:var(--green-dark);}
+  .rm-sibling-btn.active{background:var(--green); border-color:var(--green); color:#fff; cursor:default;}
+
+  .rm-hero{display:grid; grid-template-columns:300px 1fr; gap:0;}
+  .rm-media{background:var(--mint-skip); position:relative;}
+  .rm-media .rm-main{width:100%; aspect-ratio:3/4; overflow:hidden;}
+  .rm-media .rm-main img, .rm-media .rm-main video{width:100%; height:100%; object-fit:cover; display:block;}
+  .rm-media .rm-thumbs{display:flex; gap:4px; padding:6px;}
+  .rm-media .rm-thumb{width:44px; height:44px; padding:0; border:2px solid transparent; background:none; cursor:pointer; flex:0 0 auto;}
+  .rm-media .rm-thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+  .rm-media .rm-thumb.active{border-color:var(--green);}
+  .rm-media-empty{width:100%; height:100%; min-height:260px; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:15px; color:var(--text-3);}
+
+  .rm-info{padding:24px 26px; display:flex; flex-direction:column; gap:12px;}
+  .rm-eyebrow-row{display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .rm-stamp{font-family:'Fraunces',serif; font-weight:800; font-size:15px; color:var(--green);}
+  .rm-weather{font-size:12.5px; color:var(--text-2);}
+  .rm-fail-badge{font-size:11px; color:var(--clay); border:1px solid var(--clay); background:var(--clay-pale); border-radius:12px; padding:1px 8px;}
+  .rm-share{margin-left:auto; display:flex; align-items:center; gap:5px; border:1px solid var(--rule); background:#fff; padding:5px 10px; font-size:12px; color:var(--text-2); cursor:pointer; font-family:inherit;}
+  .rm-share:hover{border-color:var(--green); color:var(--green-dark);}
+  .rm-share.copied{border-color:var(--green); color:var(--green-dark); background:var(--mint);}
+  .rm-title{margin:0; font-family:'Noto Serif KR',serif; font-weight:900; font-size:26px; line-height:1.25; color:var(--ink);}
+  .rm-kcal{display:flex; align-items:baseline; gap:8px;}
+  .rm-kcal .label{font-size:11px; letter-spacing:0.08em; color:var(--text-3);}
+  .rm-kcal .value{font-family:'Fraunces',serif; font-weight:800; font-size:22px; color:var(--green-dark);}
+  .rm-kcal .value small{font-size:12px; font-weight:600; margin-left:2px;}
+  .rm-tags{display:flex; gap:6px; flex-wrap:wrap;}
+  .rm-tags a{font-size:12px; color:var(--green-dark); background:var(--mint); padding:3px 9px; border-radius:4px; text-decoration:none;}
+  .rm-tags a:hover{background:var(--green); color:#fff;}
+
+  .rm-cook-grid{display:grid; grid-template-columns:1fr 1fr; gap:0; border-top:1px solid var(--rule);}
+  .rm-col{padding:20px 26px;}
+  .rm-col:first-child{border-right:1px solid var(--rule);}
+  .rm-col h3{margin:0 0 10px; font-family:'Noto Serif KR',serif; font-size:14px; font-weight:900; color:var(--ink);}
+  .rm-ing-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:7px;}
+  .rm-ing-list label{display:flex; align-items:flex-start; gap:8px; font-size:13.5px; color:#3A3934; cursor:pointer;}
+  .rm-ing-list input{margin-top:3px;}
+  .rm-ing-list input:checked + span{color:var(--text-3); text-decoration:line-through;}
+  .rm-steps{margin:0; padding:0; list-style:none; counter-reset:rmstep; display:flex; flex-direction:column; gap:10px;}
+  .rm-steps li{display:flex; gap:10px; font-size:13.5px; line-height:1.6; color:#3A3934; counter-increment:rmstep;}
+  .rm-steps li::before{content:counter(rmstep); flex:0 0 auto; width:20px; height:20px; border-radius:50%; background:var(--green); color:#fff; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center;}
+
+  .rm-footer{display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; padding:16px 26px 22px; border-top:1px solid var(--rule);}
+  .rm-cook-btn{border:none; background:var(--green); color:#fff; font-size:13.5px; font-weight:700; padding:10px 18px; cursor:pointer; font-family:inherit;}
+  .rm-cook-btn:hover{background:var(--green-dark);}
+  .rm-more-link{font-size:13px; color:var(--green-dark); text-decoration:none; font-weight:600;}
+  .rm-more-link:hover{text-decoration:underline;}
+  .rm-empty-note{padding:26px; font-size:14px; color:var(--text-2);}
+
+  @media (max-width:640px){
+    .rm-hero{grid-template-columns:1fr;}
+    .rm-cook-grid{grid-template-columns:1fr;}
+    .rm-col:first-child{border-right:0; border-bottom:1px solid var(--rule);}
+    .rm-topbar{padding:12px 52px 12px 14px;}
+    .rm-info{padding:18px 18px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="rm-banner">⚠️ 검토용 시안 페이지입니다 — 실 데이터와 연동되어 있지만 실제 사이트에는 아직 반영되지 않았습니다</div>
+
+<div class="rm-launcher">
+  <h1>팝업(모달) 리뉴얼 시안</h1>
+  <p>아래 예시를 눌러서 새 모달 디자인을 직접 열어보세요. 실제 recipes-index.json 데이터를 그대로 사용합니다. 모달 안에서 이전/다음 날짜 이동, 같은 날 다른 게시물 전환도 실제로 동작합니다.</p>
+  <div class="rm-launch-grid" id="launchGrid"></div>
+</div>
+
+<div class="rm-overlay" id="rmOverlay">
+  <div class="rm-modal" id="rmModal"></div>
+</div>
+
+<script src="../../../shared.js"></script>
+<script src="../../../i18n.js"></script>
+<script src="../../../cookmode.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  function esc(s) { return Shared.escapeHtml(s); }
+  function L(key) { return I18N.t(key); }
+
+  // cookmode.js keeps these private; duplicated here only for this static
+  // preview. In the real implementation these would be exported from
+  // cookmode.js and reused as-is, not re-implemented in shared.js.
+  function parseIngredientLines(text) {
+    if (!text) return [];
+    var lines = text.split('\n').map(function (l) { return l.trim(); }).filter(Boolean);
+    if (lines.length > 1) return lines.map(function (l) { return l.replace(/^[-•]\s*/, ''); });
+    return text.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+  }
+  function parseStepLines(text) {
+    if (!text) return [];
+    return text.split('\n').map(function (l) { return l.trim(); }).filter(Boolean)
+      .map(function (l) { return l.replace(/^\d+\.\s*/, ''); });
+  }
+  function previewRecipeUrl(r) {
+    return '../../../recipes/' + r.page_id + '.html';
+  }
+  function titleFor(r) {
+    return r.title || L('untitled_fallback');
+  }
+
+  var state = { all: [], byDate: {} };
+
+  fetch('../../../recipes-index.json').then(function (r) { return r.json(); }).then(function (all) {
+    state.all = all;
+    all.forEach(function (r) {
+      (state.byDate[r.date] = state.byDate[r.date] || []).push(r);
+    });
+    buildLauncher();
+  });
+
+  function findIndex(r) { return state.all.indexOf(r); }
+
+  function buildLauncher() {
+    var examples = [
+      { key: '갤러리+재료+단계 예시', id: '애호박-고추장아찌-비빔국수', desc: '사진 갤러리, 콤마 재료 목록, 번호 단계 - 가장 일반적인 형태' },
+      { key: '실패한 날 예시', date: '2026-08-20', desc: '사진/재료 없이 #실패기 배지만 있는 날' },
+      { key: '사진 없는 예시', id: '흑임자-메밀면-Black-sesame-buckwheat-noodles', desc: '텍스트 재료/단계만 있고 사진은 없는 게시물' },
+      { key: '같은 날 여러 편', date: '2026-07-09', desc: '흑임자 메밀면 - 같은 날 사진 없는 버전 / 사진+영상 버전 2편, 전환 버튼 테스트' },
+    ];
+    var grid = document.getElementById('launchGrid');
+    grid.innerHTML = examples.map(function (ex, i) {
+      return '<button type="button" class="rm-launch-card" data-idx="' + i + '"><span class="k">' + esc(ex.key) + '</span><span class="t">' + esc(ex.id || ex.date) + '</span><span class="d">' + esc(ex.desc) + '</span></button>';
+    }).join('');
+    Array.prototype.forEach.call(grid.querySelectorAll('.rm-launch-card'), function (btn, i) {
+      btn.addEventListener('click', function () {
+        var ex = examples[i];
+        var rec = ex.id ? state.all.find(function (r) { return r.page_id === ex.id; }) : state.byDate[ex.date][0];
+        openPreviewModal(rec);
+      });
+    });
+  }
+
+  function galleryHTML(r) {
+    var items = [];
+    if (r.gallery && r.gallery.length) items = r.gallery.map(function (src) { return { type: 'image', src: src }; });
+    else if (r.image) items = [{ type: 'image', src: r.image }];
+    if (r.video) items.push({ type: 'video', src: r.video });
+
+    if (!items.length) {
+      return '<div class="rm-media-empty">사진 없음</div>';
+    }
+    var main = items[0];
+    var mainHTML = main.type === 'video'
+      ? '<video src="' + esc(main.src) + '" controls playsinline></video>'
+      : '<img src="' + esc(main.src) + '" alt="">';
+    var thumbs = items.length > 1 ? (
+      '<div class="rm-thumbs">' + items.map(function (it, i) {
+        var thumbSrc = it.type === 'video' ? (items[0].src) : it.src;
+        return '<button type="button" class="rm-thumb' + (i === 0 ? ' active' : '') + '" data-idx="' + i + '"><img src="' + esc(thumbSrc) + '" alt=""></button>';
+      }).join('') + '</div>'
+    ) : '';
+    return '<div class="rm-main">' + mainHTML + '</div>' + thumbs;
+  }
+
+  function bindGallery(root, r) {
+    var items = [];
+    if (r.gallery && r.gallery.length) items = r.gallery.map(function (src) { return { type: 'image', src: src }; });
+    else if (r.image) items = [{ type: 'image', src: r.image }];
+    if (r.video) items.push({ type: 'video', src: r.video });
+    if (items.length < 2) return;
+    var main = root.querySelector('.rm-main');
+    var btns = root.querySelectorAll('.rm-thumb');
+    Array.prototype.forEach.call(btns, function (btn) {
+      btn.addEventListener('click', function () {
+        var idx = Number(btn.getAttribute('data-idx'));
+        var it = items[idx];
+        main.innerHTML = it.type === 'video'
+          ? '<video src="' + esc(it.src) + '" controls playsinline autoplay></video>'
+          : '<img src="' + esc(it.src) + '" alt="">';
+        Array.prototype.forEach.call(btns, function (b) { b.classList.toggle('active', b === btn); });
+      });
+    });
+  }
+
+  function openPreviewModal(r) {
+    var overlay = document.getElementById('rmOverlay');
+    var modal = document.getElementById('rmModal');
+    var idx = findIndex(r);
+    // recipes-index.json is sorted newest-first, so the chronologically
+    // earlier ("이전 날짜") record sits at idx+1, not idx-1.
+    var prevRec = idx < state.all.length - 1 ? state.all[idx + 1] : null;
+    var nextRec = idx > 0 ? state.all[idx - 1] : null;
+    var siblings = state.byDate[r.date];
+    var siblingIdx = siblings.indexOf(r);
+
+    var topbarHTML =
+      '<div class="rm-topbar">' +
+      '<div class="rm-nav">' +
+      '<button type="button" class="rm-nav-btn" id="rmPrev"' + (prevRec ? '' : ' disabled') + '>← ' + esc(L('modal_prev_day')) + (prevRec ? '<span class="rm-nav-date">' + esc(prevRec.date) + '</span>' : '') + '</button>' +
+      '<button type="button" class="rm-nav-btn" id="rmNext"' + (nextRec ? '' : ' disabled') + '>' + esc(L('modal_next_day')) + ' →' + (nextRec ? '<span class="rm-nav-date">' + esc(nextRec.date) + '</span>' : '') + '</button>' +
+      '</div>' +
+      (siblings.length > 1 ? (
+        '<div class="rm-siblings"><span>' + esc(L('modal_same_day_posts')) + '</span><div class="rm-sibling-list">' +
+        siblings.map(function (s, i) {
+          return '<button type="button" class="rm-sibling-btn' + (i === siblingIdx ? ' active' : '') + '" data-idx="' + i + '">' + (i + 1) + '</button>';
+        }).join('') + '</div></div>'
+      ) : '') +
+      '</div>';
+
+    if (r.failed || (!r.title && !r.ingredients)) {
+      modal.innerHTML =
+        '<button class="rm-close" id="rmClose">✕</button>' +
+        topbarHTML +
+        '<div class="rm-empty-note"><span class="rm-stamp">' + esc('#' + r.diary_no) + '</span> · ' + esc(r.date) +
+        '<br><br>' + esc(L('badge_failed')) + ' — 이 날은 별도 기록이 없습니다.</div>';
+    } else {
+      var tagsHtml = (r.hashtags || []).map(function (h) {
+        return '<a href="../../../archive.html?tag=' + encodeURIComponent(h) + '">#' + esc(h) + '</a>';
+      }).join('');
+      var ingItems = parseIngredientLines(r.ingredients);
+      var stepItems = parseStepLines(r.steps);
+      modal.innerHTML =
+        '<button class="rm-close" id="rmClose">✕</button>' +
+        topbarHTML +
+        '<div class="rm-hero">' +
+        '<div class="rm-media">' + galleryHTML(r) + '</div>' +
+        '<div class="rm-info">' +
+        '<div class="rm-eyebrow-row"><span class="rm-stamp">#' + esc(r.diary_no) + '</span>' +
+        (r.weather ? '<span class="rm-weather">' + esc(r.weather) + '</span>' : '') +
+        '<button type="button" class="rm-share" id="rmShare">🔗 ' + esc(L('modal_copy_link')) + '</button>' +
+        '</div>' +
+        '<h2 class="rm-title">' + esc(titleFor(r)) + '</h2>' +
+        (r.calories ? '<div class="rm-kcal"><span class="label">CALORIES</span><span class="value">' + r.calories + '<small>kcal</small></span></div>' : '') +
+        (tagsHtml ? '<div class="rm-tags">' + tagsHtml + '</div>' : '') +
+        '</div></div>' +
+        (ingItems.length || stepItems.length ? (
+          '<div class="rm-cook-grid">' +
+          '<div class="rm-col"><h3>' + esc(L('modal_ingredients')) + '</h3><ul class="rm-ing-list">' +
+          ingItems.map(function (it, i) { return '<li><label><input type="checkbox" data-idx="' + i + '"><span>' + esc(it) + '</span></label></li>'; }).join('') +
+          '</ul></div>' +
+          '<div class="rm-col"><h3>' + esc(L('modal_steps')) + '</h3><ol class="rm-steps">' +
+          stepItems.map(function (it) { return '<li>' + esc(it) + '</li>'; }).join('') +
+          '</ol></div>' +
+          '</div>'
+        ) : '') +
+        '<div class="rm-footer">' +
+        (ingItems.length && stepItems.length ? '<button type="button" class="rm-cook-btn">🍳 ' + esc(L('cook_start')) + '</button>' : '<span></span>') +
+        '<a class="rm-more-link" href="' + previewRecipeUrl(r) + '" target="_blank">전체 레시피 페이지에서 보기 →</a>' +
+        '</div>';
+      bindGallery(modal, r);
+      var shareBtn = document.getElementById('rmShare');
+      shareBtn.addEventListener('click', function () {
+        var url = new URL(previewRecipeUrl(r), location.href).href;
+        (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).catch(function () {}).then(function () {
+          shareBtn.classList.add('copied');
+          shareBtn.textContent = '✓ ' + L('modal_copied');
+          setTimeout(function () {
+            shareBtn.classList.remove('copied');
+            shareBtn.innerHTML = '🔗 ' + esc(L('modal_copy_link'));
+          }, 1400);
+        });
+      });
+      var cookBtn = modal.querySelector('.rm-cook-btn');
+      if (cookBtn) {
+        cookBtn.addEventListener('click', function () {
+          CookMode.open({ title: titleFor(r), ingredients: r.ingredients, steps: r.steps }, 'ko');
+        });
+      }
+    }
+
+    document.getElementById('rmClose').addEventListener('click', closePreviewModal);
+    var prevBtn = document.getElementById('rmPrev');
+    var nextBtn = document.getElementById('rmNext');
+    if (prevRec) prevBtn.addEventListener('click', function () { openPreviewModal(prevRec); });
+    if (nextRec) nextBtn.addEventListener('click', function () { openPreviewModal(nextRec); });
+    Array.prototype.forEach.call(modal.querySelectorAll('.rm-sibling-btn'), function (btn) {
+      btn.addEventListener('click', function () {
+        var i = Number(btn.getAttribute('data-idx'));
+        if (i === siblingIdx) return;
+        openPreviewModal(siblings[i]);
+      });
+    });
+
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePreviewModal() {
+    document.getElementById('rmOverlay').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  document.getElementById('rmOverlay').addEventListener('click', function (e) {
+    if (e.target === this) closePreviewModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closePreviewModal();
+  });
+})();
+</script>
+</body>
+</html>
