@@ -38085,7 +38085,7 @@
   "weather": "19도/비",
   "failed": false,
   "calories": null,
-  "title": "프리타타 계란 시금치",
+  "title": "시금치 계란 프리타타",
   "credit": null,
   "hashtags": [
    "계란",
@@ -38097,8 +38097,8 @@
    "프리타타"
   ],
   "intro": "20230926, #조식다이어리 856, 19도/비\n형식이 내용을 규정한다. 양이 많지 않아 사각팬으로 바꿨더니 식빵 같은 프리타타가 됐다. \n달군 팬에 올리브오일, 양파, 시금치를 넣고 볶는다.\n계란 3개 풀어서 우유 조금, 소금, 후추 넣고 섞어서 팬에 붓는다. 방울토마토와 부라타치즈를 찢어 넣는다. \n대충 익은 걸 확인하고 접시를 덮어 (영차,) 뒤집는다. 팬에 올리브오일 두르고 반대편을 굽는다. \n다시 뒤집어 접시에 놓는다. \n무릇 #프리타타 는 이 정도로 찐하게 익혀야 제맛이다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 양파 1/4개\n- 시금치 3~4뿌리\n- 방울토마토 5개\n- 부라타치즈 1개\n- 계란 3개\n- 우유 2T\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 팬에 올리브오일 두른 후 길게 썬 양파 볶다가 양파가 투명해지면 시금치 넣고 살짝 볶는다. \n2. 계란 3개 풀어서 우유, 소금, 후추 넣고 섞어서 1의 팬에 붓는다. \n3. 방울토마토는 반으로 썰고 부라타치즈를 찢어서 팬에 넣는다. \n4. 적당히 익으면 팬 위에 접시를 얹고 뒤집어 프리타타를 덜어낸 후 팬에 올리브오일 조금 두르고 프리타타를 담아 반대편을 익힌다. ",
   "raw": "20230926, #조식다이어리 856, 19도/비\n\n형식이 내용을 규정한다. 양이 많지 않아 사각팬으로 바꿨더니 식빵 같은 프리타타가 됐다. \n\n달군 팬에 올리브오일, 양파, 시금치를 넣고 볶는다.\n계란 3개 풀어서 우유 조금, 소금, 후추 넣고 섞어서 팬에 붓는다. 방울토마토와 부라타치즈를 찢어 넣는다. \n대충 익은 걸 확인하고 접시를 덮어 (영차,) 뒤집는다. 팬에 올리브오일 두르고 반대편을 굽는다. \n다시 뒤집어 접시에 놓는다. \n\n무릇 #프리타타 는 이 정도로 찐하게 익혀야 제맛이다. \n\n#조식 #레시피 #미라클모닝 #계란 #시금치",
   "image": "https://images.how-about-breakfast.com/images/856.jpg",
   "gallery": [
@@ -38107,13 +38107,6 @@
    "https://images.how-about-breakfast.com/images/856_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/856.mp4",
-  "_en": {
-   "hash": "2dc47dee294c4cb03cc3354ba3ef5a37b79759c13aaecf40ab7b83f92c869a96",
-   "title": "Egg and Spinach Frittata",
-   "intro": "20230926 #breakfastdiary 856, 19°C/rainy\nForm dictates content. Since the portion wasn't much, I switched to a square pan, and it turned out looking like a loaf of bread — a frittata in disguise.\nIn a heated pan, sauté olive oil, onion, and spinach.\nBeat 3 eggs with a little milk, salt, and pepper, mix, and pour into the pan. Tear in cherry tomatoes and burrata cheese.\nOnce it looks roughly cooked, cover with a plate and (heave-ho) flip it over. Drizzle olive oil in the pan and cook the other side.\nFlip it back onto a plate.\nA #frittata really only tastes right when it's cooked this thoroughly.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "프리타타-계란-시금치"
  },
  {
