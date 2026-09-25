@@ -28,15 +28,16 @@
   ];
 
   var OTD_EMPTY_BANGS = ['앗!', '엇!', '이런!'];
-  var OTD_EMPTY_SUBS = ['조식이 없네요', '조식을 못 먹었어요', '조식을 건너 뛰었죠', '별일이 있었나봐요'];
+  var OTD_EMPTY_SUBS = ['조식이 없네요', '조식을 못 먹었어요', '조식을 건너 뛰었죠'];
 
   // Randomly recombines the On-This-Day empty-year row's copy each render
   // so a list with several empty years doesn't repeat the same line.
+  // "별일이 있었나봐요" always closes the line so the row still reads as a link worth clicking.
   // English mode keeps the plain static i18n strings instead of randomizing.
   function randomOtdEmptyMessage() {
     var bang = OTD_EMPTY_BANGS[Math.floor(Math.random() * OTD_EMPTY_BANGS.length)];
     var sub = OTD_EMPTY_SUBS[Math.floor(Math.random() * OTD_EMPTY_SUBS.length)];
-    return bang + ' ' + sub;
+    return bang + ' ' + sub + ', 별일이 있었나봐요';
   }
 
   var allData = null;
