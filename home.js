@@ -27,6 +27,18 @@
     '가지, 오늘 주인공 해볼까?'
   ];
 
+  var OTD_EMPTY_BANGS = ['앗!', '엇!', '이런!'];
+  var OTD_EMPTY_SUBS = ['조식이 없네요', '조식을 못 먹었어요', '조식을 건너 뛰었죠', '별일이 있었나봐요'];
+
+  // Randomly recombines the On-This-Day empty-year row's copy each render
+  // so a list with several empty years doesn't repeat the same line.
+  // English mode keeps the plain static i18n strings instead of randomizing.
+  function randomOtdEmptyMessage() {
+    var bang = OTD_EMPTY_BANGS[Math.floor(Math.random() * OTD_EMPTY_BANGS.length)];
+    var sub = OTD_EMPTY_SUBS[Math.floor(Math.random() * OTD_EMPTY_SUBS.length)];
+    return bang + ' ' + sub;
+  }
+
   var allData = null;
   var selectedYear = null; // 히트맵 연도 탭 필터 상태 (데스크톱)
   var calendarMonth = null; // 모바일 월별 캘린더 커서 (Date, day=1)
@@ -274,8 +286,10 @@
       var r = otd.byYear[y];
       var yearLabel = lang === 'en' ? y : (y + '년');
       if (!r) {
-        return '<div class="home-otd-row otd-empty-row"><span class="home-otd-year">' + Shared.escapeHtml(y.slice(2)) + '</span>' +
-          '<span class="home-otd-title">' + (lang === 'en' ? 'No breakfast that day' : '조식이 없었어요') + '</span></div>';
+        var emptyMsg = lang === 'en' ? (I18N.t('otd_empty_bang') + ' ' + I18N.t('otd_empty_sub')) : randomOtdEmptyMessage();
+        return '<a class="home-otd-row otd-empty-row" href="https://brunch.co.kr/@howaboutbfast/4" target="_blank" rel="noopener noreferrer">' +
+          '<span class="home-otd-year">' + Shared.escapeHtml(yearLabel) + '</span>' +
+          '<span class="home-otd-title">' + Shared.escapeHtml(emptyMsg) + '</span></a>';
       }
       var isCover = y === heroYear;
       var koTitle = r.title || I18N.t('untitled_fallback');
