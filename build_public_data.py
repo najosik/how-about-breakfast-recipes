@@ -67,7 +67,7 @@ def load_medal_winners():
 # share button). Free-text recipe content itself comes from r['_en'].
 LABELS = {
     'ko': {
-        'site_name': '날마다, 조식',
+        'site_name': '날마다 조식',
         'title_suffix': '날마다 조식',
         'archive_back': '아카이브',
         'hall': '명예의 전당', 'brunch': '브런치북',

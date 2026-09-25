@@ -50,7 +50,7 @@ a{color:var(--teal-deep);}
   padding:6px 14px; font-size:12.5px; font-weight:600; color:var(--ink-soft); text-decoration:none;
   background:var(--paper-raised); transition:border-color .12s, color .12s;
 }
-.channel-links a:hover{border-color:var(--teal); color:var(--teal-deep);}
+.channel-links a:hover{border-color:var(--green); color:var(--green-dark);}
 .channel-toggle{display:none;}
 /* Under ~640px, .channel-links collapses behind a hamburger button
    (#channelToggle) into a popover - shared.js wires the open/close.
@@ -125,7 +125,7 @@ p.subtitle{margin:0; color:var(--ink-soft); font-size:15px; max-width:560px;}
 .site-header-nav a{color:var(--ink); text-decoration:none;}
 .site-header-nav a:hover{color:var(--green-dark); text-decoration:underline;}
 .site-header-nav a[aria-current="page"]{font-weight:700; text-decoration:underline; text-decoration-color:var(--green); text-decoration-thickness:3px; text-underline-offset:8px;}
-.page-footer{padding:24px 0 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
+.page-footer{max-width:1080px; margin:0 auto; padding:24px 20px 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
 .page-footer-links{display:flex; gap:18px;}
 .page-footer-links a{color:var(--text-2); text-decoration:none;}
 .page-footer-links a:hover{text-decoration:underline;}
@@ -463,7 +463,7 @@ button.loadmore:hover{border-color:var(--teal); color:var(--teal);}
 .modal-sibling-btn:hover{border-color:var(--green); color:var(--green-dark);}
 .modal-sibling-btn.active{background:var(--green); border-color:var(--green); color:#fff; cursor:default;}
 
-.modal-hero{display:grid; grid-template-columns:300px 1fr;}
+.modal-hero{display:grid; grid-template-columns:300px 1fr; padding-left:20px;}
 .modal-hero-media{background:var(--mint-skip); position:relative;}
 
 .modal-hero-info{padding:22px 26px; display:flex; flex-direction:column; gap:12px;}
@@ -511,7 +511,7 @@ button.loadmore:hover{border-color:var(--teal); color:var(--teal);}
 .modal-view-full:hover{text-decoration:underline;}
 
 @media (max-width:640px){
-  .modal-hero{grid-template-columns:1fr;}
+  .modal-hero{grid-template-columns:1fr; padding-left:14px;}
   .modal-cook-grid{grid-template-columns:1fr;}
   .modal-cook-col:first-child{border-right:0; border-bottom:1px solid var(--rule);}
   .modal-topbar{padding:12px 52px 12px 14px;}

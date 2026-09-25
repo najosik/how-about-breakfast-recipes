@@ -232,28 +232,39 @@
     var heroYear = pickHero(otd);
     var hero = heroYear ? otd.byYear[heroYear] : null;
 
-    if (hero) {
+    // Renders a single record into the cover-story panel - used both for
+    // the initial auto-picked hero and (see the otd-row click handler
+    // below) for whichever "해마다 오늘의 조식" row was last clicked, so
+    // browsing that list reuses the same big editorial treatment instead
+    // of a popup.
+    function mountCover(record, year, isPriority) {
       var dd = String(otd.dd);
       var monthNames = lang === 'en'
         ? ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
         : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
-      var mLabel = monthNames[parseInt(hero.date.slice(5, 7), 10) - 1];
-      var koTitle = hero.title || I18N.t('untitled_fallback');
-      var heroTitleHtml = Shared.hasStaticEn(hero, 'title')
-        ? Shared.escapeHtml(Shared.localizedText(hero, 'title'))
+      var mLabel = monthNames[parseInt(record.date.slice(5, 7), 10) - 1];
+      var koTitle = record.title || I18N.t('untitled_fallback');
+      var titleHtml = Shared.hasStaticEn(record, 'title')
+        ? Shared.escapeHtml(Shared.localizedText(record, 'title'))
         : '<span class="i18n-dyn" data-ko="' + Shared.escapeHtml(koTitle) + '">' + Shared.escapeHtml(koTitle) + '</span>';
       coverCol.innerHTML =
-        '<div class="home-cover-photo">' + Shared.thumbHTML(hero, 32) +
+        '<div class="home-cover-photo">' + Shared.thumbHTML(record, 32) +
         '<div class="home-cover-stamp"><span class="num">' + Shared.escapeHtml(dd) + '</span>' +
         '<span class="label">' + Shared.escapeHtml(mLabel) + '<br>ON THIS DAY</span></div></div>' +
         '<div class="home-cover-body">' +
-        '<span class="home-cover-eyebrow">' + Shared.escapeHtml(heroYear) + (lang === 'en' ? ' · Cover story' : ' · 커버 스토리') + '</span>' +
-        '<h2 class="home-cover-title">' + heroTitleHtml + '</h2>' +
-        '<a class="home-cover-link" href="' + Shared.escapeHtml(Shared.recipeUrl(hero)) + '">' + (lang === 'en' ? 'View recipe →' : '레시피 보기 →') + '</a>' +
+        '<span class="home-cover-eyebrow">' + Shared.escapeHtml(year) + (lang === 'en' ? ' · Cover story' : ' · 커버 스토리') + '</span>' +
+        '<h2 class="home-cover-title">' + titleHtml + '</h2>' +
+        '<a class="home-cover-link" href="' + Shared.escapeHtml(Shared.recipeUrl(record)) + '">' + (lang === 'en' ? 'View recipe →' : '레시피 보기 →') + '</a>' +
         '</div>';
-      var photoImg = coverCol.querySelector('.home-cover-photo img');
-      if (photoImg) photoImg.setAttribute('fetchpriority', 'high');
+      if (isPriority) {
+        var photoImg = coverCol.querySelector('.home-cover-photo img');
+        if (photoImg) photoImg.setAttribute('fetchpriority', 'high');
+      }
       I18N.applyDynamicTranslations(coverCol);
+    }
+
+    if (hero) {
+      mountCover(hero, heroYear, true);
     } else {
       coverCol.innerHTML = '';
     }
@@ -293,12 +304,15 @@
       el.addEventListener('click', function (e) {
         if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault();
-        Shared.openModal(otd.byYear[y], { siblingsByDate: siblingsByDate });
+        mountCover(otd.byYear[y], y);
+        Array.prototype.forEach.call(listCol.querySelectorAll('.home-otd-row'), function (row) {
+          row.classList.toggle('is-cover', row === el);
+        });
       });
     });
   }
 
-  function renderLedger(all, siblingsByDate) {
+  function renderLedger(all, siblingsByDate, scrollMode) {
     var lang = I18N.getLang();
     var postedDates = new Set();
     var failedDates = new Set();
@@ -364,7 +378,7 @@
     Array.prototype.forEach.call(tabsEl.querySelectorAll('button'), function (btn) {
       btn.addEventListener('click', function () {
         selectedYear = btn.getAttribute('data-year');
-        renderLedger(all, siblingsByDate);
+        renderLedger(all, siblingsByDate, 'year');
       });
     });
 
@@ -409,6 +423,15 @@
     weeks.forEach(function (w) {
       var col = document.createElement('div');
       col.className = 'home-ledger-col';
+      // First real (non-pad) day in the week decides which year tab this
+      // column belongs to, for the scroll-to-year jump below - a week
+      // straddling New Year's Eve only needs one answer, not a perfectly
+      // accurate one.
+      var colYear = null;
+      for (var wi = 0; wi < w.length; wi++) {
+        if (w[wi].year != null) { colYear = w[wi].year; break; }
+      }
+      if (colYear != null) col.setAttribute('data-year', colYear);
       w.forEach(function (day) {
         var n = day.key ? (postCounts[day.key] || 0) : 0;
         // Only an actual post is a real control - a real <button> gets
@@ -472,7 +495,16 @@
       : (selectedYear + '년 ' + totalInYear + '일 가운데 ' + postedInYear + '일, 아침을 만들었습니다.');
 
     var scrollWrap = document.querySelector('.home-ledger-scroll');
-    if (scrollWrap) requestAnimationFrame(function () { scrollWrap.scrollLeft = scrollWrap.scrollWidth; });
+    if (scrollWrap) {
+      requestAnimationFrame(function () {
+        if (scrollMode === 'year') {
+          var targetCol = gridEl.querySelector('.home-ledger-col[data-year="' + selectedYear + '"]');
+          scrollWrap.scrollLeft = targetCol ? Math.max(0, targetCol.offsetLeft - 20) : scrollWrap.scrollWidth;
+        } else {
+          scrollWrap.scrollLeft = scrollWrap.scrollWidth;
+        }
+      });
+    }
   }
 
   // Mobile-only month calendar (docs/Handoff/B-Mobile.dc.html) - shows one
