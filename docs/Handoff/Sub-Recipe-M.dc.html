@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>레시피 상세 — 모바일</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,800;1,9..144,400&amp;display=swap">
+<style>
+body{margin:0;background:#FBFBF8}
+a{color:#3F5E47}a:hover{color:#2C4533}
+</style>
+</helmet>
+<div style="width: 390px; height: 2140px; box-sizing: border-box; background: #FBFBF8; color: #1C1C1A; font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; display: flex; flex-direction: column; position: relative">
+
+<header style="margin: 0 20px; height: 56px; border-bottom: 3px solid #1C1C1A; display: flex; align-items: center; justify-content: space-between">
+<a href="Sub-Archive-M.dc.html" aria-label="아카이브로 돌아가기" style="width: 44px; height: 44px; margin-left: -12px; display: flex; align-items: center; justify-content: center; color: #1C1C1A"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 5l-7 7 7 7"></path></svg></a>
+<a href="B-Mobile.dc.html" style="font-family: 'Noto Serif KR', serif; font-size: 20px; font-weight: 900; letter-spacing: -0.04em; color: #1C1C1A; text-decoration: none">날마다, 조식</a>
+<button aria-label="공유" style="width: 44px; height: 44px; margin-right: -12px; border: 0; background: transparent; color: #1C1C1A; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12M7 8l5-5 5 5M5 13v7h14v-7"></path></svg></button>
+</header>
+
+<img src="/_blob/c1f0061bd6d287c5c36a16149380fe45" alt="하몽 아스파라거스 플레이트" style="display: block; width: 390px; height: 340px; object-fit: cover">
+
+<section style="padding: 20px 20px 28px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; font-family: 'Fraunces', serif; font-size: 13px; color: #4A4943"><span>No. [0000]</span><span>SUN, SEP 25, 2022</span></div>
+<h1 style="margin: 0; font-family: 'Noto Serif KR', serif; font-size: 30px; font-weight: 900; line-height: 1.25">하몽 아스파라거스 플레이트</h1>
+<p style="margin: 0; font-family: 'Noto Serif KR', serif; font-size: 16px; line-height: 1.7; color: #3A3934">[그날의 한 줄 소개]</p>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid #1C1C1A; border-bottom: 1px solid #1C1C1A">
+<div style="padding: 14px 0; display: flex; flex-direction: column; gap: 2px; border-right: 1px solid #D9D8D2"><span style="font-size: 12px; color: #4A4943">1인분</span><span style="font-family: 'Fraunces', serif; font-size: 30px; font-weight: 800; color: #55795E">[000]<span style="font-size: 14px; font-weight: 400; color: #4A4943"> kcal</span></span></div>
+<div style="padding: 14px 0 14px 16px; display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; color: #4A4943">분량</span><span style="font-family: 'Fraunces', serif; font-size: 30px; font-weight: 800">2<span style="font-size: 14px; font-weight: 400; color: #4A4943"> 인분</span></span></div>
+</div>
+<div style="display: flex; height: 10px"><span style="width: 58%; background: #55795E"></span><span style="width: 18%; background: #A8BDA9"></span><span style="width: 24%; background: #1C1C1A"></span></div>
+<div style="display: flex; gap: 14px; font-size: 12px; color: #3A3934"><span>탄 [00]%</span><span>단 [00]%</span><span>지 [00]%</span></div>
+</section>
+
+<section style="margin: 0 20px; padding: 24px 0; border-top: 3px solid #1C1C1A; display: flex; flex-direction: column; gap: 8px">
+<div style="display: flex; align-items: baseline; justify-content: space-between"><h2 style="margin: 0; font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 900">재료</h2><span style="font-size: 12px; color: #4A4943">2인분</span></div>
+<ul style="margin: 0; padding: 0; list-style: none">
+<sc-for list="{{ings}}" as="i" hint-placeholder-count="6">
+<li style="min-height: 48px; display: flex; align-items: center; border-bottom: 1px solid #D9D8D2">
+<label style="flex-grow: 1; display: flex; align-items: center; gap: 12px; font-size: 16px"><input type="checkbox" style="width: 20px; height: 20px; accent-color: #55795E">{{i.name}}</label>
+<span style="font-family: 'Fraunces', serif; font-size: 14px; color: #4A4943">{{i.amt}}</span>
+</li>
+</sc-for>
+</ul>
+</section>
+
+<section style="margin: 0 20px; padding: 24px 0 32px; border-top: 3px solid #1C1C1A; display: flex; flex-direction: column; gap: 4px">
+<h2 style="margin: 0 0 4px; font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 900">조리</h2>
+<ol style="margin: 0; padding: 0; list-style: none">
+<sc-for list="{{steps}}" as="s" hint-placeholder-count="4">
+<li style="padding: 18px 0; display: flex; gap: 16px; border-bottom: 1px solid #D9D8D2">
+<span style="width: 36px; flex-shrink: 0; font-family: 'Fraunces', serif; font-size: 30px; font-weight: 800; line-height: 0.9; color: #55795E">{{s.n}}</span>
+<p style="margin: 0; font-family: 'Noto Serif KR', serif; font-size: 16px; line-height: 1.75">{{s.text}}</p>
+</li>
+</sc-for>
+</ol>
+</section>
+
+<nav aria-label="이전·다음 기록" style="margin: 0 20px 32px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid #1C1C1A; border-bottom: 1px solid #1C1C1A">
+<a href="#" style="min-height: 88px; padding: 14px 12px 14px 0; display: flex; flex-direction: column; justify-content: center; gap: 4px; text-decoration: none; color: #1C1C1A; border-right: 1px solid #1C1C1A">
+<span style="font-size: 12px; color: #4A4943">← 09.24</span>
+<span style="font-family: 'Noto Serif KR', serif; font-size: 15px; font-weight: 700">[전날 메뉴명]</span>
+</a>
+<a href="#" style="min-height: 88px; padding: 14px 0 14px 12px; display: flex; flex-direction: column; justify-content: center; align-items: flex-end; gap: 4px; text-decoration: none; color: #1C1C1A">
+<span style="font-size: 12px; color: #4A4943">09.26 →</span>
+<span style="font-family: 'Noto Serif KR', serif; font-size: 15px; font-weight: 700">[다음날 메뉴명]</span>
+</a>
+</nav>
+
+<footer style="margin: auto 20px 0; padding: 20px 0 100px; border-top: 3px solid #1C1C1A; font-size: 13px; color: #4A4943">© how.about.breakfast 2020–2026</footer>
+
+<div style="position: absolute; left: 0; right: 0; bottom: 0; height: 76px; padding: 0 20px; box-sizing: border-box; background: #FBFBF8; border-top: 1px solid #1C1C1A; display: flex; align-items: center; gap: 10px">
+<a href="#" style="flex-grow: 1; height: 50px; background: #55795E; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; text-decoration: none">재료로 이동</a>
+<a href="https://www.instagram.com/how.about.breakfast/" style="height: 50px; padding: 0 16px; border: 1px solid #1C1C1A; display: flex; align-items: center; font-size: 14px; color: #1C1C1A; text-decoration: none">원문 ↗</a>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":2140}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      ings: [
+        { name: '하몽', amt: '[분량]' }, { name: '아스파라거스', amt: '[분량]' }, { name: '브로콜리', amt: '[분량]' },
+        { name: '당근', amt: '[분량]' }, { name: '[재료]', amt: '[분량]' }, { name: '[재료]', amt: '[분량]' }
+      ],
+      steps: [1, 2, 3, 4].map(function (n) { return { n: '0' + n, text: '[조리 단계 ' + n + ']' }; })
+    };
+  }
+}
+</script>
+</body>
+</html>

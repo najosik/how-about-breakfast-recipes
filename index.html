@@ -41,14 +41,19 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2329784289008303" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Nanum Myeongjo는 공유 모달(shared.js)이 이 페이지에서도 그대로 쓰므로 유지하고,
+     리뉴얼 제호/숫자 서체(Noto Serif KR/Fraunces)를 추가로 불러온다. -->
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
 
   <div class="lang-bar">
-    <div class="channel-links">
+    <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <div class="channel-links" id="channelLinks">
       <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
       <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
       <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
@@ -59,114 +64,107 @@
     </div>
   </div>
 
-  <header class="masthead">
+  <header class="home-masthead">
+    <h1 class="home-logo"><a href="./">날마다, 조식</a></h1>
+    <div class="home-kicker">
+      <span class="home-kicker-en">daily breakfast journal</span>
+      <span><span id="kickerVol">Vol. —</span> · <span id="kickerDate">—</span></span>
+      <span class="home-kicker-total" id="kickerTotal"></span>
+    </div>
     <form class="home-search" id="homeSearchForm" role="search">
-      <div class="search-box">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input id="homeSearchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)">
-      </div>
-      <button type="submit" class="btn-primary home-search-btn" data-i18n="home_search_btn">검색</button>
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+      <label for="homeSearchInput" class="home-search-label" data-i18n="home_search_prompt">무엇이 남았나요?</label>
+      <input id="homeSearchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)">
+      <button type="submit" class="home-search-btn" data-i18n="home_search_btn">검색</button>
     </form>
-    <p class="eyebrow">daily breakfast journal</p>
-    <div class="kicker">
-      <span id="kickerVol">Vol. —</span>
-      <span id="kickerSince">—</span>
-    </div>
-    <h1 data-i18n="home_title">날마다 조식(Beta)</h1>
-    <p class="tagline" data-i18n="home_tagline">2020년 7월 13일부터 매일 어제와 다른 조식을 만들어 먹고 기록한 아카이브입니다.</p>
-    <button type="button" class="beta-more-toggle" id="betaMoreToggle" data-i18n="home_beta_more" aria-expanded="false">더보기</button>
-    <div class="beta-details hidden" id="betaCaveat">
-      <p class="beta-note" data-i18n="home_beta_note">안녕하세요? 나조식입니다. 인스타그램(@how.about.breakfast)의 게시물을 웹에서 손쉽게 찾아볼 수 있도록 아카이빙 했습니다. 재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 좋은 생각이 떠오르지 않을 때, 이도저도 아니면 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때 이용해 주시면 좋겠습니다.</p>
-      <p class="beta-note" data-i18n="home_beta_caveat">주의! 20년~22년 게시물 가운데 일부분은 개인의 생각과 레시피 사이에서 왔다갔다, 들쭉날쭉합니다. 천천히 다듬어 보겠습니다. (사실 그래서 Beta인데, Beta를 언제 뗄 수 있을지는 모르겠습니다.)</p>
-    </div>
-    <div class="streak" id="streakText"><b>—</b></div>
   </header>
 
 </div>
 
-<section class="otd-full-bleed" id="otdSection">
-  <div class="otd-inner">
-    <div class="section-head">
+<section class="home-cover-grid" id="coverSection" aria-label="커버 스토리와 해마다 오늘의 조식">
+  <div class="home-cover" id="coverCol"></div>
+  <div class="home-otdlist" id="otdListCol"></div>
+</section>
+
+<section class="home-editor">
+  <span class="home-editor-label">EDITOR&rsquo;S NOTE</span>
+  <div class="home-editor-body">
+    <p class="home-editor-quote" data-i18n="home_editor_quote">&ldquo;재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 떠오르지 않을 때, 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때.&rdquo;</p>
+    <div class="home-editor-actions">
+      <span class="home-editor-byline">— 나조식</span>
+      <button type="button" class="home-editor-toggle" id="betaMoreToggle" data-i18n="home_beta_more" aria-expanded="false">더보기</button>
+    </div>
+    <div class="home-editor-more hidden" id="betaCaveat">
+      <p data-i18n="home_beta_note">안녕하세요? 나조식입니다. 인스타그램(@how.about.breakfast)의 게시물을 웹에서 손쉽게 찾아볼 수 있도록 아카이빙 했습니다. 재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 좋은 생각이 떠오르지 않을 때, 이도저도 아니면 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때 이용해 주시면 좋겠습니다.</p>
+      <p data-i18n="home_beta_caveat">주의! 20년~22년 게시물 가운데 일부분은 개인의 생각과 레시피 사이에서 왔다갔다, 들쭉날쭉합니다. 천천히 다듬어 보겠습니다. (사실 그래서 Beta인데, Beta를 언제 뗄 수 있을지는 모르겠습니다.)</p>
+    </div>
+  </div>
+</section>
+
+<section class="home-ledger" id="ledgerSection">
+  <div class="home-ledger-head">
+    <div class="home-ledger-stat">
+      <span class="home-ledger-pct" id="ledgerPct">—%</span>
       <div>
-        <p class="label">On this day</p>
-        <h2><span id="otdDatePrefix"></span><span data-i18n="otd_title">오늘의 조식들</span></h2>
-        <p class="desc" data-i18n="otd_desc">해마다 오늘 만들었던 조식을 모아봤어요.</p>
+        <h2 data-i18n="ledger_title">한눈에 보는 조식 아카이브</h2>
+        <span class="home-ledger-sub" id="ledgerSub">—</span>
       </div>
     </div>
-    <div class="otd-row" id="otdRow"></div>
+    <div class="home-year-tabs" id="yearTabs"></div>
+  </div>
+  <div class="home-ledger-scroll">
+    <div class="home-month-labels" id="monthLabels"></div>
+    <div class="home-ledger-body">
+      <div class="home-weekday-labels"><span></span><span>월</span><span></span><span>수</span><span></span><span>금</span><span></span></div>
+      <div class="home-ledger-grid" id="ledgerGrid"></div>
+    </div>
+  </div>
+  <div class="home-calendar" id="homeCalendar">
+    <div class="home-calendar-nav">
+      <button type="button" id="calPrev" aria-label="이전 달">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <span class="home-calendar-label" id="calLabel">—</span>
+      <button type="button" id="calNext" aria-label="다음 달">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+    <div class="home-calendar-weekdays" id="calWeekdays"></div>
+    <div class="home-calendar-grid" id="calGrid"></div>
+  </div>
+  <div class="home-ledger-legend">
+    <span><i style="background:var(--green)"></i><span data-i18n="legend_posted">조식</span></span>
+    <span><i style="background:var(--mint-skip)"></i><span data-i18n="legend_skipped">건너뜀</span></span>
+    <span><i style="background:var(--green-deep)"></i><span data-i18n="legend_multi">하루 여러 편</span></span>
+    <span><i class="home-swatch-today"></i><span data-i18n="legend_today">오늘</span></span>
   </div>
 </section>
 
 <div class="wrap">
 
-  <section class="mag-section">
-    <div class="section-head">
-      <div>
-        <p class="label">Consistency</p>
-        <h2 data-i18n="ledger_title">한눈에 보는 조식 아카이브</h2>
-        <p class="desc" data-i18n="ledger_desc">칸 하나가 하루예요. 진한 초록은 조식을 만든 날, 빈 칸은 별일이 있어서 조식을 건너뛴 날입니다.</p>
-      </div>
-    </div>
-    <div class="ledger" id="ledgerWrap">
-      <div class="ledger-months" id="ledgerYearLabels" style="display:flex;"></div>
-      <div class="ledger-grid" id="ledgerGrid"></div>
-      <div class="ledger-legend">
-        <span><span class="sw" style="background:var(--teal)"></span><span data-i18n="legend_posted">기록함</span></span>
-        <span><span class="sw" style="background:rgba(43,42,37,0.07)"></span><span data-i18n="legend_skipped">건너뜀</span></span>
-      </div>
-    </div>
-  </section>
-
-  <section class="mag-section">
-    <div class="section-head">
-      <div>
-        <p class="label">Collections</p>
+  <section class="home-bottom-grid">
+    <div class="home-tags">
+      <div class="home-tags-head">
         <h2 data-i18n="col_title">소재로 골라 먹기</h2>
-        <p class="desc" data-i18n="col_desc">가장 자주 등장한 재료들로 모은 테마별 아카이브예요.</p>
+        <a href="archive.html" data-i18n="col_more">전체 검색으로 보기 →</a>
       </div>
-      <a class="more-link" href="archive.html" data-i18n="col_more">전체 검색으로 보기 →</a>
+      <div class="home-tags-list" id="tagsList"></div>
     </div>
-    <div class="collection-grid" id="collectionGrid"></div>
-  </section>
-
-  <section class="mag-section">
-    <div class="section-head">
-      <div>
-        <p class="label">Surprise me</p>
-        <h2 data-i18n="shuffle_title">오늘 뭐 먹지?</h2>
-      </div>
-    </div>
-    <div class="shuffle-box">
-      <p data-i18n="shuffle_desc">2,109개가 넘는 기록 중에서 랜덤으로 꺼내먹어요.</p>
-      <button class="btn-primary" id="shuffleBtn" data-i18n="shuffle_btn">랜덤으로 꺼내 먹기</button>
-      <div class="shuffle-result hidden" id="shuffleResult"></div>
-    </div>
-  </section>
-
-  <section class="mag-section">
-    <div class="cta-archive">
-      <div>
-        <h3 data-i18n="cta_title">전체 아카이브 검색하기</h3>
-        <p data-i18n="cta_desc">재료, 칼로리, 키워드로 2,109개의 기록을 직접 뒤져보세요.</p>
-      </div>
-      <a class="btn-primary" href="archive.html" data-i18n="cta_btn">아카이브 열기 →</a>
-    </div>
+    <button type="button" class="home-cta" id="shuffleCta">
+      <span class="home-cta-eyebrow">SURPRISE ME</span>
+      <span class="home-cta-title" data-i18n="shuffle_title">오늘 뭐 먹지?</span>
+      <span class="home-cta-desc" id="shuffleDesc">—</span>
+      <span class="home-cta-btn" data-i18n="shuffle_btn">랜덤으로 꺼내 먹기</span>
+    </button>
   </section>
 
 </div>
 
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <div class="site-footer-social">
-      <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="site-footer-links"><a href="vote.html" data-i18n="footer_vote">명예의 전당</a> · <a href="privacy.html" data-i18n="footer_privacy">개인정보처리방침</a></div>
-    <div class="site-footer-bottom" data-i18n="footer_copyright">© how.about.breakfast 2020-2026. All rights reserved.</div>
+<footer class="home-footer">
+  <span data-i18n="footer_copyright">© how.about.breakfast 2020-2026. All rights reserved.</span>
+  <div class="home-footer-links">
+    <a href="vote.html" data-i18n="footer_vote">명예의 전당</a>
+    <a href="privacy.html" data-i18n="footer_privacy">개인정보처리방침</a>
   </div>
 </footer>
 

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>개인정보처리방침 — 데스크톱</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,800;1,9..144,400&amp;display=swap">
+<style>
+body{margin:0;background:#FBFBF8}
+a{color:#3F5E47}a:hover{color:#2C4533}
+</style>
+</helmet>
+<div style="width: 1440px; height: 2700px; box-sizing: border-box; background: #FBFBF8; color: #1C1C1A; font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; display: flex; flex-direction: column">
+
+<header style="margin: 0 64px; height: 88px; border-bottom: 3px solid #1C1C1A; display: flex; align-items: center; justify-content: space-between">
+<a href="B-Desktop.dc.html" style="font-family: 'Noto Serif KR', serif; font-size: 38px; font-weight: 900; letter-spacing: -0.04em; color: #1C1C1A; text-decoration: none">날마다, 조식</a>
+<nav style="display: flex; align-items: center; gap: 28px; font-size: 15px">
+<a href="Sub-Archive-D.dc.html" style="color: #1C1C1A; text-decoration: none">아카이브</a>
+<a href="Sub-Hall-D.dc.html" style="color: #1C1C1A; text-decoration: none">명예의 전당</a>
+<a href="#" style="color: #1C1C1A; text-decoration: none">브런치북</a>
+</nav>
+</header>
+
+<section style="padding: 56px 64px 40px; display: flex; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; letter-spacing: 0.14em; font-weight: 700; color: #3F5E47">PRIVACY POLICY</span>
+<h1 style="margin: 0; font-family: 'Noto Serif KR', serif; font-size: 56px; font-weight: 900; letter-spacing: -0.02em">개인정보처리방침</h1>
+</div>
+<div style="display: flex; align-items: center; gap: 16px; font-size: 14px; color: #4A4943">
+<span>시행일 [YYYY.MM.DD]</span>
+<label for="ver" style="position: absolute; width: 1px; height: 1px; overflow: hidden">이전 버전 보기</label>
+<select id="ver" style="height: 44px; padding: 0 12px; border: 1px solid #1C1C1A; background: #FBFBF8; font: inherit; font-size: 14px"><option>현재 버전</option><option>이전 버전 [YYYY.MM.DD]</option></select>
+</div>
+</section>
+
+<section style="margin: 0 64px; padding: 28px 0 40px; border-top: 3px solid #1C1C1A; display: flex; flex-direction: column; gap: 18px">
+<h2 style="margin: 0; font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 900">한눈에 보기</h2>
+<div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px">
+<sc-for list="{{labels}}" as="l" hint-placeholder-count="4">
+<div style="padding: 22px; background: #EBF1EA; display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: 'Fraunces', serif; font-size: 13px; color: #3F5E47; font-weight: 800">{{l.k}}</span>
+<span style="font-family: 'Noto Serif KR', serif; font-size: 18px; font-weight: 700; line-height: 1.45">{{l.t}}</span>
+<span style="font-size: 14px; line-height: 1.6; color: #3A3934">{{l.d}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<section style="margin: 0 64px; padding: 40px 0 72px; border-top: 1px solid #1C1C1A; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 48px">
+<nav aria-label="목차" style="grid-column: span 3; align-self: flex-start; display: flex; flex-direction: column">
+<span style="padding-bottom: 12px; font-size: 13px; letter-spacing: 0.14em; font-weight: 700; color: #3F5E47; border-bottom: 1px solid #1C1C1A">목차</span>
+<sc-for list="{{secs}}" as="s" hint-placeholder-count="13">
+<a href="#{{s.id}}" style="min-height: 44px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #E4E3DE; font-size: 14px; color: {{s.fg}}; font-weight: {{s.fw}}; text-decoration: none">
+<span style="width: 22px; font-family: 'Fraunces', serif; color: #6B695F">{{s.n}}</span>{{s.title}}</a>
+</sc-for>
+</nav>
+<article style="grid-column: span 9; display: flex; flex-direction: column; gap: 8px; max-width: 820px">
+<p style="margin: 0 0 24px; font-family: 'Noto Serif KR', serif; font-size: 19px; line-height: 1.8">‘날마다, 조식’(이하 ‘사이트’)은 「개인정보 보호법」 제30조에 따라 정보주체의 개인정보를 보호하고 관련 고충을 신속하게 처리하기 위해 다음과 같이 개인정보처리방침을 수립·공개합니다.</p>
+<sc-for list="{{secs}}" as="s" hint-placeholder-count="13">
+<section id="{{s.id}}" style="padding: 28px 0; border-top: 1px solid #D9D8D2; display: flex; gap: 24px">
+<span style="width: 44px; flex-shrink: 0; font-family: 'Fraunces', serif; font-size: 30px; font-weight: 800; line-height: 1; color: #55795E">{{s.n}}</span>
+<div style="display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-family: 'Noto Serif KR', serif; font-size: 21px; font-weight: 900">{{s.title}}</h3>
+<p style="margin: 0; font-size: 16px; line-height: 1.85; color: #3A3934">{{s.body}}</p>
+</div>
+</section>
+</sc-for>
+</article>
+</section>
+
+<footer style="margin: auto 64px 0; padding: 28px 0 40px; border-top: 3px solid #1C1C1A; display: flex; justify-content: space-between; font-size: 14px; color: #4A4943">
+<span>© how.about.breakfast 2020–2026. All rights reserved.</span>
+<a href="Sub-Hall-D.dc.html" style="color: #4A4943">명예의 전당</a>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2700}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var s = [
+      ['purpose', '처리 목적', '[예: 명예의 전당 투표 중복 방지, 서비스 이용 통계 분석]. 목적이 바뀌면 사전에 동의를 받습니다.'],
+      ['items', '처리 항목', '[예: 투표 시 브라우저 식별값, 접속 기록(IP), 쿠키]. 회원가입이 없으며 이름·연락처는 수집하지 않습니다.'],
+      ['period', '처리 및 보유 기간', '[항목별 보유 기간 — 예: 투표 식별값 [n]일, 접속 기록 [n]개월]. 기간이 끝나면 지체 없이 파기합니다.'],
+      ['destroy', '파기 절차 및 방법', '전자적 파일은 복구할 수 없는 방법으로 삭제합니다. [파기 주기 및 절차]'],
+      ['third', '제3자 제공', '정보주체의 동의나 법률에 근거한 경우를 제외하고 개인정보를 제3자에게 제공하지 않습니다.'],
+      ['entrust', '처리 위탁', '[수탁자 — 예: 호스팅·CDN·분석 도구 업체명과 위탁 업무]'],
+      ['abroad', '국외 이전', '[해당 시: 이전받는 자, 국가, 시기·방법, 항목, 목적, 보유 기간, 거부 방법]'],
+      ['rights', '정보주체의 권리와 행사 방법', '열람·정정·삭제·처리정지를 요구할 수 있으며, 아래 보호책임자에게 연락하면 지체 없이 조치합니다.'],
+      ['safety', '안전성 확보 조치', '[예: 전송 구간 암호화(HTTPS), 접근 권한 최소화, 접속 기록 보관]'],
+      ['cookie', '자동 수집 장치의 설치·운영 및 거부', '[쿠키 사용 목적]. 브라우저 설정에서 쿠키 저장을 거부할 수 있으나, 일부 기능(투표 등)이 제한될 수 있습니다.'],
+      ['officer', '개인정보 보호책임자', '성명 [이름] · 이메일 [연락처]'],
+      ['remedy', '권익침해 구제 방법', '개인정보분쟁조정위원회(1833-6972), 개인정보침해신고센터(118), 대검찰청(1301), 경찰청(182)에 분쟁 해결이나 상담을 신청할 수 있습니다.'],
+      ['change', '처리방침의 변경', '이 방침은 [YYYY.MM.DD]부터 적용되며, 변경 시 시행 7일 전부터 공지합니다.']
+    ];
+    return {
+      secs: s.map(function (a, i) { return { id: a[0], n: (i < 9 ? '0' : '') + (i + 1), title: a[1], body: a[2], fg: i === 0 ? '#1C1C1A' : '#4A4943', fw: i === 0 ? '700' : '400' }; }),
+      labels: [
+        { k: 'COLLECT', t: '최소한만 처리해요', d: '[처리 항목 요약]' },
+        { k: 'NO ACCOUNT', t: '회원가입이 없어요', d: '이름·연락처를 받지 않습니다.' },
+        { k: 'RETENTION', t: '[n]일 뒤 파기', d: '[보유 기간 요약]' },
+        { k: 'CONTACT', t: '보호책임자', d: '[이메일]' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>명예의 전당 — 데스크톱</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&amp;family=Noto+Sans+KR:wght@400;500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,800;1,9..144,400&amp;display=swap">
+<style>
+body{margin:0;background:#FBFBF8}
+a{color:#3F5E47}a:hover{color:#2C4533}
+</style>
+</helmet>
+<div style="width: 1440px; height: 2200px; box-sizing: border-box; background: #FBFBF8; color: #1C1C1A; font-family: 'Noto Sans KR', sans-serif; word-break: keep-all; display: flex; flex-direction: column">
+
+<header style="margin: 0 64px; height: 88px; border-bottom: 3px solid #1C1C1A; display: flex; align-items: center; justify-content: space-between">
+<a href="B-Desktop.dc.html" style="font-family: 'Noto Serif KR', serif; font-size: 38px; font-weight: 900; letter-spacing: -0.04em; color: #1C1C1A; text-decoration: none">날마다, 조식</a>
+<nav style="display: flex; align-items: center; gap: 28px; font-size: 15px">
+<a href="Sub-Archive-D.dc.html" style="color: #1C1C1A; text-decoration: none">아카이브</a>
+<a href="#" aria-current="page" style="color: #1C1C1A; font-weight: 700; text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 8px; text-decoration-color: #55795E">명예의 전당</a>
+<a href="#" style="color: #1C1C1A; text-decoration: none">브런치북</a>
+</nav>
+</header>
+
+<section style="padding: 56px 64px 40px; display: flex; align-items: flex-end; justify-content: space-between">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-size: 13px; letter-spacing: 0.14em; font-weight: 700; color: #3F5E47">HALL OF FAME</span>
+<h1 style="margin: 0; font-family: 'Noto Serif KR', serif; font-size: 64px; font-weight: 900; line-height: 1.1; letter-spacing: -0.02em">명예의 전당</h1>
+<p style="margin: 0; font-size: 17px; color: #4A4943">여러분이 뽑은, 또 먹고 싶은 아침들.</p>
+</div>
+<div role="tablist" aria-label="기간" style="display: flex; gap: 2px; font-family: 'Fraunces', serif; font-size: 18px">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="3">
+<button role="tab" aria-selected="{{t.on}}" onClick="{{t.pick}}" style="height: 48px; padding: 0 16px; border: 0; background: transparent; font-family: 'Noto Sans KR', sans-serif; font-size: 16px; color: {{t.fg}}; text-decoration: {{t.deco}}; text-underline-offset: 10px; text-decoration-thickness: 3px; text-decoration-color: #55795E">{{t.label}}</button>
+</sc-for>
+</div>
+</section>
+
+<section style="margin: 0 64px; padding-top: 24px; border-top: 3px solid #1C1C1A; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px">
+<a href="Sub-Recipe-D.dc.html" style="grid-column: span 6; display: flex; flex-direction: column; gap: 14px; text-decoration: none; color: #1C1C1A">
+<div style="position: relative">
+<img src="/_blob/c1f0061bd6d287c5c36a16149380fe45" alt="하몽 아스파라거스 플레이트" style="display: block; width: 100%; height: 520px; object-fit: cover">
+<span style="position: absolute; left: 0; top: 0; padding: 12px 18px 8px; background: #55795E; color: #FFFFFF; font-family: 'Fraunces', serif; font-size: 64px; font-weight: 800; line-height: 1">1</span>
+</div>
+<div style="display: flex; justify-content: space-between; align-items: baseline"><span style="font-family: 'Fraunces', serif; font-size: 14px; color: #4A4943">2022.09.25</span><span style="font-family: 'Fraunces', serif; font-size: 22px; font-weight: 800; color: #3F5E47">[n]표</span></div>
+<span style="font-family: 'Noto Serif KR', serif; font-size: 32px; font-weight: 900; line-height: 1.3">하몽 아스파라거스 플레이트</span>
+</a>
+<div style="grid-column: span 6; display: grid; grid-template-rows: repeat(2, minmax(0, 1fr)); gap: 32px">
+<sc-for list="{{podium}}" as="p" hint-placeholder-count="2">
+<a href="Sub-Recipe-D.dc.html" style="display: flex; gap: 24px; text-decoration: none; color: #1C1C1A; border-bottom: 1px solid #D9D8D2; padding-bottom: 32px">
+<div style="position: relative; flex-shrink: 0">
+<img src="{{p.img}}" alt="{{p.title}}" style="display: block; width: 300px; height: 260px; object-fit: cover">
+<span style="position: absolute; left: 0; top: 0; padding: 8px 14px 6px; background: #1C1C1A; color: #FBFBF8; font-family: 'Fraunces', serif; font-size: 40px; font-weight: 800; line-height: 1">{{p.rank}}</span>
+</div>
+<div style="display: flex; flex-direction: column; justify-content: flex-end; gap: 8px">
+<span style="font-family: 'Fraunces', serif; font-size: 14px; color: #4A4943">{{p.date}}</span>
+<span style="font-family: 'Noto Serif KR', serif; font-size: 24px; font-weight: 900; line-height: 1.35">{{p.title}}</span>
+<span style="font-family: 'Fraunces', serif; font-size: 20px; font-weight: 800; color: #3F5E47">[n]표</span>
+</div>
+</a>
+</sc-for>
+</div>
+</section>
+
+<section style="margin: 0 64px; padding: 56px 0 72px; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 32px">
+<div style="grid-column: span 8; display: flex; flex-direction: column">
+<h2 style="margin: 0; padding-bottom: 14px; border-bottom: 1px solid #1C1C1A; font-family: 'Noto Serif KR', serif; font-size: 24px; font-weight: 900">4위 — 10위</h2>
+<ol style="margin: 0; padding: 0; list-style: none">
+<sc-for list="{{rest}}" as="r" hint-placeholder-count="7">
+<li style="min-height: 80px; display: flex; align-items: center; gap: 24px; border-bottom: 1px solid #D9D8D2">
+<span style="width: 40px; font-family: 'Fraunces', serif; font-size: 30px; font-weight: 800; color: #B5B3AA">{{r.rank}}</span>
+<a href="Sub-Recipe-D.dc.html" style="flex-grow: 1; font-family: 'Noto Serif KR', serif; font-size: 19px; font-weight: 700; color: #1C1C1A; text-decoration: none">{{r.title}}</a>
+<span style="font-family: 'Fraunces', serif; font-size: 16px; color: #4A4943">[n]표</span>
+<button onClick="{{r.vote}}" aria-pressed="{{r.voted}}" style="width: 104px; height: 44px; border: 1px solid #1C1C1A; background: {{r.bg}}; color: {{r.fg}}; font: inherit; font-size: 14px; font-weight: 700">{{r.label}}</button>
+</li>
+</sc-for>
+</ol>
+</div>
+<aside style="grid-column: span 4; align-self: flex-start; padding: 32px; background: #EBF1EA; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 12px; letter-spacing: 0.14em; font-weight: 700; color: #3F5E47">HOW TO VOTE</span>
+<span style="font-family: 'Noto Serif KR', serif; font-size: 26px; font-weight: 900; line-height: 1.35">또 먹고 싶은 아침에 한 표.</span>
+<p style="margin: 0; font-size: 15px; line-height: 1.75; color: #3A3934">레시피 페이지 하단이나 이 목록에서 투표할 수 있어요. [투표 규칙 — 예: 하루 한 번, 로그인 없이]</p>
+<a href="Sub-Privacy-D.dc.html" style="font-size: 13px">투표 시 처리되는 정보 안내 →</a>
+</aside>
+</section>
+
+<footer style="margin: auto 64px 0; padding: 28px 0 40px; border-top: 3px solid #1C1C1A; display: flex; justify-content: space-between; font-size: 14px; color: #4A4943">
+<span>© how.about.breakfast 2020–2026. All rights reserved.</span>
+<div style="display: flex; gap: 24px"><a href="Sub-Privacy-D.dc.html" style="color: #4A4943">개인정보처리방침</a></div>
+</footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":2200}}'>
+class Component extends DCLogic {
+  constructor(p) { super(p); this.state = { tab: '전체', voted: {} }; }
+  renderVals() {
+    var self = this, st = this.state;
+    var tabs = ['이번 달', '올해', '전체'].map(function (l) {
+      var on = st.tab === l;
+      return { label: l, on: on, fg: on ? '#1C1C1A' : '#6B695F', deco: on ? 'underline' : 'none', pick: function () { self.setState({ tab: l }); } };
+    });
+    var rest = ['소시지를 곁들인 대파 샐러드', '[메뉴명]', '[메뉴명]', '[메뉴명]', '[메뉴명]', '[메뉴명]', '[메뉴명]'].map(function (t, i) {
+      var v = !!st.voted[i];
+      return { rank: String(i + 4), title: t, voted: v, label: v ? '투표함 ✓' : '한 표', bg: v ? '#55795E' : 'transparent', fg: v ? '#FFFFFF' : '#1C1C1A',
+        vote: function () { var o = Object.assign({}, st.voted); o[i] = !v; self.setState({ voted: o }); } };
+    });
+    return {
+      tabs: tabs, rest: rest,
+      podium: [
+        { rank: '2', date: '2024.09.25', title: '안성재 셰프의 마늘 라면', img: '/_blob/e3ed829b81e8a0acef4a993bc7807854' },
+        { rank: '3', date: '2023.09.25', title: '아보카도 에그 타코', img: '/_blob/ed68926960f352fccf62f5d6755bcd99' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

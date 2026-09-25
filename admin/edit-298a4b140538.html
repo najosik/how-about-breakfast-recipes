@@ -5,68 +5,167 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex,nofollow">
 <title>게시물 편집 (관리자 전용)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../styles.css">
 <style>
-  body { font-family: -apple-system, sans-serif; max-width: 720px; margin: 0 auto; padding: 16px; color: #222; }
-  h1 { font-size: 1.1rem; }
+  /* This page reuses the public site's design tokens (--paper, --ink, --teal,
+     --clay, --line, --radius, etc.) from ../styles.css rather than defining
+     its own palette, so the admin tool reads as part of the same site instead
+     of a bare, unstyled form. */
+  body {
+    font-family: 'Noto Sans KR', -apple-system, sans-serif;
+    max-width: 760px; margin: 0 auto; padding: 40px 20px 72px;
+    color: var(--ink); background: var(--paper); line-height: 1.65;
+  }
+  h1 {
+    font-family: 'Nanum Myeongjo', serif; font-size: 1.55rem; margin: 0 0 8px;
+    color: var(--teal-deep);
+  }
+  .hint { color: var(--ink-faint); font-size: 0.85rem; line-height: 1.55; margin: 0 0 22px; }
   input, textarea, button { font-size: 16px; font-family: inherit; }
   input[type="text"], input[type="password"], textarea {
-    width: 100%; box-sizing: border-box; padding: 8px; margin: 4px 0 12px;
-    border: 1px solid #ccc; border-radius: 6px;
+    width: 100%; box-sizing: border-box; padding: 10px 12px; margin: 4px 0 16px;
+    border: 1px solid var(--line-strong); border-radius: var(--radius);
+    background: var(--paper-raised); color: var(--ink); transition: border-color .12s;
+  }
+  input[type="text"]:focus, input[type="password"]:focus, textarea:focus {
+    outline: 2px solid var(--teal); outline-offset: 1px;
   }
   textarea { min-height: 80px; resize: vertical; overflow: hidden; }
-  label { font-weight: 600; font-size: 0.9rem; }
+  label {
+    display: block; font-weight: 600; font-size: 0.8rem; color: var(--ink-soft);
+    margin-top: 4px; letter-spacing: .01em;
+  }
   button {
-    padding: 10px 16px; border-radius: 6px; border: none;
-    background: #222; color: #fff; cursor: pointer;
+    padding: 10px 18px; border-radius: var(--radius); border: 1px solid var(--teal-deep);
+    background: var(--teal-deep); color: #fff; cursor: pointer; font-weight: 600;
+    transition: background .12s, border-color .12s, color .12s;
   }
-  button:disabled { background: #999; cursor: default; }
-  #results { list-style: none; padding: 0; margin: 8px 0; max-height: 240px; overflow-y: auto; border: 1px solid #eee; border-radius: 6px; }
-  #results li { padding: 8px; border-bottom: 1px solid #eee; cursor: pointer; }
-  #results li:hover { background: #f5f5f5; }
-  #status { margin-top: 12px; padding: 10px; border-radius: 6px; }
-  #status.ok { background: #e6f7e6; }
-  #status.err { background: #fde8e8; }
-  #editForm { display: none; margin-top: 16px; padding-top: 16px; border-top: 1px solid #eee; }
-  .hint { color: #777; font-size: 0.85rem; }
-  .quicklinks { display: flex; gap: 8px; margin: 12px 0 16px; flex-wrap: wrap; }
+  button:hover { background: var(--teal); border-color: var(--teal); }
+  button:disabled {
+    background: var(--paper-raised); border-color: var(--line-strong); color: var(--ink-faint);
+    cursor: default;
+  }
+
+  .quicklinks { display: flex; gap: 8px; margin: 0 0 30px; flex-wrap: wrap; }
   .quicklinks a {
-    display: inline-block; padding: 6px 12px; border: 1px solid #ccc; border-radius: 6px;
-    color: #222; text-decoration: none; font-size: 0.85rem;
+    display: inline-flex; align-items: center; padding: 6px 14px; border: 1px solid var(--line-strong);
+    border-radius: var(--radius); color: var(--ink-soft); text-decoration: none;
+    font-size: 0.8rem; font-weight: 600; background: var(--paper-raised);
+    transition: border-color .12s, color .12s;
   }
-  .quicklinks a:hover { border-color: #222; }
-  .tabs { display: flex; gap: 8px; margin: 16px 0; border-bottom: 1px solid #ddd; }
+  .quicklinks a:hover { border-color: var(--teal); color: var(--teal-deep); }
+
+  #lockScreen {
+    max-width: 320px; margin: 15vh auto 0; padding: 28px 24px; text-align: center;
+    background: var(--paper-raised); border: 1px solid var(--line-strong); border-radius: 8px;
+  }
+  #lockScreen label { text-align: left; }
+  #lockScreen button { width: 100%; margin-top: 6px; }
+
+  .tabs {
+    display: flex; gap: 0; margin: 8px 0 26px; border-bottom: 1px solid var(--line);
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+  }
   .tabs button {
-    background: none; color: #777; border-radius: 0; padding: 8px 4px; margin-right: 16px;
-    border-bottom: 2px solid transparent;
+    background: none; color: var(--ink-faint); border: none; border-radius: 0;
+    padding: 10px 4px; margin-right: 22px; border-bottom: 2px solid transparent;
+    font-weight: 600; font-size: 0.85rem; white-space: nowrap; flex-shrink: 0;
   }
-  .tabs button.active { color: #222; border-bottom-color: #222; font-weight: 600; }
+  .tabs button:hover { background: none; color: var(--ink-soft); }
+  .tabs button.active { color: var(--teal-deep); border-bottom-color: var(--teal); }
   .tabpage { display: none; }
   .tabpage.active { display: block; }
-  #missingList { list-style: none; padding: 0; margin: 8px 0; }
-  #missingList li { padding: 10px 8px; border-bottom: 1px solid #eee; }
+
+  #results, #missingList {
+    list-style: none; padding: 0; margin: 8px 0 20px;
+    border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  #results { max-height: 240px; overflow-y: auto; }
+  #results li, #missingList li { padding: 10px 12px; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+  #results li:last-child, #missingList li:last-child { border-bottom: none; }
+  #results li { cursor: pointer; }
+  #results li:hover { background: var(--teal-pale); }
   #missingList .missing-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
   #missingList .missing-actions { display: flex; gap: 6px; flex-shrink: 0; }
-  .preview-box { margin-top: 10px; padding: 10px; background: #f7f7f7; border-radius: 6px; font-size: 0.85rem; display: none; }
-  .preview-box img { max-width: 120px; border-radius: 6px; margin: 6px 0; display: block; }
-  .preview-box .preview-caption { white-space: pre-wrap; color: #444; max-height: 160px; overflow-y: auto; margin: 6px 0; }
-  .preview-box .preview-meta { color: #888; }
-  #missingList button { padding: 6px 10px; font-size: 0.85rem; }
-  #missingList .skip-btn { background: #999; }
-  #missingCount { color: #777; font-size: 0.85rem; margin: 8px 0; }
-  .v-cand-slot { margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px dashed #eee; }
-  .v-cand-results { list-style: none; padding: 0; margin: 4px 0; max-height: 160px; overflow-y: auto; }
-  .v-cand-results li { padding: 6px 8px; border: 1px solid #eee; border-top: none; cursor: pointer; font-size: 0.85rem; }
-  .v-cand-results li:first-child { border-top: 1px solid #eee; }
-  .v-cand-results li:hover { background: #f5f5f5; }
-  .v-cand-picked { font-size: 0.85rem; padding: 6px 0; color: #222; }
-  .v-cand-picked.filled { color: #056b05; font-weight: 600; }
-  #voteRoundsList .vote-round-row { padding: 10px 8px; border: 1px solid #eee; border-radius: 6px; margin-bottom: 8px; font-size: 0.85rem; }
-  #voteRoundsList .vote-round-row .vrr-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; font-weight: 600; }
-  #voteRoundsList .vrr-status { font-weight: 400; color: #777; }
-  #voteRoundsList .vrr-cands { margin: 6px 0; color: #444; }
-  #voteRoundsList .vrr-cands div { display: flex; justify-content: space-between; padding: 2px 0; }
-  #voteRoundsList button { padding: 6px 10px; font-size: 0.85rem; margin-top: 6px; }
+  #missingList button { padding: 6px 12px; font-size: 0.8rem; }
+  #missingList .skip-btn { background: var(--paper); border-color: var(--line-strong); color: var(--ink-soft); }
+  #missingList .skip-btn:hover { background: var(--paper-raised); border-color: var(--ink-faint); }
+  #missingCount { color: var(--ink-faint); font-size: 0.85rem; margin: 0 0 8px; }
+
+  #status { margin-top: 16px; padding: 12px 14px; border-radius: var(--radius); font-size: 0.9rem; }
+  #status.ok { background: var(--teal-pale); color: var(--teal-deep); }
+  #status.err { background: var(--clay-pale); color: var(--clay); }
+
+  #editForm { display: none; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--line); }
+  #editingTitle, #addingTitle {
+    font-family: 'Nanum Myeongjo', serif; font-size: 1.15rem; color: var(--ink); margin: 0 0 14px;
+  }
+
+  .preview-box {
+    margin-top: 12px; padding: 12px; background: var(--paper-raised);
+    border: 1px solid var(--line); border-radius: var(--radius); font-size: 0.85rem; display: none;
+  }
+  .preview-box img { max-width: 120px; border-radius: var(--radius); margin: 6px 0; display: block; }
+  .preview-box .preview-caption {
+    white-space: pre-wrap; color: var(--ink-soft); max-height: 160px; overflow-y: auto; margin: 6px 0;
+  }
+  .preview-box .preview-meta { color: var(--ink-faint); }
+
+  .v-cand-slot { margin-bottom: 16px; padding-bottom: 14px; border-bottom: 1px dashed var(--line); }
+  .v-cand-results {
+    list-style: none; padding: 0; margin: 4px 0; max-height: 180px; overflow-y: auto;
+    border-radius: var(--radius);
+  }
+  .v-cand-results li { padding: 8px 10px; border: 1px solid var(--line); border-top: none; cursor: pointer; font-size: 0.85rem; }
+  .v-cand-results li:first-child { border-top: 1px solid var(--line); }
+  .v-cand-results li:hover { background: var(--teal-pale); }
+  .v-cand-picked { font-size: 0.85rem; padding: 6px 0; color: var(--ink-soft); }
+  .v-cand-picked.filled { color: var(--teal-deep); font-weight: 600; }
+
+  #voteRoundsList .vote-round-row {
+    padding: 12px; border: 1px solid var(--line); border-radius: var(--radius);
+    margin-bottom: 10px; font-size: 0.85rem;
+  }
+  #voteRoundsList .vote-round-row .vrr-head {
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    font-weight: 600; color: var(--ink);
+  }
+  #voteRoundsList .vrr-status { font-weight: 400; color: var(--ink-faint); }
+  #voteRoundsList .vrr-cands { margin: 8px 0; color: var(--ink-soft); }
+  #voteRoundsList .vrr-cands div { display: flex; justify-content: space-between; padding: 3px 0; }
+  #voteRoundsList button { padding: 6px 12px; font-size: 0.8rem; margin-top: 8px; }
+
+  .essay-nav { display: flex; align-items: center; gap: 8px; margin: 16px 0; }
+  .essay-nav input { margin: 0; flex: 1; }
+  .essay-map {
+    display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 6px; padding: 12px;
+    background: var(--paper-raised); border: 1px solid var(--line); border-radius: var(--radius);
+  }
+  .essay-month { display: flex; flex-direction: column; align-items: center; }
+  .essay-month-label { font-size: 0.68rem; color: var(--ink-faint); margin-bottom: 4px; text-align: center; }
+  .essay-days { display: grid; grid-template-columns: repeat(7, 9px); gap: 2px; }
+  .essay-day { width: 9px; height: 9px; border-radius: 2px; background: var(--line-strong); }
+  .essay-day.filled { background: var(--teal); cursor: pointer; }
+  #essayProgress { font-weight: 600; color: var(--ink); }
+  #essayReviewProgress { margin-bottom: 8px; }
+  #essayResumeBtn {
+    width: 100%; margin: 10px 0; background: var(--paper-raised);
+    border-color: var(--line-strong); color: var(--ink-soft);
+  }
+  #essayResumeBtn:hover { border-color: var(--teal); color: var(--teal-deep); background: var(--teal-pale); }
+  .essay-card-section { margin: 12px 0; }
+  .essay-card-section label { margin-bottom: 4px; }
+  .essay-card-section div { white-space: pre-wrap; font-size: 0.9rem; color: var(--ink); line-height: 1.6; }
+  .essay-decision-row { display: flex; gap: 8px; margin-bottom: 16px; }
+  .essay-decision-row button {
+    flex: 1; background: var(--paper); border: 1px solid var(--line-strong); color: var(--ink-soft);
+  }
+  .essay-decision-row button:hover { border-color: var(--ink-faint); background: var(--paper); }
+  #essaySaveBtn.active { background: var(--teal); border-color: var(--teal); color: #fff; }
+  #essaySkipBtn.active { background: var(--ink-faint); border-color: var(--ink-faint); color: #fff; }
 </style>
 </head>
 <body>
@@ -87,6 +186,8 @@
 <div id="app" style="display:none">
   <div class="tabs">
     <button type="button" class="tab-btn active" data-tab="editTab">게시물 수정</button>
+    <button type="button" class="tab-btn" data-tab="otdTab">오늘의 조식</button>
+    <button type="button" class="tab-btn" data-tab="essayTab">에세이 후보</button>
     <button type="button" class="tab-btn" data-tab="missingTab">빠진 날짜</button>
     <button type="button" class="tab-btn" data-tab="voteTab">이달의 투표</button>
     <button type="button" class="tab-btn" data-tab="wcTab">월드컵 테스트</button>
@@ -99,6 +200,16 @@
 
     <form id="editForm">
       <h2 id="editingTitle" style="font-size:1rem"></h2>
+
+      <label>미디어 미리보기 (실제 사이트에 노출되는 그대로)</label>
+      <div id="fMediaPreview" style="max-width:280px; margin-bottom:12px"></div>
+      <label for="fImage">대표 이미지 URL</label>
+      <input type="text" id="fImage" placeholder="https://images.how-about-breakfast.com/images/1234.jpg">
+      <label for="fGallery">갤러리 이미지 URL (한 줄에 하나씩, 첫 줄이 대표 이미지)</label>
+      <textarea id="fGallery" placeholder="https://images.how-about-breakfast.com/images/1234.jpg"></textarea>
+      <label for="fVideo">영상 URL</label>
+      <input type="text" id="fVideo" placeholder="https://images.how-about-breakfast.com/images/1234.mp4">
+
       <label for="fTitle">제목</label>
       <input type="text" id="fTitle">
       <label for="fIntro">본문(intro)</label>
@@ -113,6 +224,60 @@
       <input type="text" id="fCredit">
       <button type="submit" id="saveBtn">저장</button>
     </form>
+  </div>
+
+  <div id="otdTab" class="tabpage">
+    <p class="hint">날짜를 고르면 그 날짜에 실제 사이트의 "오늘의 조식"이 어떻게 보일지 미리 확인하고, 바로 그 게시물을 불러와 수정할 수 있습니다.</p>
+
+    <section class="otd-full-bleed" id="otdPreviewSection">
+      <div class="otd-inner">
+        <div class="section-head">
+          <div>
+            <p class="label">On this day</p>
+            <h2><span id="otdPreviewDatePrefix"></span>오늘의 조식들</h2>
+            <p class="desc">해마다 이 날짜에 만들었던 조식을 모아봤어요.</p>
+          </div>
+        </div>
+        <div class="otd-row" id="otdPreviewRow"></div>
+      </div>
+    </section>
+
+    <label for="otdDateInput">미리 볼 날짜</label>
+    <input type="text" id="otdDateInput" placeholder="YYYY-MM-DD (예: 2026-09-08)">
+
+    <label>이 날짜의 게시물 (연도별) — 선택하면 "게시물 수정" 탭으로 이동해 바로 편집합니다</label>
+    <ul id="otdCandidates" class="v-cand-results" style="max-height:none; border:1px solid #eee; border-radius:6px;"></ul>
+  </div>
+
+  <div id="essayTab" class="tabpage">
+    <p class="hint">하루씩 훑어보면서 에세이로 남길 만한 글을 후보로 저장합니다. 같은 월-일(연도 무관)에 여러 해의 게시물을 동시에 후보로 저장할 수 있고, 그 중 최종 하나를 고르는 건 나중에 따로 합니다.</p>
+
+    <div id="essayProgress"></div>
+    <div id="essayReviewProgress" class="hint"></div>
+    <button type="button" id="essayResumeBtn" style="width:100%; margin:8px 0;">↷ 다른 기기에서 이어서 검토하기</button>
+    <div id="essayMap" class="essay-map"></div>
+
+    <div class="essay-nav">
+      <button type="button" id="essayPrevBtn">◀ 어제</button>
+      <input type="text" id="essayDateInput" placeholder="YYYY-MM-DD">
+      <button type="button" id="essayNextBtn">내일 ▶</button>
+    </div>
+
+    <div id="essayDecisionRow" class="essay-decision-row" style="display:none;">
+      <button type="button" id="essaySaveBtn">★ 후보로 저장</button>
+      <button type="button" id="essaySkipBtn">저장 안 함</button>
+    </div>
+
+    <ul id="essayCandList" class="v-cand-results" style="max-height:none; border:1px solid #eee; border-radius:6px; display:none;"></ul>
+
+    <div id="essayCard" style="display:none;">
+      <h2 id="essayCardTitle" style="font-size:1rem; margin-bottom:8px;"></h2>
+      <div id="essayCardMedia" style="max-width:280px; margin-bottom:10px;"></div>
+      <div class="essay-card-section"><label>본문(intro)</label><div id="essayCardIntro"></div></div>
+      <div class="essay-card-section"><label>재료</label><div id="essayCardIngredients"></div></div>
+      <div class="essay-card-section"><label>조리 순서</label><div id="essayCardSteps"></div></div>
+    </div>
+    <div id="essayEmpty" class="hint" style="display:none;">이 날짜엔 게시물이 없습니다.</div>
   </div>
 
   <div id="missingTab" class="tabpage">
@@ -175,6 +340,7 @@
   <div id="status" style="display:none"></div>
 </div>
 
+<script src="../i18n.js"></script>
 <script src="../shared.js"></script>
 <script src="../worldcup.js"></script>
 <script>
@@ -196,6 +362,10 @@
   var saveBtn = document.getElementById('saveBtn');
   var statusEl = document.getElementById('status');
 
+  var fMediaPreview = document.getElementById('fMediaPreview');
+  var fImage = document.getElementById('fImage');
+  var fGallery = document.getElementById('fGallery');
+  var fVideo = document.getElementById('fVideo');
   var fTitle = document.getElementById('fTitle');
   var fIntro = document.getElementById('fIntro');
   var fIngredients = document.getElementById('fIngredients');
@@ -230,6 +400,31 @@
   var wcResultBox = document.getElementById('wcResultBox');
   var wcContainer = document.getElementById('wcContainer');
 
+  var otdDateInput = document.getElementById('otdDateInput');
+  var otdPreviewRow = document.getElementById('otdPreviewRow');
+  var otdPreviewDatePrefix = document.getElementById('otdPreviewDatePrefix');
+  var otdCandidates = document.getElementById('otdCandidates');
+
+  var essayProgress = document.getElementById('essayProgress');
+  var essayReviewProgress = document.getElementById('essayReviewProgress');
+  var essayResumeBtn = document.getElementById('essayResumeBtn');
+  var essayMap = document.getElementById('essayMap');
+  var essayPrevBtn = document.getElementById('essayPrevBtn');
+  var essayNextBtn = document.getElementById('essayNextBtn');
+  var essayDateInput = document.getElementById('essayDateInput');
+  var essayCandList = document.getElementById('essayCandList');
+  var essayCard = document.getElementById('essayCard');
+  var essayCardTitle = document.getElementById('essayCardTitle');
+  var essayCardMedia = document.getElementById('essayCardMedia');
+  var essayCardIntro = document.getElementById('essayCardIntro');
+  var essayCardIngredients = document.getElementById('essayCardIngredients');
+  var essayCardSteps = document.getElementById('essayCardSteps');
+  var essayDecisionRow = document.getElementById('essayDecisionRow');
+  var essaySaveBtn = document.getElementById('essaySaveBtn');
+  var essaySkipBtn = document.getElementById('essaySkipBtn');
+  var essayEmpty = document.getElementById('essayEmpty');
+  var essayCurrent = null; // record currently shown in the essay card
+
   var allRecords = [];
   var igIndex = null; // {date: {caption, images, ...}} from ig_index.json, or null if not built yet
   var igIndexMaxDate = null; // latest date key in igIndex - anything at/before this and absent genuinely isn't on Instagram
@@ -255,7 +450,7 @@
   // no way to make it bigger. Auto-grow to fit content instead — this also
   // benefits desktop, which additionally keeps the CSS `resize: vertical`
   // handle for manual override.
-  var growTargets = [fIntro, fIngredients, fSteps, aIntro, aIngredients, aSteps, aImages];
+  var growTargets = [fIntro, fIngredients, fSteps, fGallery, aIntro, aIngredients, aSteps, aImages];
   function autoGrow(el) {
     el.style.height = 'auto';
     el.style.height = el.scrollHeight + 'px';
@@ -297,6 +492,8 @@
         allRecords = data;
         renderMissing();
         loadVoteRounds();
+        initOtdTab();
+        initEssayTab();
       })
       .catch(function (err) {
         showStatus('err', '게시물 목록을 불러오지 못했습니다: ' + err);
@@ -756,6 +953,415 @@
       });
   });
 
+  // ---- 오늘의 조식 (On This Day) preview + quick-edit ----
+  // Mirrors home.js's renderOnThisDay() card markup/picking logic exactly
+  // (same CSS classes, same day_secondary/hasMedia tie-break) so the top
+  // preview here looks identical to the real site, but driven by an
+  // admin-chosen date instead of the real "today" - lets the admin check
+  // tomorrow's (or any future) On This Day row before it goes live.
+
+  var OTD_EMPTY_BANGS = ['앗!', '엇!', '이런!'];
+  var OTD_EMPTY_SUBS = ['조식이 없네요', '조식을 못 먹었어요', '조식을 건너 뛰었죠'];
+  function randomOtdEmptyMessage() {
+    var bang = OTD_EMPTY_BANGS[Math.floor(Math.random() * OTD_EMPTY_BANGS.length)];
+    var sub = OTD_EMPTY_SUBS[Math.floor(Math.random() * OTD_EMPTY_SUBS.length)];
+    return { bang: bang, sub: sub };
+  }
+
+  function otdHasMedia(r) { return !!(r.image || r.gallery || r.video); }
+
+  function otdIsExactMatch(r, mm, dd) {
+    if (r.failed) return false;
+    if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return false;
+    var parts = r.date.split('-');
+    return parseInt(parts[1], 10) === mm && parseInt(parts[2], 10) === dd;
+  }
+
+  function switchToTab(tabId) {
+    Array.prototype.forEach.call(document.querySelectorAll('.tab-btn'), function (b) { b.classList.remove('active'); });
+    Array.prototype.forEach.call(document.querySelectorAll('.tabpage'), function (p) { p.classList.remove('active'); });
+    var btn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
+    if (btn) btn.classList.add('active');
+    var page = document.getElementById(tabId);
+    if (page) page.classList.add('active');
+  }
+
+  function editFromOtd(r) {
+    if (!r) return;
+    loadRecord(r);
+    switchToTab('editTab');
+    editForm.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function initOtdTab() {
+    if (!otdDateInput.value) {
+      var today = new Date();
+      var pad0 = function (n) { return (n < 10 ? '0' : '') + n; };
+      otdDateInput.value = today.getFullYear() + '-' + pad0(today.getMonth() + 1) + '-' + pad0(today.getDate());
+    }
+    renderOtdPreview();
+  }
+
+  otdDateInput.addEventListener('input', renderOtdPreview);
+
+  function renderOtdPreview() {
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(otdDateInput.value.trim());
+    if (!m) {
+      otdPreviewRow.innerHTML = '';
+      otdPreviewDatePrefix.textContent = '';
+      otdCandidates.innerHTML = '<li class="hint" style="cursor:default; list-style:none;">날짜를 YYYY-MM-DD 형식으로 입력해주세요.</li>';
+      return;
+    }
+    var mm = parseInt(m[2], 10);
+    var dd = parseInt(m[3], 10);
+    otdPreviewDatePrefix.textContent = mm + '.' + dd + '. ';
+
+    var byYear = {};
+    var matches = [];
+    allRecords.forEach(function (r) {
+      if (!otdIsExactMatch(r, mm, dd)) return;
+      matches.push(r);
+      var y = r.date.slice(0, 4);
+      var existing = byYear[y];
+      if (!existing || (existing.day_secondary && !r.day_secondary) || (!otdHasMedia(existing) && otdHasMedia(r) && !r.day_secondary)) {
+        byYear[y] = r;
+      }
+    });
+
+    var allDates = allRecords.map(function (r) { return r.date; })
+      .filter(function (d) { return d && /^\d{4}-\d{2}-\d{2}$/.test(d); })
+      .sort();
+
+    if (!allDates.length) {
+      otdPreviewRow.innerHTML = '';
+      otdCandidates.innerHTML = '<li class="hint" style="cursor:default; list-style:none;">게시물 목록을 아직 불러오지 못했습니다.</li>';
+      return;
+    }
+
+    var minDate = allDates[0];
+    var startYear = parseInt(minDate.slice(0, 4), 10);
+    var startMM = parseInt(minDate.slice(5, 7), 10);
+    var startDD = parseInt(minDate.slice(8, 10), 10);
+    var currentYear = new Date().getFullYear();
+
+    var years = [];
+    for (var y = startYear; y <= currentYear; y++) {
+      if (y === startYear && (mm < startMM || (mm === startMM && dd < startDD))) continue;
+      if (y === currentYear && !byYear[String(y)]) continue;
+      years.push(String(y));
+    }
+
+    otdPreviewRow.innerHTML = years.map(function (y) {
+      var r = byYear[y];
+      if (!r) {
+        var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+        var emptyDate = y + '-' + pad(mm) + '-' + pad(dd);
+        var emptyMsg = randomOtdEmptyMessage();
+        return (
+          '<div class="otd-card otd-empty">' +
+          '<div class="otd-empty-msg">' +
+          '<span class="otd-empty-bang">' + Shared.escapeHtml(emptyMsg.bang) + '</span>' +
+          '<span class="otd-empty-sub">' + Shared.escapeHtml(emptyMsg.sub) + '</span>' +
+          '</div>' +
+          '<div class="otd-year">' + y + '년</div>' +
+          '<h4 class="otd-title"><a href="https://brunch.co.kr/@howaboutbfast/4" target="_blank" rel="noopener noreferrer">별일이 있었나봐요</a></h4>' +
+          '<div class="otd-meta">' + emptyDate + '</div>' +
+          '</div>'
+        );
+      }
+      return (
+        '<a class="otd-card" href="../' + Shared.escapeHtml(Shared.recipeUrl(r)) + '" target="_blank" rel="noopener" data-year="' + y + '">' +
+        Shared.thumbHTML(r, 24) +
+        '<div class="otd-year">' + y + '년</div>' +
+        '<h4 class="otd-title">' + Shared.escapeHtml(r.title || '(제목 없음)') + '</h4>' +
+        '<div class="otd-meta">' + r.date + (r.calories ? ' · ' + r.calories + 'kcal' : '') + '</div>' +
+        '</a>'
+      );
+    }).join('');
+
+    Array.prototype.forEach.call(otdPreviewRow.querySelectorAll('.otd-card:not(.otd-empty)'), function (el) {
+      el.addEventListener('click', function (e) {
+        if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+        e.preventDefault();
+        editFromOtd(byYear[el.getAttribute('data-year')]);
+      });
+    });
+
+    // Below the date input: every matching record for this month/day across
+    // all years (not just the one byYear picked to display) - so a shadowed
+    // day_secondary duplicate is still directly reachable to edit.
+    matches.sort(function (a, b) { return a.date < b.date ? 1 : -1; });
+    otdCandidates.innerHTML = '';
+    if (!matches.length) {
+      otdCandidates.innerHTML = '<li class="hint" style="cursor:default; list-style:none;">이 날짜에 게시물이 없습니다.</li>';
+      return;
+    }
+    matches.forEach(function (r) {
+      var li = document.createElement('li');
+      li.style.cssText = 'display:flex; justify-content:space-between; align-items:center; gap:8px; cursor:default;';
+      var label = document.createElement('span');
+      label.textContent = r.date + ' — ' + (r.title || '(제목 없음)') + (r.day_secondary ? ' (숨김)' : '');
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = '수정';
+      btn.style.flexShrink = '0';
+      btn.addEventListener('click', function () { editFromOtd(r); });
+      li.appendChild(label);
+      li.appendChild(btn);
+      otdCandidates.appendChild(li);
+    });
+  }
+
+  // ---- 에세이 후보 (Essay Candidate) picker ----
+  // Browse the diary one calendar day at a time (like flipping through a
+  // stack of cards) and flag posts worth reading as an essay rather than
+  // a recipe. At most one flagged post per month-day (any year) - the
+  // 365-day map below fills in as candidates are picked, and picking a
+  // day that's already taken (by a different year's post) asks to swap.
+
+  var ESSAY_MONTH_DAYS = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // Feb=29 so a leap-day pick still has a cell
+
+  function essayPad(n) { return (n < 10 ? '0' : '') + n; }
+
+  // "Already reviewed" (essay_reviewed) is stored server-side alongside
+  // essay_candidate, via the same edit action - so the decision ("저장함"
+  // or "저장 안 함") is visible from any device, not just the one that
+  // made it.
+  function essayIsReviewed(r) { return !!(r && (r.essay_reviewed || r.essay_candidate)); }
+
+  // The one thing that lets "이어서 검토하기" work on a device that has
+  // never opened this tab before: walk the diary in date order and find
+  // the earliest live post nobody has decided on yet, using only the
+  // server-synced essay_candidate/essay_reviewed flags already in
+  // allRecords - no reliance on this browser's own history.
+  function essayFirstUnreviewedDate() {
+    var sorted = allRecords
+      .filter(function (r) { return r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date) && !r.failed; })
+      .slice()
+      .sort(function (a, b) { return a.date < b.date ? -1 : (a.date > b.date ? 1 : 0); });
+    var found = sorted.find(function (r) { return !essayIsReviewed(r); });
+    return found ? found.date : null;
+  }
+
+  essayResumeBtn.addEventListener('click', function () {
+    var d = essayFirstUnreviewedDate();
+    if (!d) {
+      showStatus('ok', '모든 게시물을 검토했습니다!');
+      return;
+    }
+    essayDateInput.value = d;
+    renderEssayCard();
+  });
+
+  function renderEssayReviewProgress() {
+    var total = allRecords.length;
+    var seen = allRecords.filter(essayIsReviewed).length;
+    essayReviewProgress.textContent = '검토한 게시물: ' + seen + ' / ' + total;
+  }
+
+  // Several different years can now share a month-day slot at once (the
+  // shortlist phase) - each cell holds an array, not a single record.
+  // Picking one final winner per day is a separate, not-yet-built step.
+  function essayPicksMap() {
+    var map = {};
+    allRecords.forEach(function (r) {
+      if (r.essay_candidate && r.date && /^\d{4}-\d{2}-\d{2}$/.test(r.date)) {
+        var md = r.date.slice(5, 10);
+        (map[md] = map[md] || []).push(r);
+      }
+    });
+    Object.keys(map).forEach(function (md) {
+      map[md].sort(function (a, b) { return a.date < b.date ? -1 : 1; });
+    });
+    return map;
+  }
+
+  function renderEssayMap() {
+    var picks = essayPicksMap();
+    essayProgress.textContent = '후보 있는 날짜: ' + Object.keys(picks).length + ' / 365';
+
+    var html = '';
+    for (var mo = 1; mo <= 12; mo++) {
+      html += '<div class="essay-month"><div class="essay-month-label">' + mo + '월</div><div class="essay-days">';
+      var days = ESSAY_MONTH_DAYS[mo - 1];
+      for (var d = 1; d <= days; d++) {
+        var md = essayPad(mo) + '-' + essayPad(d);
+        var list = picks[md];
+        var title = list
+          ? list.map(function (r) { return r.date + ' — ' + (r.title || '(제목 없음)'); }).join('\n')
+          : (md + ' (후보 없음)');
+        html += '<div class="essay-day' + (list ? ' filled' : '') + '" data-md="' + md + '" title="' + title.replace(/"/g, '&quot;') + '"></div>';
+      }
+      html += '</div></div>';
+    }
+    essayMap.innerHTML = html;
+
+    Array.prototype.forEach.call(essayMap.querySelectorAll('.essay-day.filled'), function (el) {
+      el.addEventListener('click', function () {
+        var list = picks[el.getAttribute('data-md')];
+        if (!list || !list.length) return;
+        essayDateInput.value = list[0].date;
+        renderEssayCard();
+      });
+    });
+  }
+
+  function essayShiftDate(delta) {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(essayDateInput.value.trim())) return;
+    var d = new Date(essayDateInput.value.trim() + 'T00:00:00');
+    d.setDate(d.getDate() + delta);
+    essayDateInput.value = d.getFullYear() + '-' + essayPad(d.getMonth() + 1) + '-' + essayPad(d.getDate());
+    renderEssayCard();
+  }
+
+  essayPrevBtn.addEventListener('click', function () { essayShiftDate(-1); });
+  essayNextBtn.addEventListener('click', function () { essayShiftDate(1); });
+  essayDateInput.addEventListener('input', renderEssayCard);
+
+  function initEssayTab() {
+    if (!essayDateInput.value) {
+      // A device that's never opened this tab has no localStorage
+      // position to fall back on - resume at the server's actual
+      // frontier (first unreviewed post) instead of always restarting
+      // from day one.
+      essayDateInput.value = localStorage.getItem('essayReviewDate') || essayFirstUnreviewedDate() || (function () {
+        var dates = allRecords.map(function (r) { return r.date; })
+          .filter(function (d) { return d && /^\d{4}-\d{2}-\d{2}$/.test(d); }).sort();
+        return dates.length ? dates[0] : '';
+      })();
+    }
+    renderEssayMap();
+    renderEssayReviewProgress();
+    renderEssayCard();
+  }
+
+  function loadEssayRecord(r) {
+    essayCurrent = r;
+    essayCardTitle.textContent = r.date + ' — ' + (r.title || '(제목 없음)');
+    essayCardMedia.innerHTML = (typeof Shared !== 'undefined') ? Shared.galleryHTML(r) : '';
+    if (typeof Shared !== 'undefined') Shared.bindGallery(essayCardMedia, r);
+    essayCardIntro.textContent = r.intro || '(내용 없음)';
+    essayCardIngredients.textContent = r.ingredients || '(없음)';
+    essayCardSteps.textContent = r.steps || '(없음)';
+    essaySaveBtn.disabled = false;
+    essaySkipBtn.disabled = false;
+    essaySaveBtn.textContent = '★ 후보로 저장';
+    essaySkipBtn.textContent = '저장 안 함';
+    essaySaveBtn.classList.toggle('active', !!r.essay_candidate);
+    essaySkipBtn.classList.toggle('active', !!r.essay_reviewed && !r.essay_candidate);
+    essayDecisionRow.style.display = 'flex';
+    essayCard.style.display = 'block';
+    essayEmpty.style.display = 'none';
+  }
+
+  function renderEssayCard() {
+    var dateStr = essayDateInput.value.trim();
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(dateStr)) {
+      essayCurrent = null;
+      essayDecisionRow.style.display = 'none';
+      essayCard.style.display = 'none';
+      essayCandList.style.display = 'none';
+      essayEmpty.style.display = 'block';
+      essayEmpty.textContent = '날짜를 YYYY-MM-DD 형식으로 입력해주세요.';
+      return;
+    }
+    localStorage.setItem('essayReviewDate', dateStr);
+
+    var matches = allRecords.filter(function (r) { return r.date === dateStr; });
+    if (!matches.length) {
+      essayCurrent = null;
+      essayDecisionRow.style.display = 'none';
+      essayCard.style.display = 'none';
+      essayCandList.style.display = 'none';
+      essayEmpty.style.display = 'block';
+      essayEmpty.textContent = '이 날짜엔 게시물이 없습니다.';
+      return;
+    }
+
+    if (matches.length === 1) {
+      essayCandList.style.display = 'none';
+      loadEssayRecord(matches[0]);
+      return;
+    }
+
+    // Same exact date has more than one record (e.g. a day_secondary
+    // duplicate) - let the admin pick which one to review, defaulting to
+    // whichever already holds the candidate flag, else the first.
+    essayCandList.style.display = 'block';
+    essayCandList.innerHTML = '';
+    matches.forEach(function (r) {
+      var li = document.createElement('li');
+      li.textContent = (r.title || '(제목 없음)') + (r.essay_candidate ? ' ★' : '') + (r.day_secondary ? ' (숨김)' : '') + (essayIsReviewed(r) ? ' ✓' : '');
+      li.addEventListener('click', function () { loadEssayRecord(r); });
+      essayCandList.appendChild(li);
+    });
+    var preselect = matches.find(function (r) { return r.essay_candidate; }) || matches[0];
+    loadEssayRecord(preselect);
+  }
+
+  // Shortlisting: any number of different years may share a month-day at
+  // once, so this just toggles essay_candidate on the current record with
+  // no cross-record conflict check. Picking one final winner per day is a
+  // separate step, done later once every year's post for that day has
+  // been shortlisted.
+  essaySaveBtn.addEventListener('click', function () {
+    if (!essayCurrent) return;
+    var next = !essayCurrent.essay_candidate;
+
+    var targetPageId = essayCurrent.page_id;
+    var prevText = essaySaveBtn.textContent;
+    essaySaveBtn.disabled = true;
+    essaySkipBtn.disabled = true;
+    essaySaveBtn.textContent = '저장 중...';
+
+    submitToWorker({ action: 'edit', page_id: targetPageId, fields: { essay_candidate: next } })
+      .then(function (res) {
+        essaySaveBtn.disabled = false;
+        essaySkipBtn.disabled = false;
+        if (!res.ok) {
+          showStatus('err', '저장 실패: ' + res.detail);
+          essaySaveBtn.textContent = prevText;
+          return;
+        }
+        // Optimistic local update so the map/progress/buttons reflect the
+        // change immediately, without waiting for the ~1-2 min rebuild.
+        essayCurrent.essay_candidate = next;
+        if (next) essayCurrent.essay_reviewed = true;
+        showStatus('ok', '저장 요청 완료. 1~2분 후 사이트에 반영됩니다.');
+        renderEssayMap();
+        renderEssayReviewProgress();
+        renderEssayCard();
+      });
+  });
+
+  essaySkipBtn.addEventListener('click', function () {
+    if (!essayCurrent) return;
+    if (essayCurrent.essay_reviewed && !essayCurrent.essay_candidate) return; // already exactly this state
+
+    var targetPageId = essayCurrent.page_id;
+    var prevText = essaySkipBtn.textContent;
+    essaySaveBtn.disabled = true;
+    essaySkipBtn.disabled = true;
+    essaySkipBtn.textContent = '저장 중...';
+
+    submitToWorker({ action: 'edit', page_id: targetPageId, fields: { essay_candidate: false, essay_reviewed: true } })
+      .then(function (res) {
+        essaySaveBtn.disabled = false;
+        essaySkipBtn.disabled = false;
+        if (!res.ok) {
+          showStatus('err', '저장 실패: ' + res.detail);
+          essaySkipBtn.textContent = prevText;
+          return;
+        }
+        essayCurrent.essay_candidate = false;
+        essayCurrent.essay_reviewed = true;
+        showStatus('ok', '저장 요청 완료. 1~2분 후 사이트에 반영됩니다.');
+        renderEssayMap();
+        renderEssayReviewProgress();
+        renderEssayCard();
+      });
+  });
+
   // World Cup bracket test harness: entirely client-side, nothing is sent
   // to any Worker or saved anywhere - just runs WorldCup.start() against
   // that month's real posts so the UX/animations can be reviewed before
@@ -805,9 +1411,35 @@
     });
   });
 
+  function renderMediaPreview(r) {
+    fMediaPreview.innerHTML = (typeof Shared !== 'undefined') ? Shared.galleryHTML(r) : '';
+    if (typeof Shared !== 'undefined') Shared.bindGallery(fMediaPreview, r);
+  }
+
+  // Re-render the preview from the form fields as they're typed, so the
+  // admin can check a fix (new image/video URL) before saving instead of
+  // saving blind and reloading the record to see if it worked.
+  function renderMediaPreviewFromForm() {
+    if (!current) return;
+    var gallery = fGallery.value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
+    renderMediaPreview({
+      title: current.title,
+      image: fImage.value.trim() || null,
+      gallery: gallery.length ? gallery : null,
+      video: fVideo.value.trim() || null,
+    });
+  }
+  [fImage, fGallery, fVideo].forEach(function (el) {
+    el.addEventListener('input', renderMediaPreviewFromForm);
+  });
+
   function loadRecord(r) {
     current = r;
     editingTitle.textContent = (r.date || '') + ' — ' + (r.title || '');
+    renderMediaPreview(r);
+    fImage.value = r.image || '';
+    fGallery.value = (r.gallery || []).join('\n');
+    fVideo.value = r.video || '';
     fTitle.value = r.title || '';
     fIntro.value = r.intro || '';
     fIngredients.value = r.ingredients || '';
@@ -824,7 +1456,11 @@
     if (!current) return;
 
     var newHashtags = fHashtags.value.split(',').map(function (s) { return s.trim(); }).filter(Boolean);
+    var newGallery = fGallery.value.split('\n').map(function (s) { return s.trim(); }).filter(Boolean);
     var candidates = {
+      image: fImage.value.trim(),
+      gallery: newGallery,
+      video: fVideo.value.trim(),
       title: fTitle.value,
       intro: fIntro.value,
       ingredients: fIngredients.value,
@@ -832,10 +1468,11 @@
       hashtags: newHashtags,
       credit: fCredit.value,
     };
+    var LIST_FIELDS = { hashtags: true, gallery: true };
 
     var fields = {};
     Object.keys(candidates).forEach(function (key) {
-      var oldVal = key === 'hashtags' ? (current.hashtags || []) : (current[key] || '');
+      var oldVal = LIST_FIELDS[key] ? (current[key] || []) : (current[key] || '');
       var newVal = candidates[key];
       if (JSON.stringify(newVal) !== JSON.stringify(oldVal)) {
         fields[key] = newVal;

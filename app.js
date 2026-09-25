@@ -55,16 +55,33 @@
     renderTagCloud();
     bindEvents();
 
-    if (params.get('tag')) state.activeTags.add(params.get('tag'));
+    var tagParams = params.getAll('tag');
+    tagParams.forEach(function (t) { state.activeTags.add(t); });
     if (params.get('q')) { state.query = params.get('q').toLowerCase(); searchInput.value = params.get('q'); }
     if (params.get('failed') === '1') state.onlyFailed = true;
 
     applyFilters();
-    if (params.get('tag')) {
+    if (tagParams.length) {
       Array.prototype.forEach.call(tagCloud.querySelectorAll('.tag-chip'), function (c) {
-        if (c.getAttribute('data-tag') === params.get('tag')) { c.classList.add('active'); c.setAttribute('aria-pressed', 'true'); }
+        if (tagParams.indexOf(c.getAttribute('data-tag')) !== -1) { c.classList.add('active'); c.setAttribute('aria-pressed', 'true'); }
       });
     }
+  }
+
+  // Keeps the address bar in sync with the query/tags/failed-only state so
+  // the URL on screen is always a valid, copy-pasteable link back to the
+  // same filtered results - mirrors what home.js already does when it
+  // sends a home-page search to archive.html?q=... . Sort order and the
+  // calorie slider aren't included since init() doesn't read them back
+  // from the URL either.
+  function syncUrl() {
+    var p = new URLSearchParams();
+    var q = searchInput.value.trim();
+    if (q) p.set('q', q);
+    state.activeTags.forEach(function (tag) { p.append('tag', tag); });
+    if (state.onlyFailed) p.set('failed', '1');
+    var qs = p.toString();
+    history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
   }
 
   function bindLangToggle() {
@@ -182,6 +199,7 @@
   }
 
   function applyFilters() {
+    syncUrl();
     var q = state.query;
     var tags = state.activeTags;
     var list = state.all.filter(function (r) {
