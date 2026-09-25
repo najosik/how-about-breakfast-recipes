@@ -40,84 +40,132 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2329784289008303" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Nanum Myeongjo는 공유 카드/모달(shared.js)이 이 페이지에서도 쓰므로 유지 -->
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
-  <div class="nav-bar">
-    <a href="index.html" data-i18n="nav_home">← 홈으로</a>
-    <div class="nav-right">
-      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-      <div class="channel-links" id="channelLinks">
-        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
-        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
-      </div>
-      <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
-        <button type="button" data-lang="ko" class="active">한국어</button>
-        <button type="button" data-lang="en">EN</button>
-      </div>
-    </div>
-  </div>
 
-  <header class="top">
-    <p class="eyebrow">how.about.breakfast</p>
-    <h1 class="title" data-i18n="archive_title">전체 레시피 아카이브</h1>
-    <p class="subtitle" data-i18n="archive_subtitle">2020년 7월부터 매일 아침 기록해 온 조식 다이어리, 그 안에 쌓인 레시피를 검색합니다.</p>
-    <div class="stats-row" id="statsRow"></div>
+  <header class="site-header">
+    <a href="index.html" class="site-header-logo">날마다, 조식</a>
+    <nav class="site-header-nav" aria-label="주요 메뉴">
+      <a href="archive.html" aria-current="page" data-i18n="nav_archive">아카이브</a>
+      <a href="vote.html" data-i18n="nav_hall">명예의 전당</a>
+      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener" data-i18n="nav_brunch">브런치북</a>
+    </nav>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" class="active">한국어</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
   </header>
 
-  <div class="controls">
-    <div class="search-row">
-      <div class="search-box">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input id="searchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)">
+  <section class="arc-hero">
+    <span class="arc-eyebrow">THE ARCHIVE</span>
+    <h1 class="arc-title" data-i18n="archive_title">전체 아카이브</h1>
+    <span class="arc-count-meta" id="arcCountMeta">—</span>
+  </section>
+
+  <form class="arc-search" id="archiveSearchForm" role="search">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+    <label for="searchInput" class="sr-only" data-i18n="archive_search_label">아카이브 검색</label>
+    <input id="searchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)">
+    <button type="submit" class="arc-search-btn" data-i18n="home_search_btn">검색</button>
+  </form>
+
+  <div class="arc-mobile-bar">
+    <button type="button" class="arc-mobile-filter-btn" id="openFiltersBtn" aria-haspopup="true" aria-expanded="false" aria-controls="arcFilters">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M7 12h10M10 18h4"/></svg>
+      <span data-i18n="filter_open">필터</span><span id="filterCountBadge" class="arc-filter-badge hidden">0</span>
+    </button>
+    <div class="arc-mobile-chips" id="mobileChips"></div>
+  </div>
+
+  <div class="arc-layout">
+    <div class="arc-sheet-scrim hidden" id="sheetScrim"></div>
+    <aside class="arc-filters" id="arcFilters">
+      <div class="arc-sheet-head">
+        <span class="arc-sheet-title" data-i18n="filter_open">필터</span>
+        <button type="button" class="arc-sheet-close" id="closeFiltersBtn" aria-label="필터 닫기">✕</button>
       </div>
-      <select id="sortSel">
-        <option value="new" data-i18n="sort_new">최신순</option>
-        <option value="old" data-i18n="sort_old">오래된순</option>
-        <option value="kcal_asc" data-i18n="sort_kcal_asc">칼로리 낮은순</option>
-        <option value="kcal_desc" data-i18n="sort_kcal_desc">칼로리 높은순</option>
-      </select>
-    </div>
-    <div class="filter-row">
-      <div class="tag-cloud" id="tagCloud"></div>
-      <label class="cal-filter">
-        <input type="checkbox" id="calToggle"> <span id="calLabel">≤ 600kcal</span>
-        <input type="range" id="calRange" min="100" max="900" step="50" value="600">
-      </label>
-    </div>
-    <div class="result-count" id="resultCount" aria-live="polite"></div>
-  </div>
 
-  <div class="grid" id="grid"></div>
-  <div class="empty hidden" id="emptyState">
-    <b data-i18n="empty_title">일치하는 조식이 없어요</b>
-    <span data-i18n="empty_desc">검색어나 필터를 조정해보세요.</span>
-  </div>
-  <div class="load-more-wrap">
-    <button class="loadmore hidden" id="loadMoreBtn" data-i18n="load_more">더 불러오기</button>
-  </div>
+      <fieldset class="arc-field">
+        <legend data-i18n="filter_date">날짜</legend>
+        <div class="arc-date-picker">
+          <select id="dateMonthSel" aria-label="월"></select>
+          <select id="dateDaySel" aria-label="일"></select>
+          <button type="button" class="arc-date-apply" id="dateApplyBtn" data-i18n="filter_apply">적용</button>
+        </div>
+        <div class="arc-chip-row" id="dateChipRow"></div>
+      </fieldset>
 
-  <!-- AdSense: 계정 승인 후 이 자리에 실제 광고 코드가 채워집니다 (archive-bottom) -->
+      <fieldset class="arc-field">
+        <legend data-i18n="filter_year">연도</legend>
+        <div id="yearChecks" class="arc-year-checks"></div>
+      </fieldset>
+
+      <fieldset class="arc-field">
+        <legend data-i18n="filter_calorie">칼로리 (1인분)</legend>
+        <div class="arc-cal-range">
+          <div class="arc-cal-track"><div class="arc-cal-fill" id="calFill"></div></div>
+          <input type="range" id="calMinRange" min="0" max="900" step="50" value="0" aria-label="최소 칼로리">
+          <input type="range" id="calMaxRange" min="0" max="900" step="50" value="900" aria-label="최대 칼로리">
+        </div>
+        <div class="arc-cal-labels"><span id="calMinLabel">0</span><span id="calMaxLabel">900kcal+</span></div>
+        <label class="arc-cal-toggle"><input type="checkbox" id="calToggle"> <span data-i18n="filter_calorie_use">이 범위로 필터링</span></label>
+      </fieldset>
+
+      <fieldset class="arc-field">
+        <legend data-i18n="filter_tags">자주 쓴 재료</legend>
+        <div class="tag-cloud" id="tagCloud"></div>
+      </fieldset>
+
+      <button type="button" class="arc-clear-btn" id="clearFiltersBtn" data-i18n="filter_clear">필터 모두 지우기</button>
+    </aside>
+
+    <div class="arc-results">
+      <div class="arc-results-head">
+        <p class="result-count" id="resultCount" aria-live="polite"></p>
+        <div class="arc-results-controls">
+          <label class="arc-sort-label" data-i18n="sort_label">정렬
+            <select id="sortSel">
+              <option value="new" data-i18n="sort_new">최신순</option>
+              <option value="old" data-i18n="sort_old">오래된순</option>
+              <option value="kcal_asc" data-i18n="sort_kcal_asc">칼로리 낮은순</option>
+              <option value="kcal_desc" data-i18n="sort_kcal_desc">칼로리 높은순</option>
+            </select>
+          </label>
+          <div class="arc-view-toggle" role="group" aria-label="보기 방식">
+            <button type="button" id="viewGridBtn" aria-pressed="true" aria-label="격자 보기">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="6" height="6"/><rect x="14" y="4" width="6" height="6"/><rect x="4" y="14" width="6" height="6"/><rect x="14" y="14" width="6" height="6"/></svg>
+            </button>
+            <button type="button" id="viewListBtn" aria-pressed="false" aria-label="목록 보기">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+      <div class="empty hidden" id="emptyState">
+        <b data-i18n="empty_title">일치하는 조식이 없어요</b>
+        <span data-i18n="empty_desc">검색어나 필터를 조정해보세요.</span>
+      </div>
+      <div class="load-more-wrap">
+        <button class="loadmore hidden" id="loadMoreBtn" data-i18n="load_more">더 불러오기</button>
+      </div>
+
+      <!-- AdSense: 계정 승인 후 이 자리에 실제 광고 코드가 채워집니다 (archive-bottom) -->
+    </div>
+  </div>
 
 </div>
 
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <div class="site-footer-social">
-      <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="site-footer-links"><a href="vote.html" data-i18n="footer_vote">명예의 전당</a> · <a href="privacy.html" data-i18n="footer_privacy">개인정보처리방침</a></div>
-    <div class="site-footer-bottom" data-i18n="footer_copyright">© how.about.breakfast 2020-2026. All rights reserved.</div>
+<footer class="page-footer">
+  <span data-i18n="footer_copyright">© how.about.breakfast 2020-2026. All rights reserved.</span>
+  <div class="page-footer-links">
+    <a href="vote.html" data-i18n="footer_vote">명예의 전당</a>
+    <a href="privacy.html" data-i18n="footer_privacy">개인정보처리방침</a>
   </div>
 </footer>
 

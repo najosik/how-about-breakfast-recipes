@@ -1,15 +1,21 @@
 (function () {
   'use strict';
 
+  var CAL_MIN = 0, CAL_MAX = 900, CAL_STEP = 50;
+  var MONTH_DAYS = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]; // Feb 29 to allow any leap-year date
+
   var state = {
     all: [],
     filtered: [],
     query: '',
     activeTags: new Set(),
-    onlyFailed: false,
+    excludedYears: new Set(), // years unchecked in the sidebar (default: none, i.e. all included)
+    dateFilter: null, // { mm, dd } or null - "이 날짜만" 필터 (연도 무관하게 월-일 매칭)
     calOn: false,
-    calMax: 600,
+    calMin: CAL_MIN,
+    calMax: CAL_MAX,
     sort: 'new',
+    viewMode: 'grid',
     page: 0,
     pageSize: 24
   };
@@ -19,13 +25,31 @@
   var emptyState = document.getElementById('emptyState');
   var loadMoreBtn = document.getElementById('loadMoreBtn');
   var tagCloud = document.getElementById('tagCloud');
-  var statsRow = document.getElementById('statsRow');
+  var arcCountMeta = document.getElementById('arcCountMeta');
+  var searchForm = document.getElementById('archiveSearchForm');
   var searchInput = document.getElementById('searchInput');
   var sortSel = document.getElementById('sortSel');
   var calToggle = document.getElementById('calToggle');
-  var calRange = document.getElementById('calRange');
-  var calLabel = document.getElementById('calLabel');
+  var calMinRange = document.getElementById('calMinRange');
+  var calMaxRange = document.getElementById('calMaxRange');
+  var calMinLabel = document.getElementById('calMinLabel');
+  var calMaxLabel = document.getElementById('calMaxLabel');
+  var calFill = document.getElementById('calFill');
   var langToggle = document.getElementById('langToggle');
+  var dateMonthSel = document.getElementById('dateMonthSel');
+  var dateDaySel = document.getElementById('dateDaySel');
+  var dateApplyBtn = document.getElementById('dateApplyBtn');
+  var dateChipRow = document.getElementById('dateChipRow');
+  var yearChecksEl = document.getElementById('yearChecks');
+  var clearFiltersBtn = document.getElementById('clearFiltersBtn');
+  var viewGridBtn = document.getElementById('viewGridBtn');
+  var viewListBtn = document.getElementById('viewListBtn');
+  var openFiltersBtn = document.getElementById('openFiltersBtn');
+  var closeFiltersBtn = document.getElementById('closeFiltersBtn');
+  var sheetScrim = document.getElementById('sheetScrim');
+  var arcFilters = document.getElementById('arcFilters');
+  var mobileChips = document.getElementById('mobileChips');
+  var filterCountBadge = document.getElementById('filterCountBadge');
 
   var params = new URLSearchParams(location.search);
 
@@ -50,15 +74,41 @@
   function init() {
     I18N.applyStaticI18n();
     bindLangToggle();
-    updateCalLabel();
-    renderStats();
+    populateDateSelects();
+    renderCountMeta();
+    renderYearChecks();
     renderTagCloud();
+    updateCalUI();
     bindEvents();
+    bindSheet();
 
     var tagParams = params.getAll('tag');
     tagParams.forEach(function (t) { state.activeTags.add(t); });
     if (params.get('q')) { state.query = params.get('q').toLowerCase(); searchInput.value = params.get('q'); }
-    if (params.get('failed') === '1') state.onlyFailed = true;
+    if (params.get('sort')) { state.sort = params.get('sort'); sortSel.value = state.sort; }
+    if (params.get('view') === 'list') setViewMode('list');
+    if (params.get('cal')) {
+      var parts = params.get('cal').split('-');
+      if (parts.length === 2 && !isNaN(parts[0]) && !isNaN(parts[1])) {
+        state.calOn = true;
+        state.calMin = clampCal(parseInt(parts[0], 10));
+        state.calMax = clampCal(parseInt(parts[1], 10));
+        calToggle.checked = true;
+      }
+    }
+    if (params.get('date')) {
+      var dparts = params.get('date').split('-');
+      if (dparts.length === 2) {
+        var mm = parseInt(dparts[0], 10), dd = parseInt(dparts[1], 10);
+        if (mm >= 1 && mm <= 12 && dd >= 1 && dd <= 31) state.dateFilter = { mm: mm, dd: dd };
+      }
+    }
+    var yearsExcluded = params.getAll('yx');
+    yearsExcluded.forEach(function (y) { state.excludedYears.add(y); });
+
+    updateCalUI();
+    syncDateSelectsToFilter();
+    renderDateChip();
 
     applyFilters();
     if (tagParams.length) {
@@ -66,23 +116,30 @@
         if (tagParams.indexOf(c.getAttribute('data-tag')) !== -1) { c.classList.add('active'); c.setAttribute('aria-pressed', 'true'); }
       });
     }
+    Array.prototype.forEach.call(yearChecksEl.querySelectorAll('input'), function (cb) {
+      if (state.excludedYears.has(cb.value)) cb.checked = false;
+    });
   }
 
-  // Keeps the address bar in sync with the query/tags/failed-only state so
-  // the URL on screen is always a valid, copy-pasteable link back to the
-  // same filtered results - mirrors what home.js already does when it
-  // sends a home-page search to archive.html?q=... . Sort order and the
-  // calorie slider aren't included since init() doesn't read them back
-  // from the URL either.
+  // Keeps the address bar in sync with every filter/sort/view state so the
+  // URL on screen is always a valid, copy-pasteable link back to the same
+  // filtered results.
   function syncUrl() {
     var p = new URLSearchParams();
     var q = searchInput.value.trim();
     if (q) p.set('q', q);
     state.activeTags.forEach(function (tag) { p.append('tag', tag); });
-    if (state.onlyFailed) p.set('failed', '1');
+    state.excludedYears.forEach(function (y) { p.append('yx', y); });
+    if (state.calOn) p.set('cal', state.calMin + '-' + state.calMax);
+    if (state.dateFilter) p.set('date', pad(state.dateFilter.mm) + '-' + pad(state.dateFilter.dd));
+    if (state.sort !== 'new') p.set('sort', state.sort);
+    if (state.viewMode !== 'grid') p.set('view', state.viewMode);
     var qs = p.toString();
     history.replaceState(null, '', location.pathname + (qs ? '?' + qs : ''));
   }
+
+  function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function clampCal(n) { return Math.max(CAL_MIN, Math.min(CAL_MAX, n)); }
 
   function bindLangToggle() {
     if (!langToggle) return;
@@ -96,36 +153,54 @@
           b.classList.toggle('active', b === btn);
         });
         I18N.applyStaticI18n();
-        updateCalLabel();
-        renderStats();
+        populateDateSelects();
+        syncDateSelectsToFilter();
+        renderDateChip();
+        renderCountMeta();
+        renderYearChecks();
         renderTagCloud();
+        updateCalUI();
         // re-mark active tag chips after rebuilding the cloud
         state.activeTags.forEach(function (tag) {
           var chip = tagCloud.querySelector('.tag-chip[data-tag="' + tag + '"]');
           if (chip) { chip.classList.add('active'); chip.setAttribute('aria-pressed', 'true'); }
         });
+        Array.prototype.forEach.call(yearChecksEl.querySelectorAll('input'), function (cb) {
+          if (state.excludedYears.has(cb.value)) cb.checked = false;
+        });
+        renderMobileChips();
         var ready = newLang === 'en' ? Shared.ensureEnMerged(state.all) : Promise.resolve(state.all);
         ready.then(renderGrid);
       });
     });
   }
 
-  function updateCalLabel() {
+  function renderCountMeta() {
+    var dates = state.all.map(function (r) { return r.date; }).filter(Boolean).sort();
+    var first = dates[0] ? dates[0].slice(0, 4) : '?';
+    var last = dates[dates.length - 1] ? dates[dates.length - 1].slice(0, 4) : '?';
     var lang = I18N.getLang();
-    calLabel.textContent = lang === 'en'
-      ? '≤ ' + state.calMax + 'kcal only'
-      : '칼로리 ' + state.calMax + 'kcal만';
+    arcCountMeta.textContent = state.all.length.toLocaleString() + (lang === 'en' ? ' entries · ' : '개 · ') + first + '—' + last;
   }
 
-  function renderStats() {
-    var withRecipe = state.all.filter(function (r) { return r.ingredients; }).length;
-    var dates = state.all.map(function (r) { return r.date; }).filter(Boolean).sort();
-    var first = dates[0] ? dates[0].slice(0, 7) : '?';
-    var last = dates[dates.length - 1] ? dates[dates.length - 1].slice(0, 7) : '?';
-    statsRow.innerHTML =
-      '<div class="stat"><b>' + state.all.length.toLocaleString() + '</b><span>' + I18N.t('stat_total') + '</span></div>' +
-      '<div class="stat"><b>' + withRecipe.toLocaleString() + '</b><span>' + I18N.t('stat_structured') + '</span></div>' +
-      '<div class="stat"><b>' + first + ' ~ ' + last + '</b><span>' + I18N.t('stat_range') + '</span></div>';
+  function yearOf(r) { return r.date ? r.date.slice(0, 4) : null; }
+
+  function renderYearChecks() {
+    var counts = {};
+    state.all.forEach(function (r) { var y = yearOf(r); if (y) counts[y] = (counts[y] || 0) + 1; });
+    var years = Object.keys(counts).sort(function (a, b) { return b.localeCompare(a); });
+    var lang = I18N.getLang();
+    yearChecksEl.innerHTML = years.map(function (y) {
+      return '<label><input type="checkbox" checked value="' + y + '">' + y + (lang === 'en' ? '' : '년') +
+        '<span class="arc-year-count">' + counts[y] + '</span></label>';
+    }).join('');
+    Array.prototype.forEach.call(yearChecksEl.querySelectorAll('input'), function (cb) {
+      cb.addEventListener('change', function () {
+        if (cb.checked) state.excludedYears.delete(cb.value); else state.excludedYears.add(cb.value);
+        state.page = 0;
+        applyFilters();
+      });
+    });
   }
 
   function renderTagCloud() {
@@ -140,20 +215,143 @@
       chip.setAttribute('aria-pressed', state.activeTags.has(pair[0]) ? 'true' : 'false');
       if (state.activeTags.has(pair[0])) chip.classList.add('active');
       chip.addEventListener('click', function () {
-        if (state.activeTags.has(pair[0])) {
-          state.activeTags.delete(pair[0]);
-          chip.classList.remove('active');
-          chip.setAttribute('aria-pressed', 'false');
-        } else {
-          state.activeTags.add(pair[0]);
-          chip.classList.add('active');
-          chip.setAttribute('aria-pressed', 'true');
-        }
-        state.page = 0;
-        applyFilters();
+        toggleTag(pair[0]);
       });
       tagCloud.appendChild(chip);
     });
+  }
+
+  function toggleTag(tag) {
+    var chip = tagCloud.querySelector('.tag-chip[data-tag="' + tag + '"]');
+    if (state.activeTags.has(tag)) {
+      state.activeTags.delete(tag);
+      if (chip) { chip.classList.remove('active'); chip.setAttribute('aria-pressed', 'false'); }
+    } else {
+      state.activeTags.add(tag);
+      if (chip) { chip.classList.add('active'); chip.setAttribute('aria-pressed', 'true'); }
+    }
+    state.page = 0;
+    applyFilters();
+  }
+
+  function populateDateSelects() {
+    var lang = I18N.getLang();
+    var monthNames = lang === 'en'
+      ? ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+      : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+    var curMonth = dateMonthSel.value ? parseInt(dateMonthSel.value, 10) : (new Date().getMonth() + 1);
+    dateMonthSel.innerHTML = monthNames.map(function (m, i) {
+      return '<option value="' + (i + 1) + '">' + m + '</option>';
+    }).join('');
+    dateMonthSel.value = String(curMonth);
+    fillDaySelect(curMonth);
+  }
+
+  function fillDaySelect(mm) {
+    var curDay = dateDaySel.value ? parseInt(dateDaySel.value, 10) : (new Date().getDate());
+    var maxDay = MONTH_DAYS[mm - 1];
+    var lang = I18N.getLang();
+    var opts = [];
+    for (var d = 1; d <= maxDay; d++) opts.push('<option value="' + d + '">' + d + (lang === 'en' ? '' : '일') + '</option>');
+    dateDaySel.innerHTML = opts.join('');
+    dateDaySel.value = String(Math.min(curDay, maxDay));
+  }
+
+  function syncDateSelectsToFilter() {
+    if (!state.dateFilter) return;
+    dateMonthSel.value = String(state.dateFilter.mm);
+    fillDaySelect(state.dateFilter.mm);
+    dateDaySel.value = String(state.dateFilter.dd);
+  }
+
+  function renderDateChip() {
+    var lang = I18N.getLang();
+    if (!state.dateFilter) { dateChipRow.innerHTML = ''; return; }
+    var label = lang === 'en'
+      ? (dateMonthSel.options[state.dateFilter.mm - 1].text + ' ' + state.dateFilter.dd)
+      : (state.dateFilter.mm + '월 ' + state.dateFilter.dd + '일');
+    dateChipRow.innerHTML = '<button type="button" class="arc-chip" id="dateChipRemove">' + Shared.escapeHtml(label) + ' ✕</button>';
+    document.getElementById('dateChipRemove').addEventListener('click', function () {
+      state.dateFilter = null;
+      renderDateChip();
+      state.page = 0;
+      applyFilters();
+      renderMobileChips();
+    });
+  }
+
+  function updateCalUI() {
+    if (state.calMin > state.calMax) state.calMin = state.calMax;
+    calMinRange.value = String(state.calMin);
+    calMaxRange.value = String(state.calMax);
+    calToggle.checked = state.calOn;
+    var lang = I18N.getLang();
+    calMinLabel.textContent = state.calMin;
+    calMaxLabel.textContent = state.calMax >= CAL_MAX ? (CAL_MAX + 'kcal+') : (state.calMax + 'kcal');
+    var pctMin = (state.calMin - CAL_MIN) / (CAL_MAX - CAL_MIN) * 100;
+    var pctMax = (state.calMax - CAL_MIN) / (CAL_MAX - CAL_MIN) * 100;
+    calFill.style.left = pctMin + '%';
+    calFill.style.width = (pctMax - pctMin) + '%';
+  }
+
+  function renderMobileChips() {
+    var lang = I18N.getLang();
+    var chips = [];
+    if (state.dateFilter) {
+      var label = lang === 'en'
+        ? (dateMonthSel.options[state.dateFilter.mm - 1].text + ' ' + state.dateFilter.dd)
+        : (state.dateFilter.mm + '월 ' + state.dateFilter.dd + '일');
+      chips.push({ key: 'date', label: label });
+    }
+    if (state.calOn) chips.push({ key: 'cal', label: state.calMin + '–' + state.calMax + 'kcal' });
+    state.activeTags.forEach(function (t) { chips.push({ key: 'tag:' + t, label: '#' + I18N.tagLabel(t) }); });
+
+    mobileChips.innerHTML = chips.map(function (c) {
+      return '<button type="button" class="arc-chip" data-chip="' + Shared.escapeHtml(c.key) + '">' + Shared.escapeHtml(c.label) + ' ✕</button>';
+    }).join('');
+    Array.prototype.forEach.call(mobileChips.querySelectorAll('button'), function (btn) {
+      btn.addEventListener('click', function () {
+        var key = btn.getAttribute('data-chip');
+        if (key === 'date') { state.dateFilter = null; renderDateChip(); }
+        else if (key === 'cal') { state.calOn = false; updateCalUI(); }
+        else if (key.indexOf('tag:') === 0) { toggleTag(key.slice(4)); return; }
+        state.page = 0;
+        applyFilters();
+      });
+    });
+
+    var activeGroups = (state.dateFilter ? 1 : 0) + (state.calOn ? 1 : 0) +
+      (state.activeTags.size ? 1 : 0) + (state.excludedYears.size ? 1 : 0);
+    filterCountBadge.textContent = String(activeGroups);
+    filterCountBadge.classList.toggle('hidden', activeGroups === 0);
+  }
+
+  function setViewMode(mode) {
+    state.viewMode = mode;
+    grid.classList.toggle('list-view', mode === 'list');
+    viewGridBtn.setAttribute('aria-pressed', mode === 'grid' ? 'true' : 'false');
+    viewListBtn.setAttribute('aria-pressed', mode === 'list' ? 'true' : 'false');
+  }
+
+  function clearAllFilters() {
+    state.query = '';
+    searchInput.value = '';
+    state.activeTags.clear();
+    state.excludedYears.clear();
+    state.dateFilter = null;
+    state.calOn = false;
+    state.calMin = CAL_MIN;
+    state.calMax = CAL_MAX;
+    state.sort = 'new';
+    sortSel.value = 'new';
+    state.page = 0;
+
+    renderTagCloud();
+    Array.prototype.forEach.call(yearChecksEl.querySelectorAll('input'), function (cb) { cb.checked = true; });
+    renderDateChip();
+    updateCalUI();
+    renderMobileChips();
+    applyFilters();
   }
 
   function bindEvents() {
@@ -167,6 +365,13 @@
         applyFilters();
       }, 180);
     });
+    searchForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      clearTimeout(t);
+      state.query = searchInput.value.trim().toLowerCase();
+      state.page = 0;
+      applyFilters();
+    });
 
     sortSel.addEventListener('change', function () {
       state.sort = sortSel.value;
@@ -178,17 +383,69 @@
       state.calOn = calToggle.checked;
       state.page = 0;
       applyFilters();
+      renderMobileChips();
     });
-
-    calRange.addEventListener('input', function () {
-      state.calMax = parseInt(calRange.value, 10);
-      updateCalLabel();
+    calMinRange.addEventListener('input', function () {
+      var v = clampCal(parseInt(calMinRange.value, 10));
+      if (v > state.calMax) v = state.calMax;
+      state.calMin = v;
+      updateCalUI();
       if (state.calOn) { state.page = 0; applyFilters(); }
     });
+    calMaxRange.addEventListener('input', function () {
+      var v = clampCal(parseInt(calMaxRange.value, 10));
+      if (v < state.calMin) v = state.calMin;
+      state.calMax = v;
+      updateCalUI();
+      if (state.calOn) { state.page = 0; applyFilters(); }
+    });
+    calMinRange.addEventListener('change', renderMobileChips);
+    calMaxRange.addEventListener('change', renderMobileChips);
+
+    dateMonthSel.addEventListener('change', function () { fillDaySelect(parseInt(dateMonthSel.value, 10)); });
+    dateApplyBtn.addEventListener('click', function () {
+      state.dateFilter = { mm: parseInt(dateMonthSel.value, 10), dd: parseInt(dateDaySel.value, 10) };
+      renderDateChip();
+      renderMobileChips();
+      state.page = 0;
+      applyFilters();
+    });
+
+    clearFiltersBtn.addEventListener('click', clearAllFilters);
+
+    viewGridBtn.addEventListener('click', function () { setViewMode('grid'); syncUrl(); });
+    viewListBtn.addEventListener('click', function () { setViewMode('list'); syncUrl(); });
 
     loadMoreBtn.addEventListener('click', function () {
       state.page += 1;
       renderGrid();
+    });
+  }
+
+  // Mobile bottom sheet - #arcFilters is the same sidebar element repositioned
+  // via CSS under ~640px; opening/closing just toggles visibility + a scrim,
+  // with focus moved in/out and Escape/outside-click to close.
+  function bindSheet() {
+    if (!openFiltersBtn) return;
+    function openSheet() {
+      arcFilters.classList.add('open');
+      sheetScrim.classList.remove('hidden');
+      sheetScrim.classList.add('open');
+      openFiltersBtn.setAttribute('aria-expanded', 'true');
+      closeFiltersBtn.focus();
+    }
+    function closeSheet() {
+      arcFilters.classList.remove('open');
+      sheetScrim.classList.add('hidden');
+      sheetScrim.classList.remove('open');
+      openFiltersBtn.setAttribute('aria-expanded', 'false');
+      openFiltersBtn.focus();
+    }
+    openFiltersBtn.addEventListener('click', openSheet);
+    closeFiltersBtn.addEventListener('click', closeSheet);
+    sheetScrim.addEventListener('click', closeSheet);
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && arcFilters.classList.contains('open')) closeSheet();
     });
   }
 
@@ -198,21 +455,32 @@
     return hay.indexOf(q) !== -1;
   }
 
+  function matchesDate(r, filter) {
+    if (!filter || !r.date) return !filter;
+    var parts = r.date.split('-');
+    return parseInt(parts[1], 10) === filter.mm && parseInt(parts[2], 10) === filter.dd;
+  }
+
   function applyFilters() {
     syncUrl();
+    renderMobileChips();
     var q = state.query;
     var tags = state.activeTags;
     var list = state.all.filter(function (r) {
       if (!matchesQuery(r, q)) return false;
-      if (state.onlyFailed && !r.failed) return false;
       if (tags.size > 0) {
         var rtags = new Set(r.hashtags || []);
         var any = false;
         tags.forEach(function (t) { if (rtags.has(t)) any = true; });
         if (!any) return false;
       }
+      if (state.excludedYears.size > 0) {
+        var y = yearOf(r);
+        if (y && state.excludedYears.has(y)) return false;
+      }
+      if (state.dateFilter && !matchesDate(r, state.dateFilter)) return false;
       if (state.calOn) {
-        if (r.calories == null || r.calories > state.calMax) return false;
+        if (r.calories == null || r.calories < state.calMin || r.calories > state.calMax) return false;
       }
       return true;
     });
