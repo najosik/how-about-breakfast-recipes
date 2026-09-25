@@ -47,6 +47,10 @@ VOTE_PATH = os.path.join(HERE, 'monthly-vote.json')
 
 SITE_BASE = 'https://how-about-breakfast.com'
 
+# 공유 CSS/JS가 바뀔 때마다 값을 올려서 Cloudflare/브라우저 캐시를 무효화한다.
+# (정적 페이지 index/archive/vote/privacy/en-privacy.html의 <link>/<script>도 함께 올려줄 것)
+ASSET_VERSION = '20260925'
+
 
 def load_medal_winners():
     """{page_id: target_month} for every 이달의 조식 vote round that has a
@@ -516,7 +520,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{rel}/styles.css">
+<link rel="stylesheet" href="{rel}/styles.css?v={asset_version}">
 <style>
   .recipe-page{{max-width:1080px; margin:0 auto; padding:0 20px 20px;}}
   .recipe-breadcrumb{{max-width:1080px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; color:var(--text-2); border-bottom:1px solid var(--rule);}}
@@ -673,9 +677,9 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 {mobile_bar_html}
 
 {json_ld}
-<script src="{rel}/shared.js"></script>
-<script src="{rel}/cookmode.js"></script>
-<script src="{rel}/recipe.js"></script>
+<script src="{rel}/shared.js?v={asset_version}"></script>
+<script src="{rel}/cookmode.js?v={asset_version}"></script>
+<script src="{rel}/recipe.js?v={asset_version}"></script>
 <script>
 (function () {{
   var btn = document.getElementById('shareBtn');
@@ -918,7 +922,7 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
 
         html_out = PAGE_TEMPLATE.format(
             html_lang=lang, title_suffix=labels['title_suffix'], site_name=labels['site_name'],
-            title=esc(title), description=esc(description), url=url, rel=rel,
+            title=esc(title), description=esc(description), url=url, rel=rel, asset_version=ASSET_VERSION,
             hreflang_tags=hreflang_tags, robots_meta=robots_meta, lang_switch_html=lang_switch_html,
             archive_back_label=labels['archive_back'],
             nav_home_label=labels['nav_home'],
