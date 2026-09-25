@@ -48,6 +48,7 @@
 
   Shared.loadData().then(function (all) {
     allData = all;
+    Shared.setRecords(all);
     I18N.setCount(all.length);
     var ready = I18N.getLang() === 'en' ? Shared.ensureEnMerged(all) : Promise.resolve(all);
     ready.then(function () {

@@ -166,5 +166,5 @@ var CookMode = (function () {
 
   init();
 
-  return { open: open };
+  return { open: open, parseIngredientLines: parseIngredientLines, parseStepLines: parseStepLines };
 })();
