@@ -24341,6 +24341,21 @@
   "page_id": "버터빈"
  },
  {
+  "date": "2024-10-28",
+  "date_raw": "20241028",
+  "weather": null,
+  "failed": true,
+  "calories": null,
+  "title": null,
+  "credit": null,
+  "hashtags": [],
+  "intro": null,
+  "ingredients": null,
+  "steps": null,
+  "diary_no": 1877,
+  "page_id": "2024-10-28"
+ },
+ {
   "date": "2024-10-26",
   "date_raw": "20241026",
   "diary_no": 1228,
