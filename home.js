@@ -28,7 +28,9 @@
   ];
 
   var allData = null;
-  var selectedYear = null; // 히트맵 연도 탭 필터 상태
+  var selectedYear = null; // 히트맵 연도 탭 필터 상태 (데스크톱)
+  var calendarMonth = null; // 모바일 월별 캘린더 커서 (Date, day=1)
+  var calendarBound = false;
 
   bindHomeSearch();
   bindBetaToggle();
@@ -79,6 +81,7 @@
     var otd = computeOnThisDay(all);
     renderCoverAndList(otd, siblingsByDate);
     renderLedger(all, siblingsByDate);
+    renderCalendar(all, siblingsByDate);
     renderTags(all);
     renderCta(all);
   }
@@ -459,6 +462,90 @@
 
     var scrollWrap = document.querySelector('.home-ledger-scroll');
     if (scrollWrap) requestAnimationFrame(function () { scrollWrap.scrollLeft = scrollWrap.scrollWidth; });
+  }
+
+  // Mobile-only month calendar (docs/Handoff/B-Mobile.dc.html) - shows one
+  // month at a time with prev/next navigation, same posted/missed/multi/
+  // today states as the desktop week-grid, computed independently here so
+  // it stays simple even though it duplicates renderLedger()'s per-date scan.
+  function renderCalendar(all, siblingsByDate) {
+    var lang = I18N.getLang();
+    var postedDates = new Set();
+    var recordByDate = {};
+    var postCounts = {};
+    Object.keys(siblingsByDate).forEach(function (d) { postCounts[d] = siblingsByDate[d].length; });
+    all.forEach(function (r) {
+      if (!r.date || !/^\d{4}-\d{2}-\d{2}$/.test(r.date)) return;
+      if (!r.failed) postedDates.add(r.date);
+      var existing = recordByDate[r.date];
+      if (!existing || (existing.failed && !r.failed) || (existing.day_secondary && !r.day_secondary)) {
+        recordByDate[r.date] = r;
+      }
+    });
+    var dated = Array.from(postedDates).sort();
+    if (!dated.length) return;
+    var minDate = new Date(dated[0] + 'T00:00:00');
+    var today = new Date();
+    if (!calendarMonth) calendarMonth = new Date(today.getFullYear(), today.getMonth(), 1);
+
+    function pad(n) { return (n < 10 ? '0' : '') + n; }
+    var todayKey = today.getFullYear() + '-' + pad(today.getMonth() + 1) + '-' + pad(today.getDate());
+
+    var weekdayNames = lang === 'en' ? ['S', 'M', 'T', 'W', 'T', 'F', 'S'] : ['일', '월', '화', '수', '목', '금', '토'];
+    document.getElementById('calWeekdays').innerHTML = weekdayNames.map(function (w) { return '<span>' + w + '</span>'; }).join('');
+
+    var y = calendarMonth.getFullYear();
+    var m = calendarMonth.getMonth();
+    var monthNames = lang === 'en'
+      ? ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
+      : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+    document.getElementById('calLabel').textContent = lang === 'en' ? (monthNames[m] + ' ' + y) : (y + '년 ' + monthNames[m]);
+
+    var firstDow = new Date(y, m, 1).getDay();
+    var daysInMonth = new Date(y, m + 1, 0).getDate();
+    var cells = [];
+    for (var i = 0; i < firstDow; i++) cells.push(null);
+    for (var d = 1; d <= daysInMonth; d++) cells.push({ key: y + '-' + pad(m + 1) + '-' + pad(d), day: d });
+
+    var gridEl = document.getElementById('calGrid');
+    gridEl.innerHTML = '';
+    cells.forEach(function (c) {
+      var cell = document.createElement('div');
+      if (!c) { cell.className = 'home-calendar-cell empty'; gridEl.appendChild(cell); return; }
+      var cellDate = new Date(c.key + 'T00:00:00');
+      var inRange = cellDate >= minDate && cellDate <= today;
+      var n = postCounts[c.key] || 0;
+      var cls = 'home-calendar-cell';
+      if (inRange) cls += postedDates.has(c.key) ? (n > 1 ? ' posted multi' : ' posted') : ' missed';
+      if (c.key === todayKey) cls += ' today';
+      cell.className = cls;
+      cell.textContent = n > 1 ? n : c.day;
+      if (n > 1) cell.title = String(c.day);
+      if (inRange && postedDates.has(c.key)) {
+        var rec = recordByDate[c.key];
+        cell.addEventListener('click', function () { Shared.openModal(rec, { siblingsByDate: siblingsByDate }); });
+      }
+      gridEl.appendChild(cell);
+    });
+
+    var prevBtn = document.getElementById('calPrev');
+    var nextBtn = document.getElementById('calNext');
+    prevBtn.disabled = (y === minDate.getFullYear() && m === minDate.getMonth());
+    nextBtn.disabled = (y === today.getFullYear() && m === today.getMonth());
+
+    if (!calendarBound) {
+      calendarBound = true;
+      prevBtn.addEventListener('click', function () {
+        if (prevBtn.disabled) return;
+        calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() - 1, 1);
+        renderCalendar(allData, siblingsByDate);
+      });
+      nextBtn.addEventListener('click', function () {
+        if (nextBtn.disabled) return;
+        calendarMonth = new Date(calendarMonth.getFullYear(), calendarMonth.getMonth() + 1, 1);
+        renderCalendar(allData, siblingsByDate);
+      });
+    }
   }
 
   function renderTags(all) {

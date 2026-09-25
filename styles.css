@@ -50,6 +50,25 @@ a{color:var(--teal-deep);}
   background:var(--paper-raised); transition:border-color .12s, color .12s;
 }
 .channel-links a:hover{border-color:var(--teal); color:var(--teal-deep);}
+.channel-toggle{display:none;}
+/* Under ~640px, .channel-links collapses behind a hamburger button
+   (#channelToggle) into a popover - shared.js wires the open/close.
+   Applies wherever this markup pair appears: index/archive/vote. */
+@media (max-width:640px){
+  .lang-bar,.nav-right{position:relative;}
+  .channel-toggle{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:40px; height:40px; border:1px solid var(--line-strong); border-radius:4px;
+    background:var(--paper-raised); color:var(--ink-soft); cursor:pointer;
+  }
+  .channel-links{
+    display:none; position:absolute; right:0; top:calc(100% + 6px); z-index:20;
+    flex-direction:column; gap:4px; background:var(--paper); border:1px solid var(--line-strong);
+    border-radius:6px; box-shadow:0 8px 24px rgba(0,0,0,0.16); padding:8px; min-width:170px;
+  }
+  .channel-links.open{display:flex;}
+  .channel-links a{justify-content:flex-start;}
+}
 .lang-toggle{display:inline-flex; border:1px solid var(--line-strong); border-radius:4px; overflow:hidden;}
 .lang-toggle button{
   border:none; background:var(--paper-raised); color:var(--ink-soft); font-family:inherit;
@@ -446,6 +465,11 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
 .home-ledger-legend i{width:10px; height:10px; display:inline-block;}
 .home-swatch-today{box-sizing:border-box; border:2px solid var(--ink);}
 
+/* Mobile month calendar - replaces the desktop year-tabs + week-grid under
+   ~640px (docs/Handoff/B-Mobile.dc.html), reusing the same posted/missed/
+   multi/today data as the desktop heatmap. */
+.home-calendar{display:none;}
+
 /* 소재로 골라 먹기 + Surprise me */
 .home-bottom-grid{padding:48px 0 56px; display:grid; grid-template-columns:7fr 5fr; gap:28px;}
 .home-tags{border-top:3px solid var(--ink);}
@@ -482,6 +506,20 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
   .home-cover-photo .card-photo{height:240px;}
   .home-cover-photo img,.home-cover-photo .card-thumb{height:240px;}
   .home-editor{grid-template-columns:1fr;}
+  .home-year-tabs,.home-ledger-scroll{display:none;}
+  .home-calendar{display:block; max-width:1080px; margin:16px auto 0;}
+  .home-calendar-nav{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;}
+  .home-calendar-nav button{width:40px; height:40px; border:0; background:transparent; color:var(--ink); cursor:pointer; display:flex; align-items:center; justify-content:center;}
+  .home-calendar-nav button:disabled{opacity:0.3; cursor:default;}
+  .home-calendar-label{font-family:'Fraunces',serif; font-size:17px; font-weight:800;}
+  .home-calendar-weekdays{display:grid; grid-template-columns:repeat(7,1fr); gap:4px; font-size:11px; color:var(--text-2); text-align:center; margin-bottom:4px;}
+  .home-calendar-grid{display:grid; grid-template-columns:repeat(7,1fr); gap:4px;}
+  .home-calendar-cell{height:40px; box-sizing:border-box; display:flex; align-items:center; justify-content:center; font-family:'Fraunces',serif; font-size:13px; background:transparent; color:var(--ink);}
+  .home-calendar-cell.posted{background:var(--green); color:#fff; cursor:pointer;}
+  .home-calendar-cell.posted.multi{background:var(--green-deep);}
+  .home-calendar-cell.missed{background:var(--mint-skip); color:var(--text-2);}
+  .home-calendar-cell.today{border:2px solid var(--ink);}
+  .home-calendar-cell.empty{visibility:hidden;}
   .home-tags-list{grid-template-columns:1fr;}
   .home-cta-title{font-size:26px;}
   .home-footer{flex-direction:column; align-items:flex-start;}

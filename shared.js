@@ -474,3 +474,33 @@ var Shared = (function () {
     bindCardClicks: bindCardClicks
   };
 })();
+
+// Mobile channel-link menu (Instagram/YouTube/Brunch) - collapses into a
+// popover behind a hamburger button under ~640px, shared by every page
+// that carries #channelToggle/.channel-links (index/archive/vote).
+(function () {
+  'use strict';
+  var toggle = document.getElementById('channelToggle');
+  var links = document.getElementById('channelLinks');
+  if (!toggle || !links) return;
+
+  function close() {
+    links.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function open() {
+    links.classList.add('open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
+
+  toggle.addEventListener('click', function (e) {
+    e.stopPropagation();
+    if (links.classList.contains('open')) close(); else open();
+  });
+  document.addEventListener('click', function (e) {
+    if (links.classList.contains('open') && !links.contains(e.target) && e.target !== toggle) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && links.classList.contains('open')) { close(); toggle.focus(); }
+  });
+})();
