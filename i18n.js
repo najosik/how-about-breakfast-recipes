@@ -14,9 +14,6 @@ var I18N = (function () {
   var STRINGS = {
     ko: {
       nav_home: '← 홈으로',
-      nav_archive: '아카이브',
-      nav_hall: '명예의 전당',
-      nav_brunch: '브런치북',
       archive_title: '전체 아카이브',
       archive_subtitle: '2020년 7월부터 매일 아침 기록해 온 조식 다이어리, 그 안에 쌓인 레시피를 검색합니다.',
       archive_search_label: '아카이브 검색',
@@ -122,9 +119,6 @@ var I18N = (function () {
     },
     en: {
       nav_home: '← Home',
-      nav_archive: 'Archive',
-      nav_hall: 'Hall of Fame',
-      nav_brunch: 'Brunch',
       archive_title: 'The Archive',
       archive_subtitle: 'A daily breakfast journal since July 2020 — search the recipes collected along the way.',
       archive_search_label: 'Search the archive',
