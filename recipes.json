@@ -12660,7 +12660,7 @@
   "weather": "20도/흐림",
   "failed": false,
   "calories": null,
-  "title": "20250926 #조식다이어리 1519, 20도/흐림",
+  "title": "오늘 조식 쉽니다",
   "credit": null,
   "hashtags": [
    "조식",
@@ -12670,13 +12670,6 @@
   "ingredients": null,
   "steps": null,
   "raw": "20250926 #조식다이어리 1519, 20도/흐림\n\n‘별일이 없으면 날마다 어제와 다른 조식을 만들어 먹는다’ 이 말에는 우선 ‘별일이 없으면’이라는 단서가 붙는다. 그 별일이란 조식을 거를 정도로 많이 아프거나 출장, 여행 등으로 주방을 비울 수밖에 없는 경우를 말한다. 물론 소소하게는 1년에 한 번 정도 건강 검진하는 날 금식으로 조식을 거르는 경우가 있기는 하다.\n(나조식, 외로워도 슬퍼도 나는 꼭 먹어)\n\n건강 검진으로 오늘 조식은 하루 쉽니다. \n\n#조식\n\n-\n\n우유부단한 사람에게 ‘물에 물 탄 듯 술에 술 탄 듯하다’며 타박을 한다. 이 말을 들을 때마다 부정적인 말뜻 뒤에 있는 긍정적인 뉘앙스가 느껴진다. \n\n나는 ‘물에 물, 술에 술’을 탄 듯한 사람을 좋게 본다(부럽기까지 하다). 타인에겐 ‘맺고 끊는 게 없고’ ‘물러 터지고’ ‘티미해’(트미해) 보일지라도 자신의 본성을 그대로 유지하고 있으니까.\n(김진해, 물에 물 탄 듯) ",
-  "_en": {
-   "hash": "12f2d15f82bf1319955e02848dc7fe57d69cfe671163a7a173953185f587c799",
-   "title": "20250926 #breakfastdiary day 1519, 20°C/cloudy",
-   "intro": "20250926 #breakfastdiary day 1519, 20°C/cloudy\n'If nothing comes up, I make and eat a different breakfast every day from the day before' — this statement comes with a condition: 'if nothing comes up.' That 'something' means being too sick to eat breakfast, or being away from the kitchen for a business trip or travel. Of course, on a smaller scale, there's also the once-a-year health checkup day, when I fast and skip breakfast.\n(Najoshik, 'Lonely or Sad, I Still Have to Eat' from Everyday Breakfast)\nBreakfast is taking a day off today for a health checkup.\n-\nPeople scold an indecisive person by saying they're 'like water mixed with water, liquor mixed with liquor.' Every time I hear that phrase, I sense a positive nuance hiding behind its negative surface.\nI actually like people who are 'like water in water, liquor in liquor' (I even envy them). Even if to others they seem to lack decisiveness, seem 'wishy-washy,' or 'bland,' they hold onto their true nature regardless.\n(Kim Jin-hae, Like Water Mixed With Water)",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "별일이-없으면-날마다-어제와-다른-조식을-만들어-먹는다-이-말에는-우",
   "image": "https://images.how-about-breakfast.com/images/11114.jpg",
   "video": "https://images.how-about-breakfast.com/images/11114.mp4"
@@ -51236,16 +51229,9 @@
    "조식다이어리"
   ],
   "intro": "20220926, #조식다이어리 555, 15도/흐림, 15분/운동\n중독자란 허약하고 우울한 심약자가 아니라 일찌 감치 그 사실을 깨닫고 마음과 몸을 무엇에 의지할 것 인지 간파해버린 사람을 일컫는 말이 아닐까.\n편혜영, 술과 농담\n그런 날도 있지 뭐,",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 사과 1개",
+  "steps": "- 사과는 흐르는 물에 씻은 후 껍질째 씹어 먹는다. ",
   "raw": "20220926, #조식다이어리 555, 15도/흐림, 15분/운동\n\n중독자란 허약하고 우울한 심약자가 아니라 일찌 감치 그 사실을 깨닫고 마음과 몸을 무엇에 의지할 것 인지 간파해버린 사람을 일컫는 말이 아닐까.\n편혜영, 술과 농담\n\n그런 날도 있지 뭐, \n\n#사과 #apple",
-  "_en": {
-   "hash": "18a521c4485f63db8fc9a5e7a42262dafa0fe8b5ddb1293452528fa45e25bf03",
-   "title": "Apple",
-   "intro": "20220926 #breakfastdiary 555, 15°C/cloudy, 15min/exercise\nMaybe an addict isn't a weak, depressed, faint-hearted person, but someone who realized early on what their mind and body would need to lean on, and saw straight through it.\nPyun Hye-young, Liquor and Jokes\nSome days are just like that,",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "사과-2",
   "image": "https://images.how-about-breakfast.com/images/11113.jpg",
   "gallery": [
