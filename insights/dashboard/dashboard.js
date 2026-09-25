@@ -319,9 +319,9 @@
 
   function tile(label, value, delta, deltaClass) {
     return el('div', { class: 'tile' }, [
-      el('div', { class: 'label', text: label }),
-      el('div', { class: 'value', text: value }),
-      delta ? el('div', { class: `delta ${deltaClass || ''}`, text: delta }) : null,
+      el('span', { class: 'label', text: label }),
+      el('strong', { class: 'value', text: value }),
+      delta ? el('span', { class: `delta ${deltaClass || ''}`, text: delta }) : null,
     ]);
   }
 
@@ -342,17 +342,17 @@
       : '이 기간의 계정 인사이트가 아직 없습니다.';
 
     document.getElementById('ov-tiles').replaceChildren(
-      tile('팔로워', fmt(current), newFollowers !== null ? `기간 중 신규 +${fmt(newFollowers)}` : null, newFollowers ? 'up' : ''),
-      tile('도달 (일별 합계)', fmtCompact(sum(col('reach')))),
+      tile('팔로워', fmt(current), newFollowers !== null ? `신규 +${fmt(newFollowers)}` : null, newFollowers ? 'up' : ''),
       tile('비팔로워 도달 비율', fmtPct(nfShare), nfShare !== null ? `비팔로워 ${fmtCompact(reachNF)}명` : null),
-      tile('조회 (일별 합계)', fmtCompact(sum(col('views')))),
-      tile('참여 (좋아요·댓글·저장·공유)', fmtCompact(sum(col('total_interactions')))),
+      tile('도달', fmtCompact(sum(col('reach'))), '일별 합계'),
+      tile('조회', fmtCompact(sum(col('views'))), '일별 합계'),
+      tile('참여', fmtCompact(sum(col('total_interactions'))), '좋아요·댓글·저장·공유'),
     );
 
     const hasSplit = rows.some((r) => typeof r.reach_non_follower === 'number');
     columnChart(document.getElementById('ch-reach'), {
       title: '일별 도달',
-      subtitle: hasSplit ? '팔로워와 비팔로워로 나눠 보여줍니다. 비팔로워 막대가 큰 날의 게시물이 확산된 게시물입니다.' : '팔로워/비팔로워 구분 데이터가 없어 전체 도달만 표시합니다.',
+      subtitle: hasSplit ? '주황 막대가 큰 날 = 비팔로워에게 퍼진 날' : '팔로워/비팔로워 구분 데이터가 없어 전체 도달만 표시합니다.',
       labels,
       series: hasSplit
         ? [{ name: '팔로워', color: '--series-1', values: col('reach_follower') },
@@ -364,7 +364,7 @@
     const pDates = profileDates.filter((d) => d >= from);
     lineChart(document.getElementById('ch-followers'), {
       title: '팔로워 수',
-      subtitle: '매일 수집할 때 기록한 값입니다.',
+      subtitle: '매일 수집할 때 기록',
       labels: pDates,
       series: [{ name: '팔로워', color: '--series-1', values: pDates.map((d) => state.profile[d].followers_count) }],
       emptyText: '팔로워 수는 수집을 시작한 날부터 쌓입니다. 이틀 이상 쌓이면 그래프가 나타납니다.',
@@ -381,39 +381,72 @@
     });
 
     const posts = state.posts.filter((p) => p.date >= from && p.insights);
+    renderOverviewInsight(rows, reachNF, nfShare, newFollowers);
     renderFormatTable(posts);
     renderTopTable(posts);
   }
 
+  // Inverse summary card beside the reach chart: the day the account reached
+  // the most non-followers in the period and the post published that day.
+  function renderOverviewInsight(rows, reachNF, nfShare, newFollowers) {
+    const box = document.getElementById('ov-insight');
+    const head = el('span', { class: 'ins-label', text: '이번 기간 요약' });
+    const best = rows.filter((r) => typeof r.reach_non_follower === 'number')
+      .reduce((a, b) => (!a || b.reach_non_follower > a.reach_non_follower ? b : a), null);
+    if (!best) {
+      box.replaceChildren(head, el('strong', { class: 'ins-main', text: '계정 일별 데이터가 쌓이면 요약이 나타나요.' }));
+      return;
+    }
+    const post = state.posts.find((p) => p.date === best.date);
+    box.replaceChildren(
+      head,
+      el('strong', { class: 'ins-main', text: `비팔로워에게 가장 많이 닿은 날은 ${Number(best.date.slice(5, 7))}월 ${Number(best.date.slice(8, 10))}일이에요.` }),
+      el('p', { text: post ? `그날 올린 게시물: ${titleOf(post)} · 비팔로워 ${fmtCompact(best.reach_non_follower)}명` : `비팔로워 ${fmtCompact(best.reach_non_follower)}명 · 그날 올린 게시물 없음` }),
+      el('div', { class: 'ins-targets' }, [
+        el('div', {}, [el('span', { text: '비팔로워 비율' }), el('strong', { text: fmtPct(nfShare) })]),
+        el('div', {}, [el('span', { text: '신규 팔로워' }), el('strong', { text: newFollowers !== null ? `+${fmt(newFollowers)}` : '—' })]),
+      ]),
+    );
+  }
+
+  // One card per format: post count, average reach (big), a spread-index bar
+  // on a shared scale, and share / save rates as chips.
   function renderFormatTable(posts) {
     const groups = {};
-    for (const p of posts) (groups[p.media_type] = groups[p.media_type] || []).push(p);
-    const keys = Object.keys(groups).sort((a, b) => groups[b].length - groups[a].length);
+    for (const p of posts) { const k = formatLabel(p); if (k) (groups[k] = groups[k] || []).push(p); }
+    const keys = ['릴스', '캐러셀', '사진', '동영상'].filter((k) => groups[k]);
     const holder = document.getElementById('ov-formats');
     if (!keys.length) {
       holder.replaceChildren(el('p', { class: 'empty', text: '이 기간에 인사이트가 있는 게시물이 없습니다.' }));
       return;
     }
-    const m = (list, k) => mean(list.map((p) => p.insights[k]));
-    holder.replaceChildren(el('table', { class: 'data' }, [
-      el('thead', {}, el('tr', {}, ['형식', '게시물', '평균 도달', '평균 조회', '평균 저장', '평균 공유', '평균 참여율', '평균 확산 지수']
-        .map((h, i) => el('th', { class: i === 0 ? 'left' : null, text: h })))),
-      el('tbody', {}, keys.map((k) => {
-        const list = groups[k];
-        return el('tr', {}, [
-          el('td', { class: 'left', text: FORMAT_LABELS[k] || k }),
-          el('td', { text: fmt(list.length) }),
-          el('td', { text: fmt(m(list, 'reach')) }),
-          el('td', { text: fmt(m(list, 'views')) }),
-          el('td', { text: fmt(m(list, 'saved')) }),
-          el('td', { text: fmt(m(list, 'shares')) }),
-          el('td', { text: fmtPct(mean(list.map(engagementRate))) }),
-          el('td', { text: fmtRatio(mean(list.map(spreadIndex))) }),
-        ]);
-      })),
-    ]));
+    const stats = keys.map((k) => {
+      const list = groups[k];
+      return {
+        k, n: list.length, reach: mean(list.map((p) => p.insights.reach)),
+        spread: mean(list.map(spreadIndex)), share: median(list.map(SIGNALS[0].value)), save: median(list.map(SIGNALS[1].value)),
+      };
+    });
+    const maxSpread = Math.max(...stats.map((x) => x.spread || 0));
+    const best = stats.reduce((a, b) => ((b.spread || 0) > (a.spread || 0) ? b : a));
+    holder.replaceChildren(...stats.map((x) => {
+      const fill = el('span', { class: 's-fill' });
+      fill.style.width = `${maxSpread ? Math.max(2, (x.spread / maxSpread) * 100) : 0}%`;
+      return el('div', { class: `s-tile format-card${x === best && stats.length > 1 ? ' best' : ''}` }, [
+        el('div', { class: 'fc-head' }, [el('strong', { text: x.k }), el('span', { class: 's-n', text: `${fmt(x.n)}개` })]),
+        el('span', { class: 's-kind', text: '평균 도달' }),
+        el('span', { class: 's-lift', text: fmtCompact(x.reach) }),
+        el('div', { class: 'fc-spread' }, [el('span', { class: 's-kind', text: '확산 지수' }), el('strong', { text: fmtRatio(x.spread) })]),
+        el('span', { class: 's-track' }, fill),
+        el('div', { class: 'chips' }, [
+          el('span', { class: 'chip', text: `공유 ${fmtPct(x.share)}` }),
+          el('span', { class: 'chip', text: `저장 ${fmtPct(x.save)}` }),
+        ]),
+      ]);
+    }));
   }
 
+  // Top-5 by spread index as cards with the recipe photo, like the playbooks.
   function renderTopTable(posts) {
     const top = posts.filter((p) => spreadIndex(p) !== null)
       .sort((a, b) => spreadIndex(b) - spreadIndex(a)).slice(0, 5);
@@ -422,9 +455,29 @@
       holder.replaceChildren(el('p', { class: 'empty', text: '표시할 게시물이 없습니다.' }));
       return;
     }
-    holder.replaceChildren(postTable(top, [
-      COLS.date, COLS.thumb, COLS.title, COLS.format, COLS.reach, COLS.shares, COLS.saved, COLS.follows, COLS.spread,
-    ], false));
+    holder.replaceChildren(...top.map((p, i) => {
+      const src = p.recipe && typeof p.recipe.image === 'string' && p.recipe.image.startsWith(IMAGE_ORIGIN) ? p.recipe.image : null;
+      const href = typeof p.permalink === 'string' && p.permalink.startsWith(PERMALINK_ORIGIN) ? p.permalink : null;
+      const img = src ? el('img', { src, alt: '', loading: 'lazy' }) : el('span', { class: 'pb-noimg', text: titleOf(p) });
+      if (src) img.addEventListener('error', () => img.replaceWith(el('span', { class: 'pb-noimg', text: titleOf(p) })));
+      const thumb = el('span', { class: 'pb-thumb' }, [img, el('span', { class: 'pb-cap', text: fmtRatio(spreadIndex(p)) })]);
+      const title = href ? el('a', { href, target: '_blank', rel: 'noopener noreferrer', text: titleOf(p) }) : el('span', { text: titleOf(p) });
+      const i2 = p.insights;
+      return el('article', { class: 'pb-card top-card' }, [
+        el('div', { class: 'pb-top' }, [
+          el('span', { class: 'strategy-rank', text: String(i + 1) }),
+          el('span', { class: 'badge', text: formatLabel(p) || '—' }),
+          el('span', { class: 's-n', text: p.date }),
+        ]),
+        thumb,
+        el('strong', { class: 'tc-title' }, title),
+        el('div', { class: 'pb-foot' }, [
+          el('span', {}, ['도달 ', el('strong', { text: fmtCompact(i2.reach) })]),
+          el('span', {}, ['공유 ', el('strong', { text: fmt(i2.shares) })]),
+          el('span', {}, ['저장 ', el('strong', { text: fmt(i2.saved) })]),
+        ]),
+      ]);
+    }));
   }
 
   // ------------------------------------------------------------------
@@ -459,7 +512,7 @@
       },
     },
     title: { key: 'title', label: '게시물', left: true, cls: 'title', value: titleOf, show: linkCell },
-    format: { key: 'format', label: '형식', left: true, value: (p) => p.media_type, show: (p) => el('span', { class: 'badge', text: FORMAT_LABELS[p.media_type] || p.media_type || '—' }) },
+    format: { key: 'format', label: '형식', left: true, value: (p) => formatLabel(p), show: (p) => el('span', { class: 'badge', text: formatLabel(p) || '—' }) },
     reach: { key: 'reach', label: '도달', value: ins('reach'), show: (p) => fmt(ins('reach')(p)) },
     views: { key: 'views', label: '조회', value: ins('views'), show: (p) => fmt(ins('views')(p)) },
     likes: { key: 'likes', label: '좋아요', value: ins('likes'), show: (p) => fmt(ins('likes')(p)) },
@@ -468,7 +521,17 @@
     shares: { key: 'shares', label: '공유', value: ins('shares'), show: (p) => fmt(ins('shares')(p)) },
     follows: { key: 'follows', label: '팔로우', value: ins('follows'), show: (p) => fmt(ins('follows')(p)) },
     engagement: { key: 'engagement', label: '참여율', value: engagementRate, show: (p) => fmtPct(engagementRate(p)) },
-    spread: { key: 'spread', label: '확산 지수', value: spreadIndex, show: (p) => fmtRatio(spreadIndex(p)) },
+    spread: {
+      key: 'spread', label: '확산 지수', value: spreadIndex,
+      show: (p) => {
+        const v = spreadIndex(p);
+        if (v === null) return '—';
+        const fill = el('span', { class: 'bar-fill' });
+        fill.style.width = `${Math.min(100, (v / 2) * 100)}%`;
+        if (v >= 1) fill.classList.add('hot');
+        return el('span', { class: 'spread-cell' }, [el('span', { class: 'bar-track' }, fill), el('strong', { text: fmtRatio(v) })]);
+      },
+    },
   };
   const POST_COLUMNS = ['date', 'thumb', 'title', 'format', 'reach', 'views', 'likes', 'comments', 'saved', 'shares', 'follows', 'engagement', 'spread'].map((k) => COLS[k]);
 
@@ -500,7 +563,7 @@
     const from = range ? daysAgo(range) : '';
     return state.posts.filter((p) => {
       if (p.date < from) return false;
-      if (format && p.media_type !== format) return false;
+      if (format && formatLabel(p) !== format) return false;
       if (q) {
         const hay = [titleOf(p), p.caption, ...((p.recipe && p.recipe.hashtags) || [])].join(' ').toLowerCase();
         if (!hay.includes(q)) return false;
@@ -518,8 +581,15 @@
       if (vb === null || vb === undefined) return -1;
       return (va < vb ? -1 : 1) * state.sortDir;
     });
+    const withIns = list.filter((p) => p.insights);
+    document.getElementById('ps-summary').replaceChildren(
+      tile('게시물', fmt(list.length), `인사이트 있음 ${fmt(withIns.length)}개`),
+      tile('도달 중앙값', fmtCompact(median(withIns.map((p) => p.insights.reach)))),
+      tile('공유율 중앙값', fmtPct(median(withIns.map(SIGNALS[0].value)))),
+      tile('확산 지수 중앙값', fmtRatio(median(withIns.map(spreadIndex)))),
+    );
     document.getElementById('ps-count').textContent =
-      `${fmt(list.length)}개 게시물 · 열 제목을 누르면 정렬됩니다. 확산 지수는 게시 당시 팔로워 수 기준 (수집 시작 전 게시물은 수집 첫날 팔로워 수로 계산해 실제보다 낮게 나올 수 있습니다).`;
+      '열 제목을 누르면 정렬됩니다 · 확산 지수는 게시 당시 팔로워 수 기준 (수집 시작 전 게시물은 실제보다 낮게 나올 수 있음)';
     const table = postTable(list.slice(0, state.postsShown), POST_COLUMNS, true);
     document.getElementById('ps-table').replaceWith(Object.assign(table, { id: 'ps-table' }));
     document.getElementById('ps-more').hidden = list.length <= state.postsShown;
