@@ -51159,7 +51159,13 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "사과-2"
+  "page_id": "사과-2",
+  "image": "https://images.how-about-breakfast.com/images/11113.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/11113.jpg",
+   "https://images.how-about-breakfast.com/images/11113_2.jpg",
+   "https://images.how-about-breakfast.com/images/11113_3.jpg"
+  ]
  },
  {
   "date": "2022-09-25",
