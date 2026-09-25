@@ -32,93 +32,257 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2329784289008303" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <style>
-  .legal-page{max-width:640px; margin:0 auto; padding:40px 0 20px;}
-  .legal-page h1{font-family:'Nanum Myeongjo',serif; font-size:26px; color:var(--teal-deep); margin:10px 0 6px;}
-  .legal-page .legal-meta{font-size:13px; color:var(--ink-faint); margin-bottom:22px;}
-  .legal-page section{margin-bottom:24px;}
-  .legal-page section h2{font-size:15px; color:var(--teal-deep); margin:0 0 8px; font-weight:700;}
-  .legal-page p, .legal-page li{font-size:14.5px; color:var(--ink); line-height:1.75;}
-  .legal-page ul{margin:0; padding-left:20px;}
-  .legal-page .top-links{display:flex; justify-content:space-between; font-size:13px; margin-bottom:8px;}
-  .legal-page .top-links a{color:var(--ink-soft); text-decoration:none;}
-  .legal-page .top-links a:hover{color:var(--teal-deep); text-decoration:underline;}
+  .legal-hero{padding:36px 0 28px; display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap;}
+  .legal-eyebrow{font-size:12.5px; letter-spacing:0.14em; font-weight:700; color:var(--green-dark);}
+  .legal-title{margin:8px 0 0; font-family:'Noto Serif KR',serif; font-size:44px; font-weight:900; line-height:1.1; letter-spacing:-0.02em; color:var(--ink);}
+  .legal-effective{font-size:13.5px; color:var(--text-2);}
+
+  .legal-summary{padding:24px 0 40px; border-top:3px solid var(--ink); display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px;}
+  .legal-summary-card{padding:20px; background:var(--mint); display:flex; flex-direction:column; gap:8px;}
+  .legal-summary-card .k{font-family:'Fraunces',serif; font-size:12.5px; font-weight:800; color:var(--green-dark);}
+  .legal-summary-card .t{font-family:'Noto Serif KR',serif; font-size:17px; font-weight:700; line-height:1.4;}
+  .legal-summary-card .d{font-size:13.5px; line-height:1.6; color:#3A3934;}
+
+  .legal-layout{padding:36px 0 64px; border-top:1px solid var(--ink); display:grid; grid-template-columns:220px 1fr; gap:40px;}
+  .legal-toc{align-self:flex-start; display:flex; flex-direction:column; position:sticky; top:20px;}
+  .legal-toc-label{padding-bottom:10px; font-size:12px; letter-spacing:0.14em; font-weight:700; color:var(--green-dark); border-bottom:1px solid var(--ink);}
+  .legal-toc a{min-height:40px; display:flex; align-items:center; gap:10px; border-bottom:1px solid var(--rule); font-size:13.5px; color:var(--text-2); text-decoration:none;}
+  .legal-toc a:hover{color:var(--green-dark);}
+  .legal-toc a .n{width:20px; flex:0 0 auto; font-family:'Fraunces',serif; color:var(--text-3);}
+  .legal-toc a.current{color:var(--ink); font-weight:700;}
+
+  .legal-article{max-width:760px;}
+  .legal-intro{margin:0 0 16px; font-family:'Noto Serif KR',serif; font-size:17px; line-height:1.8; color:var(--ink);}
+  .legal-section{padding:22px 0; border-top:1px solid var(--rule); display:flex; gap:20px; scroll-margin-top:20px;}
+  .legal-section .n{width:36px; flex:0 0 auto; font-family:'Fraunces',serif; font-size:26px; font-weight:800; line-height:1; color:var(--green);}
+  .legal-section-body{display:flex; flex-direction:column; gap:8px;}
+  .legal-section-body h2{margin:0; font-family:'Noto Serif KR',serif; font-size:18px; font-weight:900; color:var(--ink);}
+  .legal-section-body p, .legal-section-body li{margin:0; font-size:14.5px; line-height:1.8; color:#3A3934;}
+  .legal-section-body ul{margin:0; padding-left:20px; display:flex; flex-direction:column; gap:4px;}
+  .legal-section-body a{color:var(--green-dark);}
+  .legal-flag{display:inline-block; margin-top:4px; padding:2px 8px; font-size:12px; color:var(--clay); background:var(--clay-pale); border-radius:4px;}
+
+  @media (max-width:760px){
+    .legal-title{font-size:32px;}
+    .legal-summary{grid-template-columns:repeat(2,minmax(0,1fr));}
+    .legal-layout{grid-template-columns:1fr;}
+    .legal-toc{position:static; flex-direction:row; flex-wrap:wrap; gap:4px 14px;}
+    .legal-toc-label{width:100%; border-bottom:0; padding-bottom:4px;}
+    .legal-toc a{min-height:36px; border-bottom:0;}
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <div class="legal-page">
-    <div class="top-links">
-      <a href="index.html">← 홈으로</a>
-      <a href="en/privacy.html">EN</a>
+
+  <header class="site-header">
+    <a href="index.html" class="site-header-logo">날마다, 조식</a>
+    <nav class="site-header-nav" aria-label="주요 메뉴">
+      <a href="archive.html">아카이브</a>
+      <a href="vote.html">명예의 전당</a>
+      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">브런치북</a>
+    </nav>
+    <a href="en/privacy.html" class="lang-switch">EN</a>
+  </header>
+
+  <section class="legal-hero">
+    <div>
+      <span class="legal-eyebrow">PRIVACY POLICY</span>
+      <h1 class="legal-title">개인정보처리방침</h1>
     </div>
-    <h1>개인정보처리방침</h1>
-    <p class="legal-meta">시행일: 2026-08-25</p>
+    <span class="legal-effective">시행일 2026.09.25</span>
+  </section>
 
-    <p>날마다 조식(how-about-breakfast.com, 이하 "이 사이트")은 방문자의 개인정보를 아래와 같이 수집·이용합니다.</p>
+  <section class="legal-summary">
+    <div class="legal-summary-card">
+      <span class="k">COLLECT</span>
+      <span class="t">최소한만 처리해요</span>
+      <span class="d">쿠키·접속 IP 등 이용 통계, 투표 시 IP 해시값만 처리합니다.</span>
+    </div>
+    <div class="legal-summary-card">
+      <span class="k">NO ACCOUNT</span>
+      <span class="t">회원가입이 없어요</span>
+      <span class="d">이름·연락처·결제 정보를 받지 않습니다.</span>
+    </div>
+    <div class="legal-summary-card">
+      <span class="k">RETENTION</span>
+      <span class="t">48시간 뒤 파기</span>
+      <span class="d">투표 중복 방지용 IP 해시는 48시간 후 자동 삭제됩니다. 득표수 자체는 순위 표시를 위해 계속 보관됩니다.</span>
+    </div>
+    <div class="legal-summary-card">
+      <span class="k">CONTACT</span>
+      <span class="t">문의</span>
+      <span class="d">인스타그램 @how.about.breakfast DM</span>
+    </div>
+  </section>
 
-    <section>
-      <h2>1. 수집하는 항목</h2>
-      <ul>
-        <li>쿠키, 접속 IP, 브라우저/기기 정보</li>
-        <li>방문 페이지, 체류 시간, 클릭·스크롤 등 이용 행태 정보</li>
-        <li>"이달의 조식" 투표 참여 시, 하루 중복 투표 방지를 위해 접속 IP를 해시(단방향 암호화)하여 일시적으로 처리 (원본 IP는 저장하지 않음)</li>
-      </ul>
-      <p>(회원가입, 결제 등을 통한 별도의 개인정보 수집은 하지 않습니다.)</p>
-    </section>
+  <section class="legal-layout">
+    <nav class="legal-toc" aria-label="목차">
+      <span class="legal-toc-label">목차</span>
+      <a href="#purpose"><span class="n">01</span>처리 목적</a>
+      <a href="#items"><span class="n">02</span>처리 항목</a>
+      <a href="#period"><span class="n">03</span>처리 및 보유 기간</a>
+      <a href="#destroy"><span class="n">04</span>파기 절차 및 방법</a>
+      <a href="#third"><span class="n">05</span>제3자 제공</a>
+      <a href="#entrust"><span class="n">06</span>처리 위탁</a>
+      <a href="#abroad"><span class="n">07</span>국외 이전</a>
+      <a href="#rights"><span class="n">08</span>정보주체의 권리</a>
+      <a href="#safety"><span class="n">09</span>안전성 확보 조치</a>
+      <a href="#cookie"><span class="n">10</span>쿠키 안내</a>
+      <a href="#officer"><span class="n">11</span>보호책임자</a>
+      <a href="#remedy"><span class="n">12</span>권익침해 구제</a>
+      <a href="#change"><span class="n">13</span>처리방침 변경</a>
+    </nav>
 
-    <section>
-      <h2>2. 수집 목적</h2>
-      <ul>
-        <li>사이트 이용 통계 분석 및 서비스 개선 (Google Analytics)</li>
-        <li>사용자 경험 분석을 위한 화면 사용 패턴 파악 (Microsoft Clarity)</li>
-        <li>맞춤형 광고 게재 (Google AdSense)</li>
-        <li>"이달의 조식" 투표의 하루 중복 참여 방지</li>
-      </ul>
-    </section>
+    <article class="legal-article">
+      <p class="legal-intro">'날마다, 조식'(이하 '사이트')은 「개인정보 보호법」 제30조에 따라 정보주체의 개인정보를 보호하고 관련 고충을 신속하게 처리하기 위해 다음과 같이 개인정보처리방침을 수립·공개합니다.</p>
 
-    <section>
-      <h2>3. 이용하는 제3자 서비스</h2>
-      <p>이 사이트는 다음 서비스를 통해 위 정보를 수집·처리합니다. 각 서비스의 개인정보 처리에 대한 자세한 내용은 아래 링크에서 확인하실 수 있습니다.</p>
-      <ul>
-        <li>Google Analytics — <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a></li>
-        <li>Microsoft Clarity — <a href="https://privacy.microsoft.com/ko-kr/privacystatement" target="_blank" rel="noopener">Microsoft 개인정보처리방침</a></li>
-        <li>Google AdSense — <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google 광고 정책</a></li>
-      </ul>
-    </section>
+      <section class="legal-section" id="purpose">
+        <span class="n">01</span>
+        <div class="legal-section-body">
+          <h2>처리 목적</h2>
+          <ul>
+            <li>웹사이트 방문 통계 분석 및 서비스 개선 (Google Analytics)</li>
+            <li>화면 사용 패턴 분석 (Microsoft Clarity)</li>
+            <li>맞춤형 광고 게재 (Google AdSense)</li>
+            <li>"명예의 전당" 투표의 하루 중복 참여 방지</li>
+          </ul>
+          <p>수집 목적이 변경되는 경우 사전에 별도의 동의를 받는 등 필요한 조치를 이행합니다.</p>
+        </div>
+      </section>
 
-    <section>
-      <h2>4. 쿠키 거부 및 광고 맞춤설정 해제</h2>
-      <p>브라우저 설정에서 쿠키 저장을 거부하실 수 있으며, 이 경우 일부 기능 이용에 제한이 있을 수 있습니다. Google의 맞춤 광고를 원치 않으시면 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 광고 설정</a>에서 해제하실 수 있습니다.</p>
-    </section>
+      <section class="legal-section" id="items">
+        <span class="n">02</span>
+        <div class="legal-section-body">
+          <h2>처리 항목</h2>
+          <ul>
+            <li>쿠키, 접속 IP, 브라우저/기기 정보, 방문 페이지·클릭 등 이용 행태 정보 (위 분석·광고 서비스가 자동 수집)</li>
+            <li id="vote">"명예의 전당" 투표 참여 시, 하루 중복 투표 방지를 위해 접속 IP를 라운드 ID·날짜와 함께 해시(SHA-256, 단방향 암호화)한 값만 임시로 처리합니다. 원본 IP는 저장하지 않습니다.</li>
+            <li>회원가입, 로그인, 결제 등을 통한 이름·연락처 등의 개인정보는 수집하지 않습니다.</li>
+          </ul>
+          <p>참고로 언어 설정, 레시피 재료 체크리스트 표시 여부 등은 방문자의 브라우저(localStorage)에만 저장되며, 이 사이트 운영자에게 전송되거나 서버에 보관되지 않습니다.</p>
+        </div>
+      </section>
 
-    <section>
-      <h2>5. 보유 및 이용 기간</h2>
-      <p>수집된 정보는 각 서비스(Google, Microsoft)의 자체 정책에 따라 보관·처리되며, 이 사이트는 별도로 개인정보를 저장하지 않습니다. "이달의 조식" 투표 중복 방지를 위해 처리되는 IP 해시값은 48시간 후 자동 삭제됩니다.</p>
-    </section>
+      <section class="legal-section" id="period">
+        <span class="n">03</span>
+        <div class="legal-section-body">
+          <h2>처리 및 보유 기간</h2>
+          <ul>
+            <li>Google Analytics·Microsoft Clarity·Google AdSense가 수집하는 정보: 각 서비스 자체 정책에 따라 처리되며, 이 사이트 운영자가 별도로 보관하지 않습니다.</li>
+            <li>투표 중복 방지용 IP 해시값: 48시간 후 자동 삭제 (Cloudflare Workers KV의 만료 시간 설정 기능 이용)</li>
+            <li>투표 득표수(집계 수치): 개인을 식별할 수 없는 숫자로, "명예의 전당" 순위 표시를 위해 삭제 없이 보관됩니다.</li>
+          </ul>
+        </div>
+      </section>
 
-    <section>
-      <h2>6. 문의</h2>
-      <p>개인정보 관련 문의는 인스타그램(<a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">@how.about.breakfast</a>) DM으로 연락해 주세요.</p>
-    </section>
-  </div>
+      <section class="legal-section" id="destroy">
+        <span class="n">04</span>
+        <div class="legal-section-body">
+          <h2>파기 절차 및 방법</h2>
+          <p>전자적 파일 형태로 처리되는 정보는 복구할 수 없는 기술적 방법으로 삭제합니다. 투표 중복 방지용 IP 해시값은 Cloudflare Workers KV의 자동 만료(TTL) 기능으로 48시간 후 별도 조치 없이 자동 삭제됩니다.</p>
+        </div>
+      </section>
+
+      <section class="legal-section" id="third">
+        <span class="n">05</span>
+        <div class="legal-section-body">
+          <h2>제3자 제공</h2>
+          <p>이 사이트는 정보주체의 동의가 있거나 법령에 특별한 규정이 있는 경우를 제외하고 개인정보를 제3자에게 제공하지 않습니다.</p>
+        </div>
+      </section>
+
+      <section class="legal-section" id="entrust">
+        <span class="n">06</span>
+        <div class="legal-section-body">
+          <h2>처리 위탁</h2>
+          <p>이 사이트는 아래 서비스를 통해 정보를 수집·처리합니다. 각 서비스의 개인정보 처리에 대한 자세한 내용은 링크한 자체 정책에서 확인하실 수 있습니다.</p>
+          <ul>
+            <li>GitHub, Inc. — 웹사이트 호스팅</li>
+            <li>Cloudflare, Inc. — CDN, 이미지 저장, 투표 집계 처리(Workers/KV)</li>
+            <li>Google LLC — 방문 통계 분석(<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Analytics</a>), 맞춤형 광고(<a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">AdSense</a>), 폰트 제공(Fonts)</li>
+            <li>Microsoft Corporation — 화면 사용 패턴 분석(<a href="https://privacy.microsoft.com/ko-kr/privacystatement" target="_blank" rel="noopener">Clarity</a>)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="legal-section" id="abroad">
+        <span class="n">07</span>
+        <div class="legal-section-body">
+          <h2>국외 이전</h2>
+          <p>위 6항의 GitHub, Cloudflare, Google, Microsoft는 해외에 서버를 두고 있어, 수집된 정보는 각 사의 정책에 따라 해외 서버에서 처리될 수 있습니다. 이전받는 자, 이전 국가, 이전 일시·방법, 보유·이용 기간 등 구체적인 사항은 각 서비스가 공개하는 자체 개인정보처리방침(6항 링크)을 따릅니다.</p>
+        </div>
+      </section>
+
+      <section class="legal-section" id="rights">
+        <span class="n">08</span>
+        <div class="legal-section-body">
+          <h2>정보주체의 권리와 행사 방법</h2>
+          <p>정보주체는 언제든지 자신의 개인정보에 대한 열람·정정·삭제·처리정지를 요구할 수 있으며, 아래 11항의 개인정보 보호책임자에게 연락하시면 지체 없이 조치합니다. 다만 이 사이트는 회원가입을 받지 않아 운영자가 개별 방문자를 식별하여 보관하는 개인정보가 없으므로, Google·Microsoft 등 각 서비스가 자체적으로 수집한 정보에 대한 권리 행사는 해당 서비스가 안내하는 절차를 따라야 할 수 있습니다.</p>
+        </div>
+      </section>
+
+      <section class="legal-section" id="safety">
+        <span class="n">09</span>
+        <div class="legal-section-body">
+          <h2>안전성 확보 조치</h2>
+          <ul>
+            <li>전송 구간 암호화: 전체 페이지 HTTPS 적용</li>
+            <li>투표 중복 방지 처리 시 원본 접속 IP를 저장하지 않고 해시값만 일시 처리</li>
+            <li>회원가입을 받지 않아 이름·연락처 등 식별 가능한 개인정보 자체를 수집·저장하지 않음</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="legal-section" id="cookie">
+        <span class="n">10</span>
+        <div class="legal-section-body">
+          <h2>자동 수집 장치의 설치·운영 및 거부</h2>
+          <p>이 사이트는 방문 통계 분석(Google Analytics), 화면 사용 패턴 분석(Microsoft Clarity), 맞춤형 광고(Google AdSense)를 위해 쿠키를 사용합니다. 브라우저 설정에서 쿠키 저장을 거부하실 수 있으며, 이 경우 일부 기능 이용에 제한이 있을 수 있습니다. Google의 맞춤 광고를 원치 않으시면 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 광고 설정</a>에서 해제하실 수 있습니다.</p>
+        </div>
+      </section>
+
+      <section class="legal-section" id="officer">
+        <span class="n">11</span>
+        <div class="legal-section-body">
+          <h2>개인정보 보호책임자</h2>
+          <p>개인정보 관련 문의는 인스타그램(<a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">@how.about.breakfast</a>) DM으로 연락해 주세요.</p>
+          <span class="legal-flag">확인 필요: 「개인정보 보호법」은 보호책임자의 성명과 이메일(또는 전화번호) 명시를 요구합니다. 인스타그램 DM 외에 공개할 수 있는 담당자 성명·이메일을 알려주시면 반영하겠습니다.</span>
+        </div>
+      </section>
+
+      <section class="legal-section" id="remedy">
+        <span class="n">12</span>
+        <div class="legal-section-body">
+          <h2>권익침해 구제 방법</h2>
+          <p>개인정보 침해로 인한 신고나 상담이 필요하신 경우 아래 기관에 문의하실 수 있습니다.</p>
+          <ul>
+            <li>개인정보분쟁조정위원회 — 1833-6972 (privacy.kisa.or.kr)</li>
+            <li>개인정보침해신고센터 — 118 (privacy.kisa.or.kr)</li>
+            <li>대검찰청 사이버범죄수사단 — 1301 (www.spo.go.kr)</li>
+            <li>경찰청 사이버안전국 — 182 (ecrm.police.go.kr)</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="legal-section" id="change">
+        <span class="n">13</span>
+        <div class="legal-section-body">
+          <h2>처리방침의 변경</h2>
+          <p>이 개인정보처리방침은 2026.09.25부터 적용됩니다. 내용의 추가·삭제 및 수정이 있을 경우 시행 최소 7일 전부터 이 페이지를 통해 공지합니다.</p>
+        </div>
+      </section>
+    </article>
+  </section>
+
 </div>
 
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <div class="site-footer-social">
-      <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="site-footer-links"><a href="privacy.html">개인정보처리방침</a></div>
-    <div class="site-footer-bottom">© how.about.breakfast 2020-2026. All rights reserved.</div>
-  </div>
+<footer class="page-footer">
+  <span>© how.about.breakfast 2020-2026. All rights reserved.</span>
+  <div class="page-footer-links"><a href="vote.html">명예의 전당</a></div>
 </footer>
 </body>
 </html>
