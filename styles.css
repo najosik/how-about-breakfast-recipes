@@ -285,33 +285,79 @@ h3.card-title{
 .card-tags span{font-size:11.5px; color:var(--teal-deep); background:var(--teal-pale); padding:2px 8px; border-radius:4px;}
 
 /* Vote page (이달의 조식) */
-.vote-content{margin-top:24px;}
-.vote-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:28px 22px;}
-.vote-card{background:var(--paper-raised); border:1px solid var(--line); border-radius:3px; padding:18px; text-align:center;}
-.vote-card .modal-gallery{margin:0 auto 14px;}
-.vote-card .card-title{font-size:16px; margin:0 0 14px;}
-.vote-card.voted{border-color:var(--teal); background:var(--teal-pale);}
-.vote-card .vote-btn{width:100%;}
-.vote-card .vote-btn:disabled{background:var(--line-strong); color:var(--ink-faint); cursor:default;}
-.vote-card.voted .vote-btn:disabled{background:var(--teal); color:#fff;}
-.vote-note{text-align:center; color:var(--ink-soft); font-size:14px; margin-top:24px;}
-.vote-empty{text-align:center; padding:50px 20px; color:var(--ink-faint);}
-.vote-empty b{display:block; font-family:'Nanum Myeongjo',serif; font-size:20px; color:var(--ink); margin-bottom:8px;}
-.vote-divider{border-top:1px solid var(--line); margin:40px 0;}
-.vote-timeline-wrap{text-align:center;}
-.vote-timeline-wrap .label{font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--teal); margin-bottom:14px;}
-.vote-timeline{display:flex; flex-wrap:nowrap; gap:6px; padding:2px 0 10px;}
-.vote-timeline-item{flex:0 0 auto; width:calc((100% - 66px) / 12); min-width:0; text-align:center; cursor:default;}
-.vote-timeline-item.filled{cursor:pointer;}
-.vote-timeline-item .thumb{
-  width:100%; aspect-ratio:1; border-radius:6px; overflow:hidden; background:var(--paper-raised);
-  border:1px solid var(--line); margin:0 0 6px;
+/* ============ 명예의 전당 (Sub-Hall) ============ */
+.hall-hero{padding:36px 0 24px; display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap;}
+.hall-hero-text{display:flex; flex-direction:column; gap:8px;}
+.hall-eyebrow{font-size:12.5px; letter-spacing:0.14em; font-weight:700; color:var(--green-dark);}
+.hall-title{margin:0; font-family:'Noto Serif KR',serif; font-size:44px; font-weight:900; line-height:1.1; letter-spacing:-0.02em; color:var(--ink);}
+.hall-subtitle{margin:0; font-size:15px; color:var(--text-2);}
+.hall-tabs{display:flex; gap:4px;}
+.hall-tabs button{height:44px; padding:0 14px; border:0; background:transparent; font:inherit; font-size:14.5px; color:var(--text-3); cursor:pointer; text-underline-offset:9px; text-decoration-thickness:3px; text-decoration-color:var(--green);}
+.hall-tabs button[aria-selected="true"]{color:var(--ink); font-weight:700; text-decoration:underline;}
+
+.hall-content{padding-top:24px; border-top:3px solid var(--ink);}
+.hall-podium{display:grid; grid-template-columns:6fr 6fr; gap:32px; margin-bottom:56px;}
+.hall-first-wrap{display:flex; flex-direction:column; gap:14px;}
+.hall-first-wrap .hall-vote-btn{align-self:flex-start;}
+.hall-first{display:flex; flex-direction:column; gap:14px; text-decoration:none; color:var(--ink);}
+.hall-first-media{position:relative;}
+.hall-first-media .card-photo{width:100%; aspect-ratio:auto; height:420px; margin:0;}
+.hall-first-media img,.hall-first-media .card-thumb{display:block; width:100%; height:420px; object-fit:cover; margin-bottom:0;}
+.hall-first-rank{position:absolute; left:0; top:0; padding:12px 18px 8px; background:var(--green); color:#fff; font-family:'Fraunces',serif; font-size:52px; font-weight:800; line-height:1;}
+.hall-first-meta{display:flex; justify-content:space-between; align-items:baseline; font-family:'Fraunces',serif; font-size:13.5px; color:var(--text-2);}
+.hall-first-meta .votes{font-size:19px; font-weight:800; color:var(--green-dark);}
+.hall-first-title{font-family:'Noto Serif KR',serif; font-size:26px; font-weight:900; line-height:1.3;}
+
+.hall-podium-side{display:flex; flex-direction:column; gap:28px;}
+.hall-side-wrap{display:flex; flex-direction:column; gap:10px; border-bottom:1px solid var(--rule); padding-bottom:24px;}
+.hall-side-wrap:last-child{border-bottom:0; padding-bottom:0;}
+.hall-side-wrap .hall-vote-btn{align-self:flex-start; margin-left:calc(180px + 20px);}
+.hall-side-item{display:flex; gap:20px; text-decoration:none; color:var(--ink);}
+.hall-side-media{position:relative; flex:0 0 auto;}
+.hall-side-media .card-photo{width:180px; aspect-ratio:auto; height:150px; margin:0;}
+.hall-side-media img,.hall-side-media .card-thumb{display:block; width:180px; height:150px; object-fit:cover; margin-bottom:0;}
+.hall-side-rank{position:absolute; left:0; top:0; padding:6px 12px 4px; background:var(--ink); color:var(--paper); font-family:'Fraunces',serif; font-size:28px; font-weight:800; line-height:1;}
+.hall-side-info{display:flex; flex-direction:column; justify-content:flex-end; gap:6px; min-width:0;}
+.hall-side-info .meta{font-family:'Fraunces',serif; font-size:12.5px; color:var(--text-2);}
+.hall-side-info .title{font-family:'Noto Serif KR',serif; font-size:18px; font-weight:900; line-height:1.35;}
+.hall-side-info .votes{font-family:'Fraunces',serif; font-size:15px; font-weight:800; color:var(--green-dark);}
+
+.hall-rest-wrap{display:grid; grid-template-columns:8fr 4fr; gap:32px; padding-bottom:56px;}
+.hall-rest h2{margin:0; padding-bottom:12px; border-bottom:1px solid var(--ink); font-family:'Noto Serif KR',serif; font-size:22px; font-weight:900;}
+.hall-rest-list{margin:0; padding:0; list-style:none;}
+.hall-rest-list li{min-height:64px; display:flex; align-items:center; gap:18px; border-bottom:1px solid var(--rule);}
+.hall-rest-rank{width:32px; flex:0 0 auto; font-family:'Fraunces',serif; font-size:24px; font-weight:800; color:var(--text-3);}
+.hall-rest-list a.title{flex:1 1 auto; min-width:0; font-family:'Noto Serif KR',serif; font-size:16.5px; font-weight:700; color:var(--ink); text-decoration:none;}
+.hall-rest-list a.title:hover{color:var(--green-dark);}
+.hall-rest-votes{font-family:'Fraunces',serif; font-size:14px; color:var(--text-2); flex:0 0 auto;}
+.hall-vote-btn{flex:0 0 auto; width:96px; height:40px; border:1px solid var(--ink); background:transparent; color:var(--ink); font:inherit; font-size:13px; font-weight:700; cursor:pointer;}
+.hall-vote-btn[aria-pressed="true"]{background:var(--green); border-color:var(--green); color:#fff; cursor:default;}
+.hall-vote-btn:disabled:not([aria-pressed="true"]){opacity:0.4; cursor:default;}
+
+.hall-howto{align-self:flex-start; padding:28px; background:var(--mint); display:flex; flex-direction:column; gap:14px;}
+.hall-howto-eyebrow{font-size:12px; letter-spacing:0.14em; font-weight:700; color:var(--green-dark);}
+.hall-howto-title{font-family:'Noto Serif KR',serif; font-size:22px; font-weight:900; line-height:1.35;}
+.hall-howto-desc{margin:0; font-size:14px; line-height:1.7; color:#3A3934;}
+.hall-howto a{font-size:13px; color:var(--green-dark);}
+
+.hall-empty{padding:60px 20px; text-align:center; color:var(--text-2); font-family:'Noto Serif KR',serif; font-size:18px;}
+
+@media (max-width:760px){
+  .hall-title{font-size:32px;}
+  .hall-hero{flex-direction:column; align-items:flex-start;}
+  .hall-podium{grid-template-columns:1fr; gap:24px;}
+  .hall-first-media .card-photo{height:280px;}
+  .hall-first-media img,.hall-first-media .card-thumb{height:280px;}
+  .hall-podium-side{flex-direction:row; flex-wrap:wrap;}
+  .hall-side-wrap{flex:1 1 calc(50% - 14px); min-width:0; border-bottom:0; padding-bottom:0;}
+  .hall-side-wrap .hall-vote-btn{margin-left:0;}
+  .hall-side-item{flex-direction:column; gap:8px;}
+  .hall-side-media .card-photo{width:100%; height:140px;}
+  .hall-side-media img,.hall-side-media .card-thumb{width:100%; height:140px;}
+  .hall-rest-wrap{grid-template-columns:1fr;}
+  .hall-rest-list li{gap:10px;}
+  .hall-vote-btn{width:76px;}
 }
-.vote-timeline-item .thumb img, .vote-timeline-item .thumb .card-photo{width:100%; height:100%; aspect-ratio:1; margin:0;}
-.vote-timeline-item .thumb img{object-fit:cover; display:block;}
-.vote-timeline-item.unfilled .thumb{background:var(--line); opacity:.4;}
-.vote-timeline-item .month{font-size:11px; color:var(--ink-faint); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
-.vote-timeline-item.filled .month{color:var(--ink-soft); font-weight:600;}
 
 /* ---- World Cup bracket (separate module from vote-*, see worldcup.js) ---- */
 .wc-wrap{max-width:640px; margin:0 auto; text-align:center;}
@@ -603,9 +649,6 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
   .home-footer{flex-direction:column; align-items:flex-start;}
   .grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:22px 14px;}
   .nav-right{flex-wrap:wrap; justify-content:flex-end;}
-  .vote-timeline{gap:3px;}
-  .vote-timeline-item{width:calc((100% - 33px) / 12);}
-  .vote-timeline-item .month{font-size:9px;}
 
   /* Archive: sidebar becomes a bottom sheet, opened by the mobile chip bar */
   .site-header{padding:14px 0;}

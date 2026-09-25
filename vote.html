@@ -4,15 +4,15 @@
 <script>if(location.hostname==='najosik.github.io'){location.replace('https://how-about-breakfast.com'+location.pathname.replace(/^\/how-about-breakfast-recipes/,'')+location.search+location.hash);}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>이달의 조식 투표 — 날마다 조식</title>
-<meta name="description" content="올해의 조식 후보 12개 중 가장 마음에 드는 걸 투표로 골라주세요.">
+<title>명예의 전당 — 날마다 조식</title>
+<meta name="description" content="여러분이 뽑은, 또 먹고 싶은 아침들. 이번 달/올해/전체 기간별 득표 순위와 이달의 조식 투표.">
 <link rel="canonical" href="https://how-about-breakfast.com/vote.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="날마다, 조식">
-<meta property="og:title" content="이달의 조식 투표 — 날마다 조식">
-<meta property="og:description" content="올해의 조식 후보 12개 중 가장 마음에 드는 걸 투표로 골라주세요.">
+<meta property="og:title" content="명예의 전당 — 날마다 조식">
+<meta property="og:description" content="여러분이 뽑은, 또 먹고 싶은 아침들.">
 <meta property="og:url" content="https://how-about-breakfast.com/vote.html">
 
 <!-- Google tag (gtag.js) -->
@@ -33,56 +33,49 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Sans+KR:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
-  <div class="nav-bar">
-    <a href="index.html" data-i18n="nav_home">← 홈으로</a>
-    <div class="nav-right">
-      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-      </button>
-      <div class="channel-links" id="channelLinks">
-        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
-      </div>
-      <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
-        <button type="button" data-lang="ko" class="active">한국어</button>
-        <button type="button" data-lang="en">EN</button>
-      </div>
-    </div>
-  </div>
 
-  <header class="top">
-    <p class="eyebrow">HALL OF FAME</p>
-    <h1 class="title" data-i18n="vote_title">올해의 조식에 투표하세요!</h1>
-    <p class="subtitle" data-i18n="vote_subtitle">올해의 조식 가운데 가장 먹음직스러운 조식을 하나만 골라주세요.</p>
+  <header class="site-header">
+    <a href="index.html" class="site-header-logo">날마다, 조식</a>
+    <nav class="site-header-nav" aria-label="주요 메뉴">
+      <a href="archive.html" data-i18n="nav_archive">아카이브</a>
+      <a href="vote.html" aria-current="page" data-i18n="nav_hall">명예의 전당</a>
+      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener" data-i18n="nav_brunch">브런치북</a>
+    </nav>
+    <div class="lang-toggle" id="langToggle" role="group" aria-label="Language">
+      <button type="button" data-lang="ko" class="active">한국어</button>
+      <button type="button" data-lang="en">EN</button>
+    </div>
   </header>
 
-  <div id="voteContent" class="vote-content"></div>
+  <section class="hall-hero">
+    <div class="hall-hero-text">
+      <span class="hall-eyebrow">HALL OF FAME</span>
+      <h1 class="hall-title" data-i18n="hall_title">명예의 전당</h1>
+      <p class="hall-subtitle" data-i18n="hall_subtitle">여러분이 뽑은, 또 먹고 싶은 아침들.</p>
+    </div>
+    <div class="hall-tabs" role="tablist" aria-label="기간" id="hallTabs">
+      <button type="button" role="tab" data-period="month" aria-selected="false" data-i18n="hall_tab_month">이번 달</button>
+      <button type="button" role="tab" data-period="year" aria-selected="false" data-i18n="hall_tab_year">올해</button>
+      <button type="button" role="tab" data-period="all" aria-selected="true" data-i18n="hall_tab_all">전체</button>
+    </div>
+  </section>
+
+  <div id="hallContent" class="hall-content"></div>
 
 </div>
 
-<footer class="site-footer">
-  <div class="site-footer-inner">
-    <div class="site-footer-social">
-      <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="0.9" fill="currentColor" stroke="none"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l6 3-6 3z" fill="currentColor" stroke="currentColor" stroke-linejoin="round"/></svg>
-      </a>
-    </div>
-    <div class="site-footer-links"><a href="privacy.html" data-i18n="footer_privacy">개인정보처리방침</a></div>
-    <div class="site-footer-bottom" data-i18n="footer_copyright">© how.about.breakfast 2020-2026. All rights reserved.</div>
-  </div>
+<footer class="page-footer">
+  <span data-i18n="footer_copyright">© how.about.breakfast 2020-2026. All rights reserved.</span>
+  <div class="page-footer-links"><a href="privacy.html" data-i18n="footer_privacy">개인정보처리방침</a></div>
 </footer>
 
 <script src="i18n.js"></script>
 <script src="shared.js"></script>
-<script src="cookmode.js"></script>
 <script>I18N.applyStaticI18n();</script>
 <script src="vote.js"></script>
 </body>
