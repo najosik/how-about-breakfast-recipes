@@ -544,7 +544,7 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
 .home-kicker{display:flex; flex-wrap:wrap; gap:6px 16px; align-items:baseline; justify-content:space-between; font-size:13.5px; color:var(--text-2); padding:10px 0 14px; border-bottom:1px solid var(--ink);}
 .home-kicker-en{font-family:'Fraunces',serif; font-style:italic; font-size:16px; color:var(--ink);}
 .home-kicker-total b{color:var(--green-dark);}
-.home-search{display:flex; align-items:center; gap:14px; height:60px; border-bottom:1px solid var(--ink);}
+.home-search{display:flex; align-items:center; gap:14px; height:60px; margin-top:24px; border-top:1px solid var(--ink); border-bottom:1px solid var(--ink);}
 .home-search svg{flex:0 0 auto; color:var(--ink);}
 .home-search-label{font-family:'Noto Serif KR',serif; font-weight:700; font-size:15px; white-space:nowrap;}
 .home-search input{flex:1 1 auto; min-width:0; height:100%; border:0; background:transparent; font:inherit; font-size:15.5px; color:var(--ink);}
