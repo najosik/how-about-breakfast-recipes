@@ -68700,7 +68700,7 @@
   "weather": "19도/흐림, 16분/운동",
   "failed": false,
   "calories": null,
-  "title": "논우렁살샐러드 모닝리추얼 모닝루틴",
+  "title": "논우렁살 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68729,22 +68729,15 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20210927, #조식다이어리 222, 19도/흐림, 16분/운동\n끓는 물에 논우렁살을 데친다. 자색양파, 고수 듬뿍 곁들여 플레이팅하고 비네그레트 드레싱에 레몬즙을 더한다. #논우렁살샐러드\n당신은 나로 하여금 날마다 날마다 당신을 기다리게 합니다.\n해가 저물어 산 그림자가 촌집을 덮을 때에, 나는 기약없는 기대를 가지고 마을 숲 밖에 가서 기다리고 있습니다.\n한용운, 고대苦待",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20210927, #조식다이어리 222, 19도/흐림, 16분/운동\n끓는 물에 논우렁살을 데친다. 자색양파, 고수 듬뿍 곁들여 플레이팅하고 비네그레트 드레싱에 레몬즙을 더한다. #논우렁살샐러드\n\n당신은 나로 하여금 날마다 날마다 당신을 기다리게 합니다.\n해가 저물어 산 그림자가 촌집을 덮을 때에, 나는 기약없는 기대를 가지고 마을 숲 밖에 가서 기다리고 있습니다.\n(한용운, 고대苦待)",
+  "ingredients": "- 논우렁살 2컵\n- 자색양파 1/4개\n- 고수\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 레몬주스 1T",
+  "steps": "1. 끓는 물에 1~2분 정도 논우렁살을 데친다. \n2. 자색양파는 길게 썰어 물에 담근다. \n3. 그릇에 1의 논우렁살을 담고 2의 자색양파, 고수 얹고 드레싱, 레몬주스 뿌린다. ",
   "raw": "20210927, #조식다이어리 222, 19도/흐림, 16분/운동\n\n끓는 물에 논우렁살을 데친다. 자색양파, 고수 듬뿍 곁들여 플레이팅하고 비네그레트 드레싱에 레몬즙을 더한다. #논우렁살샐러드\n\n당신은 나로 하여금 날마다 날마다 당신을 기다리게 합니다.\n해가 저물어 산 그림자가 촌집을 덮을 때에, 나는 기약없는 기대를 가지고 마을 숲 밖에 가서 기다리고 있습니다.\n한용운, 고대苦待\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #논우렁살 #그린올리브 #고수 #딜 #비네그레트 \n#breakfast #recipe #salad #riversnails #dill #coriander #redonion ",
   "image": "https://images.how-about-breakfast.com/images/222.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/222.jpg",
    "https://images.how-about-breakfast.com/images/222_2.jpg"
   ],
-  "_en": {
-   "hash": "ab81e0782abb8566e0e815e6d024e522aa6b67017e2e2b71a0442e76817be96d",
-   "title": "Rice Snail Salad, Morning Ritual, Morning Routine",
-   "intro": "20210927, #breakfastdiary 222, 19°C/cloudy, 16min/exercise\nBlanch the rice snail meat in boiling water. Plate it with plenty of purple onion and cilantro, then finish with vinaigrette dressing and a touch of lemon juice. #ricesnailsalad\nYou make me wait for you, day after day.\nAs the sun sets and the mountain's shadow falls over the village house, I go out beyond the village woods and wait, holding onto a hope with no promise of fulfillment.\nHan Yong-un, Bitter Waiting",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "논우렁살샐러드-모닝리추얼-모닝루틴"
  },
  {
