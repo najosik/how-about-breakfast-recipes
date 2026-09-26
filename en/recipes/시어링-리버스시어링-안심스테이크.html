@@ -41,6 +41,7 @@
   .recipe-photo{width:100%; aspect-ratio:3/4; border-radius:2px; overflow:hidden; margin-bottom:0; background:var(--line);}
   .recipe-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .recipe-video{width:100%; display:block; border-radius:2px; margin-top:10px;}
+  .recipe-video-solo{margin-top:0; aspect-ratio:3/4; object-fit:cover; background:var(--line);}
   .recipe-ig-link{display:inline-block; font-size:12.5px; color:var(--green-dark); text-decoration:none; margin-top:8px;}
   .recipe-ig-link:hover{text-decoration:underline;}
   .recipe-thumbs{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}
@@ -149,7 +150,7 @@
 <div class="wrap">
   <div class="recipe-page">
     <div class="recipe-hero-grid">
-      <div class="recipe-hero-media"></div>
+      <div class="recipe-hero-media"><video class="recipe-video recipe-video-solo" src="https://images.how-about-breakfast.com/images/736.mp4" controls playsinline></video></div>
       <div class="recipe-hero-info">
         <div class="recipe-hero-topline">
           <span class="stamp">#746</span>

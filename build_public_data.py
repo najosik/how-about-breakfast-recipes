@@ -444,9 +444,10 @@ def ad_slot_html(position):
 
 def media_html(r, title, lang='ko'):
     imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
-    if not imgs:
+    if not imgs and not r.get('video'):
         return ''
-    video_html = f'<video class="recipe-video" src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
+    video_class = 'recipe-video' if imgs else 'recipe-video recipe-video-solo'
+    video_html = f'<video class="{video_class}" src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
     ig_link_html = (
         f'<a class="recipe-ig-link" href="{esc(r["permalink"])}" target="_blank" rel="noopener">{LABELS[lang]["ig_link"]}</a>'
         if r.get('video') and r.get('permalink') else ''
@@ -457,10 +458,8 @@ def media_html(r, title, lang='ko'):
             f'<img src="{esc(u)}" alt="{esc(title)} {i+1}" loading="lazy">'
             for i, u in enumerate(imgs[1:], start=1)
         ) + '</div>'
-    return (
-        f'<div class="recipe-photo"><img src="{esc(imgs[0])}" alt="{esc(title)}"></div>'
-        + video_html + ig_link_html + thumbs
-    )
+    photo_html = f'<div class="recipe-photo"><img src="{esc(imgs[0])}" alt="{esc(title)}"></div>' if imgs else ''
+    return photo_html + video_html + ig_link_html + thumbs
 
 
 def json_ld(r, url, title, intro=None, ingredients=None, steps=None, lang='ko'):
@@ -541,6 +540,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-photo{{width:100%; aspect-ratio:3/4; border-radius:2px; overflow:hidden; margin-bottom:0; background:var(--line);}}
   .recipe-photo img{{width:100%; height:100%; object-fit:cover; display:block;}}
   .recipe-video{{width:100%; display:block; border-radius:2px; margin-top:10px;}}
+  .recipe-video-solo{{margin-top:0; aspect-ratio:3/4; object-fit:cover; background:var(--line);}}
   .recipe-ig-link{{display:inline-block; font-size:12.5px; color:var(--green-dark); text-decoration:none; margin-top:8px;}}
   .recipe-ig-link:hover{{text-decoration:underline;}}
   .recipe-thumbs{{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}}
