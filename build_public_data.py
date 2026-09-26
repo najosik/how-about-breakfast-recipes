@@ -381,7 +381,12 @@ def find_other_years(live, include, idx, limit=4):
     if not parts:
         return []
     mmdd = date[5:]
-    matches = [j for j in include if j != idx and live[j].get('date', '')[5:] == mmdd
+    cur_year = date[:4]
+    # Exclude the current record's own YEAR (not just its own index) so a
+    # day with two posts (see day_secondary) doesn't show its sibling
+    # post as if it were a different year's entry.
+    matches = [j for j in include if live[j].get('date', '')[5:] == mmdd
+               and live[j].get('date', '')[:4] != cur_year
                and re.match(r'^\d{4}-\d{2}-\d{2}$', live[j].get('date', ''))]
     matches.sort(key=lambda j: live[j]['date'], reverse=True)
     return matches[:limit]
@@ -878,8 +883,19 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
         else:
             other_years_section = ''
 
-        if pos > 0:
-            prev_idx = include[pos - 1]
+        # Skip past any sibling post(s) sharing this record's own date (see
+        # day_secondary) so "전날/다음날" always lands on a genuinely
+        # different calendar day instead of mislabeling a same-day sibling.
+        cur_date = r.get('date')
+        prev_pos = pos - 1
+        while prev_pos >= 0 and live[include[prev_pos]].get('date') == cur_date:
+            prev_pos -= 1
+        next_pos = pos + 1
+        while next_pos < len(include) and live[include[next_pos]].get('date') == cur_date:
+            next_pos += 1
+
+        if prev_pos >= 0:
+            prev_idx = include[prev_pos]
             prev_r = live[prev_idx]
             prev_href = f'{ids[prev_idx]}.html'
             prev_title = (prev_r.get('_en') or {}).get('title') if lang == 'en' else None
@@ -890,8 +906,8 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
             )
         else:
             prev_href, prev_block = '#', ''
-        if pos < len(include) - 1:
-            next_idx = include[pos + 1]
+        if next_pos < len(include):
+            next_idx = include[next_pos]
             next_r = live[next_idx]
             next_href = f'{ids[next_idx]}.html'
             next_title = (next_r.get('_en') or {}).get('title') if lang == 'en' else None
