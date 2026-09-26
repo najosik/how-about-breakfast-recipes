@@ -92,6 +92,7 @@ LABELS = {
         'checklist_note': '장 볼 때 체크해 두면 표시가 남아요.',
         'other_years_title': '다른 해의 {date}',
         'other_years_more': '모두 보기 →',
+        'same_day_note': '이 날 다른 게시물도 있어요:',
         'mobile_jump': '재료로 이동',
     },
     'en': {
@@ -116,6 +117,7 @@ LABELS = {
         'checklist_note': 'Check items off while grocery shopping - it’s remembered here.',
         'other_years_title': 'Other years, {date}',
         'other_years_more': 'See all →',
+        'same_day_note': 'There’s another post from this day:',
         'mobile_jump': 'Jump to ingredients',
     },
 }
@@ -576,6 +578,10 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-other-years-head h2{{margin:0; font-family:'Noto Serif KR',serif; font-size:20px; font-weight:900; text-transform:none; letter-spacing:0; color:var(--ink);}}
   .recipe-other-years-head a{{font-size:13px; color:var(--green-dark); text-decoration:none;}}
   .recipe-other-years-head a:hover{{text-decoration:underline;}}
+  .recipe-same-day{{margin:0 0 22px; padding:14px 18px; background:var(--mint); font-size:13.5px; color:var(--text-2);}}
+  .recipe-same-day a{{color:var(--green-dark); font-weight:700; text-decoration:none;}}
+  .recipe-same-day a:hover{{text-decoration:underline;}}
+  .recipe-same-day a + a{{margin-left:10px;}}
   .recipe-other-years-grid{{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;}}
   .recipe-other-years-grid a{{display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--ink);}}
   .recipe-other-years-grid img,.recipe-other-years-grid .card-thumb{{width:100%; aspect-ratio:1; object-fit:cover; margin-bottom:0;}}
@@ -662,6 +668,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
     {cook_grid_section}
 
+    {same_day_section}
     {other_years_section}
 
     <nav aria-label="이전·다음 기록" class="recipe-daynav">
@@ -859,6 +866,23 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
             if mobile_jump_html or mobile_ig_link else ''
         )
 
+        # A day can have more than one post (see day_secondary) - prev/next
+        # and the "other years" grid both skip these siblings now, so
+        # surface them here instead or they'd be unreachable from this page.
+        same_date_idxs = [j for j in include if j != idx and live[j].get('date') == r.get('date')]
+        if same_date_idxs:
+            sd_links = []
+            for j in same_date_idxs:
+                other_r = live[j]
+                other_en = other_r.get('_en') or {}
+                other_title = (other_en.get('title') or display_title(other_r)) if lang == 'en' else display_title(other_r)
+                sd_links.append(f'<a href="{esc(ids[j])}.html">{esc(other_title)} →</a>')
+            same_day_section = (
+                f'<div class="recipe-same-day">{labels["same_day_note"]} ' + ' '.join(sd_links) + '</div>'
+            )
+        else:
+            same_day_section = ''
+
         other_year_idxs = find_other_years(live, include, idx)
         if other_year_idxs:
             oy_cards = []
@@ -952,6 +976,7 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
             ig_link_top=ig_link_top, mobile_bar_html=mobile_bar_html,
             kcal_block=kcal_block,
             intro_section=intro_section, cook_grid_section=cook_grid_section, cook_section=cook_section,
+            same_day_section=same_day_section,
             other_years_section=other_years_section,
             credit_section=credit_section, tags_section=tags_section,
             prev_href=prev_href, prev_block=prev_block, next_href=next_href, next_block=next_block,
