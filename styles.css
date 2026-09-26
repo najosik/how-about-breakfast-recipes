@@ -534,9 +534,10 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
 }
 
 /* ============ Homepage-only components (Renewal B안 "아침 잡지") ============
-   admin/edit-298a4b140538.html의 "빠진 날짜" 미리보기 탭이 .otd-*/.section-head
-   클래스를 그대로 재사용하므로 그 클래스들은 여기서 건드리지 않는다 - 새 홈페이지
-   요소는 전부 home- 접두사를 붙인 새 클래스로 만든다. */
+   admin/edit-298a4b140538.html의 "빠진 날짜" 미리보기 탭이 .otd- 로 시작하는
+   클래스와 .section-head 클래스를 그대로 재사용하므로 그 클래스들은 여기서
+   건드리지 않는다 - 새 홈페이지 요소는 전부 home- 접두사를 붙인 새 클래스로
+   만든다. */
 
 .home-masthead{padding:22px 0 0;}
 .home-logo{font-family:'Noto Serif KR',serif; font-weight:900; font-size:52px; line-height:0.95; letter-spacing:-0.02em; margin:0; border-top:3px solid var(--ink); padding-top:36px;}
