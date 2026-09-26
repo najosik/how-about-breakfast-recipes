@@ -238,7 +238,7 @@
             <p class="desc">해마다 이 날짜에 만들었던 조식을 모아봤어요.</p>
           </div>
         </div>
-        <div class="otd-row" id="otdPreviewRow"></div>
+        <div class="home-otdlist" id="otdPreviewRow"></div>
       </div>
     </section>
 
@@ -1054,32 +1054,26 @@
     otdPreviewRow.innerHTML = years.map(function (y) {
       var r = byYear[y];
       if (!r) {
-        var pad = function (n) { return (n < 10 ? '0' : '') + n; };
-        var emptyDate = y + '-' + pad(mm) + '-' + pad(dd);
         var emptyMsg = randomOtdEmptyMessage();
         return (
-          '<div class="otd-card otd-empty">' +
-          '<div class="otd-empty-msg">' +
-          '<span class="otd-empty-bang">' + Shared.escapeHtml(emptyMsg.bang) + '</span>' +
-          '<span class="otd-empty-sub">' + Shared.escapeHtml(emptyMsg.sub) + '</span>' +
-          '</div>' +
-          '<div class="otd-year">' + y + '년</div>' +
-          '<h4 class="otd-title"><a href="https://brunch.co.kr/@howaboutbfast/4" target="_blank" rel="noopener noreferrer">별일이 있었나봐요</a></h4>' +
-          '<div class="otd-meta">' + emptyDate + '</div>' +
-          '</div>'
+          '<a class="home-otd-row otd-empty-row" href="https://brunch.co.kr/@howaboutbfast/4" target="_blank" rel="noopener noreferrer">' +
+          '<span class="home-otd-year">' + y + '년</span>' +
+          '<span class="home-otd-title">' + Shared.escapeHtml(emptyMsg.bang + ' ' + emptyMsg.sub + ', 별일이 있었나봐요') +
+          '<span class="home-otd-sib">· 브런치에서 ↗</span></span>' +
+          '</a>'
         );
       }
       return (
-        '<a class="otd-card" href="../' + Shared.escapeHtml(Shared.recipeUrl(r)) + '" target="_blank" rel="noopener" data-year="' + y + '">' +
-        Shared.thumbHTML(r, 24) +
-        '<div class="otd-year">' + y + '년</div>' +
-        '<h4 class="otd-title">' + Shared.escapeHtml(r.title || '(제목 없음)') + '</h4>' +
-        '<div class="otd-meta">' + r.date + (r.calories ? ' · ' + r.calories + 'kcal' : '') + '</div>' +
+        '<a class="home-otd-row" href="../' + Shared.escapeHtml(Shared.recipeUrl(r)) + '" target="_blank" rel="noopener" data-year="' + y + '">' +
+        '<span class="home-otd-year">' + y + '년</span>' +
+        '<span class="home-otd-title">' + Shared.escapeHtml(r.title || '(제목 없음)') +
+        '<span class="home-otd-sib">· ' + r.date + (r.calories ? ' · ' + r.calories + 'kcal' : '') + '</span></span>' +
+        Shared.thumbHTML(r, 20) +
         '</a>'
       );
     }).join('');
 
-    Array.prototype.forEach.call(otdPreviewRow.querySelectorAll('.otd-card:not(.otd-empty)'), function (el) {
+    Array.prototype.forEach.call(otdPreviewRow.querySelectorAll('.home-otd-row:not(.otd-empty-row)'), function (el) {
       el.addEventListener('click', function (e) {
         if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
         e.preventDefault();
