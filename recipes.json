@@ -38109,7 +38109,7 @@
   "weather": "20도/흐림",
   "failed": false,
   "calories": null,
-  "title": "한가위보름달 당근라페",
+  "title": "당근라페를 곁들인 피타브레드",
   "credit": null,
   "hashtags": [
    "당근라페",
@@ -38119,18 +38119,11 @@
    "조식다이어리",
    "한가위보름달"
   ],
-  "intro": "20230927, #조식다이어리 857, 20도/흐림\n#한가위보름달 을 기대해도 되겠습니까? \n작은 당근 한 개 채 치고, 다진 실파에 비네그레트 드레싱과 후추 뿌려서 잠시 재워, 두려고 했으나 시간이 없으므로 부라타치즈 한 덩어리 올리고 올리브오일 두른다. \n팬에 데운 피타브레드 반으로 갈라 당근 라페와 부라타치즈로 속을 채워 한 입, 😃",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20230927, #조식다이어리 857, 20도/흐림\n#한가위보름달 을 기대해도 되겠습니까? \n\n작은 당근 한 개 채 치고, 다진 실파에 비네그레트 드레싱과 후추 뿌려서 잠시 재워, 두려고 했으나 시간이 없으므로 부라타치즈 한 덩어리 올리고 올리브오일 두른다. \n팬에 데운 피타브레드 반으로 갈라 당근 라페와 부라타치즈로 속을 채워 한 입, 😃",
+  "ingredients": "- 당근 1개\n- 쪽파 1/2컵\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 피타브레드 1장\n- 부라타치즈 1개\n- 올리브오일\n- 후추",
+  "steps": "1. 당근을 채칼로 썬다. \n2. 믹싱볼에 1의 당근 넣고 다진 쪽파, 드레싱, 후추 뿌린 후 골고루 섞는다. \n3. 접시에 2의 당근라페 담고 부라타치즈, 올리브오일 뿌린다. \n4. 피타브레드 구운 후 3의 당근라페로 속을 채워서 먹는다. ",
   "raw": "20230927, #조식다이어리 857, 20도/흐림\n\n#한가위보름달 을 기대해도 되겠습니까? \n\n작은 당근 한 개 채 치고, 다진 실파에 비네그레트 드레싱과 후추 뿌려서 잠시 재워, 두려고 했으나 시간이 없으므로 부라타치즈 한 덩어리 올리고 올리브오일 두른다. \n팬에 데운 피타브레드 반으로 갈라 당근 라페와 부라타치즈로 속을 채워 한 입, 😃\n\n#조식 #레시피 #미라클모닝 #당근라페",
   "video": "https://images.how-about-breakfast.com/images/857.mp4",
-  "_en": {
-   "hash": "54fe3bb16d2457bb345d47aa3c73a14b8ab992916a11ba2b505a27442bbb6cb8",
-   "title": "Carrot Rapé Pita",
-   "intro": "20230927, #breakfastdiary 857, 20°C/cloudy\nCan we look forward to a full #chuseokmoon tonight?\nJulienne a small carrot, sprinkle with chopped green onion, vinaigrette dressing, and pepper, and let it sit for a bit — well, that was the plan, but since I'm short on time, I just top it with a chunk of burrata cheese and a drizzle of olive oil instead.\nWarm a pita in the pan, split it in half, stuff it with the carrot rapé and burrata, and take a big bite 😃",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "한가위보름달-당근라페"
  },
  {
