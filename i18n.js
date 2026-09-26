@@ -31,7 +31,7 @@ var I18N = (function () {
       home_search_btn: '검색',
       home_search_prompt: '무엇을 먹을까요?',
       home_total_label: '누적 기록 {count}편 · Beta',
-      home_editor_quote: '“재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 떠오르지 않을 때, 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때.”',
+      home_editor_quote: '“재료는 있는데 레시피가 필요할 때, 뭘 먹을까 떠오르지 않을 때, 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때.”',
       sort_new: '최신순',
       sort_old: '오래된순',
       sort_kcal_asc: '칼로리 낮은순',
