@@ -49,7 +49,7 @@ SITE_BASE = 'https://how-about-breakfast.com'
 
 # 공유 CSS/JS가 바뀔 때마다 값을 올려서 Cloudflare/브라우저 캐시를 무효화한다.
 # (정적 페이지 index/archive/vote/privacy/en-privacy.html의 <link>/<script>도 함께 올려줄 것)
-ASSET_VERSION = '20260926'
+ASSET_VERSION = '20260926b'
 
 
 def load_medal_winners():
