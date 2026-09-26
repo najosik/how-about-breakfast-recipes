@@ -538,8 +538,8 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
    클래스를 그대로 재사용하므로 그 클래스들은 여기서 건드리지 않는다 - 새 홈페이지
    요소는 전부 home- 접두사를 붙인 새 클래스로 만든다. */
 
-.home-masthead{padding:20px 0 0;}
-.home-logo{font-family:'Noto Serif KR',serif; font-weight:900; font-size:52px; line-height:0.95; letter-spacing:-0.02em; margin:0; border-top:3px solid var(--ink); padding-top:16px;}
+.home-masthead{padding:22px 0 0;}
+.home-logo{font-family:'Noto Serif KR',serif; font-weight:900; font-size:52px; line-height:0.95; letter-spacing:-0.02em; margin:0; border-top:3px solid var(--ink); padding-top:36px;}
 .home-logo a{color:var(--ink); text-decoration:none;}
 .home-kicker{display:flex; flex-wrap:wrap; gap:6px 16px; align-items:baseline; justify-content:space-between; font-size:13.5px; color:var(--text-2); padding:10px 0 14px; border-bottom:1px solid var(--ink);}
 .home-kicker-en{font-family:'Fraunces',serif; font-style:italic; font-size:16px; color:var(--ink);}
