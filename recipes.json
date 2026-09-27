@@ -86077,7 +86077,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "온실가스 오늘의조식",
+  "title": "통토마토 카프레제",
   "credit": null,
   "hashtags": [
    "오늘의조식",
@@ -86085,17 +86085,10 @@
   ],
   "intro": "20200929, 지난해 7억280만톤으로 우리나라가 배출하는 #온실가스 가 20년만에 처음으로 감소세를 보였다는, 반가운 소식과 함께하는 #오늘의조식 \n바질페스토 위에 모짜렐라 위에 껍질 벗긴 토마토 위에 새싹이",
   "ingredients": null,
-  "steps": null,
+  "steps": "1. 토마토는 꼭지를 파내고 끓는 물에 살짝 데친 후 찬물에 넣어 껍질을 벗긴다. \n2. 접시에 바질페스토, 생모짜렐라치즈, 1의 토마토 얹는다. ",
   "raw": "20200929, 지난해 7억280만톤으로 우리나라가 배출하는 #온실가스 가 20년만에 처음으로 감소세를 보였다는, 반가운 소식과 함께하는 #오늘의조식 \n\n바질페스토 위에 모짜렐라 위에 껍질 벗긴 토마토 위에 새싹이",
   "pre_label": "D-136",
   "image": "https://images.how-about-breakfast.com/images/pre-136.jpg",
-  "_en": {
-   "hash": "7e7713dda0fc52a4481d833fb21bccac0219dc9270af95466077ae0265ef934c",
-   "title": "Greenhouse Gases, Today's Breakfast",
-   "intro": "20200929, Good news alongside #todaysbreakfast: last year Korea's #greenhousegas emissions came to 702.8 million tons, showing their first decline in 20 years.\nBasil pesto, then mozzarella, then peeled tomato, then sprouts on top",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "온실가스-오늘의조식"
  },
  {
