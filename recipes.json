@@ -68631,7 +68631,7 @@
   "weather": "21도/소나기",
   "failed": false,
   "calories": null,
-  "title": "아보카도고수샐러드 모닝리추얼 모닝루틴",
+  "title": "아보카도 완두콩 샐러드",
   "credit": null,
   "hashtags": [
    "avocado",
@@ -68660,8 +68660,8 @@
    "홈쿡"
   ],
   "intro": "20210929, #조식다이어리 224, 21도/소나기\n고수, 아보카도, 완두콩에 비네그레트 드레싱, 후추 #아보카도고수샐러드\n푸드페어링, Foodpairing 이란 용어가 있다. 일반적으론 와인에 어울리는 음식을 뜻하는 말. 화이트와인엔 어류, 레드와인엔 육류, 치킨엔 맥주(요즘엔 피맥), 막걸리엔 파전 이런 식이다. (비가 오니 갑자기 막걸리 생각이 간절한데) \n그래서 아보카도엔 고수, 코리엔더, 실란트로, 팍치, 샹차이다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 아보카도 1/2개\n- 완두콩 1/2컵\n- 고수\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 후추",
+  "steps": "1. 팬에 물을 조금 붓고 완두콩을 저수분으로 익힌다. \n2. 아보카도는 껍질 벗기고 세로로 길게 썬다. \n3. 접시에 1의 완두콩, 2의 아보카도와 고수 얹고 드레싱와 후추 뿌린다. ",
   "raw": "20210929, #조식다이어리 224, 21도/소나기\n\n고수, 아보카도, 완두콩에 비네그레트 드레싱, 후추 #아보카도고수샐러드\n\n푸드페어링, Foodpairing 이란 용어가 있다. 일반적으론 와인에 어울리는 음식을 뜻하는 말. 화이트와인엔 어류, 레드와인엔 육류, 치킨엔 맥주(요즘엔 피맥), 막걸리엔 파전 이런 식이다. (비가 오니 갑자기 막걸리 생각이 간절한데) \n\n그래서 아보카도엔 고수, 코리엔더, 실란트로, 팍치, 샹차이다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #고수 #아보카도 #완두콩\n#breakfast #recipe #salad #avocado #coriander #vinaigrette #pea #cilantro",
   "image": "https://images.how-about-breakfast.com/images/224.jpg",
   "gallery": [
@@ -68669,13 +68669,6 @@
    "https://images.how-about-breakfast.com/images/224_2.jpg",
    "https://images.how-about-breakfast.com/images/224_3.jpg"
   ],
-  "_en": {
-   "hash": "3a92d3faf8d2fe09e70d3d643618b00f5fa97323bf1fe601db4917c229a45d7e",
-   "title": "Avocado Cilantro Salad, Morning Ritual, Morning Routine",
-   "intro": "20210929, #breakfastdiary 224, 21°C/rain showers\nCilantro, avocado, and peas with vinaigrette dressing and pepper #avocadocilantrosalad\nThere's a term, foodpairing, that usually refers to food that goes well with wine — fish with white wine, meat with red wine, beer with chicken (these days it's chimaek), and pajeon with makgeolli, that kind of thing. (Now that it's raining, I'm suddenly craving makgeolli.) \nAnd so with avocado, it's cilantro — coriander, cilantro, phak chi, xiangcai, whatever you want to call it.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "아보카도고수샐러드-모닝리추얼-모닝루틴"
  },
  {
