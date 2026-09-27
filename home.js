@@ -28,7 +28,7 @@
   ];
 
   var OTD_EMPTY_BANGS = ['앗!', '엇!', '이런!'];
-  var OTD_EMPTY_SUBS = ['조식이 없네요', '조식을 못 먹었어요', '조식을 건너 뛰었죠'];
+  var OTD_EMPTY_SUBS = ['조식이 없네요', '조식을 못 먹었어요', '조식을 건너 뛰었네요'];
 
   // Randomly recombines the On-This-Day empty-year row's copy each render
   // so a list with several empty years doesn't repeat the same line.
