@@ -86091,25 +86091,18 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식 적채",
+  "title": "적양배추 오렌지 샐러드",
   "credit": null,
   "hashtags": [
    "오늘의조식",
    "적채"
   ],
   "intro": "20200928, ‘안전하고 합법적인 임신중지를 위한 국제행동의 날’을 맞아 여성계 원로 100인이 ‘낙태의 죄’ 전면 폐지를 촉구하는 선언문을 발표한다는 의미있는 소식으로 시작하는 #오늘의조식\n#적채 와 오렌지, 호두, 포도, 리코타 치즈에 드레싱",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 적양배추 1/4개\n- 오렌지 1개\n- 포도 5~6개\n- 호두 1T\n- 리코타치즈 1T\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)",
+  "steps": "1. 적양배추는 먹기 좋은 크기로 썬다.\n2. 오렌지는 칼로 껍질을 깎아서 과육만 발라낸 후 가로로 썬다. \n3. 접시에 적양배추, 오렌지, 적양배추 순서로 담고 호두, 포도, 리코타치즈 얹고 드레싱 얹는다.  ",
   "raw": "20200928, ‘안전하고 합법적인 임신중지를 위한 국제행동의 날’을 맞아 여성계 원로 100인이 ‘낙태의 죄’ 전면 폐지를 촉구하는 선언문을 발표한다는 의미있는 소식으로 시작하는 #오늘의조식\n\n#적채 와 오렌지, 호두, 포도, 리코타 치즈에 드레싱",
   "pre_label": "D-137",
   "image": "https://images.how-about-breakfast.com/images/pre-137.jpg",
-  "_en": {
-   "hash": "2b4224281901b790b2408ac228913b6012853489762ff3c3cad675619c6bbd1f",
-   "title": "Today's Breakfast: Red Cabbage",
-   "intro": "20200928, #todaysbreakfast starts with meaningful news: to mark the International Day of Action for Safe and Legal Abortion, 100 senior women's-movement figures are set to release a declaration calling for the complete abolition of the crime of abortion.\n#redcabbage with orange, walnut, grape, and ricotta cheese, dressed",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식-적채"
  },
  {
