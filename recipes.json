@@ -38103,7 +38103,7 @@
   "weather": "22도/대체로맑음",
   "failed": false,
   "calories": null,
-  "title": "호밀크래커",
+  "title": "클로티드크림과 초코무화과잼을 얹은 호밀크래커",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38113,17 +38113,10 @@
    "호밀크래커"
   ],
   "intro": "20230928, #조식다이어리 858, 22도/대체로맑음\n긴 연휴의 첫 날은 가볍게\n호밀 크래커에 초코무화과잼과 클로티드크림",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 호밀크래커 4장\n- 클로티드크림 1T\n- 초코무화과잼 1T",
+  "steps": "1. 호밀크래커에 클로티드 크림과 초코무화과잼 얹고 호밀크래커로 덮어서 먹는다. ",
   "raw": "20230928, #조식다이어리 858, 22도/대체로맑음\n\n긴 연휴의 첫 날은 가볍게\n\n호밀 크래커에 초코무화과잼과 클로티드크림\n\n#조식 #레시피 #미라클모닝 #호밀크래커",
   "video": "https://images.how-about-breakfast.com/images/858.mp4",
-  "_en": {
-   "hash": "3fd768c32bde8a96064e95e2314fc56abb86fd719078a1d427759eafa67a61e2",
-   "title": "Rye Crackers",
-   "intro": "20230928, #breakfastdiary 858, 22°C/mostly sunny\nKeeping the first day of the long holiday light —\nrye crackers with chocolate fig jam and clotted cream.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "호밀크래커"
  },
  {
