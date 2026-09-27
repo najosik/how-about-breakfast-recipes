@@ -51142,7 +51142,7 @@
   "weather": "15도/한때흐림, 16분/운동",
   "failed": false,
   "calories": null,
-  "title": "토마토 닭꼬치 대파",
+  "title": "닭다리살 토마토 꼬치",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51162,9 +51162,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20220929, #조식다이어리 558, 15도/한때흐림, 16분/운동\n아토믹스는 장은 꼭 전라남도 담양의 기순도 명인이 만든 장을 공수해 쓰는데요, 아토믹스 서버라면 한국 전통 된장, 간장의 종류까지 안다고요. 이는 곧 손님들의 교양으로 이어지죠.\n출처: 아토믹스 박정은 : 지적이고 따뜻한 환대로, 뉴욕 최고 레스토랑을 만들다 @longblack.co\n뉴욕의 한식 레스토랑 아토믹스 인터뷰, 식재료에 대한 설명이 결국 레스토랑에 대한 좋은 평판이나, 한식에 대한 선호 따위가 아니라 ‘손님들의 교양으로 이어진다’는 말이 꽤 인상적이다. \n오늘의 인사이트와는 동떨어진 조식 메뉴지만, \n닭만으론 안되겠다 싶어 대파와 토마토를 꼬치에 꽂았다. 소금, 후추후추후추후추, 술 한 잔이 생각나는 조식이지만 이번 주는 자제하기로 했다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20220929, #조식다이어리 558, 15도/한때흐림, 16분/운동\n아토믹스는 장은 꼭 전라남도 담양의 기순도 명인이 만든 장을 공수해 쓰는데요, 아토믹스 서버라면 한국 전통 된장, 간장의 종류까지 안다고요. 이는 곧 손님들의 교양으로 이어지죠.\n출처: 아토믹스 박정은 : 지적이고 따뜻한 환대로, 뉴욕 최고 레스토랑을 만들다 @longblack.co\n\n뉴욕의 한식 레스토랑 아토믹스 인터뷰, 식재료에 대한 설명이 결국 레스토랑에 대한 좋은 평판이나, 한식에 대한 선호 따위가 아니라 ‘손님들의 교양으로 이어진다’는 말이 꽤 인상적이다. \n오늘의 인사이트와는 동떨어진 조식 메뉴지만, \n닭만으론 안되겠다 싶어 대파와 토마토를 꼬치에 꽂았다. 소금, 후추후추후추후추, 술 한 잔이 생각나는 조식이지만 이번 주는 자제하기로 했다.",
+  "ingredients": "- 닭다리살 꼬치 2개(시판)\n- 대파 1/4개(잎집)\n- 방울토마토 3개",
+  "steps": "1. 팬에 오일 두르고 닭다리살, 대파, 방울토마토 꼬치를 굽는다. \n2. 적당히 익으면 토치로 겉을 굽는다.  ",
   "raw": "20220929, #조식다이어리 558, 15도/한때흐림, 16분/운동\n\n아토믹스는 장은 꼭 전라남도 담양의 기순도 명인이 만든 장을 공수해 쓰는데요, 아토믹스 서버라면 한국 전통 된장, 간장의 종류까지 안다고요. 이는 곧 손님들의 교양으로 이어지죠.\n출처: 아토믹스 박정은 : 지적이고 따뜻한 환대로, 뉴욕 최고 레스토랑을 만들다 @longblack.co\n\n뉴욕의 한식 레스토랑 아토믹스 인터뷰, 식재료에 대한 설명이 결국 레스토랑에 대한 좋은 평판이나, 한식에 대한 선호 따위가 아니라 ‘손님들의 교양으로 이어진다’는 말이 꽤 인상적이다. \n\n오늘의 인사이트와는 동떨어진 조식 메뉴지만, \n닭만으론 안되겠다 싶어 대파와 토마토를 꼬치에 꽂았다. 소금, 후추후추후추후추, 술 한 잔이 생각나는 조식이지만 이번 주는 자제하기로 했다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #토마토 #닭꼬치 #대파\n#breakfast #cherrytomato #chickenskewers #greenonion ",
   "image": "https://images.how-about-breakfast.com/images/558.jpg",
   "gallery": [
@@ -51173,13 +51173,6 @@
    "https://images.how-about-breakfast.com/images/558_3.jpg",
    "https://images.how-about-breakfast.com/images/558_4.jpg"
   ],
-  "_en": {
-   "hash": "505a690ba7af204f1a09491540bd2e045d4df312bc5843898ac977b3326caa21",
-   "title": "Tomato and Chicken Skewers",
-   "intro": "20220929 #breakfastdiary 558, 15°C/occasionally cloudy, 16min/exercise\nAtomix always flies in soy sauces made by master craftsman Gi Sun-do in Damyang, Jeollanam-do — apparently an Atomix server can even tell you the different types of traditional Korean doenjang and soy sauce. That, in turn, becomes part of the guests' own sophistication.\nSource: Atomix's Park Jung-eun — Building New York's best restaurant through intelligent, warm hospitality, @longblack.co\nAn interview with Atomix, the Korean restaurant in New York — what struck me most wasn't that describing the ingredients builds the restaurant's reputation or a preference for Korean food, but that it 'becomes part of the guests' own sophistication.'\nA far cry from today's insight, but for breakfast anyway —\nchicken alone didn't feel like enough, so I skewered it with scallion and tomato. Salt, pepper pepper pepper pepper — the kind of breakfast that makes you want a drink, but I decided to hold off this week.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "토마토-닭꼬치-대파"
  },
  {
@@ -68637,7 +68630,7 @@
   "weather": "21도/소나기",
   "failed": false,
   "calories": null,
-  "title": "아보카도고수샐러드 모닝리추얼 모닝루틴",
+  "title": "아보카도 완두콩 샐러드",
   "credit": null,
   "hashtags": [
    "avocado",
@@ -68666,8 +68659,8 @@
    "홈쿡"
   ],
   "intro": "20210929, #조식다이어리 224, 21도/소나기\n고수, 아보카도, 완두콩에 비네그레트 드레싱, 후추 #아보카도고수샐러드\n푸드페어링, Foodpairing 이란 용어가 있다. 일반적으론 와인에 어울리는 음식을 뜻하는 말. 화이트와인엔 어류, 레드와인엔 육류, 치킨엔 맥주(요즘엔 피맥), 막걸리엔 파전 이런 식이다. (비가 오니 갑자기 막걸리 생각이 간절한데) \n그래서 아보카도엔 고수, 코리엔더, 실란트로, 팍치, 샹차이다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 아보카도 1/2개\n- 완두콩 1/2컵\n- 고수\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 후추",
+  "steps": "1. 팬에 물을 조금 붓고 완두콩을 저수분으로 익힌다. \n2. 아보카도는 껍질 벗기고 세로로 길게 썬다. \n3. 접시에 1의 완두콩, 2의 아보카도와 고수 얹고 드레싱와 후추 뿌린다. ",
   "raw": "20210929, #조식다이어리 224, 21도/소나기\n\n고수, 아보카도, 완두콩에 비네그레트 드레싱, 후추 #아보카도고수샐러드\n\n푸드페어링, Foodpairing 이란 용어가 있다. 일반적으론 와인에 어울리는 음식을 뜻하는 말. 화이트와인엔 어류, 레드와인엔 육류, 치킨엔 맥주(요즘엔 피맥), 막걸리엔 파전 이런 식이다. (비가 오니 갑자기 막걸리 생각이 간절한데) \n\n그래서 아보카도엔 고수, 코리엔더, 실란트로, 팍치, 샹차이다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #고수 #아보카도 #완두콩\n#breakfast #recipe #salad #avocado #coriander #vinaigrette #pea #cilantro",
   "image": "https://images.how-about-breakfast.com/images/224.jpg",
   "gallery": [
@@ -68675,13 +68668,6 @@
    "https://images.how-about-breakfast.com/images/224_2.jpg",
    "https://images.how-about-breakfast.com/images/224_3.jpg"
   ],
-  "_en": {
-   "hash": "3a92d3faf8d2fe09e70d3d643618b00f5fa97323bf1fe601db4917c229a45d7e",
-   "title": "Avocado Cilantro Salad, Morning Ritual, Morning Routine",
-   "intro": "20210929, #breakfastdiary 224, 21°C/rain showers\nCilantro, avocado, and peas with vinaigrette dressing and pepper #avocadocilantrosalad\nThere's a term, foodpairing, that usually refers to food that goes well with wine — fish with white wine, meat with red wine, beer with chicken (these days it's chimaek), and pajeon with makgeolli, that kind of thing. (Now that it's raining, I'm suddenly craving makgeolli.) \nAnd so with avocado, it's cilantro — coriander, cilantro, phak chi, xiangcai, whatever you want to call it.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "아보카도고수샐러드-모닝리추얼-모닝루틴"
  },
  {
@@ -86083,7 +86069,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "온실가스 오늘의조식",
+  "title": "통토마토 카프레제",
   "credit": null,
   "hashtags": [
    "오늘의조식",
@@ -86091,17 +86077,10 @@
   ],
   "intro": "20200929, 지난해 7억280만톤으로 우리나라가 배출하는 #온실가스 가 20년만에 처음으로 감소세를 보였다는, 반가운 소식과 함께하는 #오늘의조식 \n바질페스토 위에 모짜렐라 위에 껍질 벗긴 토마토 위에 새싹이",
   "ingredients": null,
-  "steps": null,
+  "steps": "1. 토마토는 꼭지를 파내고 끓는 물에 살짝 데친 후 찬물에 넣어 껍질을 벗긴다. \n2. 접시에 바질페스토, 생모짜렐라치즈, 1의 토마토 얹는다. ",
   "raw": "20200929, 지난해 7억280만톤으로 우리나라가 배출하는 #온실가스 가 20년만에 처음으로 감소세를 보였다는, 반가운 소식과 함께하는 #오늘의조식 \n\n바질페스토 위에 모짜렐라 위에 껍질 벗긴 토마토 위에 새싹이",
   "pre_label": "D-136",
   "image": "https://images.how-about-breakfast.com/images/pre-136.jpg",
-  "_en": {
-   "hash": "7e7713dda0fc52a4481d833fb21bccac0219dc9270af95466077ae0265ef934c",
-   "title": "Greenhouse Gases, Today's Breakfast",
-   "intro": "20200929, Good news alongside #todaysbreakfast: last year Korea's #greenhousegas emissions came to 702.8 million tons, showing their first decline in 20 years.\nBasil pesto, then mozzarella, then peeled tomato, then sprouts on top",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "온실가스-오늘의조식"
  },
  {
