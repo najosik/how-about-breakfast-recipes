@@ -86096,25 +86096,18 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "낫또",
+  "title": "낫토",
   "credit": null,
   "hashtags": [
    "낫또",
    "조식"
   ],
   "intro": "20200930, 내년부터 구글도 애플처럼 앱 결제 금액의 30% 수수료를 부과하겠다고, \n구글의 모토, Don’t be evil이 잠시 떠올랐지만 자본주의 사회에서 기업이 이윤을 추구하겠다는데, \n세상에서 제일 예쁜 계란 노른자를 곁들인 #낫또 #조식",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 낫토 1개\n- 계란노른자 1개",
+  "steps": "1. 낫토 포장지 뜯어서 간장, 겨자 넣고 섞는다. \n2. 낫토를 그릇에 담고 계란노른자 얹는다. 골고구 섞어서 먹는다. ",
   "raw": "20200930, 내년부터 구글도 애플처럼 앱 결제 금액의 30% 수수료를 부과하겠다고, \n구글의 모토, Don’t be evil이 잠시 떠올랐지만 자본주의 사회에서 기업이 이윤을 추구하겠다는데, \n\n세상에서 제일 예쁜 계란 노른자를 곁들인 #낫또 #조식",
   "pre_label": "D-135",
   "image": "https://images.how-about-breakfast.com/images/pre-135.jpg",
-  "_en": {
-   "hash": "9ebfb6d704df3eb18d2ce7007738121b9d2b68d2a509109dd3286d7ae11f18e7",
-   "title": "Natto",
-   "intro": "20200930, Starting next year, Google, like Apple, will apparently charge a 30% commission on app payments.\nGoogle's motto, \"Don't be evil,\" briefly crossed my mind, but in a capitalist society, if a company wants to pursue profit...\n#natto with the prettiest egg yolk in the world on top #breakfast",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "낫또"
  },
  {
