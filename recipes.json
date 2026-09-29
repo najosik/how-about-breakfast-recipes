@@ -1,5 +1,35 @@
 [
  {
+  "date": "2026-09-29",
+  "date_raw": "20260929",
+  "diary_no": 1878,
+  "weather": "14도/청명함",
+  "failed": false,
+  "calories": 325,
+  "title": "대파 두부무침",
+  "credit": "@mayumillion",
+  "hashtags": [
+   "대파",
+   "레시피",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20260929 #조식다이어리 1850, 14도/청명함\n파가 맵다는 편견에 대해\n편견은 대개 한 번의 경험으로 만들어지고, 한 번의 경험으로 사라지기도 한다. \n약 325kcal 대파 두부무침",
+  "ingredients": "- 두부 1/2모\n- 대파 1뿌리(잎집만 사용)\n- 소금 1t\n- 홀그레인 머스터드 1t \n- 올리브오일 1t \n- 파마산치즈 1t\n- 후추",
+  "steps": "1. 두부는 수분을 빼기 위해서 키친타워로 감싼 뒤 전자레인지에 2분 데우고 식힌다. \n2. 대파는 2cm 크기로 잘라서 올리브오일 두른 팬에서 굽는다. \n3. 팬에 물 조금 붓고 뚜껑 덮고 2분 더 굽는다. \n4. 믹싱볼에 두부, 소금 1t, 홀그레인 머스터드 1t, 올리브오일 1t, 파마산치즈 1t와 3의 대파 넣고 골고루 섞는다. \n5. 4의 두부와 대파를 접시에 담고 후추 뿌린다",
+  "raw": "20260929 #조식다이어리 1850, 14도/청명함\n\n파가 맵다는 편견에 대해\n\n편견은 대개 한 번의 경험으로 만들어지고, 한 번의 경험으로 사라지기도 한다. \n\n약 325kcal 대파 두부무침\n\n👉재료\n- 두부 1/2모\n- 대파 1뿌리(잎집만 사용)\n- 소금 1t\n- 홀그레인 머스터드 1t \n- 올리브오일 1t \n- 파마산치즈 1t\n- 후추\n\n👉조리\n1. 두부는 수분을 빼기 위해서 키친타워로 감싼 뒤 전자레인지에 2분 데우고 식힌다. \n2. 대파는 2cm 크기로 잘라서 올리브오일 두른 팬에서 굽는다. \n3. 팬에 물 조금 붓고 뚜껑 덮고 2분 더 굽는다. \n4. 믹싱볼에 두부, 소금 1t, 홀그레인 머스터드 1t, 올리브오일 1t, 파마산치즈 1t와 3의 대파 넣고 골고루 섞는다. \n5. 4의 두부와 대파를 접시에 담고 후추 뿌린다 \n\nInspired by @mayumillion\n\n#조식 #레시피 #대파",
+  "permalink": "https://www.instagram.com/p/Dd3zLJWHbb3/",
+  "image": "https://images.how-about-breakfast.com/images/1878.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1878.jpg",
+   "https://images.how-about-breakfast.com/images/1878_2.jpg",
+   "https://images.how-about-breakfast.com/images/1878_3.jpg",
+   "https://images.how-about-breakfast.com/images/1878_4.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1878.mp4",
+  "page_id": "대파-두부무침"
+ },
+ {
   "date": "2026-09-28",
   "date_raw": "20260928",
   "diary_no": 1877,
