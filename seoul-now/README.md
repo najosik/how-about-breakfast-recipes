@@ -24,7 +24,6 @@ data/events.json      사이트가 읽는 데이터 (Actions가 자동 갱신)
 scripts/fetch_events.py      API 수집 · 정제 스크립트 (표준 라이브러리만 사용)
 scripts/test_fetch_events.py 단위 테스트
 scripts/make_demo_data.py    로컬 미리보기용 예시 데이터 생성
-.github/workflows/fetch-events.yml  6시간마다 수집 후 커밋
 ```
 
 ## 로컬에서 보기
@@ -38,12 +37,13 @@ SEOUL_API_KEY=발급받은키 python3 scripts/fetch_events.py
 ```
 테스트: `python3 -m unittest discover -s scripts`
 
-## 배포 (새 저장소 연결 후)
-1. 이 폴더를 새 GitHub 저장소의 루트로 올립니다.
-2. [서울 열린데이터광장](https://data.seoul.go.kr)에서 인증키를 발급받습니다.
-3. 저장소 Settings → Secrets and variables → Actions에 `SEOUL_API_KEY`를 등록합니다.
-4. Actions 탭에서 **Fetch Seoul culture events** 워크플로를 한 번 수동 실행합니다.
-5. Settings → Pages에서 `main` 브랜치 루트를 배포 대상으로 설정합니다.
+## 배포 (현재: how-about-breakfast.com/seoul-now/)
+- 자동 수집: 저장소 루트의 `.github/workflows/seoul-now-fetch.yml`이 6시간마다 실행됩니다.
+  다른 자동화와 같은 `main-branch-writer` 동시 실행 그룹을 사용하고, push가 거절되면 rebase 후 재시도합니다.
+- 인증키: 저장소 Settings → Secrets and variables → Actions에 `SEOUL_API_KEY` 등록.
+  키가 없으면 수집 단계는 경고만 남기고 건너뜁니다.
+- 첫 수집: Actions 탭 → **Seoul Now - fetch culture events** → Run workflow.
+- 별도 저장소로 분리할 때는 이 폴더를 루트로 옮기고, 워크플로의 `working-directory`를 제거합니다.
 
 ## 보안 설계 (OWASP Top 10 기준)
 | 항목 | 적용 내용 |
