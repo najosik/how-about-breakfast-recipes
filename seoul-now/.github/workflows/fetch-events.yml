@@ -1,0 +1,44 @@
+name: Fetch Seoul culture events
+
+on:
+  schedule:
+    - cron: "15 */6 * * *"   # 6시간마다 (UTC 기준 :15분)
+  workflow_dispatch:
+
+# 필요한 최소 권한만 부여
+permissions:
+  contents: write
+
+concurrency:
+  group: fetch-events
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      # 공급망 공격 방지를 위해 커밋 SHA로 고정 (actions/checkout v4.2.2)
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: true
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s scripts -q
+
+      - name: Fetch events
+        env:
+          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
+        run: python3 scripts/fetch_events.py
+
+      - name: Commit if changed
+        run: |
+          if git diff --quiet -- data/events.json; then
+            echo "No changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/events.json
+          git commit -m "Update Seoul culture events data"
+          git push
