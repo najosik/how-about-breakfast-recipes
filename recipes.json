@@ -25476,7 +25476,7 @@
   "weather": "22도/부분적으로 흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "볶음우동 우동",
+  "title": "일본식 볶음우동",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25487,8 +25487,8 @@
    "조식다이어리"
   ],
   "intro": "20241001 #조식다이어리 1192, 22도/부분적으로 흐림, 20분/운동(M) \n \n어제 해물볶음우동 을 사 먹었는데, 엔드노트라고 해야 하나, 마지막에 감도는 버터 맛이 인상적이었다. 해물이 없어서 양배추만으로 만든 #볶음우동",
-  "ingredients": "시판 우동 1개(풀무원)\n양배추 1/4개\n양파 1/2개\n마늘 2개\n청경채 1개(생략 가능)\n계란 1개(생략 가능)\n소스(간장 1, 굴소스 1, 참기름 1, 올리고당 1/2)\n버터 1\n그 밖에 오일 2T, 가쓰오부시  \n\n👉이렇게\n끓는 물에 우동 넣고 풀어준다. \n그동안 간장, 굴소스, 참기름, 올리고당 섞어서 소스를 만든다. \n팬에 오일 붓고 마늘, 양파, 양배추 순서로 충분히 볶는다. 야채 숨이 죽으면 소스 붓고 충분히 스며들 수 있도록 골고루 섞는다. \n토치로 그을려서 불맛을 낸다. 물론 이건 선택 사항이다. \n우동 넣고 골고루 섞는다. \n여기서 버터 1 넣으면 풍미가 확 살아난다. \n접시에 담고 가쓰오부시 얹고 계란프라이 얹어서 맛있게 먹는다.  \n\n#조식 #레시피 #미라클모닝 #우동",
-  "steps": null,
+  "ingredients": "- 시판 우동 1개\n- 양배추 1/4개\n- 양파 1/2개\n- 마늘 2개\n- 청경채 1개(생략 가능)\n- 계란 1개(생략 가능)\n- 소스(간장 1T, 굴소스 1T, 참기름 1/2T, 올리고당 1/2)\n- 버터 1T\n- 오일 1T \n- 가쓰오부시  ",
+  "steps": "1. 끓는 물에 우동 넣고 푼다.  \n2. 간장 1T, 굴소스 1T, 참기름 1T, 올리고당 1/2T 섞어서 소스를 만든다. \n3. 팬에 오일 붓고 다진 마늘 볶다가 양파, 양배추 순서로 충분히 볶는다. \n4. 3의 채소 숨이 죽으면 2의 소스 붓고 충분히 스며들 수 있도록 골고루 섞는다. 토치로 그을려서 불맛을 낸다. (물론 이건 선택 사항이다.)\n5. 4에 우동 넣고 골고루 섞다가 버터 1/2T 넣고 섞는다. \n6. 5의 우동을 접시에 담고 가쓰오부시와 계란프라이 얹어서 맛있게 먹는다.  ",
   "raw": "20241001 #조식다이어리 1192, 22도/부분적으로 흐림, 20분/운동(M) \n \n어제 해물볶음우동 을 사 먹었는데, 엔드노트라고 해야 하나, 마지막에 감도는 버터 맛이 인상적이었다. 해물이 없어서 양배추만으로 만든 #볶음우동 \n\n👉재료는\n시판 우동 1개(풀무원)\n양배추 1/4개\n양파 1/2개\n마늘 2개\n청경채 1개(생략 가능)\n계란 1개(생략 가능)\n소스(간장 1, 굴소스 1, 참기름 1, 올리고당 1/2)\n버터 1\n그 밖에 오일 2T, 가쓰오부시  \n\n👉이렇게\n끓는 물에 우동 넣고 풀어준다. \n그동안 간장, 굴소스, 참기름, 올리고당 섞어서 소스를 만든다. \n팬에 오일 붓고 마늘, 양파, 양배추 순서로 충분히 볶는다. 야채 숨이 죽으면 소스 붓고 충분히 스며들 수 있도록 골고루 섞는다. \n토치로 그을려서 불맛을 낸다. 물론 이건 선택 사항이다. \n우동 넣고 골고루 섞는다. \n여기서 버터 1 넣으면 풍미가 확 살아난다. \n접시에 담고 가쓰오부시 얹고 계란프라이 얹어서 맛있게 먹는다.  \n\n#조식 #레시피 #미라클모닝 #우동",
   "image": "https://images.how-about-breakfast.com/images/1192.jpg",
   "gallery": [
@@ -25499,13 +25499,6 @@
    "https://images.how-about-breakfast.com/images/1192_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1192.mp4",
-  "_en": {
-   "hash": "9569497e3c830d13024aed5dc05a296c724b436d105acf5e76e1130bba26c6d3",
-   "title": "Stir-fried udon, udon",
-   "intro": "20241001 #breakfastdiary 1192, 22°C/partly cloudy, 20 min/exercise(M) \n \nYesterday I bought seafood stir-fried udon, and the buttery finish at the end — I guess you'd call it the \"end note\" — was memorable. No seafood on hand, so here's #stirfriedudon made with just cabbage.",
-   "ingredients": "Store-bought udon, 1 pack (Pulmuone)\nCabbage, 1/4\nOnion, 1/2\nGarlic, 2 cloves\nBok choy, 1 (optional)\nEgg, 1 (optional)\nSauce (soy sauce 1, oyster sauce 1, sesame oil 1, oligosaccharide syrup 1/2)\nButter, 1\nAlso oil 2T, bonito flakes\n\n👉Like this\nPut the udon in boiling water and loosen it up.\nMeanwhile mix soy sauce, oyster sauce, sesame oil, and oligosaccharide syrup to make the sauce.\nPour oil in a pan and sauté garlic, then onion, then cabbage in that order until well cooked. Once the vegetables wilt, pour in the sauce and mix well so it soaks in.\nTorch it briefly for a smoky flavor. Of course this step is optional.\nAdd the udon and mix well.\nAdding the 1 butter here really brings the flavor to life.\nPlate it, top with bonito flakes and a fried egg, and enjoy.\n\n#breakfast #recipe #miraclemorning #udon",
-   "steps": ""
-  },
   "page_id": "볶음우동-우동"
  },
  {
