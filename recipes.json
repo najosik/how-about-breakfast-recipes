@@ -51080,7 +51080,7 @@
   "weather": "20도/한때흐림",
   "failed": false,
   "calories": null,
-  "title": "브리치즈오픈샌드위치 샌드위치 프로슈토",
+  "title": "프로슈토 브리치즈 토스트",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51103,9 +51103,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20221001, #조식다이어리 560, 20도/한때흐림\n그렇게 계속 같은 취향의 것들만 즐기다 보면\n결국은 아주 좁은 우물 안 개구리처럼\n동전만한 하늘을 보면서\n이게 세상의 전부라고 생각하거나\n내 취향만이 신성한 거라고 믿게 될 수 있으니깡쇼\n또 깡쇼\n출처: 취향에 대한 올바른 태도를 가질 수 있는 삶에 대하여(이동진, 김이나), 카카오TV\n알고리즘은 우리를 유사한 취향으로 이끈다. 개인의 선호도를 반영한다고 하지만 어쩌면 우리는 모두 플랫폼이 제공하는 같은 방향의 취향을 즐기고 있을지도 모르겠다. 보통 그런 걸 편향이라고 한다. \n그리고 편향에서 벗어나기 위해 매일 아침 가능한 한 다른 조식을 준비한다. \n달군 팬에 올리브오일 바른 빵을 앞뒤로 바삭하게 굽는다. 프로슈토, 브리치즈, 꿀을 휘익, 세상에서 제일 예쁜 호두를 다져서 올린 #브리치즈오픈샌드위치",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20221001, #조식다이어리 560, 20도/한때흐림\n그렇게 계속 같은 취향의 것들만 즐기다 보면\n결국은 아주 좁은 우물 안 개구리처럼\n동전만한 하늘을 보면서\n이게 세상의 전부라고 생각하거나\n내 취향만이 신성한 거라고 믿게 될 수 있으니깡쇼\n또 깡쇼\n(출처: 취향에 대한 올바른 태도를 가질 수 있는 삶에 대하여(이동진, 김이나), 카카오TV)\n\n알고리즘은 우리를 유사한 취향으로 이끈다. 개인의 선호도를 반영한다고 하지만 어쩌면 우리는 모두 플랫폼이 제공하는 같은 방향의 취향을 즐기고 있을지도 모르겠다. 보통 그런 걸 편향이라고 한다. \n그리고 편향에서 벗어나기 위해 매일 아침 가능한 한 다른 조식을 준비한다. \n달군 팬에 올리브오일 바른 빵을 앞뒤로 바삭하게 굽는다. 프로슈토, 브리치즈, 꿀을 휘익, 세상에서 제일 예쁜 호두를 다져서 올린 #브리치즈오픈샌드위치",
+  "ingredients": "- 사워도우 1장\n- 브리치즈 1/2개\n- 프로슈토 2~3장\n- 꿀 2t\n- 호두 1T",
+  "steps": "1. 작은 사워도우에 올리브오일 바르고 앞뒤로 굽는다. \n2. 사워도우 위에 프로슈토, 브리치즈, 그 위에 꿀을 얹는다. 다진 호두로 마무리한다. ",
   "raw": "20221001, #조식다이어리 560, 20도/한때흐림\n\n그렇게 계속 같은 취향의 것들만 즐기다 보면\n결국은 아주 좁은 우물 안 개구리처럼\n동전만한 하늘을 보면서\n이게 세상의 전부라고 생각하거나\n내 취향만이 신성한 거라고 믿게 될 수 있으니깡쇼\n또 깡쇼\n출처: 취향에 대한 올바른 태도를 가질 수 있는 삶에 대하여(이동진, 김이나), 카카오TV\n\n알고리즘은 우리를 유사한 취향으로 이끈다. 개인의 선호도를 반영한다고 하지만 어쩌면 우리는 모두 플랫폼이 제공하는 같은 방향의 취향을 즐기고 있을지도 모르겠다. 보통 그런 걸 편향이라고 한다. \n그리고 편향에서 벗어나기 위해 매일 아침 가능한 한 다른 조식을 준비한다. \n\n달군 팬에 올리브오일 바른 빵을 앞뒤로 바삭하게 굽는다. 프로슈토, 브리치즈, 꿀을 휘익, 세상에서 제일 예쁜 호두를 다져서 올린 #브리치즈오픈샌드위치 \n \n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샌드위치 #프로슈토 #브리치즈 #호두 #꿀\n#breakfast #walnut #briecheese #prosciutto #honey",
   "image": "https://images.how-about-breakfast.com/images/560.jpg",
   "gallery": [
@@ -51115,13 +51115,6 @@
    "https://images.how-about-breakfast.com/images/560_4.jpg",
    "https://images.how-about-breakfast.com/images/560_5.jpg"
   ],
-  "_en": {
-   "hash": "d48a169a738f80a543593341521b5c6249436847bd6476aee1c87351237da1a6",
-   "title": "Brie and Prosciutto Open Sandwich",
-   "intro": "20221001 #breakfastdiary 560, 20°C/partly cloudy\nKeep enjoying only the same tastes over and over,\nand eventually, like a frog in a very small well,\nstaring up at a sky the size of a coin,\nyou might start thinking that's all there is to the world,\nor believe your own taste is the only sacred one — and that's a shame,\ntruly a shame.\nSource: On Living a Life with the Right Attitude Toward Taste (Lee Dong-jin, Kim Eana), Kakao TV\nAlgorithms steer us toward similar tastes. They claim to reflect our personal preferences, but maybe we're all just enjoying the same direction of taste that the platform hands us. That's usually called bias.\nAnd to break free of that bias, I try to make a different breakfast every morning, as much as I can.\nBrush bread with olive oil and toast both sides until crisp in a heated pan. A quick flourish of prosciutto, brie, and honey, topped with the prettiest chopped walnuts in the world. #briecheeseopensandwich",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "브리치즈오픈샌드위치-샌드위치-프로슈토"
  },
  {
