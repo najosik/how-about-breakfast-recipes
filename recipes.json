@@ -86076,24 +86076,17 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식",
+  "title": "베리베리베리 샐러드",
   "credit": null,
   "hashtags": [
    "오늘의조식"
   ],
   "intro": "20201001, K본부 수신료의 가치 증명은 20세기 ‘이산가족찾기’, ‘21세기 대한민국 어게인 나훈아’였다는 어떤 분(@seraph506)의 트윗처럼 전날 나훈아 콘서트 뉴스로 가득한 2020년의 4분기 첫 날, \n세상에서 제일 예쁜 라즈베리 그리고 블랙베리, 블루베리와 적채를 곁들인 샐러드 #오늘의조식",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 적양배추 1/4개\n- 라즈베리, 블랙베리, 블루베리 각 1/2컵\n- 호두 1T\n- 올리브오일 1t",
+  "steps": "1. 적양배추는 먹기 좋은 크기로 썬다. \n2. 접시에 1의 적양배추, 라즈베리, 블랙베리, 블루베리와 호두와 올리브오일 뿌린다. ",
   "raw": "20201001, K본부 수신료의 가치 증명은 20세기 ‘이산가족찾기’, ‘21세기 대한민국 어게인 나훈아’였다는 어떤 분(@seraph506)의 트윗처럼 전날 나훈아 콘서트 뉴스로 가득한 2020년의 4분기 첫 날, \n\n세상에서 제일 예쁜 라즈베리 그리고 블랙베리, 블루베리와 적채를 곁들인 샐러드 #오늘의조식",
   "pre_label": "2020-10-01-2",
   "image": "https://images.how-about-breakfast.com/images/2020-10-01-2.jpg",
-  "_en": {
-   "hash": "51ca797aa83f9412945bea02f95ba2646c72f5616e8897c1a22908b823da9300",
-   "title": "Today's Breakfast: Berries",
-   "intro": "20201001, Someone (@seraph506) tweeted that the value of Broadcaster K's license fee was proven by the 20th century's 'Finding Dispersed Families' and the 21st century's 'Korea Again, Na Hoon-a' — a fitting line for the first day of Q4 2020, coming right after a day full of news about Na Hoon-a's concert.\nThe prettiest raspberries in the world, along with blackberries, blueberries, and red cabbage — a salad. #todaysbreakfast",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식"
  },
  {
