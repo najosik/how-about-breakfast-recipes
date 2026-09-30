@@ -1,0 +1,64 @@
+name: Seoul Now - fetch culture events
+
+# 서울시 문화행사 정보(OA-15486) → seoul-now/data/events.json
+on:
+  schedule:
+    - cron: '30 */6 * * *'   # 6시간마다 (UTC :30, 인스타그램 동기화와 30분 간격)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Shared with every other workflow that commits to main - see add-post.yml
+# for why (queues concurrent runs instead of letting them race to push and
+# silently drop the loser's otherwise-successful commit).
+concurrency:
+  group: main-branch-writer
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: seoul-now
+    steps:
+      # 공급망 공격 방지를 위해 커밋 SHA로 고정 (actions/checkout v4.2.2)
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s scripts -q
+
+      - name: Fetch events
+        id: fetch
+        env:
+          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
+        run: |
+          if [ -z "$SEOUL_API_KEY" ]; then
+            echo "::warning::SEOUL_API_KEY secret is not set - skipping fetch."
+            echo "skipped=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python3 scripts/fetch_events.py
+
+      - name: Commit and push if changed
+        if: steps.fetch.outputs.skipped != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/events.json
+          if git diff --cached --quiet; then
+            echo "No changes, nothing to commit."
+            exit 0
+          fi
+          git commit -m "Seoul Now: update culture events data"
+          # 다른 경로(관리자 도구 등)로 main이 먼저 바뀐 경우를 대비해 재시도
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push rejected, rebasing onto latest main (attempt $i)..."
+            git pull --rebase origin main
+            sleep $((i * 5))
+          done
+          echo "::error::Push failed after 3 attempts."
+          exit 1

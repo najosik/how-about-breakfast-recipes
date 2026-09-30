@@ -1,5 +1,35 @@
 [
  {
+  "date": "2026-09-29",
+  "date_raw": "20260929",
+  "diary_no": 1878,
+  "weather": "14도/청명함",
+  "failed": false,
+  "calories": 325,
+  "title": "대파 두부무침",
+  "credit": "@mayumillion",
+  "hashtags": [
+   "대파",
+   "레시피",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20260929 #조식다이어리 1850, 14도/청명함\n파가 맵다는 편견에 대해\n편견은 대개 한 번의 경험으로 만들어지고, 한 번의 경험으로 사라지기도 한다. \n약 325kcal 대파 두부무침",
+  "ingredients": "- 두부 1/2모\n- 대파 1뿌리(잎집만 사용)\n- 소금 1t\n- 홀그레인 머스터드 1t \n- 올리브오일 1t \n- 파마산치즈 1t\n- 후추",
+  "steps": "1. 두부는 수분을 빼기 위해서 키친타워로 감싼 뒤 전자레인지에 2분 데우고 식힌다. \n2. 대파는 2cm 크기로 잘라서 올리브오일 두른 팬에서 굽는다. \n3. 팬에 물 조금 붓고 뚜껑 덮고 2분 더 굽는다. \n4. 믹싱볼에 두부, 소금 1t, 홀그레인 머스터드 1t, 올리브오일 1t, 파마산치즈 1t와 3의 대파 넣고 골고루 섞는다. \n5. 4의 두부와 대파를 접시에 담고 후추 뿌린다",
+  "raw": "20260929 #조식다이어리 1850, 14도/청명함\n\n파가 맵다는 편견에 대해\n\n편견은 대개 한 번의 경험으로 만들어지고, 한 번의 경험으로 사라지기도 한다. \n\n약 325kcal 대파 두부무침\n\n👉재료\n- 두부 1/2모\n- 대파 1뿌리(잎집만 사용)\n- 소금 1t\n- 홀그레인 머스터드 1t \n- 올리브오일 1t \n- 파마산치즈 1t\n- 후추\n\n👉조리\n1. 두부는 수분을 빼기 위해서 키친타워로 감싼 뒤 전자레인지에 2분 데우고 식힌다. \n2. 대파는 2cm 크기로 잘라서 올리브오일 두른 팬에서 굽는다. \n3. 팬에 물 조금 붓고 뚜껑 덮고 2분 더 굽는다. \n4. 믹싱볼에 두부, 소금 1t, 홀그레인 머스터드 1t, 올리브오일 1t, 파마산치즈 1t와 3의 대파 넣고 골고루 섞는다. \n5. 4의 두부와 대파를 접시에 담고 후추 뿌린다 \n\nInspired by @mayumillion\n\n#조식 #레시피 #대파",
+  "permalink": "https://www.instagram.com/p/Dd3zLJWHbb3/",
+  "image": "https://images.how-about-breakfast.com/images/1878.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1878.jpg",
+   "https://images.how-about-breakfast.com/images/1878_2.jpg",
+   "https://images.how-about-breakfast.com/images/1878_3.jpg",
+   "https://images.how-about-breakfast.com/images/1878_4.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1878.mp4",
+  "page_id": "대파-두부무침"
+ },
+ {
   "date": "2026-09-28",
   "date_raw": "20260928",
   "diary_no": 1877,
@@ -38097,7 +38127,7 @@
   "weather": "17도/맑음, 55분/운동(W, Y)",
   "failed": false,
   "calories": null,
-  "title": "무화과",
+  "title": "제철 무화과 토스트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38106,19 +38136,12 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20231001, #조식다이어리 861, 17도/맑음, 55분/운동(W, Y)\n달군 팬에 올리브오일 바른 빵을 굽고 리코타치즈, 제철 올리브와 꿀, 다진 피스타치오",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20231001, #조식다이어리 861, 17도/맑음, 55분/운동(W, Y)\n달군 팬에 올리브오일 바른 빵을 굽고 리코타치즈, 제철 무화과와 꿀, 다진 피스타치오",
+  "ingredients": "- 사워도우 1장\n- 리코타치즈 1T\n- 무화과 2개\n- 꿀 1t\n- 올리브오일 2t\n- 피스타치오 2t",
+  "steps": "1. 사워도우에 올리브오일 바르고 앞뒤로 바삭하게 굽는다. \n2. 1의 사워도에 리코타치즈 바르고 0.5cm 두께로 썬 무화과, 꿀, 다진 피스타치오 얹는다. ",
   "raw": "20231001, #조식다이어리 861, 17도/맑음, 55분/운동(W, Y)\n\n달군 팬에 올리브오일 바른 빵을 굽고 리코타치즈, 제철 올리브와 꿀, 다진 피스타치오\n\n#조식 #레시피 #미라클모닝 #무화과",
   "image": "https://images.how-about-breakfast.com/images/11120.jpg",
   "video": "https://images.how-about-breakfast.com/images/861.mp4",
-  "_en": {
-   "hash": "7ba28a02521f3f0f1de084cba824324e2bcecbd3807db509860f283a9a4c7da3",
-   "title": "Figs",
-   "intro": "20231001, #breakfastdiary 861, 17°C/sunny, 55min/exercise(W, Y)\nToast bread brushed with olive oil in a hot pan, then top with ricotta cheese, seasonal olives, honey, and chopped pistachios.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "무화과-2"
  },
  {
@@ -51051,7 +51074,7 @@
   "weather": "20도/한때흐림",
   "failed": false,
   "calories": null,
-  "title": "브리치즈오픈샌드위치 샌드위치 프로슈토",
+  "title": "프로슈토 브리치즈 토스트",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51074,9 +51097,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20221001, #조식다이어리 560, 20도/한때흐림\n그렇게 계속 같은 취향의 것들만 즐기다 보면\n결국은 아주 좁은 우물 안 개구리처럼\n동전만한 하늘을 보면서\n이게 세상의 전부라고 생각하거나\n내 취향만이 신성한 거라고 믿게 될 수 있으니깡쇼\n또 깡쇼\n출처: 취향에 대한 올바른 태도를 가질 수 있는 삶에 대하여(이동진, 김이나), 카카오TV\n알고리즘은 우리를 유사한 취향으로 이끈다. 개인의 선호도를 반영한다고 하지만 어쩌면 우리는 모두 플랫폼이 제공하는 같은 방향의 취향을 즐기고 있을지도 모르겠다. 보통 그런 걸 편향이라고 한다. \n그리고 편향에서 벗어나기 위해 매일 아침 가능한 한 다른 조식을 준비한다. \n달군 팬에 올리브오일 바른 빵을 앞뒤로 바삭하게 굽는다. 프로슈토, 브리치즈, 꿀을 휘익, 세상에서 제일 예쁜 호두를 다져서 올린 #브리치즈오픈샌드위치",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20221001, #조식다이어리 560, 20도/한때흐림\n그렇게 계속 같은 취향의 것들만 즐기다 보면\n결국은 아주 좁은 우물 안 개구리처럼\n동전만한 하늘을 보면서\n이게 세상의 전부라고 생각하거나\n내 취향만이 신성한 거라고 믿게 될 수 있으니깡쇼\n또 깡쇼\n(출처: 취향에 대한 올바른 태도를 가질 수 있는 삶에 대하여(이동진, 김이나), 카카오TV)\n\n알고리즘은 우리를 유사한 취향으로 이끈다. 개인의 선호도를 반영한다고 하지만 어쩌면 우리는 모두 플랫폼이 제공하는 같은 방향의 취향을 즐기고 있을지도 모르겠다. 보통 그런 걸 편향이라고 한다. \n그리고 편향에서 벗어나기 위해 매일 아침 가능한 한 다른 조식을 준비한다. \n달군 팬에 올리브오일 바른 빵을 앞뒤로 바삭하게 굽는다. 프로슈토, 브리치즈, 꿀을 휘익, 세상에서 제일 예쁜 호두를 다져서 올린 #브리치즈오픈샌드위치",
+  "ingredients": "- 사워도우 1장\n- 브리치즈 1/2개\n- 프로슈토 2~3장\n- 꿀 2t\n- 호두 1T",
+  "steps": "1. 작은 사워도우에 올리브오일 바르고 앞뒤로 굽는다. \n2. 사워도우 위에 프로슈토, 브리치즈, 그 위에 꿀을 얹는다. 다진 호두로 마무리한다. ",
   "raw": "20221001, #조식다이어리 560, 20도/한때흐림\n\n그렇게 계속 같은 취향의 것들만 즐기다 보면\n결국은 아주 좁은 우물 안 개구리처럼\n동전만한 하늘을 보면서\n이게 세상의 전부라고 생각하거나\n내 취향만이 신성한 거라고 믿게 될 수 있으니깡쇼\n또 깡쇼\n출처: 취향에 대한 올바른 태도를 가질 수 있는 삶에 대하여(이동진, 김이나), 카카오TV\n\n알고리즘은 우리를 유사한 취향으로 이끈다. 개인의 선호도를 반영한다고 하지만 어쩌면 우리는 모두 플랫폼이 제공하는 같은 방향의 취향을 즐기고 있을지도 모르겠다. 보통 그런 걸 편향이라고 한다. \n그리고 편향에서 벗어나기 위해 매일 아침 가능한 한 다른 조식을 준비한다. \n\n달군 팬에 올리브오일 바른 빵을 앞뒤로 바삭하게 굽는다. 프로슈토, 브리치즈, 꿀을 휘익, 세상에서 제일 예쁜 호두를 다져서 올린 #브리치즈오픈샌드위치 \n \n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샌드위치 #프로슈토 #브리치즈 #호두 #꿀\n#breakfast #walnut #briecheese #prosciutto #honey",
   "image": "https://images.how-about-breakfast.com/images/560.jpg",
   "gallery": [
@@ -51086,13 +51109,6 @@
    "https://images.how-about-breakfast.com/images/560_4.jpg",
    "https://images.how-about-breakfast.com/images/560_5.jpg"
   ],
-  "_en": {
-   "hash": "d48a169a738f80a543593341521b5c6249436847bd6476aee1c87351237da1a6",
-   "title": "Brie and Prosciutto Open Sandwich",
-   "intro": "20221001 #breakfastdiary 560, 20°C/partly cloudy\nKeep enjoying only the same tastes over and over,\nand eventually, like a frog in a very small well,\nstaring up at a sky the size of a coin,\nyou might start thinking that's all there is to the world,\nor believe your own taste is the only sacred one — and that's a shame,\ntruly a shame.\nSource: On Living a Life with the Right Attitude Toward Taste (Lee Dong-jin, Kim Eana), Kakao TV\nAlgorithms steer us toward similar tastes. They claim to reflect our personal preferences, but maybe we're all just enjoying the same direction of taste that the platform hands us. That's usually called bias.\nAnd to break free of that bias, I try to make a different breakfast every morning, as much as I can.\nBrush bread with olive oil and toast both sides until crisp in a heated pan. A quick flourish of prosciutto, brie, and honey, topped with the prettiest chopped walnuts in the world. #briecheeseopensandwich",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "브리치즈오픈샌드위치-샌드위치-프로슈토"
  },
  {
@@ -68561,7 +68577,7 @@
   "weather": "16도/안개",
   "failed": false,
   "calories": null,
-  "title": "고수를곁들인가지구이 지구돋이 창백한푸른점",
+  "title": "고수를 곁들인 가지구이",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68589,8 +68605,8 @@
    "홈쿡"
   ],
   "intro": "20211001, #조식다이어리 226, 16도/안개\n가지에 세로로 칼집을 내고 부채 모양으로 펼친다. 올리브오일 두른 팬에 가지를 올리고 올리브오일, 토마토소스를 올린다. 뚜껑을 닫고 중불에 5분 정도 익힌 뒤 접시로 옮겨 후추, 파슬리, 고수 #고수를곁들인가지구이\n주변 지인들에게, 스트레스 받는 일이 있을 때 ‘쉼표’를 떠올려 보라는 조언을 건넬 때가 있다. 추가로 아폴로 8호에서 찍은 #지구돋이 나 보이저 1호가 찍은 #창백한푸른점 에 지나지 않은 지구를 떠올려 보라고 얘기하고 싶다. 모든 것에 너그러워질 것이다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 가지 1개\n- 올리브오일 2t\n- 토마토소스 2T\n- 고수 한 줌\n- 파슬리 1t\n- 후추 ",
+  "steps": "1. 가지에 세로로 두 번 칼집을 낸 후 부채 모양으로 펼친다. \n2. 팬에 올리브오일 뿌린 후 가지를 굽다가 토마토소스 얹고 5분 정도 익힌다. \n3. 2의 가지를 접시에 담고 후추, 파슬리, 고수 얹는다. ",
   "raw": "20211001, #조식다이어리 226, 16도/안개\n\n가지에 세로로 칼집을 내고 부채 모양으로 펼친다. 올리브오일 두른 팬에 가지를 올리고 올리브오일, 토마토소스를 올린다. 뚜껑을 닫고 중불에 5분 정도 익힌 뒤 접시로 옮겨 후추, 파슬리, 고수 #고수를곁들인가지구이\n\n주변 지인들에게, 스트레스 받는 일이 있을 때 ‘쉼표’를 떠올려 보라는 조언을 건넬 때가 있다. 추가로 아폴로 8호에서 찍은 #지구돋이 나 보이저 1호가 찍은 #창백한푸른점 에 지나지 않은 지구를 떠올려 보라고 얘기하고 싶다. 모든 것에 너그러워질 것이다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #가지 #고수 \n#breakfast #recipe #salad #eggplant #coriander #cilantro  ",
   "image": "https://images.how-about-breakfast.com/images/226.jpg",
   "gallery": [
@@ -68599,13 +68615,6 @@
    "https://images.how-about-breakfast.com/images/226_3.jpg",
    "https://images.how-about-breakfast.com/images/226_4.jpg"
   ],
-  "_en": {
-   "hash": "ab0080cee04d8c592a4436193d2f9f338489d7133484fd3a2bb67f4b293acb86",
-   "title": "Grilled Eggplant with Cilantro, Earthrise, Pale Blue Dot",
-   "intro": "20211001, #breakfastdiary 226, 16°C/foggy\nScore the eggplant lengthwise and fan it out. Place it in a pan with olive oil, then add more olive oil and tomato sauce on top. Cover and cook over medium heat for about 5 minutes, then transfer to a plate and finish with pepper, parsley, and cilantro #grilledeggplantwithcilantro\nI sometimes tell people close to me that when something is stressing them out, they should picture a 'comma' — a pause. And beyond that, I'd like to tell them to picture the Earth as nothing more than the tiny dot in #earthrise, the photo taken from Apollo 8, or in Voyager 1's #paleblueDot. You'll find yourself more forgiving of everything.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "고수를곁들인가지구이-지구돋이-창백한푸른점"
  },
  {
@@ -86047,24 +86056,17 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "오늘의조식",
+  "title": "베리베리베리 샐러드",
   "credit": null,
   "hashtags": [
    "오늘의조식"
   ],
   "intro": "20201001, K본부 수신료의 가치 증명은 20세기 ‘이산가족찾기’, ‘21세기 대한민국 어게인 나훈아’였다는 어떤 분(@seraph506)의 트윗처럼 전날 나훈아 콘서트 뉴스로 가득한 2020년의 4분기 첫 날, \n세상에서 제일 예쁜 라즈베리 그리고 블랙베리, 블루베리와 적채를 곁들인 샐러드 #오늘의조식",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 적양배추 1/4개\n- 라즈베리, 블랙베리, 블루베리 각 1/2컵\n- 호두 1T\n- 올리브오일 1t",
+  "steps": "1. 적양배추는 먹기 좋은 크기로 썬다. \n2. 접시에 1의 적양배추, 라즈베리, 블랙베리, 블루베리와 호두와 올리브오일 뿌린다. ",
   "raw": "20201001, K본부 수신료의 가치 증명은 20세기 ‘이산가족찾기’, ‘21세기 대한민국 어게인 나훈아’였다는 어떤 분(@seraph506)의 트윗처럼 전날 나훈아 콘서트 뉴스로 가득한 2020년의 4분기 첫 날, \n\n세상에서 제일 예쁜 라즈베리 그리고 블랙베리, 블루베리와 적채를 곁들인 샐러드 #오늘의조식",
   "pre_label": "2020-10-01-2",
   "image": "https://images.how-about-breakfast.com/images/2020-10-01-2.jpg",
-  "_en": {
-   "hash": "51ca797aa83f9412945bea02f95ba2646c72f5616e8897c1a22908b823da9300",
-   "title": "Today's Breakfast: Berries",
-   "intro": "20201001, Someone (@seraph506) tweeted that the value of Broadcaster K's license fee was proven by the 20th century's 'Finding Dispersed Families' and the 21st century's 'Korea Again, Na Hoon-a' — a fitting line for the first day of Q4 2020, coming right after a day full of news about Na Hoon-a's concert.\nThe prettiest raspberries in the world, along with blackberries, blueberries, and red cabbage — a salad. #todaysbreakfast",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "오늘의조식"
  },
  {
