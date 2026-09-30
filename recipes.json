@@ -38127,7 +38127,7 @@
   "weather": "17도/맑음, 55분/운동(W, Y)",
   "failed": false,
   "calories": null,
-  "title": "무화과",
+  "title": "제철 무화과 토스트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38136,18 +38136,11 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20231001, #조식다이어리 861, 17도/맑음, 55분/운동(W, Y)\n달군 팬에 올리브오일 바른 빵을 굽고 리코타치즈, 제철 올리브와 꿀, 다진 피스타치오",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20231001, #조식다이어리 861, 17도/맑음, 55분/운동(W, Y)\n달군 팬에 올리브오일 바른 빵을 굽고 리코타치즈, 제철 무화과와 꿀, 다진 피스타치오",
+  "ingredients": "- 사워도우 1장\n- 리코타치즈 1T\n- 무화과 2개\n- 꿀 1t\n- 올리브오일 2t\n- 피스타치오 2t",
+  "steps": "1. 사워도우에 올리브오일 바르고 앞뒤로 바삭하게 굽는다. \n2. 1의 사워도에 리코타치즈 바르고 0.5cm 두께로 썬 무화과, 꿀, 다진 피스타치오 얹는다. ",
   "raw": "20231001, #조식다이어리 861, 17도/맑음, 55분/운동(W, Y)\n\n달군 팬에 올리브오일 바른 빵을 굽고 리코타치즈, 제철 올리브와 꿀, 다진 피스타치오\n\n#조식 #레시피 #미라클모닝 #무화과",
   "video": "https://images.how-about-breakfast.com/images/861.mp4",
-  "_en": {
-   "hash": "7ba28a02521f3f0f1de084cba824324e2bcecbd3807db509860f283a9a4c7da3",
-   "title": "Figs",
-   "intro": "20231001, #breakfastdiary 861, 17°C/sunny, 55min/exercise(W, Y)\nToast bread brushed with olive oil in a hot pan, then top with ricotta cheese, seasonal olives, honey, and chopped pistachios.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "무화과-2"
  },
  {
