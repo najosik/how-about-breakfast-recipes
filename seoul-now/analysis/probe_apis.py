@@ -52,24 +52,21 @@ def report(service, args):
 def main():
     if not KEY:
         print("SEOUL_API_KEY missing"); return 1
-    for ds in DATASETS:
-        print(f"== {ds} ==")
-        try:
-            html = get(f"https://data.seoul.go.kr/dataList/{ds}/S/1/datasetView.do")
-        except (urllib.error.URLError, TimeoutError) as e:
-            print("   page fetch failed:", type(e).__name__); continue
-        t = TITLE_RE.search(html)
-        print("   title:", re.sub(r"\s+", " ", t.group(1)).strip()[:120] if t else "?")
-        samples = sorted(set(SAMPLE_RE.findall(html)))
-        print("   sample urls:", samples[:5])
-        for svc, tail in samples[:2]:
-            # 1) 샘플 URL의 인자 그대로, 2) 인자 없이, 3) 최근 날짜들
-            report(svc, [a for a in tail.split("/") if a])
-            report(svc, [])
-            for back in (5, 10, 20, 35, 50, 70):
-                if report(svc, [(today - timedelta(days=back)).strftime("%Y%m%d")]):
-                    break
-                time.sleep(0.3)
+    for svc in ("SPOP_FORN_TEMP_RESD_DONG", "SPOP_LOCAL_RESD_DONG"):
+        print(f"== {svc} ==")
+        data = call(svc)
+        body = data.get(svc) if isinstance(data, dict) else None
+        if not (isinstance(body, dict) and body.get("row")):
+            report(svc, []); continue
+        row = body["row"][0]
+        print("   total:", body.get("list_total_count"))
+        print("   fields:", list(row.keys()))
+        print("   sample:", json.dumps(row, ensure_ascii=False)[:700])
+        # 날짜 필터 형식 확인: 첫 행의 기준일 값으로 다시 호출
+        date_val = next((str(v) for k, v in row.items() if "DE" in k.upper() and str(v).isdigit()), "")
+        if date_val:
+            report(svc, [date_val])
+        time.sleep(0.3)
     return 0
 
 
