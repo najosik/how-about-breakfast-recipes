@@ -90,6 +90,62 @@ class ComputeTest(unittest.TestCase):
         self.assertIn("9", routes)
 
 
+class MapOutputTest(unittest.TestCase):
+    def test_split_stop_name(self):
+        self.assertEqual(bf.split_stop_name("명륜3가.성대입구(00030)"), ("명륜3가.성대입구", 30))
+        self.assertEqual(bf.split_stop_name("종점"), ("종점", None))
+
+    def test_route_id_safe(self):
+        rid = bf.route_id("종로11")
+        self.assertRegex(rid, r"^[0-9a-f]{12}$")
+        self.assertNotEqual(rid, bf.route_id("종로12"))
+
+    def test_simplify_keeps_closed_ring(self):
+        ring = [[0, 0]] + [[i / 100, 0.000001 * (i % 2)] for i in range(1, 100)] + [[1, 0], [1, 1], [0, 1], [0, 0]]
+        out = bf.simplify(ring, 0.0001)
+        self.assertLess(len(out), len(ring))
+        self.assertEqual(out[0], out[-1])
+        self.assertGreaterEqual(len(out), 4)
+
+    def test_route_files_sorted_by_seq(self):
+        pop = {("11110001", 10): [20.0, 5.0, 15.0, 80.0]}
+        xy = {"s1": (126.5, 37.5), "s2": (126.6, 37.6)}
+        rows = [dict(bus_row("100", "s2", 10, 1, 1), SBWY_STNS_NM="둘째(00002)"),
+                dict(bus_row("100", "s1", 10, 1, 1), SBWY_STNS_NM="첫째(00001)")]
+        routes, *_ = bf.compute(rows, xy, DONGS, pop)
+        files = bf.route_files(routes)
+        stops = files[bf.route_id("100")]["stops"]
+        self.assertEqual([x[1] for x in stops], ["첫째", "둘째"])
+        self.assertEqual(stops[0][2:4], [37.5, 126.5])
+
+    def test_dong_geojson_share(self):
+        pop = {("11110001", h): [10.0, 0.0, 10.0, 90.0] for h in range(24)}
+        gj = bf.dong_geojson(DONGS, pop)
+        props = {f["properties"]["code"]: f["properties"] for f in gj["features"]}
+        self.assertAlmostEqual(props["11110001"]["share"], 0.1)
+        self.assertIsNone(props["11140002"]["share"])
+
+    def test_hot_stops(self):
+        pop = {("11110001", 10): [20.0, 5.0, 15.0, 80.0]}
+        rows = [bus_row("100", "sA", 10, 60, 40), bus_row("200", "sA", 10, 10, 0)]
+        routes, used, matched, names = bf.compute(rows, {"sA": (126.5, 37.5)}, DONGS, pop)
+        out = bf.summarize(routes, used, matched, names, pop, "202607", 31, 0)
+        self.assertEqual(out["hotStops"][0]["routes"], ["100", "200"])
+        self.assertEqual(out["hotStops"][0]["use"], 110)
+        self.assertTrue(out["routes"][0]["hasMap"] is False)  # 좌표 있는 정류장 1개뿐
+
+    def test_write_routes_dir_rejects_bad_id(self):
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as d, \
+                mock.patch.object(bf, "OUT_DIR", Path(d)), mock.patch.object(bf, "ROUTES_DIR", Path(d) / "routes"):
+            bf.write_routes_dir({"0123456789ab": {"x": 1}})
+            self.assertTrue((Path(d) / "routes" / "0123456789ab.json").exists())
+            with self.assertRaises(ValueError):
+                bf.write_routes_dir({"../evil": {}})
+            self.assertTrue((Path(d) / "routes" / "0123456789ab.json").exists())
+
+
 class SecurityTest(unittest.TestCase):
     def test_bad_key_rejected(self):
         with self.assertRaises(bf.FetchError):

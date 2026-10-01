@@ -4,12 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://tile.openstreetmap.org; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <!-- 테스트 기간: 검색엔진 색인 제외. 정식 공개 시 삭제 -->
   <meta name="robots" content="noindex, nofollow">
   <title>외국인 관광객 버스 이용 추정 · Seoul Bus Routes for Visitors</title>
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../vendor/leaflet-1.9.4/leaflet.css">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="bus.css">
 </head>
@@ -31,6 +32,28 @@
 
     <section id="kpis" class="kpis" aria-label="Summary"></section>
 
+    <section class="panel" aria-labelledby="map-h">
+      <div class="panel-head">
+        <h2 id="map-h"></h2>
+        <div id="layer-toggles" class="layer-toggles" role="group"></div>
+      </div>
+      <p id="map-desc" class="note"></p>
+      <div id="map" class="map" role="region"></div>
+      <div id="map-legend" class="map-legend"></div>
+      <p id="map-privacy" class="note small-note"></p>
+    </section>
+
+    <section id="detail" class="panel" aria-live="polite" hidden>
+      <h2 id="d-title"></h2>
+      <p id="d-name" class="note"></p>
+      <div id="d-kpis" class="kpis small"></div>
+      <h3 id="d-hour-h"></h3>
+      <div id="d-chart" class="hour-chart" role="img"></div>
+      <p id="d-hour-note" class="note"></p>
+      <h3 id="d-stops-h"></h3>
+      <div class="table-wrap"><table id="d-stops" class="data-table"></table></div>
+    </section>
+
     <section class="panel" aria-labelledby="rank-h">
       <div class="panel-head">
         <h2 id="rank-h"></h2>
@@ -50,15 +73,10 @@
       <ol id="ranking" class="ranking"></ol>
     </section>
 
-    <section id="detail" class="panel" aria-live="polite" hidden>
-      <h2 id="d-title"></h2>
-      <p id="d-name" class="note"></p>
-      <div id="d-kpis" class="kpis small"></div>
-      <h3 id="d-hour-h"></h3>
-      <div id="d-chart" class="hour-chart" role="img"></div>
-      <p id="d-hour-note" class="note"></p>
-      <h3 id="d-stops-h"></h3>
-      <div class="table-wrap"><table id="d-stops" class="data-table"></table></div>
+    <section class="panel" aria-labelledby="hot-h">
+      <h2 id="hot-h"></h2>
+      <p id="hot-desc" class="note"></p>
+      <div class="table-wrap"><table id="hot" class="data-table"></table></div>
     </section>
 
     <section class="panel" aria-labelledby="dong-h">
@@ -83,6 +101,7 @@
   </footer>
 
   <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+  <script src="../vendor/leaflet-1.9.4/leaflet.js"></script>
   <script src="bus.js"></script>
 </body>
 </html>

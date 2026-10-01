@@ -48,6 +48,18 @@
         "장기체류 외국인은 비율 계산에서 제외했습니다. 버스 데이터와 생활인구 데이터는 같은 월 기준입니다.",
       ],
       updated: (m, d) => `기준월 ${m} · 분석 ${d}`,
+      mapH: "지도로 보기",
+      mapDesc: "행정동 색은 낮 시간 외국인 비율, 주황 원은 외국인 추정 이용이 많은 정류장(크기 = 이용량), 빨간 선은 선택한 노선입니다. 노선도는 정류장을 순서대로 이은 선이며 실제 운행 도로와 다를 수 있습니다.",
+      layerDong: "행정동 외국인 비율", layerHot: "주요 정류장", layerRoute: "선택 노선",
+      legendDong: "낮 시간 외국인 비율", legendHot: "외국인 추정 이용", legendRoute: "선택 노선",
+      noShare: "자료 없음",
+      mapPrivacy: "배경 지도는 OpenStreetMap 서버에서 불러오며, 이때 접속 IP 등 기술 정보가 OpenStreetMap에 전달됩니다. 이 페이지는 쿠키나 분석 도구를 쓰지 않습니다.",
+      mapAria: "서울 버스 외국인 이용 추정 지도",
+      routeNoMap: "이 노선은 서울 정류장 좌표가 부족해 지도에 노선을 그리지 못했습니다.",
+      tipRoutes: "경유 노선", tipSeq: (n) => `${n}번째 정류장`,
+      hotH: "외국인 추정 이용이 많은 정류장 (서울 전체)",
+      hotDesc: "여러 노선의 승하차를 정류장별로 합산했습니다. 상위 20곳을 표시하며, 지도에는 상위 300곳이 표시됩니다.",
+      thRoutes: "경유 노선",
     },
     en: {
       title: "Seoul Bus Routes Popular with Visitors (Estimate)",
@@ -90,6 +102,18 @@
         "Long-term foreign residents are excluded. Bus and population data refer to the same month.",
       ],
       updated: (m, d) => `Month ${m} · analyzed ${d}`,
+      mapH: "Map",
+      mapDesc: "Neighborhood shading = daytime foreign share; orange circles = stops with the most estimated foreign trips (size = volume); red line = selected route. Route lines connect stops in order and may not follow actual roads.",
+      layerDong: "Foreign share by neighborhood", layerHot: "Top stops", layerRoute: "Selected route",
+      legendDong: "Daytime foreign share", legendHot: "Est. foreign trips", legendRoute: "Selected route",
+      noShare: "No data",
+      mapPrivacy: "Map tiles are loaded from OpenStreetMap servers, which receive technical data such as your IP address. This page uses no cookies or analytics.",
+      mapAria: "Map of estimated foreign bus use in Seoul",
+      routeNoMap: "Not enough Seoul stop coordinates to draw this route.",
+      tipRoutes: "Routes", tipSeq: (n) => `Stop #${n}`,
+      hotH: "Stops with the most estimated foreign trips (all of Seoul)",
+      hotDesc: "Trips summed across routes per stop. Top 20 shown here; the map shows the top 300.",
+      thRoutes: "Routes",
     },
   };
 
@@ -162,6 +186,14 @@
     $("q").placeholder = t("qPh");
     $("dong-h").textContent = t("dongH");
     $("dong-desc").textContent = t("dongDesc");
+    $("map-h").textContent = t("mapH");
+    $("map-desc").textContent = t("mapDesc");
+    $("map-privacy").textContent = t("mapPrivacy");
+    $("map").setAttribute("aria-label", t("mapAria"));
+    $("hot-h").textContent = t("hotH");
+    $("hot-desc").textContent = t("hotDesc");
+    renderLayerToggles();
+    renderLegend();
     $("method-h").textContent = t("methodH");
     $("method").replaceChildren(...t("method").map((s) => el("p", { text: s })));
     $("limits-h").textContent = t("limitsH");
@@ -219,7 +251,8 @@
     writeUrl();
     renderRanking();
     renderDetail();
-    $("detail").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
+    showRouteOnMap();
+    $("map").scrollIntoView({ behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start" });
   }
 
   function renderDetail() {
@@ -270,13 +303,178 @@
         el("td", { class: "num", text: pct(d.share) }), el("td", { class: "num", text: fmt(d.foreign) })))));
   }
 
+  function renderHot() {
+    $("hot").replaceChildren(
+      el("thead", {}, el("tr", {}, el("th", { class: "num", text: t("thRank") }), el("th", { text: t("thStop") }),
+        el("th", { text: t("thDong") }), el("th", { text: t("thRoutes") }),
+        el("th", { class: "num", text: t("thUse") }), el("th", { class: "num", text: t("thExp") }), el("th", { class: "num", text: t("thShare") }))),
+      el("tbody", {}, ...(data.hotStops || []).slice(0, 20).map((h, i) => el("tr", {},
+        el("td", { class: "num", text: String(i + 1) }), el("td", { text: h.name }), el("td", { text: h.dong }),
+        el("td", { text: (h.routes || []).join(", ") }),
+        el("td", { class: "num", text: fmt(h.use) }), el("td", { class: "num", text: fmt(h.exp) }), el("td", { class: "num", text: pct(h.index, 2) })))));
+  }
+
+  // ---------- 지도 ----------
+  // 순차 색상(한 색상, 밝음→어두움). 단계 경계는 외국인 비율.
+  const SHARE_BREAKS = [0.01, 0.02, 0.04, 0.08];
+  const SHARE_COLORS = ["#eef3fb", "#c6d7ef", "#8fb0de", "#4a7cc2", "#1d4f9a"];
+  const HOT_COLOR = "#e8590c";
+  const ROUTE_COLOR = "#c8102e";
+  const layersOn = { dong: true, hot: true, route: true };
+  let map = null, dongLayer = null, hotLayer = null, routeLayer = null, dongGeo = null;
+  const routeCache = new Map();
+
+  const shareColor = (v) => (v == null ? null : SHARE_COLORS[SHARE_BREAKS.filter((b) => v >= b).length]);
+
+  function tipEl(title, lines) {
+    return el("div", { class: "map-tip" }, el("strong", { text: title }), ...lines.map((l) => el("div", { text: l })));
+  }
+
+  function renderLayerToggles() {
+    const items = [["dong", "layerDong"], ["hot", "layerHot"], ["route", "layerRoute"]];
+    $("layer-toggles").replaceChildren(...items.map(([k, label]) => {
+      const cb = el("input", { type: "checkbox" });
+      cb.checked = layersOn[k];
+      cb.addEventListener("change", () => { layersOn[k] = cb.checked; syncLayers(); });
+      return el("label", {}, cb, el("span", { text: t(label) }));
+    }));
+  }
+
+  function renderLegend() {
+    const fmtB = (v) => `${fmt(v * 100, 0)}%`;
+    const ranges = [`< ${fmtB(SHARE_BREAKS[0])}`, ...SHARE_BREAKS.slice(0, -1).map((b, i) => `${fmtB(b)}–${fmtB(SHARE_BREAKS[i + 1])}`),
+      `≥ ${fmtB(SHARE_BREAKS[SHARE_BREAKS.length - 1])}`];
+    const sw = (c) => { const n = el("span", { class: "legend-swatch" }); n.style.background = c; return n; };
+    const dot = (d) => { const n = el("span", { class: "legend-dot" }); n.style.cssText = `width:${d}px;height:${d}px;background:${HOT_COLOR}`; return n; };
+    const line = el("span", { class: "legend-line" }); line.style.background = ROUTE_COLOR;
+    $("map-legend").replaceChildren(
+      el("div", { class: "legend-group" }, el("span", { class: "legend-title", text: t("legendDong") }),
+        ...ranges.flatMap((r, i) => [sw(SHARE_COLORS[i]), el("span", { text: r })])),
+      el("div", { class: "legend-group" }, el("span", { class: "legend-title", text: t("legendHot") }), dot(8), dot(14), dot(22)),
+      el("div", { class: "legend-group" }, el("span", { class: "legend-title", text: t("legendRoute") }), line));
+  }
+
+  function initMap() {
+    if (map || typeof L === "undefined") return;
+    map = L.map("map", { center: [37.5665, 126.978], zoom: 12, scrollWheelZoom: false, preferCanvas: false });
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      maxZoom: 18, minZoom: 10,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    }).addTo(map);
+    map.attributionControl.setPrefix(false);
+    map.createPane("hotPane").style.zIndex = 450;
+    map.createPane("routePane").style.zIndex = 460;
+    // 페이지 스크롤과 충돌하지 않도록 지도를 클릭한 뒤에만 휠 확대
+    map.on("click", () => map.scrollWheelZoom.enable());
+    map.on("mouseout", () => map.scrollWheelZoom.disable());
+  }
+
+  async function loadDongs() {
+    if (dongGeo) return;
+    try {
+      const res = await fetch("data/dongs.geojson", { cache: "no-cache", credentials: "omit" });
+      if (!res.ok) return;
+      const gj = await res.json();
+      if (gj && gj.type === "FeatureCollection" && Array.isArray(gj.features)) dongGeo = gj;
+    } catch { /* 지도 경계 없이도 나머지는 동작 */ }
+  }
+
+  function buildDongLayer() {
+    if (!map || !dongGeo) return;
+    if (dongLayer) dongLayer.remove();
+    dongLayer = L.geoJSON(dongGeo, {
+      style: (f) => {
+        const c = shareColor(f.properties.share);
+        return { color: "#ffffff", weight: 0.6, fillColor: c || "#000", fillOpacity: c ? 0.6 : 0 };
+      },
+      onEachFeature: (f, layer) => {
+        const p = f.properties;
+        layer.bindTooltip(() => tipEl(String(p.name || ""), [
+          `${t("legendDong")}: ${p.share == null ? t("noShare") : pct(p.share)}`]), { sticky: true });
+      },
+    });
+  }
+
+  function buildHotLayer() {
+    if (!map || !data) return;
+    if (hotLayer) hotLayer.remove();
+    const hs = (data.hotStops || []).filter((h) => Number.isFinite(h.lat) && Number.isFinite(h.lng));
+    const max = Math.max(...hs.map((h) => h.exp), 1);
+    hotLayer = L.layerGroup(hs.map((h) => L.circleMarker([h.lat, h.lng], {
+      pane: "hotPane", radius: 3 + 11 * Math.sqrt(h.exp / max),
+      color: "#ffffff", weight: 1.5, fillColor: HOT_COLOR, fillOpacity: 0.8,
+    }).bindTooltip(() => tipEl(h.name, [h.dong, `${t("tipExp")}: ${fmt(h.exp)}`, `${t("tipUse")}: ${fmt(h.use)}`,
+      `${t("tipShare")}: ${pct(h.index, 2)}`, `${t("tipRoutes")}: ${(h.routes || []).join(", ")}`]))));
+  }
+
+  async function showRouteOnMap() {
+    if (!map) return;
+    if (routeLayer) { routeLayer.remove(); routeLayer = null; }
+    const r = data && data.routes.find((x) => x.no === state.route);
+    if (!r || !/^[0-9a-f]{12}$/.test(r.id || "")) return;
+    let rd = routeCache.get(r.id);
+    if (!rd) {
+      try {
+        const res = await fetch(`data/routes/${r.id}.json`, { cache: "no-cache", credentials: "omit" });
+        if (!res.ok) return;
+        rd = await res.json();
+        if (!rd || !Array.isArray(rd.stops)) return;
+        routeCache.set(r.id, rd);
+      } catch { return; }
+    }
+    if (state.route !== r.no) return;   // 그사이 다른 노선을 선택한 경우
+    const pts = rd.stops.filter((s) => Number.isFinite(s[2]) && Number.isFinite(s[3]));
+    if (pts.length < 2) { $("map-desc").textContent = `${t("mapDesc")} ${t("routeNoMap")}`; return; }
+    $("map-desc").textContent = t("mapDesc");
+    // 좌표 없는(서울 밖) 정류장에서 선을 끊어 직선이 엉뚱하게 이어지지 않게 함
+    const segs = []; let cur = [];
+    for (const s of rd.stops) {
+      if (Number.isFinite(s[2]) && Number.isFinite(s[3])) cur.push([s[2], s[3]]);
+      else if (cur.length) { segs.push(cur); cur = []; }
+    }
+    if (cur.length) segs.push(cur);
+    const maxExp = Math.max(...pts.map((s) => s[5]), 1);
+    routeLayer = L.layerGroup([
+      L.polyline(segs, { pane: "routePane", color: ROUTE_COLOR, weight: 4, opacity: 0.85 }),
+      ...pts.map((s) => L.circleMarker([s[2], s[3]], {
+        pane: "routePane", radius: 3 + 7 * Math.sqrt(s[5] / maxExp),
+        color: ROUTE_COLOR, weight: 2, fillColor: "#ffffff", fillOpacity: 1,
+      }).bindTooltip(() => tipEl(String(s[1] || ""), [
+        s[0] != null ? t("tipSeq", s[0]) : "", `${t("tipExp")}: ${fmt(s[5])}`, `${t("tipUse")}: ${fmt(s[4])}`,
+        `${t("tipShare")}: ${pct(s[4] ? s[5] / s[4] : 0, 2)}`].filter(Boolean)))),
+    ]);
+    syncLayers();
+    map.fitBounds(L.latLngBounds(pts.map((s) => [s[2], s[3]])), { padding: [24, 24], maxZoom: 15 });
+  }
+
+  function syncLayers() {
+    if (!map) return;
+    for (const [k, layer] of [["dong", dongLayer], ["hot", hotLayer], ["route", routeLayer]]) {
+      if (!layer) continue;
+      if (layersOn[k] && !map.hasLayer(layer)) layer.addTo(map);
+      if (!layersOn[k] && map.hasLayer(layer)) layer.remove();
+    }
+  }
+
+  async function setupMap() {
+    initMap();
+    if (!map) return;
+    await loadDongs();
+    buildDongLayer();
+    buildHotLayer();
+    syncLayers();
+    await showRouteOnMap();
+  }
+
   function renderAll() {
     renderStatic();
     if (!data) return;
     renderSummary();
     renderRanking();
     renderDetail();
+    renderHot();
     renderDongs();
+    if (map) { buildDongLayer(); buildHotLayer(); syncLayers(); showRouteOnMap(); }  // 언어 전환 시 툴팁 갱신
   }
 
   function validData(j) {
@@ -305,6 +503,7 @@
       if (!state.route && data.routes.length) state.route = data.routes[0].no;
       $("status").hidden = true;
       renderAll();
+      setupMap();
     } catch {
       $("status").textContent = t("loadError");
     }

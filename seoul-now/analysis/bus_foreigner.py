@@ -16,6 +16,7 @@ import hashlib
 import json
 import os
 import re
+import shutil
 import sys
 import tempfile
 import time
@@ -37,7 +38,12 @@ BOUNDARY_SHA256 = "c01ef44a0eb00978662ba7a6240ccb1da287fb52abd85104a1758969d3911
 BOUNDARY_VERSION = "admdongkor ver20260701"
 
 ROOT = Path(__file__).resolve().parent.parent
-OUT_PATH = ROOT / "bus" / "data" / "bus-foreigner.json"
+OUT_DIR = ROOT / "bus" / "data"
+OUT_PATH = OUT_DIR / "bus-foreigner.json"
+ROUTES_DIR = OUT_DIR / "routes"
+DONGS_PATH = OUT_DIR / "dongs.geojson"
+HOT_STOPS = 300            # 지도에 표시할 외국인 추정 이용 상위 정류장 수
+SIMPLIFY_TOL = 0.00015     # 행정동 경계 단순화 허용 오차(도, 약 15m)
 MIN_ROUTE_USE = 30000      # 비중 지수 순위에 넣을 노선의 최소 월 승하차(소규모 노선 잡음 방지)
 TOP_STOPS = 5
 
@@ -123,6 +129,56 @@ def hour_value(row: dict, h: int, kind: str) -> float:
 
 def clean(v, limit=80) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]*>", " ", str(v or ""))).strip()[:limit]
+
+
+SEQ_RE = re.compile(r"\((\d{1,5})\)\s*$")
+
+
+def split_stop_name(v) -> tuple[str, int | None]:
+    """'명륜3가.성대입구(00030)' → ('명륜3가.성대입구', 30). 괄호 숫자는 노선 내 정류장 순번."""
+    name = clean(v, 80)
+    m = SEQ_RE.search(name)
+    if not m:
+        return name, None
+    return name[:m.start()].strip(), int(m.group(1))
+
+
+def route_id(no: str) -> str:
+    """노선 번호(한글 포함 가능) → 파일명으로 안전한 ID."""
+    return hashlib.sha1(no.encode("utf-8")).hexdigest()[:12]
+
+
+def simplify(ring: list, tol: float) -> list:
+    """Douglas-Peucker 단순화(반복 구현) + 소수 5자리 반올림. 고리는 닫힌 상태 유지."""
+    if len(ring) < 5:
+        return [[round(x, 5), round(y, 5)] for x, y, *_ in ring]
+    keep = [False] * len(ring)
+    keep[0] = keep[-1] = True
+    last = len(ring) - 1
+    if ring[0][0] == ring[last][0] and ring[0][1] == ring[last][1]:
+        # 닫힌 고리: 시작점과 가장 먼 점에서 둘로 나눠야 기준선 길이가 0이 되지 않음
+        x0, y0 = ring[0][0], ring[0][1]
+        k = max(range(1, last), key=lambda i: (ring[i][0] - x0) ** 2 + (ring[i][1] - y0) ** 2)
+        keep[k] = True
+        stack = [(0, k), (k, last)]
+    else:
+        stack = [(0, last)]
+    while stack:
+        a, b = stack.pop()
+        ax, ay = ring[a][0], ring[a][1]
+        bx, by = ring[b][0], ring[b][1]
+        dx, dy = bx - ax, by - ay
+        norm = (dx * dx + dy * dy) ** 0.5 or 1e-15
+        best, idx = 0.0, -1
+        for i in range(a + 1, b):
+            d = abs(dy * ring[i][0] - dx * ring[i][1] + bx * ay - by * ax) / norm
+            if d > best:
+                best, idx = d, i
+        if best > tol and idx > 0:
+            keep[idx] = True
+            stack += [(a, idx), (idx, b)]
+    out = [[round(p[0], 5), round(p[1], 5)] for p, k in zip(ring, keep) if k]
+    return out if len(out) >= 4 else [[round(p[0], 5), round(p[1], 5)] for p in ring]
 
 
 # ---------------------------------------------------------------- 공간 처리
@@ -252,8 +308,11 @@ def compute(bus_rows, stop_xy, dong_index, pop, hours=range(24)):
             "use": 0.0, "exp": 0.0, "expChina": 0.0, "expEtc": 0.0,
             "hourUse": [0.0] * 24, "hourExp": [0.0] * 24, "stops": {},
         })
+        sname, seq = split_stop_name(r.get("SBWY_STNS_NM"))
+        xy = stop_xy.get(sid)
         st = rt["stops"].setdefault(sid, {"id": sid, "ars": clean(r.get("STOPS_ARS_NO"), 10),
-                                          "name": clean(r.get("SBWY_STNS_NM"), 60), "dong": dname or "",
+                                          "name": sname[:60], "seq": seq, "dong": dname or "",
+                                          "lat": xy[1] if xy else None, "lng": xy[0] if xy else None,
                                           "use": 0.0, "exp": 0.0})
         for h in hours:
             u = hour_value(r, h, "ON") + hour_value(r, h, "OFF")
@@ -280,6 +339,7 @@ def summarize(routes, stops_used, stops_matched, dong_names, pop, ym, days, api_
         idx = r["exp"] / r["use"]
         top = sorted(r["stops"].values(), key=lambda s: s["exp"], reverse=True)[:TOP_STOPS]
         out_routes.append({
+            "id": route_id(r["no"]), "hasMap": sum(1 for s in r["stops"].values() if s["lat"] is not None) >= 2,
             "no": r["no"], "name": r["name"], "type": r["type"],
             "use": round(r["use"]), "exp": round(r["exp"], 1),
             "index": round(idx, 5), "lift": round(idx / city_index, 3) if city_index else 0,
@@ -292,6 +352,22 @@ def summarize(routes, stops_used, stops_matched, dong_names, pop, ym, days, api_
                          for s in top],
         })
     out_routes.sort(key=lambda r: r["exp"], reverse=True)
+
+    # 서울 전체 정류장별 합계(여러 노선 합산) → 지도 '주요 정류장' 층
+    hot = {}
+    for r in routes.values():
+        for s in r["stops"].values():
+            if s["lat"] is None:
+                continue
+            h = hot.setdefault(s["id"], {"name": s["name"], "ars": s["ars"], "dong": s["dong"],
+                                         "lat": round(s["lat"], 5), "lng": round(s["lng"], 5),
+                                         "use": 0.0, "exp": 0.0, "routes": []})
+            h["use"] += s["use"]; h["exp"] += s["exp"]; h["routes"].append(r["no"])
+    hot_stops = sorted(hot.values(), key=lambda h: h["exp"], reverse=True)[:HOT_STOPS]
+    for h in hot_stops:
+        h["index"] = round(h["exp"] / h["use"], 5) if h["use"] else 0
+        h["use"], h["exp"] = round(h["use"]), round(h["exp"], 1)
+        h["routes"] = sorted(set(h["routes"]))[:12]
 
     # 낮 시간(10~18시) 단기체류 외국인 비율 상위 행정동
     dong_rows = []
@@ -321,8 +397,60 @@ def summarize(routes, stops_used, stops_matched, dong_names, pop, ym, days, api_
             f"행정동 경계: {BOUNDARY_VERSION} (github.com/vuski/admdongkor)",
         ],
         "topDongs": dong_rows[:20],
+        "hotStops": hot_stops,
         "routes": out_routes,
     }
+
+
+def route_files(routes) -> dict[str, dict]:
+    """노선별 지도 데이터: 순번 순 정류장 [순번, 이름, 위도, 경도, 승하차, 외국인 추정]."""
+    out = {}
+    for r in routes.values():
+        if r["use"] <= 0:
+            continue
+        stops = sorted(r["stops"].values(), key=lambda s: (s["seq"] is None, s["seq"] or 0))
+        out[route_id(r["no"])] = {
+            "no": r["no"], "name": r["name"],
+            "stops": [[s["seq"], s["name"], round(s["lat"], 5) if s["lat"] is not None else None,
+                       round(s["lng"], 5) if s["lng"] is not None else None, round(s["use"]), round(s["exp"], 1)]
+                      for s in stops],
+        }
+    return out
+
+
+def dong_geojson(dong_index, pop) -> dict:
+    """행정동 경계(단순화) + 낮 시간(10~18시) 단기체류 외국인 비율."""
+    feats = []
+    for *_bbox, code, name, polys in dong_index.items:
+        f = sum(pop.get((code, h), (0, 0, 0, 0))[0] for h in range(10, 19))
+        l = sum(pop.get((code, h), (0, 0, 0, 0))[3] for h in range(10, 19))
+        coords = [[simplify(ring, SIMPLIFY_TOL) for ring in poly] for poly in polys]
+        feats.append({"type": "Feature",
+                      "properties": {"code": code, "name": name,
+                                     "share": round(f / (f + l), 4) if f + l > 0 else None,
+                                     "foreign": round(f / 9)},
+                      "geometry": {"type": "MultiPolygon", "coordinates": coords}})
+    return {"type": "FeatureCollection", "features": feats}
+
+
+def write_routes_dir(files: dict[str, dict]) -> None:
+    """노선 파일 묶음을 임시 폴더에 쓴 뒤 통째로 교체(중간 상태 노출 방지)."""
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    tmp = Path(tempfile.mkdtemp(dir=OUT_DIR, prefix=".routes-"))
+    try:
+        for rid, data in files.items():
+            if not re.fullmatch(r"[0-9a-f]{12}", rid):
+                raise ValueError("bad route id")
+            (tmp / f"{rid}.json").write_text(json.dumps(data, ensure_ascii=False, separators=(",", ":")), "utf-8")
+        old = OUT_DIR / ".routes-old"
+        shutil.rmtree(old, ignore_errors=True)
+        if ROUTES_DIR.exists():
+            ROUTES_DIR.rename(old)
+        tmp.rename(ROUTES_DIR)
+        shutil.rmtree(old, ignore_errors=True)
+    except BaseException:
+        shutil.rmtree(tmp, ignore_errors=True)
+        raise
 
 
 def write_atomic(path: Path, data: dict) -> None:
@@ -371,6 +499,8 @@ def main() -> int:
     if result["stats"]["matchRate"] < 0.8:
         print(f"Stop match rate too low ({result['stats']['matchRate']:.1%}); not saving.", file=sys.stderr)
         return 1
+    write_routes_dir(route_files(routes))
+    write_atomic(DONGS_PATH, dong_geojson(dongs, pop))
     write_atomic(OUT_PATH, result)
     print(f"Saved {result['stats']['routes']} routes; match rate {result['stats']['matchRate']:.1%}; "
           f"city index {result['cityIndex']:.4f}")

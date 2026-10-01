@@ -69,3 +69,21 @@
   .rank-row .r-track { grid-column: 2 / 4; grid-row: 2; }
   .panel { padding: 16px; }
 }
+
+/* 지도 */
+.map { height: 520px; margin-top: 12px; border-radius: 10px; border: 1px solid var(--line); background: #e8e5df; z-index: 0; }
+.layer-toggles { display: flex; flex-wrap: wrap; gap: 12px; font-size: .9rem; }
+.layer-toggles label { display: inline-flex; align-items: center; gap: 6px; cursor: pointer; }
+.layer-toggles input { width: 16px; height: 16px; accent-color: var(--accent); }
+.map-legend { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-top: 10px; font-size: .8rem; color: var(--muted); align-items: center; }
+.legend-group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.legend-title { font-weight: 600; color: var(--text); margin-right: 4px; }
+.legend-swatch { display: inline-block; width: 22px; height: 12px; border-radius: 2px; border: 1px solid var(--line); vertical-align: middle; }
+.legend-dot { display: inline-block; border-radius: 50%; vertical-align: middle; border: 1.5px solid #fff; box-shadow: 0 0 0 1px var(--line); }
+.legend-line { display: inline-block; width: 26px; height: 4px; border-radius: 2px; vertical-align: middle; }
+.small-note { font-size: .78rem; }
+.map-tip { font: 12px/1.45 system-ui, -apple-system, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+.map-tip strong { display: block; font-size: 13px; }
+.leaflet-container a.leaflet-popup-close-button { color: #333; }
+.route-link { border: 0; background: none; padding: 0; color: var(--on); text-decoration: underline; cursor: pointer; font: inherit; }
+@media (max-width: 560px) { .map { height: 420px; } }
