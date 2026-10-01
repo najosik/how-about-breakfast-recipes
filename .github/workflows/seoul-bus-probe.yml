@@ -1,0 +1,19 @@
+name: Seoul bus analysis - API probe (temporary)
+
+# 읽기 전용 확인 작업. 저장소에 아무것도 쓰지 않음. 분석 스크립트 작성 후 삭제 예정.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Probe APIs
+        env:
+          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
+        run: python3 seoul-now/analysis/probe_apis.py
