@@ -49,24 +49,33 @@ def report(service, args):
     return False
 
 
+def count(svc, ymd):
+    data = call(svc, ymd)
+    body = data.get(svc) if isinstance(data, dict) else None
+    return int(body.get("list_total_count") or 0) if isinstance(body, dict) else 0
+
+
 def main():
     if not KEY:
         print("SEOUL_API_KEY missing"); return 1
+    months = [f"{y}{m:02d}" for y in range(2019, 2027) for m in range(1, 13) if f"{y}{m:02d}" <= today.strftime("%Y%m")]
     for svc in ("SPOP_FORN_TEMP_RESD_DONG", "SPOP_LOCAL_RESD_DONG"):
-        print(f"== {svc} ==")
-        data = call(svc)
-        body = data.get(svc) if isinstance(data, dict) else None
-        if not (isinstance(body, dict) and body.get("row")):
-            report(svc, []); continue
-        row = body["row"][0]
-        print("   total:", body.get("list_total_count"))
-        print("   fields:", list(row.keys()))
-        print("   sample:", json.dumps(row, ensure_ascii=False)[:700])
-        # 날짜 필터 형식 확인: 첫 행의 기준일 값으로 다시 호출
-        date_val = next((str(v) for k, v in row.items() if "DE" in k.upper() and str(v).isdigit()), "")
-        if date_val:
-            report(svc, [date_val])
-        time.sleep(0.3)
+        have = []
+        for ym in months:
+            n = count(svc, ym + "15")
+            if n:
+                have.append(ym)
+            time.sleep(0.15)
+        print(f"== {svc}: months with data on the 15th ({len(have)}) ==")
+        print("   ", have)
+        if have:
+            last = have[-1]
+            y, m = int(last[:4]), int(last[4:])
+            days = [f"{last}{d:02d}" for d in range(1, 32)]
+            nxt = f"{y + (m == 12)}{(m % 12) + 1:02d}"
+            days += [f"{nxt}{d:02d}" for d in range(1, 16)]
+            avail = [d for d in days if count(svc, d)]
+            print("    latest days:", avail[-5:], "| rows/day:", count(svc, avail[-1]) if avail else 0)
     return 0
 
 
