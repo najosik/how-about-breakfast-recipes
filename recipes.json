@@ -38110,7 +38110,7 @@
   "weather": "17도/맑음, 60분/운동(W, C)",
   "failed": false,
   "calories": null,
-  "title": "스팸덮밥 스팸",
+  "title": "스팸덮밥",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38121,21 +38121,14 @@
    "조식다이어리"
   ],
   "intro": "20231002, #조식다이어리 862, 17도/맑음, 60분/운동(W, C)\n따뜻한 밥에 스팸 한 조각 🙂\n해외에서 정크푸드 취급을 받는 스팸이 국내에선, 명절에 주고받는 선물이 됐다는 것, (전체 매출의 약 60%가 설과 추석에 집중되어 있다고,) 그건 전적으로 마케팅의 승리다. \n스팸의 앞면은 세로로, 뒷면은 대각선으로 칼집을 내서 팬에 굽는다. (적절히 두껍게 잘라야 분해되지 않는다.) \n갓지은 밥 위에 스팸, 실파 그리고 참기름 조금, #스팸덮밥",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 스팸 2조각\n- 밥 1/2공기\n- 다진쪽파 2t\n- 참기름 1t",
+  "steps": "1. 두툼하게 썬 스팸 2조각 준비해서 앞면은 세로로, 뒷면은 대각선으로 칼집 내고 오일 없이 팬에 굽는다. \n2. 갓지은 밥 위에 1의 스팸 얹고 다진 쪽파와 참기름 조금 얹는다. ",
   "raw": "20231002, #조식다이어리 862, 17도/맑음, 60분/운동(W, C)\n\n따뜻한 밥에 스팸 한 조각 🙂\n\n해외에서 정크푸드 취급을 받는 스팸이 국내에선, 명절에 주고받는 선물이 됐다는 것, (전체 매출의 약 60%가 설과 추석에 집중되어 있다고,) 그건 전적으로 마케팅의 승리다. \n\n스팸의 앞면은 세로로, 뒷면은 대각선으로 칼집을 내서 팬에 굽는다. (적절히 두껍게 잘라야 분해되지 않는다.) \n갓지은 밥 위에 스팸, 실파 그리고 참기름 조금, #스팸덮밥\n\n#조식 #레시피 #미라클모닝 #스팸 ",
   "image": "https://images.how-about-breakfast.com/images/862.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/862.jpg",
    "https://images.how-about-breakfast.com/images/862_2.jpg"
   ],
-  "_en": {
-   "hash": "ee3fb22b781f1c9c279347d3c2c8c958c4edf102775874f1e75b96823018b38e",
-   "title": "Spam Rice Bowl",
-   "intro": "20231002, #breakfastdiary 862, 17°C/sunny, 60min/exercise(W, C)\nA slice of Spam over warm rice 🙂\nSpam gets treated as junk food abroad, but in Korea it's become a holiday gift people give each other — about 60% of its total sales are concentrated around Lunar New Year and Chuseok. That's a complete marketing win.\nScore the front of the Spam vertically and the back diagonally, then fry it in a pan. (Cut it thick enough or it'll fall apart.)\nOver freshly cooked rice, add the Spam, chopped green onion, and a bit of sesame oil. #spamricebowl",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "스팸덮밥-스팸"
  },
  {
