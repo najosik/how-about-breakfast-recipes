@@ -25465,7 +25465,7 @@
   "weather": "11도/대체로 흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "바게트",
+  "title": "토마토 버섯 토스트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25474,9 +25474,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20241002 #조식다이어리 1193, 11도/대체로 흐림, 20분/운동(M) \n \n아침 기온이 10도나 떨어졌다. \n구운 양송이버섯을 얹은 #바게트",
-  "ingredients": "바게트 1/4개\n토마토 페이스트\n양송이버섯 3개\n방울토마토2~3개\n\n👉이렇게\n양송이버섯은 얇게 잘라서 달군 팬에 올리브오일 두르고 소금소금 후추후추 허브허브 굽는다. \n바게트는 세로로 자르고 다시 가로로 단면이 보이도록 자른다음 올리브오일 발라서 180도 에프에 5분 굽는다. \n바게트 위에 토마토 페이스트와 버섯, 방울토마토 얹어서 맛있게 먹는다. \n\n#조식 #레시피 #미라클모닝 #바게트\n\n-\n\n냉동시켜 두었던 바게트를 꺼내니 돌덩이 같다. 에프에 넣고 잠깐 데웠더니 조금 낫다.",
-  "steps": null,
+  "intro": "20241002 #조식다이어리 1193, 11도/대체로 흐림, 20분/운동(M) \n \n아침 기온이 10도나 떨어졌다. \n냉동시켜 두었던 바게트를 꺼내니 돌덩이 같다. 에프에 넣고 잠깐 데웠더니 조금 낫다.\n\n구운 양송이버섯을 얹은 #바게트",
+  "ingredients": "- 바게트 1/4개\n- 토마토 페이스트 2T\n- 양송이버섯 3개\n- 방울토마토2~3개\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 양송이버섯은 얇게 잘라서 달군 팬에 올리브오일 두르고 소금, 후추, 허브 뿌려서 굽는다. \n2. 바게트는 올리브오일 발라서 180도 에어프라이어에 5분 굽는다. \n3. 2의 바게트 위에 토마토 페이스트 바르고 1의 양송이버섯과 방울토마토 얹는다. ",
   "raw": "20241002 #조식다이어리 1193, 11도/대체로 흐림, 20분/운동(M) \n \n아침 기온이 10도나 떨어졌다. \n\n구운 양송이버섯을 얹은 #바게트\n\n👉재료는\n바게트 1/4개\n토마토 페이스트\n양송이버섯 3개\n방울토마토2~3개\n\n👉이렇게\n양송이버섯은 얇게 잘라서 달군 팬에 올리브오일 두르고 소금소금 후추후추 허브허브 굽는다. \n바게트는 세로로 자르고 다시 가로로 단면이 보이도록 자른다음 올리브오일 발라서 180도 에프에 5분 굽는다. \n바게트 위에 토마토 페이스트와 버섯, 방울토마토 얹어서 맛있게 먹는다. \n\n#조식 #레시피 #미라클모닝 #바게트\n\n-\n\n냉동시켜 두었던 바게트를 꺼내니 돌덩이 같다. 에프에 넣고 잠깐 데웠더니 조금 낫다. ",
   "image": "https://images.how-about-breakfast.com/images/1193.jpg",
   "gallery": [
@@ -25485,13 +25485,6 @@
    "https://images.how-about-breakfast.com/images/1193_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1193.mp4",
-  "_en": {
-   "hash": "5c5b687c981a2e9905645335ca8dfd18f38067bf2d9cf22f79cdc59a34fb55ad",
-   "title": "Baguette",
-   "intro": "20241002 #breakfastdiary 1193, 11°C/mostly cloudy, 20 min/exercise(M) \n \nThe morning temperature dropped a whole 10 degrees. \n#Baguette topped with roasted cremini mushrooms",
-   "ingredients": "Baguette, 1/4\nTomato paste\nCremini mushrooms, 3\nCherry tomatoes, 2-3\n\n👉Like this\nSlice the mushrooms thinly and roast in a hot pan with olive oil, salt, pepper, herbs.\nCut the baguette lengthwise, then again crosswise so the cut side shows, brush with olive oil, and bake at 180°C for 5 minutes.\nTop the baguette with tomato paste, mushrooms, and cherry tomatoes and enjoy.\n\n#breakfast #recipe #miraclemorning #baguette\n\n-\n\nTook the frozen baguette out and it was like a rock. Warmed it briefly in the oven and it got a bit better.",
-   "steps": ""
-  },
   "page_id": "바게트"
  },
  {
