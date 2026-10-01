@@ -86010,7 +86010,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "애호박 미라클모닝 샐러드",
+  "title": "애호박 샐러드",
   "credit": null,
   "hashtags": [
    "미라클모닝",
@@ -86019,18 +86019,11 @@
    "조식"
   ],
   "intro": "20201002, 제16회 와우북 페스티벌의 온라인 강연을 몇 개, 간편하게 예약했다. 작년에 예약이 쉽지 않았던 오픈하우스서울(@openhouse_seoul)도 온라인으로 진행한다니 작년보다 예약은 수월할 것이다. 그렇다면 접근성은 오히려 예전보다 증대된 것 아닐까?\n세상에서 제일 예쁜 #애호박 을 팬에 굽고 다진 양파, 올리브 오일, 홀그레인 머스타드, 화이트와인 식초에 페스토와 다진 파슬리를 얹어, #조식 #미라클모닝 #샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 애호박 1/2개\n- 바질페스토 1T\n- 드레싱(올리브오일 2T, 다진 양파 1T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 파슬리",
+  "steps": "1. 애호박은 반으로 자른 뒤 팬에 올리브오일 두르고 자른 단면부터 굽는다. \n2. 1의 애호박을 접시에 담고 바질 페스토 1T 얹는다. \n3. 올리브오일 2T, 다진 양파 1T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t 섞은 드레싱 얹는다. \n4. 다진 파슬리 조금 얹는다. ",
   "raw": "20201002, 제16회 와우북 페스티벌의 온라인 강연을 몇 개, 간편하게 예약했다. 작년에 예약이 쉽지 않았던 오픈하우스서울(@openhouse_seoul)도 온라인으로 진행한다니 작년보다 예약은 수월할 것이다. 그렇다면 접근성은 오히려 예전보다 증대된 것 아닐까?\n\n세상에서 제일 예쁜 #애호박 을 팬에 굽고 다진 양파, 올리브 오일, 홀그레인 머스타드, 화이트와인 식초에 페스토와 다진 파슬리를 얹어, #조식 #미라클모닝 #샐러드",
   "pre_label": "D-133",
   "image": "https://images.how-about-breakfast.com/images/pre-133.jpg",
-  "_en": {
-   "hash": "710b73c5930a685db5652012d32ebe4785e1ce6efd1a37ffebdf7c1991186ad2",
-   "title": "Zucchini Miracle Morning Salad",
-   "intro": "20201002, Booked a few online lectures for the 16th Wow Book Festival — easy enough. I hear Open House Seoul (@openhouse_seoul), which was hard to book last year, is also going online this time, so reservations should be much easier than before. Doesn't that mean accessibility has actually gone up compared to before?\nPan-sear the prettiest zucchini in the world, then top with minced onion, olive oil, wholegrain mustard, and white wine vinegar, finished with pesto and chopped parsley — #breakfastdiary #miraclemorning #salad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "애호박-미라클모닝-샐러드",
   "essay_candidate": true,
   "essay_reviewed": true
