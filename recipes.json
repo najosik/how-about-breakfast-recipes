@@ -68543,7 +68543,7 @@
   "weather": "19도/한때흐림",
   "failed": false,
   "calories": null,
-  "title": "복숭아샐러드 모닝리추얼 모닝루틴",
+  "title": "복숭아 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68569,9 +68569,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20211002, #조식다이어리 227, 19도/한때흐림\n복숭아, 샤인머스캣, 리코타치즈에 올리브오일과 레몬즙, \n세상에서 제일 예쁜 후추후추후추후추후추후추후추후추 #복숭아샐러드\n‘영감’은 낭만주의 시대의 단어이다. 영감을 의인화하거나 신격화해서 ‘뮤즈’라고 이름을 붙이는 호사 취미가 바로 낭만주의의 유산이다. 당연한 얘기지만, 영감은 하늘에서 떨어지는 것이 아니라 삶과 생활에서 발생하는 유형무형의 자극에서 시작된다. 우리의 내면과 외부 세계의 연결, 접속, 충돌, 확산의 산물이다. 추상적이고 형이상학적인 사유조차 그렇다. \n이장욱, 책 읽기와 함께 글쓰기를 \n빅데이터라는 이름으로 우리의 모든 것이 비트 단위로 낱낱이 기록되고, 확인과 분석이 가능한 사회는 반대로 낭만주의 시대의 ‘영감’ 혹은 ‘뮤즈’가 더 절실한 시대일지도 모르겠다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20211002, #조식다이어리 227, 19도/한때흐림\n복숭아, 샤인머스캣, 리코타치즈에 올리브오일과 레몬즙, \n세상에서 제일 예쁜 후추후추후추후추후추후추후추후추 #복숭아샐러드\n\n‘영감’은 낭만주의 시대의 단어이다. 영감을 의인화하거나 신격화해서 ‘뮤즈’라고 이름을 붙이는 호사 취미가 바로 낭만주의의 유산이다. 당연한 얘기지만, 영감은 하늘에서 떨어지는 것이 아니라 삶과 생활에서 발생하는 유형무형의 자극에서 시작된다. 우리의 내면과 외부 세계의 연결, 접속, 충돌, 확산의 산물이다. 추상적이고 형이상학적인 사유조차 그렇다. \n(이장욱, 책 읽기와 함께 글쓰기를) \n빅데이터라는 이름으로 우리의 모든 것이 비트 단위로 낱낱이 기록되고, 확인과 분석이 가능한 사회는 반대로 낭만주의 시대의 ‘영감’ 혹은 ‘뮤즈’가 더 절실한 시대일지도 모르겠다.",
+  "ingredients": "- 복숭아 1개\n- 샤인머스캣 1/2컵\n- 리코타치즈 2T\n- 올리브오일 1T\n- 레몬주스 1/2T\n- 후추",
+  "steps": "1. 복숭아는 웻지 모양으로 썰어서 접시에 담는다. \n2. 1의 접시에 반으로 썬 샤인머스캣과 리코타치즈 담고 올리브오일 1T, 레몬주스 1/2T, 후추 뿌린다. ",
   "raw": "20211002, #조식다이어리 227, 19도/한때흐림\n\n복숭아, 샤인머스캣, 리코타치즈에 올리브오일과 레몬즙, \n세상에서 제일 예쁜 후추후추후추후추후추후추후추후추 #복숭아샐러드\n\n‘영감’은 낭만주의 시대의 단어이다. 영감을 의인화하거나 신격화해서 ‘뮤즈’라고 이름을 붙이는 호사 취미가 바로 낭만주의의 유산이다. 당연한 얘기지만, 영감은 하늘에서 떨어지는 것이 아니라 삶과 생활에서 발생하는 유형무형의 자극에서 시작된다. 우리의 내면과 외부 세계의 연결, 접속, 충돌, 확산의 산물이다. 추상적이고 형이상학적인 사유조차 그렇다. \n이장욱, 책 읽기와 함께 글쓰기를 \n\n빅데이터라는 이름으로 우리의 모든 것이 비트 단위로 낱낱이 기록되고, 확인과 분석이 가능한 사회는 반대로 낭만주의 시대의 ‘영감’ 혹은 ‘뮤즈’가 더 절실한 시대일지도 모르겠다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #복숭아 #샤인머스캣 #리코타치즈 \n#breakfast #recipe #salad #peach #shinemuscat #ricottacheese  ",
   "image": "https://images.how-about-breakfast.com/images/227.jpg",
   "gallery": [
@@ -68579,13 +68579,6 @@
    "https://images.how-about-breakfast.com/images/227_2.jpg",
    "https://images.how-about-breakfast.com/images/227_3.jpg"
   ],
-  "_en": {
-   "hash": "c97ced017b8d2123d91db1e4dcc5435864427b7603f729bd9f456336a11e3e30",
-   "title": "Peach Salad, Morning Ritual, Morning Routine",
-   "intro": "20211002, #breakfastdiary 227, 19°C/occasionally cloudy\nPeach, shine muscat grapes, ricotta cheese with olive oil and lemon juice, \nand the prettiest pepper in the world — pepperpepperpepperpepperpepperpepperpepperpepper #peachsalad\n'Inspiration' is a word from the Romantic era. Personifying or deifying inspiration and giving it the extravagant name 'muse' is exactly the kind of legacy the Romantics left us. Obviously, inspiration doesn't fall from the sky — it begins with tangible and intangible stimuli arising from life itself. It's the product of connection, contact, collision, and diffusion between our inner selves and the outer world. Even abstract, metaphysical thought is no exception. \nLee Jang-wook, Reading Books and Writing Alongside \nA society where everything about us, under the name of 'big data,' is recorded down to the bit and made available for checking and analysis might, conversely, be an era that needs the Romantic era's 'inspiration' or 'muse' even more desperately.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "복숭아샐러드-모닝리추얼-모닝루틴-3"
  },
  {
