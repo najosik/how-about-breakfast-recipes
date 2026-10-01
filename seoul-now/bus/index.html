@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <!-- 테스트 기간: 검색엔진 색인 제외. 정식 공개 시 삭제 -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>외국인 관광객 버스 이용 추정 · Seoul Bus Routes for Visitors</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="bus.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div>
+        <p class="crumb"><a id="back" href="../">← 서울에서 지금 뭐하지</a></p>
+        <h1 id="title"></h1>
+        <p id="sub" class="sub"></p>
+      </div>
+      <button id="lang-toggle" class="lang-btn" type="button"></button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p id="estimate-note" class="banner"></p>
+    <p id="status" class="empty" hidden></p>
+
+    <section id="kpis" class="kpis" aria-label="Summary"></section>
+
+    <section class="panel" aria-labelledby="rank-h">
+      <div class="panel-head">
+        <h2 id="rank-h"></h2>
+        <div class="controls-inline">
+          <div id="metric-chips" class="chips" role="group"></div>
+          <label class="field-inline">
+            <span id="lbl-type" class="visually-hidden"></span>
+            <select id="type"></select>
+          </label>
+          <label class="field-inline">
+            <span id="lbl-q" class="visually-hidden"></span>
+            <input id="q" type="search" maxlength="20" autocomplete="off">
+          </label>
+        </div>
+      </div>
+      <p id="rank-desc" class="note"></p>
+      <ol id="ranking" class="ranking"></ol>
+    </section>
+
+    <section id="detail" class="panel" aria-live="polite" hidden>
+      <h2 id="d-title"></h2>
+      <p id="d-name" class="note"></p>
+      <div id="d-kpis" class="kpis small"></div>
+      <h3 id="d-hour-h"></h3>
+      <div id="d-chart" class="hour-chart" role="img"></div>
+      <p id="d-hour-note" class="note"></p>
+      <h3 id="d-stops-h"></h3>
+      <div class="table-wrap"><table id="d-stops" class="data-table"></table></div>
+    </section>
+
+    <section class="panel" aria-labelledby="dong-h">
+      <h2 id="dong-h"></h2>
+      <p id="dong-desc" class="note"></p>
+      <div class="table-wrap"><table id="dongs" class="data-table"></table></div>
+    </section>
+
+    <section class="panel method" aria-labelledby="method-h">
+      <h2 id="method-h"></h2>
+      <div id="method"></div>
+      <h3 id="limits-h"></h3>
+      <ul id="limits"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p id="updated"></p>
+      <ul id="sources" class="sources"></ul>
+    </div>
+  </footer>
+
+  <div id="tooltip" class="tooltip" role="tooltip" hidden></div>
+  <script src="bus.js"></script>
+</body>
+</html>

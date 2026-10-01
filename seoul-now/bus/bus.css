@@ -1,0 +1,71 @@
+/* 버스 대시보드 전용 — 색은 ../styles.css 토큰을 그대로 사용 (다크 모드 포함) */
+:root { --bar: var(--on); --grid: var(--line); }
+
+.crumb { margin: 0 0 4px; font-size: .85rem; }
+.crumb a { color: var(--muted); text-decoration: none; }
+.crumb a:hover { text-decoration: underline; }
+
+.panel { margin-top: 24px; padding: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.panel h2 { margin: 0; font-size: 1.15rem; }
+.panel h3 { margin: 20px 0 8px; font-size: 1rem; }
+.panel-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; }
+.controls-inline { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.field-inline select, .field-inline input {
+  font: inherit; color: inherit; background: var(--surface);
+  border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px;
+}
+.field-inline input { width: 9rem; }
+
+/* KPI 타일 */
+.kpis { display: grid; gap: 12px; margin-top: 20px; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.kpis.small { margin-top: 12px; }
+.kpi { padding: 14px 16px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+.kpis.small .kpi { background: var(--bg); }
+.kpi .k-label { margin: 0; font-size: .8rem; color: var(--muted); }
+.kpi .k-value { margin: 4px 0 0; font-size: 1.5rem; font-weight: 700; letter-spacing: -.01em; font-variant-numeric: tabular-nums; }
+.kpi .k-sub { margin: 2px 0 0; font-size: .78rem; color: var(--muted); }
+
+/* 순위 막대 */
+.ranking { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 2px; }
+.rank-row {
+  display: grid; grid-template-columns: 2rem minmax(7rem, 14rem) 1fr 6.5rem; align-items: center; gap: 10px;
+  width: 100%; padding: 6px 8px; border: 0; border-radius: 8px; background: transparent; text-align: left;
+}
+.rank-row:hover, .rank-row.active { background: var(--bg); }
+.rank-row .r-no { color: var(--muted); font-variant-numeric: tabular-nums; font-size: .85rem; }
+.rank-row .r-name { overflow: hidden; }
+.rank-row .r-name b { display: block; }
+.rank-row .r-name span { display: block; font-size: .78rem; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.rank-row .r-track { height: 14px; position: relative; }
+.rank-row .r-bar { position: absolute; left: 0; top: 0; bottom: 0; background: var(--bar); border-radius: 0 4px 4px 0; min-width: 2px; }
+.rank-row .r-val { text-align: right; font-variant-numeric: tabular-nums; font-size: .9rem; }
+
+/* 시간대 막대 차트 */
+.hour-chart { position: relative; display: grid; grid-template-columns: repeat(24, 1fr); gap: 2px; align-items: end; height: 180px; padding: 0 0 22px; border-bottom: 1px solid var(--grid); }
+.hour-col { position: relative; height: 100%; display: flex; align-items: flex-end; cursor: default; }
+.hour-col .h-bar { width: 100%; background: var(--bar); border-radius: 4px 4px 0 0; min-height: 1px; }
+.hour-col:hover .h-bar, .hour-col:focus .h-bar { opacity: .75; }
+.hour-col .h-tick { position: absolute; bottom: -20px; left: 0; right: 0; text-align: center; font-size: .7rem; color: var(--muted); }
+
+/* 표 */
+.table-wrap { overflow-x: auto; }
+.data-table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.data-table th, .data-table td { padding: 8px 10px; border-bottom: 1px solid var(--line); text-align: left; white-space: nowrap; }
+.data-table th { font-size: .8rem; color: var(--muted); font-weight: 600; }
+.data-table td.num, .data-table th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.method p, .method li { line-height: 1.65; }
+.method ul { padding-left: 1.2rem; }
+.sources { margin: 4px 0 0; padding-left: 1.1rem; }
+
+.tooltip {
+  position: fixed; z-index: 10; pointer-events: none; max-width: 240px;
+  padding: 8px 10px; border-radius: 8px; background: var(--text); color: var(--bg);
+  font-size: .8rem; line-height: 1.45; box-shadow: var(--shadow);
+}
+
+@media (max-width: 560px) {
+  .rank-row { grid-template-columns: 1.6rem 1fr 5.5rem; }
+  .rank-row .r-track { grid-column: 2 / 4; grid-row: 2; }
+  .panel { padding: 16px; }
+}
