@@ -32,6 +32,12 @@
  *                      (only needed for the 'preview' action)
  *   IG_USER_ID       - same Instagram user id instagram-sync.yml uses
  *                      (only needed for the 'preview' action)
+ * Optional binding:
+ *   IG_TOKEN_STORE   - R2 binding to the PRIVATE insights bucket. When set,
+ *                      'preview' uses the token the weekly "Instagram token
+ *                      refresh" workflow keeps there (auth/ig-token.json),
+ *                      so IG_ACCESS_TOKEN above never has to be re-pasted;
+ *                      it is only the fallback. Read-only use, one key.
  */
 
 const ALLOWED_FIELDS = {
@@ -80,10 +86,11 @@ export default {
       if (!date || typeof date !== 'string' || !/^\d{4}-\d{2}-\d{2}$/.test(date)) {
         return json({ error: 'invalid payload' }, 400, cors);
       }
-      if (!env.IG_ACCESS_TOKEN || !env.IG_USER_ID) {
+      const igToken = await loadInstagramToken(env);
+      if (!igToken || !env.IG_USER_ID) {
         return json({ error: 'instagram credentials not configured' }, 500, cors);
       }
-      const result = await searchInstagramForDate(date, env);
+      const result = await searchInstagramForDate(date, igToken, env);
       return json(result, 200, cors);
     }
 
@@ -157,11 +164,31 @@ async function dispatchWorkflow(workflowFile, inputs, env, cors) {
   return json({ ok: true }, 200, cors);
 }
 
-async function searchInstagramForDate(targetDate, env) {
+// The auto-refreshed token when it is there and not about to expire,
+// otherwise the IG_ACCESS_TOKEN secret. Same rules as insights/ig_token.py.
+const TOKEN_RE = /^[A-Za-z0-9_\-.]{20,2048}$/;
+
+async function loadInstagramToken(env) {
+  if (env.IG_TOKEN_STORE) {
+    try {
+      const obj = await env.IG_TOKEN_STORE.get('auth/ig-token.json');
+      const rec = obj ? await obj.json() : null;
+      if (rec && typeof rec.access_token === 'string' && TOKEN_RE.test(rec.access_token)
+          && Date.parse(rec.expires_at) - Date.now() > 3600 * 1000) {
+        return rec.access_token;
+      }
+    } catch (e) {
+      // fall through to the secret
+    }
+  }
+  return env.IG_ACCESS_TOKEN || null;
+}
+
+async function searchInstagramForDate(targetDate, igToken, env) {
   const fields = 'id,caption,media_type,media_url,thumbnail_url,timestamp,permalink,children{media_type,media_url,thumbnail_url}';
   let url =
     `https://graph.instagram.com/v21.0/${env.IG_USER_ID}/media` +
-    `?fields=${encodeURIComponent(fields)}&limit=${IG_PAGE_LIMIT}&access_token=${encodeURIComponent(env.IG_ACCESS_TOKEN)}`;
+    `?fields=${encodeURIComponent(fields)}&limit=${IG_PAGE_LIMIT}&access_token=${encodeURIComponent(igToken)}`;
 
   let checked = 0;
   for (let page = 0; page < IG_MAX_PAGES && url; page++) {

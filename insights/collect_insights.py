@@ -106,7 +106,9 @@ DIARY_NO_RE = re.compile(r'#조식다이어리\s*(\d+)')
 # token was issued, so the collector notes the day it first sees a new token
 # (by fingerprint - the token itself is never stored) and counts from there.
 # IG_TOKEN_ISSUED_AT (repo variable, YYYY-MM-DD) overrides it when known.
+# Once ig_token.py refreshes the token, its record gives the exact expiry.
 TOKEN_LIFETIME_DAYS = 60
+TOKEN_RECORD_KEY = 'auth/ig-token.json'
 
 # Metrics kept in post_history.json (the per-day growth curve of a post).
 HISTORY_METRICS = ('reach', 'views', 'likes', 'comments', 'saved', 'shares',
@@ -423,9 +425,25 @@ def upload_dashboard(store):
 # Main
 # --------------------------------------------------------------------------
 
-def update_token_status(meta, token, today):
-    fingerprint = hashlib.sha256(token.encode()).hexdigest()[:12]
+def token_fingerprint(token):
+    return hashlib.sha256(token.encode()).hexdigest()[:12]
+
+
+def update_token_status(meta, token, today, record=None):
+    fingerprint = token_fingerprint(token)
+    record = record or {}
+    if record.get('fingerprint') == fingerprint and record.get('expires_at'):
+        # Auto-refreshed token: exact dates, no estimate needed.
+        meta['token'] = {'fingerprint': fingerprint, 'auto_refresh': True, 'issued_known': True,
+                         'issued_at': record['refreshed_at'][:10],
+                         'expires_estimate': record['expires_at'][:10]}
+        if record.get('last_error'):
+            meta['token']['refresh_error'] = record['last_error']
+        return
     prev = meta.get('token') or {}
+    if prev.pop('auto_refresh', None):
+        prev.setdefault('first_seen', prev.get('issued_at', today.isoformat()))
+    prev.pop('refresh_error', None)
     if prev.get('fingerprint') != fingerprint:
         # A change between two daily runs means it was issued within a day
         # of today; the very first token we see has an unknown issue date.
@@ -438,6 +456,8 @@ def update_token_status(meta, token, today):
     prev['issued_at'] = issued
     prev['expires_estimate'] = (datetime.date.fromisoformat(issued)
                                 + datetime.timedelta(days=TOKEN_LIFETIME_DAYS)).isoformat()
+    if record.get('last_error') and record.get('seed_fingerprint') == fingerprint:
+        prev['refresh_error'] = record['last_error']
     meta['token'] = prev
 
 
@@ -453,7 +473,7 @@ def run(store, client, force_full):
     refused_media = {}
 
     # 1. Profile snapshot (the only source of long-term follower history)
-    update_token_status(meta, client.access_token, today)
+    update_token_status(meta, client.access_token, today, store.get_json(TOKEN_RECORD_KEY, None))
     try:
         prof = client.profile()
     except ApiError as e:

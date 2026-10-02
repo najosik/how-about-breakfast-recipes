@@ -28,65 +28,89 @@
     <p class="notice" id="load-error" hidden></p>
 
     <section id="tab-overview" role="tabpanel" data-panel="overview">
-      <div class="filters">
-        <label>기간
-          <select id="ov-range">
-            <option value="7">최근 7일</option>
-            <option value="28" selected>최근 28일</option>
-            <option value="90">최근 90일</option>
-            <option value="0">전체</option>
-          </select>
-        </label>
-        <span class="hint" id="ov-range-hint"></span>
+      <div class="an-toolbar">
+        <div class="an-filters start">
+          <span class="seg-label">기간</span>
+          <div class="seg-box" data-for="ov-range" role="group" aria-label="기간">
+            <button type="button" data-value="7">7일</button>
+            <button type="button" data-value="28">28일</button>
+            <button type="button" data-value="90">90일</button>
+            <button type="button" data-value="0">전체</button>
+          </div>
+          <span class="hint" id="ov-range-hint"></span>
+        </div>
+        <select id="ov-range" hidden aria-hidden="true" tabindex="-1">
+          <option value="7">7</option><option value="28" selected>28</option><option value="90">90</option><option value="0">0</option>
+        </select>
       </div>
-      <div class="tiles" id="ov-tiles"></div>
-      <div class="grid">
-        <figure class="card wide" id="ch-reach"></figure>
-        <figure class="card" id="ch-followers"></figure>
-        <figure class="card" id="ch-new-followers"></figure>
-        <figure class="card" id="ch-interactions"></figure>
-        <figure class="card" id="ch-views"></figure>
-      </div>
-      <div class="grid">
-        <section class="card wide">
-          <h2>형식별 성과</h2>
-          <p class="card-sub">선택한 기간에 올린 게시물의 평균입니다. 확산 지수 = 도달 ÷ 게시 당시 팔로워 수 (1 이상이면 팔로워보다 많은 사람에게 닿았다는 뜻)</p>
-          <div class="table-wrap" id="ov-formats"></div>
-        </section>
-        <section class="card wide">
-          <h2>확산이 잘 된 게시물 TOP 5</h2>
-          <p class="card-sub">확산 지수 기준. 자세한 비교는 게시물 탭에서 볼 수 있습니다.</p>
-          <div class="table-wrap" id="ov-top"></div>
-        </section>
-      </div>
+
+      <section class="an-section">
+        <div class="sec-head"><h2>계정 요약</h2><span>선택한 기간의 계정 전체 수치</span></div>
+        <div class="kpi-tiles" id="ov-tiles"></div>
+        <div class="an-row">
+          <figure class="card span-2" id="ch-reach"></figure>
+          <section class="insight-card" id="ov-insight" aria-live="polite"></section>
+        </div>
+      </section>
+
+      <section class="an-section">
+        <div class="sec-head"><h2>추이</h2><span>일별 수치 · 막대에 손을 올리면 값이 보입니다</span></div>
+        <div class="chart-grid">
+          <figure class="card" id="ch-followers"></figure>
+          <figure class="card" id="ch-new-followers"></figure>
+          <figure class="card" id="ch-interactions"></figure>
+          <figure class="card" id="ch-views"></figure>
+        </div>
+      </section>
+
+      <section class="an-section">
+        <div class="sec-head"><h2>형식별 성과</h2><span>이 기간에 올린 게시물 · 확산 지수 = 도달 ÷ 게시 당시 팔로워 수</span></div>
+        <div class="format-cards" id="ov-formats"></div>
+      </section>
+
+      <section class="an-section">
+        <div class="sec-head"><h2>확산이 잘 된 게시물 TOP 5</h2><span>확산 지수 기준 · 자세한 비교는 게시물 탭</span></div>
+        <div class="top-cards" id="ov-top"></div>
+      </section>
     </section>
 
     <section id="tab-posts" role="tabpanel" data-panel="posts" hidden>
-      <div class="filters">
-        <label>기간
-          <select id="ps-range">
-            <option value="30">최근 30일</option>
-            <option value="90" selected>최근 90일</option>
-            <option value="365">최근 1년</option>
-            <option value="0">전체</option>
-          </select>
+      <div class="an-toolbar">
+        <div class="an-filters start">
+          <span class="seg-label">기간</span>
+          <div class="seg-box" data-for="ps-range" role="group" aria-label="기간">
+            <button type="button" data-value="30">30일</button>
+            <button type="button" data-value="90">90일</button>
+            <button type="button" data-value="365">1년</button>
+            <button type="button" data-value="0">전체</button>
+          </div>
+          <span class="seg-label">형식</span>
+          <div class="seg-box" data-for="ps-format" role="group" aria-label="형식">
+            <button type="button" data-value="">전체</button>
+            <button type="button" data-value="릴스">릴스</button>
+            <button type="button" data-value="캐러셀">캐러셀</button>
+            <button type="button" data-value="사진">사진</button>
+          </div>
+        </div>
+        <label class="search-box">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+          <span class="sr-only">검색</span>
+          <input id="ps-search" type="search" placeholder="제목·캡션·해시태그 검색" maxlength="50">
         </label>
-        <label>형식
-          <select id="ps-format">
-            <option value="">전체</option>
-            <option value="REELS">릴스</option>
-            <option value="CAROUSEL_ALBUM">캐러셀</option>
-            <option value="IMAGE">사진</option>
-            <option value="VIDEO">동영상</option>
-          </select>
-        </label>
-        <label class="grow">검색
-          <input id="ps-search" type="search" placeholder="제목·캡션·해시태그" maxlength="50">
-        </label>
+        <select id="ps-range" hidden aria-hidden="true" tabindex="-1">
+          <option value="30">30</option><option value="90" selected>90</option><option value="365">365</option><option value="0">0</option>
+        </select>
+        <select id="ps-format" hidden aria-hidden="true" tabindex="-1">
+          <option value="" selected></option><option value="릴스"></option><option value="캐러셀"></option><option value="사진"></option>
+        </select>
       </div>
-      <p class="hint" id="ps-count"></p>
-      <div class="card table-wrap"><table class="data" id="ps-table"></table></div>
-      <button class="more" id="ps-more" hidden>더 보기</button>
+
+      <section class="an-section">
+        <div class="kpi-tiles small" id="ps-summary"></div>
+        <p class="hint" id="ps-count"></p>
+        <div class="card table-wrap posts-table"><table class="data" id="ps-table"></table></div>
+        <button class="more" id="ps-more" hidden>더 보기</button>
+      </section>
     </section>
 
     <section id="tab-analysis" role="tabpanel" data-panel="analysis" hidden>
