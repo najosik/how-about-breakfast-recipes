@@ -13,7 +13,7 @@
 
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="날마다, 조식">
+<meta property="og:site_name" content="날마다 조식">
 <meta property="og:title" content="새송이버섯 샐러드">
 <meta property="og:description" content="닭가슴살 같은 420kcal 새송이버섯 샐러드">
 <meta property="og:url" content="https://how-about-breakfast.com/recipes/새송이버섯-샐러드.html">
@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../styles.css?v=20260927h">
 <style>
   .recipe-page{max-width:1080px; margin:0 auto; padding:0 20px 20px;}
   .recipe-breadcrumb{max-width:1080px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; color:var(--text-2); border-bottom:1px solid var(--rule);}
@@ -41,6 +41,7 @@
   .recipe-photo{width:100%; aspect-ratio:3/4; border-radius:2px; overflow:hidden; margin-bottom:0; background:var(--line);}
   .recipe-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .recipe-video{width:100%; display:block; border-radius:2px; margin-top:10px;}
+  .recipe-video-solo{margin-top:0; aspect-ratio:3/4; object-fit:cover; background:var(--line);}
   .recipe-ig-link{display:inline-block; font-size:12.5px; color:var(--green-dark); text-decoration:none; margin-top:8px;}
   .recipe-ig-link:hover{text-decoration:underline;}
   .recipe-thumbs{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}
@@ -78,6 +79,10 @@
   .recipe-other-years-head h2{margin:0; font-family:'Noto Serif KR',serif; font-size:20px; font-weight:900; text-transform:none; letter-spacing:0; color:var(--ink);}
   .recipe-other-years-head a{font-size:13px; color:var(--green-dark); text-decoration:none;}
   .recipe-other-years-head a:hover{text-decoration:underline;}
+  .recipe-same-day{margin:0 0 22px; padding:14px 18px; background:var(--mint); font-size:13.5px; color:var(--text-2);}
+  .recipe-same-day a{color:var(--green-dark); font-weight:700; text-decoration:none;}
+  .recipe-same-day a:hover{text-decoration:underline;}
+  .recipe-same-day a + a{margin-left:10px;}
   .recipe-other-years-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;}
   .recipe-other-years-grid a{display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--ink);}
   .recipe-other-years-grid img,.recipe-other-years-grid .card-thumb{width:100%; aspect-ratio:1; object-fit:cover; margin-bottom:0;}
@@ -115,13 +120,20 @@
 <body>
 <div class="wrap">
   <header class="site-header">
-    <a href="../index.html" class="site-header-logo">날마다, 조식</a>
     <nav class="site-header-nav" aria-label="주요 메뉴">
-      <a href="../archive.html">아카이브</a>
-      <a href="../vote.html">명예의 전당</a>
-      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">브런치북</a>
+      <a href="../index.html">← 홈으로</a>
     </nav>
-    <a href="https://how-about-breakfast.com/en/recipes/새송이버섯-샐러드.html" class="lang-switch">EN</a>
+    <div class="nav-right">
+      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="channel-links" id="channelLinks">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
+      </div>
+      <a href="https://how-about-breakfast.com/en/recipes/새송이버섯-샐러드.html" class="lang-switch">EN</a>
+    </div>
   </header>
 </div>
 
@@ -131,14 +143,14 @@
   </div>
   <div class="recipe-breadcrumb-actions">
     <button type="button" class="recipe-share-btn" id="shareBtn" aria-label="링크 복사"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg><span id="shareLabel">링크 복사</span></button>
-    
+    <a href="https://www.instagram.com/reel/Dds83UqzjS5/" target="_blank" rel="noopener" class="recipe-share-btn">인스타그램 원문 ↗</a>
   </div>
 </nav>
 
 <div class="wrap">
   <div class="recipe-page">
     <div class="recipe-hero-grid">
-      <div class="recipe-hero-media"><div class="recipe-photo"><img src="https://images.how-about-breakfast.com/images/1598.jpg" alt="새송이버섯 샐러드"></div><video class="recipe-video" src="https://images.how-about-breakfast.com/images/1598.mp4" controls playsinline></video><div class="recipe-thumbs"><img src="https://images.how-about-breakfast.com/images/1598_2.jpg" alt="새송이버섯 샐러드 2" loading="lazy"><img src="https://images.how-about-breakfast.com/images/1598_3.jpg" alt="새송이버섯 샐러드 3" loading="lazy"></div></div>
+      <div class="recipe-hero-media"><div class="recipe-photo"><img src="https://images.how-about-breakfast.com/images/1598.jpg" alt="새송이버섯 샐러드"></div><video class="recipe-video" src="https://images.how-about-breakfast.com/images/1598.mp4" controls playsinline></video><a class="recipe-ig-link" href="https://www.instagram.com/reel/Dds83UqzjS5/" target="_blank" rel="noopener">인스타그램 원문 ↗</a><div class="recipe-thumbs"><img src="https://images.how-about-breakfast.com/images/1598_2.jpg" alt="새송이버섯 샐러드 2" loading="lazy"><img src="https://images.how-about-breakfast.com/images/1598_3.jpg" alt="새송이버섯 샐러드 3" loading="lazy"></div></div>
       <div class="recipe-hero-info">
         <div class="recipe-hero-topline">
           <span class="stamp">#1609</span>
@@ -158,6 +170,7 @@
 
     <section class="recipe-cook-grid" id="cookGrid"><div class="recipe-cook-col"><h2>재료</h2><ul class="recipe-ing-list" id="ingList" data-recipe-id="새송이버섯-샐러드"><li><label><input type="checkbox" class="recipe-ing-check" data-idx="0"><span class="recipe-ing-name">새송이버섯 3개</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="1"><span class="recipe-ing-name">올리브오일 1T</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="2"><span class="recipe-ing-name">마요네즈 1T</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="3"><span class="recipe-ing-name">홀그레인 머스터드 1t</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="4"><span class="recipe-ing-name">쯔유 1t</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="5"><span class="recipe-ing-name">다진 쪽파</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="6"><span class="recipe-ing-name">검은깨</span></label></li></ul><p class="recipe-checklist-note">장 볼 때 체크해 두면 표시가 남아요.</p></div><div class="recipe-cook-col"><h2>조리</h2><ol class="recipe-step-list"><li><span class="recipe-step-num">01</span><p class="recipe-step-text">새송이버섯의 먼지를 털고 포크로 찢는다. 마치 닭가슴살 같은 질감이다.</p></li><li><span class="recipe-step-num">02</span><p class="recipe-step-text">팬을 달군 뒤 올리브오일 두르고 센불에 빠르게 닭가슴살 같은 새송이버섯을 볶는다.</p></li><li><span class="recipe-step-num">03</span><p class="recipe-step-text">그릇에 닭가슴살 같은 새송이버섯, 마요네즈 1T, 홀그레인 머스터드 1t, 쯔유 1t, 다진 쪽파 넣고 골고루 섞는다.</p></li><li><span class="recipe-step-num">04</span><p class="recipe-step-text">그릇에 3과 먹기 좋게 썬 토마토를 얹고 검은깨 조금 뿌린다.</p></li></ol></div></section>
 
+    
     <section class="recipe-other-years"><div class="recipe-other-years-head"><h2>다른 해의 12월 29일</h2><a href="../archive.html?date=12-29">모두 보기 →</a></div><div class="recipe-other-years-grid"><a href="마파두부-오히려좋아.html"><img src="https://images.how-about-breakfast.com/images/1271.jpg" alt="" loading="lazy"><span class="oy-year">2024</span><span class="oy-title">마파두부 오히려좋아</span></a><a href="방어세비체-세비체.html"><img src="https://images.how-about-breakfast.com/images/936.jpg" alt="" loading="lazy"><span class="oy-year">2023</span><span class="oy-title">방어세비체 세비체</span></a><a href="팬톤에서-토마토시금치랩-모닝루틴.html"><img src="https://images.how-about-breakfast.com/images/637.jpg" alt="" loading="lazy"><span class="oy-year">2022</span><span class="oy-title">팬톤에서 토마토시금치랩 모닝루틴</span></a><a href="아보카도연어샌드위치-모닝리추얼-모닝루틴-2.html"><img src="https://images.how-about-breakfast.com/images/309.jpg" alt="" loading="lazy"><span class="oy-year">2021</span><span class="oy-title">아보카도연어샌드위치 모닝리추얼 모닝루틴</span></a></div></section>
 
     <nav aria-label="이전·다음 기록" class="recipe-daynav">
@@ -175,11 +188,12 @@
   <div class="page-footer-links"><a href="../privacy.html">개인정보처리방침</a></div>
 </footer>
 
-<div class="recipe-mobile-bar"><a href="#cookGrid" class="recipe-mobile-jump">재료로 이동</a></div>
+<div class="recipe-mobile-bar"><a href="#cookGrid" class="recipe-mobile-jump">재료로 이동</a><a href="https://www.instagram.com/reel/Dds83UqzjS5/" target="_blank" rel="noopener" class="recipe-mobile-ig">원문 ↗</a></div>
 
 <script type="application/ld+json">{"@context": "https://schema.org/", "@type": "Recipe", "name": "새송이버섯 샐러드", "url": "https://how-about-breakfast.com/recipes/새송이버섯-샐러드.html", "image": ["https://images.how-about-breakfast.com/images/1598.jpg", "https://images.how-about-breakfast.com/images/1598_2.jpg", "https://images.how-about-breakfast.com/images/1598_3.jpg"], "author": {"@type": "Person", "name": "나조식", "sameAs": ["https://www.instagram.com/how.about.breakfast/", "https://www.youtube.com/@How.about.breakfast"]}, "recipeYield": "1인분", "datePublished": "2025-12-29", "description": "닭가슴살 같은 420kcal 새송이버섯 샐러드", "recipeIngredient": ["새송이버섯 3개", "올리브오일 1T", "마요네즈 1T", "홀그레인 머스터드 1t", "쯔유 1t", "다진 쪽파", "검은깨"], "recipeInstructions": [{"@type": "HowToStep", "text": "새송이버섯의 먼지를 털고 포크로 찢는다. 마치 닭가슴살 같은 질감이다."}, {"@type": "HowToStep", "text": "팬을 달군 뒤 올리브오일 두르고 센불에 빠르게 닭가슴살 같은 새송이버섯을 볶는다."}, {"@type": "HowToStep", "text": "그릇에 닭가슴살 같은 새송이버섯, 마요네즈 1T, 홀그레인 머스터드 1t, 쯔유 1t, 다진 쪽파 넣고 골고루 섞는다."}, {"@type": "HowToStep", "text": "그릇에 3과 먹기 좋게 썬 토마토를 얹고 검은깨 조금 뿌린다."}], "keywords": "레시피, 미라클모닝, 새송이버섯, 조식, 조식다이어리", "nutrition": {"@type": "NutritionInformation", "calories": "420 kcal"}}</script>
-<script src="../cookmode.js"></script>
-<script src="../recipe.js"></script>
+<script src="../shared.js?v=20260927h"></script>
+<script src="../cookmode.js?v=20260927h"></script>
+<script src="../recipe.js?v=20260927h"></script>
 <script>
 (function () {
   var btn = document.getElementById('shareBtn');

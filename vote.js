@@ -95,16 +95,32 @@
   function leaderboardFor(period) {
     var rounds = roundsForPeriod(period);
     var totals = {};
+    var monthOf = {};
     rounds.forEach(function (r) {
       var tally = state.tallies[r.id] || {};
       (r.candidates || []).forEach(function (pid) {
         totals[pid] = (totals[pid] || 0) + (tally[pid] || 0);
+        if (!monthOf[pid]) monthOf[pid] = r.target_month;
       });
     });
+    // Most rounds so far had exactly one manually-picked candidate each
+    // (no real vote competition), so a plain vote-count sort would always
+    // surface the same fixed order. A random tiebreaker (assigned once per
+    // render, not inside the comparator) rotates who gets the big spot
+    // while still respecting real vote totals whenever those differ.
     return Object.keys(totals)
-      .map(function (pid) { return { pid: pid, votes: totals[pid] }; })
+      .map(function (pid) { return { pid: pid, votes: totals[pid], month: monthOf[pid], _r: Math.random() }; })
       .filter(function (row) { return state.byId[row.pid]; })
-      .sort(function (a, b) { return b.votes - a.votes; });
+      .sort(function (a, b) { return (b.votes - a.votes) || (a._r - b._r); });
+  }
+
+  var MONTH_NAMES_KO = ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
+  var MONTH_NAMES_EN = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+  function monthLabel(targetMonth) {
+    if (!targetMonth) return '';
+    var mm = parseInt(targetMonth.slice(5, 7), 10);
+    var names = I18N.getLang() === 'en' ? MONTH_NAMES_EN : MONTH_NAMES_KO;
+    return names[mm - 1] || '';
   }
 
   function titleFor(r) {
@@ -162,7 +178,7 @@
     var firstHTML =
       '<div class="hall-first-wrap">' +
       '<a class="hall-first" href="' + Shared.escapeHtml(Shared.recipeUrl(firstR)) + '">' +
-      '<div class="hall-first-media">' + Shared.thumbHTML(firstR, 40) + '<span class="hall-first-rank">1</span></div>' +
+      '<div class="hall-first-media">' + Shared.thumbHTML(firstR, 40) + '<span class="hall-first-rank">' + Shared.escapeHtml(monthLabel(first.month)) + '</span></div>' +
       '<div class="hall-first-meta"><span>' + Shared.escapeHtml(dateLabel(firstR)) + '</span><span class="votes">' + Shared.escapeHtml(votesLabel(first.votes)) + '</span></div>' +
       '<span class="hall-first-title">' + Shared.escapeHtml(titleFor(firstR)) + '</span>' +
       '</a>' + voteButtonHTML(first.pid) + '</div>';
@@ -172,7 +188,7 @@
       return (
         '<div class="hall-side-wrap">' +
         '<a class="hall-side-item" href="' + Shared.escapeHtml(Shared.recipeUrl(r)) + '">' +
-        '<div class="hall-side-media">' + Shared.thumbHTML(r, 28) + '<span class="hall-side-rank">' + (i + 2) + '</span></div>' +
+        '<div class="hall-side-media">' + Shared.thumbHTML(r, 28) + '<span class="hall-side-rank">' + Shared.escapeHtml(monthLabel(row.month)) + '</span></div>' +
         '<div class="hall-side-info"><span class="meta">' + Shared.escapeHtml(dateLabel(r)) + '</span>' +
         '<span class="title">' + Shared.escapeHtml(titleFor(r)) + '</span>' +
         '<span class="votes">' + Shared.escapeHtml(votesLabel(row.votes)) + '</span></div>' +
@@ -183,7 +199,7 @@
     var restHTML = rest.map(function (row, i) {
       var r = state.byId[row.pid];
       return (
-        '<li><span class="hall-rest-rank">' + (i + 4) + '</span>' +
+        '<li><span class="hall-rest-rank">' + Shared.escapeHtml(monthLabel(row.month)) + '</span>' +
         '<a class="title" href="' + Shared.escapeHtml(Shared.recipeUrl(r)) + '">' + Shared.escapeHtml(titleFor(r)) + '</a>' +
         '<span class="hall-rest-votes">' + Shared.escapeHtml(votesLabel(row.votes)) + '</span>' +
         voteButtonHTML(row.pid) +

@@ -1,0 +1,70 @@
+name: Seoul Now - bus foreigner analysis
+
+# 버스 노선별 외국인 관광객 이용 추정 → seoul-now/bus/data/bus-foreigner.json
+# 생활인구 데이터가 약 2개월 늦게 올라오므로 월 2회 확인하고, 새 기준월이 있을 때만 다시 계산.
+on:
+  schedule:
+    - cron: '0 2 5,20 * *'   # 매월 5일·20일 11:00 KST
+  workflow_dispatch:
+    inputs:
+      target_ym:
+        description: '기준월 YYYYMM (비우면 자동 선택)'
+        required: false
+        default: ''
+      force:
+        description: '같은 기준월이어도 다시 계산'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+# Shared with every other workflow that commits to main - see add-post.yml
+concurrency:
+  group: main-branch-writer
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    defaults:
+      run:
+        working-directory: seoul-now
+    steps:
+      # 공급망 공격 방지를 위해 커밋 SHA로 고정 (actions/checkout v4.2.2)
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s analysis -q
+
+      - name: Analyze
+        env:
+          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
+          TARGET_YM: ${{ inputs.target_ym }}
+          FORCE: ${{ inputs.force && '1' || '' }}
+        run: |
+          if [ -z "$SEOUL_API_KEY" ]; then
+            echo "::warning::SEOUL_API_KEY secret is not set - skipping."
+            exit 0
+          fi
+          python3 analysis/bus_foreigner.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A bus/data
+          if git diff --cached --quiet; then
+            echo "No changes, nothing to commit."
+            exit 0
+          fi
+          git commit -m "Seoul Now: update bus foreigner analysis"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push rejected, rebasing onto latest main (attempt $i)..."
+            git pull --rebase origin main
+            sleep $((i * 5))
+          done
+          echo "::error::Push failed after 3 attempts."
+          exit 1

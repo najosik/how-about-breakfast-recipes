@@ -4,7 +4,7 @@
 <script>if(location.hostname==='najosik.github.io'){location.replace('https://how-about-breakfast.com'+location.pathname.replace(/^\/how-about-breakfast-recipes/,'')+location.search+location.hash);}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>똠얌꿍 나의비거니즘일기 — 날마다 조식</title>
+<title>똠얌꿍 — 날마다 조식</title>
 <meta name="description" content="그래 이 맛이야, 고향의 맛🍲똠얌꿍🍤 냄비에 물 1.5리터, 똠얌 재료와 똠얌 페이스트를 넣고 끓인다. 라임주스2, 피시소스1, 치킨스톡0.5, 설탕1, 고추가루1 섞어서 맛을 끌어올릴 소스를 만들어 붓는다. 칼집 낸 방울토마토, 버섯과 새우 그리고 고급진 맛을 위한 ">
 <link rel="canonical" href="https://how-about-breakfast.com/recipes/똠얌꿍-나의비거니즘일기.html">
 <link rel="alternate" hreflang="ko" href="https://how-about-breakfast.com/recipes/똠얌꿍-나의비거니즘일기.html">
@@ -13,21 +13,21 @@
 
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="날마다, 조식">
-<meta property="og:title" content="똠얌꿍 나의비거니즘일기">
+<meta property="og:site_name" content="날마다 조식">
+<meta property="og:title" content="똠얌꿍">
 <meta property="og:description" content="그래 이 맛이야, 고향의 맛🍲똠얌꿍🍤 냄비에 물 1.5리터, 똠얌 재료와 똠얌 페이스트를 넣고 끓인다. 라임주스2, 피시소스1, 치킨스톡0.5, 설탕1, 고추가루1 섞어서 맛을 끌어올릴 소스를 만들어 붓는다. 칼집 낸 방울토마토, 버섯과 새우 그리고 고급진 맛을 위한 ">
 <meta property="og:url" content="https://how-about-breakfast.com/recipes/똠얌꿍-나의비거니즘일기.html">
-
+<meta property="og:image" content="https://images.how-about-breakfast.com/images/11117.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="똠얌꿍 나의비거니즘일기">
+<meta name="twitter:title" content="똠얌꿍">
 <meta name="twitter:description" content="그래 이 맛이야, 고향의 맛🍲똠얌꿍🍤 냄비에 물 1.5리터, 똠얌 재료와 똠얌 페이스트를 넣고 끓인다. 라임주스2, 피시소스1, 치킨스톡0.5, 설탕1, 고추가루1 섞어서 맛을 끌어올릴 소스를 만들어 붓는다. 칼집 낸 방울토마토, 버섯과 새우 그리고 고급진 맛을 위한 ">
-
+<meta name="twitter:image" content="https://images.how-about-breakfast.com/images/11117.jpg">
 <!-- Google AdSense (site verification) -->
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2329784289008303" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../styles.css?v=20260927h">
 <style>
   .recipe-page{max-width:1080px; margin:0 auto; padding:0 20px 20px;}
   .recipe-breadcrumb{max-width:1080px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; color:var(--text-2); border-bottom:1px solid var(--rule);}
@@ -41,6 +41,7 @@
   .recipe-photo{width:100%; aspect-ratio:3/4; border-radius:2px; overflow:hidden; margin-bottom:0; background:var(--line);}
   .recipe-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .recipe-video{width:100%; display:block; border-radius:2px; margin-top:10px;}
+  .recipe-video-solo{margin-top:0; aspect-ratio:3/4; object-fit:cover; background:var(--line);}
   .recipe-ig-link{display:inline-block; font-size:12.5px; color:var(--green-dark); text-decoration:none; margin-top:8px;}
   .recipe-ig-link:hover{text-decoration:underline;}
   .recipe-thumbs{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}
@@ -78,6 +79,10 @@
   .recipe-other-years-head h2{margin:0; font-family:'Noto Serif KR',serif; font-size:20px; font-weight:900; text-transform:none; letter-spacing:0; color:var(--ink);}
   .recipe-other-years-head a{font-size:13px; color:var(--green-dark); text-decoration:none;}
   .recipe-other-years-head a:hover{text-decoration:underline;}
+  .recipe-same-day{margin:0 0 22px; padding:14px 18px; background:var(--mint); font-size:13.5px; color:var(--text-2);}
+  .recipe-same-day a{color:var(--green-dark); font-weight:700; text-decoration:none;}
+  .recipe-same-day a:hover{text-decoration:underline;}
+  .recipe-same-day a + a{margin-left:10px;}
   .recipe-other-years-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;}
   .recipe-other-years-grid a{display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--ink);}
   .recipe-other-years-grid img,.recipe-other-years-grid .card-thumb{width:100%; aspect-ratio:1; object-fit:cover; margin-bottom:0;}
@@ -115,13 +120,20 @@
 <body>
 <div class="wrap">
   <header class="site-header">
-    <a href="../index.html" class="site-header-logo">날마다, 조식</a>
     <nav class="site-header-nav" aria-label="주요 메뉴">
-      <a href="../archive.html">아카이브</a>
-      <a href="../vote.html">명예의 전당</a>
-      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">브런치북</a>
+      <a href="../index.html">← 홈으로</a>
     </nav>
-    <a href="https://how-about-breakfast.com/en/recipes/똠얌꿍-나의비거니즘일기.html" class="lang-switch">EN</a>
+    <div class="nav-right">
+      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="channel-links" id="channelLinks">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
+      </div>
+      <a href="https://how-about-breakfast.com/en/recipes/똠얌꿍-나의비거니즘일기.html" class="lang-switch">EN</a>
+    </div>
   </header>
 </div>
 
@@ -138,7 +150,7 @@
 <div class="wrap">
   <div class="recipe-page">
     <div class="recipe-hero-grid">
-      <div class="recipe-hero-media"></div>
+      <div class="recipe-hero-media"><div class="recipe-photo"><img src="https://images.how-about-breakfast.com/images/11117.jpg" alt="똠얌꿍"></div><video class="recipe-video" src="https://images.how-about-breakfast.com/images/859.mp4" controls playsinline></video><div class="recipe-thumbs"><img src="https://images.how-about-breakfast.com/images/11117_2.jpg" alt="똠얌꿍 2" loading="lazy"><img src="https://images.how-about-breakfast.com/images/11117_3.jpg" alt="똠얌꿍 3" loading="lazy"></div></div>
       <div class="recipe-hero-info">
         <div class="recipe-hero-topline">
           <span class="stamp">#870</span>
@@ -146,10 +158,10 @@
           
           <span>2023년 9월 29일</span>
         </div>
-        <h1>똠얌꿍 나의비거니즘일기</h1>
+        <h1>똠얌꿍</h1>
         
         <div class="recipe-tags"><span>#나의비거니즘일기</span><span>#똠얌꿍</span><span>#레시피</span><span>#미라클모닝</span><span>#조식</span><span>#조식다이어리</span></div>
-        
+        <button type="button" class="cook-start-btn" id="cookStartBtn">요리하기</button><script type="application/json" id="cookData">{"title": "똠얌꿍", "ingredients": "- 똠얌 키트(말린 채소와 페이스트) 1개\n- 소스(라임주스 2T, 피시소스 1T, 치킨스톡 0.5T, 설탕 1T, 고춧가루 1T)\n- 방울토마토 5개\n- 만가닥버섯 1컵\n- 새우 3마리\n- 코코넛밀크 1/2컵", "steps": "1. 냄비에 물 1.5L 붓고 똠얌 재료와 페이스트를 넣고 끓인다. \n2. 1에 소스(라임주스 2T, 피시소스 1T, 치킨스톡 0.5T, 설탕 1T, 고춧가루 1T) 넣고 좀 더 끓인다. \n3. 방울토마토, 버섯과 새우 넣고 좀 더 끓인다. \n4. 코코넛밀크 붓고 살짝 끓인 다음  그릇에 담는다. "}</script>
       </div>
     </div>
 
@@ -157,16 +169,16 @@
 그래 이 맛이야, 고향의 맛🍲똠얌꿍🍤
 냄비에 물 1.5리터, 똠얌 재료와 똠얌 페이스트를 넣고 끓인다. 라임주스2, 피시소스1, 치킨스톡0.5, 설탕1, 고추가루1 섞어서 맛을 끌어올릴 소스를 만들어 붓는다. 
 칼집 낸 방울토마토, 버섯과 새우 그리고 고급진 맛을 위한 코코넛밀크
-모두 풍요롭고 평안한 한가위 되시기를, 
-병아리콩 샐러드! 비건은 아니지만 매일 아침 조식을 만들다 보니 가끔 비건식을 즐기게 된다. 병아리콩은 하룻밤 불렸다가 끓는 물에 삶고, 팬에 올리브오일 두르고 양파, 토마토, 시금치 그리고 병아리콩 데친 다음 접시에 담아 비네그레트 드레싱 곁들이면 👍 #나의비거니즘일기 https://www.instagram.com/reel/Cxkq3vkvv1b/?igshid=MzRlODBiNWFlZA==</div></section>
+모두 풍요롭고 평안한 한가위 되시기를, </div></section>
+
+    <section class="recipe-cook-grid" id="cookGrid"><div class="recipe-cook-col"><h2>재료</h2><ul class="recipe-ing-list" id="ingList" data-recipe-id="똠얌꿍-나의비거니즘일기"><li><label><input type="checkbox" class="recipe-ing-check" data-idx="0"><span class="recipe-ing-name">똠얌 키트(말린 채소와 페이스트) 1개</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="1"><span class="recipe-ing-name">소스(라임주스 2T, 피시소스 1T, 치킨스톡 0.5T, 설탕 1T, 고춧가루 1T)</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="2"><span class="recipe-ing-name">방울토마토 5개</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="3"><span class="recipe-ing-name">만가닥버섯 1컵</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="4"><span class="recipe-ing-name">새우 3마리</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="5"><span class="recipe-ing-name">코코넛밀크 1/2컵</span></label></li></ul><p class="recipe-checklist-note">장 볼 때 체크해 두면 표시가 남아요.</p></div><div class="recipe-cook-col"><h2>조리</h2><ol class="recipe-step-list"><li><span class="recipe-step-num">01</span><p class="recipe-step-text">냄비에 물 1.5L 붓고 똠얌 재료와 페이스트를 넣고 끓인다.</p></li><li><span class="recipe-step-num">02</span><p class="recipe-step-text">1에 소스(라임주스 2T, 피시소스 1T, 치킨스톡 0.5T, 설탕 1T, 고춧가루 1T) 넣고 좀 더 끓인다.</p></li><li><span class="recipe-step-num">03</span><p class="recipe-step-text">방울토마토, 버섯과 새우 넣고 좀 더 끓인다.</p></li><li><span class="recipe-step-num">04</span><p class="recipe-step-text">코코넛밀크 붓고 살짝 끓인 다음  그릇에 담는다.</p></li></ol></div></section>
 
     
-
-    <section class="recipe-other-years"><div class="recipe-other-years-head"><h2>다른 해의 9월 29일</h2><a href="../archive.html?date=09-29">모두 보기 →</a></div><div class="recipe-other-years-grid"><a href="토마토-닭꼬치-대파.html"><img src="https://images.how-about-breakfast.com/images/558.jpg" alt="" loading="lazy"><span class="oy-year">2022</span><span class="oy-title">토마토 닭꼬치 대파</span></a><a href="아보카도고수샐러드-모닝리추얼-모닝루틴.html"><img src="https://images.how-about-breakfast.com/images/224.jpg" alt="" loading="lazy"><span class="oy-year">2021</span><span class="oy-title">아보카도고수샐러드 모닝리추얼 모닝루틴</span></a><a href="온실가스-오늘의조식.html"><img src="https://images.how-about-breakfast.com/images/pre-136.jpg" alt="" loading="lazy"><span class="oy-year">2020</span><span class="oy-title">온실가스 오늘의조식</span></a></div></section>
+    <section class="recipe-other-years"><div class="recipe-other-years-head"><h2>다른 해의 9월 29일</h2><a href="../archive.html?date=09-29">모두 보기 →</a></div><div class="recipe-other-years-grid"><a href="대파-두부무침.html"><img src="https://images.how-about-breakfast.com/images/1878.jpg" alt="" loading="lazy"><span class="oy-year">2026</span><span class="oy-title">대파 두부무침</span></a><a href="토마토-닭꼬치-대파.html"><img src="https://images.how-about-breakfast.com/images/558.jpg" alt="" loading="lazy"><span class="oy-year">2022</span><span class="oy-title">닭다리살 토마토 꼬치</span></a><a href="아보카도고수샐러드-모닝리추얼-모닝루틴.html"><img src="https://images.how-about-breakfast.com/images/224.jpg" alt="" loading="lazy"><span class="oy-year">2021</span><span class="oy-title">아보카도 완두콩 샐러드</span></a><a href="온실가스-오늘의조식.html"><img src="https://images.how-about-breakfast.com/images/pre-136.jpg" alt="" loading="lazy"><span class="oy-year">2020</span><span class="oy-title">통토마토 카프레제</span></a></div></section>
 
     <nav aria-label="이전·다음 기록" class="recipe-daynav">
-      <a href="호밀크래커.html" class="recipe-daynav-prev"><span class="meta">← 전날 · 2023-09-28</span><span class="title">호밀크래커</span></a>
-      <a href="얌운센.html" class="recipe-daynav-next"><span class="meta">2023-09-30 · 다음날 →</span><span class="title">얌운센</span></a>
+      <a href="호밀크래커.html" class="recipe-daynav-prev"><span class="meta">← 전날 · 2023-09-28</span><span class="title">클로티드크림과 초코무화과잼을 얹은 호밀크래커</span></a>
+      <a href="얌운센.html" class="recipe-daynav-next"><span class="meta">2023-09-30 · 다음날 →</span><span class="title">따뜻하게 먹는 태국 샐러드 얌운센</span></a>
     </nav>
 
     
@@ -179,11 +191,12 @@
   <div class="page-footer-links"><a href="../privacy.html">개인정보처리방침</a></div>
 </footer>
 
+<div class="recipe-mobile-bar"><a href="#cookGrid" class="recipe-mobile-jump">재료로 이동</a></div>
 
-
-
-<script src="../cookmode.js"></script>
-<script src="../recipe.js"></script>
+<script type="application/ld+json">{"@context": "https://schema.org/", "@type": "Recipe", "name": "똠얌꿍", "url": "https://how-about-breakfast.com/recipes/똠얌꿍-나의비거니즘일기.html", "image": ["https://images.how-about-breakfast.com/images/11117.jpg", "https://images.how-about-breakfast.com/images/11117_2.jpg", "https://images.how-about-breakfast.com/images/11117_3.jpg"], "author": {"@type": "Person", "name": "나조식", "sameAs": ["https://www.instagram.com/how.about.breakfast/", "https://www.youtube.com/@How.about.breakfast"]}, "recipeYield": "1인분", "datePublished": "2023-09-29", "description": "그래 이 맛이야, 고향의 맛🍲똠얌꿍🍤 냄비에 물 1.5리터, 똠얌 재료와 똠얌 페이스트를 넣고 끓인다. 라임주스2, 피시소스1, 치킨스톡0.5, 설탕1, 고추가루1 섞어서 맛을 끌어올릴 소스를 만들어 붓는다. 칼집 낸 방울토마토, 버섯과 새우 그리고 고급진 맛을 위한 ", "recipeIngredient": ["- 똠얌 키트(말린 채소와 페이스트) 1개\n- 소스(라임주스 2T", "피시소스 1T", "치킨스톡 0.5T", "설탕 1T", "고춧가루 1T)\n- 방울토마토 5개\n- 만가닥버섯 1컵\n- 새우 3마리\n- 코코넛밀크 1/2컵"], "recipeInstructions": [{"@type": "HowToStep", "text": "냄비에 물 1.5L 붓고 똠얌 재료와 페이스트를 넣고 끓인다."}, {"@type": "HowToStep", "text": "1에 소스(라임주스 2T, 피시소스 1T, 치킨스톡 0.5T, 설탕 1T, 고춧가루 1T) 넣고 좀 더 끓인다."}, {"@type": "HowToStep", "text": "방울토마토, 버섯과 새우 넣고 좀 더 끓인다."}, {"@type": "HowToStep", "text": "코코넛밀크 붓고 살짝 끓인 다음  그릇에 담는다."}], "keywords": "나의비거니즘일기, 똠얌꿍, 레시피, 미라클모닝, 조식, 조식다이어리"}</script>
+<script src="../shared.js?v=20260927h"></script>
+<script src="../cookmode.js?v=20260927h"></script>
+<script src="../recipe.js?v=20260927h"></script>
 <script>
 (function () {
   var btn = document.getElementById('shareBtn');

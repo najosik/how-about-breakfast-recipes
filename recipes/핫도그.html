@@ -13,7 +13,7 @@
 
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="날마다, 조식">
+<meta property="og:site_name" content="날마다 조식">
 <meta property="og:title" content="#핫도그">
 <meta property="og:description" content="하다 하다 못해 이제는 당근을 전자레인지에 구워서 소스 붓고 졸여서 소시지 같은 비주얼을 연출하기에 이른 것이다. 소시지 대신 당근을 넣은 620kcal #핫도그">
 <meta property="og:url" content="https://how-about-breakfast.com/recipes/핫도그.html">
@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../styles.css?v=20260927h">
 <style>
   .recipe-page{max-width:1080px; margin:0 auto; padding:0 20px 20px;}
   .recipe-breadcrumb{max-width:1080px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; color:var(--text-2); border-bottom:1px solid var(--rule);}
@@ -41,6 +41,7 @@
   .recipe-photo{width:100%; aspect-ratio:3/4; border-radius:2px; overflow:hidden; margin-bottom:0; background:var(--line);}
   .recipe-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .recipe-video{width:100%; display:block; border-radius:2px; margin-top:10px;}
+  .recipe-video-solo{margin-top:0; aspect-ratio:3/4; object-fit:cover; background:var(--line);}
   .recipe-ig-link{display:inline-block; font-size:12.5px; color:var(--green-dark); text-decoration:none; margin-top:8px;}
   .recipe-ig-link:hover{text-decoration:underline;}
   .recipe-thumbs{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}
@@ -78,6 +79,10 @@
   .recipe-other-years-head h2{margin:0; font-family:'Noto Serif KR',serif; font-size:20px; font-weight:900; text-transform:none; letter-spacing:0; color:var(--ink);}
   .recipe-other-years-head a{font-size:13px; color:var(--green-dark); text-decoration:none;}
   .recipe-other-years-head a:hover{text-decoration:underline;}
+  .recipe-same-day{margin:0 0 22px; padding:14px 18px; background:var(--mint); font-size:13.5px; color:var(--text-2);}
+  .recipe-same-day a{color:var(--green-dark); font-weight:700; text-decoration:none;}
+  .recipe-same-day a:hover{text-decoration:underline;}
+  .recipe-same-day a + a{margin-left:10px;}
   .recipe-other-years-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;}
   .recipe-other-years-grid a{display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--ink);}
   .recipe-other-years-grid img,.recipe-other-years-grid .card-thumb{width:100%; aspect-ratio:1; object-fit:cover; margin-bottom:0;}
@@ -115,13 +120,20 @@
 <body>
 <div class="wrap">
   <header class="site-header">
-    <a href="../index.html" class="site-header-logo">날마다, 조식</a>
     <nav class="site-header-nav" aria-label="주요 메뉴">
-      <a href="../archive.html">아카이브</a>
-      <a href="../vote.html">명예의 전당</a>
-      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">브런치북</a>
+      <a href="../index.html">← 홈으로</a>
     </nav>
-    <a href="https://how-about-breakfast.com/en/recipes/핫도그.html" class="lang-switch">EN</a>
+    <div class="nav-right">
+      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="channel-links" id="channelLinks">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
+      </div>
+      <a href="https://how-about-breakfast.com/en/recipes/핫도그.html" class="lang-switch">EN</a>
+    </div>
   </header>
 </div>
 
@@ -159,6 +171,7 @@
 
     <section class="recipe-cook-grid" id="cookGrid"><div class="recipe-cook-col"><h2>재료</h2><ul class="recipe-ing-list" id="ingList" data-recipe-id="핫도그"><li><label><input type="checkbox" class="recipe-ing-check" data-idx="0"><span class="recipe-ing-name">작은 당근 2개</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="1"><span class="recipe-ing-name">핫도그 브레드 1개</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="2"><span class="recipe-ing-name">피클 조금</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="3"><span class="recipe-ing-name">케첩</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="4"><span class="recipe-ing-name">머스터드</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="5"><span class="recipe-ing-name">(소스) 올리브오일 3T</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="6"><span class="recipe-ing-name">화이트와인 비니거 3T</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="7"><span class="recipe-ing-name">블랙 소이 소스 1T</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="8"><span class="recipe-ing-name">메이플시럽 1t</span></label></li></ul><p class="recipe-checklist-note">장 볼 때 체크해 두면 표시가 남아요.</p></div><div class="recipe-cook-col"><h2>조리</h2><ol class="recipe-step-list"><li><span class="recipe-step-num">01</span><p class="recipe-step-text">작은 당근 2개 씻어서 껍질 벗기고 랩 씌워서 전자레인지에 3분 굽는다.</p></li><li><span class="recipe-step-num">02</span><p class="recipe-step-text">팬에 1의 당근과 올리브오일 3T, 화이트와인 비니거 3T, 블랙 소이 소스 1T, 메이플시럽 1t 넣고 졸인다. 당근이 제법 소시지처럼 변신한다.</p></li><li><span class="recipe-step-num">03</span><p class="recipe-step-text">피클 다져서 준비한다.</p></li><li><span class="recipe-step-num">04</span><p class="recipe-step-text">팬에 올리브오일 두르고 핫도그 브레드를 굽는다.</p></li><li><span class="recipe-step-num">05</span><p class="recipe-step-text">핫도그 브레드는 반으로 가르고 2의 당근 넣고 3의 다진 피클 얹은 뒤, 케첩과 머스터드 뿌린다.</p></li></ol></div></section>
 
+    
     <section class="recipe-other-years"><div class="recipe-other-years-head"><h2>다른 해의 10월 9일</h2><a href="../archive.html?date=10-09">모두 보기 →</a></div><div class="recipe-other-years-grid"><a href="토마토타르타르-토마토.html"><img src="https://images.how-about-breakfast.com/images/1200.jpg" alt="" loading="lazy"><span class="oy-year">2024</span><span class="oy-title">토마토타르타르 토마토</span></a><a href="사과대추오픈샌드위치-모닝리추얼-모닝루틴.html"><img src="https://images.how-about-breakfast.com/images/234.jpg" alt="" loading="lazy"><span class="oy-year">2021</span><span class="oy-title">사과대추오픈샌드위치 모닝리추얼 모닝루틴</span></a><a href="군만두-올드보이-박찬욱.html"><img src="https://images.how-about-breakfast.com/images/pre-126.jpg" alt="" loading="lazy"><span class="oy-year">2020</span><span class="oy-title">군만두 올드보이 박찬욱</span></a><a href="가지-가지샐러드-조식.html"><img src="https://images.how-about-breakfast.com/images/2020-10-09-2.jpg" alt="" loading="lazy"><span class="oy-year">2020</span><span class="oy-title">가지 가지샐러드 조식</span></a></div></section>
 
     <nav aria-label="이전·다음 기록" class="recipe-daynav">
@@ -179,8 +192,9 @@
 <div class="recipe-mobile-bar"><a href="#cookGrid" class="recipe-mobile-jump">재료로 이동</a></div>
 
 <script type="application/ld+json">{"@context": "https://schema.org/", "@type": "Recipe", "name": "#핫도그", "url": "https://how-about-breakfast.com/recipes/핫도그.html", "image": ["https://images.how-about-breakfast.com/images/1527.jpg", "https://images.how-about-breakfast.com/images/1527_2.jpg", "https://images.how-about-breakfast.com/images/1527_3.jpg"], "author": {"@type": "Person", "name": "나조식", "sameAs": ["https://www.instagram.com/how.about.breakfast/", "https://www.youtube.com/@How.about.breakfast"]}, "recipeYield": "1인분", "datePublished": "2025-10-09", "description": "하다 하다 못해 이제는 당근을 전자레인지에 구워서 소스 붓고 졸여서 소시지 같은 비주얼을 연출하기에 이른 것이다. 소시지 대신 당근을 넣은 620kcal #핫도그", "recipeIngredient": ["작은 당근 2개", "핫도그 브레드 1개", "피클 조금", "케첩", "머스터드", "(소스) 올리브오일 3T", "화이트와인 비니거 3T", "블랙 소이 소스 1T", "메이플시럽 1t"], "recipeInstructions": [{"@type": "HowToStep", "text": "작은 당근 2개 씻어서 껍질 벗기고 랩 씌워서 전자레인지에 3분 굽는다."}, {"@type": "HowToStep", "text": "팬에 1의 당근과 올리브오일 3T, 화이트와인 비니거 3T, 블랙 소이 소스 1T, 메이플시럽 1t 넣고 졸인다. 당근이 제법 소시지처럼 변신한다."}, {"@type": "HowToStep", "text": "피클 다져서 준비한다."}, {"@type": "HowToStep", "text": "팬에 올리브오일 두르고 핫도그 브레드를 굽는다."}, {"@type": "HowToStep", "text": "핫도그 브레드는 반으로 가르고 2의 당근 넣고 3의 다진 피클 얹은 뒤, 케첩과 머스터드 뿌린다."}], "keywords": "레시피, 조식, 조식다이어리, 핫도그", "nutrition": {"@type": "NutritionInformation", "calories": "620 kcal"}}</script>
-<script src="../cookmode.js"></script>
-<script src="../recipe.js"></script>
+<script src="../shared.js?v=20260927h"></script>
+<script src="../cookmode.js?v=20260927h"></script>
+<script src="../recipe.js?v=20260927h"></script>
 <script>
 (function () {
   var btn = document.getElementById('shareBtn');

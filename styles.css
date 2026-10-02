@@ -50,7 +50,7 @@ a{color:var(--teal-deep);}
   padding:6px 14px; font-size:12.5px; font-weight:600; color:var(--ink-soft); text-decoration:none;
   background:var(--paper-raised); transition:border-color .12s, color .12s;
 }
-.channel-links a:hover{border-color:var(--teal); color:var(--teal-deep);}
+.channel-links a:hover{border-color:var(--green); color:var(--green-dark);}
 .channel-toggle{display:none;}
 /* Under ~640px, .channel-links collapses behind a hamburger button
    (#channelToggle) into a popover - shared.js wires the open/close.
@@ -119,20 +119,19 @@ p.subtitle{margin:0; color:var(--ink-soft); font-size:15px; max-width:560px;}
    later) - a lighter version of the homepage's masthead: logotype + page
    nav + language toggle, no channel-links (Instagram/YouTube live on the
    homepage only in this design). */
-.site-header{display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; padding:22px 0; border-bottom:3px solid var(--ink);}
+.site-header{display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; padding:18px 0 22px; border-bottom:3px solid var(--ink);}
 .site-header-logo{font-family:'Noto Serif KR',serif; font-weight:900; font-size:26px; letter-spacing:-0.02em; color:var(--ink); text-decoration:none;}
 .site-header-nav{display:flex; gap:22px; font-size:14px;}
 .site-header-nav a{color:var(--ink); text-decoration:none;}
 .site-header-nav a:hover{color:var(--green-dark); text-decoration:underline;}
 .site-header-nav a[aria-current="page"]{font-weight:700; text-decoration:underline; text-decoration-color:var(--green); text-decoration-thickness:3px; text-underline-offset:8px;}
-.page-footer{padding:24px 0 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
+.page-footer{max-width:1040px; margin:0 auto; padding:24px 20px 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
 .page-footer-links{display:flex; gap:18px;}
 .page-footer-links a{color:var(--text-2); text-decoration:none;}
 .page-footer-links a:hover{text-decoration:underline;}
 
 /* ============ Archive (Sub-Archive) ============ */
 .arc-hero{padding:36px 0 0; display:flex; flex-direction:column; gap:6px;}
-.arc-eyebrow{font-size:12.5px; letter-spacing:0.14em; font-weight:700; color:var(--green-dark);}
 .arc-title{margin:0; font-family:'Noto Serif KR',serif; font-size:44px; font-weight:900; line-height:1.1; letter-spacing:-0.02em; color:var(--ink);}
 .arc-count-meta{font-family:'Fraunces',serif; font-size:15px; color:var(--text-2);}
 
@@ -149,11 +148,6 @@ p.subtitle{margin:0; color:var(--ink-soft); font-size:15px; max-width:560px;}
 .arc-sheet-head{display:none;}
 .arc-field{margin:0 0 26px; padding:0; border:0;}
 .arc-field legend{padding:0 0 10px; width:100%; font-family:'Noto Serif KR',serif; font-size:15px; font-weight:900; border-bottom:1px solid var(--ink); color:var(--ink);}
-.arc-date-picker{display:flex; gap:8px; align-items:center;}
-.arc-date-picker select{height:38px; padding:0 8px; border:1px solid var(--line-strong); background:var(--paper-raised); font:inherit; font-size:13px; color:var(--ink);}
-.arc-date-apply{height:38px; padding:0 12px; border:1px solid var(--ink); background:transparent; font:inherit; font-size:13px; color:var(--ink); cursor:pointer;}
-.arc-date-apply:hover{background:var(--mint);}
-.arc-chip-row{display:flex; gap:8px; flex-wrap:wrap; margin-top:10px;}
 .arc-chip{display:inline-flex; align-items:center; gap:8px; height:36px; padding:0 12px; border:1px solid var(--ink); background:var(--ink); color:var(--paper); font-size:13px; cursor:pointer;}
 .arc-chip:hover{background:var(--green-dark); border-color:var(--green-dark);}
 .arc-year-checks{display:flex; flex-direction:column; gap:8px;}
@@ -287,7 +281,6 @@ h3.card-title{
 /* ============ 명예의 전당 (Sub-Hall) ============ */
 .hall-hero{padding:36px 0 24px; display:flex; align-items:flex-end; justify-content:space-between; gap:20px; flex-wrap:wrap;}
 .hall-hero-text{display:flex; flex-direction:column; gap:8px;}
-.hall-eyebrow{font-size:12.5px; letter-spacing:0.14em; font-weight:700; color:var(--green-dark);}
 .hall-title{margin:0; font-family:'Noto Serif KR',serif; font-size:44px; font-weight:900; line-height:1.1; letter-spacing:-0.02em; color:var(--ink);}
 .hall-subtitle{margin:0; font-size:15px; color:var(--text-2);}
 .hall-tabs{display:flex; gap:4px;}
@@ -325,7 +318,7 @@ h3.card-title{
 .hall-rest h2{margin:0; padding-bottom:12px; border-bottom:1px solid var(--ink); font-family:'Noto Serif KR',serif; font-size:22px; font-weight:900;}
 .hall-rest-list{margin:0; padding:0; list-style:none;}
 .hall-rest-list li{min-height:64px; display:flex; align-items:center; gap:18px; border-bottom:1px solid var(--rule);}
-.hall-rest-rank{width:32px; flex:0 0 auto; font-family:'Fraunces',serif; font-size:24px; font-weight:800; color:var(--text-3);}
+.hall-rest-rank{width:48px; flex:0 0 auto; font-family:'Fraunces',serif; font-size:17px; font-weight:800; color:var(--text-3);}
 .hall-rest-list a.title{flex:1 1 auto; min-width:0; font-family:'Noto Serif KR',serif; font-size:16.5px; font-weight:700; color:var(--ink); text-decoration:none;}
 .hall-rest-list a.title:hover{color:var(--green-dark);}
 .hall-rest-votes{font-family:'Fraunces',serif; font-size:14px; color:var(--text-2); flex:0 0 auto;}
@@ -463,7 +456,7 @@ button.loadmore:hover{border-color:var(--teal); color:var(--teal);}
 .modal-sibling-btn:hover{border-color:var(--green); color:var(--green-dark);}
 .modal-sibling-btn.active{background:var(--green); border-color:var(--green); color:#fff; cursor:default;}
 
-.modal-hero{display:grid; grid-template-columns:300px 1fr;}
+.modal-hero{display:grid; grid-template-columns:300px 1fr; padding-left:20px;}
 .modal-hero-media{background:var(--mint-skip); position:relative;}
 
 .modal-hero-info{padding:22px 26px; display:flex; flex-direction:column; gap:12px;}
@@ -511,7 +504,7 @@ button.loadmore:hover{border-color:var(--teal); color:var(--teal);}
 .modal-view-full:hover{text-decoration:underline;}
 
 @media (max-width:640px){
-  .modal-hero{grid-template-columns:1fr;}
+  .modal-hero{grid-template-columns:1fr; padding-left:14px;}
   .modal-cook-grid{grid-template-columns:1fr;}
   .modal-cook-col:first-child{border-right:0; border-bottom:1px solid var(--rule);}
   .modal-topbar{padding:12px 52px 12px 14px;}
@@ -539,12 +532,13 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
 }
 
 /* ============ Homepage-only components (Renewal B안 "아침 잡지") ============
-   admin/edit-298a4b140538.html의 "빠진 날짜" 미리보기 탭이 .otd-*/.section-head
-   클래스를 그대로 재사용하므로 그 클래스들은 여기서 건드리지 않는다 - 새 홈페이지
-   요소는 전부 home- 접두사를 붙인 새 클래스로 만든다. */
+   admin/edit-298a4b140538.html의 "빠진 날짜" 미리보기 탭이 .otd- 로 시작하는
+   클래스와 .section-head 클래스를 그대로 재사용하므로 그 클래스들은 여기서
+   건드리지 않는다 - 새 홈페이지 요소는 전부 home- 접두사를 붙인 새 클래스로
+   만든다. */
 
-.home-masthead{padding:20px 0 0;}
-.home-logo{font-family:'Noto Serif KR',serif; font-weight:900; font-size:52px; line-height:0.95; letter-spacing:-0.02em; margin:0; border-top:3px solid var(--ink); padding-top:16px;}
+.home-masthead{padding:22px 0 0;}
+.home-logo{font-family:'Noto Serif KR',serif; font-weight:900; font-size:52px; line-height:0.95; letter-spacing:-0.02em; margin:0; border-top:3px solid var(--ink); padding-top:36px;}
 .home-logo a{color:var(--ink); text-decoration:none;}
 .home-kicker{display:flex; flex-wrap:wrap; gap:6px 16px; align-items:baseline; justify-content:space-between; font-size:13.5px; color:var(--text-2); padding:10px 0 14px; border-bottom:1px solid var(--ink);}
 .home-kicker-en{font-family:'Fraunces',serif; font-style:italic; font-size:16px; color:var(--ink);}
@@ -558,10 +552,11 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
 .home-search-btn:hover{background:var(--green-dark);}
 
 /* Cover story + 해마다 오늘의 조식 */
-.home-cover-grid{max-width:1080px; margin:0 auto; padding:36px 20px 48px; display:grid; grid-template-columns:7fr 5fr; gap:28px;}
+.home-cover-grid{max-width:1080px; margin:0 auto; padding:36px 20px 48px; display:grid; grid-template-columns:5fr 7fr; gap:28px;}
 .home-cover-photo{position:relative;}
-.home-cover-photo .card-photo{width:100%; aspect-ratio:auto; height:360px; margin:0; background:var(--mint);}
-.home-cover-photo img,.home-cover-photo .card-thumb{display:block; width:100%; height:360px; object-fit:cover; background:var(--mint);}
+.home-cover-photo .card-photo{width:100%; aspect-ratio:3/4; height:auto; margin:0; background:var(--mint);}
+.home-cover-photo .card-thumb{width:100%; aspect-ratio:3/4; height:auto;}
+.home-cover-photo img{display:block; width:100%; height:100%; object-fit:cover; background:var(--mint);}
 .home-cover-stamp{position:absolute; left:-10px; bottom:-20px; background:var(--paper); padding:10px 16px 0 10px; display:flex; align-items:flex-end; gap:8px;}
 .home-cover-stamp .num{font-family:'Fraunces',serif; font-size:72px; font-weight:800; line-height:0.8; color:var(--green);}
 .home-cover-stamp .label{font-size:11px; line-height:1.4; color:var(--text-2);}
@@ -583,7 +578,6 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
 .home-otd-sib{font-family:'Noto Sans KR',sans-serif; font-size:11.5px; font-weight:400; color:var(--text-3); margin-left:6px; white-space:nowrap;}
 .home-otd-row .card-photo{width:52px; height:52px; aspect-ratio:1; margin:0; flex:0 0 auto;}
 .home-otd-row img,.home-otd-row .card-thumb{width:52px; height:52px; object-fit:cover; flex:0 0 auto;}
-.home-otd-row.otd-empty-row .home-otd-title{color:var(--text-3); font-family:inherit; font-weight:400; font-size:13.5px;}
 
 /* Editor's note */
 .home-editor{max-width:1080px; margin:0 auto; padding:40px 20px; border-top:1px solid var(--ink); display:grid; grid-template-columns:180px 1fr; gap:20px;}
@@ -653,7 +647,7 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
 
 /* 새 홈페이지 전용 푸터 - 2163개 레시피 페이지가 공유하는 .site-footer와는
    별개(그 페이지들의 어두운 통짜 푸터는 이번 단계에서 건드리지 않는다). */
-.home-footer{max-width:1080px; margin:0 auto; padding:20px 20px 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
+.home-footer{max-width:1040px; margin:0 auto; padding:20px 20px 40px; border-top:3px solid var(--ink); display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap; font-size:13px; color:var(--text-2);}
 .home-footer-links{display:flex; gap:18px;}
 .home-footer-links a{color:var(--text-2); text-decoration:none;}
 .home-footer-links a:hover{text-decoration:underline;}
@@ -663,8 +657,6 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
   .home-logo{font-size:32px;}
   .home-kicker{flex-direction:column; align-items:flex-start;}
   .home-cover-grid,.home-bottom-grid{grid-template-columns:1fr;}
-  .home-cover-photo .card-photo{height:240px;}
-  .home-cover-photo img,.home-cover-photo .card-thumb{height:240px;}
   .home-editor{grid-template-columns:1fr;}
   .home-year-tabs,.home-ledger-scroll{display:none;}
   .home-calendar{display:block; max-width:1080px; margin:16px auto 0;}
@@ -688,7 +680,6 @@ footer.foot{text-align:center; padding:44px 0; color:var(--ink-faint); font-size
   .nav-right{flex-wrap:wrap; justify-content:flex-end;}
 
   /* Archive: sidebar becomes a bottom sheet, opened by the mobile chip bar */
-  .site-header{padding:14px 0;}
   .site-header-logo{font-size:20px;}
   .site-header-nav{gap:14px; font-size:13px;}
   .arc-title{font-size:30px;}

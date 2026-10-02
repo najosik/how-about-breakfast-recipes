@@ -1,3 +1,33 @@
+# 알려진 SEO 스크레이퍼 / 콘텐츠 수집 봇 차단
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: DataForSeoBot
+Disallow: /
+
+User-agent: SerpstatBot
+Disallow: /
+
+User-agent: Barkrowler
+Disallow: /
+
+# 그 외(구글/빙 등 검색엔진, ChatGPT/Claude/Gemini 등 생성형 AI 크롤러 포함)는
+# 전체 허용 - AI 답변엔진에 콘텐츠가 노출되도록(AEO) 의도적으로 막지 않음
 User-agent: *
 Allow: /
 

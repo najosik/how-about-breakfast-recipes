@@ -13,7 +13,7 @@
 
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="날마다, 조식">
+<meta property="og:site_name" content="날마다 조식">
 <meta property="og:title" content="골뱅이 애호박 콜드 파스타">
 <meta property="og:description" content="오늘 조식의 단백질 담당 골뱅이와 가장 비슷하게 생긴 꼬불꼬불 베수비오, 소라 모양의 콘킬리에로 삼총사 결성 핑크페퍼 + 파슬리 드레싱으로 맛을 낸 1인분 475kcal 골뱅이 애호박 콜드 파스타 ⚠️핑크페퍼는 호불호가 있다. 적당히 사용하자.">
 <meta property="og:url" content="https://how-about-breakfast.com/recipes/골뱅이-애호박-콜드-파스타.html">
@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../styles.css?v=20260927h">
 <style>
   .recipe-page{max-width:1080px; margin:0 auto; padding:0 20px 20px;}
   .recipe-breadcrumb{max-width:1080px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; color:var(--text-2); border-bottom:1px solid var(--rule);}
@@ -41,6 +41,7 @@
   .recipe-photo{width:100%; aspect-ratio:3/4; border-radius:2px; overflow:hidden; margin-bottom:0; background:var(--line);}
   .recipe-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .recipe-video{width:100%; display:block; border-radius:2px; margin-top:10px;}
+  .recipe-video-solo{margin-top:0; aspect-ratio:3/4; object-fit:cover; background:var(--line);}
   .recipe-ig-link{display:inline-block; font-size:12.5px; color:var(--green-dark); text-decoration:none; margin-top:8px;}
   .recipe-ig-link:hover{text-decoration:underline;}
   .recipe-thumbs{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}
@@ -78,6 +79,10 @@
   .recipe-other-years-head h2{margin:0; font-family:'Noto Serif KR',serif; font-size:20px; font-weight:900; text-transform:none; letter-spacing:0; color:var(--ink);}
   .recipe-other-years-head a{font-size:13px; color:var(--green-dark); text-decoration:none;}
   .recipe-other-years-head a:hover{text-decoration:underline;}
+  .recipe-same-day{margin:0 0 22px; padding:14px 18px; background:var(--mint); font-size:13.5px; color:var(--text-2);}
+  .recipe-same-day a{color:var(--green-dark); font-weight:700; text-decoration:none;}
+  .recipe-same-day a:hover{text-decoration:underline;}
+  .recipe-same-day a + a{margin-left:10px;}
   .recipe-other-years-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;}
   .recipe-other-years-grid a{display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--ink);}
   .recipe-other-years-grid img,.recipe-other-years-grid .card-thumb{width:100%; aspect-ratio:1; object-fit:cover; margin-bottom:0;}
@@ -115,13 +120,20 @@
 <body>
 <div class="wrap">
   <header class="site-header">
-    <a href="../index.html" class="site-header-logo">날마다, 조식</a>
     <nav class="site-header-nav" aria-label="주요 메뉴">
-      <a href="../archive.html">아카이브</a>
-      <a href="../vote.html">명예의 전당</a>
-      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">브런치북</a>
+      <a href="../index.html">← 홈으로</a>
     </nav>
-    <a href="https://how-about-breakfast.com/en/recipes/골뱅이-애호박-콜드-파스타.html" class="lang-switch">EN</a>
+    <div class="nav-right">
+      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="channel-links" id="channelLinks">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
+      </div>
+      <a href="https://how-about-breakfast.com/en/recipes/골뱅이-애호박-콜드-파스타.html" class="lang-switch">EN</a>
+    </div>
   </header>
 </div>
 
@@ -164,6 +176,7 @@
 골뱅이 130g(작은 캔 1개)
 그린올리브 10개</span></label></li></ul><p class="recipe-checklist-note">장 볼 때 체크해 두면 표시가 남아요.</p></div><div class="recipe-cook-col"><h2>조리</h2><ol class="recipe-step-list"><li><span class="recipe-step-num">01</span><p class="recipe-step-text">애호박은 반달모양으로 썬다.</p></li><li><span class="recipe-step-num">02</span><p class="recipe-step-text">끓는 물에 소금 넣고 베수비오, 콘킬리에 삶는다. 숏파스타라면 뭐든지 좋다.</p></li><li><span class="recipe-step-num">03</span><p class="recipe-step-text">파스타가 익어갈 무렵에 1의 애호박 넣고 살짝 삶는다. 베수비오, 콘킬리에, 애호박은 모두 알 덴테 정도가 좋을 것 같다.</p></li><li><span class="recipe-step-num">04</span><p class="recipe-step-text">핑크페퍼 간 뒤 파슬리, 올리브오일, 레몬소금, 레몬주스 넣고 섞어서 소스를 만든다.</p></li><li><span class="recipe-step-num">05</span><p class="recipe-step-text">믹싱볼에 오늘의 조식의 단백질 담당, 골뱅이 넣고 2의 파스타와 애호박, 4의 소스 넣고 맛있게 버무린다.</p></li><li><span class="recipe-step-num">06</span><p class="recipe-step-text">핑크페퍼와 올리브오일 좀 더 뿌린다.</p></li></ol></div></section>
 
+    
     <section class="recipe-other-years"><div class="recipe-other-years-head"><h2>다른 해의 9월 9일</h2><a href="../archive.html?date=09-09">모두 보기 →</a></div><div class="recipe-other-years-grid"><a href="요새-한참-유행-중인-티라미수-치아-푸딩.html"><img src="https://images.how-about-breakfast.com/images/1503.jpg" alt="" loading="lazy"><span class="oy-year">2025</span><span class="oy-title">티라미수 치아 푸딩</span></a><a href="바나나푸딩.html"><img src="https://images.how-about-breakfast.com/images/1174.jpg" alt="" loading="lazy"><span class="oy-year">2024</span><span class="oy-title">매그놀리아 바나나 푸딩</span></a><a href="사우어크라우트-2.html"><img src="https://images.how-about-breakfast.com/images/840.jpg" alt="" loading="lazy"><span class="oy-year">2023</span><span class="oy-title">사우어크라우트와 소시지</span></a><a href="브뤼셀스프라우츠를곁들인크리스피한뇨끼-뇨끼-브뤼셀스프라우츠.html"><img src="https://images.how-about-breakfast.com/images/538.jpg" alt="" loading="lazy"><span class="oy-year">2022</span><span class="oy-title">방울양배추를 곁들인 크리스피 뇨끼</span></a></div></section>
 
     <nav aria-label="이전·다음 기록" class="recipe-daynav">
@@ -184,8 +197,9 @@
 <div class="recipe-mobile-bar"><a href="#cookGrid" class="recipe-mobile-jump">재료로 이동</a><a href="https://www.instagram.com/p/DdEOIrwHVyz/" target="_blank" rel="noopener" class="recipe-mobile-ig">원문 ↗</a></div>
 
 <script type="application/ld+json">{"@context": "https://schema.org/", "@type": "Recipe", "name": "골뱅이 애호박 콜드 파스타", "url": "https://how-about-breakfast.com/recipes/골뱅이-애호박-콜드-파스타.html", "image": ["https://images.how-about-breakfast.com/images/1858.jpg", "https://images.how-about-breakfast.com/images/1858_2.jpg", "https://images.how-about-breakfast.com/images/1858_3.jpg", "https://images.how-about-breakfast.com/images/1858_4.jpg", "https://images.how-about-breakfast.com/images/1858_5.jpg"], "author": {"@type": "Person", "name": "나조식", "sameAs": ["https://www.instagram.com/how.about.breakfast/", "https://www.youtube.com/@How.about.breakfast"]}, "recipeYield": "1인분", "datePublished": "2026-09-09", "description": "오늘 조식의 단백질 담당 골뱅이와 가장 비슷하게 생긴 꼬불꼬불 베수비오, 소라 모양의 콘킬리에로 삼총사 결성 핑크페퍼 + 파슬리 드레싱으로 맛을 낸 1인분 475kcal 골뱅이 애호박 콜드 파스타 ⚠️핑크페퍼는 호불호가 있다. 적당히 사용하자.", "recipeIngredient": ["애호박 1/2개\n숏파스타 2컵\n소스(핑크페퍼 2t", "파슬리(2~3줄기 잎만 떼서)", "레몬소금 1t", "레몬주스 1t", "올리브오일 2T)\n골뱅이 130g(작은 캔 1개)\n그린올리브 10개"], "recipeInstructions": [{"@type": "HowToStep", "text": "애호박은 반달모양으로 썬다."}, {"@type": "HowToStep", "text": "끓는 물에 소금 넣고 베수비오, 콘킬리에 삶는다. 숏파스타라면 뭐든지 좋다."}, {"@type": "HowToStep", "text": "파스타가 익어갈 무렵에 1의 애호박 넣고 살짝 삶는다. 베수비오, 콘킬리에, 애호박은 모두 알 덴테 정도가 좋을 것 같다."}, {"@type": "HowToStep", "text": "핑크페퍼 간 뒤 파슬리, 올리브오일, 레몬소금, 레몬주스 넣고 섞어서 소스를 만든다."}, {"@type": "HowToStep", "text": "믹싱볼에 오늘의 조식의 단백질 담당, 골뱅이 넣고 2의 파스타와 애호박, 4의 소스 넣고 맛있게 버무린다."}, {"@type": "HowToStep", "text": "핑크페퍼와 올리브오일 좀 더 뿌린다."}], "keywords": "레시피, 애호박, 조식, 조식다이어리", "nutrition": {"@type": "NutritionInformation", "calories": "475 kcal"}}</script>
-<script src="../cookmode.js"></script>
-<script src="../recipe.js"></script>
+<script src="../shared.js?v=20260927h"></script>
+<script src="../cookmode.js?v=20260927h"></script>
+<script src="../recipe.js?v=20260927h"></script>
 <script>
 (function () {
   var btn = document.getElementById('shareBtn');

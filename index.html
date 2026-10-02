@@ -10,7 +10,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="날마다, 조식">
+<meta property="og:site_name" content="날마다 조식">
 <meta property="og:title" content="날마다 조식 — 나조식의 매일 아침 기록">
 <meta property="og:description" content="나조식이 2020년 7월부터 매일 아침 다른 조식을 만들어 기록해 온 다이어리 아카이브. 하루도 빠짐없이 쌓아온 1,900개가 넘는 아침 기록을 만나보세요.">
 <meta property="og:url" content="https://how-about-breakfast.com/">
@@ -44,7 +44,7 @@
 <!-- Nanum Myeongjo는 공유 모달(shared.js)이 이 페이지에서도 그대로 쓰므로 유지하고,
      리뉴얼 제호/숫자 서체(Noto Serif KR/Fraunces)를 추가로 불러온다. -->
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20260927h">
 </head>
 <body>
 <div class="wrap">
@@ -65,7 +65,7 @@
   </div>
 
   <header class="home-masthead">
-    <h1 class="home-logo"><a href="./">날마다, 조식</a></h1>
+    <h1 class="home-logo"><a href="./">날마다 조식</a></h1>
     <div class="home-kicker">
       <span class="home-kicker-en">daily breakfast journal</span>
       <span><span id="kickerVol">Vol. —</span> · <span id="kickerDate">—</span></span>
@@ -73,7 +73,7 @@
     </div>
     <form class="home-search" id="homeSearchForm" role="search">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
-      <label for="homeSearchInput" class="home-search-label" data-i18n="home_search_prompt">무엇이 남았나요?</label>
+      <label for="homeSearchInput" class="home-search-label" data-i18n="home_search_prompt">무엇을 먹을까요?</label>
       <input id="homeSearchInput" type="text" data-i18n-placeholder="search_placeholder" placeholder="재료, 메뉴명, 키워드로 검색 (예: 토마토, 사워도우, 코코넛)">
       <button type="submit" class="home-search-btn" data-i18n="home_search_btn">검색</button>
     </form>
@@ -89,7 +89,7 @@
 <section class="home-editor">
   <span class="home-editor-label">EDITOR&rsquo;S NOTE</span>
   <div class="home-editor-body">
-    <p class="home-editor-quote" data-i18n="home_editor_quote">&ldquo;재료는 있는데 레시피가 궁금할 때, 뭘 먹을까 떠오르지 않을 때, 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때.&rdquo;</p>
+    <p class="home-editor-quote" data-i18n="home_editor_quote">&ldquo;재료는 있는데 레시피가 필요할 때, 뭘 먹을까 떠오르지 않을 때, 그냥 남들은 뭘 먹고 사나 엿보고 싶을 때.&rdquo;</p>
     <div class="home-editor-actions">
       <span class="home-editor-byline">— 나조식</span>
       <button type="button" class="home-editor-toggle" id="betaMoreToggle" data-i18n="home_beta_more" aria-expanded="false">더보기</button>
@@ -135,8 +135,6 @@
   <div class="home-ledger-legend">
     <span><i style="background:var(--green)"></i><span data-i18n="legend_posted">조식</span></span>
     <span><i style="background:var(--mint-skip)"></i><span data-i18n="legend_skipped">건너뜀</span></span>
-    <span><i style="background:var(--green-deep)"></i><span data-i18n="legend_multi">하루 여러 편</span></span>
-    <span><i class="home-swatch-today"></i><span data-i18n="legend_today">오늘</span></span>
   </div>
 </section>
 
@@ -172,9 +170,9 @@
   <div class="modal" id="modalContent"></div>
 </div>
 
-<script src="i18n.js"></script>
-<script src="shared.js"></script>
-<script src="cookmode.js"></script>
-<script src="home.js"></script>
+<script src="i18n.js?v=20260927h"></script>
+<script src="shared.js?v=20260927h"></script>
+<script src="cookmode.js?v=20260927h"></script>
+<script src="home.js?v=20260927h"></script>
 </body>
 </html>

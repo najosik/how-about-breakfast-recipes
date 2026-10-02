@@ -47,6 +47,10 @@ VOTE_PATH = os.path.join(HERE, 'monthly-vote.json')
 
 SITE_BASE = 'https://how-about-breakfast.com'
 
+# 공유 CSS/JS가 바뀔 때마다 값을 올려서 Cloudflare/브라우저 캐시를 무효화한다.
+# (정적 페이지 index/archive/vote/privacy/en-privacy.html의 <link>/<script>도 함께 올려줄 것)
+ASSET_VERSION = '20260927h'
+
 
 def load_medal_winners():
     """{page_id: target_month} for every 이달의 조식 vote round that has a
@@ -67,10 +71,10 @@ def load_medal_winners():
 # share button). Free-text recipe content itself comes from r['_en'].
 LABELS = {
     'ko': {
-        'site_name': '날마다, 조식',
+        'site_name': '날마다 조식',
         'title_suffix': '날마다 조식',
         'archive_back': '아카이브',
-        'hall': '명예의 전당', 'brunch': '브런치북',
+        'nav_home': '← 홈으로',
         'notes': '메모', 'ingredients': '재료', 'steps': '조리',
         'credit': '원본 크레딧', 'tags': '태그',
         'failed_badge': '실패기',
@@ -88,13 +92,14 @@ LABELS = {
         'checklist_note': '장 볼 때 체크해 두면 표시가 남아요.',
         'other_years_title': '다른 해의 {date}',
         'other_years_more': '모두 보기 →',
+        'same_day_note': '이 날 다른 게시물도 있어요:',
         'mobile_jump': '재료로 이동',
     },
     'en': {
         'site_name': 'Breakfast, Every Day',
         'title_suffix': 'Breakfast, Every Day',
         'archive_back': 'Archive',
-        'hall': 'Hall of Fame', 'brunch': 'Brunch',
+        'nav_home': '← Home',
         'notes': 'Notes', 'ingredients': 'Ingredients', 'steps': 'Steps',
         'credit': 'Original Credit', 'tags': 'Tags',
         'failed_badge': 'Failed attempt',
@@ -112,6 +117,7 @@ LABELS = {
         'checklist_note': 'Check items off while grocery shopping - it’s remembered here.',
         'other_years_title': 'Other years, {date}',
         'other_years_more': 'See all →',
+        'same_day_note': 'There’s another post from this day:',
         'mobile_jump': 'Jump to ingredients',
     },
 }
@@ -377,7 +383,12 @@ def find_other_years(live, include, idx, limit=4):
     if not parts:
         return []
     mmdd = date[5:]
-    matches = [j for j in include if j != idx and live[j].get('date', '')[5:] == mmdd
+    cur_year = date[:4]
+    # Exclude the current record's own YEAR (not just its own index) so a
+    # day with two posts (see day_secondary) doesn't show its sibling
+    # post as if it were a different year's entry.
+    matches = [j for j in include if live[j].get('date', '')[5:] == mmdd
+               and live[j].get('date', '')[:4] != cur_year
                and re.match(r'^\d{4}-\d{2}-\d{2}$', live[j].get('date', ''))]
     matches.sort(key=lambda j: live[j]['date'], reverse=True)
     return matches[:limit]
@@ -433,9 +444,10 @@ def ad_slot_html(position):
 
 def media_html(r, title, lang='ko'):
     imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
-    if not imgs:
+    if not imgs and not r.get('video'):
         return ''
-    video_html = f'<video class="recipe-video" src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
+    video_class = 'recipe-video' if imgs else 'recipe-video recipe-video-solo'
+    video_html = f'<video class="{video_class}" src="{esc(r["video"])}" controls playsinline></video>' if r.get('video') else ''
     ig_link_html = (
         f'<a class="recipe-ig-link" href="{esc(r["permalink"])}" target="_blank" rel="noopener">{LABELS[lang]["ig_link"]}</a>'
         if r.get('video') and r.get('permalink') else ''
@@ -446,10 +458,8 @@ def media_html(r, title, lang='ko'):
             f'<img src="{esc(u)}" alt="{esc(title)} {i+1}" loading="lazy">'
             for i, u in enumerate(imgs[1:], start=1)
         ) + '</div>'
-    return (
-        f'<div class="recipe-photo"><img src="{esc(imgs[0])}" alt="{esc(title)}"></div>'
-        + video_html + ig_link_html + thumbs
-    )
+    photo_html = f'<div class="recipe-photo"><img src="{esc(imgs[0])}" alt="{esc(title)}"></div>' if imgs else ''
+    return photo_html + video_html + ig_link_html + thumbs
 
 
 def json_ld(r, url, title, intro=None, ingredients=None, steps=None, lang='ko'):
@@ -516,7 +526,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{rel}/styles.css">
+<link rel="stylesheet" href="{rel}/styles.css?v={asset_version}">
 <style>
   .recipe-page{{max-width:1080px; margin:0 auto; padding:0 20px 20px;}}
   .recipe-breadcrumb{{max-width:1080px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; color:var(--text-2); border-bottom:1px solid var(--rule);}}
@@ -530,6 +540,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-photo{{width:100%; aspect-ratio:3/4; border-radius:2px; overflow:hidden; margin-bottom:0; background:var(--line);}}
   .recipe-photo img{{width:100%; height:100%; object-fit:cover; display:block;}}
   .recipe-video{{width:100%; display:block; border-radius:2px; margin-top:10px;}}
+  .recipe-video-solo{{margin-top:0; aspect-ratio:3/4; object-fit:cover; background:var(--line);}}
   .recipe-ig-link{{display:inline-block; font-size:12.5px; color:var(--green-dark); text-decoration:none; margin-top:8px;}}
   .recipe-ig-link:hover{{text-decoration:underline;}}
   .recipe-thumbs{{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}}
@@ -567,6 +578,10 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
   .recipe-other-years-head h2{{margin:0; font-family:'Noto Serif KR',serif; font-size:20px; font-weight:900; text-transform:none; letter-spacing:0; color:var(--ink);}}
   .recipe-other-years-head a{{font-size:13px; color:var(--green-dark); text-decoration:none;}}
   .recipe-other-years-head a:hover{{text-decoration:underline;}}
+  .recipe-same-day{{margin:0 0 22px; padding:14px 18px; background:var(--mint); font-size:13.5px; color:var(--text-2);}}
+  .recipe-same-day a{{color:var(--green-dark); font-weight:700; text-decoration:none;}}
+  .recipe-same-day a:hover{{text-decoration:underline;}}
+  .recipe-same-day a + a{{margin-left:10px;}}
   .recipe-other-years-grid{{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;}}
   .recipe-other-years-grid a{{display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--ink);}}
   .recipe-other-years-grid img,.recipe-other-years-grid .card-thumb{{width:100%; aspect-ratio:1; object-fit:cover; margin-bottom:0;}}
@@ -604,13 +619,20 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 <body>
 <div class="wrap">
   <header class="site-header">
-    <a href="{rel}/index.html" class="site-header-logo">{site_name}</a>
     <nav class="site-header-nav" aria-label="주요 메뉴">
-      <a href="{rel}/archive.html">{archive_back_label}</a>
-      <a href="{rel}/vote.html">{hall_label}</a>
-      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">{brunch_label}</a>
+      <a href="{rel}/index.html">{nav_home_label}</a>
     </nav>
-    {lang_switch_html}
+    <div class="nav-right">
+      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="channel-links" id="channelLinks">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
+      </div>
+      {lang_switch_html}
+    </div>
   </header>
 </div>
 
@@ -646,6 +668,7 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 
     {cook_grid_section}
 
+    {same_day_section}
     {other_years_section}
 
     <nav aria-label="이전·다음 기록" class="recipe-daynav">
@@ -666,8 +689,9 @@ PAGE_TEMPLATE = """<!DOCTYPE html>
 {mobile_bar_html}
 
 {json_ld}
-<script src="{rel}/cookmode.js"></script>
-<script src="{rel}/recipe.js"></script>
+<script src="{rel}/shared.js?v={asset_version}"></script>
+<script src="{rel}/cookmode.js?v={asset_version}"></script>
+<script src="{rel}/recipe.js?v={asset_version}"></script>
 <script>
 (function () {{
   var btn = document.getElementById('shareBtn');
@@ -842,6 +866,23 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
             if mobile_jump_html or mobile_ig_link else ''
         )
 
+        # A day can have more than one post (see day_secondary) - prev/next
+        # and the "other years" grid both skip these siblings now, so
+        # surface them here instead or they'd be unreachable from this page.
+        same_date_idxs = [j for j in include if j != idx and live[j].get('date') == r.get('date')]
+        if same_date_idxs:
+            sd_links = []
+            for j in same_date_idxs:
+                other_r = live[j]
+                other_en = other_r.get('_en') or {}
+                other_title = (other_en.get('title') or display_title(other_r)) if lang == 'en' else display_title(other_r)
+                sd_links.append(f'<a href="{esc(ids[j])}.html">{esc(other_title)} →</a>')
+            same_day_section = (
+                f'<div class="recipe-same-day">{labels["same_day_note"]} ' + ' '.join(sd_links) + '</div>'
+            )
+        else:
+            same_day_section = ''
+
         other_year_idxs = find_other_years(live, include, idx)
         if other_year_idxs:
             oy_cards = []
@@ -866,8 +907,19 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
         else:
             other_years_section = ''
 
-        if pos > 0:
-            prev_idx = include[pos - 1]
+        # Skip past any sibling post(s) sharing this record's own date (see
+        # day_secondary) so "전날/다음날" always lands on a genuinely
+        # different calendar day instead of mislabeling a same-day sibling.
+        cur_date = r.get('date')
+        prev_pos = pos - 1
+        while prev_pos >= 0 and live[include[prev_pos]].get('date') == cur_date:
+            prev_pos -= 1
+        next_pos = pos + 1
+        while next_pos < len(include) and live[include[next_pos]].get('date') == cur_date:
+            next_pos += 1
+
+        if prev_pos >= 0:
+            prev_idx = include[prev_pos]
             prev_r = live[prev_idx]
             prev_href = f'{ids[prev_idx]}.html'
             prev_title = (prev_r.get('_en') or {}).get('title') if lang == 'en' else None
@@ -878,8 +930,8 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
             )
         else:
             prev_href, prev_block = '#', ''
-        if pos < len(include) - 1:
-            next_idx = include[pos + 1]
+        if next_pos < len(include):
+            next_idx = include[next_pos]
             next_r = live[next_idx]
             next_href = f'{ids[next_idx]}.html'
             next_title = (next_r.get('_en') or {}).get('title') if lang == 'en' else None
@@ -910,10 +962,10 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
 
         html_out = PAGE_TEMPLATE.format(
             html_lang=lang, title_suffix=labels['title_suffix'], site_name=labels['site_name'],
-            title=esc(title), description=esc(description), url=url, rel=rel,
+            title=esc(title), description=esc(description), url=url, rel=rel, asset_version=ASSET_VERSION,
             hreflang_tags=hreflang_tags, robots_meta=robots_meta, lang_switch_html=lang_switch_html,
             archive_back_label=labels['archive_back'],
-            hall_label=labels['hall'], brunch_label=labels['brunch'],
+            nav_home_label=labels['nav_home'],
             year_label=esc(year_label), month_day_label=esc(month_day), full_date_label=esc(full_date),
             privacy_href=privacy_href, footer_privacy_label=labels['footer_privacy'],
             og_image=og_image, twitter_image=twitter_image, ad_verify_script=AD_VERIFY_SCRIPT,
@@ -924,6 +976,7 @@ def build_pages(live, ids, lang='ko', medal_winners=None):
             ig_link_top=ig_link_top, mobile_bar_html=mobile_bar_html,
             kcal_block=kcal_block,
             intro_section=intro_section, cook_grid_section=cook_grid_section, cook_section=cook_section,
+            same_day_section=same_day_section,
             other_years_section=other_years_section,
             credit_section=credit_section, tags_section=tags_section,
             prev_href=prev_href, prev_block=prev_block, next_href=next_href, next_block=next_block,

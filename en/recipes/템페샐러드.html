@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="../../styles.css?v=20260927h">
 <style>
   .recipe-page{max-width:1080px; margin:0 auto; padding:0 20px 20px;}
   .recipe-breadcrumb{max-width:1080px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; color:var(--text-2); border-bottom:1px solid var(--rule);}
@@ -41,6 +41,7 @@
   .recipe-photo{width:100%; aspect-ratio:3/4; border-radius:2px; overflow:hidden; margin-bottom:0; background:var(--line);}
   .recipe-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .recipe-video{width:100%; display:block; border-radius:2px; margin-top:10px;}
+  .recipe-video-solo{margin-top:0; aspect-ratio:3/4; object-fit:cover; background:var(--line);}
   .recipe-ig-link{display:inline-block; font-size:12.5px; color:var(--green-dark); text-decoration:none; margin-top:8px;}
   .recipe-ig-link:hover{text-decoration:underline;}
   .recipe-thumbs{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}
@@ -78,6 +79,10 @@
   .recipe-other-years-head h2{margin:0; font-family:'Noto Serif KR',serif; font-size:20px; font-weight:900; text-transform:none; letter-spacing:0; color:var(--ink);}
   .recipe-other-years-head a{font-size:13px; color:var(--green-dark); text-decoration:none;}
   .recipe-other-years-head a:hover{text-decoration:underline;}
+  .recipe-same-day{margin:0 0 22px; padding:14px 18px; background:var(--mint); font-size:13.5px; color:var(--text-2);}
+  .recipe-same-day a{color:var(--green-dark); font-weight:700; text-decoration:none;}
+  .recipe-same-day a:hover{text-decoration:underline;}
+  .recipe-same-day a + a{margin-left:10px;}
   .recipe-other-years-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;}
   .recipe-other-years-grid a{display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--ink);}
   .recipe-other-years-grid img,.recipe-other-years-grid .card-thumb{width:100%; aspect-ratio:1; object-fit:cover; margin-bottom:0;}
@@ -115,13 +120,20 @@
 <body>
 <div class="wrap">
   <header class="site-header">
-    <a href="../../index.html" class="site-header-logo">Breakfast, Every Day</a>
     <nav class="site-header-nav" aria-label="주요 메뉴">
-      <a href="../../archive.html">Archive</a>
-      <a href="../../vote.html">Hall of Fame</a>
-      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
+      <a href="../../index.html">← Home</a>
     </nav>
-    <a href="https://how-about-breakfast.com/recipes/템페샐러드.html" class="lang-switch">KO</a>
+    <div class="nav-right">
+      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="channel-links" id="channelLinks">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
+      </div>
+      <a href="https://how-about-breakfast.com/recipes/템페샐러드.html" class="lang-switch">KO</a>
+    </div>
   </header>
 </div>
 
@@ -161,6 +173,7 @@ An approx. 350kcal #tempehsalad where my jaw dropped — the crunchy romaine pai
 
 ☝️For the fried tempeh: blend 3 cloves garlic</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="8"><span class="recipe-ing-name">1 red chili and 1/3 scallion</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="9"><span class="recipe-ing-name">5T starch</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="10"><span class="recipe-ing-name">50ml water</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="11"><span class="recipe-ing-name">1t salt</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="12"><span class="recipe-ing-name">1t dashida</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="13"><span class="recipe-ing-name">1t basil powder</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="14"><span class="recipe-ing-name">1/4t baking powder in a blender</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="15"><span class="recipe-ing-name">then add the tempeh and fry.</span></label></li></ul><p class="recipe-checklist-note">Check items off while grocery shopping - it’s remembered here.</p></div><div class="recipe-cook-col"><h2>Steps</h2><ol class="recipe-step-list"><li><span class="recipe-step-num">01</span><p class="recipe-step-text">Tear the mini romaine into bite-sized pieces by hand.</p></li><li><span class="recipe-step-num">02</span><p class="recipe-step-text">Microwave yesterday&#x27;s fried-chicken-style tempeh for 30 seconds, then cut in half.</p></li><li><span class="recipe-step-num">03</span><p class="recipe-step-text">Prep the cherry tomatoes and apple jujubes as well.</p></li><li><span class="recipe-step-num">04</span><p class="recipe-step-text">Mix 2T yogurt, 1t Dijon mustard, 1t white wine vinegar, salt, and pepper thoroughly.</p></li><li><span class="recipe-step-num">05</span><p class="recipe-step-text">In a bowl, combine the mini romaine, fried tempeh, cherry tomatoes and apple jujubes, and top with the dressing.</p></li></ol></div></section>
 
+    
     <section class="recipe-other-years"><div class="recipe-other-years-head"><h2>Other years, Nov 3</h2><a href="../../archive.html?date=11-03">See all →</a></div><div class="recipe-other-years-grid"><a href="땅콩호박.html"><img src="https://images.how-about-breakfast.com/images/1221.jpg" alt="" loading="lazy"><span class="oy-year">2024</span><span class="oy-title">Butternut Squash</span></a><a href="페스토볶음밥-볶음밥-페스토.html"><img src="https://images.how-about-breakfast.com/images/585.jpg" alt="" loading="lazy"><span class="oy-year">2022</span><span class="oy-title">Pesto Fried Rice</span></a><a href="영귤쇼유코우지-로메인샐러드-모닝리추얼.html"><img src="https://images.how-about-breakfast.com/images/257.jpg" alt="" loading="lazy"><span class="oy-year">2021</span><span class="oy-title">Citrus Shoyu Koji Romaine Salad, Morning Ritual</span></a><a href="시티팝-디깅클럽서울-그린빈.html"><img src="https://images.how-about-breakfast.com/images/pre-101.jpg" alt="" loading="lazy"><span class="oy-year">2020</span><span class="oy-title">City Pop, Digging Club Seoul, and a Green Bean Salad</span></a></div></section>
 
     <nav aria-label="이전·다음 기록" class="recipe-daynav">
@@ -181,8 +194,9 @@ An approx. 350kcal #tempehsalad where my jaw dropped — the crunchy romaine pai
 <div class="recipe-mobile-bar"><a href="#cookGrid" class="recipe-mobile-jump">Jump to ingredients</a></div>
 
 <script type="application/ld+json">{"@context": "https://schema.org/", "@type": "Recipe", "name": "#TempehSalad", "url": "https://how-about-breakfast.com/en/recipes/템페샐러드.html", "image": ["https://images.how-about-breakfast.com/images/1550.jpg", "https://images.how-about-breakfast.com/images/1550_2.jpg", "https://images.how-about-breakfast.com/images/1550_3.jpg"], "author": {"@type": "Person", "name": "나조식", "sameAs": ["https://www.instagram.com/how.about.breakfast/", "https://www.youtube.com/@How.about.breakfast"]}, "recipeYield": "1 serving", "datePublished": "2025-11-03", "description": "Romaine is torn by hand rather than cut with a knife, because cutting damages the leaf cells at the cut edge, making that part soggy and prone to oxid", "recipeIngredient": ["1 mini romaine", "fried tempeh", "cherry tomatoes and apple jujubes as much as you like", "(dressing) 2T yogurt", "1t Dijon mustard", "1t white wine vinegar", "salt", "pepper\n\n☝️For the fried tempeh: blend 3 cloves garlic", "1 red chili and 1/3 scallion", "5T starch", "50ml water", "1t salt", "1t dashida", "1t basil powder", "1/4t baking powder in a blender", "then add the tempeh and fry."], "recipeInstructions": [{"@type": "HowToStep", "text": "Tear the mini romaine into bite-sized pieces by hand."}, {"@type": "HowToStep", "text": "Microwave yesterday's fried-chicken-style tempeh for 30 seconds, then cut in half."}, {"@type": "HowToStep", "text": "Prep the cherry tomatoes and apple jujubes as well."}, {"@type": "HowToStep", "text": "Mix 2T yogurt, 1t Dijon mustard, 1t white wine vinegar, salt, and pepper thoroughly."}, {"@type": "HowToStep", "text": "In a bowl, combine the mini romaine, fried tempeh, cherry tomatoes and apple jujubes, and top with the dressing."}], "keywords": "레시피, 조식, 조식다이어리, 템페, 템페샐러드", "nutrition": {"@type": "NutritionInformation", "calories": "350 kcal"}}</script>
-<script src="../../cookmode.js"></script>
-<script src="../../recipe.js"></script>
+<script src="../../shared.js?v=20260927h"></script>
+<script src="../../cookmode.js?v=20260927h"></script>
+<script src="../../recipe.js?v=20260927h"></script>
 <script>
 (function () {
   var btn = document.getElementById('shareBtn');

@@ -13,7 +13,7 @@
 
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
 <meta property="og:type" content="article">
-<meta property="og:site_name" content="날마다, 조식">
+<meta property="og:site_name" content="날마다 조식">
 <meta property="og:title" content="#애호박둥지 덮밥">
 <meta property="og:description" content="#당근둥지 (3.1.), #적양배추둥지 (3.12.)에 이어 #애호박둥지 를 오늘은 덮밥으로. 원래 고요하고 잔잔하게 오븐에 구울 예정이었으나 좀 더 격렬한 영상으로 어그로를 끌어보고자 1개는 팬에 구웠다. 조식치고는 꽤 격렬한 영상을 스토리에 올렸더니 평소보다 좋아요">
 <meta property="og:url" content="https://how-about-breakfast.com/recipes/애호박둥지-덮밥.html">
@@ -27,7 +27,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Noto+Serif+KR:wght@700;900&family=Noto+Sans+KR:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="../styles.css?v=20260927h">
 <style>
   .recipe-page{max-width:1080px; margin:0 auto; padding:0 20px 20px;}
   .recipe-breadcrumb{max-width:1080px; margin:0 auto; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; font-size:13.5px; color:var(--text-2); border-bottom:1px solid var(--rule);}
@@ -41,6 +41,7 @@
   .recipe-photo{width:100%; aspect-ratio:3/4; border-radius:2px; overflow:hidden; margin-bottom:0; background:var(--line);}
   .recipe-photo img{width:100%; height:100%; object-fit:cover; display:block;}
   .recipe-video{width:100%; display:block; border-radius:2px; margin-top:10px;}
+  .recipe-video-solo{margin-top:0; aspect-ratio:3/4; object-fit:cover; background:var(--line);}
   .recipe-ig-link{display:inline-block; font-size:12.5px; color:var(--green-dark); text-decoration:none; margin-top:8px;}
   .recipe-ig-link:hover{text-decoration:underline;}
   .recipe-thumbs{display:flex; gap:6px; flex-wrap:wrap; margin-top:10px;}
@@ -78,6 +79,10 @@
   .recipe-other-years-head h2{margin:0; font-family:'Noto Serif KR',serif; font-size:20px; font-weight:900; text-transform:none; letter-spacing:0; color:var(--ink);}
   .recipe-other-years-head a{font-size:13px; color:var(--green-dark); text-decoration:none;}
   .recipe-other-years-head a:hover{text-decoration:underline;}
+  .recipe-same-day{margin:0 0 22px; padding:14px 18px; background:var(--mint); font-size:13.5px; color:var(--text-2);}
+  .recipe-same-day a{color:var(--green-dark); font-weight:700; text-decoration:none;}
+  .recipe-same-day a:hover{text-decoration:underline;}
+  .recipe-same-day a + a{margin-left:10px;}
   .recipe-other-years-grid{display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:20px;}
   .recipe-other-years-grid a{display:flex; flex-direction:column; gap:8px; text-decoration:none; color:var(--ink);}
   .recipe-other-years-grid img,.recipe-other-years-grid .card-thumb{width:100%; aspect-ratio:1; object-fit:cover; margin-bottom:0;}
@@ -115,13 +120,20 @@
 <body>
 <div class="wrap">
   <header class="site-header">
-    <a href="../index.html" class="site-header-logo">날마다, 조식</a>
     <nav class="site-header-nav" aria-label="주요 메뉴">
-      <a href="../archive.html">아카이브</a>
-      <a href="../vote.html">명예의 전당</a>
-      <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">브런치북</a>
+      <a href="../index.html">← 홈으로</a>
     </nav>
-    <a href="https://how-about-breakfast.com/en/recipes/애호박둥지-덮밥.html" class="lang-switch">EN</a>
+    <div class="nav-right">
+      <button type="button" class="channel-toggle" id="channelToggle" aria-expanded="false" aria-controls="channelLinks" aria-label="채널 링크 메뉴">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="channel-links" id="channelLinks">
+        <a href="https://www.instagram.com/how.about.breakfast/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@How.about.breakfast" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://brunch.co.kr/brunchbook/dailybreakfast" target="_blank" rel="noopener">Brunch</a>
+      </div>
+      <a href="https://how-about-breakfast.com/en/recipes/애호박둥지-덮밥.html" class="lang-switch">EN</a>
+    </div>
   </header>
 </div>
 
@@ -160,6 +172,7 @@
 
     <section class="recipe-cook-grid" id="cookGrid"><div class="recipe-cook-col"><h2>재료</h2><ul class="recipe-ing-list" id="ingList" data-recipe-id="애호박둥지-덮밥"><li><label><input type="checkbox" class="recipe-ing-check" data-idx="0"><span class="recipe-ing-name">밥 1/2공기, 애호박 1개, 소금, 후추, 슈레드치즈 조금, 계란 1개, 스리라차 소스</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="1"><span class="recipe-ing-name">*애호박 1개에 약 3~4개 분량의 둥지가 생산됩니다.</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="2"><span class="recipe-ing-name">👉이렇게</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="3"><span class="recipe-ing-name">1. 애호박 1개, 흐르는 물에 씻고 스파이럴라이저로 돌려깎기한다.</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="4"><span class="recipe-ing-name">2. 달군 팬에 오일 두르고 애호박을 얹은 뒤 둥지모양으로 만들고 소금, 후추, 슈레드치즈와 계란 얹고 굽는다. (고요하게 잔잔하게 드실 분들은 180도 오븐에 10분~15분 구워서 드시면 됩니다.)</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="5"><span class="recipe-ing-name">3. 밥 위에 얹고 스리라차 소스로 마무리한다.</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="6"><span class="recipe-ing-name">Inspired by @neighbourmart</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="7"><span class="recipe-ing-name">#조식 #레시피 #미라클모닝 #애호박 #BKKDW2025 #CEA #TravelSizedSavory</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="8"><span class="recipe-ing-name"></span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="9"><span class="recipe-ing-name">해녀들이 잠수한 후 물 위로 나와 숨을 고를 때 내는 소리를 숨비소리라 한다. 마치 휘파람을 부는 것처럼 들리는데 이는 몸속의 이산화탄소를 한꺼번에 내뿜고 산소를 들이마시는 과정에서 자연스레 나는 소리다.</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="10"><span class="recipe-ing-name">방콕 디자인위크에 다녀온 지인의 선물을 받았다. 태국 음식에 사용되는 6가지 소스가 담긴 패키지인데 역시 디자인위크 답게 골저스하다. 그 가운데 하나 black soy sauce를 뜯었다. 약 400kcal #팟씨유</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="11"><span class="recipe-ing-name">팟씨유는 왠만하면 라이스누들로 만듭시다. 당면 비추🥲🙃🤫</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="12"><span class="recipe-ing-name">👉당면 적당히, 마늘 2개, 케일 10장, 쪽파 1뿌리, 표고버섯 5개, 소금, 백후추, 계란 1개, (소스) 간장 1/2T, 설탕 1/2T, 피쉬소스 1/2T, 굴소스 1T, 노두유 1.5T</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="13"><span class="recipe-ing-name">(소스는 2~3T 넣고 간을 본 뒤 추가)</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="14"><span class="recipe-ing-name">👉이렇게</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="15"><span class="recipe-ing-name">1. 오늘은 쌀국수 대신 당면으로. 따뜻한 물에 넓은 당면 담가 놓는다.</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="16"><span class="recipe-ing-name">2. 마늘 2개 다지고, 케일은 10장 정도 먹기 좋은 크기로, 쪽파 1뿌리 잘게 썬다. 고기 대신 준비한 표고버섯은 큼지막하게 5개 썬다.</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="17"><span class="recipe-ing-name">3. 달군 팬에 오일 두르고 표고버섯과 소금, 후추 넣고 볶아서 덜어 놓는다. (고기 대신 사용)</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="18"><span class="recipe-ing-name">4. 같은 팬에 오일 좀 더 두르고 다진 마늘 넣고 볶다가 케일 넣고 숨이 죽으면 당면과 소스 넣고 볶는다.</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="19"><span class="recipe-ing-name">5. 팬 한켠에 오일 두르고 계란 1개 넣고 볶다가 한꺼번에 섞어 볶는다. 표고버섯도 넣고 함께 볶는다.</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="20"><span class="recipe-ing-name">6. 접시에 담고 백후추, 쪽파 얹는다.</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="21"><span class="recipe-ing-name">Inspired by @neighbourmart</span></label></li><li><label><input type="checkbox" class="recipe-ing-check" data-idx="22"><span class="recipe-ing-name">#조식 #레시피 #미라클모닝 #팟씨유 #BKKDW2025 #CEA #TravelSizedSavory</span></label></li></ul><p class="recipe-checklist-note">장 볼 때 체크해 두면 표시가 남아요.</p></div></section>
 
+    
     <section class="recipe-other-years"><div class="recipe-other-years-head"><h2>다른 해의 4월 1일</h2><a href="../archive.html?date=04-01">모두 보기 →</a></div><div class="recipe-other-years-grid"><a href="날아갈-듯-가벼운-토마토-두부-베지볼-Tomato-Tofu-Vegie-Ball.html"><img src="https://images.how-about-breakfast.com/images/1679.jpg" alt="" loading="lazy"><span class="oy-year">2026</span><span class="oy-title">날아갈 듯 가벼운 토마토 두부 베지볼 Tomato Tofu Vegie Ball</span></a><a href="완두콩후무스-흔한채소가흔하지않은술안주가되었습니다-완두콩.html"><img src="https://images.how-about-breakfast.com/images/1020.jpg" alt="" loading="lazy"><span class="oy-year">2024</span><span class="oy-title">완두콩후무스 흔한채소가흔하지않은술안주가되었습니다 완두콩</span></a><a href="오징어먹물냉파스타-냉파스타.html"><div class="card-thumb"></div><span class="oy-year">2023</span><span class="oy-title">오징어먹물냉파스타 냉파스타</span></a><a href="블루베리오트밀-모닝리추얼-모닝루틴.html"><img src="https://images.how-about-breakfast.com/images/397.jpg" alt="" loading="lazy"><span class="oy-year">2022</span><span class="oy-title">블루베리오트밀 모닝리추얼 모닝루틴</span></a></div></section>
 
     <nav aria-label="이전·다음 기록" class="recipe-daynav">
@@ -180,8 +193,9 @@
 <div class="recipe-mobile-bar"><a href="#cookGrid" class="recipe-mobile-jump">재료로 이동</a></div>
 
 
-<script src="../cookmode.js"></script>
-<script src="../recipe.js"></script>
+<script src="../shared.js?v=20260927h"></script>
+<script src="../cookmode.js?v=20260927h"></script>
+<script src="../recipe.js?v=20260927h"></script>
 <script>
 (function () {
   var btn = document.getElementById('shareBtn');
