@@ -1,5 +1,36 @@
 [
  {
+  "date": "2026-09-30",
+  "date_raw": "20260930",
+  "diary_no": 1879,
+  "weather": "18도/맑움",
+  "failed": false,
+  "calories": 495,
+  "title": "토마토 연두부 파스타",
+  "credit": "@everylife.cooking",
+  "hashtags": [
+   "레시피",
+   "조식",
+   "조식다이어리",
+   "토마토"
+  ],
+  "intro": "20260930 #조식다이어리 1851, 18도/맑움\n페타치즈 없는 페타치즈 파스타\n플레이트에 토마토, 페타치즈, 파스타 넣고 한꺼번에 으깨서 비벼 먹는 Jenni Häyrinen @liemessa 의 페타 파스타가 전 세계적으로 유명세를 탄 게 2021년의 일이다. 그동안 실로 다양한 종류의 페타치즈 파스타가 출현한 가운데 오늘은 페타치즈 대신에 연두부로, 약 495kcal 토마토 연두부 파스타",
+  "ingredients": "- 리가토니 1컵 \n- 토마토 150g\n- 연두부 1개(120g)\n- 마늘 2쪽\n- 올리브오일 2t\n- 건조 허브 2t\n- 소금 2t\n- 미소 1t\n- 레몬소금 1/4t\n- 레몬 1/2개(레몬조각, 레몬제스트, 레몬주스 1t)\n- 후추\n- 파슬리",
+  "steps": "1. 밧드에 내키는대로 썬 토마토 150g, 통마늘 2쪽, 올리브오일 2t, 건조 허브 2t, 레몬 2조각 담고 200도 오븐에 15분 굽는다. 연두부, 레몬소금 1/4t, 미소 1t 넣고 5분 더 굽는다. \n2. 끓는 물에 소금 2t 넣고 리가토니를 삶는다. \n3. 1의 밧드에 삶은 리가토니와 파슬리, 레몬주스 1t, 레몬제스트, 후추 넣고 골고루 섞는다.",
+  "raw": "20260930 #조식다이어리 1851, 18도/맑움\n\n페타치즈 없는 페타치즈 파스타\n\n플레이트에 토마토, 페타치즈, 파스타 넣고 한꺼번에 으깨서 비벼 먹는 Jenni Häyrinen @liemessa 의 페타 파스타가 전 세계적으로 유명세를 탄 게 2021년의 일이다. 그동안 실로 다양한 종류의 페타치즈 파스타가 출현한 가운데 오늘은 페타치즈 대신에 연두부로, 약 495kcal 토마토 연두부 파스타\n\n👉재료\n- 리가토니 1컵 \n- 토마토 150g\n- 연두부 1개(120g)\n- 마늘 2쪽\n- 올리브오일 2t\n- 건조 허브 2t\n- 소금 2t\n- 미소 1t\n- 레몬소금 1/4t\n- 레몬 1/2개(레몬조각, 레몬제스트, 레몬주스 1t)\n- 후추\n- 파슬리\n\n👉조리\n1. 밧드에 내키는대로 썬 토마토 150g, 통마늘 2쪽, 올리브오일 2t, 건조 허브 2t, 레몬 2조각 담고 200도 오븐에 15분 굽는다. 연두부, 레몬소금 1/4t, 미소 1t 넣고 5분 더 굽는다. \n2. 끓는 물에 소금 2t 넣고 리가토니를 삶는다. \n3. 1의 밧드에 삶은 리가토니와 파슬리, 레몬주스 1t, 레몬제스트, 후추 넣고 골고루 섞는다. \n\nInspired by @everylife.cooking\n\n#조식 #레시피 #토마토",
+  "permalink": "https://www.instagram.com/p/Dd6f117nb8S/",
+  "image": "https://images.how-about-breakfast.com/images/1879.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1879.jpg",
+   "https://images.how-about-breakfast.com/images/1879_2.jpg",
+   "https://images.how-about-breakfast.com/images/1879_3.jpg",
+   "https://images.how-about-breakfast.com/images/1879_4.jpg",
+   "https://images.how-about-breakfast.com/images/1879_5.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1879.mp4",
+  "page_id": "토마토-연두부-파스타"
+ },
+ {
   "date": "2026-09-29",
   "date_raw": "20260929",
   "diary_no": 1878,
@@ -12684,7 +12715,7 @@
   "weather": "27도/흐림",
   "failed": false,
   "calories": null,
-  "title": "태국식아침디저트 디저트",
+  "title": "치앙라이 스타일 조식",
   "credit": null,
   "hashtags": [
    "디저트",
@@ -12694,18 +12725,11 @@
    "태국식아침디저트"
   ],
   "intro": "20251003 #조식다이어리 1522, 27도/흐림\n좋은 식재료가 전부다. #태국식아침디저트",
-  "ingredients": "계란, 바나나, 자색 고구마 등등",
+  "ingredients": "- 계란 3개\n- 바나나 2개\n- 자색 고구마 2개\n- 꿀 1T",
   "steps": "1. 바나나잎을 접어서 꼬치로 고정시키고 계란을 넣는다. 약불에 얹어서 천천히 익힌다. \n2. 바나나, 자색 고구마도 약불에 굽는다. \n3. 접시에 바나나 잎 깔고 1의 계란프라이, 구운 바나나, 자색 고구마 담는다. 꿀 조금 곁들인다.",
   "raw": "20251003 #조식다이어리 1522, 27도/흐림\n\n좋은 식재료가 전부다. #태국식아침디저트\n\n👉 재료\n계란, 바나나, 자색 고구마 등등\n\n👉 조리\n1. 바나나잎을 접어서 꼬치로 고정시키고 계란을 넣는다. 약불에 얹어서 천천히 익힌다. \n2. 바나나, 자색 고구마도 약불에 굽는다. \n3. 접시에 바나나 잎 깔고 1의 계란프라이, 구운 바나나, 자색 고구마 담는다. 꿀 조금 곁들인다. \n\n#조식 #레시피 #디저트",
   "image": "https://images.how-about-breakfast.com/images/11122.jpg",
   "video": "https://images.how-about-breakfast.com/images/1522.mp4",
-  "_en": {
-   "hash": "74cde56c51fa4fc2e8b9806e34edfedf744f470047c3e2d0e3b9fb723dc31b64",
-   "title": "Thai-Style Breakfast Dessert",
-   "intro": "20251003 #breakfastdiary day 1522, 27°C/cloudy\nGood ingredients are everything. #thaistylebreakfastdessert",
-   "ingredients": "Egg, banana, purple sweet potato, etc.",
-   "steps": "1. Fold a banana leaf and secure it with a skewer, then crack an egg into it. Cook slowly over low heat.\n2. Also grill the banana and purple sweet potato slowly over low heat.\n3. Line a plate with banana leaf and arrange the fried egg from step 1, grilled banana, and purple sweet potato. Serve with a little honey on the side."
-  },
   "page_id": "태국식아침디저트-디저트"
  },
  {
@@ -25396,7 +25420,7 @@
   "weather": "15도/맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "알프레도파스타 크림파스타",
+  "title": "알프레도 파스타",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25407,8 +25431,8 @@
    "크림파스타"
   ],
   "intro": "20241003 #조식다이어리 1194, 15도/맑음, 20분/운동(M) \n \n페투치네는 넓직한 면에 소스가 충분히 묻어날 수 있도록 #알프레도파스타 로 먹어야 한다.",
-  "ingredients": "페투치네\n생크림 1컵\n양송이버섯 4개\n마늘 1개\n\n👉이렇게\n끓는 물에 소금소금 페투치네를 삶는다. \n달군 팬에 버터, 다진 마늘 넣고 얇게 썬 양송이버섯과 올리브오일 넣고 볶는다. \n생크림 1컵 넣고 삶은 페투치네와 면수 1컵 붓고 저어가며 끓인다. \n불끄고 만테까레, 접시에 담아 맛있게 먹는다. \n\n#조식 #레시피 #미라클모닝 #크림파스타",
-  "steps": null,
+  "ingredients": "- 페투치네 1/2인분\n- 생크림 1컵\n- 버터 5g\n- 양송이버섯 4개\n- 마늘 1개\n- 올리브오일\n- 소금",
+  "steps": "1. 끓는 물에 소금 1/2T 넣고 페투치네를 삶는다. \n2. 팬에 올리브오일 2t, 버터 5g, 다진 마늘 1t 넣고 얇게 썬 양송이버섯을 볶는다. \n3. 2에 생크림 1컵, 1의 삶은 페투치네와 면수 1컵 붓고 저어가며 끓인다. \n4. 불끄고 만테까레, 접시에 담아 맛있게 먹는다. ",
   "raw": "20241003 #조식다이어리 1194, 15도/맑음, 20분/운동(M) \n \n페투치네는 넓직한 면에 소스가 충분히 묻어날 수 있도록 #알프레도파스타 로 먹어야 한다. \n\n👉재료는\n페투치네\n생크림 1컵\n양송이버섯 4개\n마늘 1개\n\n👉이렇게\n끓는 물에 소금소금 페투치네를 삶는다. \n달군 팬에 버터, 다진 마늘 넣고 얇게 썬 양송이버섯과 올리브오일 넣고 볶는다. \n생크림 1컵 넣고 삶은 페투치네와 면수 1컵 붓고 저어가며 끓인다. \n불끄고 만테까레, 접시에 담아 맛있게 먹는다. \n\n#조식 #레시피 #미라클모닝 #크림파스타",
   "image": "https://images.how-about-breakfast.com/images/1194.jpg",
   "gallery": [
@@ -25419,13 +25443,6 @@
    "https://images.how-about-breakfast.com/images/1194_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1194.mp4",
-  "_en": {
-   "hash": "12a5d176809b30148c7f2e3902c88cc69b63b82959e12d51832e481e9fd07cc9",
-   "title": "Alfredo pasta, cream pasta",
-   "intro": "20241003 #breakfastdiary 1194, 15°C/clear, 20 min/exercise(M) \n \nFettuccine, with its wide noodles that hold sauce so well, deserves to be eaten as #alfredopasta.",
-   "ingredients": "Fettuccine\nHeavy cream, 1 cup\nCremini mushrooms, 4\nGarlic, 1 clove\n\n👉Like this\nBoil the fettuccine in salted water.\nIn a hot pan, add butter and minced garlic, then sauté thinly sliced mushrooms with olive oil.\nAdd 1 cup heavy cream, then pour in the boiled fettuccine and 1 cup pasta water, stirring as it simmers.\nTurn off the heat, mantecare, and plate it up to enjoy.\n\n#breakfast #recipe #miraclemorning #creampasta",
-   "steps": ""
-  },
   "page_id": "알프레도파스타-크림파스타"
  },
  {
@@ -25435,7 +25452,7 @@
   "weather": "11도/대체로 흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "바게트",
+  "title": "토마토 버섯 토스트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25444,9 +25461,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20241002 #조식다이어리 1193, 11도/대체로 흐림, 20분/운동(M) \n \n아침 기온이 10도나 떨어졌다. \n구운 양송이버섯을 얹은 #바게트",
-  "ingredients": "바게트 1/4개\n토마토 페이스트\n양송이버섯 3개\n방울토마토2~3개\n\n👉이렇게\n양송이버섯은 얇게 잘라서 달군 팬에 올리브오일 두르고 소금소금 후추후추 허브허브 굽는다. \n바게트는 세로로 자르고 다시 가로로 단면이 보이도록 자른다음 올리브오일 발라서 180도 에프에 5분 굽는다. \n바게트 위에 토마토 페이스트와 버섯, 방울토마토 얹어서 맛있게 먹는다. \n\n#조식 #레시피 #미라클모닝 #바게트\n\n-\n\n냉동시켜 두었던 바게트를 꺼내니 돌덩이 같다. 에프에 넣고 잠깐 데웠더니 조금 낫다.",
-  "steps": null,
+  "intro": "20241002 #조식다이어리 1193, 11도/대체로 흐림, 20분/운동(M) \n \n아침 기온이 10도나 떨어졌다. \n냉동시켜 두었던 바게트를 꺼내니 돌덩이 같다. 에프에 넣고 잠깐 데웠더니 조금 낫다.\n\n구운 양송이버섯을 얹은 #바게트",
+  "ingredients": "- 바게트 1/4개\n- 토마토 페이스트 2T\n- 양송이버섯 3개\n- 방울토마토2~3개\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 양송이버섯은 얇게 잘라서 달군 팬에 올리브오일 두르고 소금, 후추, 허브 뿌려서 굽는다. \n2. 바게트는 올리브오일 발라서 180도 에어프라이어에 5분 굽는다. \n3. 2의 바게트 위에 토마토 페이스트 바르고 1의 양송이버섯과 방울토마토 얹는다. ",
   "raw": "20241002 #조식다이어리 1193, 11도/대체로 흐림, 20분/운동(M) \n \n아침 기온이 10도나 떨어졌다. \n\n구운 양송이버섯을 얹은 #바게트\n\n👉재료는\n바게트 1/4개\n토마토 페이스트\n양송이버섯 3개\n방울토마토2~3개\n\n👉이렇게\n양송이버섯은 얇게 잘라서 달군 팬에 올리브오일 두르고 소금소금 후추후추 허브허브 굽는다. \n바게트는 세로로 자르고 다시 가로로 단면이 보이도록 자른다음 올리브오일 발라서 180도 에프에 5분 굽는다. \n바게트 위에 토마토 페이스트와 버섯, 방울토마토 얹어서 맛있게 먹는다. \n\n#조식 #레시피 #미라클모닝 #바게트\n\n-\n\n냉동시켜 두었던 바게트를 꺼내니 돌덩이 같다. 에프에 넣고 잠깐 데웠더니 조금 낫다. ",
   "image": "https://images.how-about-breakfast.com/images/1193.jpg",
   "gallery": [
@@ -25455,13 +25472,6 @@
    "https://images.how-about-breakfast.com/images/1193_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1193.mp4",
-  "_en": {
-   "hash": "5c5b687c981a2e9905645335ca8dfd18f38067bf2d9cf22f79cdc59a34fb55ad",
-   "title": "Baguette",
-   "intro": "20241002 #breakfastdiary 1193, 11°C/mostly cloudy, 20 min/exercise(M) \n \nThe morning temperature dropped a whole 10 degrees. \n#Baguette topped with roasted cremini mushrooms",
-   "ingredients": "Baguette, 1/4\nTomato paste\nCremini mushrooms, 3\nCherry tomatoes, 2-3\n\n👉Like this\nSlice the mushrooms thinly and roast in a hot pan with olive oil, salt, pepper, herbs.\nCut the baguette lengthwise, then again crosswise so the cut side shows, brush with olive oil, and bake at 180°C for 5 minutes.\nTop the baguette with tomato paste, mushrooms, and cherry tomatoes and enjoy.\n\n#breakfast #recipe #miraclemorning #baguette\n\n-\n\nTook the frozen baguette out and it was like a rock. Warmed it briefly in the oven and it got a bit better.",
-   "steps": ""
-  },
   "page_id": "바게트"
  },
  {
@@ -38050,7 +38060,7 @@
   "weather": "18도/맑음",
   "failed": false,
   "calories": null,
-  "title": "무화과",
+  "title": "제철 무화과와 사과를 곁들인 그릭요거트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38060,17 +38070,10 @@
    "조식다이어리"
   ],
   "intro": "20231003, #조식다이어리 863, 18도/맑음\n그릭요거트에 무화과와 사과, 올리브오일",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 그릭요거트 3T\n- 사과 1/4개\n- 무화과 1개\n- 올리브오일 2t",
+  "steps": "1. 그릇에 그릭요거트 3T 담는다. \n2. 무화과 1개 얇게 썰고, 사과 1/4개 썰어서 그릭요거트 위에 얹는다. \n3. 올리브오일 2t 뿌린다. ",
   "raw": "20231003, #조식다이어리 863, 18도/맑음\n\n그릭요거트에 무화과와 사과, 올리브오일 \n\n#조식 #레시피 #미라클모닝 #무화과",
   "image": "https://images.how-about-breakfast.com/images/863.jpg",
-  "_en": {
-   "hash": "ba745c55d735c0df2d6888e42b03a8acfaf4ab937674bb5bf30fa89a2af6ecfc",
-   "title": "Figs",
-   "intro": "20231003, #breakfastdiary 863, 18°C/sunny\nGreek yogurt with figs, apple, and olive oil.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "무화과"
  },
  {
@@ -38080,7 +38083,7 @@
   "weather": "17도/맑음, 60분/운동(W, C)",
   "failed": false,
   "calories": null,
-  "title": "스팸덮밥 스팸",
+  "title": "스팸덮밥",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38091,21 +38094,14 @@
    "조식다이어리"
   ],
   "intro": "20231002, #조식다이어리 862, 17도/맑음, 60분/운동(W, C)\n따뜻한 밥에 스팸 한 조각 🙂\n해외에서 정크푸드 취급을 받는 스팸이 국내에선, 명절에 주고받는 선물이 됐다는 것, (전체 매출의 약 60%가 설과 추석에 집중되어 있다고,) 그건 전적으로 마케팅의 승리다. \n스팸의 앞면은 세로로, 뒷면은 대각선으로 칼집을 내서 팬에 굽는다. (적절히 두껍게 잘라야 분해되지 않는다.) \n갓지은 밥 위에 스팸, 실파 그리고 참기름 조금, #스팸덮밥",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 스팸 2조각\n- 밥 1/2공기\n- 다진쪽파 2t\n- 참기름 1t",
+  "steps": "1. 두툼하게 썬 스팸 2조각 준비해서 앞면은 세로로, 뒷면은 대각선으로 칼집 내고 오일 없이 팬에 굽는다. \n2. 갓지은 밥 위에 1의 스팸 얹고 다진 쪽파와 참기름 조금 얹는다. ",
   "raw": "20231002, #조식다이어리 862, 17도/맑음, 60분/운동(W, C)\n\n따뜻한 밥에 스팸 한 조각 🙂\n\n해외에서 정크푸드 취급을 받는 스팸이 국내에선, 명절에 주고받는 선물이 됐다는 것, (전체 매출의 약 60%가 설과 추석에 집중되어 있다고,) 그건 전적으로 마케팅의 승리다. \n\n스팸의 앞면은 세로로, 뒷면은 대각선으로 칼집을 내서 팬에 굽는다. (적절히 두껍게 잘라야 분해되지 않는다.) \n갓지은 밥 위에 스팸, 실파 그리고 참기름 조금, #스팸덮밥\n\n#조식 #레시피 #미라클모닝 #스팸 ",
   "image": "https://images.how-about-breakfast.com/images/862.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/862.jpg",
    "https://images.how-about-breakfast.com/images/862_2.jpg"
   ],
-  "_en": {
-   "hash": "ee3fb22b781f1c9c279347d3c2c8c958c4edf102775874f1e75b96823018b38e",
-   "title": "Spam Rice Bowl",
-   "intro": "20231002, #breakfastdiary 862, 17°C/sunny, 60min/exercise(W, C)\nA slice of Spam over warm rice 🙂\nSpam gets treated as junk food abroad, but in Korea it's become a holiday gift people give each other — about 60% of its total sales are concentrated around Lunar New Year and Chuseok. That's a complete marketing win.\nScore the front of the Spam vertically and the back diagonally, then fry it in a pan. (Cut it thick enough or it'll fall apart.)\nOver freshly cooked rice, add the Spam, chopped green onion, and a bit of sesame oil. #spamricebowl",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "스팸덮밥-스팸"
  },
  {
@@ -50962,7 +50958,7 @@
   "weather": "22도/비, 29분/운동",
   "failed": false,
   "calories": null,
-  "title": "게맛살커리 커리 카레",
+  "title": "뿌님팟퐁커리 스타일 게맛살카레",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -50982,9 +50978,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20221003, #조식다이어리 562, 22도/비, 29분/운동\n나아가 이제 크리에이터들은 기성 디지털 플랫폼을 통한 수익 외에 자신의 창작물로 직접 수익을 창술 할 수 있게 되었다. 이른바 Over The Digital-platform(이하 OTD)이 시작된 것이다. 크리에이터들은 자신의 콘텐츠로 팬덤을 확보하고, 그 영향 력을 바탕으로 비즈니스, 마케팅, 커머스, 커뮤니티, 교육 등의 다양한 방법으로 수익을 실현하고 있다.\n이런 도전적인 변화들이 의미하는 것은 무엇일까?\n크리에이터를 1인 미디어가 아니라 1인 미디어 엔터테인먼트 기업으로 봐야 할 시점이 온 것이다. \n출처: 2023 뉴미디어 트렌드: 크리에이터가 이끄는 변화,  퍼블리 @publy.co\n가까운 미래에 언론과 크리에이터의 가치가 뒤섞이는 시대가 올 것이다. 아직 소프트쉘을 흉내 낸 게맛살에 불과해 보이겠지만 그들은 이미 세상을 바꾸고 있다. \n게맛살을 적당히 잘라 전분에 버무린다. 달군 팬에 올리브오일을 두르고 크리스피하게 게맛살을 튀긴다. \n시판 카레에 생크림을 조금 더해서 튀긴 게맛살 위에 붓는다. 뿌님팟퐁커리st #게맛살커리",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20221003, #조식다이어리 562, 22도/비, 29분/운동\n나아가 이제 크리에이터들은 기성 디지털 플랫폼을 통한 수익 외에 자신의 창작물로 직접 수익을 창술 할 수 있게 되었다. 이른바 Over The Digital-platform(이하 OTD)이 시작된 것이다. 크리에이터들은 자신의 콘텐츠로 팬덤을 확보하고, 그 영향 력을 바탕으로 비즈니스, 마케팅, 커머스, 커뮤니티, 교육 등의 다양한 방법으로 수익을 실현하고 있다.\n이런 도전적인 변화들이 의미하는 것은 무엇일까?\n크리에이터를 1인 미디어가 아니라 1인 미디어 엔터테인먼트 기업으로 봐야 할 시점이 온 것이다. \n(출처: 2023 뉴미디어 트렌드: 크리에이터가 이끄는 변화,  퍼블리 @publy.co )\n\n가까운 미래에 언론과 크리에이터의 가치가 뒤섞이는 시대가 올 것이다. 아직 소프트쉘을 흉내 낸 게맛살에 불과해 보이겠지만 그들은 이미 세상을 바꾸고 있다. \n게맛살을 적당히 잘라 전분에 버무린다. 달군 팬에 올리브오일을 두르고 크리스피하게 게맛살을 튀긴다. \n시판 카레에 생크림을 조금 더해서 튀긴 게맛살 위에 붓는다. 뿌님팟퐁커리st #게맛살커리",
+  "ingredients": "- 즉석 카레 1봉지\n- 게맛살 1봉지\n- 전분 2T\n- 생크림 1/2컵\n- 올리브오일 2T\n- 파슬리 파우더 1t",
+  "steps": "1. 게맛살을 잘게 찢은 뒤 전분에 버무린다. \n2. 팬에 올리브오일 두르고 게맛살을 튀기듯 구워 소프트크랩 같은 맛과 식감을 연출한다. \n3. 냄비에 시판 카레 1봉지 붓고 끓이다가 생크림 넣고 좀 더 끓인다. \n4. 접시에 3의 카레 담고 2의 소프트크랩 같은 게맛살 튀김 얹는다. 파슬리 파우더 조금 뿌린다. ",
   "raw": "20221003, #조식다이어리 562, 22도/비, 29분/운동\n\n나아가 이제 크리에이터들은 기성 디지털 플랫폼을 통한 수익 외에 자신의 창작물로 직접 수익을 창술 할 수 있게 되었다. 이른바 Over The Digital-platform(이하 OTD)이 시작된 것이다. 크리에이터들은 자신의 콘텐츠로 팬덤을 확보하고, 그 영향 력을 바탕으로 비즈니스, 마케팅, 커머스, 커뮤니티, 교육 등의 다양한 방법으로 수익을 실현하고 있다.\n이런 도전적인 변화들이 의미하는 것은 무엇일까?\n크리에이터를 1인 미디어가 아니라 1인 미디어 엔터테인먼트 기업으로 봐야 할 시점이 온 것이다. \n출처: 2023 뉴미디어 트렌드: 크리에이터가 이끄는 변화,  퍼블리 @publy.co\n\n가까운 미래에 언론과 크리에이터의 가치가 뒤섞이는 시대가 올 것이다. 아직 소프트쉘을 흉내 낸 게맛살에 불과해 보이겠지만 그들은 이미 세상을 바꾸고 있다. \n\n게맛살을 적당히 잘라 전분에 버무린다. 달군 팬에 올리브오일을 두르고 크리스피하게 게맛살을 튀긴다. \n시판 카레에 생크림을 조금 더해서 튀긴 게맛살 위에 붓는다. 뿌님팟퐁커리st #게맛살커리\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #커리 #카레 #게맛살 \n#breakfast #salad #curry #crabstick",
   "image": "https://images.how-about-breakfast.com/images/562.jpg",
   "gallery": [
@@ -50993,13 +50989,6 @@
    "https://images.how-about-breakfast.com/images/562_3.jpg",
    "https://images.how-about-breakfast.com/images/562_4.jpg"
   ],
-  "_en": {
-   "hash": "37d6f48a8fdfd8f12a9efc85d418f55f0b5e574e1c6fb94545fed6a122b607f7",
-   "title": "Crab Stick Curry",
-   "intro": "20221003 #breakfastdiary 562, 22°C/rain, 29min exercise\nBeyond earning through established digital platforms, creators can now generate revenue directly from their own creative work — the start of what's called Over The Digital-platform, or OTD. Creators build a fanbase around their content, then monetize that influence through business, marketing, commerce, community, education, and more.\nWhat do these bold shifts mean?\nIt's time to see creators not as one-person media outlets, but as one-person media entertainment companies.\nSource: 2023 New Media Trends: Change Led by Creators, Publy @publy.co\nIn the near future, the line between journalism and creators will blur. Right now they might look like nothing more than imitation crab sticks pretending to be soft-shell crab, but they're already changing the world.\nCut crab sticks into pieces and coat with starch. Heat olive oil in a pan and fry the crab sticks until crispy.\nAdd a splash of cream to store-bought curry and pour it over the fried crab sticks. A poor man's poo pad pong curry-style dish. #crabstickcurry",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "게맛살커리-커리-카레"
  },
  {
@@ -51009,7 +50998,7 @@
   "weather": "20도/흐림, 17분/운동",
   "failed": false,
   "calories": null,
-  "title": "카스0.0 대파 베이컨",
+  "title": "베이컨과 계란을 곁들인 대파구이",
   "credit": null,
   "hashtags": [
    "bacon",
@@ -51034,9 +51023,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20221002, #조식다이어리 561, 20도/흐림, 17분/운동\n소버 큐리어스Sober Curious. 주류 문화에 대해 경각심을 품고, 술을 마시고 취하는 행위 자체에 의문을 표하는 이들을 가리켜. 물론 그렇다고 술맛까지 잃고 싶진 않겠지. 이런 이들이 찾는 게 바로 취하지는 않으면서, 술맛은 나는 무알콜 음료인 거야.\n(출처: 무알콜 음료 : 주류 시장의 유일한 블루칩, 3대 트렌드를 읽다 @longblack.co ) \n기존 알콜 음료 시장의 성장률이 (사실상) 0퍼인 가운데 무알콜 음료 시장은 9퍼씩 성장 중, 게다가 온라인 판매, 마케팅이 자유로우니 건강에 대한 트렌드와 상승 작용을 통해 주류로 떠오를 것이라는 전망이다. \n어제 사 온 #카스0.0 에 어울릴 대파샐러드를 만들어보자, \n달군 팬에 올리브오일, 대파에 칼집을 내고 앞뒤로 굽는다. 베이컨, 페타치즈, 계란을 올리고 후추후추, 비네그레트 드레싱 휘익 \n#나의프랑스식샐러드 레시피 입니다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20221002, #조식다이어리 561, 20도/흐림, 17분/운동\n소버 큐리어스Sober Curious. 주류 문화에 대해 경각심을 품고, 술을 마시고 취하는 행위 자체에 의문을 표하는 이들을 가리켜. 물론 그렇다고 술맛까지 잃고 싶진 않겠지. 이런 이들이 찾는 게 바로 취하지는 않으면서, 술맛은 나는 무알콜 음료인 거야.\n(출처: 무알콜 음료 : 주류 시장의 유일한 블루칩, 3대 트렌드를 읽다 @longblack.co ) \n\n기존 알콜 음료 시장의 성장률이 (사실상) 0퍼인 가운데 무알콜 음료 시장은 9퍼씩 성장 중, 게다가 온라인 판매, 마케팅이 자유로우니 건강에 대한 트렌드와 상승 작용을 통해 주류로 떠오를 것이라는 전망이다. \n어제 사 온 #카스0.0 에 어울릴 대파샐러드를 만들어보자, \n달군 팬에 올리브오일, 대파에 칼집을 내고 앞뒤로 굽는다. 베이컨, 페타치즈, 계란을 올리고 후추후추, 비네그레트 드레싱 휘익 \n#나의프랑스식샐러드 레시피 입니다.",
+  "ingredients": "- 대파 2뿌리\n- 베이컨 2~3장\n- 페타치즈 1T\n- 계란 1개\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 후추",
+  "steps": "1. 베이컨은 팬에 오일 없이 바삭하게 구운 후 칼로 다진다. \n2. 팬에 올리브오일 두르고 대파에 칼집 낸 후 앞뒤로 굽는다. \n3. 접시에 2의 대파 담고 1의 베이컨, 페타치즈, 삶은 계란 얹고 드레싱과 후추 뿌린다. ",
   "raw": "20221002, #조식다이어리 561, 20도/흐림, 17분/운동\n\n소버 큐리어스Sober Curious. 주류 문화에 대해 경각심을 품고, 술을 마시고 취하는 행위 자체에 의문을 표하는 이들을 가리켜. 물론 그렇다고 술맛까지 잃고 싶진 않겠지. 이런 이들이 찾는 게 바로 취하지는 않으면서, 술맛은 나는 무알콜 음료인 거야.\n(출처: 무알콜 음료 : 주류 시장의 유일한 블루칩, 3대 트렌드를 읽다 @longblack.co ) \n\n기존 알콜 음료 시장의 성장률이 (사실상) 0퍼인 가운데 무알콜 음료 시장은 9퍼씩 성장 중, 게다가 온라인 판매, 마케팅이 자유로우니 건강에 대한 트렌드와 상승 작용을 통해 주류로 떠오를 것이라는 전망이다. \n\n어제 사 온 #카스0.0 에 어울릴 대파샐러드를 만들어보자, \n\n달군 팬에 올리브오일, 대파에 칼집을 내고 앞뒤로 굽는다. 베이컨, 페타치즈, 계란을 올리고 후추후추, 비네그레트 드레싱 휘익 \n#나의프랑스식샐러드 레시피 입니다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #대파 #베이컨 #페타치즈 #계란\n#breakfast #salad #fetacheese #greenonion #bacon #eggs",
   "image": "https://images.how-about-breakfast.com/images/561.jpg",
   "gallery": [
@@ -51046,13 +51035,6 @@
    "https://images.how-about-breakfast.com/images/561_4.jpg",
    "https://images.how-about-breakfast.com/images/561_5.jpg"
   ],
-  "_en": {
-   "hash": "12572f16b8e75260c735baf7c76ceefa93f268abdf372ebb4166332c0f2484c6",
-   "title": "Scallion Bacon Salad with Cass 0.0",
-   "intro": "20221002 #breakfastdiary 561, 20°C/cloudy, 17min exercise\nSober Curious: people who feel a certain wariness toward drinking culture and question the act of drinking and getting drunk itself. That said, they don't necessarily want to give up the taste of alcohol — which is exactly what non-alcoholic drinks offer: the flavor, without the buzz.\n(Source: Non-Alcoholic Drinks: The Only Blue Chip in the Alcohol Market, Reading 3 Trends @longblack.co)\nWhile growth in the traditional alcohol market has essentially flatlined at 0%, the non-alcoholic drink market is growing 9% a year. And since online sales and marketing face fewer restrictions, it's expected to ride the wellness trend right into the mainstream.\nLet's make a scallion salad to go with the #Cass0.0 I picked up yesterday.\nScore the scallions and grill them on both sides in a pan with olive oil. Top with bacon, feta cheese, and egg, season with pepper, and finish with a quick drizzle of vinaigrette.\nThis is my #myfrenchstylesalad recipe.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "카스0-0-대파-베이컨"
  },
  {
@@ -68461,7 +68443,7 @@
   "weather": "23도/맑음",
   "failed": false,
   "calories": null,
-  "title": "모닝리추얼 모닝루틴 빵",
+  "title": "크로와상과 생무화과베르 크로넛",
   "credit": null,
   "hashtags": [
    "bread",
@@ -68497,13 +68479,6 @@
    "https://images.how-about-breakfast.com/images/228_2.jpg",
    "https://images.how-about-breakfast.com/images/228_3.jpg"
   ],
-  "_en": {
-   "hash": "dcacbb5b2f6f3fb4b4dec75551f0f33b1fd9f63f0a091d866329b14ae582d45e",
-   "title": "Morning Ritual, Morning Routine, Bread",
-   "intro": "20211003, #breakfastdiary 228, 23°C/clear\nToday's breakfast: croissant, fresh fig and fig-jam cronut, and a flat white. \nIn the world of breakfast, there are days like this too.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "모닝리추얼-모닝루틴-빵"
  },
  {
@@ -68513,7 +68488,7 @@
   "weather": "19도/한때흐림",
   "failed": false,
   "calories": null,
-  "title": "복숭아샐러드 모닝리추얼 모닝루틴",
+  "title": "복숭아 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68539,9 +68514,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20211002, #조식다이어리 227, 19도/한때흐림\n복숭아, 샤인머스캣, 리코타치즈에 올리브오일과 레몬즙, \n세상에서 제일 예쁜 후추후추후추후추후추후추후추후추 #복숭아샐러드\n‘영감’은 낭만주의 시대의 단어이다. 영감을 의인화하거나 신격화해서 ‘뮤즈’라고 이름을 붙이는 호사 취미가 바로 낭만주의의 유산이다. 당연한 얘기지만, 영감은 하늘에서 떨어지는 것이 아니라 삶과 생활에서 발생하는 유형무형의 자극에서 시작된다. 우리의 내면과 외부 세계의 연결, 접속, 충돌, 확산의 산물이다. 추상적이고 형이상학적인 사유조차 그렇다. \n이장욱, 책 읽기와 함께 글쓰기를 \n빅데이터라는 이름으로 우리의 모든 것이 비트 단위로 낱낱이 기록되고, 확인과 분석이 가능한 사회는 반대로 낭만주의 시대의 ‘영감’ 혹은 ‘뮤즈’가 더 절실한 시대일지도 모르겠다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20211002, #조식다이어리 227, 19도/한때흐림\n복숭아, 샤인머스캣, 리코타치즈에 올리브오일과 레몬즙, \n세상에서 제일 예쁜 후추후추후추후추후추후추후추후추 #복숭아샐러드\n\n‘영감’은 낭만주의 시대의 단어이다. 영감을 의인화하거나 신격화해서 ‘뮤즈’라고 이름을 붙이는 호사 취미가 바로 낭만주의의 유산이다. 당연한 얘기지만, 영감은 하늘에서 떨어지는 것이 아니라 삶과 생활에서 발생하는 유형무형의 자극에서 시작된다. 우리의 내면과 외부 세계의 연결, 접속, 충돌, 확산의 산물이다. 추상적이고 형이상학적인 사유조차 그렇다. \n(이장욱, 책 읽기와 함께 글쓰기를) \n빅데이터라는 이름으로 우리의 모든 것이 비트 단위로 낱낱이 기록되고, 확인과 분석이 가능한 사회는 반대로 낭만주의 시대의 ‘영감’ 혹은 ‘뮤즈’가 더 절실한 시대일지도 모르겠다.",
+  "ingredients": "- 복숭아 1개\n- 샤인머스캣 1/2컵\n- 리코타치즈 2T\n- 올리브오일 1T\n- 레몬주스 1/2T\n- 후추",
+  "steps": "1. 복숭아는 웻지 모양으로 썰어서 접시에 담는다. \n2. 1의 접시에 반으로 썬 샤인머스캣과 리코타치즈 담고 올리브오일 1T, 레몬주스 1/2T, 후추 뿌린다. ",
   "raw": "20211002, #조식다이어리 227, 19도/한때흐림\n\n복숭아, 샤인머스캣, 리코타치즈에 올리브오일과 레몬즙, \n세상에서 제일 예쁜 후추후추후추후추후추후추후추후추 #복숭아샐러드\n\n‘영감’은 낭만주의 시대의 단어이다. 영감을 의인화하거나 신격화해서 ‘뮤즈’라고 이름을 붙이는 호사 취미가 바로 낭만주의의 유산이다. 당연한 얘기지만, 영감은 하늘에서 떨어지는 것이 아니라 삶과 생활에서 발생하는 유형무형의 자극에서 시작된다. 우리의 내면과 외부 세계의 연결, 접속, 충돌, 확산의 산물이다. 추상적이고 형이상학적인 사유조차 그렇다. \n이장욱, 책 읽기와 함께 글쓰기를 \n\n빅데이터라는 이름으로 우리의 모든 것이 비트 단위로 낱낱이 기록되고, 확인과 분석이 가능한 사회는 반대로 낭만주의 시대의 ‘영감’ 혹은 ‘뮤즈’가 더 절실한 시대일지도 모르겠다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #복숭아 #샤인머스캣 #리코타치즈 \n#breakfast #recipe #salad #peach #shinemuscat #ricottacheese  ",
   "image": "https://images.how-about-breakfast.com/images/227.jpg",
   "gallery": [
@@ -68549,13 +68524,6 @@
    "https://images.how-about-breakfast.com/images/227_2.jpg",
    "https://images.how-about-breakfast.com/images/227_3.jpg"
   ],
-  "_en": {
-   "hash": "c97ced017b8d2123d91db1e4dcc5435864427b7603f729bd9f456336a11e3e30",
-   "title": "Peach Salad, Morning Ritual, Morning Routine",
-   "intro": "20211002, #breakfastdiary 227, 19°C/occasionally cloudy\nPeach, shine muscat grapes, ricotta cheese with olive oil and lemon juice, \nand the prettiest pepper in the world — pepperpepperpepperpepperpepperpepperpepperpepper #peachsalad\n'Inspiration' is a word from the Romantic era. Personifying or deifying inspiration and giving it the extravagant name 'muse' is exactly the kind of legacy the Romantics left us. Obviously, inspiration doesn't fall from the sky — it begins with tangible and intangible stimuli arising from life itself. It's the product of connection, contact, collision, and diffusion between our inner selves and the outer world. Even abstract, metaphysical thought is no exception. \nLee Jang-wook, Reading Books and Writing Alongside \nA society where everything about us, under the name of 'big data,' is recorded down to the bit and made available for checking and analysis might, conversely, be an era that needs the Romantic era's 'inspiration' or 'muse' even more desperately.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "복숭아샐러드-모닝리추얼-모닝루틴-3"
  },
  {
@@ -85946,7 +85914,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "당근 당근라페 조식",
+  "title": "당근라페",
   "credit": null,
   "hashtags": [
    "carrotrapees",
@@ -85957,18 +85925,11 @@
    "조식"
   ],
   "intro": "20201003, 시사인(@sisain_editor) 언론매체 신뢰도 조사에서 유튜브와 네이버가 신뢰하는 언론매체 1, 2위를 차지했다. 논란의 여지가 있으나 다른 의미로는 레거시 매체처럼 데스크, 편집자가 아닌 알고리즘에 보내는 신뢰이기도 하다. \n세상에서 제일 예쁜 #당근 을 채 썰어 다진 양파, 화이트와인 식초, 홀그레인 머스타드, 올리브 오일 드레싱에 파슬리 #당근라페 #carrotrapees #조식 #샐러드 #미라클모닝",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 당근 1개\n- 양파 1/4개\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 파슬리",
+  "steps": "1. 채칼로 당근 썬다. \n2. 양파 1/4개 잘게 다진다. \n3. 믹싱볼에 1의 당근, 2의 양파와 드레싱 붓고 골고 섞는다. \n4. 접시에 당근라페 담고 다진 파슬리 조금 얹는다. ",
   "raw": "20201003, 시사인(@sisain_editor) 언론매체 신뢰도 조사에서 유튜브와 네이버가 신뢰하는 언론매체 1, 2위를 차지했다. 논란의 여지가 있으나 다른 의미로는 레거시 매체처럼 데스크, 편집자가 아닌 알고리즘에 보내는 신뢰이기도 하다. \n\n세상에서 제일 예쁜 #당근 을 채 썰어 다진 양파, 화이트와인 식초, 홀그레인 머스타드, 올리브 오일 드레싱에 파슬리 #당근라페 #carrotrapees #조식 #샐러드 #미라클모닝",
   "pre_label": "D-132",
   "image": "https://images.how-about-breakfast.com/images/pre-132.jpg",
-  "_en": {
-   "hash": "baab7825716712580d2ad98bad1c0b024d6feabd9da0c46dcedf92d41931e7d8",
-   "title": "Carrot Rapée for Breakfast",
-   "intro": "20201003, In Sisa In's (@sisain_editor) media trust survey, YouTube and Naver ranked first and second among trusted news outlets. It's debatable, but in another sense it also reflects trust placed not in a desk editor, as with legacy media, but in an algorithm.\nJulienne the prettiest carrot in the world and toss with minced onion, white wine vinegar, wholegrain mustard, and olive oil dressing, finished with parsley — #carrotrapee #carrotrapees #breakfastdiary #salad #miraclemorning",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "당근-당근라페-조식",
   "essay_candidate": true,
   "essay_reviewed": true
@@ -85980,7 +85941,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "애호박 미라클모닝 샐러드",
+  "title": "애호박 샐러드",
   "credit": null,
   "hashtags": [
    "미라클모닝",
@@ -85989,18 +85950,11 @@
    "조식"
   ],
   "intro": "20201002, 제16회 와우북 페스티벌의 온라인 강연을 몇 개, 간편하게 예약했다. 작년에 예약이 쉽지 않았던 오픈하우스서울(@openhouse_seoul)도 온라인으로 진행한다니 작년보다 예약은 수월할 것이다. 그렇다면 접근성은 오히려 예전보다 증대된 것 아닐까?\n세상에서 제일 예쁜 #애호박 을 팬에 굽고 다진 양파, 올리브 오일, 홀그레인 머스타드, 화이트와인 식초에 페스토와 다진 파슬리를 얹어, #조식 #미라클모닝 #샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 애호박 1/2개\n- 바질페스토 1T\n- 드레싱(올리브오일 2T, 다진 양파 1T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 파슬리",
+  "steps": "1. 애호박은 반으로 자른 뒤 팬에 올리브오일 두르고 자른 단면부터 굽는다. \n2. 1의 애호박을 접시에 담고 바질 페스토 1T 얹는다. \n3. 올리브오일 2T, 다진 양파 1T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t 섞은 드레싱 얹는다. \n4. 다진 파슬리 조금 얹는다. ",
   "raw": "20201002, 제16회 와우북 페스티벌의 온라인 강연을 몇 개, 간편하게 예약했다. 작년에 예약이 쉽지 않았던 오픈하우스서울(@openhouse_seoul)도 온라인으로 진행한다니 작년보다 예약은 수월할 것이다. 그렇다면 접근성은 오히려 예전보다 증대된 것 아닐까?\n\n세상에서 제일 예쁜 #애호박 을 팬에 굽고 다진 양파, 올리브 오일, 홀그레인 머스타드, 화이트와인 식초에 페스토와 다진 파슬리를 얹어, #조식 #미라클모닝 #샐러드",
   "pre_label": "D-133",
   "image": "https://images.how-about-breakfast.com/images/pre-133.jpg",
-  "_en": {
-   "hash": "710b73c5930a685db5652012d32ebe4785e1ce6efd1a37ffebdf7c1991186ad2",
-   "title": "Zucchini Miracle Morning Salad",
-   "intro": "20201002, Booked a few online lectures for the 16th Wow Book Festival — easy enough. I hear Open House Seoul (@openhouse_seoul), which was hard to book last year, is also going online this time, so reservations should be much easier than before. Doesn't that mean accessibility has actually gone up compared to before?\nPan-sear the prettiest zucchini in the world, then top with minced onion, olive oil, wholegrain mustard, and white wine vinegar, finished with pesto and chopped parsley — #breakfastdiary #miraclemorning #salad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "애호박-미라클모닝-샐러드",
   "essay_candidate": true,
   "essay_reviewed": true
