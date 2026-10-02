@@ -85948,7 +85948,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "당근 당근라페 조식",
+  "title": "당근라페",
   "credit": null,
   "hashtags": [
    "carrotrapees",
@@ -85959,18 +85959,11 @@
    "조식"
   ],
   "intro": "20201003, 시사인(@sisain_editor) 언론매체 신뢰도 조사에서 유튜브와 네이버가 신뢰하는 언론매체 1, 2위를 차지했다. 논란의 여지가 있으나 다른 의미로는 레거시 매체처럼 데스크, 편집자가 아닌 알고리즘에 보내는 신뢰이기도 하다. \n세상에서 제일 예쁜 #당근 을 채 썰어 다진 양파, 화이트와인 식초, 홀그레인 머스타드, 올리브 오일 드레싱에 파슬리 #당근라페 #carrotrapees #조식 #샐러드 #미라클모닝",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 당근 1개\n- 양파 1/4개\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 파슬리",
+  "steps": "1. 채칼로 당근 썬다. \n2. 양파 1/4개 잘게 다진다. \n3. 믹싱볼에 1의 당근, 2의 양파와 드레싱 붓고 골고 섞는다. \n4. 접시에 당근라페 담고 다진 파슬리 조금 얹는다. ",
   "raw": "20201003, 시사인(@sisain_editor) 언론매체 신뢰도 조사에서 유튜브와 네이버가 신뢰하는 언론매체 1, 2위를 차지했다. 논란의 여지가 있으나 다른 의미로는 레거시 매체처럼 데스크, 편집자가 아닌 알고리즘에 보내는 신뢰이기도 하다. \n\n세상에서 제일 예쁜 #당근 을 채 썰어 다진 양파, 화이트와인 식초, 홀그레인 머스타드, 올리브 오일 드레싱에 파슬리 #당근라페 #carrotrapees #조식 #샐러드 #미라클모닝",
   "pre_label": "D-132",
   "image": "https://images.how-about-breakfast.com/images/pre-132.jpg",
-  "_en": {
-   "hash": "baab7825716712580d2ad98bad1c0b024d6feabd9da0c46dcedf92d41931e7d8",
-   "title": "Carrot Rapée for Breakfast",
-   "intro": "20201003, In Sisa In's (@sisain_editor) media trust survey, YouTube and Naver ranked first and second among trusted news outlets. It's debatable, but in another sense it also reflects trust placed not in a desk editor, as with legacy media, but in an algorithm.\nJulienne the prettiest carrot in the world and toss with minced onion, white wine vinegar, wholegrain mustard, and olive oil dressing, finished with parsley — #carrotrapee #carrotrapees #breakfastdiary #salad #miraclemorning",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "당근-당근라페-조식",
   "essay_candidate": true,
   "essay_reviewed": true
