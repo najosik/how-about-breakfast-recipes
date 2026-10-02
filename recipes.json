@@ -38073,7 +38073,7 @@
   "weather": "18도/맑음",
   "failed": false,
   "calories": null,
-  "title": "무화과",
+  "title": "제철 무화과와 사과를 곁들인 그릭요거트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38083,17 +38083,10 @@
    "조식다이어리"
   ],
   "intro": "20231003, #조식다이어리 863, 18도/맑음\n그릭요거트에 무화과와 사과, 올리브오일",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 그릭요거트 3T\n- 사과 1/4개\n- 무화과 1개\n- 올리브오일 2t",
+  "steps": "1. 그릇에 그릭요거트 3T 담는다. \n2. 무화과 1개 얇게 썰고, 사과 1/4개 썰어서 그릭요거트 위에 얹는다. \n3. 올리브오일 2t 뿌린다. ",
   "raw": "20231003, #조식다이어리 863, 18도/맑음\n\n그릭요거트에 무화과와 사과, 올리브오일 \n\n#조식 #레시피 #미라클모닝 #무화과",
   "image": "https://images.how-about-breakfast.com/images/863.jpg",
-  "_en": {
-   "hash": "ba745c55d735c0df2d6888e42b03a8acfaf4ab937674bb5bf30fa89a2af6ecfc",
-   "title": "Figs",
-   "intro": "20231003, #breakfastdiary 863, 18°C/sunny\nGreek yogurt with figs, apple, and olive oil.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "무화과"
  },
  {
