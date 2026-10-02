@@ -1181,14 +1181,25 @@
     let level = 'ok';
     if (t && t.error) {
       level = 'bad';
-      msgs.push(`인스타그램 토큰 오류로 수집이 멈췄습니다 (${t.error.at.slice(0, 10)}). 토큰을 새로 발급해 GitHub Secrets와 Cloudflare Worker의 IG_ACCESS_TOKEN을 교체해 주세요.`);
+      msgs.push(`인스타그램 토큰 오류로 수집이 멈췄습니다 (${t.error.at.slice(0, 10)}). 토큰을 새로 발급해 GitHub Secrets의 IG_ACCESS_TOKEN을 교체해 주세요.`);
     } else if (t && t.expires_estimate) {
       const left = Math.round((Date.parse(t.expires_estimate) - Date.parse(daysAgo(0))) / 86400000);
       if (left <= 0) level = 'bad'; else if (left <= 14) level = 'warn';
-      msgs.push(`토큰 만료까지 ${left > 0 ? `D-${left}` : '만료됨'}${t.issued_known ? '' : ' (추정)'}`
-        + (left <= 14 ? ' · 지금 갱신해 주세요' : ''));
-      box.title = `만료 예정 ${t.expires_estimate}`
-        + (t.issued_known ? '' : ' · 발급일을 몰라 첫 수집일 기준으로 추정했습니다. 실제 만료는 더 빠를 수 있어요');
+      const dday = left > 0 ? `D-${left}` : '만료됨';
+      if (t.auto_refresh) {
+        // refreshed weekly, so this normally stays around D-53..60
+        msgs.push(`토큰 자동 연장 중 · 만료까지 ${dday}`);
+        box.title = `마지막 연장 ${t.issued_at} · 만료 예정 ${t.expires_estimate} · 매주 월요일 자동 연장`;
+      } else {
+        msgs.push(`토큰 만료까지 ${dday}${t.issued_known ? '' : ' (추정)'}`
+          + (left <= 14 ? ' · 자동 연장이 아직 시작되지 않았어요' : ''));
+        box.title = `만료 예정 ${t.expires_estimate}`
+          + (t.issued_known ? '' : ' · 발급일을 몰라 첫 수집일 기준으로 추정했습니다. 실제 만료는 더 빠를 수 있어요');
+      }
+      if (t.refresh_error) {
+        if (level === 'ok') level = 'warn';
+        msgs.push(`자동 연장 실패 (${t.refresh_error.at.slice(0, 10)}) · GitHub Actions의 "Instagram token refresh" 기록을 확인해 주세요`);
+      }
     }
     if (meta.last_run) {
       const age = (Date.now() - Date.parse(meta.last_run)) / 3600000;
