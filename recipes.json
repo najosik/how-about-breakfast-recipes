@@ -1,5 +1,36 @@
 [
  {
+  "date": "2026-10-03",
+  "date_raw": "20261003",
+  "diary_no": 1882,
+  "weather": "15도/흐림",
+  "failed": false,
+  "calories": 570,
+  "title": "미소비빔우동",
+  "credit": "@jjomeal",
+  "hashtags": [
+   "레시피",
+   "미소",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20261003 #조식다이어리 1854, 15도/흐림\n우동은 국물이라는 편견에 맞서, 끝내주게 맛있는 570kcal 미소비빔우동",
+  "ingredients": "- 우동면 2개\n- 돼지고기 다짐육 80g\n- 미림 1T\n- 소금 한 꼬집\n- 후추 한 꼬집\n- 에다마메 1/2컵\n- 소스(미소 1T, 마요네즈 1T, 간장 1T, 올리고당 1T, 참기름 1/2T, 다진마늘 1T)\n- 대파 1/4개(잎집)",
+  "steps": "1. 팬에 돼지고기 다짐육 80g 넣고 볶다가 미림 2T, 소금, 후추로 간한다. \n2. 끓는 물에 에다마메 익힌 후 건지고 우동면 삶는다. \n3. 미소 1T, 마요네즈 1T, 간장 1T, 올리고당 1T, 참기름 1T, 다진마늘 1T 넣고 골고루 섞어서 소스를 만든다.\n4. 그릇에 2의 우동면 담고 1의 돼지고기, 에다마메, 3의 소스와 다진 대파 얹는다.",
+  "raw": "20261003 #조식다이어리 1854, 15도/흐림\n\n우동은 국물이라는 편견에 맞서, 끝내주게 맛있는 570kcal 미소비빔우동\n\n👉재료(2인분)\n- 우동면 2개\n- 돼지고기 다짐육 80g\n- 미림 1T\n- 소금 한 꼬집\n- 후추 한 꼬집\n- 에다마메 1/2컵\n- 소스(미소 1T, 마요네즈 1T, 간장 1T, 올리고당 1T, 참기름 1/2T, 다진마늘 1T)\n- 대파 1/4개(잎집) \n\n👉조리\n1. 팬에 돼지고기 다짐육 80g 넣고 볶다가 미림 2T, 소금, 후추로 간한다. \n2. 끓는 물에 에다마메 익힌 후 건지고 우동면 삶는다. \n3. 미소 1T, 마요네즈 1T, 간장 1T, 올리고당 1T, 참기름 1T, 다진마늘 1T 넣고 골고루 섞어서 소스를 만든다.\n4. 그릇에 2의 우동면 담고 1의 돼지고기, 에다마메, 3의 소스와 다진 대파 얹는다. \n\nInspired by @jjomeal\n\n#조식 #레시피 #미소",
+  "permalink": "https://www.instagram.com/p/DeCR9r0Hdyb/",
+  "image": "https://images.how-about-breakfast.com/images/1882.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1882.jpg",
+   "https://images.how-about-breakfast.com/images/1882_2.jpg",
+   "https://images.how-about-breakfast.com/images/1882_3.jpg",
+   "https://images.how-about-breakfast.com/images/1882_4.jpg",
+   "https://images.how-about-breakfast.com/images/1882_5.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1882.mp4",
+  "page_id": "미소비빔우동"
+ },
+ {
   "date": "2026-10-02",
   "date_raw": "20261002",
   "diary_no": 1881,
