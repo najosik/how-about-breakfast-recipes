@@ -68662,7 +68662,7 @@
   "weather": "21도/흐림, 32분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "토마토파스타 모닝리추얼 모닝루틴",
+  "title": "두부면으로 만든 토마토 파스타",
   "credit": null,
   "hashtags": [
    "basil",
@@ -68690,22 +68690,15 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20211004, #조식다이어리 229, 21도/흐림, 32분/운동하기\n팬에 올리브오일을 두르고 두부면을 데친다. 토마토소스를 끼얹고 면이 끊어지지 않도록 뒤적뒤적. 후추후추후추후추, 플레이팅한 후 파마산 치즈 조금 #토마토파스타\n파스타면에는 듀럼밀(Durum Wheat)이 사용된다. 우리가 일반적으로 알고 있는 (빵 만들 때 쓰는) 밀과는 다른 품종이다. 글루텐 함량이 높을 뿐만 아니라 얼마만큼 빠른 속도로 혈당으로 전환되는지를 나타내는 GI지수(Glycemic Index)가 콩 다음으로 낮다. (GI지수에 대한 논란이 있으니 맹신할 일은 못되지만)\n만들기는 라면만큼 간단하고 버섯, 양파, 브로콜리 등의 채소와도 잘 어울리니 영양가도 만점이다. 그래도 많이 먹으면 살찐다. 그럴땐 파스타면 대신에 두부면이다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20211004, #조식다이어리 229, 21도/흐림, 32분/운동하기\n팬에 올리브오일을 두르고 두부면을 데친다. 토마토소스를 끼얹고 면이 끊어지지 않도록 뒤적뒤적. 후추후추후추후추, 플레이팅한 후 파마산 치즈 조금 #토마토파스타\n\n파스타면에는 듀럼밀(Durum Wheat)이 사용된다. 우리가 일반적으로 알고 있는 (빵 만들 때 쓰는) 밀과는 다른 품종이다. 글루텐 함량이 높을 뿐만 아니라 얼마만큼 빠른 속도로 혈당으로 전환되는지를 나타내는 GI지수(Glycemic Index)가 콩 다음으로 낮다. (GI지수에 대한 논란이 있으니 맹신할 일은 못되지만)\n만들기는 라면만큼 간단하고 버섯, 양파, 브로콜리 등의 채소와도 잘 어울리니 영양가도 만점이다. 그래도 많이 먹으면 살찐다. 그럴땐 파스타면 대신에 두부면이다.",
+  "ingredients": "- 두부면 1개\n- 토마토소스 3T\n- 파마산치즈 \n- 후추\n- 바질",
+  "steps": "1. 팬에 올리브오일 두르고 두부면을 볶는다. \n2. 1에 토마토소스와 후추 뿌리고 골고루 섞는다. \n3. 그릇에 담고 파마산치즈 갈아서 얹는다. ",
   "raw": "20211004, #조식다이어리 229, 21도/흐림, 32분/운동하기\n\n팬에 올리브오일을 두르고 두부면을 데친다. 토마토소스를 끼얹고 면이 끊어지지 않도록 뒤적뒤적. 후추후추후추후추, 플레이팅한 후 파마산 치즈 조금 #토마토파스타\n\n파스타면에는 듀럼밀(Durum Wheat)이 사용된다. 우리가 일반적으로 알고 있는 (빵 만들 때 쓰는) 밀과는 다른 품종이다. 글루텐 함량이 높을 뿐만 아니라 얼마만큼 빠른 속도로 혈당으로 전환되는지를 나타내는 GI지수(Glycemic Index)가 콩 다음으로 낮다. (GI지수에 대한 논란이 있으니 맹신할 일은 못되지만)\n\n만들기는 라면만큼 간단하고 버섯, 양파, 브로콜리 등의 채소와도 잘 어울리니 영양가도 만점이다. 그래도 많이 먹으면 살찐다. 그럴땐 파스타면 대신에 두부면이다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #파스타 #파마산치즈 #바질 #두부면\n#breakfast #recipe #pasta #tomatopasta #basil #parmigianoreggiano #spaghetti",
   "image": "https://images.how-about-breakfast.com/images/229.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/229.jpg",
    "https://images.how-about-breakfast.com/images/229_2.jpg"
   ],
-  "_en": {
-   "hash": "5a24939d1c7aec6cf7b5ef9f7e290444aedb5c916c964af6d50021f333312d21",
-   "title": "Tomato Pasta, Morning Ritual, Morning Routine",
-   "intro": "20211004, #breakfastdiary 229, 21°C/cloudy, 32min/exercise\nHeat olive oil in a pan and warm the tofu noodles. Pour over tomato sauce and toss gently so the noodles don't break. Pepperpepperpepperpepper, then plate with a little parmesan cheese on top #tomatopasta\nRegular pasta is made from durum wheat, a different variety from the wheat we normally know (the kind used for bread). Not only does it have a higher gluten content, its glycemic index (GI) — which measures how quickly it converts to blood sugar — is the second lowest after beans. (There's some debate about GI, so it's not something to take as gospel.)\nIt's as easy to make as instant ramen and pairs well with vegetables like mushrooms, onions, and broccoli, so it scores full marks on nutrition too. Still, eat too much and you'll gain weight. That's when tofu noodles step in for pasta noodles.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "토마토파스타-모닝리추얼-모닝루틴"
  },
  {
