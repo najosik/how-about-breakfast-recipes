@@ -55,6 +55,7 @@ import os
 import re
 import sys
 import time
+import unicodedata
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -106,7 +107,9 @@ DIARY_NO_RE = re.compile(r'#조식다이어리\s*(\d+)')
 # token was issued, so the collector notes the day it first sees a new token
 # (by fingerprint - the token itself is never stored) and counts from there.
 # IG_TOKEN_ISSUED_AT (repo variable, YYYY-MM-DD) overrides it when known.
+# Once ig_token.py refreshes the token, its record gives the exact expiry.
 TOKEN_LIFETIME_DAYS = 60
+TOKEN_RECORD_KEY = 'auth/ig-token.json'
 
 # Metrics kept in post_history.json (the per-day growth curve of a post).
 HISTORY_METRICS = ('reach', 'views', 'likes', 'comments', 'saved', 'shares',
@@ -311,13 +314,23 @@ def collect_media_insights(client, media, refused_media):
 
 
 def load_recipe_index():
+    """Returns (by_permalink, by_date) over the live recipes.json records.
+
+    Matching is by permalink, then by calendar date - the same strategy as
+    sync_instagram.py. The caption's "#조식다이어리 N" counter is NOT the
+    site's diary_no (a past backfill renumbered diary_no, which now runs up
+    to ~30 ahead of the captions), so matching on it attached posts to the
+    wrong day's recipe - wrong photo, title, hashtags and topic.
+    """
     try:
         with open(RECIPES_PATH, encoding='utf-8') as f:
             recipes = json.load(f)
     except (OSError, ValueError):
         return {}, {}
-    by_no, by_date = {}, {}
+    by_permalink, by_date = {}, {}
     for r in recipes:
+        if r.get('deleted'):
+            continue
         info = {
             'title': r.get('title'),
             'page_id': r.get('page_id'),
@@ -327,19 +340,39 @@ def load_recipe_index():
             'calories': r.get('calories'),
             'weather': r.get('weather'),
         }
-        if r.get('diary_no') is not None:
-            by_no[str(r['diary_no'])] = info
+        if r.get('permalink'):
+            by_permalink[r['permalink']] = info
         if r.get('date'):
-            by_date.setdefault(r['date'], info)
-    return by_no, by_date
+            by_date.setdefault(r['date'], []).append((r.get('permalink'), info))
+    return by_permalink, by_date
 
 
-def match_recipe(media, by_no, by_date):
-    m = DIARY_NO_RE.search(media.get('caption') or '')
-    if m and m.group(1) in by_no:
-        return m.group(1), by_no[m.group(1)]
-    date = to_kst_date(media['timestamp']).isoformat()
-    return (m.group(1) if m else None), by_date.get(date)
+def post_date(media, caption):
+    # Captions start with the diary's own date (YYYYMMDD) - it can differ
+    # from the upload day when a post goes up late; else the KST upload day.
+    m = re.match(r'\s*(\d{4})(\d{2})(\d{2})', caption)
+    if m:
+        try:
+            return datetime.date(*map(int, m.groups())).isoformat()
+        except ValueError:
+            pass
+    return to_kst_date(media['timestamp']).isoformat()
+
+
+def match_recipe(media, by_permalink, by_date):
+    """Returns (caption diary number or None, recipe info or None)."""
+    caption = unicodedata.normalize('NFC', media.get('caption') or '')
+    m = DIARY_NO_RE.search(caption)
+    caption_no = m.group(1) if m else None
+    permalink = media.get('permalink')
+    if permalink and permalink in by_permalink:
+        return caption_no, by_permalink[permalink]
+    candidates = by_date.get(post_date(media, caption), [])
+    # a record already tied to another post is that post's, not this one's
+    free = [info for link, info in candidates if not link or link == permalink]
+    # two posts on one day: the one whose title the caption mentions
+    named = [info for info in free if info['title'] and info['title'] in caption]
+    return caption_no, (named or free or [None])[0]
 
 
 def needs_full_refresh(meta, force):
@@ -423,9 +456,25 @@ def upload_dashboard(store):
 # Main
 # --------------------------------------------------------------------------
 
-def update_token_status(meta, token, today):
-    fingerprint = hashlib.sha256(token.encode()).hexdigest()[:12]
+def token_fingerprint(token):
+    return hashlib.sha256(token.encode()).hexdigest()[:12]
+
+
+def update_token_status(meta, token, today, record=None):
+    fingerprint = token_fingerprint(token)
+    record = record or {}
+    if record.get('fingerprint') == fingerprint and record.get('expires_at'):
+        # Auto-refreshed token: exact dates, no estimate needed.
+        meta['token'] = {'fingerprint': fingerprint, 'auto_refresh': True, 'issued_known': True,
+                         'issued_at': record['refreshed_at'][:10],
+                         'expires_estimate': record['expires_at'][:10]}
+        if record.get('last_error'):
+            meta['token']['refresh_error'] = record['last_error']
+        return
     prev = meta.get('token') or {}
+    if prev.pop('auto_refresh', None):
+        prev.setdefault('first_seen', prev.get('issued_at', today.isoformat()))
+    prev.pop('refresh_error', None)
     if prev.get('fingerprint') != fingerprint:
         # A change between two daily runs means it was issued within a day
         # of today; the very first token we see has an unknown issue date.
@@ -438,6 +487,8 @@ def update_token_status(meta, token, today):
     prev['issued_at'] = issued
     prev['expires_estimate'] = (datetime.date.fromisoformat(issued)
                                 + datetime.timedelta(days=TOKEN_LIFETIME_DAYS)).isoformat()
+    if record.get('last_error') and record.get('seed_fingerprint') == fingerprint:
+        prev['refresh_error'] = record['last_error']
     meta['token'] = prev
 
 
@@ -453,7 +504,7 @@ def run(store, client, force_full):
     refused_media = {}
 
     # 1. Profile snapshot (the only source of long-term follower history)
-    update_token_status(meta, client.access_token, today)
+    update_token_status(meta, client.access_token, today, store.get_json(TOKEN_RECORD_KEY, None))
     try:
         prof = client.profile()
     except ApiError as e:
@@ -488,14 +539,14 @@ def run(store, client, force_full):
 
     # 3. Posts: list everything, refresh insights for new/recent posts (all
     #    posts on a full refresh), and attach the recipes.json match
-    by_no, by_date = load_recipe_index()
+    by_permalink, by_date = load_recipe_index()
     full = needs_full_refresh(meta, force_full)
     media_list = list(client.all_media())
     refreshed = failed = 0
     rate_limited = False
     for media in media_list:
         post = posts.get(media['id'], {})
-        diary_no, recipe = match_recipe(media, by_no, by_date)
+        diary_no, recipe = match_recipe(media, by_permalink, by_date)
         post.update({
             'id': media['id'],
             'timestamp': media.get('timestamp'),

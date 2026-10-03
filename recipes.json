@@ -1,5 +1,119 @@
 [
  {
+  "date": "2026-10-03",
+  "date_raw": "20261003",
+  "diary_no": 1882,
+  "weather": "15도/흐림",
+  "failed": false,
+  "calories": 570,
+  "title": "미소비빔우동",
+  "credit": "@jjomeal",
+  "hashtags": [
+   "레시피",
+   "미소",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20261003 #조식다이어리 1854, 15도/흐림\n우동은 국물이라는 편견에 맞서, 끝내주게 맛있는 570kcal 미소비빔우동",
+  "ingredients": "- 우동면 2개\n- 돼지고기 다짐육 80g\n- 미림 1T\n- 소금 한 꼬집\n- 후추 한 꼬집\n- 에다마메 1/2컵\n- 소스(미소 1T, 마요네즈 1T, 간장 1T, 올리고당 1T, 참기름 1/2T, 다진마늘 1T)\n- 대파 1/4개(잎집)",
+  "steps": "1. 팬에 돼지고기 다짐육 80g 넣고 볶다가 미림 2T, 소금, 후추로 간한다. \n2. 끓는 물에 에다마메 익힌 후 건지고 우동면 삶는다. \n3. 미소 1T, 마요네즈 1T, 간장 1T, 올리고당 1T, 참기름 1T, 다진마늘 1T 넣고 골고루 섞어서 소스를 만든다.\n4. 그릇에 2의 우동면 담고 1의 돼지고기, 에다마메, 3의 소스와 다진 대파 얹는다.",
+  "raw": "20261003 #조식다이어리 1854, 15도/흐림\n\n우동은 국물이라는 편견에 맞서, 끝내주게 맛있는 570kcal 미소비빔우동\n\n👉재료(2인분)\n- 우동면 2개\n- 돼지고기 다짐육 80g\n- 미림 1T\n- 소금 한 꼬집\n- 후추 한 꼬집\n- 에다마메 1/2컵\n- 소스(미소 1T, 마요네즈 1T, 간장 1T, 올리고당 1T, 참기름 1/2T, 다진마늘 1T)\n- 대파 1/4개(잎집) \n\n👉조리\n1. 팬에 돼지고기 다짐육 80g 넣고 볶다가 미림 2T, 소금, 후추로 간한다. \n2. 끓는 물에 에다마메 익힌 후 건지고 우동면 삶는다. \n3. 미소 1T, 마요네즈 1T, 간장 1T, 올리고당 1T, 참기름 1T, 다진마늘 1T 넣고 골고루 섞어서 소스를 만든다.\n4. 그릇에 2의 우동면 담고 1의 돼지고기, 에다마메, 3의 소스와 다진 대파 얹는다. \n\nInspired by @jjomeal\n\n#조식 #레시피 #미소",
+  "permalink": "https://www.instagram.com/p/DeCR9r0Hdyb/",
+  "image": "https://images.how-about-breakfast.com/images/1882.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1882.jpg",
+   "https://images.how-about-breakfast.com/images/1882_2.jpg",
+   "https://images.how-about-breakfast.com/images/1882_3.jpg",
+   "https://images.how-about-breakfast.com/images/1882_4.jpg",
+   "https://images.how-about-breakfast.com/images/1882_5.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1882.mp4",
+  "page_id": "미소비빔우동",
+  "_en": {
+   "hash": "189701e698a50680ecad309d99c57d5945ab21e0ef555fc2fe8a674f8ffc22c5",
+   "title": "Miso Bibim Udon",
+   "intro": "20261003 #breakfastdiary 1854, 15°C/cloudy\nIn defiance of the idea that udon has to mean broth, a ridiculously delicious 570kcal Miso Bibim Udon",
+   "ingredients": "- 2 portions udon noodles\n- 80g ground pork\n- 1 tbsp mirin\n- A pinch of salt\n- A pinch of pepper\n- 1/2 cup edamame\n- Sauce (1 tbsp miso, 1 tbsp mayonnaise, 1 tbsp soy sauce, 1 tbsp oligo syrup, 1/2 tbsp sesame oil, 1 tbsp minced garlic)\n- 1/4 scallion (white part)",
+   "steps": "1. Stir-fry 80g ground pork in a pan, then season with 2 tbsp mirin, salt, and pepper.\n2. Cook the edamame in boiling water and remove, then boil the udon noodles.\n3. Mix 1 tbsp miso, 1 tbsp mayonnaise, 1 tbsp soy sauce, 1 tbsp oligo syrup, 1 tbsp sesame oil, and 1 tbsp minced garlic to make the sauce.\n4. Place the udon noodles from step 2 in a bowl, then top with the pork from step 1, edamame, the sauce from step 3, and chopped scallion."
+  }
+ },
+ {
+  "date": "2026-10-02",
+  "date_raw": "20261002",
+  "diary_no": 1881,
+  "weather": "12도/맑음",
+  "failed": false,
+  "calories": 340,
+  "title": "모로코 스타일 토마토가지 딥 + 사워도우",
+  "credit": "@hjimoga",
+  "hashtags": [
+   "가지",
+   "레시피",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20261002 #조식다이어리 1853, 12도/맑음\n냉장고 파먹다 어느새 모로코\n자룩 Zaalouk 모로코의 대표적인 가지 토마토 샐러드, 실제로는 익혀서 으깬 따뜻한 딥이다. 연휴 앞두고 냉장고 식재료 털다가 북아프리카 모로코에 이르렀다. \n약 340kcal 모로코 스타일 토마토가지 딥 + 사워도우",
+  "ingredients": "- 사워도우 2장\n- 가지 2개\n- 토마토 2~3개\n- 올리브오일 2T\n- 다진마늘 2t \n- 큐민 1/2t \n- 파프리카 파우더 1/2t \n- 깻잎 1장\n- 소금\n- 후추",
+  "steps": "1. 가지는 껍질째 랩 씌워서 전자레인지에 5분 익힌다. \n2. 팬에 올리브오일 2T, 다진마늘 2t, 큐민 1/2t, 파프리카 파우더 1/2t 넣고 숭덩숭덩 썬 토마토를 볶다가 으깬다. \n3. 1의 가지를 대충 썬 다음 2에 넣고 토마토처럼 으깬다. 소금과 후추로 간한다. \n4. 그릇에 3의 토마토가지 딥을 담고 올리브오일 조금 얹는다. \n5. 사워도우에 토마토가지 딥과 다진 깻잎 얹어서 먹는다.",
+  "raw": "20261002 #조식다이어리 1853, 12도/맑음\n\n냉장고 파먹다 어느새 모로코\n\n자룩 Zaalouk 모로코의 대표적인 가지 토마토 샐러드, 실제로는 익혀서 으깬 따뜻한 딥이다. 연휴 앞두고 냉장고 식재료 털다가 북아프리카 모로코에 이르렀다. \n\n약 340kcal 모로코 스타일 토마토가지 딥 + 사워도우\n\n👉재료(2인분)\n- 사워도우 2장\n- 가지 2개\n- 토마토 2~3개\n- 올리브오일 2T\n- 다진마늘 2t \n- 큐민 1/2t \n- 파프리카 파우더 1/2t \n- 깻잎 1장\n- 소금\n- 후추\n\n👉조리\n1. 가지는 껍질째 랩 씌워서 전자레인지에 5분 익힌다. \n2. 팬에 올리브오일 2T, 다진마늘 2t, 큐민 1/2t, 파프리카 파우더 1/2t 넣고 숭덩숭덩 썬 토마토를 볶다가 으깬다. \n3. 1의 가지를 대충 썬 다음 2에 넣고 토마토처럼 으깬다. 소금과 후추로 간한다. \n4. 그릇에 3의 토마토가지 딥을 담고 올리브오일 조금 얹는다. \n5. 사워도우에 토마토가지 딥과 다진 깻잎 얹어서 먹는다. \n\nInspired by @hjimoga\n\n#조식 #레시피 #가지",
+  "permalink": "https://www.instagram.com/p/Dd-0iu8nQZx/",
+  "image": "https://images.how-about-breakfast.com/images/1881.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1881.jpg",
+   "https://images.how-about-breakfast.com/images/1881_2.jpg",
+   "https://images.how-about-breakfast.com/images/1881_3.jpg",
+   "https://images.how-about-breakfast.com/images/1881_4.jpg",
+   "https://images.how-about-breakfast.com/images/1881_5.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1881.mp4",
+  "page_id": "모로코-스타일-토마토가지-딥-사워도우",
+  "_en": {
+   "hash": "8249cf820268151969467d76a3ff322e53fe374fec770269aecac53bb3795b2c",
+   "title": "Moroccan-Style Tomato Eggplant Dip + Sourdough",
+   "intro": "20261002 #breakfastdiary 1853, 12°C/clear\nRaiding the fridge somehow landed me in Morocco\nZaalouk, Morocco's signature eggplant-tomato salad, is actually more of a warm, cooked-and-mashed dip. Clearing out fridge ingredients ahead of the holidays, I somehow ended up in North Africa.\nAbout 340kcal Moroccan-Style Tomato Eggplant Dip + Sourdough",
+   "ingredients": "- 2 slices sourdough\n- 2 eggplants\n- 2-3 tomatoes\n- 2 tbsp olive oil\n- 2 tsp minced garlic\n- 1/2 tsp cumin\n- 1/2 tsp paprika powder\n- 1 perilla leaf\n- Salt\n- Pepper",
+   "steps": "1. Wrap the eggplants in plastic wrap, skin on, and microwave for 5 minutes.\n2. In a pan, heat 2 tbsp olive oil, 2 tsp minced garlic, 1/2 tsp cumin, and 1/2 tsp paprika powder, then sauté roughly chopped tomato and mash it down.\n3. Roughly chop the eggplant from step 1, add to the pan, and mash it the same way as the tomato. Season with salt and pepper.\n4. Spoon the tomato-eggplant dip from step 3 into a bowl and drizzle with a little olive oil.\n5. Top the sourdough with the tomato-eggplant dip and chopped perilla leaf to eat."
+  }
+ },
+ {
+  "date": "2026-10-01",
+  "date_raw": "20261001",
+  "diary_no": 1880,
+  "weather": "12도/대체로 맑음",
+  "failed": false,
+  "calories": 420,
+  "title": "들깨연두부 버섯 뇨끼",
+  "credit": "@dalkomhi33",
+  "hashtags": [
+   "들깨",
+   "레시피",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20261001 #조식다이어리 1852, 12도/대체로 맑음\n10월 하고도 1일, 4Q, 4분기다. \n1인분 420kcal 들깨연두부 버섯 뇨끼",
+  "ingredients": "- 연두부 250g 1팩\n- 들깨가루 3T\n- 간장 1T \n- 참치액 1T\n- 양파 1/2개\n- 버섯 3개\n- 뇨끼 2컵\n- 대파 1/4뿌리(잎집)\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 믹싱볼에 연두부 넣고 휘핑한다. \n2. 1에 물 100ml 붓고 간장 1T, 참치액 1T, 들깨가루 3T 넣고 골고루 섞는다. \n3. 팬에 올리브오일 두르고 소금, 후추 뿌려서 길게 썬 양파와 버섯을 볶는다.\n4. 3의 팬에 2의 들깨 연두부 소스 붓고 2~3분 끓이다가 뇨끼 넣고 좀 더 끓인다. \n5. 접시에 담고 대파 썰어서 얹는다.",
+  "raw": "20261001 #조식다이어리 1852, 12도/대체로 맑음\n\n10월 하고도 1일, 4Q, 4분기다. \n\n1인분 420kcal 들깨연두부 버섯 뇨끼\n\n👉재료(2인분)\n- 연두부 250g 1팩\n- 들깨가루 3T\n- 간장 1T \n- 참치액 1T\n- 양파 1/2개\n- 버섯 3개\n- 뇨끼 2컵\n- 대파 1/4뿌리(잎집)\n- 올리브오일\n- 소금\n- 후추\n\n👉조리\n1. 믹싱볼에 연두부 넣고 휘핑한다. \n2. 1에 물 100ml 붓고 간장 1T, 참치액 1T, 들깨가루 3T 넣고 골고루 섞는다. \n3. 팬에 올리브오일 두르고 소금, 후추 뿌려서 길게 썬 양파와 버섯을 볶는다.\n4. 3의 팬에 2의 들깨 연두부 소스 붓고 2~3분 끓이다가 뇨끼 넣고 좀 더 끓인다. \n5. 접시에 담고 대파 썰어서 얹는다. \n\nInspired by @dalkomhi33\n\n#조식 #레시피 #들깨",
+  "permalink": "https://www.instagram.com/p/Dd9LbSMHXh9/",
+  "image": "https://images.how-about-breakfast.com/images/1880.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1880.jpg",
+   "https://images.how-about-breakfast.com/images/1880_2.jpg",
+   "https://images.how-about-breakfast.com/images/1880_3.jpg",
+   "https://images.how-about-breakfast.com/images/1880_4.jpg",
+   "https://images.how-about-breakfast.com/images/1880_5.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1880.mp4",
+  "page_id": "들깨연두부-버섯-뇨끼",
+  "_en": {
+   "hash": "170f8311e277482f43e18770e5e8c03ce33fc09a971553f7c533f37c94ed52af",
+   "title": "Perilla Seed Soft Tofu Mushroom Gnocchi",
+   "intro": "20261001 #breakfastdiary 1852, 12°C/mostly clear\nOctober 1st already - Q4, the fourth quarter.\n420kcal per serving, Perilla Seed Soft Tofu Mushroom Gnocchi",
+   "ingredients": "- 1 pack soft tofu (250g)\n- 3 tbsp ground perilla seeds\n- 1 tbsp soy sauce\n- 1 tbsp tuna extract (liquid seasoning)\n- 1/2 onion\n- 3 mushrooms\n- 2 cups gnocchi\n- 1/4 scallion (white part)\n- Olive oil\n- Salt\n- Pepper",
+   "steps": "1. Put the soft tofu in a mixing bowl and whip it.\n2. Add 100ml water to step 1, then mix in 1 tbsp soy sauce, 1 tbsp tuna extract, and 3 tbsp ground perilla seeds until well combined.\n3. Heat olive oil in a pan, season with salt and pepper, and sauté sliced onion and mushroom.\n4. Pour the perilla seed and soft tofu sauce from step 2 into the pan from step 3, simmer for 2-3 minutes, then add the gnocchi and simmer a bit longer.\n5. Plate and top with sliced scallion."
+  }
+ },
+ {
   "date": "2026-09-30",
   "date_raw": "20260930",
   "diary_no": 1879,
@@ -38127,7 +38241,7 @@
   "weather": "13도/부분적으로흐림",
   "failed": false,
   "calories": null,
-  "title": "타코 무화과",
+  "title": "버섯 타코",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38137,20 +38251,20 @@
    "조식다이어리",
    "타코"
   ],
-  "intro": "20231004, #조식다이어리 864, 13도/부분적으로흐림\n헐리우드 작가 조합이 파업을 끝냈다. 결론은 다음 세 가지, \n1. 저작권료 인상 \n2. 제작현장에 '집필 공간 Writing room'을 두고 작가를 상주시킬 것 \n3. 대본 작업에 AI를 사용할 때 작가 보호 조치를 도입할 것\n항간에서는 21세기판 러다이트 운동 아니냐는 비판도 있지만 새로 나오는 기술이 생활의 개선과 삶의 진보를 향하고 있는지는 늘 경계할 일이다. \n달군 팬에 올리브오일, 소금, 후추, 굴소스를 더해 버섯을 데친다. 흡사 고기 비주얼이다. \n팬에 또띠아를 살짝 데운 후 접시에 담고 아삭함을 더해 줄 양파를 조금 썰어서 물에 담가 두었다가 얹는다. (냉동) 아보카도에 소금, 후추, 라임주스 넣고 다져서 올리고, 토마토도 얹는다. 드레싱으로 마무리, 반으로 접어서 두 손에 쥐고 야무지게 먹는다. \n2023100\n20231003, #조식다이어리 863, 18도/맑음\n그릭요거트에 무화과와 사과, 올리브오일 \n헐리우드 작가 조합이 파업을 끝냈다. 결론은 다음 세 가지, \n1. 저작권료 인상 \n2. 제작현장에 '집필 공간 Writing room'을 두고 작가를 상주시킬 것 \n3. 대본 작업에 AI를 사용할 때 작가 보호 조치를 도입할 것\n새로 나오는 기술이 생활의 개선과 삶의 진보를 향하고 있는지 생각해 볼 일이다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20231004, #조식다이어리 864, 13도/부분적으로흐림\n헐리우드 작가 조합이 파업을 끝냈다. 결론은 다음 세 가지, \n1. 저작권료 인상 \n2. 제작현장에 '집필 공간 Writing room'을 두고 작가를 상주시킬 것 \n3. 대본 작업에 AI를 사용할 때 작가 보호 조치를 도입할 것\n항간에서는 21세기판 러다이트 운동 아니냐는 비판도 있지만 새로 나오는 기술이 생활의 개선과 삶의 진보를 향하고 있는지는 늘 경계할 일이다. \n\n달군 팬에 올리브오일, 소금, 후추, 굴소스를 더해 버섯을 데친다. 흡사 고기 비주얼이다. \n팬에 또띠아를 살짝 데운 후 접시에 담고 아삭함을 더해 줄 양파를 조금 썰어서 물에 담가 두었다가 얹는다. (냉동) 아보카도에 소금, 후추, 라임주스 넣고 다져서 올리고, 토마토도 얹는다. 드레싱으로 마무리, 반으로 접어서 두 손에 쥐고 야무지게 먹는다. ",
+  "ingredients": "- 또띠아 1장\n- 버섯(느타리버섯  1컵, 올리브오일 1T, 굴소스 1t, 소금과 후추 한 꼬집)\n- 토마토 1/2개\n- 양파 1/4개\n- 과카몰(아보카도 1/2개, 라임주스 1t, 소금과 후추 한 꼬집)\n- 홀스래디시 1T",
+  "steps": "1. 팬에 올리브오일, 소금, 후추, 굴소스 넣고 버섯을 볶는다. \n2. 양파는 길게 썬 후 물에 담근다. \n3. 토마토는 씨를 제거한 후 잘게 썬다. \n4. 잘게 썬 아보카도에 소금, 후추, 라임주스 넣고 다져서 과카몰을 만든다. \n4. 또띠아는 살짝 데운 뒤 버섯, 양파, 과카몰, 토마토와 홀스래디시 소스 얹는다.  ",
   "raw": "20231004, #조식다이어리 864, 13도/부분적으로흐림\n\n헐리우드 작가 조합이 파업을 끝냈다. 결론은 다음 세 가지, \n1. 저작권료 인상 \n2. 제작현장에 '집필 공간 Writing room'을 두고 작가를 상주시킬 것 \n3. 대본 작업에 AI를 사용할 때 작가 보호 조치를 도입할 것\n\n항간에서는 21세기판 러다이트 운동 아니냐는 비판도 있지만 새로 나오는 기술이 생활의 개선과 삶의 진보를 향하고 있는지는 늘 경계할 일이다. \n\n달군 팬에 올리브오일, 소금, 후추, 굴소스를 더해 버섯을 데친다. 흡사 고기 비주얼이다. \n팬에 또띠아를 살짝 데운 후 접시에 담고 아삭함을 더해 줄 양파를 조금 썰어서 물에 담가 두었다가 얹는다. (냉동) 아보카도에 소금, 후추, 라임주스 넣고 다져서 올리고, 토마토도 얹는다. 드레싱으로 마무리, 반으로 접어서 두 손에 쥐고 야무지게 먹는다. \n\n#조식 #레시피 #미라클모닝 #타코\n\n2023100\n20231003, #조식다이어리 863, 18도/맑음\n\n그릭요거트에 무화과와 사과, 올리브오일 \n\n#조식 #레시피 #미라클모닝 #무화과\n\n헐리우드 작가 조합이 파업을 끝냈다. 결론은 다음 세 가지, \n1. 저작권료 인상 \n2. 제작현장에 '집필 공간 Writing room'을 두고 작가를 상주시킬 것 \n3. 대본 작업에 AI를 사용할 때 작가 보호 조치를 도입할 것\n\n새로 나오는 기술이 생활의 개선과 삶의 진보를 향하고 있는지 생각해 볼 일이다. ",
   "image": "https://images.how-about-breakfast.com/images/11123.jpg",
   "video": "https://images.how-about-breakfast.com/images/864.mp4",
+  "page_id": "타코-무화과",
   "_en": {
-   "hash": "2785ea2a72ea6cff70d715648fc9b5ca5a828c7112e4dbc9279b34423d736f3c",
-   "title": "Mushroom Tacos & Figs",
-   "intro": "20231004, #breakfastdiary 864, 13°C/partly cloudy\nThe Hollywood writers' guild ended its strike. The three main outcomes were:\n1. Higher residuals/pay\n2. A 'writers room' on set where writers stay through production\n3. Protections for writers when AI is used in script work\nSome call it a 21st-century Luddite movement, but it's always worth staying alert to whether new technology is actually moving life and society forward.\nIn a hot pan, cook mushrooms with olive oil, salt, pepper, and oyster sauce — the visual is almost like meat.\nWarm a tortilla in the pan, plate it, and top with a little sliced onion (soaked in water first for extra crunch). Chop up (frozen) avocado with salt, pepper, and lime juice and add it on, then top with tomato. Finish with dressing, fold in half, and eat with both hands, no holding back.\n2023100\n20231003, #breakfastdiary 863, 18°C/sunny\nGreek yogurt with figs, apple, and olive oil.\nThe Hollywood writers' guild ended its strike. The three main outcomes were:\n1. Higher residuals/pay\n2. A 'writers room' on set where writers stay through production\n3. Protections for writers when AI is used in script work\nWorth thinking about whether new technology is really moving life and society forward.",
-   "ingredients": "",
-   "steps": ""
-  },
-  "page_id": "타코-무화과"
+   "hash": "51ed5cb72e46c6bb2b6a6c769403061b8c6473a7ae1dbc116673a431005c5b58",
+   "title": "Mushroom Taco",
+   "intro": "20231004, #breakfastdiary 864, 13°C/partly cloudy\nThe Hollywood writers' guild ended its strike. The three main outcomes were:\n1. Higher residuals/pay\n2. A 'writers room' on set where writers stay through production\n3. Protections for writers when AI is used in script work\nSome call it a 21st-century Luddite movement, but it's always worth staying alert to whether new technology is actually moving life and society forward.\n\nIn a hot pan, cook mushrooms with olive oil, salt, pepper, and oyster sauce - the visual is almost like meat.\nWarm a tortilla in the pan, plate it, and top with a little sliced onion (soaked in water first for extra crunch). Chop up (frozen) avocado with salt, pepper, and lime juice and add it on, then top with tomato. Finish with dressing, fold in half, and eat with both hands, no holding back.",
+   "ingredients": "- 1 tortilla\n- Mushrooms (1 cup oyster mushrooms, 1 tbsp olive oil, 1 tsp oyster sauce, a pinch each of salt and pepper)\n- 1/2 tomato\n- 1/4 onion\n- Guacamole (1/2 avocado, 1 tsp lime juice, a pinch each of salt and pepper)\n- 1 tbsp horseradish",
+   "steps": "1. Heat olive oil in a pan with salt, pepper, and oyster sauce, and sauté the mushrooms.\n2. Slice the onion lengthwise and soak in water.\n3. Deseed the tomato and chop finely.\n4. Finely chop the avocado, mix with salt, pepper, and lime juice to make guacamole.\n5. Warm the tortilla, then top with the mushrooms, onion, guacamole, tomato, and horseradish sauce."
+  }
  },
  {
   "date": "2023-10-03",
@@ -51065,7 +51179,7 @@
   "weather": "16도/흐림",
   "failed": false,
   "calories": null,
-  "title": "그릭요거트비트샐러드 비트 그릭요거트",
+  "title": "그릭요거트를 곁들인 비트샐러드",
   "credit": null,
   "hashtags": [
    "beet",
@@ -51087,8 +51201,8 @@
    "홈쿡"
   ],
   "intro": "20221004, #조식다이어리 563, 16도/흐림\n어제 직장 동료 축가를 했고 결과보다 과정이 아름답고 중요하단 생각을 하게 됐다. 결혼을 진심으로 축하한다! \n(어젯 밤에) 비트는 반으로 잘라 1시간 이상 푹 삶는다. 숟가락으로 살짝 떠낸 뒤 올리브오일, 발사믹, (리코타치즈 대신 엊그제 만들어 둔) 그릭요거트를 듬뿍, 후추후추, 그 과정이 아름다웠던 #그릭요거트비트샐러드\n#나의프랑스식샐러드 레시피 입니다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 비트 1개\n- 올리브오일 1T\n- 발사믹 비니거 1T\n- 후추\n- 그릭요거트 1T ",
+  "steps": "1. 비트는 반으로 잘라 냄비에 물 붓고 1시간 이상 삶는다. \n2. 부드러워진 비트는 숟가락으로 파낸 뒤 올리브오일, 발사믹 붓고 그릭요거트 얹는다. 후추 뿌린다. ",
   "raw": "20221004, #조식다이어리 563, 16도/흐림\n\n어제 직장 동료 축가를 했고 결과보다 과정이 아름답고 중요하단 생각을 하게 됐다. 결혼을 진심으로 축하한다! \n\n(어젯 밤에) 비트는 반으로 잘라 1시간 이상 푹 삶는다. 숟가락으로 살짝 떠낸 뒤 올리브오일, 발사믹, (리코타치즈 대신 엊그제 만들어 둔) 그릭요거트를 듬뿍, 후추후추, 그 과정이 아름다웠던 #그릭요거트비트샐러드\n#나의프랑스식샐러드 레시피 입니다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #비트 #그릭요거트\n#breakfast #salad #beet #greekyogurt ",
   "image": "https://images.how-about-breakfast.com/images/563.jpg",
   "gallery": [
@@ -51097,14 +51211,14 @@
    "https://images.how-about-breakfast.com/images/563_3.jpg",
    "https://images.how-about-breakfast.com/images/563_4.jpg"
   ],
+  "page_id": "그릭요거트비트샐러드-비트-그릭요거트",
   "_en": {
-   "hash": "b1a69014cab9665abf05f7272b73c375fbf7be215e529c5e66fd5c87ea082e36",
-   "title": "Greek Yogurt Beet Salad",
-   "intro": "20221004 #breakfastdiary 563, 16°C/cloudy\nYesterday I sang at a coworker's wedding, and it made me realize that the process matters more, and is more beautiful, than the result. Congratulations on the marriage, truly!\n(The night before) cut a beet in half and boil it thoroughly for over an hour. Scoop it out gently with a spoon, then top with olive oil, balsamic, plenty of Greek yogurt (made a couple of days ago, standing in for ricotta), and pepper — a process every bit as beautiful. #greekyogurtbeetsalad\nThis is my #myfrenchstylesalad recipe.",
-   "ingredients": "",
-   "steps": ""
-  },
-  "page_id": "그릭요거트비트샐러드-비트-그릭요거트"
+   "hash": "e9beda73e4b7533c96fe787132d20ec363e0b8be89d684a704bc4c6b9bca9891",
+   "title": "Beet Salad with Greek Yogurt",
+   "intro": "20221004, #breakfastdiary 563, 16°C/cloudy\nI sang a congratulatory song at a coworker's wedding yesterday, and it left me thinking the process matters more, and is more beautiful, than the result. Congratulations on the wedding, truly!\n(The night before,) halve a beet and boil it for over an hour until fully tender. Scoop it out with a spoon, then add olive oil, balsamic, and (in place of ricotta) a generous scoop of the Greek yogurt I'd made a couple of days earlier, pepper, pepper - the process itself was beautiful. #greekyogurtbeetsalad\nMy own #frenchstylesalad recipe.",
+   "ingredients": "- 1 beet\n- 1 tbsp olive oil\n- 1 tbsp balsamic vinegar\n- Pepper\n- 1 tbsp Greek yogurt",
+   "steps": "1. Halve the beet, place in a pot of water, and boil for over an hour.\n2. Once the beet is tender, scoop it out with a spoon, drizzle with olive oil and balsamic, and top with Greek yogurt. Finish with pepper."
+  }
  },
  {
   "date": "2022-10-03",
@@ -68601,7 +68715,7 @@
   "weather": "21도/흐림, 32분/운동하기",
   "failed": false,
   "calories": null,
-  "title": "토마토파스타 모닝리추얼 모닝루틴",
+  "title": "두부면으로 만든 토마토 파스타",
   "credit": null,
   "hashtags": [
    "basil",
@@ -68629,23 +68743,23 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20211004, #조식다이어리 229, 21도/흐림, 32분/운동하기\n팬에 올리브오일을 두르고 두부면을 데친다. 토마토소스를 끼얹고 면이 끊어지지 않도록 뒤적뒤적. 후추후추후추후추, 플레이팅한 후 파마산 치즈 조금 #토마토파스타\n파스타면에는 듀럼밀(Durum Wheat)이 사용된다. 우리가 일반적으로 알고 있는 (빵 만들 때 쓰는) 밀과는 다른 품종이다. 글루텐 함량이 높을 뿐만 아니라 얼마만큼 빠른 속도로 혈당으로 전환되는지를 나타내는 GI지수(Glycemic Index)가 콩 다음으로 낮다. (GI지수에 대한 논란이 있으니 맹신할 일은 못되지만)\n만들기는 라면만큼 간단하고 버섯, 양파, 브로콜리 등의 채소와도 잘 어울리니 영양가도 만점이다. 그래도 많이 먹으면 살찐다. 그럴땐 파스타면 대신에 두부면이다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20211004, #조식다이어리 229, 21도/흐림, 32분/운동하기\n팬에 올리브오일을 두르고 두부면을 데친다. 토마토소스를 끼얹고 면이 끊어지지 않도록 뒤적뒤적. 후추후추후추후추, 플레이팅한 후 파마산 치즈 조금 #토마토파스타\n\n파스타면에는 듀럼밀(Durum Wheat)이 사용된다. 우리가 일반적으로 알고 있는 (빵 만들 때 쓰는) 밀과는 다른 품종이다. 글루텐 함량이 높을 뿐만 아니라 얼마만큼 빠른 속도로 혈당으로 전환되는지를 나타내는 GI지수(Glycemic Index)가 콩 다음으로 낮다. (GI지수에 대한 논란이 있으니 맹신할 일은 못되지만)\n만들기는 라면만큼 간단하고 버섯, 양파, 브로콜리 등의 채소와도 잘 어울리니 영양가도 만점이다. 그래도 많이 먹으면 살찐다. 그럴땐 파스타면 대신에 두부면이다.",
+  "ingredients": "- 두부면 1개\n- 토마토소스 3T\n- 파마산치즈 \n- 후추\n- 바질",
+  "steps": "1. 팬에 올리브오일 두르고 두부면을 볶는다. \n2. 1에 토마토소스와 후추 뿌리고 골고루 섞는다. \n3. 그릇에 담고 파마산치즈 갈아서 얹는다. ",
   "raw": "20211004, #조식다이어리 229, 21도/흐림, 32분/운동하기\n\n팬에 올리브오일을 두르고 두부면을 데친다. 토마토소스를 끼얹고 면이 끊어지지 않도록 뒤적뒤적. 후추후추후추후추, 플레이팅한 후 파마산 치즈 조금 #토마토파스타\n\n파스타면에는 듀럼밀(Durum Wheat)이 사용된다. 우리가 일반적으로 알고 있는 (빵 만들 때 쓰는) 밀과는 다른 품종이다. 글루텐 함량이 높을 뿐만 아니라 얼마만큼 빠른 속도로 혈당으로 전환되는지를 나타내는 GI지수(Glycemic Index)가 콩 다음으로 낮다. (GI지수에 대한 논란이 있으니 맹신할 일은 못되지만)\n\n만들기는 라면만큼 간단하고 버섯, 양파, 브로콜리 등의 채소와도 잘 어울리니 영양가도 만점이다. 그래도 많이 먹으면 살찐다. 그럴땐 파스타면 대신에 두부면이다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #파스타 #파마산치즈 #바질 #두부면\n#breakfast #recipe #pasta #tomatopasta #basil #parmigianoreggiano #spaghetti",
   "image": "https://images.how-about-breakfast.com/images/229.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/229.jpg",
    "https://images.how-about-breakfast.com/images/229_2.jpg"
   ],
+  "page_id": "토마토파스타-모닝리추얼-모닝루틴",
   "_en": {
-   "hash": "5a24939d1c7aec6cf7b5ef9f7e290444aedb5c916c964af6d50021f333312d21",
-   "title": "Tomato Pasta, Morning Ritual, Morning Routine",
-   "intro": "20211004, #breakfastdiary 229, 21°C/cloudy, 32min/exercise\nHeat olive oil in a pan and warm the tofu noodles. Pour over tomato sauce and toss gently so the noodles don't break. Pepperpepperpepperpepper, then plate with a little parmesan cheese on top #tomatopasta\nRegular pasta is made from durum wheat, a different variety from the wheat we normally know (the kind used for bread). Not only does it have a higher gluten content, its glycemic index (GI) — which measures how quickly it converts to blood sugar — is the second lowest after beans. (There's some debate about GI, so it's not something to take as gospel.)\nIt's as easy to make as instant ramen and pairs well with vegetables like mushrooms, onions, and broccoli, so it scores full marks on nutrition too. Still, eat too much and you'll gain weight. That's when tofu noodles step in for pasta noodles.",
-   "ingredients": "",
-   "steps": ""
-  },
-  "page_id": "토마토파스타-모닝리추얼-모닝루틴"
+   "hash": "0fd70d78d496c5ab477314f75edd659bfc6ff11c94837828dc1f7276c52da6d3",
+   "title": "Tomato Pasta Made with Tofu Noodles",
+   "intro": "20211004, #breakfastdiary 229, 21°C/cloudy, 32min/exercise\nHeat olive oil in a pan and warm through the tofu noodles. Pour over tomato sauce and toss gently so the noodles don't break apart. Pepper, pepper, pepper, pepper, plate it, and finish with a little parmesan. #tomatopasta\n\nRegular pasta is made from durum wheat, a different variety from the wheat we typically know (the kind used for bread). Not only is its gluten content higher, but its Glycemic Index - a measure of how quickly it converts to blood sugar - is the second lowest after beans. (Though there's some debate over the GI index, so it's not something to take as gospel.)\nIt's as simple to make as instant noodles, and pairs well with vegetables like mushrooms, onion, and broccoli, so it's great nutritionally too. Still, eat too much and you'll gain weight. That's when tofu noodles step in for pasta.",
+   "ingredients": "- 1 pack tofu noodles\n- 3 tbsp tomato sauce\n- Parmesan cheese\n- Pepper\n- Basil",
+   "steps": "1. Heat olive oil in a pan and sauté the tofu noodles.\n2. Add tomato sauce and pepper to step 1 and mix well.\n3. Plate and top with grated parmesan cheese."
+  }
  },
  {
   "date": "2021-10-03",
@@ -86148,7 +86262,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "마이크로어그레션 파프리카 조식",
+  "title": "라따뚜이 스터프드 파프리카",
   "credit": null,
   "hashtags": [
    "마이크로어그레션",
@@ -86157,22 +86271,22 @@
    "조식",
    "파프리카"
   ],
-  "intro": "20201004, “(정세균 후보자가) 총리가 된다면 이것은 ‘절름발이 총리’이고….” \n일상에서 눈에 잘 띄지 않을 정도로 미세하고 만연한 (이런) 차별(적 표현의 사용)을 ‘마이크로어그레션’(Microaggression·아주 작은 공격)이라 한다고, \n명절에 혹은 일상에서 의례적으로 건네는 인사, 취직했어? 애인 있어? 결혼은 언제 해? 애는 언제 낳아? 이런 표현마저도, 진심으로 다시 생각해볼 일이다. #마이크로어그레션\n세상에서 제일 예쁜 #파프리카 에 애호박, 가지, 토마토, 양파로 속을 채우고 빵가루 섞은 드레싱을 곁들인 라따뚜이 #조식 #샐러드 #미라클모닝",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20201004, “(정세균 후보자가) 총리가 된다면 이것은 ‘절름발이 총리’이고….” \n일상에서 눈에 잘 띄지 않을 정도로 미세하고 만연한 (이런) 차별(적 표현의 사용)을 ‘마이크로어그레션’(Microaggression·아주 작은 공격)이라 한다고, \n명절에 혹은 일상에서 의례적으로 건네는 인사, 취직했어? 애인 있어? 결혼은 언제 해? 애는 언제 낳아? 이런 표현마저도, 진심으로 다시 생각해볼 일이다. #마이크로어그레션\n\n세상에서 제일 예쁜 #파프리카 에 애호박, 가지, 토마토, 양파로 속을 채우고 빵가루 섞은 드레싱을 곁들인 라따뚜이 #조식 #샐러드 #미라클모닝",
+  "ingredients": "- 파프리카 1개\n- 토마토 1/2개\n- 애호박 1/4개\n- 가지 1/2개\n- 양파 1/2개\n- 빵가루 2T\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 올리브오일 1T",
+  "steps": "1. 파프리카는 반으로 썬다. \n2. 토마토는 잘게 썬 뒤 씨를 제거한다. \n3. 팬에 올리브오일 두른 후 잘게 썬 애호박, 가지, 양파, 2의 토마토를 볶는다. \n4. 믹싱볼에 3의 애호박, 가지, 양파, 토마토와 빵가루, 드레싱 넣고 섞는다.\n5. 1의 파프리카에 4의 속재료를 채워넣는다. ",
   "raw": "20201004, “(정세균 후보자가) 총리가 된다면 이것은 ‘절름발이 총리’이고….” \n일상에서 눈에 잘 띄지 않을 정도로 미세하고 만연한 (이런) 차별(적 표현의 사용)을 ‘마이크로어그레션’(Microaggression·아주 작은 공격)이라 한다고, \n명절에 혹은 일상에서 의례적으로 건네는 인사, 취직했어? 애인 있어? 결혼은 언제 해? 애는 언제 낳아? 이런 표현마저도, 진심으로 다시 생각해볼 일이다. #마이크로어그레션\n\n세상에서 제일 예쁜 #파프리카 에 애호박, 가지, 토마토, 양파로 속을 채우고 빵가루 섞은 드레싱을 곁들인 라따뚜이 #조식 #샐러드 #미라클모닝",
   "pre_label": "D-131",
   "image": "https://images.how-about-breakfast.com/images/pre-131.jpg",
-  "_en": {
-   "hash": "160f849d30257bea12ad576eb83ff18c18771659cdc3ec3a13f6272220731e24",
-   "title": "Microaggressions, Bell Pepper Ratatouille",
-   "intro": "20201004, \"If (nominee Chung Sye-kyun) becomes prime minister, it would make him a 'lame-duck prime minister'...\"\nThey call this kind of subtle, pervasive everyday bias — barely noticeable but everywhere — a 'microaggression' (a very small attack).\nEven the routine holiday or everyday greetings — got a job yet? seeing anyone? when are you getting married? when are you having kids? — are worth thinking hard about again. #microaggression\nStuff the prettiest bell pepper in the world with zucchini, eggplant, tomato, and onion, and serve with a breadcrumb dressing — ratatouille. #breakfastdiary #salad #miraclemorning",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "마이크로어그레션-파프리카-조식",
   "essay_candidate": true,
-  "essay_reviewed": true
+  "essay_reviewed": true,
+  "_en": {
+   "hash": "08c3e524aba3eacbb3cddeb8dc8f84cd2bf976cf43ce2272772fe4a7f6838c34",
+   "title": "Ratatouille Stuffed Bell Pepper",
+   "intro": "20201004, 'If (candidate Chung Sye-kyun) becomes prime minister, this will be a lame-duck premiership...' \nThis kind of subtle, pervasive (discriminatory) language, so faint it barely registers in everyday life, is called a 'microaggression' - a very small attack. \nEven the routine greetings we exchange at holidays or in daily life - got a job yet? Seeing anyone? When are you getting married? When are you having kids? - are worth genuinely reconsidering. #microaggression\n\nThe prettiest #bellpepper in the world, stuffed with zucchini, eggplant, tomato, and onion, with a breadcrumb-mixed dressing on the side - ratatouille. #breakfast #salad #miraclemorning",
+   "ingredients": "- 1 bell pepper\n- 1/2 tomato\n- 1/4 zucchini\n- 1/2 eggplant\n- 1/2 onion\n- 2 tbsp breadcrumbs\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)\n- 1 tbsp olive oil",
+   "steps": "1. Halve the bell pepper.\n2. Finely chop the tomato and remove the seeds.\n3. Heat olive oil in a pan and sauté finely chopped zucchini, eggplant, onion, and the tomato from step 2.\n4. In a mixing bowl, combine the zucchini, eggplant, onion, and tomato from step 3 with breadcrumbs and dressing.\n5. Stuff the bell pepper from step 1 with the filling from step 4."
+  }
  },
  {
   "date": "2020-10-03",

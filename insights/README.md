@@ -72,18 +72,25 @@ GitHub Actions (매일 06:30 KST)
 - **API가 거부한 지표**: 수집기가 실패하지 않고 건너뛴 뒤 `meta.json`에 기록합니다. 목록은 대시보드 '심화 분석' 탭 하단에서 볼 수 있습니다.
 - **확산 지수** = 게시물 도달 ÷ 게시 당시 팔로워 수입니다. 수집 시작 전 게시물은 수집 첫날의 팔로워 수로 계산하므로 실제보다 낮게 나올 수 있습니다.
 
+## 인스타그램 토큰 자동 연장
+- **매주 월요일 12:17(KST)** `Instagram token refresh` 워크플로가 토큰을 새 60일짜리로 연장합니다(`ig_token.py refresh`). 직접 교체할 일이 없습니다.
+- 연장된 토큰은 **비공개 인사이트 버킷의 `auth/ig-token.json`**에만 저장됩니다. 대시보드 Worker는 정해진 파일만 내려주므로 이 파일은 밖으로 나가지 않습니다.
+- 토큰을 쓰는 워크플로(사이트 동기화, 인사이트 수집, 인스타 색인)는 시작할 때 `ig_token.py resolve`로 연장된 토큰을 가져오고, 없거나 만료가 1시간 안쪽이면 GitHub Secrets의 `IG_ACCESS_TOKEN`을 씁니다. 토큰은 로그에서 가려집니다(`::add-mask::`).
+- GitHub Secrets의 `IG_ACCESS_TOKEN`은 **씨앗** 역할입니다. 언젠가 토큰을 새로 발급해 이 값을 바꾸면, 저장된 토큰보다 새 값이 우선하고 다음 연장부터 새 값을 이어 갑니다.
+- 왜 Secrets를 직접 고치지 않나: 워크플로가 Secrets를 고치려면 "비밀값을 바꿀 수 있는 키"를 새로 만들어 둬야 합니다. 버킷 방식은 **이미 있는 버킷 전용 키만 써서 새 권한이 생기지 않습니다.**
+- Cloudflare `edit-api` Worker(관리자 "빠진 날짜" 미리보기)도 같은 토큰을 쓰려면 한 번만 설정합니다: Worker → Settings → Bindings → **R2 bucket** 추가, 이름 `IG_TOKEN_STORE`, 버킷 `ig-insights`. 그리고 저장소의 `cloudflare-worker/edit-api.js` 내용으로 코드를 다시 붙여넣기. 바인딩이 없으면 기존 `IG_ACCESS_TOKEN` 비밀값을 그대로 씁니다.
+
 ## 인스타그램 토큰 만료 표시
-- 대시보드 제목 아래에 **토큰 만료 예정일(D-day)**이 나옵니다. 14일 이하로 남으면 ⚠, 만료되거나 토큰 오류로 수집이 멈추면 ⛔ 표시가 뜹니다.
-- 인스타그램 API는 발급일을 알려주지 않습니다. 그래서 수집기가 **토큰이 바뀐 날**을 알아채고(토큰은 저장하지 않고 되돌릴 수 없는 짧은 지문만 비교), 그날부터 60일을 셉니다. 따라서 토큰을 교체하면 다음 날 수집부터 정확한 날짜가 표시됩니다.
-- 처음 수집할 때 쓰던 토큰은 발급일을 몰라서 첫 수집일 기준으로 추정합니다(실제로는 더 빠를 수 있음). 발급일을 알면 저장소 **Settings → Secrets and variables → Actions → Variables** 탭에 `IG_TOKEN_ISSUED_AT` = `YYYY-MM-DD`를 넣어 바로잡을 수 있습니다(비밀값이 아니므로 Variables에 넣습니다).
-- 토큰을 교체할 때는 **GitHub Secrets의 `IG_ACCESS_TOKEN`과 Cloudflare `edit-api` Worker의 `IG_ACCESS_TOKEN` 두 곳**을 모두 바꿔 주세요.
+- 대시보드 제목 아래에 **토큰 상태**가 나옵니다. 자동 연장이 돌고 있으면 "토큰 자동 연장 중 · 만료까지 D-N"(보통 D-53~60)으로 보입니다.
+- 연장이 실패하면 ⚠ "자동 연장 실패"가 뜹니다. 이전 토큰은 그대로 남아 있고 만료까지 몇 주 여유가 있으니, GitHub Actions에서 `Instagram token refresh` 기록을 확인하고 **Run workflow**로 다시 돌려 보세요. 토큰 오류로 수집이 멈추면 ⛔가 뜹니다(이때만 새로 발급해 GitHub Secrets `IG_ACCESS_TOKEN`을 교체).
+- 자동 연장 전 토큰은 발급일을 API가 알려주지 않아, 수집기가 토큰이 바뀐 날(되돌릴 수 없는 짧은 지문으로 비교)부터 60일을 셉니다. 발급일을 알면 저장소 **Variables**에 `IG_TOKEN_ISSUED_AT` = `YYYY-MM-DD`로 바로잡을 수 있습니다.
 
 ## 보안·개인정보 점검 (OWASP Top 10 기준)
 | 항목 | 적용 내용 |
 |---|---|
 | A01 접근 통제 | Cloudflare Access(본인 이메일만) + Worker에서 Access JWT 서명·aud·iss·만료·이메일 재검증. 설정 누락 시 503으로 차단(fail closed). 허용 목록에 있는 파일만 제공. GET 외 메서드 거부 |
-| A02 암호화 실패 | 모든 통신 HTTPS. 토큰·키는 GitHub Secrets, Worker Secrets에만 보관하고 저장소와 로그에는 남기지 않음 |
-| A03 인젝션 | 대시보드는 데이터를 `textContent`로만 넣음(innerHTML 미사용). 외부 링크는 instagram.com, 이미지는 사이트 이미지 도메인만 허용 |
+| A02 암호화 실패 | 모든 통신 HTTPS. 토큰·키는 GitHub Secrets, Worker Secrets, 비공개 버킷(자동 연장 토큰)에만 보관하고 저장소와 로그에는 남기지 않음(로그 마스킹) |
+| A03 인젝션 | 대시보드는 데이터를 `textContent`로만 넣음(innerHTML 미사용). 외부 링크는 instagram.com, 이미지는 사이트 이미지 도메인만 허용. 토큰은 형식 검사(영숫자 등) 후에만 워크플로 환경변수·자격증명 파일에 기록 |
 | A05 보안 설정 | CSP(`default-src 'none'`, 인라인 스크립트·스타일 금지), X-Frame-Options DENY, nosniff, no-referrer, no-store, noindex |
 | A06 취약 구성요소 | 대시보드에 외부 라이브러리·CDN 없음. 수집기 의존성은 boto3 하나 |
 | A07 인증 | 비밀번호를 직접 다루지 않고 Cloudflare Access 일회용 코드 로그인에 위임 |

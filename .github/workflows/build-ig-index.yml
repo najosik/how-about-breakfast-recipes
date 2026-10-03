@@ -23,10 +23,24 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Install dependencies
+        run: pip install boto3
+
+      - name: Resolve Instagram token
+        # the auto-refreshed token if there is one (see insights/ig_token.py),
+        # otherwise the secret; exported masked as env.IG_ACCESS_TOKEN
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          INSIGHTS_R2_ENDPOINT: ${{ secrets.INSIGHTS_R2_ENDPOINT }}
+          INSIGHTS_R2_ACCESS_KEY_ID: ${{ secrets.INSIGHTS_R2_ACCESS_KEY_ID }}
+          INSIGHTS_R2_SECRET_ACCESS_KEY: ${{ secrets.INSIGHTS_R2_SECRET_ACCESS_KEY }}
+          INSIGHTS_R2_BUCKET: ${{ secrets.INSIGHTS_R2_BUCKET }}
+        run: python insights/ig_token.py resolve
+
       - name: Write credentials
         run: |
           cat > .ig-credentials.json <<EOF
-          {"access_token": "${{ secrets.IG_ACCESS_TOKEN }}", "ig_user_id": "${{ secrets.IG_USER_ID }}"}
+          {"access_token": "${{ env.IG_ACCESS_TOKEN }}", "ig_user_id": "${{ secrets.IG_USER_ID }}"}
           EOF
 
       - name: Build Instagram index
