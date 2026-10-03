@@ -38220,7 +38220,7 @@
   "weather": "13도/부분적으로흐림",
   "failed": false,
   "calories": null,
-  "title": "타코 무화과",
+  "title": "버섯 타코",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38230,18 +38230,11 @@
    "조식다이어리",
    "타코"
   ],
-  "intro": "20231004, #조식다이어리 864, 13도/부분적으로흐림\n헐리우드 작가 조합이 파업을 끝냈다. 결론은 다음 세 가지, \n1. 저작권료 인상 \n2. 제작현장에 '집필 공간 Writing room'을 두고 작가를 상주시킬 것 \n3. 대본 작업에 AI를 사용할 때 작가 보호 조치를 도입할 것\n항간에서는 21세기판 러다이트 운동 아니냐는 비판도 있지만 새로 나오는 기술이 생활의 개선과 삶의 진보를 향하고 있는지는 늘 경계할 일이다. \n달군 팬에 올리브오일, 소금, 후추, 굴소스를 더해 버섯을 데친다. 흡사 고기 비주얼이다. \n팬에 또띠아를 살짝 데운 후 접시에 담고 아삭함을 더해 줄 양파를 조금 썰어서 물에 담가 두었다가 얹는다. (냉동) 아보카도에 소금, 후추, 라임주스 넣고 다져서 올리고, 토마토도 얹는다. 드레싱으로 마무리, 반으로 접어서 두 손에 쥐고 야무지게 먹는다. \n2023100\n20231003, #조식다이어리 863, 18도/맑음\n그릭요거트에 무화과와 사과, 올리브오일 \n헐리우드 작가 조합이 파업을 끝냈다. 결론은 다음 세 가지, \n1. 저작권료 인상 \n2. 제작현장에 '집필 공간 Writing room'을 두고 작가를 상주시킬 것 \n3. 대본 작업에 AI를 사용할 때 작가 보호 조치를 도입할 것\n새로 나오는 기술이 생활의 개선과 삶의 진보를 향하고 있는지 생각해 볼 일이다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20231004, #조식다이어리 864, 13도/부분적으로흐림\n헐리우드 작가 조합이 파업을 끝냈다. 결론은 다음 세 가지, \n1. 저작권료 인상 \n2. 제작현장에 '집필 공간 Writing room'을 두고 작가를 상주시킬 것 \n3. 대본 작업에 AI를 사용할 때 작가 보호 조치를 도입할 것\n항간에서는 21세기판 러다이트 운동 아니냐는 비판도 있지만 새로 나오는 기술이 생활의 개선과 삶의 진보를 향하고 있는지는 늘 경계할 일이다. \n\n달군 팬에 올리브오일, 소금, 후추, 굴소스를 더해 버섯을 데친다. 흡사 고기 비주얼이다. \n팬에 또띠아를 살짝 데운 후 접시에 담고 아삭함을 더해 줄 양파를 조금 썰어서 물에 담가 두었다가 얹는다. (냉동) 아보카도에 소금, 후추, 라임주스 넣고 다져서 올리고, 토마토도 얹는다. 드레싱으로 마무리, 반으로 접어서 두 손에 쥐고 야무지게 먹는다. ",
+  "ingredients": "- 또띠아 1장\n- 버섯(느타리버섯  1컵, 올리브오일 1T, 굴소스 1t, 소금과 후추 한 꼬집)\n- 토마토 1/2개\n- 양파 1/4개\n- 과카몰(아보카도 1/2개, 라임주스 1t, 소금과 후추 한 꼬집)\n- 홀스래디시 1T",
+  "steps": "1. 팬에 올리브오일, 소금, 후추, 굴소스 넣고 버섯을 볶는다. \n2. 양파는 길게 썬 후 물에 담근다. \n3. 토마토는 씨를 제거한 후 잘게 썬다. \n4. 잘게 썬 아보카도에 소금, 후추, 라임주스 넣고 다져서 과카몰을 만든다. \n4. 또띠아는 살짝 데운 뒤 버섯, 양파, 과카몰, 토마토와 홀스래디시 소스 얹는다.  ",
   "raw": "20231004, #조식다이어리 864, 13도/부분적으로흐림\n\n헐리우드 작가 조합이 파업을 끝냈다. 결론은 다음 세 가지, \n1. 저작권료 인상 \n2. 제작현장에 '집필 공간 Writing room'을 두고 작가를 상주시킬 것 \n3. 대본 작업에 AI를 사용할 때 작가 보호 조치를 도입할 것\n\n항간에서는 21세기판 러다이트 운동 아니냐는 비판도 있지만 새로 나오는 기술이 생활의 개선과 삶의 진보를 향하고 있는지는 늘 경계할 일이다. \n\n달군 팬에 올리브오일, 소금, 후추, 굴소스를 더해 버섯을 데친다. 흡사 고기 비주얼이다. \n팬에 또띠아를 살짝 데운 후 접시에 담고 아삭함을 더해 줄 양파를 조금 썰어서 물에 담가 두었다가 얹는다. (냉동) 아보카도에 소금, 후추, 라임주스 넣고 다져서 올리고, 토마토도 얹는다. 드레싱으로 마무리, 반으로 접어서 두 손에 쥐고 야무지게 먹는다. \n\n#조식 #레시피 #미라클모닝 #타코\n\n2023100\n20231003, #조식다이어리 863, 18도/맑음\n\n그릭요거트에 무화과와 사과, 올리브오일 \n\n#조식 #레시피 #미라클모닝 #무화과\n\n헐리우드 작가 조합이 파업을 끝냈다. 결론은 다음 세 가지, \n1. 저작권료 인상 \n2. 제작현장에 '집필 공간 Writing room'을 두고 작가를 상주시킬 것 \n3. 대본 작업에 AI를 사용할 때 작가 보호 조치를 도입할 것\n\n새로 나오는 기술이 생활의 개선과 삶의 진보를 향하고 있는지 생각해 볼 일이다. ",
   "video": "https://images.how-about-breakfast.com/images/864.mp4",
-  "_en": {
-   "hash": "2785ea2a72ea6cff70d715648fc9b5ca5a828c7112e4dbc9279b34423d736f3c",
-   "title": "Mushroom Tacos & Figs",
-   "intro": "20231004, #breakfastdiary 864, 13°C/partly cloudy\nThe Hollywood writers' guild ended its strike. The three main outcomes were:\n1. Higher residuals/pay\n2. A 'writers room' on set where writers stay through production\n3. Protections for writers when AI is used in script work\nSome call it a 21st-century Luddite movement, but it's always worth staying alert to whether new technology is actually moving life and society forward.\nIn a hot pan, cook mushrooms with olive oil, salt, pepper, and oyster sauce — the visual is almost like meat.\nWarm a tortilla in the pan, plate it, and top with a little sliced onion (soaked in water first for extra crunch). Chop up (frozen) avocado with salt, pepper, and lime juice and add it on, then top with tomato. Finish with dressing, fold in half, and eat with both hands, no holding back.\n2023100\n20231003, #breakfastdiary 863, 18°C/sunny\nGreek yogurt with figs, apple, and olive oil.\nThe Hollywood writers' guild ended its strike. The three main outcomes were:\n1. Higher residuals/pay\n2. A 'writers room' on set where writers stay through production\n3. Protections for writers when AI is used in script work\nWorth thinking about whether new technology is really moving life and society forward.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "타코-무화과"
  },
  {
