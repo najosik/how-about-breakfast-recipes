@@ -25567,7 +25567,7 @@
   "weather": "00도/맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "스매쉬드포테이토 감자",
+  "title": "스매쉬드 포테이토",
   "credit": null,
   "hashtags": [
    "감자",
@@ -25578,8 +25578,8 @@
    "조식다이어리"
   ],
   "intro": "20241004 #조식다이어리 1195, 00도/맑음, 20분/운동(M) \n \n(리처드 칼슨의 책 제목을 살짝 빌려서 얘기하면,) 100년 뒤 우리는 이 세상에 없으니 사소한 일에 목숨 걸지 말고 바질 페스토 위에 올린 썬드라이드 토마토처럼 맛있게 살아야 한다. \n사워크림 위에 바질 페스토와 썬드라이드 토마토를 얹은 #스매쉬드포테이토",
-  "ingredients": "감자 (먹고 싶은 만큼)\n사워크림 (없으면 그릭요거트+레몬주스 혹은 그냥 요거트)\n썬드라이드 토마토\n바질 페스토\n그 밖에 올리브오일, 소금, 후추 등\n\n👉이렇게\n끓는 물에 소금소금 감자 삶는다. \n한 김 식히고 컵바닥으로 감자를 지그시 으깨고 올리브오일, 소금소금 후추후추 220도 오븐에 20분 굽는다. \n20분 굽고 좀 더 바삭하게 만들려고 토치를 사용했는데, 부질 없는 짓이었다. 아무튼,\n감자를 접시에 담고 감자 위에 사워크림, 바질 페스토, 썬드라이드 토마토 얹는다.   \n\n#조식 #레시피 #미라클모닝 #감자",
-  "steps": null,
+  "ingredients": "- 감자 2~3개\n- 사워크림 2T (없다면 그릭요거트+레몬주스 혹은 요거트로 대체 가능)\n- 썬드라이드 토마토 2~3개\n- 바질 페스토 1T\n- 올리브오일\n- 소금\n- 후추",
+  "steps": "1. 끓는 물에 소금 넣고 감자 삶는다. \n2. 한 김 식히고 컵바닥으로 감자를 지그시 으깬 후 올리브오일, 소금, 후추 뿌리고 220도 오븐에 20분 굽는다. \n3. 2의 감자를 접시에 담고 사워크림, 바질 페스토, 썬드라이드 토마토 얹는다.   ",
   "raw": "20241004 #조식다이어리 1195, 00도/맑음, 20분/운동(M) \n \n(리처드 칼슨의 책 제목을 살짝 빌려서 얘기하면,) 100년 뒤 우리는 이 세상에 없으니 사소한 일에 목숨 걸지 말고 바질 페스토 위에 올린 썬드라이드 토마토처럼 맛있게 살아야 한다. \n\n사워크림 위에 바질 페스토와 썬드라이드 토마토를 얹은 #스매쉬드포테이토\n\n👉재료는\n감자 (먹고 싶은 만큼)\n사워크림 (없으면 그릭요거트+레몬주스 혹은 그냥 요거트)\n썬드라이드 토마토\n바질 페스토\n그 밖에 올리브오일, 소금, 후추 등\n\n👉이렇게\n끓는 물에 소금소금 감자 삶는다. \n한 김 식히고 컵바닥으로 감자를 지그시 으깨고 올리브오일, 소금소금 후추후추 220도 오븐에 20분 굽는다. \n20분 굽고 좀 더 바삭하게 만들려고 토치를 사용했는데, 부질 없는 짓이었다. 아무튼,\n감자를 접시에 담고 감자 위에 사워크림, 바질 페스토, 썬드라이드 토마토 얹는다.   \n\n#조식 #레시피 #미라클모닝 #감자",
   "image": "https://images.how-about-breakfast.com/images/1195.jpg",
   "gallery": [
@@ -25588,13 +25588,6 @@
    "https://images.how-about-breakfast.com/images/1195_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1195.mp4",
-  "_en": {
-   "hash": "6fca3861beef188695dce691deda540d1d8d4aa337d38a16a887280307d5afc3",
-   "title": "Smashed potato, potato",
-   "intro": "20241004 #breakfastdiary 1195, 0°C/clear, 20 min/exercise(M) \n \n(To borrow slightly from the title of Richard Carlson's book,) in 100 years none of us will be here, so don't sweat the small stuff — live deliciously, like sun-dried tomatoes on top of basil pesto. \n#Smashedpotato topped with basil pesto and sun-dried tomatoes over sour cream",
-   "ingredients": "Potatoes (as many as you want to eat)\nSour cream (if you don't have it, Greek yogurt + lemon juice, or just plain yogurt)\nSun-dried tomatoes\nBasil pesto\nAlso olive oil, salt, pepper, etc.\n\n👉Like this\nBoil the potatoes in salted water.\nLet cool slightly, gently smash with the bottom of a cup, then roast at 220°C for 20 minutes with olive oil, salt, and pepper.\nAfter the 20 minutes I tried using a torch to make them crispier, but that was pointless. Anyway,\nPlate the potatoes and top with sour cream, basil pesto, and sun-dried tomatoes.\n\n#breakfast #recipe #miraclemorning #potato",
-   "steps": ""
-  },
   "page_id": "스매쉬드포테이토-감자"
  },
  {
