@@ -140,6 +140,8 @@ const DISTRICT_EN = {
 const FIT_I18N = {
   en: {
     title: "Foreign-visitor fit",
+    filter: "Visitor-friendly only",
+    filterNote: (n) => `Visitor-friendly filter on: hid ${n.toLocaleString("en")} event${n === 1 ? "" : "s"} that need Korean, Korean ID booking, or are limited to certain groups.`,
     lead: (n) => `We auto-tagged all ${n.toLocaleString("en")} events by how easy they are for visitors who don't speak Korean.`,
     statEasy: "Enjoyable without Korean",
     statBooking: "Need advance booking",
@@ -167,6 +169,8 @@ const FIT_I18N = {
   },
   ko: {
     title: "외국인 적합도",
+    filter: "외국인 적합도 적용",
+    filterNote: (n) => `외국인 적합도 적용 중: 한국어 이해 필요·국내 본인인증 예약·대상 제한 행사 ${n.toLocaleString("ko")}건을 숨겼습니다.`,
     lead: (n) => `전체 ${n.toLocaleString("ko")}건의 행사를 '한국어를 몰라도 즐기기 쉬운가' 기준으로 자동 분류했습니다.`,
     statEasy: "한국어 몰라도 OK",
     statBooking: "사전 예약 필요",
