@@ -9,11 +9,12 @@
   const $ = (id) => document.getElementById(id);
 
   const state = {
-    lang: "en", when: "week", cat: "all", gu: "", free: false, q: "", sort: "ending",
+    lang: "en", when: "week", cat: "all", gu: "", free: false, fit: false, q: "", sort: "ending",
     shown: PAGE,
   };
   let data = { events: [] };
-  let fit = null;   // { tags, overrides, rulesVersion, updatedAt } — 없으면 패널 숨김
+  let fit = null;
+  let fitHiddenCount = 0;   // { tags, overrides, rulesVersion, updatedAt } — 없으면 패널 숨김
   let filtered = [];
 
   // ---------- 유틸 ----------
@@ -107,6 +108,7 @@
     const gu = p.get("gu");
     if (gu && Object.hasOwn(DISTRICT_EN, gu)) state.gu = gu;
     state.free = p.get("free") === "1";
+    state.fit = p.get("fit") === "1";
     if (SORTS.includes(p.get("sort"))) state.sort = p.get("sort");
     state.q = (p.get("q") || "").slice(0, 50);
   }
@@ -117,6 +119,7 @@
     if (state.cat !== "all") p.set("cat", state.cat);
     if (state.gu) p.set("gu", state.gu);
     if (state.free) p.set("free", "1");
+    if (state.fit) p.set("fit", "1");
     if (state.sort !== "ending") p.set("sort", state.sort);
     if (state.q) p.set("q", state.q);
     history.replaceState(null, "", `${location.pathname}?${p}`);
@@ -127,6 +130,9 @@
     const today = kstToday();
     const [from, to] = range(state.when, today);
     const q = state.q.trim().toLowerCase();
+    const useFit = state.fit && fit;
+    const sets = useFit ? fitSets() : null;
+    fitHiddenCount = 0;
     filtered = data.events.filter((ev) => {
       if (ev.end < from || ev.start > to) return false;
       if (state.cat !== "all" && groupOf(ev.category) !== state.cat) return false;
@@ -136,6 +142,7 @@
         const hay = `${ev.title} ${ev.place} ${ev.org} ${ev.category} ${CATEGORY_EN[ev.category] || ""} ${DISTRICT_EN[ev.district] || ""}`.toLowerCase();
         if (!hay.includes(q)) return false;
       }
+      if (useFit && fitHidden(ev, sets)) { fitHiddenCount++; return false; }
       return true;
     });
     const key = state.sort === "starting" ? "start" : "end";
@@ -154,6 +161,8 @@
     $("lbl-district").textContent = t("district");
     $("lbl-sort").textContent = t("sort");
     $("lbl-free").textContent = t("freeOnly");
+    $("lbl-fit").textContent = FIT_I18N[state.lang].filter;
+    $("fitonly").checked = state.fit;
     $("q").placeholder = t("searchPh");
     $("q").value = state.q;
     $("free").checked = state.free;
@@ -226,6 +235,9 @@
   function renderList() {
     const today = kstToday();
     $("count").textContent = t("results", filtered.length);
+    const note = $("fit-note");
+    note.hidden = !(state.fit && fit);
+    note.textContent = note.hidden ? "" : FIT_I18N[state.lang].filterNote(fitHiddenCount);
     $("list").replaceChildren(...filtered.slice(0, state.shown).map((ev) => card(ev, today)));
     $("empty").textContent = t("none");
     $("empty").hidden = filtered.length > 0;
@@ -278,6 +290,24 @@
   };
   const overrideIds = (list) => new Set((Array.isArray(list) ? list : [])
     .map((x) => (typeof x === "string" ? x : x && x.id)).filter((x) => typeof x === "string"));
+
+  function fitSets() {
+    return { pin: overrideIds(fit.overrides.pin), exc: overrideIds(fit.overrides.exclude) };
+  }
+  /**
+   * 적합도 필터에서 숨길 이유(없으면 null). 담당자 제외 > 담당자 추천 > 자동 규칙.
+   * 자동 규칙: 참여 대상 제한, 국내 본인인증 예약, 한국어 이해가 필요한 형식(언어 장벽 높음).
+   */
+  function fitHidden(ev, { pin, exc }) {
+    if (exc.has(ev.id)) return "exclude";
+    if (pin.has(ev.id)) return null;
+    const tg = Object.hasOwn(fit.tags, ev.id) ? fit.tags[ev.id] : null;
+    if (!tg || typeof tg !== "object") return null;   // 아직 분류 안 된 행사는 숨기지 않음
+    if (tg.audience_restricted === true) return "restricted";
+    if (tg.reservation_barrier === "kr_auth_required") return "kr_auth";
+    if (tg.language_barrier === "high") return "language";
+    return null;
+  }
 
   function fitSummary() {
     const ids = new Set(data.events.map((e) => e.id));
@@ -339,7 +369,9 @@
     if (!tags || typeof tags.tags !== "object" || Array.isArray(tags.tags)) return;
     fit = { tags: tags.tags, overrides: overrides && typeof overrides === "object" ? overrides : {},
       rulesVersion: String(tags.rules_version || "").slice(0, 20), updatedAt: String(tags.updatedAt || "").slice(0, 25) };
+    $("fit-filter").hidden = false;   // 태그를 읽은 뒤에만 필터를 보여 준다
     renderFit();
+    if (state.fit) { applyFilters(); renderList(); }
   }
 
   function update() {
@@ -363,9 +395,10 @@
     });
     $("sort").addEventListener("change", (e) => { state.sort = SORTS.includes(e.target.value) ? e.target.value : "ending"; update(); });
     $("free").addEventListener("change", (e) => { state.free = e.target.checked; update(); });
+    $("fitonly").addEventListener("change", (e) => { state.fit = e.target.checked; update(); });
     $("more").addEventListener("click", () => { state.shown += PAGE; renderList(); });
     $("reset").addEventListener("click", () => {
-      Object.assign(state, { when: "week", cat: "all", gu: "", free: false, q: "", sort: "ending" }); update();
+      Object.assign(state, { when: "week", cat: "all", gu: "", free: false, fit: false, q: "", sort: "ending" }); update();
     });
     $("lang-toggle").addEventListener("click", () => { state.lang = state.lang === "en" ? "ko" : "en"; update(); });
     const dlg = $("detail");
