@@ -38207,7 +38207,7 @@
   "weather": "9도/맑음",
   "failed": false,
   "calories": null,
-  "title": "쏨땀",
+  "title": "옥수수 자몽 쏨땀",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38216,22 +38216,15 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20231005, #조식다이어리 865, 9도/맑음 \n그릇에 방울토마토 잘라 넣고 덜 매운#쏨땀 드레싱(다진 마늘 조금, 페페론치노 2~3개, 레드페퍼, 피쉬소스1, 설탕 1/2, 라임주스1) 얹어 가볍게 토마토를 으깬다. \n끓는 물에 데친 그린빈, 옥수수, 당근, 자몽 넣고 뒤섞뒤섞, 먹을 때 가끔 바삭한 식감이 나면 재밌을 것 같아서 튀긴 샬롯 넣고 마무리, (실은 땅콩이 없어서,)",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20231005, #조식다이어리 865, 9도/맑음 \n그릇에 방울토마토 잘라 넣고 덜 매운#쏨땀 드레싱(다진 마늘 조금, 페페론치노 2~3개, 피쉬소스1, 설탕 1/2, 라임주스1) 얹어 가볍게 토마토를 으깬다. \n끓는 물에 데친 그린빈, 옥수수, 당근, 자몽 넣고 뒤섞뒤섞, 먹을 때 가끔 바삭한 식감이 나면 재밌을 것 같아서 튀긴 샬롯 넣고 마무리, (실은 땅콩이 없어서,)",
+  "ingredients": "- 방울토마토 3개\n- 드레싱(다진마늘 1t, 페페론치노 2개, 피쉬소스 1T, 설탕 1/2T, 라임주스1T)\n- 그린빈 3개\n- 옥수수 1/2개\n- 당근 1/2개\n- 자몽 1/2개\n- 프라이드샬롯 2t",
+  "steps": "1. 그릇에 반으로 자른 방울토마토 3개와 드레싱 넣고 으깬다.  \n2. 그린빈은 끓는 물에 데친다. \n3. 옥수수는 세로로 썰어서 알갱이만 발라낸다. \n4. 당근은 채칼로 썬다. \n5. 자몽은 과육만 발라낸다. \n6. 1에 준비한 그린빈, 옥수수, 당근, 자몽 넣고 골고루 섞는다 튀긴샬롯 조금 얹는다. ",
   "raw": "20231005, #조식다이어리 865, 9도/맑음 \n\n그릇에 방울토마토 잘라 넣고 덜 매운#쏨땀 드레싱(다진 마늘 조금, 페페론치노 2~3개, 레드페퍼, 피쉬소스1, 설탕 1/2, 라임주스1) 얹어 가볍게 토마토를 으깬다. \n끓는 물에 데친 그린빈, 옥수수, 당근, 자몽 넣고 뒤섞뒤섞, 먹을 때 가끔 바삭한 식감이 나면 재밌을 것 같아서 튀긴 샬롯 넣고 마무리, (실은 땅콩이 없어서,) \n\n#조식 #레시피 #미라클모닝 ",
   "image": "https://images.how-about-breakfast.com/images/865.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/865.jpg",
    "https://images.how-about-breakfast.com/images/865_2.jpg"
   ],
-  "_en": {
-   "hash": "98d2fe0845c20891f854fbcfd77c586eaa036433f9416d72ef0108bd04f86685",
-   "title": "Tomato Som Tam",
-   "intro": "20231005, #breakfastdiary 865, 9°C/sunny\nCut cherry tomatoes into a bowl, add a mild #somtam dressing (a little minced garlic, 2-3 pepperoncini, red pepper flakes, 1 part fish sauce, 1/2 part sugar, 1 part lime juice), and lightly crush the tomatoes.\nAdd green beans, corn, carrot, and grapefruit blanched in boiling water, and toss well. Thought it'd be fun to have a bit of crunch here and there, so I finished with fried shallots (mostly because I was out of peanuts).",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "쏨땀"
  },
  {
