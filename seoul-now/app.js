@@ -13,6 +13,7 @@
     shown: PAGE,
   };
   let data = { events: [] };
+  let fit = null;   // { tags, overrides, rulesVersion, updatedAt } — 없으면 패널 숨김
   let filtered = [];
 
   // ---------- 유틸 ----------
@@ -269,10 +270,83 @@
     else dlg.setAttribute("open", "");
   }
 
+  // ---------- 외국인 적합도 패널 ----------
+  const FIT_ENUMS = {
+    language_barrier: ["low", "mid", "high"], nonverbal: [true, false],
+    reservation_barrier: ["none", "online", "kr_auth_required"], audience_restricted: [true, false],
+    experience_type: ["traditional", "kculture", "food", "light", "performance", "etc"],
+  };
+  const overrideIds = (list) => new Set((Array.isArray(list) ? list : [])
+    .map((x) => (typeof x === "string" ? x : x && x.id)).filter((x) => typeof x === "string"));
+
+  function fitSummary() {
+    const ids = new Set(data.events.map((e) => e.id));
+    const tags = Object.entries(fit.tags).filter(([id, v]) => ids.has(id) && v && typeof v === "object").map(([, v]) => v);
+    const pin = overrideIds(fit.overrides.pin), exc = overrideIds(fit.overrides.exclude);
+    const counts = {};
+    for (const k of Object.keys(FIT_ENUMS)) {
+      counts[k] = new Map(FIT_ENUMS[k].map((v) => [v, 0]));
+      for (const tg of tags) if (counts[k].has(tg[k])) counts[k].set(tg[k], counts[k].get(tg[k]) + 1);
+    }
+    let excluded = 0;
+    for (const [id, tg] of Object.entries(fit.tags)) {
+      if (!ids.has(id) || !tg) continue;
+      if (exc.has(id) || (!pin.has(id) && (tg.audience_restricted === true || tg.reservation_barrier === "kr_auth_required"))) excluded++;
+    }
+    return { total: tags.length, counts, excluded, pinned: [...pin].filter((id) => ids.has(id) && !exc.has(id)).length };
+  }
+
+  function renderFit() {
+    const box = $("fit");
+    if (!fit || !data.events.length) { box.hidden = true; return; }
+    const L = FIT_I18N[state.lang];
+    const sum = fitSummary();
+    if (!sum.total) { box.hidden = true; return; }
+    const pct = (n) => (sum.total ? Math.round((n / sum.total) * 100) : 0);
+    $("fit-title").textContent = L.title;
+    $("fit-lead").textContent = L.lead(sum.total);
+    const stat = (n, label, cls) => el("li", { class: "fit-stat " + cls },
+      el("strong", { text: n.toLocaleString(state.lang) }), el("span", { text: label }));
+    $("fit-stats").replaceChildren(
+      stat(sum.counts.language_barrier.get("low"), L.statEasy, "good"),
+      stat(sum.counts.reservation_barrier.get("online"), L.statBooking, "warn"),
+      stat(sum.excluded, L.statExcluded, "bad"),
+      ...(sum.pinned ? [stat(sum.pinned, L.statPinned, "good")] : []));
+    $("fit-toggle").textContent = L.toggle;
+    $("fit-rules").replaceChildren(...L.rules.map((r) => el("div", { class: "fit-rule" },
+      el("h3", { text: r.name }),
+      el("p", { class: "fit-how", text: r.how }),
+      el("ul", { class: "fit-bars" }, ...[...sum.counts[r.key]].map(([v, n]) => {
+        const bar = el("span", { class: "fit-bar" });
+        bar.style.width = pct(n) + "%";   // CSSOM 사용(인라인 style 속성은 CSP로 막힘)
+        return el("li", {}, el("span", { class: "fit-val", text: r.values[String(v)] }),
+          el("span", { class: "fit-track" }, bar),
+          el("span", { class: "fit-num", text: `${n.toLocaleString(state.lang)} (${pct(n)}%)` }));
+      })))));
+    $("fit-foot").textContent = L.foot(fit.rulesVersion,
+      /^\d{4}-\d{2}-\d{2}/.test(fit.updatedAt) ? fmtDate(fit.updatedAt.slice(0, 10)) : "-");
+    box.hidden = false;
+  }
+
+  async function loadFit() {
+    const get = async (url) => {
+      try {
+        const res = await fetch(url, { cache: "no-cache", credentials: "omit" });
+        return res.ok ? await res.json() : null;
+      } catch { return null; }
+    };
+    const [tags, overrides] = await Promise.all([get("data/festival_tags.json"), get("data/festival_overrides.json")]);
+    if (!tags || typeof tags.tags !== "object" || Array.isArray(tags.tags)) return;
+    fit = { tags: tags.tags, overrides: overrides && typeof overrides === "object" ? overrides : {},
+      rulesVersion: String(tags.rules_version || "").slice(0, 20), updatedAt: String(tags.updatedAt || "").slice(0, 25) };
+    renderFit();
+  }
+
   function update() {
     state.shown = PAGE;
     writeUrl();
     renderStatic();
+    renderFit();
     applyFilters();
     renderList();
   }
@@ -313,6 +387,7 @@
       const json = await res.json();
       data = { ...json, events: Array.isArray(json.events) ? json.events.filter(isValidEvent) : [] };
       update();
+      loadFit();   // 패널은 부가 정보: 실패해도 목록에 영향 없음
     } catch {
       renderStatic();
       $("empty").textContent = t("loadError");
