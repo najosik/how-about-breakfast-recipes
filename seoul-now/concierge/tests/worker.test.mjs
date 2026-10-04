@@ -187,7 +187,12 @@ test("HTTP: 경로·메서드·출처·타입·크기·키 없음 처리와 보�
   const req = (path, init = {}) => new Request(`https://w.example${path}`, init);
   const post = (body, h = {}) => req("/api/chat", { method: "POST", headers: { "Content-Type": "application/json", Origin: ENV.ALLOWED_ORIGIN, ...h }, body });
   assert.equal((await worker.fetch(req("/admin"), ENV)).status, 404);
+  assert.equal((await worker.fetch(req("/data/places.json"), ENV)).status, 404, "샘플 데이터는 공개 경로 없음");
   assert.equal((await worker.fetch(req("/api/chat"), ENV)).status, 405);
+  const page = await worker.fetch(req("/"), ENV);
+  assert.equal(page.status, 200);
+  assert.match(page.headers.get("Content-Security-Policy"), /script-src 'self'/);
+  assert.match(page.headers.get("Permissions-Policy"), /geolocation=\(\)/);
   assert.equal((await worker.fetch(post("{}", { Origin: "https://evil.example" }), ENV)).status, 403);
   assert.equal((await worker.fetch(req("/api/chat", { method: "POST", headers: { "Content-Type": "text/plain" }, body: "x" }), ENV)).status, 415);
   assert.equal((await worker.fetch(post("x".repeat(40000)), ENV)).status, 413);

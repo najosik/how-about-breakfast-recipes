@@ -17,6 +17,7 @@ import ranking from "./config/ranking.json" with { type: "json" };
 import { loadFeed, kstToday } from "./festivals.js";
 import { TOOL_DEFINITIONS, executeTool, cardsFromResult, findInfoCenter } from "./tools.js";
 import { systemPrompt, languageNote, CANARY } from "./prompt.js";
+import STATIC from "./static.generated.js";
 import {
   validateChatBody, InputError, maskPII, looksLikeInjection, looksLikeEmergency, filterOutput,
   checkRateLimit, safeLog, detectLang, LIMITS,
@@ -166,12 +167,16 @@ export async function handleChat(rawBody, env, deps = {}) {
     ranking_note: toolsUsed.includes("search_places") ? (ranking.transparency_note[lang] || ranking.transparency_note.en) : "" } };
 }
 
+const MAX_CARDS_PER_TYPE = 5;   // 휴대폰 화면에서 너무 길어지지 않게
+
 function dedupeCards(cards) {
   const seen = new Set();
+  const perType = {};
   return cards.filter((c) => {
     const k = `${c.type}:${c.data && c.data.id}`;
-    if (seen.has(k)) return false;
+    if (seen.has(k) || (perType[c.type] || 0) >= MAX_CARDS_PER_TYPE) return false;
     seen.add(k);
+    perType[c.type] = (perType[c.type] || 0) + 1;
     return true;
   });
 }
@@ -199,18 +204,40 @@ function cors(env, origin) {
 
 const json = (status, body, headers) => new Response(JSON.stringify(body), { status, headers });
 
-export default {
-  async fetch(request, env) {
+// 화면(정적 파일)도 같은 Worker가 제공: Cloudflare Access 한 번으로 화면·API 모두 직원 전용, 샘플 데이터는 공개 경로에 없음(A01).
+const PAGE_CSP = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; connect-src 'self'; " +
+  "font-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
+const STATIC_TYPES = { ".html": "text/html; charset=utf-8", ".css": "text/css; charset=utf-8", ".js": "text/javascript; charset=utf-8", ".svg": "image/svg+xml" };
+
+function serveStatic(pathname) {
+  const path = pathname === "/" ? "/index.html" : pathname;
+  if (!Object.hasOwn(STATIC, path)) return null;
+  const ext = path.slice(path.lastIndexOf("."));
+  return new Response(STATIC[path], { status: 200, headers: {
+    "Content-Type": STATIC_TYPES[ext] || "application/octet-stream",
+    "Content-Security-Policy": PAGE_CSP, "X-Content-Type-Options": "nosniff", "Referrer-Policy": "no-referrer",
+    "X-Frame-Options": "DENY", "Cache-Control": "no-cache",
+    "Permissions-Policy": "geolocation=(), camera=(), microphone=(), payment=()",   // §10: 정확한 위치 수집 안 함
+  } });
+}
+
+/** deps로 Claude 호출·축제 피드를 바꿔 끼울 수 있는 핸들러(테스트·로컬 개발용). */
+export function makeHandler(deps = {}) {
+  return async function fetchHandler(request, env) {
     const url = new URL(request.url);
     const origin = request.headers.get("Origin") || "";
-    const headers = securityHeaders(cors(env, origin));
+    const allowedOrigin = (o) => o === url.origin || o === env.ALLOWED_ORIGIN;
+    const headers = securityHeaders(allowedOrigin(origin) && origin !== url.origin ? cors(env, origin) : { Vary: "Origin" });
 
+    if (request.method === "GET" && url.pathname !== "/api/chat") {
+      return serveStatic(url.pathname) || json(404, { error: "not_found" }, headers);
+    }
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });
     if (url.pathname !== "/api/chat") return json(404, { error: "not_found" }, headers);
     if (request.method !== "POST") return json(405, { error: "method_not_allowed" }, headers);
-    if (origin && origin !== (env.ALLOWED_ORIGIN || "https://how-about-breakfast.com")) return json(403, { error: "forbidden" }, headers);
+    if (origin && !allowedOrigin(origin)) return json(403, { error: "forbidden" }, headers);
     if (!(request.headers.get("Content-Type") || "").includes("application/json")) return json(415, { error: "unsupported_media_type" }, headers);
-    if (!env.ANTHROPIC_API_KEY) { safeLog("config_error", { reason: "missing_key" }); return json(503, { error: "unavailable" }, headers); }
+    if (!env.ANTHROPIC_API_KEY && !deps.createMessage) { safeLog("config_error", { reason: "missing_key" }); return json(503, { error: "unavailable" }, headers); }
 
     const sessionId = (request.headers.get("X-Session-Id") || "").slice(0, 64);
     const rl = await checkRateLimit(env.RATE_KV, { ip: request.headers.get("CF-Connecting-IP"), sessionId, salt: env.RL_SALT || "" });
@@ -225,11 +252,13 @@ export default {
     try { body = JSON.parse(raw); } catch { return json(400, { error: "invalid_json" }, headers); }
 
     try {
-      const { status, body: out } = await handleChat(body, env);
+      const { status, body: out } = await handleChat(body, env, deps);
       return json(status, out, headers);
     } catch {
       safeLog("internal_error", {});
       return json(500, { error: msg("en", "error") }, headers);   // A05: 상세 오류 숨김
     }
-  },
-};
+  };
+}
+
+export default { fetch: makeHandler() };
