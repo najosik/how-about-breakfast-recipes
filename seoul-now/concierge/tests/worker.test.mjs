@@ -202,3 +202,21 @@ test("HTTP: 경로·메서드·출처·타입·크기·키 없음 처리와 보�
   for (const h of ["X-Content-Type-Options", "Referrer-Policy", "Content-Security-Policy"]) assert.ok(noKey.headers.get(h), h);
   assert.ok(!(await noKey.text()).includes("ANTHROPIC"));
 });
+
+test("목업 결제: 상품 1건 조회만 허용, 결제 입력란 없음", async () => {
+  const get = (p) => worker.fetch(new Request(`https://w.example${p}`), ENV);
+  const ok = await get("/api/dsp/dsp-72");
+  assert.equal(ok.status, 200);
+  const body = await ok.json();
+  assert.equal(body.product.id, "dsp-72");
+  assert.equal(body.product.is_sample, true);
+  assert.equal(body.demo, true);
+  assert.equal((await get("/api/dsp/nope")).status, 404);
+  assert.equal((await get("/api/dsp/..%2Fsecrets")).status, 404);
+  assert.equal((await get("/api/dsp")).status, 404, "전체 목록 노출 없음");
+  const page = await (await get("/checkout.html")).text();
+  assert.match(page, /시연용 – 실제 결제 아님/);
+  assert.ok(!/<input|<form|<select/i.test(page), "결제 정보 입력란 없음");
+  const js = await (await get("/checkout.js")).text();
+  assert.ok(!/method:\s*"POST"/.test(js), "결제 요청을 보내지 않음");
+});

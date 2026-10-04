@@ -1,0 +1,17 @@
+/* 목업 결제 화면: "시연용" 표시가 어떤 화면 크기에서도 가장 먼저, 크게 보이도록 */
+.checkout { overflow-y: auto; }
+.demo-stamp { margin: 0; padding: 14px 12px; background: var(--warn-bg); color: var(--warn); text-align: center;
+  border-bottom: 3px dashed var(--warn); display: grid; gap: 2px; }
+.demo-stamp strong { font-size: 1.25rem; }
+.demo-stamp span { font-size: .8rem; font-weight: 700; letter-spacing: .04em; }
+.co-main { padding: 16px 12px 24px; display: grid; gap: 14px; }
+.co-main h1 { font-size: 1.15rem; }
+.co-main h2 { margin: 0 0 4px; font-size: 1rem; }
+.co-box { border: 1px dashed var(--line); border-radius: 12px; padding: 12px; }
+.co-note { margin: 0; font-size: .88rem; color: var(--muted); }
+.pay-methods { display: flex; gap: 6px; margin-top: 8px; opacity: .55; }
+.pay-pill { border: 1px solid var(--line); border-radius: 8px; padding: 6px 10px; font-size: .8rem; }
+.co-confirm { width: 100%; }
+.co-result { border-radius: 12px; padding: 14px; background: var(--sample-bg); color: var(--sample); font-weight: 700; }
+.co-result p { margin: 4px 0; }
+.price-line { font-size: 1.1rem; font-weight: 700; color: var(--text); }

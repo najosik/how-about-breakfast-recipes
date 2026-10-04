@@ -229,7 +229,13 @@ export function makeHandler(deps = {}) {
     const allowedOrigin = (o) => o === url.origin || o === env.ALLOWED_ORIGIN;
     const headers = securityHeaders(allowedOrigin(origin) && origin !== url.origin ? cors(env, origin) : { Vary: "Origin" });
 
-    if (request.method === "GET" && url.pathname !== "/api/chat") {
+    // 목업 결제 화면용 DSP 상품 1건 조회(읽기 전용, 샘플 표시). 전체 목록은 노출하지 않는다.
+    const dspMatch = url.pathname.match(/^\/api\/dsp\/([a-z0-9-]{1,30})$/);
+    if (request.method === "GET" && dspMatch) {
+      const p = dsp.find((x) => x.id === dspMatch[1]);
+      return p ? json(200, { product: p, demo: true }, headers) : json(404, { error: "not_found" }, headers);
+    }
+    if (request.method === "GET" && !url.pathname.startsWith("/api/")) {
       return serveStatic(url.pathname) || json(404, { error: "not_found" }, headers);
     }
     if (request.method === "OPTIONS") return new Response(null, { status: 204, headers });

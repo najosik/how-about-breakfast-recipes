@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>DEMO checkout · 시연용 – 실제 결제 아님</title>
+  <link rel="stylesheet" href="/app.css">
+  <link rel="stylesheet" href="/checkout.css">
+</head>
+<body>
+  <div class="app checkout">
+    <header class="top">
+      <p class="demo-stamp" role="alert">
+        <strong id="stamp-title">시연용 – 실제 결제 아님</strong>
+        <span id="stamp-sub">DEMO ONLY · NOT A REAL PAYMENT</span>
+      </p>
+    </header>
+    <main class="co-main">
+      <h1 id="co-title"></h1>
+      <section id="product" class="card" aria-live="polite"></section>
+      <section class="co-box">
+        <h2 id="pay-h"></h2>
+        <p id="pay-note" class="co-note"></p>
+        <div class="pay-methods" aria-hidden="true">
+          <span class="pay-pill">Card</span><span class="pay-pill">Pay</span><span class="pay-pill">OK-Seoul</span>
+        </div>
+      </section>
+      <button id="confirm" type="button" class="send co-confirm"></button>
+      <section id="result" class="co-result" role="status" hidden></section>
+      <p><a id="back" class="btn" href="/"></a></p>
+    </main>
+  </div>
+  <script src="/checkout.js"></script>
+</body>
+</html>
