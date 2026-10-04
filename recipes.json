@@ -68614,7 +68614,7 @@
   "weather": "18도/흐림, 26분/운동",
   "failed": false,
   "calories": null,
-  "title": "제프쿤스 유니클로 모닝리추얼",
+  "title": "리코타치즈 복숭아 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68640,9 +68640,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20211006, #조식다이어리 231, 18도/흐림, 26분/운동\n계란은 써니사이드업을 선호하는 편\n#제프쿤스 는 #유니클로 와 콜라보, 역시 최고로 영악한 예술가다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20211006, #조식다이어리 231, 18도/흐림, 26분/운동\n계란은 써니사이드업을 선호하는 편\n\n#제프쿤스 는 #유니클로 와 콜라보, 역시 최고로 영악한 예술가다.",
+  "ingredients": "- 리코타치즈 2T\n- 황도 1/2개\n- 올리브오리 1t\n- 후추",
+  "steps": "1. 그릇에 리코타치즈 담는다. \n2. 황도 1/2개 얹고 올리브오일과 후추 뿌린다. ",
   "raw": "20211006, #조식다이어리 231, 18도/흐림, 26분/운동\n\n계란은 써니사이드업을 선호하는 편\n\n#제프쿤스 는 #유니클로 와 콜라보, 역시 최고로 영악한 예술가다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #리코타치즈 #복숭아 \n#breakfast #recipe #salad #ricotta #peach #jeffkoons",
   "image": "https://images.how-about-breakfast.com/images/231.jpg",
   "gallery": [
@@ -68650,13 +68650,6 @@
    "https://images.how-about-breakfast.com/images/231_2.jpg",
    "https://images.how-about-breakfast.com/images/231_3.jpg"
   ],
-  "_en": {
-   "hash": "951a07413e50aad638b35589f16a97ab7ac645be043898c0b55ed469089de5b8",
-   "title": "Jeff Koons, Uniqlo, Morning Ritual",
-   "intro": "20211006, #breakfastdiary 231, 18°C/cloudy, 26min/exercise\nI tend to prefer my eggs sunny-side up\n#jeffkoons collaborates with #uniqlo — truly the shrewdest artist out there.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "제프쿤스-유니클로-모닝리추얼"
  },
  {
