@@ -17,6 +17,8 @@ import ranking from "./config/ranking.json" with { type: "json" };
 import { loadFeed, kstToday } from "./festivals.js";
 import { TOOL_DEFINITIONS, executeTool, cardsFromResult, findInfoCenter } from "./tools.js";
 import { systemPrompt, languageNote, CANARY } from "./prompt.js";
+import { msg } from "./messages.js";
+import { dedupeCards } from "./cards.js";
 import STATIC from "./static.generated.js";
 import {
   validateChatBody, InputError, maskPII, looksLikeInjection, looksLikeEmergency, filterOutput,
@@ -29,22 +31,7 @@ const MAX_TOOL_CALLS = 5;      // LLM10: 요청당 도구 호출 상한
 const MAX_API_CALLS = 6;       // 도구 루프 상한
 const MAX_TOKENS = 2000;       // LLM10: 응답 길이 상한(휴대폰 화면용 짧은 답변)
 
-const MSG = {
-  ko: { error: "일시적으로 답변할 수 없습니다. 잠시 후 다시 시도하거나 관광통역안내 1330으로 문의해 주세요.",
-    rate: "요청이 너무 많습니다. 1분 뒤 다시 시도해 주세요.", blocked: "그 요청에는 답할 수 없습니다. 여행 관련 질문을 도와드릴게요.",
-    emergency: "긴급 상황이면 112(경찰), 119(화재·구급), 1330(관광통역안내)으로 바로 연락하세요.", too_long: "메시지는 1,000자 이내로 입력해 주세요." },
-  en: { error: "Sorry, I can't answer right now. Please try again shortly or call the 1330 Korea Travel Hotline.",
-    rate: "Too many requests. Please try again in a minute.", blocked: "I can't help with that request, but I'm happy to help with your trip.",
-    emergency: "In an emergency call 112 (police), 119 (fire/ambulance) or 1330 (interpretation) right away.", too_long: "Please keep messages under 1,000 characters." },
-  ja: { error: "現在お答えできません。しばらくしてから再度お試しいただくか、観光通訳案内1330へお問い合わせください。",
-    rate: "リクエストが多すぎます。1分後にもう一度お試しください。", blocked: "そのご依頼にはお答えできません。旅行のご質問ならお手伝いします。",
-    emergency: "緊急時は112（警察）、119（消防・救急）、1330（通訳案内）へすぐにご連絡ください。", too_long: "メッセージは1,000文字以内で入力してください。" },
-  "zh-CN": { error: "暂时无法回答。请稍后再试，或拨打旅游翻译热线1330。", rate: "请求过多，请一分钟后再试。",
-    blocked: "无法回答该请求。我可以帮您解答旅行相关问题。", emergency: "如遇紧急情况，请立即拨打112（警察）、119（消防/急救）或1330（翻译）。", too_long: "消息请控制在1000字以内。" },
-  "zh-TW": { error: "暫時無法回答。請稍後再試，或撥打觀光翻譯熱線1330。", rate: "請求過多，請一分鐘後再試。",
-    blocked: "無法回答該請求。我可以協助您解答旅遊相關問題。", emergency: "如遇緊急狀況，請立即撥打112（警察）、119（消防/救護）或1330（翻譯）。", too_long: "訊息請控制在1000字以內。" },
-};
-const msg = (lang, key) => (MSG[lang] || MSG.en)[key];
+
 
 /** 기본 Claude 호출: 공식 SDK, 서버측 거절 대체(fallbacks: "default") 사용. 테스트에서는 deps.createMessage로 교체. */
 function defaultCreateMessage(env) {
@@ -165,20 +152,6 @@ export async function handleChat(rawBody, env, deps = {}) {
     stop: response?.stop_reason, turns: input.messages.length, fallback });
   return { status: 200, body: { reply, lang, cards: dedupeCards(cards).slice(0, 20), notices,
     ranking_note: toolsUsed.includes("search_places") ? (ranking.transparency_note[lang] || ranking.transparency_note.en) : "" } };
-}
-
-const MAX_CARDS_PER_TYPE = 5;   // 휴대폰 화면에서 너무 길어지지 않게
-
-function dedupeCards(cards) {
-  const seen = new Set();
-  const perType = {};
-  return cards.filter((c) => {
-    const k = `${c.type}:${c.data && c.data.id}`;
-    if (seen.has(k) || (perType[c.type] || 0) >= MAX_CARDS_PER_TYPE) return false;
-    seen.add(k);
-    perType[c.type] = (perType[c.type] || 0) + 1;
-    return true;
-  });
 }
 
 // ---------------------------------------------------------------- HTTP

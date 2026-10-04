@@ -6,14 +6,22 @@
   --warn: #9b1c1c; --warn-bg: #fde8e8; --focus: #c2410c;
   color-scheme: light;
 }
+/* 다크: 시스템 설정(아티팩트 뷰어의 명시적 light 선택은 존중) + 뷰어의 명시적 dark 선택 */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --bg: #121212; --surface: #1d1d1d; --text: #ececec; --muted: #b5b0a8; --line: #3a3a3a;
     --brand: #8cc4ff; --brand-ink: #0b1b2b; --user: #2a5d8f; --user-ink: #ffffff;
     --real: #7fd6a4; --real-bg: #12301f; --sample: #f5c56b; --sample-bg: #3a2c10;
     --warn: #ffb4b4; --warn-bg: #3d1515; --focus: #fdba74;
     color-scheme: dark;
   }
+}
+:root[data-theme="dark"] {
+    --bg: #121212; --surface: #1d1d1d; --text: #ececec; --muted: #b5b0a8; --line: #3a3a3a;
+    --brand: #8cc4ff; --brand-ink: #0b1b2b; --user: #2a5d8f; --user-ink: #ffffff;
+    --real: #7fd6a4; --real-bg: #12301f; --sample: #f5c56b; --sample-bg: #3a2c10;
+    --warn: #ffb4b4; --warn-bg: #3d1515; --focus: #fdba74;
+    color-scheme: dark;
 }
 * { box-sizing: border-box; }
 html, body { height: 100%; }
@@ -72,3 +80,17 @@ h1 { margin: 0; font-size: 1.1rem; }
 
 @media (min-width: 520px) { body { padding: 16px 0; } .app { height: calc(100% - 32px); border-radius: 16px; border: 1px solid var(--line); overflow: hidden; } }
 @media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; } }
+
+/* 목업 결제 오버레이(아티팩트 모드) */
+.co-overlay { position: fixed; inset: 0; z-index: 10; display: flex; align-items: flex-end; justify-content: center;
+  background: color-mix(in srgb, var(--text) 45%, transparent); padding: env(safe-area-inset-top, 0px) 0 env(safe-area-inset-bottom, 0px); }
+.co-panel { width: 100%; max-width: 480px; max-height: 92%; overflow-y: auto; background: var(--surface); border-radius: 16px 16px 0 0; }
+.co-panel .demo-stamp { margin: 0; padding: 14px 12px; background: var(--warn-bg); color: var(--warn); text-align: center;
+  border-bottom: 3px dashed var(--warn); display: grid; gap: 2px; }
+.co-panel .demo-stamp strong { font-size: 1.2rem; }
+.co-panel .demo-stamp span { font-size: .78rem; font-weight: 700; letter-spacing: .04em; }
+.co-body { padding: 14px 16px 18px; display: grid; gap: 12px; }
+.co-note { margin: 0; font-size: .88rem; color: var(--muted); }
+.co-confirm { width: 100%; }
+.co-result { border-radius: 12px; padding: 12px; background: var(--sample-bg); color: var(--sample); font-weight: 700; }
+.co-result p { margin: 4px 0; }

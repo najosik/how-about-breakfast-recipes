@@ -56,6 +56,8 @@
     "我想和真人说话，我的包丢了。",
   ];
 
+  // 백엔드: Worker 배포에서는 /api/chat, claude.ai 아티팩트에서는 페이지 안 엔진(window.ConciergeBackend)
+  const backend = window.ConciergeBackend || null;
   const state = { lang: "auto", uiLang: detectUiLang(), messages: [], busy: false, sessionId: randomId() };
 
   function randomId() {
@@ -131,7 +133,7 @@
       if (d.free) lines.push(t("free")); else if (d.fee) lines.push(d.fee);
       const link = safeUrl(d.link);
       if (link) actions.push(el("a", { class: "btn", href: link, target: "_blank", rel: "noopener noreferrer", text: t("official") }));
-      const src = safeUrl(d.image);
+      const src = backend && backend.noImages ? "" : safeUrl(d.image);
       if (src) { img = el("img", { src, alt: "", loading: "lazy", referrerpolicy: "no-referrer" }); img.addEventListener("error", () => img.remove(), { once: true }); }
     } else if (card.type === "place") {
       title = nameOf(d.name);
@@ -147,7 +149,11 @@
       lines.push(`${d.duration_hours}h · ${t("price")} ₩${Number(d.price_krw || 0).toLocaleString()}`,
         (d.includes || []).map((i) => i.name).join(", "));
       const path = sameOriginPath(d.checkout_url ? `/${String(d.checkout_url).replace(/^\/+/, "")}` : "");
-      if (path) {
+      if (path && backend && backend.product) {
+        // 아티팩트: 같은 페이지 안의 목업 결제 화면
+        actions.push(el("button", { type: "button", class: "btn primary", "aria-label": `${t("buy")}: ${d.name}`, text: t("buy"),
+          onclick: () => openCheckout(String(d.id || "")) }));
+      } else if (path) {
         const href = `${path}${path.includes("?") ? "&" : "?"}lang=${encodeURIComponent(state.uiLang)}`;
         // 새 탭으로 열어 채팅(메모리에만 있음)이 사라지지 않게 함
         actions.push(el("a", { class: "btn primary", href, target: "_blank", rel: "noopener", "aria-label": `${t("buy")}: ${d.name}`, text: t("buy") }));
@@ -179,7 +185,8 @@
   }
   function addError(text) { log.append(el("div", { class: "msg bot error", role: "alert", text })); scrollDown(); }
 
-  async function post(payload) {
+  async function post(payload, onProgress) {
+    if (backend) return backend.chat(payload, { onProgress });
     const res = await fetch("/api/chat", {
       method: "POST", credentials: "same-origin",
       headers: { "Content-Type": "application/json", "X-Session-Id": state.sessionId },
@@ -195,9 +202,10 @@
     if (state.busy) return;
     state.busy = true;
     $("send").disabled = true;
-    const typing = el("div", { class: "typing", text: t("typing") });
+    const typing = el("div", { class: "typing", role: "status", text: t("typing") });
     log.append(typing); scrollDown();
-    try { await fn(); } catch (e) { addError(e instanceof Error && e.message ? e.message.slice(0, 300) : t("error")); }
+    const progress = (label) => { if (label) typing.textContent = `${t("typing")} ${label}`; };
+    try { await fn(progress); } catch (e) { addError(e instanceof Error && e.message ? e.message.slice(0, 300) : t("error")); }
     finally { typing.remove(); state.busy = false; $("send").disabled = false; $("input").focus(); }
   }
 
@@ -206,8 +214,8 @@
     if (!content) return;
     addUser(content);
     state.messages.push({ role: "user", content });
-    withBusy(async () => {
-      const body = await post({ messages: state.messages.slice(-20), lang: state.lang === "auto" ? undefined : state.lang });
+    withBusy(async (progress) => {
+      const body = await post({ messages: state.messages.slice(-20), lang: state.lang === "auto" ? undefined : state.lang }, progress);
       if (body.lang && LANGS.includes(body.lang) && state.lang === "auto") { state.uiLang = body.lang; renderChrome(); }
       addBot(body);
       if (body.reply) state.messages.push({ role: "assistant", content: body.reply });
@@ -221,6 +229,49 @@
       log.append(el("div", { class: "msg bot", text: t("handoffMsg") }));
       addBot(body);
     });
+  }
+
+  // ---------- 목업 결제 (아티팩트: 페이지 안 오버레이). 결제 정보 입력란 없음, 아무 요청도 보내지 않음 ----------
+  const CO = {
+    ko: { stamp: "시연용 – 실제 결제 아님", note: "결제 정보를 입력받지 않으며 실제로 결제·예약되지 않습니다. 실제 서비스에서는 OK-Seoul 등 공식 결제 화면으로 연결됩니다.",
+      confirm: "시연 완료 보기 (결제되지 않음)", done: "시연이 완료되었습니다. 실제 결제·예약은 이루어지지 않았습니다.", code: "시연 번호(효력 없음)", close: "닫기", price: "가격(샘플)" },
+    en: { stamp: "DEMO – NOT A REAL PAYMENT", note: "No payment details are collected and nothing is charged or booked. A real service would hand off to an official checkout such as OK-Seoul.",
+      confirm: "Show demo completion (no charge)", done: "Demo complete. No payment or booking was made.", code: "Demo reference (not valid)", close: "Close", price: "Price (sample)" },
+    ja: { stamp: "デモ用 – 実際の決済ではありません", note: "決済情報は入力せず、実際の決済・予約は行われません。実サービスではOK-Seoulなど公式の決済画面へ移動します。",
+      confirm: "デモ完了を表示（決済されません）", done: "デモが完了しました。実際の決済・予約は行われていません。", code: "デモ番号（無効）", close: "閉じる", price: "価格（サンプル）" },
+    "zh-CN": { stamp: "演示用 – 非真实支付", note: "不收集支付信息，也不会产生真实扣款或预订。正式服务将跳转至 OK-Seoul 等官方支付页面。",
+      confirm: "查看演示完成（不扣款）", done: "演示完成。未进行任何真实支付或预订。", code: "演示编号（无效）", close: "关闭", price: "价格（示例）" },
+    "zh-TW": { stamp: "展示用 – 非實際付款", note: "不收集付款資訊，也不會產生實際扣款或預訂。正式服務將連結至 OK-Seoul 等官方付款頁面。",
+      confirm: "查看展示完成（不扣款）", done: "展示完成。未進行任何實際付款或預訂。", code: "展示編號（無效）", close: "關閉", price: "價格（範例）" },
+  };
+  function openCheckout(id) {
+    const c = CO[state.uiLang] || CO.en;
+    const p = backend.product(id);
+    if (!p) return;
+    const result = el("div", { class: "co-result", role: "status", hidden: "" });
+    const confirm = el("button", { type: "button", class: "send co-confirm", text: c.confirm });
+    const close = el("button", { type: "button", class: "btn", text: c.close });
+    const panel = el("div", { class: "co-panel", role: "dialog", "aria-modal": "true", "aria-label": c.stamp },
+      el("p", { class: "demo-stamp", role: "alert" }, el("strong", { text: c.stamp }), el("span", { text: "DEMO ONLY · NOT A REAL PAYMENT" })),
+      el("div", { class: "co-body" },
+        el("article", { class: "card" }, el("div", { class: "card-kind", text: "Discover Seoul Pass" }), el("h3", { text: p.name }),
+          el("div", { class: "badges" }, el("span", { class: "badge sample", text: t("sample") })),
+          el("p", { class: "meta-line", text: `${c.price} ₩${Number(p.price_krw || 0).toLocaleString()} · ${p.duration_hours}h` }),
+          el("p", { text: (p.includes || []).map((i) => i.name).join(", ") })),
+        el("p", { class: "co-note", text: c.note }), confirm, result, close));
+    const overlay = el("div", { class: "co-overlay" }, panel);
+    const onKey = (e) => { if (e.key === "Escape") shut(); };
+    const shut = () => { document.removeEventListener("keydown", onKey); overlay.remove(); $("input").focus(); };
+    close.addEventListener("click", shut);
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) shut(); });   // 바깥(어두운 영역) 누르면 닫힘
+    document.addEventListener("keydown", onKey);
+    confirm.addEventListener("click", () => {
+      const a = new Uint8Array(3); crypto.getRandomValues(a);
+      result.replaceChildren(el("p", { text: c.done }), el("p", { text: `${c.code}: DEMO-${[...a].map((b) => b.toString(16).padStart(2, "0")).join("").toUpperCase()}` }));
+      result.hidden = false; confirm.disabled = true; close.focus();
+    });
+    document.body.append(overlay);
+    confirm.focus();
   }
 
   function renderChrome() {
@@ -238,6 +289,7 @@
   function init() {
     renderChrome();
     log.append(el("p", { class: "welcome", text: t("welcome") }));
+    if (backend && backend.dataNote) log.append(el("p", { class: "welcome", text: backend.dataNote(state.uiLang) }));
     $("suggestions").setAttribute("aria-label", "Demo scenarios");
     $("suggestions").replaceChildren(...SUGGESTIONS.map((s) => el("button", { type: "button", class: "chip", text: s, onclick: () => send(s) })));
     $("form").addEventListener("submit", (e) => { e.preventDefault(); const v = $("input").value; $("input").value = ""; updateCounter(); send(v); });
