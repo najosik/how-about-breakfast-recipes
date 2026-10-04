@@ -1,1 +1,17 @@
-{"type":"module"}
+{
+  "name": "seoul-concierge-prototype",
+  "private": true,
+  "type": "module",
+  "description": "서울 AI 관광 컨시어지 — 내부 시연용 프로토타입 (실제 결제 없음)",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "node build.mjs",
+    "audit": "npm audit --audit-level=high"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "0.131.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.28.2"
+  }
+}
