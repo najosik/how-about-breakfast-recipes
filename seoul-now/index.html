@@ -28,6 +28,20 @@
   <main class="wrap">
     <p id="demo-banner" class="banner" hidden></p>
 
+    <!-- 외국인 적합도(festival_fit) 분류 기준·결과: data/festival_tags.json 을 읽어 집계 -->
+    <section id="fit" class="fit" aria-labelledby="fit-title" hidden>
+      <div class="fit-head">
+        <h2 id="fit-title"></h2>
+        <p id="fit-lead" class="fit-lead"></p>
+      </div>
+      <ul id="fit-stats" class="fit-stats"></ul>
+      <details class="fit-more">
+        <summary id="fit-toggle"></summary>
+        <div id="fit-rules" class="fit-rules"></div>
+        <p id="fit-foot" class="note"></p>
+      </details>
+    </section>
+
     <section class="filters" aria-label="Filters">
       <div class="filter-row">
         <span class="filter-label" id="lbl-when"></span>
