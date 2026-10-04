@@ -12792,6 +12792,21 @@
   "page_id": "비트샐러드"
  },
  {
+  "date": "2025-10-06",
+  "date_raw": "20251006",
+  "weather": null,
+  "failed": true,
+  "calories": null,
+  "title": null,
+  "credit": null,
+  "hashtags": [],
+  "intro": null,
+  "ingredients": null,
+  "steps": null,
+  "diary_no": 1883,
+  "page_id": "2025-10-06"
+ },
+ {
   "date": "2025-10-05",
   "date_raw": "20251005",
   "diary_no": 1535,
