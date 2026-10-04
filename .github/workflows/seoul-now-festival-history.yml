@@ -1,0 +1,66 @@
+name: Seoul Now - festival history & calendar
+
+# 문화행사 API의 축제를 주 1회 보관(data/festival_history.json)하고
+# 다음 연도 예상 캘린더(data/calendar_<연도>.json)를 만든다. API는 약 5년 치만 남기므로 지난 축제를 잃지 않기 위함.
+on:
+  schedule:
+    - cron: '50 18 * * 0'   # 매주 월요일 03:50 KST (6시간 수집 :30과 겹치지 않게)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# 다른 main 커밋 워크플로와 같은 그룹(add-post.yml 참고)
+concurrency:
+  group: main-branch-writer
+  cancel-in-progress: false
+
+jobs:
+  history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: seoul-now
+    steps:
+      # 공급망 공격 방지를 위해 커밋 SHA로 고정 (actions/checkout v4.2.2)
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s scripts -q
+
+      - name: Archive festivals
+        id: archive
+        env:
+          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
+        run: |
+          if [ -z "$SEOUL_API_KEY" ]; then
+            echo "::warning::SEOUL_API_KEY secret is not set - skipping."
+            echo "skipped=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          python3 scripts/archive_festivals.py
+
+      - name: Build next-year calendar
+        if: steps.archive.outputs.skipped != 'true'
+        run: python3 scripts/build_calendar.py
+
+      - name: Commit and push if changed
+        if: steps.archive.outputs.skipped != 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/festival_history.json data/calendar_*.json
+          if git diff --cached --quiet; then
+            echo "No changes, nothing to commit."
+            exit 0
+          fi
+          git commit -m "Seoul Now: update festival history & calendar"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push rejected, rebasing onto latest main (attempt $i)..."
+            git pull --rebase origin main
+            sleep $((i * 5))
+          done
+          echo "::error::Push failed after 3 attempts."
+          exit 1
