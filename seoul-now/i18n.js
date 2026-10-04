@@ -6,6 +6,7 @@ const I18N = {
   en: {
     siteTitle: "What's On in Seoul",
     siteSub: "Culture events happening in Seoul — concerts, exhibitions, festivals & more",
+    calLink: (y) => `${y} festival calendar (forecast) →`,
     when: "When",
     whenToday: "Today",
     whenWeekend: "This weekend",
@@ -55,6 +56,7 @@ const I18N = {
   ko: {
     siteTitle: "서울에서 지금 뭐하지",
     siteSub: "공연 · 전시 · 축제 등 서울의 문화행사를 한눈에",
+    calLink: (y) => `${y} 축제 예상 캘린더 →`,
     when: "기간",
     whenToday: "오늘",
     whenWeekend: "이번 주말",

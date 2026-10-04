@@ -42,6 +42,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .header-inner { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding-top: 20px; padding-bottom: 16px; }
 h1 { margin: 0; font-size: clamp(1.5rem, 4vw, 2.1rem); letter-spacing: -.02em; }
 .sub { margin: 4px 0 0; color: var(--muted); }
+.cal-link { display: inline-block; margin-top: 6px; font-size: .9rem; font-weight: 600; color: var(--on); }
 .lang-btn { flex: none; border: 1px solid var(--line); background: transparent; border-radius: 999px; padding: 6px 14px; }
 
 .banner { margin: 16px 0 0; padding: 10px 14px; border-radius: 8px; background: var(--c-festival); font-weight: 600; }
