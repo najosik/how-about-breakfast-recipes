@@ -10,7 +10,7 @@
     ko: { banner: "서울관광재단 내부 시연용 프로토타입 · 실제 결제·예약 없음", send: "보내기", placeholder: "무엇이든 물어보세요 (교통·음식·쇼핑·축제)",
       handoff: "상담원 연결 (관광정보센터)", privacy: "이름·연락처·여권번호는 입력하지 마세요. 대화는 저장되지 않습니다.",
       welcome: "안녕하세요! 서울 여행의 교통·음식·쇼핑·축제를 한 번에 안내해 드려요.", typing: "답변을 준비하고 있어요…",
-      real: "실데이터", sample: "샘플 데이터", local: "지역 상권", buy: "구매하기 (시연)", official: "공식 페이지", call: "1330 전화",
+      koOrig: "국문 원문", hoursAsk: "영업시간은 물어보시면 조회", photo: (n) => `사진: 한국관광공사 (공공누리 제${n}유형)`, real: "실데이터", sample: "샘플 데이터", local: "지역 상권", buy: "구매하기 (시연)", official: "공식 페이지", call: "1330 전화",
       error: "연결에 문제가 있어요. 잠시 후 다시 시도해 주세요.", sendLabel: "메시지 보내기", langLabel: "언어 선택",
       kinds: { festival: "축제·행사", place: "추천 장소", transit: "교통 안내", dsp: "디스커버 서울 패스", center: "관광정보센터" },
       hours: "운영", price: "가격(샘플)", free: "무료", ongoing: "진행 중", minutes: (m) => `약 ${m}분`, handoffMsg: "가까운 관광정보센터를 안내해 드릴게요. 직원과 직접 상담할 수 있어요.",
@@ -18,7 +18,7 @@
     en: { banner: "Seoul Tourism Organization internal demo · No real payments or bookings", send: "Send", placeholder: "Ask about transport, food, shopping, festivals",
       handoff: "Talk to a person (Tourist Information Center)", privacy: "Please don't enter names, phone numbers or passport numbers. Chats are not saved.",
       welcome: "Hello! I can help with transport, food, shopping and festivals in Seoul — all in one answer.", typing: "Preparing your answer…",
-      real: "Real data", sample: "Sample data", local: "Local business", buy: "Buy (demo)", official: "Official page", call: "Call 1330",
+      koOrig: "Original in Korean", hoursAsk: "Ask for opening hours", photo: (n) => `Photo: Korea Tourism Organization (KOGL Type ${n})`, real: "Real data", sample: "Sample data", local: "Local business", buy: "Buy (demo)", official: "Official page", call: "Call 1330",
       error: "Connection problem. Please try again shortly.", sendLabel: "Send message", langLabel: "Language",
       kinds: { festival: "Festival / event", place: "Recommended place", transit: "Getting there", dsp: "Discover Seoul Pass", center: "Tourist info center" },
       hours: "Hours", price: "Price (sample)", free: "Free", ongoing: "On now", minutes: (m) => `about ${m} min`, handoffMsg: "Here is the nearest tourist information center, where staff can help you in person.",
@@ -26,7 +26,7 @@
     ja: { banner: "ソウル観光財団 社内デモ用プロトタイプ・実際の決済や予約は行いません", send: "送信", placeholder: "交通・グルメ・ショッピング・お祭りについて質問",
       handoff: "スタッフにつなぐ（観光案内所）", privacy: "氏名・電話番号・パスポート番号は入力しないでください。会話は保存されません。",
       welcome: "こんにちは！ソウルの交通・グルメ・ショッピング・お祭りをまとめてご案内します。", typing: "回答を準備しています…",
-      real: "実データ", sample: "サンプル", local: "地域の商店", buy: "購入（デモ）", official: "公式ページ", call: "1330に電話",
+      koOrig: "韓国語原文", hoursAsk: "営業時間はお尋ねください", photo: (n) => `写真：韓国観光公社（公共ヌリ第${n}類型）`, real: "実データ", sample: "サンプル", local: "地域の商店", buy: "購入（デモ）", official: "公式ページ", call: "1330に電話",
       error: "接続に問題があります。しばらくしてからお試しください。", sendLabel: "メッセージを送信", langLabel: "言語",
       kinds: { festival: "お祭り・イベント", place: "おすすめスポット", transit: "アクセス", dsp: "ディスカバーソウルパス", center: "観光案内所" },
       hours: "営業", price: "価格（サンプル）", free: "無料", ongoing: "開催中", minutes: (m) => `約${m}分`, handoffMsg: "最寄りの観光案内所です。スタッフが直接ご案内します。",
@@ -34,7 +34,7 @@
     "zh-CN": { banner: "首尔旅游财团内部演示原型 · 不进行真实支付或预订", send: "发送", placeholder: "询问交通、美食、购物、节庆",
       handoff: "转接人工（旅游咨询中心）", privacy: "请勿输入姓名、电话或护照号码。对话不会被保存。",
       welcome: "您好！我可以一次性为您介绍首尔的交通、美食、购物和节庆。", typing: "正在准备回答…",
-      real: "真实数据", sample: "示例数据", local: "本地商家", buy: "购买（演示）", official: "官方页面", call: "拨打1330",
+      koOrig: "韩文原文", hoursAsk: "营业时间可询问查询", photo: (n) => `图片：韩国观光公社（公共授权第${n}类）`, real: "真实数据", sample: "示例数据", local: "本地商家", buy: "购买（演示）", official: "官方页面", call: "拨打1330",
       error: "连接出现问题，请稍后再试。", sendLabel: "发送消息", langLabel: "语言",
       kinds: { festival: "节庆·活动", place: "推荐地点", transit: "交通指南", dsp: "首尔通票", center: "旅游咨询中心" },
       hours: "营业", price: "价格（示例）", free: "免费", ongoing: "进行中", minutes: (m) => `约${m}分钟`, handoffMsg: "为您推荐最近的旅游咨询中心，工作人员可当面为您服务。",
@@ -42,7 +42,7 @@
     "zh-TW": { banner: "首爾觀光財團內部展示原型 · 不進行實際付款或預訂", send: "傳送", placeholder: "詢問交通、美食、購物、節慶",
       handoff: "轉接真人（觀光諮詢中心）", privacy: "請勿輸入姓名、電話或護照號碼。對話不會被儲存。",
       welcome: "您好！我可以一次為您介紹首爾的交通、美食、購物與節慶。", typing: "正在準備回答…",
-      real: "真實資料", sample: "範例資料", local: "在地商家", buy: "購買（展示）", official: "官方頁面", call: "撥打1330",
+      koOrig: "韓文原文", hoursAsk: "營業時間可詢問查詢", photo: (n) => `圖片：韓國觀光公社（公共授權第${n}類）`, real: "真實資料", sample: "範例資料", local: "在地商家", buy: "購買（展示）", official: "官方頁面", call: "撥打1330",
       error: "連線發生問題，請稍後再試。", sendLabel: "傳送訊息", langLabel: "語言",
       kinds: { festival: "節慶·活動", place: "推薦地點", transit: "交通指南", dsp: "首爾通行證", center: "觀光諮詢中心" },
       hours: "營業", price: "價格（範例）", free: "免費", ongoing: "進行中", minutes: (m) => `約${m}分鐘`, handoffMsg: "為您介紹最近的觀光諮詢中心，工作人員可當面為您服務。",
@@ -125,7 +125,13 @@
   }
 
   // ---------- 카드 ----------
-  const nameOf = (n) => (n && typeof n === "object" ? (state.uiLang === "ko" ? n.ko : `${n.en || n.ko}${n.ko && n.en ? ` (${n.ko})` : ""}`) : String(n || ""));
+  const nameOf = (n) => {
+    if (!n || typeof n !== "object") return String(n || "");
+    if (state.uiLang !== "ko" && state.uiLang !== "en" && typeof n[state.uiLang] === "string") return n[state.uiLang];
+    if (state.uiLang === "ko" && n.ko) return n.ko;
+    if (n.en || n.ko) return `${n.en || n.ko}${n.ko && n.en ? ` (${n.ko})` : ""}`;
+    return String(Object.values(n).find((v) => typeof v === "string") || "");
+  };
   function badge(card) {
     return card.is_sample
       ? el("span", { class: "badge sample", text: `${t("sample")}` })
@@ -147,10 +153,21 @@
       if (src) { img = el("img", { src, alt: "", loading: "lazy", referrerpolicy: "no-referrer" }); img.addEventListener("error", () => img.remove(), { once: true }); }
     } else if (card.type === "place") {
       title = nameOf(d.name);
-      lines.push(`${d.district || ""} · ${t("hours")} ${d.open_hours || "-"}`);
+      if (d.detail_id) {
+        // 한국관광공사 TourAPI 음식점: 원문 그대로 표시(번역은 답변에서만), 사진은 공공누리 유형 표기
+        if (d.needs_translation) badges.append(el("span", { class: "badge sample", text: t("koOrig") }));
+        lines.push(d.address || d.district || "", t("hoursAsk"));
+        const src = backend && backend.noImages ? "" : safeUrl(d.image);
+        const type = { Type1: "1", Type3: "3" }[d.image_license];
+        if (src && type) {
+          img = el("figure", { class: "photo" + (type === "3" ? " no-modify" : "") },
+            el("img", { src, alt: "", loading: "lazy", referrerpolicy: "no-referrer" }), el("figcaption", { text: t("photo")(type) }));
+          img.querySelector("img").addEventListener("error", () => img.remove(), { once: true });
+        }
+      } else lines.push(`${d.district || ""} · ${t("hours")} ${d.open_hours || "-"}`);
       if (d.flags && (d.flags.is_traditional_market || d.flags.is_local_small_business)) badges.append(el("span", { class: "badge local", text: t("local") }));
       if (Array.isArray(d.tags)) lines.push(d.tags.slice(0, 4).join(" · "));
-      actions.push(naverLink(d.name && d.name.ko));
+      actions.push(naverLink((d.name && d.name.ko) || nameOf(d.name)));
     } else if (card.type === "transit") {
       title = `${d.from} → ${d.to}`;
       const sum = d.summary || {};

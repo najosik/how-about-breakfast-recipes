@@ -125,7 +125,7 @@ export function searchPlaces(input, places, config, lang = "en") {
   const ranked = rankPlaces(places, query, cfg);
   const note = cfg.note[lang] || cfg.note.en || "";
   return {
-    source: "샘플 데이터", is_sample: true,
+    sources: [...new Set(ranked.results.map((r) => r.place.source))],
     query: { category: category || "all", district: query.district || "서울 전체", hour: query.hour, keywords },
     ranking_policy: note,
     guaranteed_local: ranked.guaranteed_local,
@@ -134,6 +134,8 @@ export function searchPlaces(input, places, config, lang = "en") {
       district: r.place.district, area: r.place.area, open_hours: r.place.open_hours, open_hours_note: r.place.open_hours_note,
       tags: r.place.tags, flags: r.place.flags, score: r.score, score_breakdown: r.breakdown,
       source: r.place.source, is_sample: r.place.is_sample,
+      ...(r.place.detail_ref ? { address: r.place.address, image: r.place.image, image_license: r.place.image_license,
+        original_lang: r.place.original_lang, needs_translation: r.place.needs_translation, detail_id: r.place.detail_ref } : {}),
     })),
   };
 }

@@ -25,7 +25,7 @@ function fakeClaude(responses) {
 }
 const toolUse = (id, name, input) => ({ type: "tool_use", id, name, input });
 const text = (t) => ({ type: "text", text: t });
-const deps = (c) => ({ createMessage: c.createMessage, loadFeed: async () => FEED, loadFit: async () => undefined });
+const deps = (c) => ({ createMessage: c.createMessage, loadFeed: async () => FEED, loadFit: async () => undefined, loadTourFood: async () => null });
 
 // ---------------------------------------------------------------- security
 test("maskPII: 이메일·전화·여권·카드 마스킹, 날짜·가격은 유지", () => {
@@ -152,7 +152,7 @@ test("인젝션: 응답에 시스템 프롬프트가 새어 나가면 차단 문
 test("refusal·API 오류·응급 안내", async () => {
   const ref = fakeClaude([{ stop_reason: "refusal", content: [] }]);
   assert.match((await handleChat({ messages: [{ role: "user", content: "hello" }] }, ENV, deps(ref))).body.reply, /can't help/);
-  const err = { createMessage: async () => { const e = new Error("boom secret"); e.status = 500; throw e; }, loadFeed: async () => FEED, loadFit: async () => undefined };
+  const err = { createMessage: async () => { const e = new Error("boom secret"); e.status = 500; throw e; }, loadFeed: async () => FEED, loadFit: async () => undefined, loadTourFood: async () => null };
   const r = await handleChat({ messages: [{ role: "user", content: "hello" }] }, ENV, err);
   assert.equal(r.status, 502);
   assert.ok(!JSON.stringify(r.body).includes("boom"));
@@ -175,7 +175,7 @@ test("언어 지시는 대화 끝 system 메시지, 축제 피드 실패 시 도
     { stop_reason: "end_turn", content: [text("確認できませんでした")] },
   ]);
   const r = await handleChat({ messages: [{ role: "user", content: "今週のお祭りは？" }] }, ENV,
-    { createMessage: c.createMessage, loadFeed: async () => { throw new Error("down"); }, loadFit: async () => undefined });
+    { createMessage: c.createMessage, loadFeed: async () => { throw new Error("down"); }, loadFit: async () => undefined, loadTourFood: async () => null });
   assert.equal(c.calls[0].messages.at(-1).role, "system");
   assert.match(c.calls[0].messages.at(-1).content, /Japanese/);
   assert.equal(c.calls[1].messages.at(-1).content[0].is_error, true);

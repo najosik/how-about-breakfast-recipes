@@ -1,6 +1,7 @@
 // 도구 계층(LLM06: 모두 읽기 전용). Claude에 노출하는 도구 정의와 실행 디스패처.
 import { searchFestivals, resolveDistrict } from "./festivals.js";
 import { searchPlaces } from "./places.js";
+import { tourPlaces, fetchRestaurantDetail } from "./restaurants.js";
 
 const SAMPLE = "샘플 데이터";
 
@@ -32,6 +33,16 @@ export const TOOL_DEFINITIONS = [
         keywords: { type: "array", items: { type: "string" }, maxItems: 5 },
       },
       required: ["category"],
+      additionalProperties: false,
+    },
+  },
+  {
+    name: "get_restaurant_detail",
+    description: "Get opening hours, closed days, signature menu and reservation info for one restaurant returned by search_places (results with a detail_id, from the Korea Tourism Organization TourAPI). Call only when the visitor asks about that restaurant's hours or menu.",
+    input_schema: {
+      type: "object",
+      properties: { detail_id: { type: "string", description: "detail_id from a search_places result, e.g. tour-en-1234567" } },
+      required: ["detail_id"],
       additionalProperties: false,
     },
   },
@@ -119,6 +130,19 @@ const AREA_FALLBACK = { 성동구: "동북", 광진구: "동북", 동대문구: 
   마포구: "서북", 서대문구: "서북", 은평구: "서북", 영등포구: "서남", 동작구: "서남", 관악구: "서남", 구로구: "서남", 강서구: "서남", 양천구: "서남", 금천구: "서남",
   강남구: "동남", 서초구: "동남", 송파구: "동남", 강동구: "동남", 중구: "도심", 종로구: "도심", 용산구: "도심" };
 
+/** 음식 질의면 TourAPI 음식점(사용자 언어 우선, 없으면 국문)을 샘플 장소와 함께 후보로. */
+async function placeCandidates(input, ctx) {
+  const cat = input && typeof input === "object" ? input.category : null;
+  if (cat !== "food" || !ctx.getTourFood) return ctx.places;
+  let food = null;
+  try { food = await ctx.getTourFood(); } catch { food = null; }
+  if (!food) return ctx.places;
+  const district = resolveDistrict(typeof input.region === "string" ? input.region.slice(0, 50) : "");
+  const tour = tourPlaces(food, ctx.lang, district);
+  // 실데이터가 있으면 샘플 음식점은 빼고(샘플이 실데이터를 밀어내지 않게) 전통시장 등 다른 샘플만 남긴다
+  return tour.length ? ctx.places.filter((p) => !(p.is_sample && p.category === "food")).concat(tour) : ctx.places;
+}
+
 /**
  * 도구 실행. 알 수 없는 도구·실패는 오류 결과로 돌려준다(예외를 LLM에 노출하지 않음).
  * ctx: { feed, today, places, transit, dsp, centers, ranking, lang }
@@ -127,7 +151,12 @@ export async function executeTool(name, input, ctx) {
   try {
     switch (name) {
       case "search_festivals": return { ok: true, result: searchFestivals(input, await ctx.getFeed(), ctx.today, ctx.getFit ? await ctx.getFit() : undefined) };
-      case "search_places": return { ok: true, result: searchPlaces(input, ctx.places, ctx.ranking, ctx.lang) };
+      case "search_places": return { ok: true, result: searchPlaces(input, await placeCandidates(input, ctx), ctx.ranking, ctx.lang) };
+      case "get_restaurant_detail": {
+        const r = ctx.getRestaurantDetail ? await ctx.getRestaurantDetail(input && input.detail_id) : { ok: false, error: "detail_unavailable" };
+        if (!r.ok) return { ok: true, result: { found: false, error: r.error, message: "Restaurant details are unavailable right now. Suggest checking the Visit Korea site or asking at a tourist information center." } };
+        return { ok: true, result: { found: true, ...r.result, needs_translation: r.result.original_lang !== ctx.lang } };
+      }
       case "get_transit_guide": return { ok: true, result: getTransitGuide(input, ctx.transit) };
       case "recommend_dsp": return { ok: true, result: recommendDsp(input, ctx.dsp) };
       case "find_info_center": return { ok: true, result: findInfoCenter(input, ctx.centers) };
@@ -145,7 +174,7 @@ export function cardsFromResult(name, result) {
     case "search_festivals":
       return (result.results || []).map((r) => ({ type: "festival", source: r.source, is_sample: false, data: r }));
     case "search_places":
-      return (result.results || []).map((r) => ({ type: "place", source: r.source, is_sample: true, data: r }));
+      return (result.results || []).map((r) => ({ type: "place", source: r.source, is_sample: r.is_sample !== false, data: r }));
     case "get_transit_guide":
       return result.found ? [{ type: "transit", source: result.source, is_sample: true, data: result.guide }] : [];
     case "recommend_dsp":

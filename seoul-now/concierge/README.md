@@ -75,6 +75,19 @@ ANTHROPIC_API_KEY=... SHOW_REPLIES=1 node dev/scenarios.mjs  # 답변 원문도 
 > `CLAUDE_MODEL`을 바꿀 때 주의: 언어 지시를 대화 중간 system 메시지로 보내므로, 이를 지원하는 모델(Claude Sonnet 5.5, Opus 5.5 등)을 쓰세요.
 > 요청은 서버측 거절 대체(`fallbacks: "default"`)를 사용합니다. 모델이 안전 정책으로 거절하면 API가 권장 모델로 자동 재시도합니다.
 
+## 맛집 모듈 (한국관광공사 TourAPI v2)
+
+- 수집: `seoul-now/scripts/fetch_tour_food.py` → `seoul-now/data/tour_food.json` (하루 1회, `.github/workflows/seoul-now-tourapi.yml`)
+  - `areaBasedList2`, 서울 `areaCode=1`, 음식점 `contentTypeId` 국문 39 / 외국어 82, `_type=json`, https만
+  - 키: GitHub Secret `TOURAPI_KEY`(Decoding 키). 코드는 한 번만 인코딩. `%`가 든 Encoding 키는 거부
+  - JSON이 아닌 응답(XML 오류)은 원문 없이 실패 처리, 실패한 언어는 이전 수집본 유지
+  - 서비스 경로·코드는 `src/config/tourapi.json` (외국어 서비스 경로는 매뉴얼로 확인 후 수정)
+- 상세: `get_restaurant_detail` 도구가 `detailIntro2`를 요청 시 조회(Worker Secret `TOURAPI_KEY`, 6시간 메모리 캐시). 아티팩트판은 외부 호출 불가로 미제공
+- 언어: 사용자 언어 서비스 원문 우선 → 그 지역 결과가 없을 때만 국문(`needs_translation`, 카드에 "국문 원문" 배지, 답변에서 번역 표시)
+- 이미지: 공공누리 Type1·Type3만 표시하고 유형을 캡션으로 표기. Type3는 자르지 않음(`object-fit: contain`, 필터 없음)
+- 순위: 수집 결과를 `rankPlaces()` 후보에 편입. 실데이터가 있으면 샘플 음식점은 빼고 전통시장 샘플은 유지
+- 출처 배지 "한국관광공사 TourAPI", 원문은 태그 제거·길이 제한만(지시문처럼 보이는 문장은 비움)
+
 ## 추천 가중치 조정 (`src/config/ranking.json`)
 - **가중치(`weights`):** 전통시장 +0.20, 로컬 상권 +0.15, 야간(18시 이후) +0.15, 대형몰·면세점 −0.10. 값은 −1~1 범위이며, 벗어나면 기본값을 씁니다.
 - **`max_related_in_top`:** 요청과 다른 관련 카테고리(예: 쇼핑 질의에 대한 전통시장)가 상위 5개에 들어갈 수 있는 최대 개수입니다. 기본 2입니다.

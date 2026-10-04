@@ -9,7 +9,13 @@ const PORT = Number(process.env.PORT || 8787);
 const useMock = !process.env.ANTHROPIC_API_KEY;
 const env = { ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY, CLAUDE_MODEL: process.env.CLAUDE_MODEL,
   ALLOWED_ORIGIN: `http://localhost:${PORT}` };
-const deps = { loadFeed: async () => JSON.parse(readFileSync(new URL("../../data/events.json", import.meta.url), "utf-8")) };
+const readData = (f) => JSON.parse(readFileSync(new URL(`../../data/${f}`, import.meta.url), "utf-8"));
+// 로컬: 수집본(tour_food.json)이 비어 있으면 TOUR_FOOD_FIXTURE 경로의 시험 데이터를 쓴다. 상세 조회는 하지 않음.
+const deps = {
+  loadFeed: async () => readData("events.json"),
+  loadTourFood: async () => (process.env.TOUR_FOOD_FIXTURE ? JSON.parse(readFileSync(process.env.TOUR_FOOD_FIXTURE, "utf-8")) : readData("tour_food.json")),
+  fetchRestaurantDetail: async () => ({ ok: false, error: "detail_unavailable" }),
+};
 if (useMock) deps.createMessage = createMockModel();
 const handler = makeHandler(deps);
 

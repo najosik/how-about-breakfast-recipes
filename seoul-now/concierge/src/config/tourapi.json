@@ -1,0 +1,14 @@
+{
+  "_comment": "한국관광공사 TourAPI(v2) 설정. 외국어 서비스 경로는 공공데이터포털 매뉴얼로 확인 후 수정. 오퍼레이션명은 모두 '2' 접미사(구버전 이름 금지).",
+  "base_url": "https://apis.data.go.kr/B551011",
+  "mobile_app": "SeoulTourismConcierge",
+  "area_code": 1,
+  "services": {
+    "ko": { "service": "KorService2", "food_content_type": 39 },
+    "en": { "service": "EngService2", "food_content_type": 82 },
+    "ja": { "service": "JpnService2", "food_content_type": 82 },
+    "zh-CN": { "service": "ChsService2", "food_content_type": 82 },
+    "zh-TW": { "service": "ChtService2", "food_content_type": 82 }
+  },
+  "source_label": "한국관광공사 TourAPI"
+}
