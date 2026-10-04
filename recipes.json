@@ -38174,7 +38174,7 @@
   "weather": "13도/부분적으로흐림",
   "failed": false,
   "calories": null,
-  "title": "콜리플라워",
+  "title": "콜리플라워 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38184,21 +38184,14 @@
    "콜리플라워"
   ],
   "intro": "20231006, #조식다이어리 866, 13도/부분적으로흐림\n#콜리플라워 는 흐르는 물에 씻어 1cm 두께로 자른다. \n올리브오일3, 파프리카가루1/2, 허브1/2, 마늘가루1/2, 소금1/4 넣어 드레싱을 만들고 콜리플라워에 끼얹는다. 모짜렐라치즈도 얹는다. \n에어플라이어에 넣고 15분, 후추로 마무리~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 콜리플라워 1/2개\n- 소스(올리브오일 3T, 파프리카가루 1/2T, 허브 1/2T, 마늘파우더 1/2T, 소금 1/4T)\n- 모짜렐라치즈 1T",
+  "steps": "1. 콜리플라워는 흐르는 물에 씻고 1cm 두께로 자른다. \n2. 올리브오일 3T, 파프리카가루 1/2T, 허브 1/2T, 마늘파우더 1/2T, 소금 1/4T 섞어서 소스를 만든다. \n3. 오븐팬에 클리플라워 담고 2의 소스 바르고 모짜렐라치즈 얹고 180도 에어프라이어에 15분 굽는다. ",
   "raw": "20231006, #조식다이어리 866, 13도/부분적으로흐림\n\n#콜리플라워 는 흐르는 물에 씻어 1cm 두께로 자른다. \n올리브오일3, 파프리카가루1/2, 허브1/2, 마늘가루1/2, 소금1/4 넣어 드레싱을 만들고 콜리플라워에 끼얹는다. 모짜렐라치즈도 얹는다. \n에어플라이어에 넣고 15분, 후추로 마무리~\n\n#조식 #레시피 #미라클모닝 ",
   "image": "https://images.how-about-breakfast.com/images/866.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/866.jpg",
    "https://images.how-about-breakfast.com/images/866_2.jpg"
   ],
-  "_en": {
-   "hash": "30b9e159d0613aca98bd4f5c16f0dbe2082a1432ece5b2e284237ff3552dbd78",
-   "title": "Air-Fried Cauliflower",
-   "intro": "20231006, #breakfastdiary 866, 13°C/partly cloudy\nWash the #cauliflower under running water and slice it 1cm thick.\nCombine 3 parts olive oil, 1/2 part paprika powder, 1/2 part herbs, 1/2 part garlic powder, and 1/4 part salt to make a dressing, then drizzle it over the cauliflower. Top with mozzarella cheese.\nAir-fry for 15 minutes, and finish with pepper~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "콜리플라워"
  },
  {
