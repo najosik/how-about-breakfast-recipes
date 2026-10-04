@@ -1,0 +1,246 @@
+[
+ {
+  "id": "c01",
+  "name": {
+   "ko": "명동관광정보센터",
+   "en": "Myeongdong Tourist Information Center"
+  },
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "명동",
+   "을지로",
+   "남대문",
+   "시청",
+   "서울역"
+  ],
+  "hours": "09:00-18:00",
+  "hours_note": "샘플 값(방문 전 확인 필요)",
+  "phone": "1330",
+  "phone_note": "관광통역안내전화 1330(24시간). 센터 직통번호는 샘플 미기재",
+  "languages": [
+   "ko",
+   "en",
+   "ja",
+   "zh"
+  ],
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "c02",
+  "name": {
+   "ko": "홍대관광정보센터",
+   "en": "Hongdae Tourist Information Center"
+  },
+  "district": "마포구",
+  "area": "서북",
+  "near": [
+   "홍대",
+   "합정",
+   "연남",
+   "망원"
+  ],
+  "hours": "09:00-18:00",
+  "hours_note": "샘플 값(방문 전 확인 필요)",
+  "phone": "1330",
+  "phone_note": "관광통역안내전화 1330(24시간). 센터 직통번호는 샘플 미기재",
+  "languages": [
+   "ko",
+   "en",
+   "ja",
+   "zh"
+  ],
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "c03",
+  "name": {
+   "ko": "동대문관광정보센터",
+   "en": "Dongdaemun Tourist Information Center"
+  },
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "동대문",
+   "DDP",
+   "신당"
+  ],
+  "hours": "09:00-18:00",
+  "hours_note": "샘플 값(방문 전 확인 필요)",
+  "phone": "1330",
+  "phone_note": "관광통역안내전화 1330(24시간). 센터 직통번호는 샘플 미기재",
+  "languages": [
+   "ko",
+   "en",
+   "ja",
+   "zh"
+  ],
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "c04",
+  "name": {
+   "ko": "인사동관광정보센터",
+   "en": "Insadong Tourist Information Center"
+  },
+  "district": "종로구",
+  "area": "도심",
+  "near": [
+   "인사동",
+   "종로",
+   "경복궁",
+   "익선동",
+   "광장시장"
+  ],
+  "hours": "09:00-18:00",
+  "hours_note": "샘플 값(방문 전 확인 필요)",
+  "phone": "1330",
+  "phone_note": "관광통역안내전화 1330(24시간). 센터 직통번호는 샘플 미기재",
+  "languages": [
+   "ko",
+   "en",
+   "ja",
+   "zh"
+  ],
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "c05",
+  "name": {
+   "ko": "이태원관광정보센터",
+   "en": "Itaewon Tourist Information Center"
+  },
+  "district": "용산구",
+  "area": "도심",
+  "near": [
+   "이태원",
+   "한남",
+   "남산",
+   "용산"
+  ],
+  "hours": "09:00-18:00",
+  "hours_note": "샘플 값(방문 전 확인 필요)",
+  "phone": "1330",
+  "phone_note": "관광통역안내전화 1330(24시간). 센터 직통번호는 샘플 미기재",
+  "languages": [
+   "ko",
+   "en",
+   "ja",
+   "zh"
+  ],
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "c06",
+  "name": {
+   "ko": "강남관광정보센터",
+   "en": "Gangnam Tourist Information Center"
+  },
+  "district": "강남구",
+  "area": "동남",
+  "near": [
+   "강남",
+   "가로수길",
+   "코엑스",
+   "신사",
+   "압구정"
+  ],
+  "hours": "09:00-18:00",
+  "hours_note": "샘플 값(방문 전 확인 필요)",
+  "phone": "1330",
+  "phone_note": "관광통역안내전화 1330(24시간). 센터 직통번호는 샘플 미기재",
+  "languages": [
+   "ko",
+   "en",
+   "ja",
+   "zh"
+  ],
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "c07",
+  "name": {
+   "ko": "잠실관광정보센터",
+   "en": "Jamsil Tourist Information Center"
+  },
+  "district": "송파구",
+  "area": "동남",
+  "near": [
+   "잠실",
+   "석촌호수",
+   "송리단길",
+   "롯데월드"
+  ],
+  "hours": "09:00-18:00",
+  "hours_note": "샘플 값(방문 전 확인 필요)",
+  "phone": "1330",
+  "phone_note": "관광통역안내전화 1330(24시간). 센터 직통번호는 샘플 미기재",
+  "languages": [
+   "ko",
+   "en",
+   "ja",
+   "zh"
+  ],
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "c08",
+  "name": {
+   "ko": "서울관광플라자 관광안내센터",
+   "en": "Seoul Tourism Plaza Information Center"
+  },
+  "district": "종로구",
+  "area": "도심",
+  "near": [
+   "청계천",
+   "종각",
+   "광화문"
+  ],
+  "hours": "09:00-18:00",
+  "hours_note": "샘플 값(방문 전 확인 필요)",
+  "phone": "1330",
+  "phone_note": "관광통역안내전화 1330(24시간). 센터 직통번호는 샘플 미기재",
+  "languages": [
+   "ko",
+   "en",
+   "ja",
+   "zh"
+  ],
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "c09",
+  "name": {
+   "ko": "김포공항 관광안내센터",
+   "en": "Gimpo Airport Tourist Information Center"
+  },
+  "district": "강서구",
+  "area": "서남",
+  "near": [
+   "김포공항",
+   "강서",
+   "마곡",
+   "gimpo"
+  ],
+  "hours": "09:00-22:00",
+  "hours_note": "샘플 값(방문 전 확인 필요)",
+  "phone": "1330",
+  "phone_note": "관광통역안내전화 1330(24시간). 센터 직통번호는 샘플 미기재",
+  "languages": [
+   "ko",
+   "en",
+   "ja",
+   "zh"
+  ],
+  "source": "샘플 데이터",
+  "is_sample": true
+ }
+]

@@ -1,0 +1,198 @@
+[
+ {
+  "id": "dsp-24",
+  "name": "Discover Seoul Pass 24h",
+  "duration_hours": 24,
+  "price_krw": 50000,
+  "price_note": "샘플 값(실제 판매가 아님)",
+  "includes": [
+   {
+    "name": "경복궁",
+    "type": "palace"
+   },
+   {
+    "name": "N서울타워 전망대",
+    "type": "observatory"
+   },
+   {
+    "name": "국립중앙박물관 특별전",
+    "type": "museum"
+   },
+   {
+    "name": "한강 유람선",
+    "type": "experience"
+   }
+  ],
+  "checkout_url": "checkout.html?product=dsp-24",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "dsp-48",
+  "name": "Discover Seoul Pass 48h",
+  "duration_hours": 48,
+  "price_krw": 70000,
+  "price_note": "샘플 값(실제 판매가 아님)",
+  "includes": [
+   {
+    "name": "경복궁",
+    "type": "palace"
+   },
+   {
+    "name": "창덕궁",
+    "type": "palace"
+   },
+   {
+    "name": "N서울타워 전망대",
+    "type": "observatory"
+   },
+   {
+    "name": "롯데월드",
+    "type": "theme park"
+   },
+   {
+    "name": "한강 유람선",
+    "type": "experience"
+   }
+  ],
+  "checkout_url": "checkout.html?product=dsp-48",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "dsp-72",
+  "name": "Discover Seoul Pass 72h",
+  "duration_hours": 72,
+  "price_krw": 90000,
+  "price_note": "샘플 값(실제 판매가 아님)",
+  "includes": [
+   {
+    "name": "경복궁",
+    "type": "palace"
+   },
+   {
+    "name": "창덕궁·후원",
+    "type": "palace"
+   },
+   {
+    "name": "덕수궁",
+    "type": "palace"
+   },
+   {
+    "name": "N서울타워 전망대",
+    "type": "observatory"
+   },
+   {
+    "name": "롯데월드타워 서울스카이",
+    "type": "observatory"
+   },
+   {
+    "name": "한강 유람선",
+    "type": "experience"
+   },
+   {
+    "name": "공항철도 1회",
+    "type": "transit"
+   }
+  ],
+  "checkout_url": "checkout.html?product=dsp-72",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "dsp-120",
+  "name": "Discover Seoul Pass 120h",
+  "duration_hours": 120,
+  "price_krw": 130000,
+  "price_note": "샘플 값(실제 판매가 아님)",
+  "includes": [
+   {
+    "name": "경복궁",
+    "type": "palace"
+   },
+   {
+    "name": "창덕궁·후원",
+    "type": "palace"
+   },
+   {
+    "name": "덕수궁",
+    "type": "palace"
+   },
+   {
+    "name": "창경궁",
+    "type": "palace"
+   },
+   {
+    "name": "N서울타워 전망대",
+    "type": "observatory"
+   },
+   {
+    "name": "롯데월드타워 서울스카이",
+    "type": "observatory"
+   },
+   {
+    "name": "롯데월드",
+    "type": "theme park"
+   },
+   {
+    "name": "공항철도 1회",
+    "type": "transit"
+   }
+  ],
+  "checkout_url": "checkout.html?product=dsp-120",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "dsp-night",
+  "name": "Seoul Night Pass (시연용 가상 상품)",
+  "duration_hours": 48,
+  "price_krw": 40000,
+  "price_note": "샘플 값(실제 판매가 아님)",
+  "includes": [
+   {
+    "name": "N서울타워 전망대",
+    "type": "observatory"
+   },
+   {
+    "name": "한강 야간 유람선",
+    "type": "experience"
+   },
+   {
+    "name": "광장시장 먹거리 쿠폰",
+    "type": "market"
+   }
+  ],
+  "checkout_url": "checkout.html?product=dsp-night",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "dsp-market",
+  "name": "Seoul Market Taste Pass (시연용 가상 상품)",
+  "duration_hours": 72,
+  "price_krw": 30000,
+  "price_note": "샘플 값(실제 판매가 아님)",
+  "includes": [
+   {
+    "name": "광장시장 쿠폰",
+    "type": "market"
+   },
+   {
+    "name": "망원시장 쿠폰",
+    "type": "market"
+   },
+   {
+    "name": "통인시장 엽전 도시락",
+    "type": "market"
+   },
+   {
+    "name": "경동시장 카페",
+    "type": "market"
+   }
+  ],
+  "checkout_url": "checkout.html?product=dsp-market",
+  "source": "샘플 데이터",
+  "is_sample": true
+ }
+]

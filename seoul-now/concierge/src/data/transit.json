@@ -1,0 +1,229 @@
+[
+ {
+  "id": "t01",
+  "from": "명동",
+  "to": "광장시장",
+  "modes": [
+   "subway"
+  ],
+  "summary": {
+   "ko": "을지로입구역(2호선) → 을지로4가역 하차, 4번 출구에서 도보 약 7분",
+   "en": "Euljiro 1-ga Stn (Line 2) → Euljiro 4-ga Stn, ~7-min walk from Exit 4"
+  },
+  "total_minutes": 15,
+  "fare_krw": 1400,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t02",
+  "from": "명동",
+  "to": "남대문시장",
+  "modes": [
+   "walk"
+  ],
+  "summary": {
+   "ko": "명동역 5번 출구에서 회현역 방향으로 도보 약 10분",
+   "en": "Walk about 10 min from Myeongdong Stn Exit 5 toward Hoehyeon Stn"
+  },
+  "total_minutes": 10,
+  "fare_krw": 0,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t03",
+  "from": "명동",
+  "to": "N서울타워",
+  "modes": [
+   "walk",
+   "bus"
+  ],
+  "summary": {
+   "ko": "명동역 3번 출구 → 남산 순환버스 01A/01B 또는 남산케이블카",
+   "en": "Myeongdong Stn Exit 3 → Namsan circular bus 01A/01B or Namsan Cable Car"
+  },
+  "total_minutes": 25,
+  "fare_krw": 1400,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t04",
+  "from": "명동",
+  "to": "을지로 노가리골목",
+  "modes": [
+   "subway",
+   "walk"
+  ],
+  "summary": {
+   "ko": "을지로입구역(2호선) → 을지로3가역 하차 후 도보 3분, 또는 명동에서 도보 약 15분",
+   "en": "Euljiro 1-ga → Euljiro 3-ga Stn (Line 2), 3-min walk; or ~15-min walk from Myeongdong"
+  },
+  "total_minutes": 10,
+  "fare_krw": 1400,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t05",
+  "from": "명동",
+  "to": "동대문디자인플라자(DDP)",
+  "modes": [
+   "subway"
+  ],
+  "summary": {
+   "ko": "명동역(4호선) → 동대문역사문화공원역 1번 출구",
+   "en": "Myeongdong Stn (Line 4) → Dongdaemun History & Culture Park Stn Exit 1"
+  },
+  "total_minutes": 10,
+  "fare_krw": 1400,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t06",
+  "from": "명동",
+  "to": "경복궁",
+  "modes": [
+   "subway"
+  ],
+  "summary": {
+   "ko": "명동역(4호선) → 충무로역 환승(3호선) → 경복궁역 하차",
+   "en": "Myeongdong Stn (Line 4) → transfer at Chungmuro (Line 3) → Gyeongbokgung Stn"
+  },
+  "total_minutes": 20,
+  "fare_krw": 1400,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t07",
+  "from": "경복궁",
+  "to": "통인시장",
+  "modes": [
+   "walk"
+  ],
+  "summary": {
+   "ko": "경복궁역 2번 출구에서 서촌 방향 도보 약 8분",
+   "en": "Walk ~8 min from Gyeongbokgung Stn Exit 2 into Seochon"
+  },
+  "total_minutes": 8,
+  "fare_krw": 0,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t08",
+  "from": "홍대",
+  "to": "망원시장",
+  "modes": [
+   "subway",
+   "bus"
+  ],
+  "summary": {
+   "ko": "홍대입구역 → 합정역 환승(6호선) → 망원역 2번 출구 도보 5분",
+   "en": "Hongik Univ. Stn → Hapjeong (Line 6) → Mangwon Stn Exit 2, 5-min walk"
+  },
+  "total_minutes": 15,
+  "fare_krw": 1400,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t09",
+  "from": "인천공항",
+  "to": "명동",
+  "modes": [
+   "airport bus",
+   "subway"
+  ],
+  "summary": {
+   "ko": "공항리무진 6015번 또는 공항철도(서울역) → 4호선 회현·명동역",
+   "en": "Airport limousine 6015 or AREX to Seoul Stn → Line 4 to Myeongdong"
+  },
+  "total_minutes": 70,
+  "fare_krw": 4250,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t10",
+  "from": "강남",
+  "to": "가로수길",
+  "modes": [
+   "subway"
+  ],
+  "summary": {
+   "ko": "강남역에서 신분당선 → 신사역 하차, 8번 출구에서 도보 약 5분",
+   "en": "Gangnam Stn, Shinbundang Line → Sinsa Stn Exit 8, ~5-min walk"
+  },
+  "total_minutes": 10,
+  "fare_krw": 1400,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t11",
+  "from": "잠실",
+  "to": "송리단길",
+  "modes": [
+   "walk"
+  ],
+  "summary": {
+   "ko": "잠실역 → 석촌호수 동호 방향 도보 약 12분",
+   "en": "Walk ~12 min from Jamsil Stn past Seokchon Lake"
+  },
+  "total_minutes": 12,
+  "fare_krw": 0,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t12",
+  "from": "명동",
+  "to": "반포한강공원 달빛무지개분수",
+  "modes": [
+   "subway",
+   "bus"
+  ],
+  "summary": {
+   "ko": "명동역(4호선) → 충무로역 환승(3호선) → 고속터미널역 8-1번 출구에서 도보 약 15분",
+   "en": "Myeongdong (Line 4) → Chungmuro (Line 3) → Express Bus Terminal Stn Exit 8-1, ~15-min walk"
+  },
+  "total_minutes": 40,
+  "fare_krw": 1400,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "t13",
+  "from": "홍대",
+  "to": "망원한강공원",
+  "modes": [
+   "subway",
+   "walk"
+  ],
+  "summary": {
+   "ko": "홍대입구역 → 합정역 환승(6호선) → 망원역 1번 출구에서 도보 약 15분",
+   "en": "Hongik Univ. → Hapjeong (Line 6) → Mangwon Stn Exit 1, ~15-min walk"
+  },
+  "total_minutes": 25,
+  "fare_krw": 1400,
+  "fare_note": "샘플 값(교통카드 기준 참고용)",
+  "source": "샘플 데이터",
+  "is_sample": true
+ }
+]

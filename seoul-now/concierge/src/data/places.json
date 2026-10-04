@@ -1,0 +1,1217 @@
+[
+ {
+  "id": "m01",
+  "name": {
+   "ko": "광장시장",
+   "en": "Gwangjang Market"
+  },
+  "category": "market",
+  "district": "종로구",
+  "area": "도심",
+  "near": [
+   "종로",
+   "동대문",
+   "청계천"
+  ],
+  "open_hours": "09:00-23:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "street food",
+   "bindaetteok",
+   "mayak gimbap",
+   "silk",
+   "night"
+  ],
+  "flags": {
+   "is_traditional_market": true,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "m02",
+  "name": {
+   "ko": "남대문시장",
+   "en": "Namdaemun Market"
+  },
+  "category": "market",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "명동",
+   "남대문",
+   "시청",
+   "서울역"
+  ],
+  "open_hours": "07:00-23:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "street food",
+   "kalguksu",
+   "souvenirs",
+   "clothing",
+   "night"
+  ],
+  "flags": {
+   "is_traditional_market": true,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "m03",
+  "name": {
+   "ko": "통인시장",
+   "en": "Tongin Market"
+  },
+  "category": "market",
+  "district": "종로구",
+  "area": "도심",
+  "near": [
+   "경복궁",
+   "서촌"
+  ],
+  "open_hours": "07:00-21:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "dosirak cafe",
+   "tteokbokki",
+   "lunch"
+  ],
+  "flags": {
+   "is_traditional_market": true,
+   "is_local_small_business": true,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "m04",
+  "name": {
+   "ko": "망원시장",
+   "en": "Mangwon Market"
+  },
+  "category": "market",
+  "district": "마포구",
+  "area": "서북",
+  "near": [
+   "홍대",
+   "합정",
+   "망원"
+  ],
+  "open_hours": "10:00-21:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "street food",
+   "croquette",
+   "local"
+  ],
+  "flags": {
+   "is_traditional_market": true,
+   "is_local_small_business": true,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "m05",
+  "name": {
+   "ko": "영천시장",
+   "en": "Yeongcheon Market"
+  },
+  "category": "market",
+  "district": "서대문구",
+  "area": "서북",
+  "near": [
+   "독립문",
+   "서대문"
+  ],
+  "open_hours": "09:00-21:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "tteokbokki",
+   "twisted donuts",
+   "local"
+  ],
+  "flags": {
+   "is_traditional_market": true,
+   "is_local_small_business": true,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "m06",
+  "name": {
+   "ko": "경동시장",
+   "en": "Gyeongdong Market"
+  },
+  "category": "market",
+  "district": "동대문구",
+  "area": "동북",
+  "near": [
+   "청량리",
+   "제기동"
+  ],
+  "open_hours": "08:00-19:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "herbs",
+   "ginseng",
+   "produce",
+   "cafe"
+  ],
+  "flags": {
+   "is_traditional_market": true,
+   "is_local_small_business": true,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "m07",
+  "name": {
+   "ko": "노량진수산시장",
+   "en": "Noryangjin Fish Market"
+  },
+  "category": "market",
+  "district": "동작구",
+  "area": "서남",
+  "near": [
+   "노량진",
+   "여의도"
+  ],
+  "open_hours": "01:00-22:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "seafood",
+   "raw fish",
+   "dinner",
+   "night"
+  ],
+  "flags": {
+   "is_traditional_market": true,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "m08",
+  "name": {
+   "ko": "가락시장",
+   "en": "Garak Market"
+  },
+  "category": "market",
+  "district": "송파구",
+  "area": "동남",
+  "near": [
+   "잠실",
+   "가락"
+  ],
+  "open_hours": "00:00-24:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "seafood",
+   "produce",
+   "wholesale"
+  ],
+  "flags": {
+   "is_traditional_market": true,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "m09",
+  "name": {
+   "ko": "마장축산물시장",
+   "en": "Majang Meat Market"
+  },
+  "category": "market",
+  "district": "성동구",
+  "area": "동북",
+  "near": [
+   "왕십리",
+   "마장"
+  ],
+  "open_hours": "09:00-22:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "korean beef",
+   "bbq",
+   "dinner"
+  ],
+  "flags": {
+   "is_traditional_market": true,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "m10",
+  "name": {
+   "ko": "남구로시장",
+   "en": "Namguro Market"
+  },
+  "category": "market",
+  "district": "구로구",
+  "area": "서남",
+  "near": [
+   "구로",
+   "대림"
+  ],
+  "open_hours": "09:00-21:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "chinese korean food",
+   "street food",
+   "local"
+  ],
+  "flags": {
+   "is_traditional_market": true,
+   "is_local_small_business": true,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "f01",
+  "name": {
+   "ko": "을지로 노가리골목",
+   "en": "Euljiro Nogari Alley"
+  },
+  "category": "food",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "명동",
+   "을지로",
+   "종로"
+  ],
+  "open_hours": "16:00-24:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "beer",
+   "dried pollock",
+   "night",
+   "retro"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "f02",
+  "name": {
+   "ko": "신당동 떡볶이타운",
+   "en": "Sindang-dong Tteokbokki Town"
+  },
+  "category": "food",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "동대문",
+   "신당"
+  ],
+  "open_hours": "10:00-23:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "tteokbokki",
+   "spicy",
+   "casual"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "f03",
+  "name": {
+   "ko": "익선동 한옥거리",
+   "en": "Ikseon-dong Hanok Street"
+  },
+  "category": "food",
+  "district": "종로구",
+  "area": "도심",
+  "near": [
+   "종로",
+   "인사동",
+   "창덕궁"
+  ],
+  "open_hours": "11:00-22:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "hanok cafe",
+   "dessert",
+   "brunch"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "f04",
+  "name": {
+   "ko": "명동 먹자골목",
+   "en": "Myeongdong Food Street"
+  },
+  "category": "food",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "명동",
+   "을지로"
+  ],
+  "open_hours": "10:00-23:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "street food",
+   "korean bbq",
+   "night"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "f05",
+  "name": {
+   "ko": "연남동 경의선숲길 일대",
+   "en": "Yeonnam-dong Gyeongui Line Forest Park"
+  },
+  "category": "food",
+  "district": "마포구",
+  "area": "서북",
+  "near": [
+   "홍대",
+   "연남"
+  ],
+  "open_hours": "11:00-23:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "cafe",
+   "international food",
+   "park"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "f06",
+  "name": {
+   "ko": "응암동 감자국거리",
+   "en": "Eungam-dong Gamjaguk Street"
+  },
+  "category": "food",
+  "district": "은평구",
+  "area": "서북",
+  "near": [
+   "응암",
+   "은평"
+  ],
+  "open_hours": "10:00-24:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "pork bone soup",
+   "local",
+   "night"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "f07",
+  "name": {
+   "ko": "신림동 순대타운",
+   "en": "Sillim-dong Sundae Town"
+  },
+  "category": "food",
+  "district": "관악구",
+  "area": "서남",
+  "near": [
+   "신림",
+   "서울대입구"
+  ],
+  "open_hours": "10:00-24:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "sundae",
+   "stir-fry",
+   "local",
+   "night"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "f08",
+  "name": {
+   "ko": "왕십리 곱창골목",
+   "en": "Wangsimni Gopchang Alley"
+  },
+  "category": "food",
+  "district": "성동구",
+  "area": "동북",
+  "near": [
+   "왕십리",
+   "성수"
+  ],
+  "open_hours": "16:00-02:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "gopchang",
+   "grilled intestines",
+   "night"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "f09",
+  "name": {
+   "ko": "문래 창작촌 골목",
+   "en": "Mullae Art Village Alleys"
+  },
+  "category": "food",
+  "district": "영등포구",
+  "area": "서남",
+  "near": [
+   "문래",
+   "영등포"
+  ],
+  "open_hours": "11:00-23:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "craft beer",
+   "bistro",
+   "art"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "f10",
+  "name": {
+   "ko": "송리단길",
+   "en": "Songridan-gil"
+  },
+  "category": "food",
+  "district": "송파구",
+  "area": "동남",
+  "near": [
+   "잠실",
+   "석촌호수"
+  ],
+  "open_hours": "11:00-22:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "cafe",
+   "brunch",
+   "dessert"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s01",
+  "name": {
+   "ko": "명동 쇼핑거리",
+   "en": "Myeongdong Shopping Street"
+  },
+  "category": "shopping",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "명동",
+   "을지로"
+  ],
+  "open_hours": "10:00-22:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "cosmetics",
+   "fashion",
+   "street"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s02",
+  "name": {
+   "ko": "롯데백화점 본점·면세점",
+   "en": "Lotte Department Store Main & Duty Free"
+  },
+  "category": "shopping",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "명동",
+   "을지로",
+   "시청"
+  ],
+  "open_hours": "10:30-20:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "department store",
+   "duty free",
+   "luxury"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": true
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s03",
+  "name": {
+   "ko": "신세계면세점 명동점",
+   "en": "Shinsegae Duty Free Myeongdong"
+  },
+  "category": "shopping",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "명동",
+   "회현",
+   "남대문"
+  ],
+  "open_hours": "10:00-21:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "duty free",
+   "luxury",
+   "cosmetics"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": true
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s04",
+  "name": {
+   "ko": "인사동 쌈지길",
+   "en": "Insa-dong Ssamziegil"
+  },
+  "category": "shopping",
+  "district": "종로구",
+  "area": "도심",
+  "near": [
+   "인사동",
+   "종로",
+   "안국"
+  ],
+  "open_hours": "10:30-20:30",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "crafts",
+   "souvenirs",
+   "hanji",
+   "local artists"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s05",
+  "name": {
+   "ko": "홍대 걷고싶은거리",
+   "en": "Hongdae Walking Street"
+  },
+  "category": "shopping",
+  "district": "마포구",
+  "area": "서북",
+  "near": [
+   "홍대",
+   "합정"
+  ],
+  "open_hours": "11:00-23:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "indie fashion",
+   "busking",
+   "street"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s06",
+  "name": {
+   "ko": "성수동 수제화거리",
+   "en": "Seongsu Handmade Shoe Street"
+  },
+  "category": "shopping",
+  "district": "성동구",
+  "area": "동북",
+  "near": [
+   "성수",
+   "서울숲"
+  ],
+  "open_hours": "10:00-20:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "handmade shoes",
+   "leather",
+   "local makers"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s07",
+  "name": {
+   "ko": "이태원 앤틱가구거리",
+   "en": "Itaewon Antique Furniture Street"
+  },
+  "category": "shopping",
+  "district": "용산구",
+  "area": "도심",
+  "near": [
+   "이태원",
+   "한남"
+  ],
+  "open_hours": "10:00-19:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "antiques",
+   "vintage",
+   "interior"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s08",
+  "name": {
+   "ko": "고속터미널 지하상가(고투몰)",
+   "en": "GOTO Mall (Express Bus Terminal Underground)"
+  },
+  "category": "shopping",
+  "district": "서초구",
+  "area": "동남",
+  "near": [
+   "고속터미널",
+   "반포",
+   "강남"
+  ],
+  "open_hours": "10:00-22:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "bargain fashion",
+   "accessories",
+   "underground"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s09",
+  "name": {
+   "ko": "더현대 서울",
+   "en": "The Hyundai Seoul"
+  },
+  "category": "shopping",
+  "district": "영등포구",
+  "area": "서남",
+  "near": [
+   "여의도"
+  ],
+  "open_hours": "10:30-20:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "department store",
+   "pop-up",
+   "fashion"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": true
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s10",
+  "name": {
+   "ko": "스타필드 코엑스몰",
+   "en": "Starfield COEX Mall"
+  },
+  "category": "shopping",
+  "district": "강남구",
+  "area": "동남",
+  "near": [
+   "코엑스",
+   "삼성",
+   "강남"
+  ],
+  "open_hours": "10:30-22:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "mall",
+   "library",
+   "k-pop"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": false,
+   "is_large_mall_or_duty_free": true
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "s11",
+  "name": {
+   "ko": "동대문 패션타운",
+   "en": "Dongdaemun Fashion Town"
+  },
+  "category": "shopping",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "동대문",
+   "DDP"
+  ],
+  "open_hours": "10:00-05:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "wholesale fashion",
+   "late night",
+   "fabric"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": true,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "n01",
+  "name": {
+   "ko": "N서울타워",
+   "en": "N Seoul Tower"
+  },
+  "category": "night",
+  "district": "용산구",
+  "area": "도심",
+  "near": [
+   "남산",
+   "명동",
+   "이태원"
+  ],
+  "open_hours": "10:00-23:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "observatory",
+   "night view",
+   "cable car"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "n02",
+  "name": {
+   "ko": "청계천",
+   "en": "Cheonggyecheon Stream"
+  },
+  "category": "night",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "명동",
+   "종로",
+   "광화문",
+   "을지로"
+  ],
+  "open_hours": "00:00-24:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "stream walk",
+   "lights",
+   "free"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "n03",
+  "name": {
+   "ko": "동대문디자인플라자(DDP)",
+   "en": "Dongdaemun Design Plaza (DDP)"
+  },
+  "category": "night",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "동대문",
+   "을지로"
+  ],
+  "open_hours": "10:00-22:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "architecture",
+   "lights",
+   "exhibitions"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "n04",
+  "name": {
+   "ko": "낙산공원 성곽길",
+   "en": "Naksan Park Seoul City Wall"
+  },
+  "category": "night",
+  "district": "종로구",
+  "area": "도심",
+  "near": [
+   "대학로",
+   "혜화",
+   "동대문"
+  ],
+  "open_hours": "00:00-24:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "city wall",
+   "night view",
+   "walk",
+   "free"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "n05",
+  "name": {
+   "ko": "반포한강공원 달빛무지개분수",
+   "en": "Banpo Bridge Moonlight Rainbow Fountain"
+  },
+  "category": "night",
+  "district": "서초구",
+  "area": "동남",
+  "near": [
+   "반포",
+   "고속터미널",
+   "강남"
+  ],
+  "open_hours": "shows 19:30-21:00 (seasonal)",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "fountain",
+   "han river",
+   "free"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "n06",
+  "name": {
+   "ko": "여의도 한강공원",
+   "en": "Yeouido Hangang Park"
+  },
+  "category": "night",
+  "district": "영등포구",
+  "area": "서남",
+  "near": [
+   "여의도"
+  ],
+  "open_hours": "00:00-24:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "han river",
+   "picnic",
+   "night market (seasonal)"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "n07",
+  "name": {
+   "ko": "뚝섬한강공원",
+   "en": "Ttukseom Hangang Park"
+  },
+  "category": "night",
+  "district": "광진구",
+  "area": "동북",
+  "near": [
+   "뚝섬",
+   "성수",
+   "건대"
+  ],
+  "open_hours": "00:00-24:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "han river",
+   "bike",
+   "night"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "n08",
+  "name": {
+   "ko": "서울로7017",
+   "en": "Seoullo 7017 Skygarden"
+  },
+  "category": "night",
+  "district": "중구",
+  "area": "도심",
+  "near": [
+   "서울역",
+   "남대문",
+   "명동"
+  ],
+  "open_hours": "00:00-24:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "elevated park",
+   "city lights",
+   "free"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "n09",
+  "name": {
+   "ko": "롯데월드타워 서울스카이",
+   "en": "Lotte World Tower Seoul Sky"
+  },
+  "category": "night",
+  "district": "송파구",
+  "area": "동남",
+  "near": [
+   "잠실"
+  ],
+  "open_hours": "10:30-22:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "observatory",
+   "night view"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": true
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ },
+ {
+  "id": "n10",
+  "name": {
+   "ko": "망원한강공원",
+   "en": "Mangwon Hangang Park"
+  },
+  "category": "night",
+  "district": "마포구",
+  "area": "서북",
+  "near": [
+   "망원",
+   "합정",
+   "홍대"
+  ],
+  "open_hours": "00:00-24:00",
+  "open_hours_note": "샘플 값(방문 전 확인 필요)",
+  "tags": [
+   "han river",
+   "sunset",
+   "picnic",
+   "free"
+  ],
+  "flags": {
+   "is_traditional_market": false,
+   "is_local_small_business": false,
+   "is_night_content": true,
+   "is_large_mall_or_duty_free": false
+  },
+  "source": "샘플 데이터",
+  "is_sample": true
+ }
+]

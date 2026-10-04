@@ -1,0 +1,20 @@
+{
+ "_comment": "rankPlaces 가중치. 비개발자가 조정 가능. score = relevance + Σ(가중치 × 플래그). max_related_in_top: 요청과 다른 관련 카테고리(예: 쇼핑 질의의 전통시장) 상위 노출 최대 개수",
+ "weights": {
+  "is_traditional_market": 0.2,
+  "is_local_small_business": 0.15,
+  "night_after_18": 0.15,
+  "is_large_mall_or_duty_free": -0.1
+ },
+ "night_hour_from": 18,
+ "top_n": 5,
+ "guarantee_local_in_top_n": true,
+ "transparency_note": {
+  "ko": "추천 기준: 서울 전역 관광 활성화를 위해 지역 상권을 함께 소개합니다.",
+  "en": "How we rank: we include local and traditional businesses to spread tourism across Seoul.",
+  "ja": "おすすめ基準：ソウル全域の観光活性化のため、地域の商店街もあわせてご紹介しています。",
+  "zh-CN": "推荐标准：为促进首尔全域旅游，我们会一并介绍当地商圈。",
+  "zh-TW": "推薦標準：為促進首爾全域觀光，我們會一併介紹當地商圈。"
+ },
+ "max_related_in_top": 2
+}
