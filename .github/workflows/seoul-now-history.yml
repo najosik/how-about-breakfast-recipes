@@ -1,0 +1,30 @@
+name: Seoul Now - event history check (one-off)
+
+# 1회 조회: 문화행사 API에 지난 연도 행사가 얼마나 남아 있는지 통계만 출력(내년도 캘린더 검토용).
+# 수동 실행 전용, 저장소에 아무것도 쓰지 않는다. 결과는 실행 화면의 Summary에서 확인.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: seoul-now
+    steps:
+      # 공급망 공격 방지를 위해 커밋 SHA로 고정 (actions/checkout v4.2.2)
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s analysis -p 'test_event_history.py' -q
+
+      - name: Summarize API history
+        env:
+          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
+        run: python3 analysis/event_history.py
