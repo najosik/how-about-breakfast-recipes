@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- 외부 스크립트·인라인 스크립트 금지 -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Seoul Festival Calendar · 서울 축제 캘린더</title>
+  <meta name="description" content="Expected dates of Seoul's recurring festivals next year, forecast from past years.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div>
+        <a id="back" class="back-link" href="../"></a>
+        <h1 id="site-title"></h1>
+        <p id="site-sub" class="sub"></p>
+      </div>
+      <button id="lang-toggle" class="lang-btn" type="button">한국어</button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="cal-about" aria-labelledby="about-title">
+      <h2 id="about-title"></h2>
+      <p id="about-text"></p>
+      <ul id="legend" class="legend"></ul>
+    </section>
+
+    <section class="cal-controls" aria-label="Filters">
+      <div id="conf-chips" class="chips" role="group"></div>
+      <nav id="month-nav" class="month-nav" aria-label="Months"></nav>
+    </section>
+
+    <div id="months"></div>
+    <p id="empty" class="empty" hidden></p>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p id="updated"></p>
+      <p id="source"></p>
+    </div>
+  </footer>
+
+  <script src="calendar.js"></script>
+</body>
+</html>

@@ -154,6 +154,8 @@
     document.documentElement.lang = state.lang;
     $("site-title").textContent = t("siteTitle");
     $("site-sub").textContent = t("siteSub");
+    $("cal-link").textContent = t("calLink", Number(kstToday().slice(0, 4)) + 1);
+    $("cal-link").href = `calendar/?lang=${state.lang}`;
     $("lang-toggle").textContent = t("langToggle");
     $("lbl-when").textContent = t("when");
     $("lbl-type").textContent = t("type");

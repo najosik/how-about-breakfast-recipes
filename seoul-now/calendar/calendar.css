@@ -1,0 +1,38 @@
+/* 축제 예상 캘린더: 공통 토큰은 ../styles.css */
+:root { --conf-confirmed: #1d7a4f; --conf-high: #2456a6; --conf-medium: #8a5a00; --conf-low: #6b675f; }
+@media (prefers-color-scheme: dark) {
+  :root { --conf-confirmed: #5fcf98; --conf-high: #7fa8ff; --conf-medium: #f0b75a; --conf-low: #a39e95; }
+}
+.back-link { display: inline-block; margin-bottom: 6px; font-size: .88rem; color: var(--muted); text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+
+.cal-about { margin-top: 20px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow); }
+.cal-about h2 { margin: 0 0 4px; font-size: 1.05rem; }
+.cal-about p { margin: 0; color: var(--muted); font-size: .92rem; }
+.legend { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 8px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.legend li { display: flex; gap: 8px; align-items: flex-start; font-size: .85rem; color: var(--muted); }
+.legend strong { color: var(--text); }
+.legend .count { margin-left: auto; font-weight: 700; color: var(--text); font-variant-numeric: tabular-nums; }
+
+.cal-controls { margin-top: 16px; display: grid; gap: 10px; position: sticky; top: 0; z-index: 1; padding: 10px 0; background: var(--bg); }
+.month-nav { display: flex; gap: 4px; overflow-x: auto; padding-bottom: 2px; }
+.month-nav a { flex: none; min-width: 44px; text-align: center; padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line);
+  background: var(--surface); color: var(--text); text-decoration: none; font-size: .85rem; }
+.month-nav a.none { color: var(--muted); opacity: .6; }
+
+.month { margin-top: 24px; scroll-margin-top: 110px; }
+.month h2 { margin: 0 0 10px; font-size: 1.25rem; display: flex; align-items: baseline; gap: 8px; }
+.month h2 small { font-size: .85rem; font-weight: 600; color: var(--muted); }
+.fest-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.fest { border: 1px solid var(--line); border-left: 4px solid var(--conf-low); border-radius: 10px; padding: 10px 12px; background: var(--surface); display: grid; gap: 4px; }
+.fest.confirmed { border-left-color: var(--conf-confirmed); } .fest.high { border-left-color: var(--conf-high); }
+.fest.medium { border-left-color: var(--conf-medium); }
+.fest h3 { margin: 0; font-size: 1rem; line-height: 1.35; overflow-wrap: anywhere; }
+.fest .when { margin: 0; font-weight: 700; font-size: .92rem; }
+.fest .where { margin: 0; font-size: .85rem; color: var(--muted); }
+.fest .past { margin: 0; font-size: .8rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.conf { justify-self: start; font-size: .72rem; font-weight: 700; padding: 1px 7px; border-radius: 4px; border: 1px solid currentColor; }
+.conf.confirmed { color: var(--conf-confirmed); } .conf.high { color: var(--conf-high); }
+.conf.medium { color: var(--conf-medium); } .conf.low { color: var(--conf-low); }
+.fest .ext { justify-self: start; margin-top: 4px; padding: 4px 10px; font-size: .82rem; }
+.fest .ext:first-child { background: none; }
