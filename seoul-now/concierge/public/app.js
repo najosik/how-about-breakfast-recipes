@@ -14,7 +14,7 @@
       error: "연결에 문제가 있어요. 잠시 후 다시 시도해 주세요.", sendLabel: "메시지 보내기", langLabel: "언어 선택",
       kinds: { festival: "축제·행사", place: "추천 장소", transit: "교통 안내", dsp: "디스커버 서울 패스", center: "관광정보센터" },
       hours: "운영", price: "가격(샘플)", free: "무료", ongoing: "진행 중", minutes: (m) => `약 ${m}분`, handoffMsg: "가까운 관광정보센터를 안내해 드릴게요. 직원과 직접 상담할 수 있어요.",
-      langs: { ko: "한국어", en: "영어", ja: "일본어", zh: "중국어" }, hotline: "관광통역안내 1330: 24시간, 다국어 상담" },
+      langs: { ko: "한국어", en: "영어", ja: "일본어", zh: "중국어" }, hotline: "관광통역안내 1330: 24시간, 다국어 상담", naver: "네이버 지도에서 길찾기" },
     en: { banner: "Seoul Tourism Organization internal demo · No real payments or bookings", send: "Send", placeholder: "Ask about transport, food, shopping, festivals",
       handoff: "Talk to a person (Tourist Information Center)", privacy: "Please don't enter names, phone numbers or passport numbers. Chats are not saved.",
       welcome: "Hello! I can help with transport, food, shopping and festivals in Seoul — all in one answer.", typing: "Preparing your answer…",
@@ -22,7 +22,7 @@
       error: "Connection problem. Please try again shortly.", sendLabel: "Send message", langLabel: "Language",
       kinds: { festival: "Festival / event", place: "Recommended place", transit: "Getting there", dsp: "Discover Seoul Pass", center: "Tourist info center" },
       hours: "Hours", price: "Price (sample)", free: "Free", ongoing: "On now", minutes: (m) => `about ${m} min`, handoffMsg: "Here is the nearest tourist information center, where staff can help you in person.",
-      langs: { ko: "Korean", en: "English", ja: "Japanese", zh: "Chinese" }, hotline: "Korea Travel Hotline 1330: 24/7, multilingual" },
+      langs: { ko: "Korean", en: "English", ja: "Japanese", zh: "Chinese" }, hotline: "Korea Travel Hotline 1330: 24/7, multilingual", naver: "Directions in Naver Map" },
     ja: { banner: "ソウル観光財団 社内デモ用プロトタイプ・実際の決済や予約は行いません", send: "送信", placeholder: "交通・グルメ・ショッピング・お祭りについて質問",
       handoff: "スタッフにつなぐ（観光案内所）", privacy: "氏名・電話番号・パスポート番号は入力しないでください。会話は保存されません。",
       welcome: "こんにちは！ソウルの交通・グルメ・ショッピング・お祭りをまとめてご案内します。", typing: "回答を準備しています…",
@@ -30,7 +30,7 @@
       error: "接続に問題があります。しばらくしてからお試しください。", sendLabel: "メッセージを送信", langLabel: "言語",
       kinds: { festival: "お祭り・イベント", place: "おすすめスポット", transit: "アクセス", dsp: "ディスカバーソウルパス", center: "観光案内所" },
       hours: "営業", price: "価格（サンプル）", free: "無料", ongoing: "開催中", minutes: (m) => `約${m}分`, handoffMsg: "最寄りの観光案内所です。スタッフが直接ご案内します。",
-      langs: { ko: "韓国語", en: "英語", ja: "日本語", zh: "中国語" }, hotline: "観光通訳案内1330：24時間・多言語対応" },
+      langs: { ko: "韓国語", en: "英語", ja: "日本語", zh: "中国語" }, hotline: "観光通訳案内1330：24時間・多言語対応", naver: "NAVER地図で経路検索" },
     "zh-CN": { banner: "首尔旅游财团内部演示原型 · 不进行真实支付或预订", send: "发送", placeholder: "询问交通、美食、购物、节庆",
       handoff: "转接人工（旅游咨询中心）", privacy: "请勿输入姓名、电话或护照号码。对话不会被保存。",
       welcome: "您好！我可以一次性为您介绍首尔的交通、美食、购物和节庆。", typing: "正在准备回答…",
@@ -38,7 +38,7 @@
       error: "连接出现问题，请稍后再试。", sendLabel: "发送消息", langLabel: "语言",
       kinds: { festival: "节庆·活动", place: "推荐地点", transit: "交通指南", dsp: "首尔通票", center: "旅游咨询中心" },
       hours: "营业", price: "价格（示例）", free: "免费", ongoing: "进行中", minutes: (m) => `约${m}分钟`, handoffMsg: "为您推荐最近的旅游咨询中心，工作人员可当面为您服务。",
-      langs: { ko: "韩语", en: "英语", ja: "日语", zh: "中文" }, hotline: "旅游翻译热线1330：24小时多语种服务" },
+      langs: { ko: "韩语", en: "英语", ja: "日语", zh: "中文" }, hotline: "旅游翻译热线1330：24小时多语种服务", naver: "在 NAVER 地图中查路线" },
     "zh-TW": { banner: "首爾觀光財團內部展示原型 · 不進行實際付款或預訂", send: "傳送", placeholder: "詢問交通、美食、購物、節慶",
       handoff: "轉接真人（觀光諮詢中心）", privacy: "請勿輸入姓名、電話或護照號碼。對話不會被儲存。",
       welcome: "您好！我可以一次為您介紹首爾的交通、美食、購物與節慶。", typing: "正在準備回答…",
@@ -46,7 +46,7 @@
       error: "連線發生問題，請稍後再試。", sendLabel: "傳送訊息", langLabel: "語言",
       kinds: { festival: "節慶·活動", place: "推薦地點", transit: "交通指南", dsp: "首爾通行證", center: "觀光諮詢中心" },
       hours: "營業", price: "價格（範例）", free: "免費", ongoing: "進行中", minutes: (m) => `約${m}分鐘`, handoffMsg: "為您介紹最近的觀光諮詢中心，工作人員可當面為您服務。",
-      langs: { ko: "韓語", en: "英語", ja: "日語", zh: "中文" }, hotline: "觀光翻譯熱線1330：24小時多語服務" },
+      langs: { ko: "韓語", en: "英語", ja: "日語", zh: "中文" }, hotline: "觀光翻譯熱線1330：24小時多語服務", naver: "在 NAVER 地圖中查路線" },
   };
   // 시연 시나리오(§3) 바로가기
   const SUGGESTIONS = [
@@ -93,6 +93,15 @@
     try { const p = new URL(u, location.origin); return p.origin === location.origin ? p.pathname + p.search : ""; } catch { return ""; }
   };
 
+  // ---------- 네이버 지도: 장소 검색 링크(웹 https, 앱 설치 시 앱으로 열림). 거기서 '길찾기 → 대중교통'.
+  // 사용자의 현재 위치는 보내지 않는다(목적지 이름만).
+  function naverLink(query) {
+    const q = String(query || "").split(/[,(·/]/)[0].replace(/\s+/g, " ").trim().slice(0, 40);
+    if (!q) return null;
+    return el("a", { class: "btn naver", href: `https://map.naver.com/p/search/${encodeURIComponent(q)}`,
+      target: "_blank", rel: "noopener noreferrer", "aria-label": `${t("naver")}: ${q}`, text: t("naver") });
+  }
+
   // ---------- 허용된 마크다운만: 문단, "- " 목록, **굵게** ----------
   function inline(text) {
     const frag = document.createDocumentFragment();
@@ -131,6 +140,7 @@
       title = d.title;
       lines.push(`${d.start} ~ ${d.end}${d.ongoing ? ` · ${t("ongoing")}` : ""}`, `${d.place || ""} · ${d.district || ""}`);
       if (d.free) lines.push(t("free")); else if (d.fee) lines.push(d.fee);
+      actions.push(naverLink(d.place));
       const link = safeUrl(d.link);
       if (link) actions.push(el("a", { class: "btn", href: link, target: "_blank", rel: "noopener noreferrer", text: t("official") }));
       const src = backend && backend.noImages ? "" : safeUrl(d.image);
@@ -140,10 +150,12 @@
       lines.push(`${d.district || ""} · ${t("hours")} ${d.open_hours || "-"}`);
       if (d.flags && (d.flags.is_traditional_market || d.flags.is_local_small_business)) badges.append(el("span", { class: "badge local", text: t("local") }));
       if (Array.isArray(d.tags)) lines.push(d.tags.slice(0, 4).join(" · "));
+      actions.push(naverLink(d.name && d.name.ko));
     } else if (card.type === "transit") {
       title = `${d.from} → ${d.to}`;
       const sum = d.summary || {};
       lines.push(state.uiLang === "ko" ? sum.ko : sum.en || sum.ko, `${t("minutes")(d.total_minutes)} · ₩${Number(d.fare_krw || 0).toLocaleString()}`);
+      actions.push(naverLink(d.to));
     } else if (card.type === "dsp") {
       title = d.name;
       lines.push(`${d.duration_hours}h · ${t("price")} ₩${Number(d.price_krw || 0).toLocaleString()}`,
@@ -163,11 +175,12 @@
       lines.push(`${d.district || ""} · ${t("hours")} ${d.hours || "-"}`,
         (d.languages || []).map((l) => t("langs")[l] || l).join(", "), t("hotline"));
       actions.push(el("a", { class: "btn primary", href: "tel:1330", "aria-label": t("call"), text: t("call") }));
+      actions.push(naverLink(d.name && d.name.ko));
     }
     return el("article", { class: "card" },
       el("div", { class: "card-head" }, el("div", {}, kind, el("h3", { text: title || "" })), badges),
       ...lines.filter(Boolean).map((l, i) => el("p", { class: i === 0 ? "meta-line" : "", text: l })),
-      img, actions.length ? el("div", { class: "card-actions" }, ...actions) : null);
+      img, actions.filter(Boolean).length ? el("div", { class: "card-actions" }, ...actions.filter(Boolean)) : null);
   }
 
   // ---------- 대화 ----------

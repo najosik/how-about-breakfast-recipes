@@ -94,3 +94,6 @@ h1 { margin: 0; font-size: 1.1rem; }
 .co-confirm { width: 100%; }
 .co-result { border-radius: 12px; padding: 12px; background: var(--sample-bg); color: var(--sample); font-weight: 700; }
 .co-result p { margin: 4px 0; }
+
+/* 네이버 지도 버튼: 브랜드 초록 대신 토큰 색을 써서 두 테마 모두 대비 4.5:1 유지 */
+.btn.naver { border-color: var(--real); color: var(--real); font-weight: 700; }
