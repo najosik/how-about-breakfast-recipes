@@ -2,6 +2,8 @@
 // 모듈을 재작성하지 않고, 그 모듈이 6시간마다 만드는 events.json(정규화된 응답)을 읽어
 // 기간·지역·키워드로 걸러 도구 응답 형태로 바꿔 줄 뿐이다.
 
+import { looksLikeInjection } from "./security.js";
+
 export const FESTIVAL_SOURCE = "서울시 문화행사 정보 API";
 const MAX_RESULTS = 8;
 const MAX_RANGE_DAYS = 31;
@@ -72,6 +74,39 @@ function validEvent(ev) {
   return ev && typeof ev.title === "string" && ISO.test(ev.start) && ISO.test(ev.end);
 }
 
+// 축제 원문은 데이터일 뿐(LLM01): 지시문처럼 보이는 문장은 도구 결과에 넣지 않는다.
+const neutralize = (v, n) => {
+  const t = typeof v === "string" ? v.slice(0, n) : "";
+  return looksLikeInjection(t) ? "[내용 생략]" : t;
+};
+
+/**
+ * 외국인 적합도(festival_fit). 태그는 수집 시 1회 붙은 것을 읽기만 한다(질의 시 재분류 금지).
+ * 담당자 override가 자동 점수·제외 규칙보다 우선.
+ * @returns {{ excluded: string|null, pinned: boolean, score: number, tags: object|null }}
+ */
+export function festivalFit(ev, fit, today) {
+  if (!fit) return { excluded: null, pinned: false, score: 0, tags: null };
+  const tags = fit.tags && Object.hasOwn(fit.tags, ev.id) ? fit.tags[ev.id] : null;
+  const pin = new Set((fit.overrides?.pin || []).map((x) => (typeof x === "string" ? x : x && x.id)));
+  const exc = new Set((fit.overrides?.exclude || []).map((x) => (typeof x === "string" ? x : x && x.id)));
+  const c = fit.config || {};
+  const num = (v) => (typeof v === "number" && Number.isFinite(v) && v >= -1 && v <= 1 ? v : 0);
+  if (exc.has(ev.id)) return { excluded: "override_exclude", pinned: false, score: 0, tags };
+  const pinned = pin.has(ev.id);
+  let score = num(c.base);
+  if (tags) {
+    score += num(c.language_barrier?.[tags.language_barrier]) + (tags.nonverbal ? num(c.nonverbal) : 0)
+      + num(c.reservation_barrier?.[tags.reservation_barrier]) + num(c.experience_type?.[tags.experience_type]);
+  }
+  if (ev.start <= today) score += num(c.ongoing_bonus);
+  if (!pinned && tags) {
+    if (c.exclude_kr_auth_required !== false && tags.reservation_barrier === "kr_auth_required") return { excluded: "kr_auth_required", pinned, score, tags };
+    if (c.exclude_audience_restricted !== false && tags.audience_restricted) return { excluded: "audience_restricted", pinned, score, tags };
+  }
+  return { excluded: null, pinned, score: Math.round(score * 1000) / 1000, tags };
+}
+
 const safeUrl = (u) => (typeof u === "string" && /^https?:\/\//i.test(u) ? u.slice(0, 500) : "");
 const str = (v, n) => (typeof v === "string" ? v.slice(0, n) : "");
 
@@ -80,8 +115,9 @@ const str = (v, n) => (typeof v === "string" ? v.slice(0, n) : "");
  * @param {object} input  { start_date?, end_date?, region?, keyword?, include_other_events? }
  * @param {object} feed   events.json 내용 { updatedAt, events: [...] }
  * @param {string} today  KST 'YYYY-MM-DD'
+ * @param {object} [fit]  { tags, config, overrides } — 있으면 외국인 적합도로 거르고 정렬
  */
-export function searchFestivals(input, feed, today) {
+export function searchFestivals(input, feed, today, fit) {
   const args = input && typeof input === "object" ? input : {};
   const [from, to] = normalizeRange(args.start_date, args.end_date, today);
   const district = resolveDistrict(args.region);
@@ -89,14 +125,24 @@ export function searchFestivals(input, feed, today) {
   const includeOther = args.include_other_events === true;
 
   const events = Array.isArray(feed && feed.events) ? feed.events.filter(validEvent) : [];
-  let hits = events.filter((ev) =>
+  const matched = events.filter((ev) =>
     ev.end >= from && ev.start <= to &&
     (includeOther || isFestival(ev)) &&
     (!district || ev.district === district) &&
     (!keyword || `${ev.title} ${ev.place} ${ev.category} ${ev.program || ""}`.toLowerCase().includes(keyword)));
-  // 진행 중인 행사 → 곧 시작하는 행사 순, 같은 조건이면 무료 우선
-  hits.sort((a, b) => (a.start <= today) !== (b.start <= today) ? (a.start <= today ? -1 : 1)
-    : a.start.localeCompare(b.start) || Number(b.free) - Number(a.free));
+  const excludedCount = {};
+  const scored = [];
+  for (const ev of matched) {
+    const f = festivalFit(ev, fit, today);
+    if (f.excluded) { excludedCount[f.excluded] = (excludedCount[f.excluded] || 0) + 1; continue; }
+    scored.push({ ev, f });
+  }
+  // 담당자 pin → 적합도 점수 → 진행 중 → 시작일 → 무료
+  scored.sort((a, b) => Number(b.f.pinned) - Number(a.f.pinned) || b.f.score - a.f.score
+    || Number(b.ev.start <= today) - Number(a.ev.start <= today)
+    || a.ev.start.localeCompare(b.ev.start) || Number(b.ev.free) - Number(a.ev.free));
+  const hits = scored.map((x) => x.ev);
+  const fitOf = new Map(scored.map((x) => [x.ev, x.f]));
 
   return {
     source: FESTIVAL_SOURCE,
@@ -105,16 +151,31 @@ export function searchFestivals(input, feed, today) {
     query: { start_date: from, end_date: to, district: district || "서울 전체", keyword: keyword || null,
       festivals_only: !includeOther },
     total_matches: hits.length,
+    ...(fit ? { excluded_for_visitors: excludedCount,
+      fit_note: "Ranked by foreign-visitor fit (rule-based tags + staff overrides). Events limited to residents or needing Korean ID verification are excluded." } : {}),
     results: hits.slice(0, MAX_RESULTS).map((ev) => ({
-      id: str(ev.id, 20), title: str(ev.title, 200), category: str(ev.category, 40),
-      district: str(ev.district, 20), place: str(ev.place, 200),
+      id: str(ev.id, 20), title: neutralize(ev.title, 200), category: str(ev.category, 40),
+      district: str(ev.district, 20), place: neutralize(ev.place, 200),
       start: ev.start, end: ev.end, ongoing: ev.start <= today,
-      free: ev.free === true, fee: str(ev.fee, 200),
+      free: ev.free === true, fee: neutralize(ev.fee, 200),
+      ...(fit ? { visitor_fit: fitView(fitOf.get(ev)) } : {}),
       lat: Number.isFinite(ev.lat) ? ev.lat : null, lng: Number.isFinite(ev.lng) ? ev.lng : null,
       link: safeUrl(ev.link || ev.homepage), image: safeUrl(ev.image),
       source: FESTIVAL_SOURCE, is_sample: false,
     })),
   };
+}
+
+function fitView(f) {
+  if (!f) return null;
+  const t = f.tags;
+  const pick = (v, allowed) => (allowed.includes(v) ? v : null);
+  // 태그 근거(reason)에는 원문 일부가 들어갈 수 있으므로 다른 원문 필드와 같이 무력화한다(LLM01)
+  return { score: f.score, pinned: f.pinned,
+    ...(t ? { language_barrier: pick(t.language_barrier, ["low", "mid", "high"]), nonverbal: t.nonverbal === true,
+      reservation_barrier: pick(t.reservation_barrier, ["none", "online", "kr_auth_required"]),
+      experience_type: pick(t.experience_type, ["traditional", "kculture", "food", "light", "performance", "etc"]),
+      reason: neutralize(t.reason, 120) } : { untagged: true }) };
 }
 
 /** Worker에서 events.json 읽기(10분 캐시). URL은 환경변수 EVENTS_URL로 교체 가능. */
@@ -124,4 +185,25 @@ export async function loadFeed(url, fetchImpl = fetch) {
   const json = await res.json();
   if (!json || !Array.isArray(json.events)) throw new Error("events feed invalid");
   return json;
+}
+
+/**
+ * 외국인 적합도 입력 묶음. 태그·담당자 수정은 수집 저장소에서 읽고(재배포 없이 반영), 가중치는 번들 설정.
+ * 하나라도 못 읽으면 그 부분만 비운다: 태그 없음 → 점수만 기본값, 수정 목록 없음 → 자동 결과 그대로.
+ */
+export async function loadFit(config, tagsUrl, overridesUrl, fetchImpl = fetch) {
+  const get = async (url, check) => {
+    try {
+      const res = await fetchImpl(url, { cf: { cacheTtl: 600, cacheEverything: true } });
+      if (!res.ok) return null;
+      const json = await res.json();
+      return check(json) ? json : null;
+    } catch { return null; }
+  };
+  const isObj = (v) => v && typeof v === "object" && !Array.isArray(v);
+  const [tags, overrides] = await Promise.all([
+    get(tagsUrl, (j) => isObj(j) && isObj(j.tags)),
+    get(overridesUrl, (j) => isObj(j) && (j.pin === undefined || Array.isArray(j.pin)) && (j.exclude === undefined || Array.isArray(j.exclude))),
+  ]);
+  return { config, tags: tags ? tags.tags : {}, overrides: overrides || { pin: [], exclude: [] } };
 }

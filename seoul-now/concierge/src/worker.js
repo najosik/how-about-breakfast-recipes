@@ -5,6 +5,7 @@
 //   Var     ALLOWED_ORIGIN      예: https://how-about-breakfast.com
 //   Var     CLAUDE_MODEL        (선택) 기본 claude-sonnet-5-5
 //   Var     EVENTS_URL          (선택) 기존 축제 모듈 산출물 events.json 주소
+//   Var     FIT_BASE_URL        (선택) festival_tags.json·festival_overrides.json 이 있는 경로
 //   Var     RL_SALT             (선택) 레이트리밋 키 해시용 임의 문자열
 //   KV      RATE_KV             레이트리밋 카운터(2분 뒤 자동 삭제)
 //   + Cloudflare Access로 직원 이메일만 접근 허용(README 참고)
@@ -14,7 +15,8 @@ import transit from "./data/transit.json" with { type: "json" };
 import dsp from "./data/dsp_products.json" with { type: "json" };
 import centers from "./data/info_centers.json" with { type: "json" };
 import ranking from "./config/ranking.json" with { type: "json" };
-import { loadFeed, kstToday } from "./festivals.js";
+import fitConfig from "./config/festival_fit.json" with { type: "json" };
+import { loadFeed, loadFit, kstToday } from "./festivals.js";
 import { TOOL_DEFINITIONS, executeTool, cardsFromResult, findInfoCenter } from "./tools.js";
 import { systemPrompt, languageNote, CANARY } from "./prompt.js";
 import { msg } from "./messages.js";
@@ -27,6 +29,7 @@ import {
 
 const DEFAULT_MODEL = "claude-sonnet-5-5";
 const DEFAULT_EVENTS_URL = "https://how-about-breakfast.com/seoul-now/data/events.json";
+const DEFAULT_FIT_BASE_URL = "https://how-about-breakfast.com/seoul-now/data/";
 const MAX_TOOL_CALLS = 5;      // LLM10: 요청당 도구 호출 상한
 const MAX_API_CALLS = 6;       // 도구 루프 상한
 const MAX_TOKENS = 2000;       // LLM10: 응답 길이 상한(휴대폰 화면용 짧은 답변)
@@ -89,9 +92,13 @@ export async function handleChat(rawBody, env, deps = {}) {
 
   const today = kstToday();
   let feedPromise = null;
+  let fitPromise = null;
+  const fitBase = env.FIT_BASE_URL || DEFAULT_FIT_BASE_URL;
   const ctx = {
     today, lang, places, transit, dsp, centers, ranking,
     getFeed: () => (feedPromise ||= (deps.loadFeed || loadFeed)(env.EVENTS_URL || DEFAULT_EVENTS_URL)),
+    getFit: () => (fitPromise ||= deps.loadFit ? deps.loadFit()
+      : loadFit(fitConfig, new URL("festival_tags.json", fitBase).href, new URL("festival_overrides.json", fitBase).href)),
   };
   const createMessage = deps.createMessage || defaultCreateMessage(env);
   const model = env.CLAUDE_MODEL || DEFAULT_MODEL;

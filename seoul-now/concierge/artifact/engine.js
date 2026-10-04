@@ -7,6 +7,9 @@ import dsp from "../src/data/dsp_products.json" with { type: "json" };
 import centers from "../src/data/info_centers.json" with { type: "json" };
 import ranking from "../src/config/ranking.json" with { type: "json" };
 import eventsSnapshot from "../../data/events.json" with { type: "json" };
+import fitConfig from "../src/config/festival_fit.json" with { type: "json" };
+import fitTags from "../../data/festival_tags.json" with { type: "json" };
+import fitOverrides from "../../data/festival_overrides.json" with { type: "json" };
 import { kstToday } from "../src/festivals.js";
 import { TOOL_DEFINITIONS, executeTool, cardsFromResult, findInfoCenter } from "../src/tools.js";
 import { systemPrompt, languageNote, CANARY } from "../src/prompt.js";
@@ -49,6 +52,7 @@ function getSample() {
 }
 getSample();   // 미리 준비(동의 창은 첫 질문 때만 뜬다)
 
+const FIT = Object.freeze({ config: fitConfig, tags: fitTags.tags || {}, overrides: fitOverrides });
 const feedDate = String(eventsSnapshot.updatedAt || "").slice(0, 16).replace("T", " ");
 
 async function chat(payload, { onProgress } = {}) {
@@ -86,7 +90,8 @@ async function chat(payload, { onProgress } = {}) {
   const cards = [];
   const used = [];
   let calls = 0;
-  const ctx = { today, lang, places, transit, dsp, centers, ranking, getFeed: async () => eventsSnapshot };
+  const ctx = { today, lang, places, transit, dsp, centers, ranking, getFeed: async () => eventsSnapshot,
+    getFit: async () => FIT };
   const tools = TOOL_DEFINITIONS.map((def) => ({
     name: def.name,
     description: def.description,

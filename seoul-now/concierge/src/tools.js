@@ -126,7 +126,7 @@ const AREA_FALLBACK = { 성동구: "동북", 광진구: "동북", 동대문구: 
 export async function executeTool(name, input, ctx) {
   try {
     switch (name) {
-      case "search_festivals": return { ok: true, result: searchFestivals(input, await ctx.getFeed(), ctx.today) };
+      case "search_festivals": return { ok: true, result: searchFestivals(input, await ctx.getFeed(), ctx.today, ctx.getFit ? await ctx.getFit() : undefined) };
       case "search_places": return { ok: true, result: searchPlaces(input, ctx.places, ctx.ranking, ctx.lang) };
       case "get_transit_guide": return { ok: true, result: getTransitGuide(input, ctx.transit) };
       case "recommend_dsp": return { ok: true, result: recommendDsp(input, ctx.dsp) };

@@ -1,0 +1,11 @@
+{
+ "_comment": "축제 외국인 적합도 점수(festival_fit). 태그는 수집 시 1회 규칙으로 붙고(data/festival_tags.json), 여기 가중치는 질의 때 점수 계산에만 쓴다. 비개발자 조정용. 값 범위 -1~1.",
+ "base": 0.5,
+ "language_barrier": { "low": 0.3, "mid": 0.0, "high": -0.4 },
+ "nonverbal": 0.15,
+ "reservation_barrier": { "none": 0.0, "online": -0.1, "kr_auth_required": -1.0 },
+ "experience_type": { "traditional": 0.2, "kculture": 0.2, "food": 0.15, "light": 0.15, "performance": 0.05, "etc": -0.1 },
+ "ongoing_bonus": 0.05,
+ "exclude_kr_auth_required": true,
+ "exclude_audience_restricted": true
+}
