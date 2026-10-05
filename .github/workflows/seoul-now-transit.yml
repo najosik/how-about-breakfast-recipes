@@ -1,0 +1,53 @@
+name: Seoul Now - transit network
+
+# 지하철 역·구간(서울 열린데이터광장) + 버스 노선별 정류장(bus/data/routes) → seoul-now/data/transit_network.json
+# 컨시어지 오프라인 경로 엔진 입력. 소요시간은 거리 기반 추정치.
+on:
+  schedule:
+    - cron: '40 19 7 * *'   # 매월 8일 04:40 KST (버스 분석 갱신 뒤)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: main-branch-writer
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: seoul-now
+    steps:
+      # 공급망 공격 방지를 위해 커밋 SHA로 고정 (actions/checkout v4.2.2)
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Unit tests
+        run: python3 -m unittest discover -s scripts -q
+
+      - name: Build transit network
+        env:
+          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
+        run: python3 scripts/build_transit.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/transit_network.json
+          if git diff --cached --quiet; then
+            echo "No changes, nothing to commit."
+            exit 0
+          fi
+          git commit -m "Seoul Now: update transit network"
+          for i in 1 2 3; do
+            if git push; then exit 0; fi
+            echo "Push rejected, rebasing onto latest main (attempt $i)..."
+            git pull --rebase origin main
+            sleep $((i * 5))
+          done
+          echo "::error::Push failed after 3 attempts."
+          exit 1
