@@ -8,12 +8,12 @@
 //   Var     FIT_BASE_URL        (선택) festival_tags.json·festival_overrides.json 이 있는 경로
 //   Secret  TOURAPI_KEY         (선택) 한국관광공사 TourAPI Decoding 키 — 음식점 상세(detailIntro2) 조회용
 //   Var     TOUR_FOOD_URL       (선택) tour_food.json 주소(하루 1회 수집본)
+//   Var     TRANSIT_URL         (선택) transit_network.json 주소(경로 엔진 노선망)
 //   Var     RL_SALT             (선택) 레이트리밋 키 해시용 임의 문자열
 //   KV      RATE_KV             레이트리밋 카운터(2분 뒤 자동 삭제)
 //   + Cloudflare Access로 직원 이메일만 접근 허용(README 참고)
 import Anthropic from "@anthropic-ai/sdk";
 import places from "./data/places.json" with { type: "json" };
-import transit from "./data/transit.json" with { type: "json" };
 import dsp from "./data/dsp_products.json" with { type: "json" };
 import centers from "./data/info_centers.json" with { type: "json" };
 import ranking from "./config/ranking.json" with { type: "json" };
@@ -33,7 +33,19 @@ import {
 const DEFAULT_MODEL = "claude-sonnet-5-5";
 const DEFAULT_EVENTS_URL = "https://how-about-breakfast.com/seoul-now/data/events.json";
 const DEFAULT_FIT_BASE_URL = "https://how-about-breakfast.com/seoul-now/data/";
+const DEFAULT_TRANSIT_URL = "https://how-about-breakfast.com/seoul-now/data/transit_network.json";
 const DEFAULT_TOUR_FOOD_URL = "https://how-about-breakfast.com/seoul-now/data/tour_food.json";
+
+// 노선망(약 2MB)은 격리 단위로 1시간 캐시: 요청마다 다시 받지 않는다
+let transitCache = { at: 0, url: "", promise: null };
+function loadTransitCached(url) {
+  const now = Date.now();
+  if (!transitCache.promise || transitCache.url !== url || now - transitCache.at > 3600e3) {
+    transitCache = { at: now, url, promise: fetch(url, { cf: { cacheTtl: 3600, cacheEverything: true } })
+      .then((r) => (r.ok ? r.json() : null)).then((j) => (j && (j.bus || j.subway) ? j : null)).catch(() => null) };
+  }
+  return transitCache.promise;
+}
 const MAX_TOOL_CALLS = 5;      // LLM10: 요청당 도구 호출 상한
 const MAX_API_CALLS = 6;       // 도구 루프 상한
 const MAX_TOKENS = 2000;       // LLM10: 응답 길이 상한(휴대폰 화면용 짧은 답변)
@@ -100,7 +112,8 @@ export async function handleChat(rawBody, env, deps = {}) {
   let tourPromise = null;
   const fitBase = env.FIT_BASE_URL || DEFAULT_FIT_BASE_URL;
   const ctx = {
-    today, lang, places, transit, dsp, centers, ranking,
+    today, lang, places, dsp, centers, ranking,
+    getTransit: () => (deps.loadTransit || loadTransitCached)(env.TRANSIT_URL || DEFAULT_TRANSIT_URL),
     getFeed: () => (feedPromise ||= (deps.loadFeed || loadFeed)(env.EVENTS_URL || DEFAULT_EVENTS_URL)),
     getTourFood: () => (tourPromise ||= (deps.loadTourFood || loadTourFood)(env.TOUR_FOOD_URL || DEFAULT_TOUR_FOOD_URL).catch(() => null)),
     getRestaurantDetail: (id) => (deps.fetchRestaurantDetail || fetchRestaurantDetail)(id, env.TOURAPI_KEY),

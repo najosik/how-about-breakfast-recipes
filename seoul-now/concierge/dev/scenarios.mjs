@@ -9,7 +9,10 @@ import { createMockModel } from "./mock-model.mjs";
 
 const real = Boolean(process.env.ANTHROPIC_API_KEY);
 const env = { ANTHROPIC_API_KEY: process.env.ANTHROPIC_API_KEY, CLAUDE_MODEL: process.env.CLAUDE_MODEL };
-const deps = { loadFeed: async () => JSON.parse(readFileSync(new URL("../../data/events.json", import.meta.url), "utf-8")) };
+const readData = (f) => JSON.parse(readFileSync(new URL(`../../data/${f}`, import.meta.url), "utf-8"));
+const transitNet = readData("transit_network.json");
+const deps = { loadFeed: async () => readData("events.json"), loadTransit: async () => transitNet,
+  loadTourFood: async () => readData("tour_food.json"), loadFit: async () => undefined };
 if (!real) deps.createMessage = createMockModel();
 
 const isLocal = (c) => c.data?.flags && (c.data.flags.is_traditional_market || c.data.flags.is_local_small_business);
@@ -21,7 +24,7 @@ const CASES = [
     check: (b) => [
       ["응답 언어 en", b.lang === "en"],
       ["음식/장소 카드", b.cards.some((c) => c.type === "place")],
-      ["교통 카드", b.cards.some((c) => c.type === "transit")],
+      ["길 안내 카드(경로 옵션 포함)", b.cards.some((c) => c.type === "route" && (c.data.options.length > 0 || c.data.walk))],
       ["축제 카드는 실데이터 + 출처 배지", b.cards.some((c) => c.type === "festival" && c.is_sample === false && /문화행사/.test(c.source))],
       ["답변 본문에 출처 표기", /\[[^\]]+\]/.test(b.reply)],
     ] },

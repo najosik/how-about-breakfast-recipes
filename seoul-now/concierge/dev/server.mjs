@@ -13,6 +13,7 @@ const readData = (f) => JSON.parse(readFileSync(new URL(`../../data/${f}`, impor
 // 로컬: 수집본(tour_food.json)이 비어 있으면 TOUR_FOOD_FIXTURE 경로의 시험 데이터를 쓴다. 상세 조회는 하지 않음.
 const deps = {
   loadFeed: async () => readData("events.json"),
+  loadTransit: (() => { let n = null; return async () => (n ||= readData("transit_network.json")); })(),
   loadTourFood: async () => (process.env.TOUR_FOOD_FIXTURE ? JSON.parse(readFileSync(process.env.TOUR_FOOD_FIXTURE, "utf-8")) : readData("tour_food.json")),
   fetchRestaurantDetail: async () => ({ ok: false, error: "detail_unavailable" }),
 };

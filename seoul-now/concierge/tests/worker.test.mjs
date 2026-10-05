@@ -3,8 +3,7 @@ import assert from "node:assert/strict";
 import worker, { handleChat } from "../src/worker.js";
 import { maskPII, validateChatBody, looksLikeInjection, filterOutput, checkRateLimit, detectLang, InputError } from "../src/security.js";
 import { CANARY } from "../src/prompt.js";
-import { getTransitGuide, recommendDsp, findInfoCenter } from "../src/tools.js";
-import transit from "../src/data/transit.json" with { type: "json" };
+import { recommendDsp, findInfoCenter } from "../src/tools.js";
 import dsp from "../src/data/dsp_products.json" with { type: "json" };
 import centers from "../src/data/info_centers.json" with { type: "json" };
 
@@ -25,7 +24,7 @@ function fakeClaude(responses) {
 }
 const toolUse = (id, name, input) => ({ type: "tool_use", id, name, input });
 const text = (t) => ({ type: "text", text: t });
-const deps = (c) => ({ createMessage: c.createMessage, loadFeed: async () => FEED, loadFit: async () => undefined, loadTourFood: async () => null });
+const deps = (c) => ({ createMessage: c.createMessage, loadFeed: async () => FEED, loadFit: async () => undefined, loadTourFood: async () => null, loadTransit: async () => null });
 
 // ---------------------------------------------------------------- security
 test("maskPII: 이메일·전화·여권·카드 마스킹, 날짜·가격은 유지", () => {
@@ -75,9 +74,7 @@ test("checkRateLimit: 세션당 분당 10회, 해시 키만 저장", async () =>
 });
 
 // ---------------------------------------------------------------- tools
-test("교통·DSP·센터 도구", () => {
-  assert.equal(getTransitGuide({ origin: "Myeongdong", destination: "광장시장" }, transit).found, true);
-  assert.equal(getTransitGuide({ origin: "부산", destination: "제주" }, transit).found, false);
+test("DSP·센터 도구", () => {
   const d = recommendDsp({ days: 3, interests: ["palace", "observatory"] }, dsp);
   assert.equal(d.results[0].id, "dsp-72");
   assert.ok(d.results.every((p) => p.is_sample && p.checkout_url.startsWith("checkout.html?product=")));
@@ -91,7 +88,7 @@ test("시나리오 1 흐름: 여러 도구 호출 → 카드는 코드가 생성
   const c = fakeClaude([
     { stop_reason: "tool_use", content: [{ type: "thinking", thinking: "", signature: "sig" },
       toolUse("t1", "search_places", { category: "food", region: "Myeongdong", time_of_day: "tonight" }),
-      toolUse("t2", "get_transit_guide", { origin: "Myeongdong", destination: "광장시장" }),
+      toolUse("t2", "plan_route", { origin: "Myeongdong", destination: "광장시장" }),
       toolUse("t3", "search_festivals", { region: "Myeongdong" })] },
     { stop_reason: "end_turn", content: [text("Here is your evening plan... [Sample data]")] },
   ]);
@@ -99,7 +96,7 @@ test("시나리오 1 흐름: 여러 도구 호출 → 카드는 코드가 생성
   assert.equal(r.status, 200);
   assert.equal(r.body.lang, "en");
   const types = new Set(r.body.cards.map((x) => x.type));
-  assert.deepEqual(types, new Set(["place", "transit", "festival"]));
+  assert.deepEqual(types, new Set(["place", "route", "festival"]));
   assert.ok(r.body.cards.find((x) => x.type === "festival").source.includes("문화행사"));
   assert.ok(r.body.ranking_note.includes("local"));
   // 두 번째 요청: 사고 블록 포함 assistant 내용 그대로, 도구 결과는 한 user 메시지에 3개
@@ -152,7 +149,7 @@ test("인젝션: 응답에 시스템 프롬프트가 새어 나가면 차단 문
 test("refusal·API 오류·응급 안내", async () => {
   const ref = fakeClaude([{ stop_reason: "refusal", content: [] }]);
   assert.match((await handleChat({ messages: [{ role: "user", content: "hello" }] }, ENV, deps(ref))).body.reply, /can't help/);
-  const err = { createMessage: async () => { const e = new Error("boom secret"); e.status = 500; throw e; }, loadFeed: async () => FEED, loadFit: async () => undefined, loadTourFood: async () => null };
+  const err = { createMessage: async () => { const e = new Error("boom secret"); e.status = 500; throw e; }, loadFeed: async () => FEED, loadFit: async () => undefined, loadTourFood: async () => null, loadTransit: async () => null };
   const r = await handleChat({ messages: [{ role: "user", content: "hello" }] }, ENV, err);
   assert.equal(r.status, 502);
   assert.ok(!JSON.stringify(r.body).includes("boom"));
@@ -175,7 +172,7 @@ test("언어 지시는 대화 끝 system 메시지, 축제 피드 실패 시 도
     { stop_reason: "end_turn", content: [text("確認できませんでした")] },
   ]);
   const r = await handleChat({ messages: [{ role: "user", content: "今週のお祭りは？" }] }, ENV,
-    { createMessage: c.createMessage, loadFeed: async () => { throw new Error("down"); }, loadFit: async () => undefined, loadTourFood: async () => null });
+    { createMessage: c.createMessage, loadFeed: async () => { throw new Error("down"); }, loadFit: async () => undefined, loadTourFood: async () => null, loadTransit: async () => null });
   assert.equal(c.calls[0].messages.at(-1).role, "system");
   assert.match(c.calls[0].messages.at(-1).content, /Japanese/);
   assert.equal(c.calls[1].messages.at(-1).content[0].is_error, true);

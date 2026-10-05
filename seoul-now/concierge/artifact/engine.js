@@ -2,7 +2,7 @@
 // 축제 어댑터·rankPlaces·도구·보안 모듈은 Worker 버전과 같은 코드를 그대로 쓰고, Claude 호출 부분만 바꾼다.
 // 페이지는 외부 네트워크를 쓸 수 없으므로 축제 데이터는 빌드 시점의 events.json 스냅샷을 포함한다.
 import places from "../src/data/places.json" with { type: "json" };
-import transit from "../src/data/transit.json" with { type: "json" };
+import transitNet from "../../data/transit_network.json" with { type: "json" };
 import dsp from "../src/data/dsp_products.json" with { type: "json" };
 import centers from "../src/data/info_centers.json" with { type: "json" };
 import ranking from "../src/config/ranking.json" with { type: "json" };
@@ -21,11 +21,11 @@ import { validateChatBody, InputError, maskPII, looksLikeEmergency, filterOutput
 const MAX_TOOL_CALLS = 5;   // 요청당 도구 호출 상한(LLM10)
 
 const TOOL_LABEL = {
-  ko: { get_restaurant_detail: "맛집 상세 확인 중", search_festivals: "축제 정보 확인 중", search_places: "장소 찾는 중", get_transit_guide: "교통 안내 확인 중", recommend_dsp: "패스 상품 확인 중", find_info_center: "관광정보센터 찾는 중" },
-  en: { get_restaurant_detail: "checking restaurant details", search_festivals: "checking festivals", search_places: "finding places", get_transit_guide: "checking transport", recommend_dsp: "checking passes", find_info_center: "finding an info center" },
-  ja: { get_restaurant_detail: "お店の詳細を確認中", search_festivals: "お祭りを確認中", search_places: "スポットを検索中", get_transit_guide: "交通を確認中", recommend_dsp: "パスを確認中", find_info_center: "観光案内所を検索中" },
-  "zh-CN": { get_restaurant_detail: "正在查询餐厅详情", search_festivals: "正在查询节庆", search_places: "正在查找地点", get_transit_guide: "正在查询交通", recommend_dsp: "正在查询通票", find_info_center: "正在查找咨询中心" },
-  "zh-TW": { get_restaurant_detail: "正在查詢餐廳詳情", search_festivals: "正在查詢節慶", search_places: "正在尋找地點", get_transit_guide: "正在查詢交通", recommend_dsp: "正在查詢通行證", find_info_center: "正在尋找諮詢中心" },
+  ko: { get_restaurant_detail: "맛집 상세 확인 중", search_festivals: "축제 정보 확인 중", search_places: "장소 찾는 중", plan_route: "길 찾는 중", recommend_dsp: "패스 상품 확인 중", find_info_center: "관광정보센터 찾는 중" },
+  en: { get_restaurant_detail: "checking restaurant details", search_festivals: "checking festivals", search_places: "finding places", plan_route: "planning the route", recommend_dsp: "checking passes", find_info_center: "finding an info center" },
+  ja: { get_restaurant_detail: "お店の詳細を確認中", search_festivals: "お祭りを確認中", search_places: "スポットを検索中", plan_route: "ルートを検索中", recommend_dsp: "パスを確認中", find_info_center: "観光案内所を検索中" },
+  "zh-CN": { get_restaurant_detail: "正在查询餐厅详情", search_festivals: "正在查询节庆", search_places: "正在查找地点", plan_route: "正在规划路线", recommend_dsp: "正在查询通票", find_info_center: "正在查找咨询中心" },
+  "zh-TW": { get_restaurant_detail: "正在查詢餐廳詳情", search_festivals: "正在查詢節慶", search_places: "正在尋找地點", plan_route: "正在規劃路線", recommend_dsp: "正在查詢通行證", find_info_center: "正在尋找諮詢中心" },
 };
 const UNAVAILABLE = {
   ko: "이 화면에서는 Claude 연결을 사용할 수 없습니다(동의하지 않았거나 조직 설정으로 꺼져 있음). 상담원 연결 버튼은 사용할 수 있습니다.",
@@ -35,8 +35,8 @@ const UNAVAILABLE = {
   "zh-TW": "此頁面無法使用 Claude（未允許或已被組織關閉）。「轉接真人」按鈕仍可使用。",
 };
 const DATA_NOTE = {
-  ko: (d) => `축제 정보는 서울시 문화행사 정보 API 데이터(${d} 기준)입니다. 음식점은 한국관광공사 TourAPI 수집본, 그 밖의 장소·교통·패스 정보는 샘플입니다.`,
-  en: (d) => `Festival info is Seoul culture-event API data as of ${d}. Restaurants come from the Korea Tourism Organization TourAPI; other places, transport and passes are sample data.`,
+  ko: (d) => `축제 정보는 서울시 문화행사 정보 API 데이터(${d} 기준)입니다. 음식점은 한국관광공사 TourAPI 수집본, 길 안내 시간은 노선 거리 기반 추정치이며, 그 밖의 장소·패스 정보는 샘플입니다.`,
+  en: (d) => `Festival info is Seoul culture-event API data as of ${d}. Restaurants come from the Korea Tourism Organization TourAPI; route times are estimates from route distances; other places and passes are sample data.`,
   ja: (d) => `お祭り情報はソウル市文化行事APIのデータ（${d}時点）です。その他のスポット・交通・パスはサンプルです。`,
   "zh-CN": (d) => `节庆信息来自首尔市文化活动 API（截至 ${d}）。其他地点、交通和通票为示例数据。`,
   "zh-TW": (d) => `節慶資訊來自首爾市文化活動 API（截至 ${d}）。其他地點、交通與通行證為範例資料。`,
@@ -91,7 +91,7 @@ async function chat(payload, { onProgress } = {}) {
   const cards = [];
   const used = [];
   let calls = 0;
-  const ctx = { today, lang, places, transit, dsp, centers, ranking, getFeed: async () => eventsSnapshot,
+  const ctx = { today, lang, places, dsp, centers, ranking, getTransit: async () => transitNet, getFeed: async () => eventsSnapshot,
     getFit: async () => FIT,
     getTourFood: async () => tourFood,
     // 아티팩트 페이지는 외부 API를 부를 수 없어 상세 조회는 제공하지 않는다

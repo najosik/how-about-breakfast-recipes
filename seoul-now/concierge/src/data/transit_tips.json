@@ -1,0 +1,17 @@
+{
+  "_comment": "지역별 교통 팁(명동 시범). 샘플이며 담당자 검토 후 사용. near: 출발지나 목적지가 이 반경 안이면 함께 안내.",
+  "tips": [
+    { "id": "md-exit", "near": { "lat": 37.5609, "lng": 126.9863, "radius_m": 600 }, "is_sample": true,
+      "text": { "ko": "명동역(4호선) 5~8번 출구가 명동 쇼핑거리와 가깝습니다.",
+                "en": "At Myeongdong Station (Line 4), exits 5-8 are closest to the Myeongdong shopping streets.",
+                "ja": "明洞駅（4号線）は5〜8番出口が明洞の繁華街に近いです。",
+                "zh-CN": "明洞站（4号线）5~8号出口离明洞购物街最近。",
+                "zh-TW": "明洞站（4號線）5~8號出口離明洞購物街最近。" } },
+    { "id": "md-1330", "near": { "lat": 37.5609, "lng": 126.9863, "radius_m": 600 }, "is_sample": true,
+      "text": { "ko": "길을 잃으면 1330(관광통역안내, 24시간 다국어)에 전화하세요.",
+                "en": "If you get lost, call 1330 (Korea Travel Hotline, 24 hours, multilingual).",
+                "ja": "道に迷ったら1330（観光通訳案内、24時間・多言語）へお電話ください。",
+                "zh-CN": "如果迷路，请拨打1330（旅游翻译咨询热线，24小时多语种）。",
+                "zh-TW": "如果迷路，請撥打1330（旅遊翻譯諮詢熱線，24小時多語種）。" } }
+  ]
+}
