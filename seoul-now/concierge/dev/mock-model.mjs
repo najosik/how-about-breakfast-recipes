@@ -9,6 +9,9 @@ function pickTools(text) {
   if (has(text, /eat|food|restaurant|맛집|음식|먹|食べ|グルメ|吃|美食/i)) calls.push(["search_places", { category: "food", region, time_of_day: has(text, /tonight|오늘 밤|저녁|今夜|今晚/i) ? "tonight" : undefined }]);
   if (has(text, /shop|쇼핑|ショッピング|购物|購物|買い物/i)) calls.push(["search_places", { category: "shopping", region }]);
   if (has(text, /night market|야시장|ナイトマーケット|夜市/i)) calls.push(["plan_route", { origin: region || "명동", destination: "광장시장" }]);
+  const dest = (text.match(/경복궁|gyeongbokgung|景福宮|景福宫|홍대|hongdae|弘大|남대문|namdaemun|N서울타워|N Seoul Tower|광장시장|잠실|jamsil|이태원|itaewon/i) || [""])[0];
+  if (dest && has(text, /어떻게 가|가는 법|가는법|how do i get|get to|directions|行き方|怎么去|怎麼去/i))
+    calls.push(["plan_route", { origin: region && region !== dest ? region : "명동", destination: dest }]);
   if (has(text, /festival|축제|祭|节|節|event|행사/i)) calls.push(["search_festivals", { region }]);
   const days = (text.match(/(\d+)\s*(일|days?|日|天)/) || [])[1];
   if (has(text, /궁|palace|宮|宫|전망대|observatory|展望|패스|pass/i)) {
