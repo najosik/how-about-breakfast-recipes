@@ -287,7 +287,17 @@ export function mapLinks(origin, dest, destLabel, lang) {
   const ll = (p) => `${p.lat.toFixed(6)},${p.lng.toFixed(6)}`;
   const g = (mode) => `https://www.google.com/maps/dir/?api=1${origin ? `&origin=${ll(origin)}` : ""}&destination=${ll(dest)}&travelmode=${mode}`;
   const label = String(destLabel || "").replace(/[,/?#]/g, " ").trim().slice(0, 40) || ll(dest);
-  const links = { google_transit: g("transit"), google_walking: g("walking"), naver: `https://map.naver.com/p/search/${encodeURIComponent(label)}` };
+  // 네이버 지도 길찾기: 좌표는 웹 메르카토르(EPSG:3857). 출발지를 모르면 '-'(지도에서 현재 위치·출발지 선택)
+  const merc = (p) => {
+    const x = (p.lng * 20037508.34) / 180;
+    const y = (Math.log(Math.tan(((90 + p.lat) * Math.PI) / 360)) / (Math.PI / 180)) * (20037508.34 / 180);
+    return `${x.toFixed(2)},${y.toFixed(2)}`;
+  };
+  const pt = (p, name) => `${merc(p)},${encodeURIComponent(name)},,`;
+  const originLabel = origin && origin.name ? String(origin.name.ko || origin.name.en || "").replace(/[,/?#]/g, " ").trim().slice(0, 40) : "";
+  const nav = (mode) => `https://map.naver.com/p/directions/${origin ? pt(origin, originLabel || ll(origin)) : "-"}/${pt(dest, label)}/-/${mode}`;
+  const links = { google_transit: g("transit"), google_walking: g("walking"), naver_transit: nav("transit"), naver_walking: nav("walk"),
+    naver: `https://map.naver.com/p/search/${encodeURIComponent(label)}` };
   if (lang === "ko") links.kakao = `https://map.kakao.com/link/to/${encodeURIComponent(label)},${dest.lat.toFixed(6)},${dest.lng.toFixed(6)}`;
   return links;
 }

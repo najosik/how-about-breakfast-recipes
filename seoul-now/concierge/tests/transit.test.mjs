@@ -75,8 +75,12 @@ test("지도 링크: 구글(대중교통·도보), 네이버 검색, 카카오�
   assert.ok(l.google_walking.endsWith("travelmode=walking"));
   assert.equal(l.naver, "https://map.naver.com/p/search/%EA%B4%91%EC%9E%A5%EC%8B%9C%EC%9E%A5");
   assert.equal(l.kakao, undefined);
+  // 네이버 길찾기: 출발·도착 좌표(EPSG:3857)·이름, 대중교통/도보 모드
+  assert.match(l.naver_transit, /^https:\/\/map\.naver\.com\/p\/directions\/1413\d{4}\.\d{2},451\d{4}\.\d{2},[^/]*,,\/1413\d{4}\.\d{2},451\d{4}\.\d{2},%EA%B4%91%EC%9E%A5%EC%8B%9C%EC%9E%A5,,\/-\/transit$/);
+  assert.ok(l.naver_walking.endsWith("/-/walk"));
   const ko = mapLinks(null, { lat: 37.5, lng: 127 }, "a,b/c?d", "ko");
   assert.ok(!ko.google_transit.includes("origin="));   // 출발지를 모르면 앱이 현재 위치 사용
+  assert.ok(ko.naver_transit.startsWith("https://map.naver.com/p/directions/-/"));
   assert.ok(ko.kakao.startsWith("https://map.kakao.com/link/to/a%20b%20c%20d,"));
 });
 
