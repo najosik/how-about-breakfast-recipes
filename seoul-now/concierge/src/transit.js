@@ -62,12 +62,15 @@ export function buildGraph(net) {
     link(hub, r, WAIT.subway + BOARD_PENALTY, "board");
     link(r, hub, 0, "alight");
   }
+  const lineAdj = new Map();
+  const rideLink = (a, b, km) => { const w = rideMin.subway(km); link(a, b, w, "ride"); link(b, a, w, "ride");
+    for (const [x, y] of [[a, b], [b, a]]) { if (!lineAdj.has(x)) lineAdj.set(x, new Set()); lineAdj.get(x).add(y); } };
   for (const e of Array.isArray(sub.edges) ? sub.edges : []) {
     const a = stationRide.get(e[0]), b = stationRide.get(e[1]);
     if (a === undefined || b === undefined || !(e[2] >= 0)) continue;
-    const w = rideMin.subway(e[2]);
-    link(a, b, w, "ride"); link(b, a, w, "ride");
+    rideLink(a, b, e[2]);
   }
+  bridgeLines(nodes, [...stationRide.values()], lineAdj, rideLink);
   for (const route of Array.isArray(net && net.bus) ? net.bus : []) {
     let prev = null;
     for (const s of Array.isArray(route.stops) ? route.stops : []) {
@@ -98,6 +101,33 @@ export function buildGraph(net) {
   };
   for (const h of hubs) for (const [o, d] of near(nodes[h], TRANSFER_M)) if (o !== h) link(h, o, walkMin(d), "walk");
   return { nodes, adj, near, counts: { hubs: hubs.length, nodes: nodes.length } };
+}
+
+/**
+ * 지선 보정: 같은 노선인데 끊긴 조각(외부코드 체계가 달라 순서로 못 이은 지선 등)을
+ * 가장 큰 조각의 가장 가까운 역과 잇는다(3km 이내만).
+ */
+const BRIDGE_KM = 3;
+function bridgeLines(nodes, rides, lineAdj, rideLink) {
+  const byLine = new Map();
+  for (const r of rides) { const l = nodes[r].route; if (!byLine.has(l)) byLine.set(l, []); byLine.get(l).push(r); }
+  for (const list of byLine.values()) {
+    const seen = new Set(), comps = [];
+    for (const r of list) {
+      if (seen.has(r)) continue;
+      const comp = [], stack = [r];
+      while (stack.length) { const x = stack.pop(); if (seen.has(x)) continue; seen.add(x); comp.push(x); for (const y of lineAdj.get(x) || []) stack.push(y); }
+      comps.push(comp);
+    }
+    if (comps.length < 2) continue;
+    comps.sort((a, b) => b.length - a.length);
+    const main = comps[0];
+    for (const comp of comps.slice(1)) {
+      let best = null;
+      for (const a of comp) for (const b of main) { const d = haversineM(nodes[a], nodes[b]) / 1000; if (!best || d < best[2]) best = [a, b, d]; }
+      if (best && best[2] <= BRIDGE_KM) { rideLink(best[0], best[1], best[2]); main.push(...comp); }
+    }
+  }
 }
 
 function dijkstra(g, origin, dest, allow) {
@@ -217,7 +247,7 @@ export const PLACES = [
   { ko: "남대문시장", en: "Namdaemun Market", ja: "南大門市場", zh: "南大门市场", station: "회현", lat: 37.5592, lng: 126.9773 },
   { ko: "광장시장", en: "Gwangjang Market", ja: "広蔵市場", zh: "广藏市场", station: "종로5가", lat: 37.5701, lng: 126.9996 },
   { ko: "N서울타워", en: "N Seoul Tower", ja: "Nソウルタワー", zh: "N首尔塔", station: null, lat: 37.5512, lng: 126.9882 },
-  { ko: "서울역", en: "Seoul Station", ja: "ソウル駅", zh: "首尔站", station: "서울역", lat: 37.5547, lng: 126.9707 },
+  { ko: "서울역", en: "Seoul Station", ja: "ソウル駅", zh: "首尔站", station: "서울", lat: 37.5547, lng: 126.9707 },
   { ko: "성수", en: "Seongsu", ja: "聖水", zh: "圣水", station: "성수", lat: 37.5446, lng: 127.0559 },
   { ko: "여의도", en: "Yeouido", ja: "汝矣島", zh: "汝矣岛", station: "여의도", lat: 37.5216, lng: 126.9243 },
   { ko: "잠실", en: "Jamsil", ja: "蚕室", zh: "蚕室", station: "잠실", lat: 37.5133, lng: 127.1001 },
