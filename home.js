@@ -401,7 +401,21 @@
     var monthNames = lang === 'en'
       ? ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC']
       : ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'];
-    document.getElementById('monthLabels').innerHTML = monthNames.map(function (m) { return '<span>' + m + '</span>'; }).join('');
+    // The grid spans several years of weekly columns and scrolls
+    // horizontally, so a label can't just be evenly spaced across one
+    // viewport width (that silently stopped matching the columns below it
+    // the moment the history grew past a single screen). Each label is
+    // instead placed at the pixel offset of the actual week-column where
+    // that month starts, same approach GitHub's contribution graph uses.
+    var COL_PITCH = 16; // .home-ledger-cell width (14px) + .home-ledger-grid gap (2px)
+    // A position:absolute child's "left" is relative to its containing
+    // block's PADDING box, not its content box - a padding-left on the
+    // label row's own container has no effect on where these labels
+    // land, so the weekday-sidebar offset (18px width + 8px row gap)
+    // has to be baked into this value directly instead.
+    var SIDEBAR_OFFSET = 26;
+    var monthLabelsHtml = '';
+    var lastMonthKey = null;
 
     var gridEl = document.getElementById('ledgerGrid');
     gridEl.innerHTML = '';
@@ -436,7 +450,7 @@
     function hideTooltip() { tooltip.classList.add('hidden'); }
 
     var postedInYear = 0, totalInYear = 0;
-    weeks.forEach(function (w) {
+    weeks.forEach(function (w, colIndex) {
       var col = document.createElement('div');
       col.className = 'home-ledger-col';
       // First real (non-pad) day in the week decides which year tab this
@@ -444,10 +458,19 @@
       // straddling New Year's Eve only needs one answer, not a perfectly
       // accurate one.
       var colYear = null;
+      var colFirstKey = null;
       for (var wi = 0; wi < w.length; wi++) {
-        if (w[wi].year != null) { colYear = w[wi].year; break; }
+        if (w[wi].year != null) { colYear = w[wi].year; colFirstKey = w[wi].key; break; }
       }
       if (colYear != null) col.setAttribute('data-year', colYear);
+      if (colFirstKey) {
+        var colDate = new Date(colFirstKey + 'T00:00:00');
+        var monthKey = colDate.getFullYear() + '-' + colDate.getMonth();
+        if (monthKey !== lastMonthKey) {
+          lastMonthKey = monthKey;
+          monthLabelsHtml += '<span style="left:' + (SIDEBAR_OFFSET + colIndex * COL_PITCH) + 'px;">' + monthNames[colDate.getMonth()] + '</span>';
+        }
+      }
       w.forEach(function (day) {
         var n = day.key ? (postCounts[day.key] || 0) : 0;
         // Only an actual post is a real control - a real <button> gets
@@ -503,6 +526,7 @@
       });
       gridEl.appendChild(col);
     });
+    document.getElementById('monthLabels').innerHTML = monthLabelsHtml;
 
     var pct = totalInYear ? Math.round((postedInYear / totalInYear) * 100) : 0;
     document.getElementById('ledgerPct').textContent = pct + '%';
