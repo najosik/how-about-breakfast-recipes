@@ -12866,7 +12866,7 @@
   "weather": "20도/대체로 흐림",
   "failed": false,
   "calories": 250,
-  "title": "#비트샐러드",
+  "title": "비트 샐러드",
   "credit": "@ottolenghi",
   "hashtags": [
    "레시피",
@@ -12876,7 +12876,7 @@
    "조식다이어리"
   ],
   "intro": "20251007 #조식다이어리 1525, 20도/대체로 흐림\n약 250kcal #비트샐러드",
-  "ingredients": "비트 1/2개, 대파 조금, (마리네이드) 올리브오일 1T, 화이트와인 비니거 3T, 메이플시럽 1t, (드레싱) 피넛버터 1T, 레몬주스 1T, 메이플시럽 1t",
+  "ingredients": "- 비트 1/2개 \n- 대파 조금 \n- 마리네이드(올리브오일 1T, 화이트와인 비니거 3T, 메이플시럽 1t) \n- 드레싱(피넛버터 1T, 레몬주스 1T, 메이플시럽 1t)",
   "steps": "1. 비트는 깨끗하게 씻어서 웻지 모양으로 썰어 끓는 물에 넣고 30분 이상 삶는다. \n2. 믹싱볼에 비트를 넣고 올리브오일 1T, 화이트와인 비니거 3T, 메이플시럽 1t 넣고 골고루 섞는다. 30분 마리네이드 한다. \n3. 접시에 비트를 담고 피넛버터 1T, 레몬주스 1T, 메이플시럽 1t 넣고 골고루 섞어서 비트 위에 얹는다. 대파 썰어서 얹는다.",
   "raw": "20251007 #조식다이어리 1525, 20도/대체로 흐림\n\n약 250kcal #비트샐러드\n\n👉 재료\n비트 1/2개, 대파 조금, (마리네이드) 올리브오일 1T, 화이트와인 비니거 3T, 메이플시럽 1t, (드레싱) 피넛버터 1T, 레몬주스 1T, 메이플시럽 1t\n\n👉 조리\n1. 비트는 깨끗하게 씻어서 웻지 모양으로 썰어 끓는 물에 넣고 30분 이상 삶는다. \n2. 믹싱볼에 비트를 넣고 올리브오일 1T, 화이트와인 비니거 3T, 메이플시럽 1t 넣고 골고루 섞는다. 30분 마리네이드 한다. \n3. 접시에 비트를 담고 피넛버터 1T, 레몬주스 1T, 메이플시럽 1t 넣고 골고루 섞어서 비트 위에 얹는다. 대파 썰어서 얹는다. \n\nInspired by @ottolenghi\n\n#조식 #레시피 #비트",
   "image": "https://images.how-about-breakfast.com/images/1525.jpg",
@@ -12886,13 +12886,6 @@
    "https://images.how-about-breakfast.com/images/1525_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1525.mp4",
-  "_en": {
-   "hash": "104ceeb17821f8ddd409754f2d72ceb97e438676403ce9f82b85576cadc55dda",
-   "title": "#BeetSalad",
-   "intro": "20251007 #breakfastdiary day 1525, 20°C/mostly cloudy\nApprox. 250kcal #beetsalad",
-   "ingredients": "1/2 beet, a little scallion, (marinade) 1T olive oil, 3T white wine vinegar, 1t maple syrup, (dressing) 1T peanut butter, 1T lemon juice, 1t maple syrup",
-   "steps": "1. Wash the beet thoroughly, cut into wedges, and boil for 30 minutes or more.\n2. In a mixing bowl, add the beet along with 1T olive oil, 3T white wine vinegar, and 1t maple syrup, and mix thoroughly. Marinate for 30 minutes.\n3. Plate the beet, mix 1T peanut butter, 1T lemon juice, and 1t maple syrup thoroughly, and spoon over the beet. Top with sliced scallion."
-  },
   "page_id": "비트샐러드"
  },
  {
