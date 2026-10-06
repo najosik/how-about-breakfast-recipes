@@ -68678,7 +68678,7 @@
   "weather": "17도/흐림, 26분/운동",
   "failed": false,
   "calories": null,
-  "title": "새우아보카도샐러드 메모리즈 모닝리추얼",
+  "title": "새우 아보카도 샐러드",
   "credit": null,
   "hashtags": [
    "almond",
@@ -68707,22 +68707,15 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20211007, #조식다이어리 232, 17도/흐림, 26분/운동\n올리브오일, 팬에 소금, 후추 넣어 데친 새우와 아보카도, 고수, 아몬드 #새우아보카도샐러드\n코로나19를 뚫고 10.15.까지 부산국제영화제가 열린다. 꽤 오래 전 이맘때쯤 수영만 요트경기장에 앉아 오토모 가츠히로의 #메모리즈 를 봤다. 찾아보니 25년 전, 제1회 부산국제영화제의 일이다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20211007, #조식다이어리 232, 17도/흐림, 26분/운동\n올리브오일, 팬에 소금, 후추 넣어 데친 새우와 아보카도, 고수, 아몬드 #새우아보카도샐러드\n\n코로나19를 뚫고 1.15.까지 부산국제영화제가 열린다. 꽤 오래 전 이맘때쯤 수영만 요트경기장에 앉아 오토모 가츠히로의 #메모리즈 를 봤다. 찾아보니 25년 전, 제1회 부산국제영화제의 일이다.",
+  "ingredients": "- 새우 7마리\n- 아보카도 1/2개\n- 고수 한 줌\n- 아몬드 1T\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)",
+  "steps": "1. 팬에 올리브오일 두르고 소금, 후추 뿌려서 새우를 굽는다. \n2. 아보카도는 껍질 벗기고 가지런히 썬다. \n3. 접시에 아보카도와 새우 담고 고수, 아몬드, 드레싱 뿌린다. ",
   "raw": "20211007, #조식다이어리 232, 17도/흐림, 26분/운동\n\n올리브오일, 팬에 소금, 후추 넣어 데친 새우와 아보카도, 고수, 아몬드 #새우아보카도샐러드\n\n코로나19를 뚫고 10.15.까지 부산국제영화제가 열린다. 꽤 오래 전 이맘때쯤 수영만 요트경기장에 앉아 오토모 가츠히로의 #메모리즈 를 봤다. 찾아보니 25년 전, 제1회 부산국제영화제의 일이다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #아보카도 #새우 #고수 #아몬드\n#breakfast #recipe #salad #coriander #shrimp #avocado #almond",
   "image": "https://images.how-about-breakfast.com/images/232.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/232.jpg",
    "https://images.how-about-breakfast.com/images/232_2.jpg"
   ],
-  "_en": {
-   "hash": "fb35aa1e7129c77ac31a6a6f32994628f910feaaa15d0d1d3bbbae0beb7c91b8",
-   "title": "Shrimp Avocado Salad, Memories, Morning Ritual",
-   "intro": "20211007, #breakfastdiary 232, 17°C/cloudy, 26min/exercise\nShrimp blanched in a pan with olive oil, salt, and pepper, with avocado, cilantro, and almonds #shrimpavocadosalad\nDespite COVID-19, the Busan International Film Festival is running through October 15. Quite a while back, around this same time of year, I sat at the Suyeongman Yacht Stadium and watched Katsuhiro Otomo's #memories. Looking it up, that turns out to have been 25 years ago, at the very first Busan International Film Festival.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "새우아보카도샐러드-메모리즈-모닝리추얼"
  },
  {
