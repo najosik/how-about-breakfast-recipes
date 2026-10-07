@@ -19,5 +19,11 @@ log("[state] box html:", (await p.locator("#google_translate_element").evaluate(
 log("[state] select visible:", await p.locator("select.goog-te-combo").isVisible().catch(() => false),
   "options:", await p.locator("select.goog-te-combo option").count().catch(() => 0));
 log("[state] select computed:", await p.locator("select.goog-te-combo").evaluate((e) => { const c = getComputedStyle(e); return `${c.display} ${c.visibility} ${e.offsetWidth}x${e.offsetHeight}`; }).catch(() => "none"));
+if (await p.locator("select.goog-te-combo option").count().catch(() => 0) > 1) {
+  await p.selectOption("select.goog-te-combo", "ja");
+  await p.waitForTimeout(6000);
+  log("[translate] html class:", await p.evaluate(() => document.documentElement.className));
+  log("[translate] sample:", (await p.locator("#count").innerText().catch(() => "")).slice(0, 80), "|", (await p.locator(".card .title").first().innerText().catch(() => "")).slice(0, 80));
+}
 await p.screenshot({ path: "ui-check.png" });
 await b.close();
