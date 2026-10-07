@@ -1,5 +1,7 @@
 // 다국어 번역(구글 번역 위젯). 버튼을 누른 방문자에게만 구글 스크립트를 불러온다
 // (누르지 않으면 외부 요청 없음). 번역하면 화면의 글이 구글로 전송된다 — 공공 행사 정보뿐, 개인정보 없음.
+// 구글 스크립트가 넣는 인라인 스크립트 1개는 index.html CSP에 해시로만 허용한다('unsafe-inline' 미사용).
+// 구글이 그 스크립트를 바꾸면 해시가 달라져 위젯이 안 뜨고, 아래 시간 초과 안내로 넘어간다(analysis/ui_check.mjs로 새 해시 확인).
 "use strict";
 
 (() => {
@@ -20,8 +22,9 @@
     // 언어 선택 상자가 실제로 나타난 뒤에만 버튼을 숨긴다(6초 안에 안 나오면 버튼 유지 + 안내)
     const started = Date.now();
     const timer = setInterval(() => {
+      // 언어 항목이 채워지고 실제로 화면에 보일 때만 성공으로 본다(보안 정책에 막히면 빈 상자가 숨겨진 채 남음)
       const select = box.querySelector("select.goog-te-combo");
-      if (select) {
+      if (select && select.options.length > 1 && select.offsetWidth > 0) {
         clearInterval(timer);
         btn.hidden = true;
         select.setAttribute("aria-label", ko() ? "번역할 언어 선택" : "Choose a language");
