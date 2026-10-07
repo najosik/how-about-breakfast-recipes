@@ -4,10 +4,10 @@ const url = process.argv[2] || "https://how-about-breakfast.com/seoul-now/?lang=
 const b = await chromium.launch();
 const p = await b.newPage({ viewport: { width: 1280, height: 800 } });
 const log = (...a) => console.log(...a);
-p.on("console", (m) => log(`[console.${m.type()}]`, m.text().slice(0, 300)));
+p.on("console", (m) => log(`[console.${m.type()}]`, m.text().slice(0, 1200)));
 p.on("pageerror", (e) => log("[pageerror]", e.message.slice(0, 300)));
 p.on("requestfailed", (r) => log("[requestfailed]", r.url().slice(0, 160), r.failure()?.errorText));
-p.on("response", (r) => { if (!r.url().startsWith(new URL(url).origin)) log("[response]", r.status(), r.url().slice(0, 160)); });
+p.on("response", (r) => { const u = r.url(); if (!u.startsWith(new URL(url).origin) && !u.includes("culture.seoul.go.kr")) log("[response]", r.status(), u.slice(0, 160)); });
 await p.addInitScript(() => document.addEventListener("securitypolicyviolation", (e) =>
   console.log(`CSP-VIOLATION directive=${e.violatedDirective} blocked=${String(e.blockedURI).slice(0, 120)}`)));
 await p.goto(url, { waitUntil: "networkidle" });
