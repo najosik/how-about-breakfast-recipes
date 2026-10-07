@@ -1,0 +1,5 @@
+{
+ "_comment": "담당자 수정. 자동 점수·제외 규칙보다 우선한다. id는 events.json의 행사 id. pin: 우선 추천(제외 규칙 무시), exclude: 추천에서 제외. note에 사유를 남겨 주세요.",
+ "pin": [],
+ "exclude": []
+}

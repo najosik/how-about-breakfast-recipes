@@ -1,6 +1,6 @@
 name: Seoul Now - fetch culture events
 
-# 서울시 문화행사 정보(OA-15486) → seoul-now/data/events.json
+# 서울시 문화행사 정보(OA-15486) → seoul-now/data/events.json (+ festival_tags.json 외국인 적합도 태그)
 on:
   schedule:
     - cron: '30 */6 * * *'   # 6시간마다 (UTC :30, 인스타그램 동기화와 30분 간격)
@@ -42,12 +42,18 @@ jobs:
           fi
           python3 scripts/fetch_events.py
 
+      # 외국인 적합도 태깅(새 행사만 1회) + 1차 선별(관광부문, data/tourism_select.json). 실패해도 행사 수집 커밋은 진행
+      - name: Tag festivals (foreign-visitor fit)
+        if: steps.fetch.outputs.skipped != 'true'
+        continue-on-error: true
+        run: python3 scripts/tag_festivals.py
+
       - name: Commit and push if changed
         if: steps.fetch.outputs.skipped != 'true'
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/events.json
+          git add data/events.json data/festival_tags.json data/tourism_select.json
           if git diff --cached --quiet; then
             echo "No changes, nothing to commit."
             exit 0

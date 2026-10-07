@@ -1,0 +1,16 @@
+{
+  "_comment": "1차 선별(관광부문) 예시 기준. 세부 기준은 TF에서 확정 예정. 통과: 관광 가치 1개 이상 + 전체 2개 이상. 시정 우선순위는 담당자 고정(pin)으로만 반영(자동화하지 않음).",
+  "rules_version": "example-2026-10-07.1",
+  "is_example": true,
+  "tourism_value": {
+    "hot_districts": ["중구", "종로구", "용산구", "마포구", "강남구", "송파구", "서초구", "영등포구", "성동구"],
+    "festival_category_prefix": "축제",
+    "recurring_min_years": 2
+  },
+  "citizen_demand": {
+    "free": true,
+    "open_audience_words": ["누구나", "전체", "제한 없음", "제한없음", "전 연령", "시민", "관광객", "방문객"],
+    "long_run_days": 30
+  },
+  "pass": { "min_tourism_value": 1, "min_total": 2 }
+}

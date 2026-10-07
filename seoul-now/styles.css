@@ -143,3 +143,21 @@ dialog::backdrop { background: rgba(0,0,0,.55); }
   .facts .row { grid-template-columns: 1fr; gap: 2px; }
 }
 @media (prefers-reduced-motion: reduce) { .card { transition: none; } }
+
+/* 선별 흐름 패널 */
+.stages { margin-top: 20px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow); display: grid; gap: 12px; }
+.stages-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
+.stages-head h2 { margin: 0; font-size: 1.1rem; }
+.basis { margin: 0; font-size: .95rem; font-weight: 700; color: var(--text); }
+.basis.snap { color: var(--hot); }
+.stage-steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.stage-steps li { display: flex; align-items: center; gap: 6px; }
+.stage-btn { display: inline-flex; align-items: baseline; gap: 8px; border: 1px solid var(--line); background: var(--bg); border-radius: 10px; padding: 8px 14px; min-height: 44px; }
+.stage-btn .stage-name { font-size: .85rem; color: var(--muted); }
+.stage-btn .stage-num { font-size: 1.25rem; font-variant-numeric: tabular-nums; }
+.stage-btn.active { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.stage-btn.active .stage-name { color: var(--accent-ink); }
+.stage-arrow { color: var(--muted); }
+.export-row { margin: 6px 0 0; }
+.card.resource { cursor: default; }
+.card.resource:hover { transform: none; }

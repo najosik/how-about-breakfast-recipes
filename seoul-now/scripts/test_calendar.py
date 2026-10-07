@@ -73,3 +73,30 @@ class Calendar(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class ReportExamples(unittest.TestCase):
+    """보고서 10쪽 예시와 같은 결과가 나와야 한다."""
+    def _one(self, fs):
+        return b.forecast({f["id"]: f for f in fs}, 2027)[0]
+
+    def test_bitchorong_high_mid_december(self):
+        fs = [fest(f"{y} 서울빛초롱축제", s) for y, s in ((2021, "2021-11-26"), (2023, "2023-12-15"), (2024, "2024-12-13"), (2025, "2025-12-12"))]
+        it = self._one(fs)
+        self.assertEqual([s["md"] for s in it["basis"]["starts"]], ["12-15", "12-13", "12-12"])
+        self.assertEqual((it["basis"]["median"], it["month"], it["part"], it["confidence"]), ("12-13", 12, "mid", "high"))
+
+    def test_drone_show_low_late_april(self):
+        fs = [fest(f"{y} 한강불빛 공연 [드론라이트쇼]", s) for y, s in ((2023, "2023-04-29"), (2024, "2024-04-27"), (2025, "2025-09-07"), (2026, "2026-04-10"))]
+        it = self._one(fs)
+        self.assertEqual((it["basis"]["median"], it["month"], it["part"], it["confidence"]), ("04-27", 4, "late", "low"))
+
+    def test_no_wrap_for_spring_autumn_and_latest_for_two_far_years(self):
+        it = self._one([fest(f"{y} 러너스 페스티벌", s) for y, s in ((2024, "2024-04-20"), (2026, "2026-10-24"))])
+        self.assertEqual((it["month"], it["part"], it["basis"]["method"]), (10, "late", "latest"))
+
+    def test_funnel_counts(self):
+        fs = [fest("2024 A축제", "2024-05-01"), fest("2025 A축제", "2025-05-02"), fest("2022 B축제", "2022-05-01"),
+              fest("2023 B축제", "2023-05-01"), fest("2025 C축제", "2025-06-01")]
+        b.forecast({f["id"]: f for f in fs}, 2027)
+        self.assertEqual(b.forecast.funnel, {"records": 5, "series": 3, "recurring": 2, "predicted": 1})
