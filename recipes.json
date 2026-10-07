@@ -27,7 +27,14 @@
    "https://images.how-about-breakfast.com/images/1886_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1886.mp4",
-  "page_id": "발사믹과-그릭요거트를-곁들인-고구마-스테이크"
+  "page_id": "발사믹과-그릭요거트를-곁들인-고구마-스테이크",
+  "_en": {
+   "hash": "af1daa230cecefb19c6fc2b9b365ea108ebd35a936bdf97d6b85766fa9c21081",
+   "title": "Sweet Potato Steak with Balsamic and Greek Yogurt",
+   "intro": "20261006 #breakfastdiary 1858, 13°C/clear\nHad roasted sweet potato and it turned into something amazing\nAnd that's entirely thanks to the Greek yogurt and balsamic. Mint is today's little extra kick.\n305kcal Sweet Potato Steak with Balsamic and Greek Yogurt",
+   "ingredients": "- 1 sweet potato\n- 2 tbsp Greek yogurt\n- 2 tsp pistachios\n- 2 tsp balsamic glaze\n- 1 tsp olive oil\n- 1/4 tsp salt\n- Mint",
+   "steps": "1. Halve the sweet potato, score it, sprinkle with salt and olive oil, and roast at 200°C for 30 minutes.\n2. Chop the pistachios with a knife.\n3. Plate the roasted sweet potato from step 1, then top with Greek yogurt, chopped pistachios, balsamic glaze, and mint."
+  }
  },
  {
   "date": "2026-10-05",
@@ -12886,7 +12893,14 @@
    "https://images.how-about-breakfast.com/images/1525_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1525.mp4",
-  "page_id": "비트샐러드"
+  "page_id": "비트샐러드",
+  "_en": {
+   "hash": "d0f4e54a9d779dff9a6d9bd0ba72b3870448ba50013398a8838d1ed3fa7718e8",
+   "title": "Beet Salad",
+   "intro": "20251007 #breakfastdiary 1525, 20°C/mostly cloudy\nAbout 250kcal #beetsalad",
+   "ingredients": "- 1/2 beet\n- A little scallion\n- Marinade (1 tbsp olive oil, 3 tbsp white wine vinegar, 1 tsp maple syrup)\n- Dressing (1 tbsp peanut butter, 1 tbsp lemon juice, 1 tsp maple syrup)",
+   "steps": "1. Wash the beet well, cut into wedges, and boil for over 30 minutes.\n2. In a mixing bowl, combine the beet with 1 tbsp olive oil, 3 tbsp white wine vinegar, and 1 tsp maple syrup, and toss well. Marinate for 30 minutes.\n3. Plate the beet. Mix 1 tbsp peanut butter, 1 tbsp lemon juice, and 1 tsp maple syrup, and spoon over the beet. Top with sliced scallion."
+  }
  },
  {
   "date": "2025-10-06",
@@ -25509,45 +25523,22 @@
   "ingredients": "- 배 1/2개\n- 쿠즈미 티 1t\n- 그릭요거트 1T\n- 꿀 1t\n- 올리브오일 1t",
   "steps": "1. 믹싱볼에 배는 먹기 좋은 크기로 썰어서 담고 쿠즈미 티 넣은 뒤 버무린다. 5분 정도 그대로 둔다. \n2. 1의 배를 접시에 담고 그릭요거트 얹고 올리브오일과 꿀 뿌린다. ",
   "raw": "20241008 #조식다이어리 1199, 13도/맑음, 20분/운동(M) \n\n안성재 셰프의 통마늘 라면 레시피는 재미난 식감을 위해 라면 부스러기를 토핑하는 것으로 마무리 된다. \n얼그레이 대신에 쿠즈미 티를 사용하면 향기는 기본 재미난 식감까지 더블 콤보로 즐길 수 있다. \n\n쿠즈미 티에 버무린 #배샐러드 그릭요거트나 부라타치즈, 리코타치즈를 곁들이면 좋다. \n\n👉재료는\n배 1/2개(엊그제 먹고 남은)\n쿠즈미 티(얼그레이 등 가능)\n그릭요거트(원하는 만큼)\n꿀\n올리브오일 \n\n👉이렇게\n배는 먹기 좋은 크기로 썰어서 볼에 담고 쿠즈미 티 넣은 뒤 버무린다. 5분 정도 그대로 둔다. \n접시에 담고 그릭요거트 얹고 올리브오일과 꿀꿀꿀~🍯\n\nInspired by @kazzz0609\n\n#조식 #레시피 #미라클모닝 #배",
-  "page_id": "배샐러드-배-2"
- },
- {
-  "date": "2024-10-08",
-  "date_raw": "20241008",
-  "diary_no": 1210,
-  "weather": "13도/맑음, 20분/운동(M)",
-  "failed": false,
-  "calories": null,
-  "title": "배샐러드 배",
-  "credit": "@kazzz0609",
-  "hashtags": [
-   "레시피",
-   "미라클모닝",
-   "배",
-   "배샐러드",
-   "조식",
-   "조식다이어리"
-  ],
-  "intro": "20241008 #조식다이어리 1199, 13도/맑음, 20분/운동(M) \n안성재 셰프의 통마늘 라면 레시피는 재미난 식감을 위해 라면 부스러기를 토핑하는 것으로 마무리 된다. \n얼그레이 대신에 쿠즈미 티를 사용하면 향기는 기본 재미난 식감까지 더블 콤보로 즐길 수 있다. \n쿠즈미 티에 버무린 #배샐러드 그릭요거트나 부라타치즈, 리코타치즈를 곁들이면 좋다.",
-  "ingredients": "배 1/2개(엊그제 먹고 남은)\n쿠즈미 티(얼그레이 등 가능)\n그릭요거트(원하는 만큼)\n꿀\n올리브오일 \n\n👉이렇게\n배는 먹기 좋은 크기로 썰어서 볼에 담고 쿠즈미 티 넣은 뒤 버무린다. 5분 정도 그대로 둔다. \n접시에 담고 그릭요거트 얹고 올리브오일과 꿀꿀꿀~🍯\n\nInspired by @kazzz0609\n\n#조식 #레시피 #미라클모닝 #배",
-  "steps": null,
-  "raw": "20241008 #조식다이어리 1199, 13도/맑음, 20분/운동(M) \n\n안성재 셰프의 통마늘 라면 레시피는 재미난 식감을 위해 라면 부스러기를 토핑하는 것으로 마무리 된다. \n얼그레이 대신에 쿠즈미 티를 사용하면 향기는 기본 재미난 식감까지 더블 콤보로 즐길 수 있다. \n\n쿠즈미 티에 버무린 #배샐러드 그릭요거트나 부라타치즈, 리코타치즈를 곁들이면 좋다. \n\n👉재료는\n배 1/2개(엊그제 먹고 남은)\n쿠즈미 티(얼그레이 등 가능)\n그릭요거트(원하는 만큼)\n꿀\n올리브오일 \n\n👉이렇게\n배는 먹기 좋은 크기로 썰어서 볼에 담고 쿠즈미 티 넣은 뒤 버무린다. 5분 정도 그대로 둔다. \n접시에 담고 그릭요거트 얹고 올리브오일과 꿀꿀꿀~🍯\n\nInspired by @kazzz0609\n\n#조식 #레시피 #미라클모닝 #배",
-  "image": "https://images.how-about-breakfast.com/images/1199.jpg",
+  "page_id": "배샐러드-배-2",
+  "image": "https://images.how-about-breakfast.com/images/11127.jpg",
   "gallery": [
-   "https://images.how-about-breakfast.com/images/1199.jpg",
-   "https://images.how-about-breakfast.com/images/1199_2.jpg",
-   "https://images.how-about-breakfast.com/images/1199_3.jpg",
-   "https://images.how-about-breakfast.com/images/1199_4.jpg"
+   "https://images.how-about-breakfast.com/images/11127.jpg",
+   "https://images.how-about-breakfast.com/images/11127_2.jpg",
+   "https://images.how-about-breakfast.com/images/11127_3.jpg",
+   "https://images.how-about-breakfast.com/images/11127_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1199.mp4",
   "_en": {
-   "hash": "80b6ff7c5624354df8282f67e37bf85fd0a4e55d6dba060651a478dacae92635",
-   "title": "Pear salad, pear",
-   "intro": "20241008 #breakfastdiary 1199, 13°C/clear, 20 min/exercise(M) \nChef Sung-jae Ahn's whole-garlic ramyeon recipe finishes with ramyeon crumbs sprinkled on top for a fun texture. \nSwap Earl Grey for Kusmi tea and you get a double combo of fragrance plus fun texture. \n#Pearsalad tossed in Kusmi tea — pairs well with Greek yogurt, burrata, or ricotta.",
-   "ingredients": "Pear, 1/2 (leftover from a couple days ago)\nKusmi tea (Earl Grey etc. also work)\nGreek yogurt (as much as you like)\nHoney\nOlive oil\n\n👉Like this\nCut the pear into bite-sized pieces, put in a bowl, add the Kusmi tea, and toss. Let it sit for about 5 minutes.\nPlate it, top with Greek yogurt, then olive oil and honey honey honey~🍯\n\nInspired by @kazzz0609\n\n#breakfast #recipe #miraclemorning #pear",
-   "steps": ""
-  },
-  "page_id": "배샐러드-배-3"
+   "hash": "f798a93e2fd18ab2dc0970402e7e582cffc5e7cc3fd1d4084f3ede0a08f21229",
+   "title": "Pear Salad Tossed in Kusmi Tea",
+   "intro": "20241008 #breakfastdiary 1199, 13°C/clear, 20min/exercise(M)\nChef Ahn Sung-jae's whole-garlic ramyeon recipe finishes with crumbled ramyeon sprinkled on top for a fun bit of texture.\nSwap Earl Grey for Kusmi tea and you get a double combo - fragrance plus that same fun texture.\n#Pearsalad tossed in Kusmi tea - pairs well with Greek yogurt, burrata, or ricotta.",
+   "ingredients": "- 1/2 pear\n- 1 tsp Kusmi tea\n- 1 tbsp Greek yogurt\n- 1 tsp honey\n- 1 tsp olive oil",
+   "steps": "1. Cut the pear into bite-sized pieces in a mixing bowl, add the Kusmi tea, and toss. Let it sit for about 5 minutes.\n2. Plate the pear from step 1, top with Greek yogurt, and drizzle with olive oil and honey."
+  }
  },
  {
   "date": "2024-10-07",
@@ -25578,7 +25569,14 @@
    "https://images.how-about-breakfast.com/images/1198_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1198.mp4",
-  "page_id": "히야시큐리-오이"
+  "page_id": "히야시큐리-오이",
+  "_en": {
+   "hash": "2f99ed7792c39e9204894a0f927fcc4777e19dc8076c7b908ad91401d594cd0e",
+   "title": "Hiyashi Kyuri (Chilled Cucumber Skewer)",
+   "intro": "20241007 #breakfastdiary 1198, 0°C/cloudy, 20min/exercise(M)\nAll week I kept looking at the cucumber sitting in the corner of the fridge, telling myself it'd probably still be fine, it's probably still fine - but when I pulled it out last night, it wasn't looking great.\nStill, after a night marinating in the dressing, it came back to life. Night really is the best teacher.\nA Japanese street food, #hiyashikyuri",
+   "ingredients": "- 1 cucumber\n- 1/4 lemon\n- Dressing (1 clove garlic, 3g ginger, 2 tsp sugar, 1/2 tsp salt, 2 tsp white wine vinegar, 1/2 tsp soy sauce, 2 tsp sesame oil)",
+   "steps": "1. Make the dressing.\n2. Skewer the cucumber lengthwise with a wooden chopstick through the center, and score both sides. This helps the dressing soak in better.\n3. Brush the cucumber with the dressing from step 1, add a slice of lemon, seal in a bag, and marinate overnight."
+  }
  },
  {
   "date": "2024-10-06",
@@ -51170,7 +51168,14 @@
   "steps": "1. 우유 1리터와 작은 플레인 요거트를 전기밥솥에 넣고 보온모드로 1시간 데운 후 전원 끈 상태로 12시간 그대로 둔다.\n2. 1의 묽은 요거트 면보에 싸서 하룻밤 정도 유청을 걸러낸댜. (꾸덕한 그릭요거트가 두 그릇 정도 나온다.)",
   "raw": "20221007, #조식다이어리 566, 12도/대체로맑음\n\n전기밥솥으로 만든 그릭요거트에 다진 피스타치오 \n\n우유 1리터, 작은 플레인 요거트를 전기밥솥에 넣고 보온 1시간, 끄고 10~12시간 그대로 둔다. 면보에 싸서 하룻밤 정도 유청을 걸러내면 꾸덕한 그릭요거트가 두 그릇 정도 나온다. \n\n#리빙포인트 걸러 낸 유청과 우유를 1:1로 섞고 레몬주스 2T를 더하면 #라씨 가 대 여섯 잔 나온다. 취향에 따라 달달구리(꿀)를 넣어 즐기시라, \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #그릭요거트 #피스타치오\n#breakfast #greekyogurt #pistachio ",
   "image": "https://images.how-about-breakfast.com/images/11126.jpg",
-  "page_id": "리빙포인트-라씨-그릭요거트"
+  "page_id": "리빙포인트-라씨-그릭요거트",
+  "_en": {
+   "hash": "73d3d20a67399331c2c25756088c573f3443cbb56db4fccf1f9ecec3201b8e86",
+   "title": "Greek Yogurt Made in a Rice Cooker",
+   "intro": "20221007, #breakfastdiary 566, 12°C/mostly clear\nGreek yogurt made in an electric rice cooker, topped with chopped pistachios\nPut 1 liter of milk and a small container of plain yogurt in the rice cooker, keep warm for 1 hour, then turn it off and leave it alone for 10-12 hours. Wrap in cheesecloth and strain the whey overnight for about two bowls' worth of thick Greek yogurt.\n#Livingtip: mix the strained whey with milk 1:1 and add 2 tbsp lemon juice for 5-6 glasses of #lassi. Sweeten with honey to taste and enjoy.",
+   "ingredients": "- 1 liter milk\n- 1 plain yogurt\n- 1 tsp pistachios",
+   "steps": "1. Put 1 liter of milk and a small plain yogurt in the rice cooker, warm on the keep-warm setting for 1 hour, then turn it off and leave it for 12 hours.\n2. Wrap the thin yogurt from step 1 in cheesecloth and strain the whey overnight. (Yields about two bowls of thick Greek yogurt.)"
+  }
  },
  {
   "date": "2022-10-06",
@@ -68635,7 +68640,14 @@
    "https://images.how-about-breakfast.com/images/233.jpg",
    "https://images.how-about-breakfast.com/images/233_2.jpg"
   ],
-  "page_id": "양송이샐러드-배신-할말없음"
+  "page_id": "양송이샐러드-배신-할말없음",
+  "_en": {
+   "hash": "0673e0167f4fd901f89de7b49f1530079bd799534acf72b70ce9475abb34b41d",
+   "title": "Button Mushroom Salad",
+   "intro": "20211008, #breakfastdiary 233, 17°C/foggy, 34min/exercise\nSlice button mushrooms, top with basil, then vinaigrette, parsley, pepper pepper pepper pepper. #mushroomsalad\nAn excerpt from Namuwiki's entry on 'betrayal':\nIts history runs deep enough that even early humans, let alone great apes and highly intelligent animals like orcas, engage in it. That's because the root cause of betrayal is nothing other than the survival instinct - people turn to it because it's one way to improve their own odds of survival. And yet, while it benefits the betrayer, it tends to spell ruin for everyone else in the community, which is why, since ancient times, a person who betrays others has been regarded as lower than an animal (in a word, not even fit to be called a beast), and even by modern standards it's counted among 'humanity's worst acts.'\nThen again, if you didn't even realize you were betraying someone - well, #nothingtosay",
+   "ingredients": "- 5 button mushrooms\n- Basil\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)\n- Parsley\n- Pepper",
+   "steps": "1. Thinly slice the mushrooms lengthwise and arrange on a plate.\n2. Top with basil, drizzle with dressing, then finish with chopped parsley and pepper."
+  }
  },
  {
   "date": "2021-10-07",
@@ -68682,7 +68694,14 @@
    "https://images.how-about-breakfast.com/images/232.jpg",
    "https://images.how-about-breakfast.com/images/232_2.jpg"
   ],
-  "page_id": "새우아보카도샐러드-메모리즈-모닝리추얼"
+  "page_id": "새우아보카도샐러드-메모리즈-모닝리추얼",
+  "_en": {
+   "hash": "99e8b88128c8932db802ffc6431914f5b371689f60896a32ce92f1156d564e97",
+   "title": "Shrimp Avocado Salad",
+   "intro": "20211007, #breakfastdiary 232, 17°C/cloudy, 26min/exercise\nShrimp pan-seared with olive oil, salt, and pepper, with avocado, cilantro, and almonds. #shrimpavocadosalad\n\nDespite COVID-19, the Busan International Film Festival runs through January 15th. Quite a while back, around this same time of year, I sat at the Suyeongman Yacht Stadium and watched Katsuhiro Otomo's #Memories. Looking it up, that was 25 years ago, at the very first Busan International Film Festival.",
+   "ingredients": "- 7 shrimp\n- 1/2 avocado\n- A handful of cilantro\n- 1 tbsp almonds\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)",
+   "steps": "1. Heat olive oil in a pan and sear the shrimp with salt and pepper.\n2. Peel the avocado and slice neatly.\n3. Plate the avocado and shrimp, then top with cilantro, almonds, and the dressing."
+  }
  },
  {
   "date": "2021-10-06",
@@ -86221,7 +86240,14 @@
   "image": "https://images.how-about-breakfast.com/images/pre-127.jpg",
   "page_id": "양송이-양송이샐러드-모닝",
   "essay_candidate": true,
-  "essay_reviewed": true
+  "essay_reviewed": true,
+  "_en": {
+   "hash": "0343a88e5151e85dbccc6b5155f04e9cea4692d65e0898a13b21a9dbcceb3041",
+   "title": "Button Mushroom Olive Salad",
+   "intro": "20201008, 'Full legalization of abortion!'\n'I am life itself!'\nCould those women possibly be what people call 'Megal' (a derogatory term for feminists)?\n(My Crazy Feminist Girlfriend, Min Ji-hyeong)\nA line from a book I happened to be reading these days. Arguing for abortion rights = 'Megal' - probably reflects how a lot of men actually see it.\nThe government has pre-announced a revision to the criminal code that would keep the crime of abortion on the books while allowing it unconditionally within 14 weeks of pregnancy.\nBut if someone only learns they're pregnant later - because of sexual assault, disability, being a minor - or can't afford the cost of ending the pregnancy, or even has serious health issues, once they're past 24 weeks they still can't legally end it, or face up to a year in prison or a fine of up to 2 million won under the abortion law.\nIt's a matter of life, and the first revision to this law in 66 years - so is this really as far as it should go?\nWash #buttonmushrooms clean, pat dry, and slice lengthwise. Olive oil, whole grain mustard, vinegar, minced onion dressing. #buttonmushroomsalad #breakfast #salad #morning #breakfastmenu",
+   "ingredients": "- 5 button mushrooms\n- 7 green olives\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard, 1 tbsp minced onion)",
+   "steps": "1. Dust off the mushrooms and slice lengthwise.\n2. Arrange the mushrooms from step 1 on a plate with sliced green olives tucked in between. Make the dressing and pour it over."
+  }
  },
  {
   "date": "2020-10-07",
