@@ -161,3 +161,10 @@ dialog::backdrop { background: rgba(0,0,0,.55); }
 .export-row { margin: 6px 0 0; }
 .card.resource { cursor: default; }
 .card.resource:hover { transform: none; }
+
+/* 구글 번역 위젯: 상단 버튼 자리, 구글이 끼워 넣는 상단 배너는 숨김 */
+.gt-wrap { flex: none; display: flex; align-items: center; min-height: 36px; }
+#google_translate_element .goog-te-gadget-simple { border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; background: var(--surface); font-size: .85rem; }
+#google_translate_element .goog-te-gadget-simple span { color: var(--text) !important; }
+iframe.skiptranslate, .goog-te-banner-frame { display: none !important; }
+body { top: 0 !important; }

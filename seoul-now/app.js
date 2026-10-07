@@ -1,4 +1,4 @@
-// 서울에서 지금 뭐하지 — 메인 로직
+// Seoul Now — 메인 로직
 // 보안: 외부 데이터는 textContent로만 출력(innerHTML 미사용), URL은 http/https만 허용.
 "use strict";
 
@@ -107,7 +107,7 @@
     const p = new URLSearchParams(location.search);
     const lang = p.get("lang");
     if (lang === "ko" || lang === "en") state.lang = lang;
-    else state.lang = (navigator.language || "").toLowerCase().startsWith("ko") ? "ko" : "en";
+    else state.lang = "ko";   // 기본 한국어(원문 언어). 다른 언어는 상단 번역 버튼(구글 번역)으로
     if (WHEN.includes(p.get("when"))) state.when = p.get("when");
     const cat = p.get("cat");
     if (cat && CATEGORY_GROUPS.some((g) => g.id === cat)) state.cat = cat;
@@ -166,7 +166,6 @@
     $("site-sub").textContent = t("siteSub");
     $("cal-link").textContent = t("calLink", Number(kstToday().slice(0, 4)) + 1);
     $("cal-link").href = `calendar/?lang=${state.lang}${snap ? `&snapshot=${snap.date}` : ""}`;
-    $("lang-toggle").textContent = t("langToggle");
     $("lbl-when").textContent = t("when");
     $("lbl-type").textContent = t("type");
     $("lbl-search").textContent = t("search");
@@ -519,7 +518,6 @@
     $("reset").addEventListener("click", () => {
       Object.assign(state, { when: "week", cat: "all", gu: "", free: false, stage: "s1", q: "", sort: "ending" }); update();
     });
-    $("lang-toggle").addEventListener("click", () => { state.lang = state.lang === "en" ? "ko" : "en"; update(); });
     const dlg = $("detail");
     $("d-close").addEventListener("click", () => dlg.close());
     dlg.addEventListener("click", (e) => { if (e.target === dlg) dlg.close(); }); // 바깥 클릭 시 닫기
