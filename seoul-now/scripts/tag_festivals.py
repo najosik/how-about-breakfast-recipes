@@ -176,6 +176,10 @@ def main() -> int:
     tags, new = tag_all(events, existing, args.retag, now)
     write_atomic(TAGS_PATH, {"rules_version": RULES_VERSION, "updatedAt": now, "count": len(tags), "tags": tags})
     print(f"tagged {new} new / {len(tags)} total")
+    # 1차 선별(관광부문)도 같은 수집 단계에서 계산(2차 선별 = 외국인 적합도는 1차 통과분에만 적용)
+    import select_tourism
+    sel = select_tourism.run()
+    print(f"tourism select: {sel['passed']} / {sel['count']} passed")
     return 0
 
 

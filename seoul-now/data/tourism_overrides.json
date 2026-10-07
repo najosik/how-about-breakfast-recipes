@@ -1,0 +1,1 @@
+{"_comment": "1차 선별 담당자 수정. pin: 시정 우선순위 등으로 반드시 포함, exclude: 제외. 항목은 행사 id 또는 {\"id\":..., \"note\":...}. exclude가 pin보다 우선.", "pin": [], "exclude": []}

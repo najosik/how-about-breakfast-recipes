@@ -6,7 +6,7 @@ const I18N = {
   en: {
     siteTitle: "What's On in Seoul",
     siteSub: "Culture events happening in Seoul — concerts, exhibitions, festivals & more",
-    calLink: (y) => `${y} festival calendar (forecast) →`,
+    calLink: () => "Calendar (guide & business planning) →",
     when: "When",
     whenToday: "Today",
     whenWeekend: "This weekend",
@@ -56,7 +56,7 @@ const I18N = {
   ko: {
     siteTitle: "서울에서 지금 뭐하지",
     siteSub: "공연 · 전시 · 축제 등 서울의 문화행사를 한눈에",
-    calLink: (y) => `${y} 축제 예상 캘린더 →`,
+    calLink: () => "캘린더 (안내·사업화 공용) →",
     when: "기간",
     whenToday: "오늘",
     whenWeekend: "이번 주말",
@@ -113,6 +113,7 @@ const CATEGORY_GROUPS = [
   { id: "festival", en: "Festivals", ko: "축제", prefix: "축제" },
   { id: "film", en: "Film", ko: "영화", match: ["영화"] },
   { id: "edu", en: "Classes & Experiences", ko: "교육/체험", match: ["교육/체험"] },
+  { id: "resource", en: "Tourism resources", ko: "관광자원", match: [] },   // 상시형 관광자원(수동 등록, data/tourism_resources.json)
   { id: "other", en: "Other", ko: "기타" },
 ];
 
@@ -141,16 +142,16 @@ const DISTRICT_EN = {
 // 외국인 적합도(festival_fit) 패널 문구. 기준 설명은 scripts/tag_festivals.py 규칙과 맞춘다.
 const FIT_I18N = {
   en: {
-    title: "Foreign-visitor fit",
-    filter: "Visitor-friendly only",
-    filterNote: (n) => `Visitor-friendly filter on: hid ${n.toLocaleString("en")} event${n === 1 ? "" : "s"} that need Korean, Korean ID booking, or are limited to certain groups.`,
-    lead: (n) => `We auto-tagged all ${n.toLocaleString("en")} events by how easy they are for visitors who don't speak Korean.`,
+    title: "Stage 2 selection (foreign-visitor fit)",
+    filter: "Foreign visitor view (stage 2)",
+    filterNote: (n) => `Foreign visitor view: showing stage-2 events only (${n.toLocaleString("en")} stage-1 events hidden in this view).`,
+    lead: (n) => `Applied to the ${n.toLocaleString("en")} events that passed stage 1. Pass: low language barrier, open to all, no Korean ID booking.`,
     statEasy: "Enjoyable without Korean",
     statBooking: "Need advance booking",
     statExcluded: "Not for visitors (excluded)",
     statPinned: "Staff picks",
-    toggle: "How we classify · full results",
-    foot: (v, d) => `Rule-based keyword tagging (rules ${v}, tagged ${d}). Each event is tagged once when collected; staff overrides take priority. Tags can be wrong — check the official page.`,
+    toggle: "Selection criteria · full results",
+    foot: (v, d) => `Rule-based keyword selection (rules ${v}, tagged ${d}). Each event is tagged once when collected; staff overrides take priority. Tags can be wrong — check the official page.`,
     rules: [
       { key: "language_barrier", name: "Language barrier",
         how: "Low if the format works without words (exhibitions, music, dance, food, light shows) or subtitles/interpreting are offered; high for talks, lectures, theater, book events and classes; mid otherwise.",
@@ -161,7 +162,7 @@ const FIT_I18N = {
       { key: "reservation_barrier", name: "Booking barrier",
         how: "Korean ID verification required (e.g. Seoul public reservation system) → excluded by default. Online booking/application/first-come → shown with a note. Otherwise none.",
         values: { none: "None", online: "Online booking", kr_auth_required: "Korean ID verification" } },
-      { key: "audience_restricted", name: "Audience restricted",
+      { key: "audience_restricted", name: "Audience",
         how: "Only for residents of a district, students, members, seniors or other specific groups → excluded by default. 'Anyone welcome' wording overrides this.",
         values: { true: "Restricted", false: "Open to all" } },
       { key: "experience_type", name: "Experience type",
@@ -170,16 +171,16 @@ const FIT_I18N = {
     ],
   },
   ko: {
-    title: "외국인 적합도",
-    filter: "외국인 적합도 적용",
-    filterNote: (n) => `외국인 적합도 적용 중: 한국어 이해 필요·국내 본인인증 예약·대상 제한 행사 ${n.toLocaleString("ko")}건을 숨겼습니다.`,
-    lead: (n) => `전체 ${n.toLocaleString("ko")}건의 행사를 '한국어를 몰라도 즐기기 쉬운가' 기준으로 자동 분류했습니다.`,
+    title: "2차 선별 (외국인 적합도)",
+    filter: "외국인용 보기 (2차 선별)",
+    filterNote: (n) => `외국인용 보기: 2차 선별 통과 행사만 표시합니다(1차 통과 중 ${n.toLocaleString("ko")}건 숨김).`,
+    lead: (n) => `1차 선별을 통과한 ${n.toLocaleString("ko")}건에 적용합니다. 통과: 언어 장벽 낮음 · 참여 대상 제한 없음 · 국내 본인인증 예약 아님.`,
     statEasy: "한국어 몰라도 OK",
     statBooking: "사전 예약 필요",
     statExcluded: "외국인 추천 제외",
     statPinned: "담당자 추천",
-    toggle: "분류 기준 · 전체 결과 보기",
-    foot: (v, d) => `규칙(키워드) 기반 자동 분류(규칙 ${v}, 분류 ${d}). 행사는 수집 시 1회만 분류하며 담당자 수정이 자동 결과보다 우선합니다. 분류가 틀릴 수 있으니 공식 페이지를 확인하세요.`,
+    toggle: "선별 기준 · 전체 결과 보기",
+    foot: (v, d) => `규칙(키워드) 기반 자동 선별(규칙 ${v}, 태깅 ${d}). 행사는 수집 시 1회만 태깅하며 담당자 수정이 자동 결과보다 우선합니다. 분류가 틀릴 수 있으니 공식 페이지를 확인하세요.`,
     rules: [
       { key: "language_barrier", name: "언어 장벽",
         how: "말이 필요 없는 형식(전시·음악·무용·음식·빛)이거나 자막·통역이 있으면 낮음, 강연·토크·연극·책·교육 프로그램은 높음, 그 밖은 중간.",
@@ -190,12 +191,56 @@ const FIT_I18N = {
       { key: "reservation_barrier", name: "예약 장벽",
         how: "국내 본인인증 예약(서울시 공공서비스예약 등) → 기본 제외. 온라인 예약·신청·선착순 → 안내와 함께 표시. 그 밖은 없음.",
         values: { none: "없음", online: "온라인 예약", kr_auth_required: "국내 본인인증" } },
-      { key: "audience_restricted", name: "참여 대상 제한",
+      { key: "audience_restricted", name: "참여 대상",
         how: "구민·주민·재학생·회원·어르신 등 특정 대상 한정 → 기본 제외. '누구나'·'방문객'으로 넓힌 경우는 제한 아님.",
         values: { true: "제한", false: "누구나" } },
       { key: "experience_type", name: "경험 유형",
         how: "제목·분류·프로그램에서 판별: K-컬처, 전통(궁궐·국악·한복 등), 음식, 빛·야경, 공연, 기타.",
         values: { traditional: "전통", kculture: "K-컬처", food: "음식", light: "빛·야경", performance: "공연", etc: "기타" } },
     ],
+  },
+};
+
+// 선별 흐름·1차 선별(관광부문) 문구. 1차 기준은 TF 확정 전 '예시 기준'.
+const STAGE_I18N = {
+  en: {
+    title: "Selection flow",
+    steps: { all: "Collected", s1: "Stage 1 · tourism", s2: "Stage 2 · foreign visitors" },
+    hint: "Tap a step to list events up to that step (all dates).",
+    basisLive: (d) => `Data as of ${d} (updates every 6 hours)`,
+    basisSnap: (d, label) => `Fixed snapshot: ${d} · ${label}`,
+    s1Toggle: "Stage 1 criteria (example) · results",
+    s1Lead: (n, p) => `${p.toLocaleString("en")} of ${n.toLocaleString("en")} collected events pass. Pass: at least one tourism-value point and two points in total. Example criteria until the task force decides.`,
+    groups: [
+      { key: "tourism_value", name: "Tourism value", how: "Tourist-dense district, festival category, held in past years (festival history)." },
+      { key: "citizen_demand", name: "Citizen demand", how: "Free, open to everyone, runs 30+ days." },
+      { key: "policy", name: "City policy priority", how: "Not automated. Reflected only when staff pin an event." },
+    ],
+    s1Foot: (v) => `Example criteria (rules ${v}). Staff overrides win: exclude > pin > rules.`,
+    stageNote: { all: "Showing all collected events.", s1: "Showing stage-1 (tourism) events: the default view for residents and visitors.", s2: "" },
+    export: "Download selected list (schema.org Event JSON-LD)",
+    exported: (n) => `Downloaded ${n} events.`,
+    resSchedule: "Schedule",
+    resNote: "Tourism resources are added manually by staff.",
+  },
+  ko: {
+    title: "선별 흐름",
+    steps: { all: "수집", s1: "1차 관광부문", s2: "2차 외국인 적합" },
+    hint: "단계를 누르면 그 단계까지 선별된 목록을 봅니다(전체 기간 기준 건수).",
+    basisLive: (d) => `기준 일시 ${d} (6시간마다 갱신)`,
+    basisSnap: (d, label) => `기준 일시 ${d} 고정 · ${label}`,
+    s1Toggle: "1차 선별 기준 (예시 기준) · 결과 보기",
+    s1Lead: (n, p) => `수집 ${n.toLocaleString("ko")}건 중 ${p.toLocaleString("ko")}건 통과. 통과 조건: 관광 가치 1개 이상 + 합계 2개 이상. TF에서 세부 기준을 정하기 전까지 쓰는 예시 기준입니다.`,
+    groups: [
+      { key: "tourism_value", name: "관광 가치", how: "관광 밀집 자치구, 축제 분류, 반복 개최(축제 이력 기준)." },
+      { key: "citizen_demand", name: "시민 수요", how: "무료, '누구나' 등 개방형 대상, 30일 이상 장기 운영." },
+      { key: "policy", name: "시정 우선순위", how: "자동화하지 않습니다. 담당자 고정(pin)으로만 반영합니다." },
+    ],
+    s1Foot: (v) => `예시 기준(규칙 ${v}). 담당자 수정이 규칙보다 우선: 제외 > 고정 > 규칙.`,
+    stageNote: { all: "수집된 전체 행사를 표시합니다.", s1: "1차 선별(관광부문) 통과 행사를 표시합니다. 관광·시민 공용 기본 화면입니다.", s2: "" },
+    export: "선별 목록 내려받기 (schema.org Event JSON-LD)",
+    exported: (n) => `${n}건을 내려받았습니다.`,
+    resSchedule: "일정",
+    resNote: "관광자원은 담당자가 수동으로 등록합니다.",
   },
 };

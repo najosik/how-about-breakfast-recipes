@@ -16,9 +16,9 @@
       conf: { confirmed: "Confirmed", high: "Likely", medium: "Probable", low: "Uncertain" },
       confHow: {
         confirmed: "Next year's dates are already published",
-        high: "Held 3+ years, start dates within 3 weeks",
-        medium: "Held 2+ years, start dates within 5 weeks",
-        low: "Recurring, but timing varies",
+        high: "Held 3+ years, start dates within 21 days",
+        medium: "Held 2+ years, within 35 days",
+        low: "Timing varies",
       },
       all: "All", likely: "Confirmed + likely",
       months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
@@ -35,6 +35,14 @@
       source: "Source: Seoul Open Data Plaza (Seoul culture events). Festival names are published in Korean only.",
       loadError: "Couldn't load the calendar. Please try again later.",
       langToggle: "한국어",
+      funnel: "How the forecast is built",
+      funnelSteps: { records: "Festival records", series: "Grouped as the same festival", recurring: "Recurring festivals only", predicted: "Forecast for the year" },
+      bars: "Festivals by month", barsNote: (n) => `April–May: ${n} festivals`, barsTable: "Show as table",
+      views: { guide: "Guide view", biz: "Business view" },
+      guideDates: (a, b) => `Collect info by ${a} (D-60) · Publish by ${b} (D-30)`,
+      bizDate: (a, late) => `Start preparing ${a} (D-180)${late ? " · Behind schedule" : ""}`,
+      basisBtn: "Why this date?", basisStarts: "Recent start dates", basisMedian: (m) => `Median ${m}`, basisLatest: (m) => `Latest ${m}`,
+      basisPart: (p, m) => `→ ${p} ${m}`, basisLive: (d) => `Forecast built ${d} (updated weekly)`, basisSnap: (d, l) => `Fixed snapshot: ${d} · ${l}`,
     },
     ko: {
       title: (y) => `${y} 서울 축제 예상 캘린더`,
@@ -45,9 +53,9 @@
       conf: { confirmed: "확정", high: "예상 높음", medium: "예상 보통", low: "예상 낮음" },
       confHow: {
         confirmed: "내년 일정이 이미 공개됨",
-        high: "3년 이상 개최, 시작일 차이 3주 이내",
-        medium: "2년 이상 개최, 시작일 차이 5주 이내",
-        low: "반복 개최되지만 시기가 들쭉날쭉",
+        high: "3년 이상 개최, 시작일 차이 21일 이내",
+        medium: "2년 이상 개최, 35일 이내",
+        low: "시기가 들쭉날쭉",
       },
       all: "전체", likely: "확정 + 예상 높음",
       months: ["1월", "2월", "3월", "4월", "5월", "6월", "7월", "8월", "9월", "10월", "11월", "12월"],
@@ -64,10 +72,19 @@
       source: "출처: 서울 열린데이터광장 (서울시 문화행사 정보)",
       loadError: "캘린더를 불러오지 못했습니다. 잠시 후 다시 시도해 주세요.",
       langToggle: "English",
+      funnel: "예측 흐름",
+      funnelSteps: { records: "축제 기록", series: "같은 축제끼리 묶기", recurring: "반복 축제만 남기기", predicted: "예측" },
+      bars: "월별 축제 분포", barsNote: (n) => `4~5월 ${n}건`, barsTable: "표로 보기",
+      views: { guide: "안내 보기", biz: "사업화 보기" },
+      guideDates: (a, b) => `취합 ${a} (D-60) · 배포 ${b} (D-30)`,
+      bizDate: (a, late) => `착수 ${a} (D-180)${late ? " · 착수 지연" : ""}`,
+      basisBtn: "예측 근거", basisStarts: "최근 시작일", basisMedian: (m) => `중앙값 ${m}`, basisLatest: (m) => `최근 개최 ${m}`,
+      basisPart: (p, m) => `→ ${m} ${p}`, basisLive: (d) => `예측 생성 ${d} (매주 갱신)`, basisSnap: (d, l) => `기준 일시 ${d} 고정 · ${l}`,
     },
   };
-  const state = { lang: "en", filter: "all" };
+  const state = { lang: "en", filter: "all", view: "guide", snapshot: "" };
   let data = null;
+  let snap = null;   // ?snapshot=날짜 → data/snapshots/날짜/ 의 예측을 고정해 보여 줌
   const t = () => T[state.lang];
 
   function el(tag, props = {}, ...children) {
@@ -99,11 +116,29 @@
     state.lang = lang === "ko" || lang === "en" ? lang
       : (navigator.language || "").toLowerCase().startsWith("ko") ? "ko" : "en";
     if (p.get("show") === "likely") state.filter = "likely";
+    if (p.get("view") === "biz") state.view = "biz";
+    const sp = p.get("snapshot");
+    state.snapshot = sp && /^\d{4}-\d{2}-\d{2}$/.test(sp) ? sp : "";
   }
   function writeUrl() {
     const p = new URLSearchParams({ lang: state.lang });
     if (state.filter !== "all") p.set("show", state.filter);
+    if (state.view !== "guide") p.set("view", state.view);
+    if (snap) p.set("snapshot", snap.date);
     history.replaceState(null, "", `${location.pathname}?${p}${location.hash}`);
+  }
+
+  /** 예상 시작일: 확정이면 실제 시작일, 아니면 초 5일·중순 15일·하순 25일 */
+  function expectedStart(i, year) {
+    if (i.confidence === "confirmed" && isDate(i.start)) return i.start;
+    const d = { early: 5, mid: 15, late: 25 }[i.part] || 15;
+    return `${year}-${String(i.month).padStart(2, "0")}-${String(d).padStart(2, "0")}`;
+  }
+  function shift(iso, days) { const d = new Date(iso + "T00:00:00Z"); d.setUTCDate(d.getUTCDate() + days); return d.toISOString().slice(0, 10); }
+  const dot = (iso) => iso.replaceAll("-", ".");
+  function today() {
+    if (snap && isDate(String(snap.date))) return snap.date;
+    return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Seoul" }).format(new Date());
   }
 
   function validItem(i) {
@@ -125,9 +160,63 @@
       el("h3", { text: i.name }),
       el("p", { class: "when", text: when }),
       el("p", { class: "where", text: [i.place, i.district].filter((x) => typeof x === "string" && x).join(" · ") }),
+      (() => {
+        const start = expectedStart(i, data.year);
+        if (state.view === "biz") {
+          const s = shift(start, -180);
+          return el("p", { class: "plan" + (s < today() ? " late" : ""), text: L.bizDate(dot(s), s < today()) });
+        }
+        return el("p", { class: "plan", text: L.guideDates(dot(shift(start, -60)), dot(shift(start, -30))) });
+      })(),
+      basisEl(i),
       past ? el("p", { class: "past", text: `${L.past} ${past}` }) : null,
       i.lunar === true ? el("p", { class: "past", text: `※ ${L.lunar}` }) : null,
       link ? el("a", { class: "ext", href: link, target: "_blank", rel: "noopener noreferrer", text: L.official }) : null);
+  }
+
+  function basisEl(i) {
+    const b = i.basis;
+    if (!b || !Array.isArray(b.starts) || !b.starts.length) return null;
+    const L = t();
+    const md = (s) => (/^\d{2}-\d{2}$/.test(s) ? s.replace("-", ".") : "");   // 보고서 표기(04.27)
+    const starts = b.starts.filter((s) => s && /^\d{2}-\d{2}$/.test(s.md)).map((s) => `${s.y}: ${md(s.md)}`).join(" · ");
+    const mid = /^\d{2}-\d{2}$/.test(b.median || "") ? (b.method === "latest" ? L.basisLatest(md(b.median)) : L.basisMedian(md(b.median))) : "";
+    return el("details", { class: "basis-detail" }, el("summary", { text: L.basisBtn }),
+      el("ol", { class: "basis-steps" },
+        el("li", { text: `${L.basisStarts}: ${starts}` }),
+        el("li", { text: mid }),
+        el("li", { text: L.basisPart(L.part[i.part], L.monthLong[i.month - 1]) }),
+        el("li", {}, el("span", { class: "conf " + i.confidence, text: L.conf[i.confidence] }), document.createTextNode(` ${typeof b.reason === "string" ? b.reason.slice(0, 120) : ""}`))));
+  }
+
+  function renderBars() {
+    const L = t();
+    const counts = Array.from({ length: 12 }, (_, m) => data.items.filter((i) => i.month === m + 1).length);
+    const max = Math.max(1, ...counts);
+    const hot = counts[3] + counts[4];
+    $("bars-title").textContent = L.bars;
+    if (state.lang === "ko") $("bars-title").textContent = `${L.bars} (월)`;
+    $("bars-note").textContent = L.barsNote(hot);
+    $("bars").replaceChildren(...counts.map((n, m) => {
+      const hi = m === 3 || m === 4;
+      const bar = el("span", { class: "bar" + (hi ? " hi" : "") });
+      bar.style.height = `${(n / max) * 100}%`;   // CSSOM(인라인 style 속성은 CSP로 막힘)
+      return el("a", { class: "bar-col" + (hi ? " hi" : ""), href: `#m${m + 1}`, role: "listitem", "aria-label": `${L.monthLong[m]} ${L.count(n)}`, "data-tip": `${L.monthLong[m]} · ${L.count(n)}` },
+        el("span", { class: "bar-val", text: hi ? String(n) : "" }), el("span", { class: "bar-track" }, bar), el("span", { class: "bar-lbl", text: state.lang === "ko" ? String(m + 1) : L.months[m] }));
+    }));
+    $("bars-table-toggle").textContent = L.barsTable;
+    $("bars-table").replaceChildren(el("table", {}, el("tbody", {}, ...counts.map((n, m) => el("tr", {}, el("th", { text: L.monthLong[m] }), el("td", { text: String(n) }))))));
+  }
+
+  function renderFunnel() {
+    const L = t();
+    $("funnel-title").textContent = L.funnel;
+    const f = data.funnel || {};
+    const steps = ["records", "series", "recurring", "predicted"].filter((k) => Number.isInteger(f[k]));
+    $("funnel").replaceChildren(...steps.map((k, i) => el("li", {},
+      el("span", { class: "f-name", text: k === "predicted" ? `${data.year} ${L.funnelSteps[k]}` : L.funnelSteps[k] }),
+      el("strong", { class: "f-num", text: f[k].toLocaleString(state.lang) }),
+      i < steps.length - 1 ? el("span", { class: "f-arrow", "aria-hidden": "true", text: "→" }) : null)));
   }
 
   function render() {
@@ -142,6 +231,17 @@
     $("lang-toggle").textContent = L.langToggle;
     $("about-title").textContent = L.aboutTitle;
     if (!data) return;
+    const when = snap ? snap.events_at : data.generatedAt;
+    const d = new Date(when);
+    const stamp = isNaN(d) ? "-" : d.toLocaleString(state.lang === "ko" ? "ko-KR" : "en-US", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST";
+    $("basis").textContent = snap ? L.basisSnap(stamp, snap.label) : L.basisLive(stamp);
+    $("basis").classList.toggle("snap", !!snap);
+    $("back").href = `../?lang=${state.lang}${snap ? `&snapshot=${snap.date}` : ""}`;
+    renderFunnel();
+    renderBars();
+    $("view-chips").replaceChildren(...["guide", "biz"].map((k) =>
+      el("button", { type: "button", class: "chip" + (state.view === k ? " active" : ""), "aria-pressed": String(state.view === k),
+        onclick: () => { state.view = k; writeUrl(); render(); }, text: L.views[k] })));
     $("about-text").textContent = L.about(data.historyCount);
     $("legend").replaceChildren(...CONFS.map((c) => el("li", {},
       el("span", { class: "conf " + c, text: L.conf[c] }),
@@ -170,14 +270,23 @@
     readUrl();
     $("lang-toggle").addEventListener("click", () => { state.lang = state.lang === "en" ? "ko" : "en"; writeUrl(); render(); });
     render();
-    const year = kstYear() + 1;
+    if (state.snapshot) {
+      try {
+        const r = await fetch("../data/snapshots/index.json", { cache: "no-cache", credentials: "omit" });
+        const idx = r.ok ? await r.json() : null;
+        const hit = idx && Array.isArray(idx.snapshots) && idx.snapshots.find((x) => x && x.date === state.snapshot);
+        if (hit) snap = { date: hit.date, label: String(hit.label || "").slice(0, 60), events_at: String(hit.events_at || "") };
+      } catch { snap = null; }
+    }
+    const year = snap ? Number(snap.date.slice(0, 4)) + 1 : kstYear() + 1;
     try {
-      const res = await fetch(`../data/calendar_${year}.json`, { cache: "no-cache", credentials: "omit" });
+      const res = await fetch(`../data/${snap ? `snapshots/${snap.date}/` : ""}calendar_${year}.json`, { cache: "no-cache", credentials: "omit" });
       if (!res.ok) throw new Error(String(res.status));
       const json = await res.json();
       const items = Array.isArray(json.items) ? json.items.filter(validItem) : [];
       data = { year: Number.isInteger(json.year) ? json.year : year, items,
-        historyCount: Number.isInteger(json.historyCount) ? json.historyCount : 0, generatedAt: String(json.generatedAt || "") };
+        historyCount: Number.isInteger(json.historyCount) ? json.historyCount : 0, generatedAt: String(json.generatedAt || ""),
+        funnel: json.funnel && typeof json.funnel === "object" ? json.funnel : null };
       render();
       if (location.hash) document.getElementById(location.hash.slice(1))?.scrollIntoView();
     } catch {

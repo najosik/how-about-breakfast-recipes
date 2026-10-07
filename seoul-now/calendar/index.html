@@ -27,6 +27,21 @@
   </header>
 
   <main class="wrap">
+    <p id="basis" class="basis"></p>
+
+    <!-- 예측 흐름(보고서 10쪽): 축제 기록 → 같은 축제끼리 묶기 → 반복 축제만 → 예측 -->
+    <section class="cal-funnel" aria-labelledby="funnel-title">
+      <h2 id="funnel-title"></h2>
+      <ol id="funnel" class="funnel"></ol>
+    </section>
+
+    <!-- 월별 분포(보고서 11쪽): 4~5월 강조 -->
+    <section class="cal-bars" aria-labelledby="bars-title">
+      <div class="bars-head"><h2 id="bars-title"></h2><p id="bars-note" class="bars-note"></p></div>
+      <div id="bars" class="bars" role="list"></div>
+      <details class="bars-table"><summary id="bars-table-toggle"></summary><div id="bars-table"></div></details>
+    </section>
+
     <section class="cal-about" aria-labelledby="about-title">
       <h2 id="about-title"></h2>
       <p id="about-text"></p>
@@ -34,7 +49,10 @@
     </section>
 
     <section class="cal-controls" aria-label="Filters">
-      <div id="conf-chips" class="chips" role="group"></div>
+      <div class="ctl-row">
+        <div id="conf-chips" class="chips" role="group"></div>
+        <div id="view-chips" class="chips view" role="group"></div>
+      </div>
       <nav id="month-nav" class="month-nav" aria-label="Months"></nav>
     </section>
 

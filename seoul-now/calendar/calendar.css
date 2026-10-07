@@ -1,7 +1,7 @@
 /* 축제 예상 캘린더: 공통 토큰은 ../styles.css */
-:root { --conf-confirmed: #1d7a4f; --conf-high: #2456a6; --conf-medium: #8a5a00; --conf-low: #6b675f; }
+:root { --conf-confirmed: #1d7a4f; --conf-high: #2456a6; --conf-medium: #8a5a00; --conf-low: #6b675f; --bar: #cfcac0; }
 @media (prefers-color-scheme: dark) {
-  :root { --conf-confirmed: #5fcf98; --conf-high: #7fa8ff; --conf-medium: #f0b75a; --conf-low: #a39e95; }
+  :root { --conf-confirmed: #5fcf98; --conf-high: #7fa8ff; --conf-medium: #f0b75a; --conf-low: #a39e95; --bar: #5c5850; }
 }
 .back-link { display: inline-block; margin-bottom: 6px; font-size: .88rem; color: var(--muted); text-decoration: none; }
 .back-link:hover { text-decoration: underline; }
@@ -36,3 +36,36 @@
 .conf.medium { color: var(--conf-medium); } .conf.low { color: var(--conf-low); }
 .fest .ext { justify-self: start; margin-top: 4px; padding: 4px 10px; font-size: .82rem; }
 .fest .ext:first-child { background: none; }
+
+/* 기준 일시·예측 흐름·월별 분포 */
+.basis { margin: 16px 0 0; font-weight: 700; font-size: .95rem; }
+.basis.snap { color: var(--hot); }
+.cal-funnel, .cal-bars { margin-top: 16px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface); box-shadow: var(--shadow); display: grid; gap: 10px; }
+.cal-funnel h2, .cal-bars h2 { margin: 0; font-size: 1.05rem; }
+.funnel { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.funnel li { display: flex; align-items: baseline; gap: 6px; }
+.funnel .f-name { font-size: .85rem; color: var(--muted); }
+.funnel .f-num { font-size: 1.2rem; font-variant-numeric: tabular-nums; }
+.funnel li:last-child .f-num { color: var(--accent); }
+.funnel .f-arrow { color: var(--muted); margin: 0 4px; }
+.bars-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 12px; }
+.bars-note { margin: 0; font-weight: 700; }
+.bars { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 2px; height: 160px; align-items: end; }
+.bar-col { display: grid; grid-template-rows: 18px 1fr 20px; height: 100%; text-decoration: none; color: var(--muted); position: relative; min-width: 0; }
+.bar-val { font-size: .78rem; font-weight: 700; text-align: center; color: var(--text); font-variant-numeric: tabular-nums; }
+.bar-track { display: flex; align-items: flex-end; justify-content: center; border-bottom: 1px solid var(--line); }
+.bar { display: block; width: min(70%, 28px); background: var(--bar); border-radius: 4px 4px 0 0; min-height: 2px; }
+.bar.hi { background: var(--accent); }
+.bar-lbl { font-size: .72rem; text-align: center; padding-top: 4px; white-space: nowrap; }
+.bar-col.hi .bar-lbl { color: var(--text); font-weight: 700; }
+.bar-col:hover::after, .bar-col:focus-visible::after { content: attr(data-tip); position: absolute; bottom: calc(100% - 10px); left: 50%; transform: translateX(-50%);
+  background: var(--text); color: var(--surface); font-size: .75rem; padding: 3px 8px; border-radius: 6px; white-space: nowrap; z-index: 2; pointer-events: none; }
+.bars-table summary { cursor: pointer; font-size: .85rem; color: var(--on); }
+.bars-table table { margin-top: 6px; border-collapse: collapse; font-size: .85rem; }
+.bars-table th, .bars-table td { padding: 2px 12px 2px 0; text-align: left; font-weight: 400; font-variant-numeric: tabular-nums; }
+.ctl-row { display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; }
+.fest .plan { margin: 0; font-size: .85rem; font-weight: 600; font-variant-numeric: tabular-nums; }
+.fest .plan.late { color: var(--hot); }
+.basis-detail summary { cursor: pointer; font-size: .82rem; color: var(--on); }
+.basis-steps { margin: 4px 0 0; padding-left: 1.1rem; font-size: .8rem; color: var(--muted); display: grid; gap: 2px; }
+.legend .conf { white-space: nowrap; }

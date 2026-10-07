@@ -79,6 +79,7 @@ def forecast(festivals: dict, target: int) -> list[dict]:
             groups[key].append(ev)
 
     out = []
+    funnel = {"records": len(festivals), "series": len(groups), "recurring": 0, "predicted": 0}
     for key, evs in groups.items():
         evs.sort(key=lambda e: e["start"])
         by_year: dict[int, list[dict]] = defaultdict(list)
@@ -98,20 +99,34 @@ def forecast(festivals: dict, target: int) -> list[dict]:
                         "month": int(e["start"][5:7]), "part": part_of_month(int(e["start"][8:10])),
                         "start": e["start"], "end": e["end"]})
             continue
-        if len(past) < 2 or max(past) < target - 2:
+        if len(past) < 2:
+            continue
+        funnel["recurring"] += 1
+        if max(past) < target - 2:
             continue
         recent = [past[y] for y in sorted(past)[-3:]]
         days = [doy(e["start"]) for e in recent]
-        if max(days) - min(days) > 180:   # 12월↔1월 걸침
-            days = [d + 365 if d < 180 else d for d in days]
+        # 12월↔1월에 걸친 축제만 연도 경계를 넘겨 계산(모든 시작일이 11~2월일 때). 4월·10월처럼 벌어진 경우는 그대로
+        if max(days) - min(days) > 180 and all(d >= 305 or d <= 59 for d in days):
+            days = [d + 365 if d <= 59 else d for d in days]
         spread = max(days) - min(days)
-        mid = int(median(days)) % 365 or 365
+        # 개최 연도가 2개뿐인데 시기가 90일 넘게 다르면 중앙값(두 날의 중간)은 의미가 없어 최근 개최 시기를 쓴다
+        use_latest = len(days) == 2 and spread > 90
+        mid = (days[-1] if use_latest else int(median(days))) % 365 or 365
         d = date(2001, 1, 1) + timedelta(days=mid - 1)
         conf = "high" if len(past) >= 3 and spread <= 21 else "medium" if spread <= 35 else "low"
         dur = int(median((date.fromisoformat(e["end"]) - date.fromisoformat(e["start"])).days + 1 for e in recent))
+        reason = f"{len(past)}개 연도 개최, 최근 시작일 차이 {spread}일 → " + {
+            "high": "예상 높음(3년 이상, 21일 이내)", "medium": "예상 보통(2년 이상, 35일 이내)", "low": "예상 낮음(시기가 들쭉날쭉)"}[conf]
+        if use_latest:
+            reason += " · 두 해의 시기가 크게 달라 최근 개최 시기 기준"
         out.append({**base, "status": "forecast", "confidence": conf, "month": d.month, "part": part_of_month(d.day),
-                    "spread_days": spread, "duration_days": dur, "years": len(past)})
+                    "spread_days": spread, "duration_days": dur, "years": len(past),
+                    "basis": {"starts": [{"y": int(e["start"][:4]), "md": e["start"][5:]} for e in recent],
+                              "median": f"{d.month:02d}-{d.day:02d}", "method": "latest" if use_latest else "median", "reason": reason}})
     rank = {"confirmed": 0, "high": 1, "medium": 2, "low": 3}
+    funnel["predicted"] = len(out)
+    forecast.funnel = funnel   # 마지막 실행의 단계별 건수(B1 예측 흐름 패널용)
     out.sort(key=lambda x: (x["month"], ["early", "mid", "late"].index(x["part"]), rank[x["confidence"]], x["name"]))
     return out
 
@@ -119,16 +134,20 @@ def forecast(festivals: dict, target: int) -> list[dict]:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--year", type=int, default=datetime.now(KST).year + 1)
+    ap.add_argument("--data-dir", type=Path, default=DATA, help="festival_history.json이 있고 결과를 쓸 폴더(스냅샷용)")
     args = ap.parse_args()
+    data_dir = args.data_dir.resolve()
+    if DATA.resolve() not in (data_dir, *data_dir.parents):
+        return 2   # data/ 밖에는 쓰지 않음
     if not 2000 <= args.year <= 2100:
         return 2
-    hist = json.loads(HISTORY_PATH.read_text("utf-8"))
+    hist = json.loads((data_dir / "festival_history.json").read_text("utf-8"))
     items = forecast(hist.get("festivals", {}), args.year)
-    out = DATA / f"calendar_{args.year}.json"
+    out = data_dir / f"calendar_{args.year}.json"
     counts = {c: sum(1 for i in items if i["confidence"] == c) for c in ("confirmed", "high", "medium", "low")}
     payload = {"year": args.year, "generatedAt": datetime.now(KST).isoformat(timespec="seconds"),
                "historyUpdatedAt": hist.get("updatedAt", ""), "historyCount": len(hist.get("festivals", {})),
-               "counts": counts, "items": items}
+               "counts": counts, "funnel": forecast.funnel, "items": items}
     tmp = out.with_suffix(".tmp")
     tmp.write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), "utf-8")
     tmp.replace(out)

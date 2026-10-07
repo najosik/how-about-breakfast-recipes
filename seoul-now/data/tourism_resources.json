@@ -1,0 +1,9 @@
+{
+  "_comment": "관광자원(상시형) 수동 등록. 사실관계가 확인되지 않은 정보(개관일 등)는 넣지 않고 '일정 미정'으로 둔다.",
+  "items": [
+    { "id": "res-seoul-arena", "name": { "ko": "서울아레나 (창동)", "en": "Seoul Arena (Changdong)" }, "district": "도봉구",
+      "kind": { "ko": "공연장(조성 중)", "en": "Concert venue (in development)" },
+      "schedule": { "ko": "일정 미정", "en": "Schedule to be confirmed" },
+      "note": { "ko": "수동 등록 예시 항목입니다. 개관 일정 등은 확인 후 반영합니다.", "en": "Example entry added manually. Opening details will be added once confirmed." } }
+  ]
+}

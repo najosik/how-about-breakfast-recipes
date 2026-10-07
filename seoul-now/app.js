@@ -9,11 +9,16 @@
   const $ = (id) => document.getElementById(id);
 
   const state = {
-    lang: "en", when: "week", cat: "all", gu: "", free: false, fit: false, q: "", sort: "ending",
+    lang: "en", when: "week", cat: "all", gu: "", free: false, stage: "s1", q: "", sort: "ending",
     shown: PAGE,
   };
   let data = { events: [] };
   let fit = null;
+  let sel = null;          // 1차 선별 결과 { select, rulesVersion, passed }
+  let resources = [];      // 관광자원(상시형, 수동 등록)
+  let snap = null;         // 보고용 기준일 스냅샷 { date, label, events_at } — ?snapshot=날짜
+  const STAGES = ["all", "s1", "s2"];
+  const base = () => (snap ? `data/snapshots/${snap.date}/` : "data/");
   let fitHiddenCount = 0;   // { tags, overrides, rulesVersion, updatedAt } — 없으면 패널 숨김
   let filtered = [];
 
@@ -25,6 +30,7 @@
 
   /** 한국 시간(Asia/Seoul) 기준 오늘 날짜 'YYYY-MM-DD' */
   function kstToday() {
+    if (snap && /^\d{4}-\d{2}-\d{2}/.test(snap.events_at)) return snap.events_at.slice(0, 10);   // 스냅샷: 기준일을 오늘로
     return new Intl.DateTimeFormat("en-CA", {
       timeZone: "Asia/Seoul", year: "numeric", month: "2-digit", day: "2-digit",
     }).format(new Date());
@@ -108,7 +114,10 @@
     const gu = p.get("gu");
     if (gu && Object.hasOwn(DISTRICT_EN, gu)) state.gu = gu;
     state.free = p.get("free") === "1";
-    state.fit = p.get("fit") === "1";
+    const st = p.get("stage");
+    state.stage = STAGES.includes(st) ? st : p.get("fit") === "1" ? "s2" : "s1";   // fit=1: 예전 주소 호환
+    const sp = p.get("snapshot");
+    state.snapshot = sp && /^\d{4}-\d{2}-\d{2}$/.test(sp) ? sp : "";
     if (SORTS.includes(p.get("sort"))) state.sort = p.get("sort");
     state.q = (p.get("q") || "").slice(0, 50);
   }
@@ -119,7 +128,8 @@
     if (state.cat !== "all") p.set("cat", state.cat);
     if (state.gu) p.set("gu", state.gu);
     if (state.free) p.set("free", "1");
-    if (state.fit) p.set("fit", "1");
+    if (state.stage !== "s1") p.set("stage", state.stage);
+    if (snap) p.set("snapshot", snap.date);
     if (state.sort !== "ending") p.set("sort", state.sort);
     if (state.q) p.set("q", state.q);
     history.replaceState(null, "", `${location.pathname}?${p}`);
@@ -130,10 +140,11 @@
     const today = kstToday();
     const [from, to] = range(state.when, today);
     const q = state.q.trim().toLowerCase();
-    const useFit = state.fit && fit;
-    const sets = useFit ? fitSets() : null;
     fitHiddenCount = 0;
+    const sets = fit ? fitSets() : null;
+    if (state.cat === "resource") { filtered = []; return; }   // 관광자원 탭은 별도 목록
     filtered = data.events.filter((ev) => {
+      if (!stagePass(ev, state.stage, sets)) { if (state.stage === "s2" && stagePass(ev, "s1", sets)) fitHiddenCount++; return false; }
       if (ev.end < from || ev.start > to) return false;
       if (state.cat !== "all" && groupOf(ev.category) !== state.cat) return false;
       if (state.gu && ev.district !== state.gu) return false;
@@ -142,7 +153,6 @@
         const hay = `${ev.title} ${ev.place} ${ev.org} ${ev.category} ${CATEGORY_EN[ev.category] || ""} ${DISTRICT_EN[ev.district] || ""}`.toLowerCase();
         if (!hay.includes(q)) return false;
       }
-      if (useFit && fitHidden(ev, sets)) { fitHiddenCount++; return false; }
       return true;
     });
     const key = state.sort === "starting" ? "start" : "end";
@@ -155,7 +165,7 @@
     $("site-title").textContent = t("siteTitle");
     $("site-sub").textContent = t("siteSub");
     $("cal-link").textContent = t("calLink", Number(kstToday().slice(0, 4)) + 1);
-    $("cal-link").href = `calendar/?lang=${state.lang}`;
+    $("cal-link").href = `calendar/?lang=${state.lang}${snap ? `&snapshot=${snap.date}` : ""}`;
     $("lang-toggle").textContent = t("langToggle");
     $("lbl-when").textContent = t("when");
     $("lbl-type").textContent = t("type");
@@ -164,7 +174,7 @@
     $("lbl-sort").textContent = t("sort");
     $("lbl-free").textContent = t("freeOnly");
     $("lbl-fit").textContent = FIT_I18N[state.lang].filter;
-    $("fitonly").checked = state.fit;
+    $("fitonly").checked = state.stage === "s2";
     $("q").placeholder = t("searchPh");
     $("q").value = state.q;
     $("free").checked = state.free;
@@ -238,8 +248,17 @@
     const today = kstToday();
     $("count").textContent = t("results", filtered.length);
     const note = $("fit-note");
-    note.hidden = !(state.fit && fit);
-    note.textContent = note.hidden ? "" : FIT_I18N[state.lang].filterNote(fitHiddenCount);
+    const SL = STAGE_I18N[state.lang];
+    note.textContent = state.stage === "s2" ? FIT_I18N[state.lang].filterNote(fitHiddenCount) : SL.stageNote[state.stage];
+    note.hidden = !note.textContent || state.cat === "resource";
+    $("export").hidden = state.cat === "resource" || !filtered.length;
+    if (state.cat === "resource") {
+      $("count").textContent = t("results", resources.length);
+      $("list").replaceChildren(...resources.map(resourceCard));
+      $("empty").hidden = resources.length > 0;
+      $("more").hidden = true;
+      return;
+    }
     $("list").replaceChildren(...filtered.slice(0, state.shown).map((ev) => card(ev, today)));
     $("empty").textContent = t("none");
     $("empty").hidden = filtered.length > 0;
@@ -311,8 +330,27 @@
     return null;
   }
 
+  /** 단계 통과 여부. s1: 1차 선별 결과(데이터가 없으면 통과로 둠), s2: 1차 통과 + 외국인 적합 */
+  function stagePass(ev, stage, sets) {
+    if (stage === "all") return true;
+    const s1 = !sel || !Object.hasOwn(sel.select, ev.id) ? !sel : sel.select[ev.id].pass === true;
+    if (stage === "s1" || !s1) return s1;
+    if (!fit || !sets) return false;
+    if (sets.exc.has(ev.id)) return false;
+    if (sets.pin.has(ev.id)) return true;
+    const tg = Object.hasOwn(fit.tags, ev.id) ? fit.tags[ev.id] : null;
+    return !!tg && tg.language_barrier === "low" && tg.audience_restricted !== true && tg.reservation_barrier !== "kr_auth_required";
+  }
+  function stageCounts() {
+    const sets = fit ? fitSets() : null;
+    const c = { all: data.events.length, s1: 0, s2: 0 };
+    for (const ev of data.events) { if (stagePass(ev, "s1", sets)) c.s1++; if (stagePass(ev, "s2", sets)) c.s2++; }
+    return c;
+  }
+
   function fitSummary() {
-    const ids = new Set(data.events.map((e) => e.id));
+    const sets0 = fitSets();
+    const ids = new Set(data.events.filter((e) => stagePass(e, "s1", sets0)).map((e) => e.id));
     const tags = Object.entries(fit.tags).filter(([id, v]) => ids.has(id) && v && typeof v === "object").map(([, v]) => v);
     const pin = overrideIds(fit.overrides.pin), exc = overrideIds(fit.overrides.exclude);
     const counts = {};
@@ -340,7 +378,7 @@
     const stat = (n, label, cls) => el("li", { class: "fit-stat " + cls },
       el("strong", { text: n.toLocaleString(state.lang) }), el("span", { text: label }));
     $("fit-stats").replaceChildren(
-      stat(sum.counts.language_barrier.get("low"), L.statEasy, "good"),
+      stat(stageCounts().s2, STAGE_I18N[state.lang].steps.s2, "good"),
       stat(sum.counts.reservation_barrier.get("online"), L.statBooking, "warn"),
       stat(sum.excluded, L.statExcluded, "bad"),
       ...(sum.pinned ? [stat(sum.pinned, L.statPinned, "good")] : []));
@@ -360,6 +398,78 @@
     box.hidden = false;
   }
 
+  function renderStages() {
+    const box = $("stages");
+    if (!data.events.length) { box.hidden = true; return; }
+    const SL = STAGE_I18N[state.lang];
+    const c = stageCounts();
+    $("stages-title").textContent = SL.title;
+    const when = snap ? snap.events_at : data.updatedAt;
+    const d = new Date(when);
+    const stamp = isNaN(d) ? "-" : d.toLocaleString(state.lang === "ko" ? "ko-KR" : "en-US", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST";
+    $("basis").textContent = snap ? SL.basisSnap(stamp, snap.label) : SL.basisLive(stamp);
+    $("basis").classList.toggle("snap", !!snap);
+    $("stage-steps").replaceChildren(...STAGES.map((k, i) => el("li", {},
+      el("button", { type: "button", class: "stage-btn" + (state.stage === k ? " active" : ""), "aria-pressed": String(state.stage === k),
+        onclick: () => { state.stage = k; if (state.cat === "resource") state.cat = "all"; update(); } },
+        el("span", { class: "stage-name", text: SL.steps[k] }), el("strong", { class: "stage-num", text: c[k].toLocaleString(state.lang) })),
+      i < STAGES.length - 1 ? el("span", { class: "stage-arrow", "aria-hidden": "true", text: "→" }) : null)));
+    $("s1-toggle").textContent = SL.s1Toggle;
+    $("s1-lead").textContent = sel ? SL.s1Lead(c.all, c.s1) + " " + SL.hint : SL.hint;
+    // 세부 기준별 건수(수집 전체 기준)
+    const tally = new Map();
+    let pinned = 0;
+    if (sel) for (const ev of data.events) {
+      const r = sel.select[ev.id];
+      if (!r) continue;
+      for (const x of [...(r.tourism_value || []), ...(r.citizen_demand || [])]) {
+        const k = String(x).replace(/\(.*\)$/, "");
+        tally.set(k, (tally.get(k) || 0) + 1);
+      }
+      if (r.override === "pin") pinned++;
+    }
+    $("s1-rules").replaceChildren(...SL.groups.map((g) => el("div", { class: "fit-rule" },
+      el("h3", { text: g.name }), el("p", { class: "fit-how", text: g.how }),
+      el("ul", { class: "fit-bars" }, ...(g.key === "policy"
+        ? [el("li", {}, el("span", { class: "fit-val", text: state.lang === "ko" ? "담당자 고정" : "Staff pins" }), el("span"), el("span", { class: "fit-num", text: String(pinned) }))]
+        : [...tally].filter(([k]) => (g.key === "tourism_value") === ["관광 밀집 자치구", "축제 분류", "반복 개최"].includes(k))
+          .map(([k, n]) => el("li", {}, el("span", { class: "fit-val", text: k }), el("span"), el("span", { class: "fit-num", text: `${n}` }))))))));
+    $("s1-foot").textContent = sel ? SL.s1Foot(sel.rulesVersion) : "";
+    $("export").textContent = SL.export;
+    box.hidden = false;
+  }
+
+  function resourceCard(r) {
+    const L = state.lang;
+    const SL = STAGE_I18N[L];
+    const txt = (o) => (o && typeof o === "object" ? String(o[L] || o.ko || "") : "");
+    return el("li", {}, el("div", { class: "card resource" },
+      el("div", { class: "card-body" },
+        el("p", { class: "meta", text: `${txt(r.kind)} · ${guLabel(r.district || "")}` }),
+        el("h2", { class: "title", text: txt(r.name) }),
+        el("p", { class: "date", text: `${SL.resSchedule}: ${txt(r.schedule)}` }),
+        el("p", { class: "place", text: txt(r.note) }))));
+  }
+
+  /** 선별 목록을 schema.org Event(JSON-LD)로 내려받기: 하나의 DB를 외부 플랫폼에 공급하는 시연 */
+  function exportJsonLd() {
+    const items = filtered.map((ev) => ({
+      "@type": "Event", name: ev.title, startDate: ev.start, endDate: ev.end, eventStatus: "https://schema.org/EventScheduled",
+      isAccessibleForFree: ev.free === true, ...(safeUrl(ev.link || ev.homepage) ? { url: safeUrl(ev.link || ev.homepage) } : {}),
+      location: { "@type": "Place", name: ev.place, address: { "@type": "PostalAddress", addressLocality: ev.district, addressRegion: "서울특별시", addressCountry: "KR" },
+        ...(Number.isFinite(ev.lat) && Number.isFinite(ev.lng) ? { geo: { "@type": "GeoCoordinates", latitude: ev.lat, longitude: ev.lng } } : {}) },
+      ...(ev.org ? { organizer: { "@type": "Organization", name: ev.org } } : {}),
+    }));
+    const doc = { "@context": "https://schema.org", "@type": "ItemList", name: `seoul-now ${STAGE_I18N[state.lang].steps[state.stage]}`,
+      dateCreated: snap ? snap.events_at : data.updatedAt, numberOfItems: items.length,
+      itemListElement: items.map((item, i) => ({ "@type": "ListItem", position: i + 1, item })) };
+    const blob = new Blob([JSON.stringify(doc, null, 2)], { type: "application/ld+json" });
+    const a = el("a", { href: URL.createObjectURL(blob), download: `seoul-now-${state.stage}-${(snap ? snap.date : kstToday())}.jsonld` });
+    document.body.append(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    $("export-note").textContent = STAGE_I18N[state.lang].exported(items.length);
+  }
+
   async function loadFit() {
     const get = async (url) => {
       try {
@@ -367,19 +477,25 @@
         return res.ok ? await res.json() : null;
       } catch { return null; }
     };
-    const [tags, overrides] = await Promise.all([get("data/festival_tags.json"), get("data/festival_overrides.json")]);
+    const [tags, overrides, select, res] = await Promise.all([get(base() + "festival_tags.json"),
+      get(base() + "festival_overrides.json").then((o) => o || get("data/festival_overrides.json")),
+      get(base() + "tourism_select.json"), get("data/tourism_resources.json")]);
+    if (select && select.select && typeof select.select === "object" && !Array.isArray(select.select)) {
+      sel = { select: select.select, rulesVersion: String(select.rules_version || "").slice(0, 40) };
+    }
+    resources = res && Array.isArray(res.items) ? res.items.slice(0, 50).filter((r) => r && typeof r === "object") : [];
     if (!tags || typeof tags.tags !== "object" || Array.isArray(tags.tags)) return;
     fit = { tags: tags.tags, overrides: overrides && typeof overrides === "object" ? overrides : {},
       rulesVersion: String(tags.rules_version || "").slice(0, 20), updatedAt: String(tags.updatedAt || "").slice(0, 25) };
     $("fit-filter").hidden = false;   // 태그를 읽은 뒤에만 필터를 보여 준다
-    renderFit();
-    if (state.fit) { applyFilters(); renderList(); }
+    update();
   }
 
   function update() {
     state.shown = PAGE;
     writeUrl();
     renderStatic();
+    renderStages();
     renderFit();
     applyFilters();
     renderList();
@@ -397,10 +513,11 @@
     });
     $("sort").addEventListener("change", (e) => { state.sort = SORTS.includes(e.target.value) ? e.target.value : "ending"; update(); });
     $("free").addEventListener("change", (e) => { state.free = e.target.checked; update(); });
-    $("fitonly").addEventListener("change", (e) => { state.fit = e.target.checked; update(); });
+    $("fitonly").addEventListener("change", (e) => { state.stage = e.target.checked ? "s2" : "s1"; update(); });
+    $("export").addEventListener("click", exportJsonLd);
     $("more").addEventListener("click", () => { state.shown += PAGE; renderList(); });
     $("reset").addEventListener("click", () => {
-      Object.assign(state, { when: "week", cat: "all", gu: "", free: false, fit: false, q: "", sort: "ending" }); update();
+      Object.assign(state, { when: "week", cat: "all", gu: "", free: false, stage: "s1", q: "", sort: "ending" }); update();
     });
     $("lang-toggle").addEventListener("click", () => { state.lang = state.lang === "en" ? "ko" : "en"; update(); });
     const dlg = $("detail");
@@ -416,8 +533,16 @@
   async function init() {
     readUrl();
     bind();
+    if (state.snapshot) {
+      try {
+        const r = await fetch("data/snapshots/index.json", { cache: "no-cache", credentials: "omit" });
+        const idx = r.ok ? await r.json() : null;
+        const hit = idx && Array.isArray(idx.snapshots) && idx.snapshots.find((x) => x && x.date === state.snapshot);
+        if (hit) snap = { date: hit.date, label: String(hit.label || "").slice(0, 60), events_at: String(hit.events_at || "") };
+      } catch { snap = null; }
+    }
     try {
-      const res = await fetch("data/events.json", { cache: "no-cache", credentials: "omit" });
+      const res = await fetch(base() + "events.json", { cache: "no-cache", credentials: "omit" });
       if (!res.ok) throw new Error(String(res.status));
       const json = await res.json();
       data = { ...json, events: Array.isArray(json.events) ? json.events.filter(isValidEvent) : [] };

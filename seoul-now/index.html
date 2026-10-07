@@ -29,7 +29,22 @@
   <main class="wrap">
     <p id="demo-banner" class="banner" hidden></p>
 
-    <!-- 외국인 적합도(festival_fit) 분류 기준·결과: data/festival_tags.json 을 읽어 집계 -->
+    <!-- 선별 흐름: 수집 → 1차 선별(관광부문) → 2차 선별(외국인 적합도). 단계를 누르면 그 단계까지 적용된 목록 -->
+    <section id="stages" class="stages" aria-labelledby="stages-title" hidden>
+      <div class="stages-head">
+        <h2 id="stages-title"></h2>
+        <p id="basis" class="basis"></p>
+      </div>
+      <ol id="stage-steps" class="stage-steps"></ol>
+      <details class="fit-more">
+        <summary id="s1-toggle"></summary>
+        <p id="s1-lead" class="note"></p>
+        <div id="s1-rules" class="fit-rules"></div>
+        <p id="s1-foot" class="note"></p>
+      </details>
+    </section>
+
+    <!-- 2차 선별(외국인 적합도) 기준·결과: 1차 통과 행사만 집계 -->
     <section id="fit" class="fit" aria-labelledby="fit-title" hidden>
       <div class="fit-head">
         <h2 id="fit-title"></h2>
@@ -82,6 +97,7 @@
     </div>
     <p id="ko-note" class="note"></p>
     <p id="fit-note" class="note" hidden></p>
+    <p class="export-row"><button id="export" class="link-btn" type="button" hidden></button> <span id="export-note" class="note" aria-live="polite"></span></p>
 
     <ul id="list" class="grid"></ul>
     <p id="empty" class="empty" hidden></p>
