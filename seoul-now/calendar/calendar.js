@@ -8,9 +8,9 @@
   const PARTS = ["early", "mid", "late"];
   const T = {
     en: {
-      title: (y) => `${y} Seoul Festival Calendar`,
-      sub: "When Seoul's recurring festivals are likely to happen next year, based on past years",
-      back: "← What's On in Seoul",
+      title: (y) => `${y} Seoul Promotion & Marketing Calendar`,
+      sub: "Next year's major Seoul events, forecast from when they were held before",
+      back: "← Seoul Now",
       aboutTitle: "How this forecast works",
       about: (n) => `We grouped ${n.toLocaleString("en")} festivals from the last five years by name and looked at when each one was held. Only festivals held in at least two different years, including at least once in the last two years, are shown. Dates are estimates — always check the official page before you go.`,
       conf: { confirmed: "Confirmed", high: "Likely", medium: "Probable", low: "Uncertain" },
@@ -45,9 +45,9 @@
       basisPart: (p, m) => `→ ${p} ${m}`, basisLive: (d) => `Forecast built ${d} (updated weekly)`, basisSnap: (d, l) => `Fixed snapshot: ${d} · ${l}`,
     },
     ko: {
-      title: (y) => `${y} 서울 축제 예상 캘린더`,
-      sub: "지난 개최 시기로 예측한 내년 서울 반복 축제 일정",
-      back: "← 서울에서 지금 뭐하지",
+      title: (y) => `${y} 서울 홍보마케팅 캘린더`,
+      sub: "지난 개최 시기로 예측한 내년 서울 주요 행사 일정",
+      back: "← Seoul Now",
       aboutTitle: "예측 방법",
       about: (n) => `최근 5년간의 축제 ${n.toLocaleString("ko")}건을 이름으로 묶어 해마다 언제 열렸는지 살폈습니다. 2개 연도 이상 열렸고 최근 2년 안에 한 번 이상 열린 축제만 보여 줍니다. 날짜는 추정이므로 방문 전 반드시 공식 페이지를 확인하세요.`,
       conf: { confirmed: "확정", high: "예상 높음", medium: "예상 보통", low: "예상 낮음" },
@@ -114,7 +114,7 @@
     const p = new URLSearchParams(location.search);
     const lang = p.get("lang");
     state.lang = lang === "ko" || lang === "en" ? lang
-      : (navigator.language || "").toLowerCase().startsWith("ko") ? "ko" : "en";
+      : "ko";   // 기본 한국어. 다른 언어는 상단 번역 버튼(구글 번역)으로
     if (p.get("show") === "likely") state.filter = "likely";
     if (p.get("view") === "biz") state.view = "biz";
     const sp = p.get("snapshot");
@@ -223,12 +223,11 @@
     const L = t();
     document.documentElement.lang = state.lang;
     const year = data ? data.year : kstYear() + 1;
-    document.title = `${L.title(year)} · ${state.lang === "ko" ? "Seoul Festival Calendar" : "서울 축제 캘린더"}`;
+    document.title = `${L.title(year)} · Seoul Now`;
     $("site-title").textContent = L.title(year);
     $("site-sub").textContent = L.sub;
     $("back").textContent = L.back;
     $("back").href = `../?lang=${state.lang}`;
-    $("lang-toggle").textContent = L.langToggle;
     $("about-title").textContent = L.aboutTitle;
     if (!data) return;
     const when = snap ? snap.events_at : data.generatedAt;
@@ -268,7 +267,6 @@
 
   async function init() {
     readUrl();
-    $("lang-toggle").addEventListener("click", () => { state.lang = state.lang === "en" ? "ko" : "en"; writeUrl(); render(); });
     render();
     if (state.snapshot) {
       try {

@@ -4,7 +4,7 @@
 
 const I18N = {
   en: {
-    siteTitle: "What's On in Seoul",
+    siteTitle: "Seoul Now",
     siteSub: "Culture events happening in Seoul — concerts, exhibitions, festivals & more",
     calLink: () => "Calendar (guide & business planning) →",
     when: "When",
@@ -54,7 +54,7 @@ const I18N = {
     langToggle: "한국어",
   },
   ko: {
-    siteTitle: "서울에서 지금 뭐하지",
+    siteTitle: "Seoul Now",
     siteSub: "공연 · 전시 · 축제 등 서울의 문화행사를 한눈에",
     calLink: () => "캘린더 (안내·사업화 공용) →",
     when: "기간",

@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- 외부 스크립트·인라인 스크립트 금지, 이미지는 https만 허용 -->
   <meta http-equiv="Content-Security-Policy"
-        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https: data:; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+        content="default-src 'self'; script-src 'self' https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://www.gstatic.com https://translate.googleapis.com; img-src 'self' https: data:; connect-src 'self' https://translate.googleapis.com https://translate-pa.googleapis.com; frame-src https://translate.google.com https://translate.googleapis.com; font-src 'self' https://fonts.gstatic.com; object-src 'none'; base-uri 'self'; form-action 'none'">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <!-- 테스트 기간: 검색엔진 색인 제외. 정식 공개 시 삭제 -->
   <meta name="robots" content="noindex, nofollow">
-  <title>What's On in Seoul · 서울에서 지금 뭐하지</title>
+  <title>Seoul Now</title>
   <meta name="description" content="Concerts, exhibitions, festivals and other culture events happening in Seoul today, this weekend and this month.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="styles.css">
@@ -18,11 +18,14 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <div>
-        <h1 id="site-title">What's On in Seoul</h1>
+        <h1 id="site-title" class="notranslate">Seoul Now</h1>
         <p id="site-sub" class="sub"></p>
         <a id="cal-link" class="cal-link" href="calendar/"></a>
       </div>
-      <button id="lang-toggle" class="lang-btn" type="button">한국어</button>
+      <div class="gt-wrap notranslate">
+        <button id="gt-btn" class="lang-btn" type="button" aria-label="Translate this page · 페이지 번역">🌐 Translate · 번역</button>
+        <div id="google_translate_element" hidden></div>
+      </div>
     </div>
   </header>
 
@@ -108,6 +111,7 @@
     <div class="wrap">
       <p id="updated"></p>
       <p id="source"></p>
+      <p id="gt-note">번역 기능은 Google 번역을 사용하며, 번역 버튼을 누르면 화면의 글이 Google로 전송됩니다(개인정보는 포함되지 않음). · Translation uses Google Translate; page text is sent to Google only after you tap Translate.</p>
     </div>
   </footer>
 
@@ -120,5 +124,6 @@
 
   <script src="i18n.js"></script>
   <script src="app.js"></script>
+  <script src="gt.js"></script>
 </body>
 </html>
