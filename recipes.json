@@ -68590,7 +68590,7 @@
   "weather": "21도/흐림",
   "failed": false,
   "calories": null,
-  "title": "사과대추오픈샌드위치 모닝리추얼 모닝루틴",
+  "title": "제철 사과대추 토스트",
   "credit": null,
   "hashtags": [
    "almond",
@@ -68623,21 +68623,14 @@
    "홈쿡"
   ],
   "intro": "20211009, #조식다이어리 234, 21도/흐림\n빵은 팬에 살짝 데운다. 빵 위에 고다 치즈, 세상에서 제일 예쁜 사과대추, 아몬드, 꿀 #사과대추오픈샌드위치 \n사과대추, 이 계절에만 먹을 수 있는 소중한 식재료다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 식빵 1장\n- 고다치즈 3~4조각\n- 사과대추 2~3개\n- 아몬드 2t\n- 꿀 2t",
+  "steps": "1. 사과대추는 얇게 썬다. 채칼을 이용해도 좋을 것 같다. \n2. 식빵을 팬에 구운 후 접시에 담는다. \n3. 2의 식빵 위에 얇게 썬 고다치즈, 1의 사과대추 얹고 아몬드, 꿀 얹는다. ",
   "raw": "20211009, #조식다이어리 234, 21도/흐림\n\n빵은 팬에 살짝 데운다. 빵 위에 고다 치즈, 세상에서 제일 예쁜 사과대추, 아몬드, 꿀 #사과대추오픈샌드위치 \n\n사과대추, 이 계절에만 먹을 수 있는 소중한 식재료다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샌드위치 #오픈샌드위치 #고다치즈 #아몬드 #꿀 #사과대추 \n#breakfast #recipe #sandwich #openfacedsandwich #honey #almond #goudacheese #appledate #jujube #date",
   "image": "https://images.how-about-breakfast.com/images/234.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/234.jpg",
    "https://images.how-about-breakfast.com/images/234_2.jpg"
   ],
-  "_en": {
-   "hash": "e8238c8b4552a2e85533ebdbdb8e454f738be5ad7d9f45354033f845456a0497",
-   "title": "Apple Jujube Open Sandwich, Morning Ritual, Morning Routine",
-   "intro": "20211009, #breakfastdiary 234, 21°C/cloudy\nWarm the bread lightly in a pan. Top with gouda cheese, the prettiest apple jujubes in the world, almonds, and honey #applejujubeopensandwich \nApple jujubes — a precious ingredient you can only get during this season.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "사과대추오픈샌드위치-모닝리추얼-모닝루틴"
  },
  {
