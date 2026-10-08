@@ -25499,7 +25499,7 @@
   "weather": "16도/맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "토마토타르타르 토마토",
+  "title": "토마토 타르타르",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25509,9 +25509,9 @@
    "토마토",
    "토마토타르타르"
   ],
-  "intro": "20241009 #조식다이어리 1200, 16도/맑음, 20분/운동(M) \n타르타르라고 하면 보통 타르타르 스테이크를 떠올린다. 러시아, 동유럽, 중부유럽 일대에서 즐겨 먹던, 우리나라의 육회와 비슷한 요리다. 장거리 전투를 위해 말 안장 밑에 고기를 보관하고 장거리를 이동하고 나면 연육작용으로 고기가 부드러워지고 먹기 좋은 상태가 되는데, 여기에 간단한 양념을 곁들여 먹었을 것이라는 얘기가 있다. 오늘은 고기 대신 토마토로 만든 #토마토타르타르 다.\n아, 토마토는 민트와 잘 어울린다. 보통 좀 더 오래가는 스피어민트를 사용하는데 오늘은  애플민트다.",
-  "ingredients": "달짝이 토마토 5개\n양파 1/4개\n케이퍼 10개\n애플민트 한 줌\n올리브오일, 소금, 후추 \n\n👉이렇게\n토마토에 칼집 내고 끓는 물에 데친 후 찬물에 담가서 껍질을 벗긴다. 다지고 채에 받혀서 적당히 물기를 뺀다. \n믹싱볼에 토마토 넣고, 양파와 케이퍼, 애플민트 다져서 넣고 올리브오일, 소금소금, 후추후추 섞는다. \n접시에 무스링 놓고 손질한 토마토 넣고 애플민트 조금 얹는다. \n\n#조식 #레시피 #미라클모닝 #토마토",
-  "steps": null,
+  "intro": "20241009 #조식다이어리 1200, 16도/맑음, 20분/운동(M) \n타르타르라고 하면 보통 타르타르 스테이크를 떠올린다. 러시아, 동유럽, 중부유럽 일대에서 즐겨 먹던, 우리나라의 육회와 비슷한 요리다. 장거리 전투를 위해 말 안장 밑에 고기를 보관하고 장거리를 이동하고 나면 연육작용으로 고기가 부드러워지고 먹기 좋은 상태가 되는데, 여기에 간단한 양념을 곁들여 먹었을 것이라는 얘기가 있다. 오늘은 고기 대신 토마토로 만든 #토마토타르타르 다.\n아, 토마토는 민트와 잘 어울린다. 보통 좀 더 오래가는 스피아민트를 사용하는데 오늘은  애플민트다.",
+  "ingredients": "- 작은 토마토 5개\n- 양파 1/4개\n- 케이퍼 10개\n- 애플민트 조금\n- 올리브오일 2t\n- 소금 1/4t\n- 후추 1/4t",
+  "steps": "1. 토마토 꼭지 떼어낸 후 가로세로 칼집 내고 끓는 물에 데친 후 찬물에 담가서 껍질을 벗긴다. \n2. 1의 토마토를 다지고 채에 받혀서 물기를 뺀다. \n3. 믹싱볼에 2의 토마토 넣고, 양파와 케이퍼, 애플민트 다져서 넣고 올리브오일, 소금, 후추 뿌려서 섞는다. \n4. 접시에 무스링 놓고 3의 재료 넣고 애플민트 조금 얹는다. ",
   "raw": "20241009 #조식다이어리 1200, 16도/맑음, 20분/운동(M) \n\n타르타르라고 하면 보통 타르타르 스테이크를 떠올린다. 러시아, 동유럽, 중부유럽 일대에서 즐겨 먹던, 우리나라의 육회와 비슷한 요리다. 장거리 전투를 위해 말 안장 밑에 고기를 보관하고 장거리를 이동하고 나면 연육작용으로 고기가 부드러워지고 먹기 좋은 상태가 되는데, 여기에 간단한 양념을 곁들여 먹었을 것이라는 얘기가 있다. 오늘은 고기 대신 토마토로 만든 #토마토타르타르 다.\n아, 토마토는 민트와 잘 어울린다. 보통 좀 더 오래가는 스피어민트를 사용하는데 오늘은  애플민트다.\n\n👉재료는\n달짝이 토마토 5개\n양파 1/4개\n케이퍼 10개\n애플민트 한 줌\n올리브오일, 소금, 후추 \n\n👉이렇게\n토마토에 칼집 내고 끓는 물에 데친 후 찬물에 담가서 껍질을 벗긴다. 다지고 채에 받혀서 적당히 물기를 뺀다. \n믹싱볼에 토마토 넣고, 양파와 케이퍼, 애플민트 다져서 넣고 올리브오일, 소금소금, 후추후추 섞는다. \n접시에 무스링 놓고 손질한 토마토 넣고 애플민트 조금 얹는다. \n\n#조식 #레시피 #미라클모닝 #토마토",
   "image": "https://images.how-about-breakfast.com/images/1200.jpg",
   "gallery": [
@@ -25522,13 +25522,6 @@
    "https://images.how-about-breakfast.com/images/1200_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1200.mp4",
-  "_en": {
-   "hash": "e83ef149c84704315ceed658b2f8b14084f906e8354074e0e39e9a2b628c98cb",
-   "title": "Tomato tartare, tomato",
-   "intro": "20241009 #breakfastdiary 1200, 16°C/clear, 20 min/exercise(M) \nWhen you hear \"tartare,\" you usually think of steak tartare. It's a dish enjoyed across Russia, Eastern Europe, and Central Europe, similar to our yukhoe (Korean raw beef). There's a story that meat was kept under a horse's saddle for long-distance travel, and by the time the journey was over, the meat had tenderized and become good to eat — seasoned simply and enjoyed that way. Today's is #tomatotartare made with tomato instead of meat.\nAh, tomato pairs well with mint. Usually the longer-lasting spearmint is used, but today it's apple mint.",
-   "ingredients": "Sweet tomatoes, 5\nOnion, 1/4\nCapers, 10\nApple mint, a handful\nOlive oil, salt, pepper\n\n👉Like this\nScore the tomatoes, blanch in boiling water, then dunk in cold water and peel. Dice and drain the excess liquid through a sieve.\nPut the tomato in a mixing bowl, add chopped onion, capers, and apple mint, then mix with olive oil, salt, and pepper.\nPlace a mousse ring on a plate, fill with the prepared tomato, and top with a bit of apple mint.\n\n#breakfast #recipe #miraclemorning #tomato",
-   "steps": ""
-  },
   "page_id": "토마토타르타르-토마토"
  },
  {
