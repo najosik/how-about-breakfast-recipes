@@ -12792,7 +12792,7 @@
   "weather": "16도/비",
   "failed": false,
   "calories": 350,
-  "title": "팟 크라파오 무 쌉 Phad Krapow Moo Sap",
+  "title": "두부로 만든 팟 크라파오 무 쌉",
   "credit": null,
   "hashtags": [
    "두부",
@@ -12801,8 +12801,8 @@
    "조식다이어리"
   ],
   "intro": "20251010 #조식다이어리 1528, 16도/비\n요새 방콕엔 팟 크라파오 무 쌉 전문점도 생겼더라. Phad이 볶다, Krapow가 홀리 바질, Moo가 돼지고기, Sap이 다졌다는 뜻이니, 돼지고기와 홀리 바질 대신에 두부와 깻잎을 넣은 이 조식은 뭐라고 불러야할까? \n1. 팟 깻잎 두부 쌉\n2. 두부와 깻잎으로 만든 팟 크라파오 무 쌉\n3. 그냥 마음대로\n두부와 깻잎으로 만든 약 350kcal 팟 크라파오 무 쌉 Phad Krapow Moo Sap",
-  "ingredients": "두부 1/2모, 타이 바질 시즈닝 페이스트, 블랙 소이 소스 1T, 깻잎 4~5장, 계란 1개, 오일",
-  "steps": "1. 단단한 두부 1/2모 전자렌지에 2분 익힌다. 물은 따라내고 손으로 으깬다. \n2. 팬에 오일 두르고 1의 두부를 볶다가 타이 바질 시즈닝 페이스트 넣고 좀 더 볶다가 블랙 소이 소스와 다진 깻잎 넣고 좀 더 볶는다. \n3. 다른 팬에 오일 듬뿍, 계란 1개 써니 사이드업으로 굽는다. 팟 크라파오 무 쌉에 얹는 계란은 오일 듬뿍 넣어 튀기 듯 굽는 게 핵심이다. \n4. 접시에 2의 두부 담고 3의 계란 얹는다.",
+  "ingredients": "- 두부 1/2모\n- 타이 바질 시즈닝 페이스트 1t\n- 블랙 소이 소스 1T \n- 깻잎 4~5장\n- 계란 1개\n- 식물성오일 2t+2T",
+  "steps": "1. 단단한 두부 1/2모 전자레인에 2분 익힌다. 물은 버리고 손으로 으깬다. \n2. 팬에 식물성오일 2t두르고 1의 두부를 볶다가 타이 바질 시즈닝 페이스트 1t 넣고 좀 더 볶는다. \n3. 2에 블랙 소이 소스 1T와 다진 깻잎 넣고 좀 더 볶는다. \n4. 다른 팬에 오일 듬뿍, 계란 1개 써니 사이드업으로 굽는다. (팟 크라파오 무 쌉에 얹는 계란은 오일 듬뿍 넣어 튀기 듯 굽는 게 핵심이다.) \n5. 접시에 2의 두부 담고 3의 계란 얹는다.",
   "raw": "20251010 #조식다이어리 1528, 16도/비\n\n요새 방콕엔 팟 크라파오 무 쌉 전문점도 생겼더라. Phad이 볶다, Krapow가 홀리 바질, Moo가 돼지고기, Sap이 다졌다는 뜻이니, 돼지고기와 홀리 바질 대신에 두부와 깻잎을 넣은 이 조식은 뭐라고 불러야할까? \n\n1. 팟 깻잎 두부 쌉\n2. 두부와 깻잎으로 만든 팟 크라파오 무 쌉\n3. 그냥 마음대로\n\n두부와 깻잎으로 만든 약 350kcal 팟 크라파오 무 쌉 Phad Krapow Moo Sap\n\n👉 재료\n두부 1/2모, 타이 바질 시즈닝 페이스트, 블랙 소이 소스 1T, 깻잎 4~5장, 계란 1개, 오일\n\n👉 조리\n1. 단단한 두부 1/2모 전자렌지에 2분 익힌다. 물은 따라내고 손으로 으깬다. \n2. 팬에 오일 두르고 1의 두부를 볶다가 타이 바질 시즈닝 페이스트 넣고 좀 더 볶다가 블랙 소이 소스와 다진 깻잎 넣고 좀 더 볶는다. \n3. 다른 팬에 오일 듬뿍, 계란 1개 써니 사이드업으로 굽는다. 팟 크라파오 무 쌉에 얹는 계란은 오일 듬뿍 넣어 튀기 듯 굽는 게 핵심이다. \n4. 접시에 2의 두부 담고 3의 계란 얹는다. \n\n#조식 #레시피 #두부\n\nQ. 이 조식은 뭐라고 불러야할까? \n\n1. 팟 깻잎 두부 쌉\n2. 두부와 깻잎으로 만든 팟 크라파오 무 쌉\n3. 그냥 마음대로",
   "image": "https://images.how-about-breakfast.com/images/1528.jpg",
   "gallery": [
@@ -12812,13 +12812,6 @@
    "https://images.how-about-breakfast.com/images/1528_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1528.mp4",
-  "_en": {
-   "hash": "50a837a09dfa2d25767aed18f0533abdc630a4eff7de77fbebbb923b7376046d",
-   "title": "Pad Krapow Moo Sap",
-   "intro": "20251010 #breakfastdiary day 1528, 16°C/rain\nApparently there are now dedicated pad krapow moo sap places popping up in Bangkok. 'Pad' means stir-fried, 'krapow' means holy basil, 'moo' means pork, and 'sap' means minced — so what should I call this breakfast, made with tofu and perilla leaves instead of pork and holy basil?\n1. Pad Perilla Leaf Tofu Sap\n2. Pad Krapow Moo Sap made with tofu and perilla leaves\n3. Whatever, really\nAn approx. 350kcal Pad Krapow Moo Sap made with tofu and perilla leaves",
-   "ingredients": "1/2 block tofu, Thai basil seasoning paste, 1T black soy sauce, 4-5 perilla leaves, 1 egg, oil",
-   "steps": "1. Microwave 1/2 block firm tofu for 2 minutes. Drain the water and crumble it by hand.\n2. Heat oil in a pan, stir-fry the tofu from step 1, add the Thai basil seasoning paste and stir-fry a bit more, then add black soy sauce and chopped perilla leaves and stir-fry a bit longer.\n3. In another pan with plenty of oil, fry 1 egg sunny-side up. The key for the egg on top of pad krapow moo sap is to fry it almost like deep-frying, with lots of oil.\n4. Plate the tofu from step 2 and top with the egg from step 3."
-  },
   "page_id": "팟-크라파오-무-쌉-Phad-Krapow-Moo-Sap"
  },
  {
