@@ -38235,6 +38235,21 @@
   "page_id": "브리치즈사과토스트"
  },
  {
+  "date": "2023-10-12",
+  "date_raw": "20231012",
+  "weather": null,
+  "failed": true,
+  "calories": null,
+  "title": null,
+  "credit": null,
+  "hashtags": [],
+  "intro": null,
+  "ingredients": null,
+  "steps": null,
+  "diary_no": 1889,
+  "page_id": "2023-10-12"
+ },
+ {
   "date": "2023-10-11",
   "date_raw": "20231011",
   "diary_no": 878,
