@@ -1,5 +1,36 @@
 [
  {
+  "date": "2026-10-10",
+  "date_raw": "20261010",
+  "diary_no": 1890,
+  "weather": "18도/맑음",
+  "failed": false,
+  "calories": 375,
+  "title": "미소 글레이즈 애호박",
+  "credit": "@roberto_avellan",
+  "hashtags": [
+   "레시피",
+   "애호박",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20261010 #조식다이어리 1861, 18도/맑음\n찌개엔 된장, 구이엔 미소\n된장은 끓이고, 미소는 바른다\n \n375kcal 미소 글레이즈 애호박",
+  "ingredients": "- 애호박 1개\n- 드레싱(미소 1T, 간장 1T, 꿀 1/2T)\n- 그릭요거트 100g\n- 타히니 1/2T\n- 참깨 1t\n- 파슬리\n- 올리브오일 2t",
+  "steps": "1. 애호박은 길게 반으로 썰고 2~3cm 크기로 숭덩숭덩 썬다. \n2. 오븐밧드에 1의 애호박을 담고 올리브오일 2t 뿌려서 골고루 섞은 다음 180도 오븐에 15분 1차 굽는다. \n3. 그동안 믹싱볼에 미소 1T, 간장 1T, 꿀 1/2T 섞어서 드레싱을 만든다. \n4. 3의 믹싱볼에 1차 구운 2의 애호박을 넣고 골고루 섞은 뒤 다시 오븐밧드에 담고 200도, 10분 굽는다. \n5. 그릭요거트 100g에 타히니 1/2T 넣고 섞은 뒤 접시에 담는다. \n6. 5의 접시에 4의 구운 애호박 얹고 참깨와 다진 파슬리 얹는다.",
+  "raw": "20261010 #조식다이어리 1861, 18도/맑음\n\n찌개엔 된장, 구이엔 미소\n된장은 끓이고, 미소는 바른다\n \n375kcal 미소 글레이즈 애호박\n\n👉재료\n- 애호박 1개\n- 드레싱(미소 1T, 간장 1T, 꿀 1/2T)\n- 그릭요거트 100g\n- 타히니 1/2T\n- 참깨 1t\n- 파슬리\n- 올리브오일 2t\n \n👉조리\n1. 애호박은 길게 반으로 썰고 2~3cm 크기로 숭덩숭덩 썬다. \n2. 오븐밧드에 1의 애호박을 담고 올리브오일 2t 뿌려서 골고루 섞은 다음 180도 오븐에 15분 1차 굽는다. \n3. 그동안 믹싱볼에 미소 1T, 간장 1T, 꿀 1/2T 섞어서 드레싱을 만든다. \n4. 3의 믹싱볼에 1차 구운 2의 애호박을 넣고 골고루 섞은 뒤 다시 오븐밧드에 담고 200도, 10분 굽는다. \n5. 그릭요거트 100g에 타히니 1/2T 넣고 섞은 뒤 접시에 담는다. \n6. 5의 접시에 4의 구운 애호박 얹고 참깨와 다진 파슬리 얹는다. \n\nInspired by @roberto_avellan\n\n#조식 #레시피 #애호박",
+  "permalink": "https://www.instagram.com/p/DeTmgzOHepT/",
+  "image": "https://images.how-about-breakfast.com/images/1890.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1890.jpg",
+   "https://images.how-about-breakfast.com/images/1890_2.jpg",
+   "https://images.how-about-breakfast.com/images/1890_3.jpg",
+   "https://images.how-about-breakfast.com/images/1890_4.jpg",
+   "https://images.how-about-breakfast.com/images/1890_5.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1890.mp4",
+  "page_id": "미소-글레이즈-애호박"
+ },
+ {
   "date": "2026-10-09",
   "date_raw": "20261009",
   "diary_no": 1889,
