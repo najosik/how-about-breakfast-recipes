@@ -28,7 +28,14 @@
    "https://images.how-about-breakfast.com/images/1890_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1890.mp4",
-  "page_id": "미소-글레이즈-애호박"
+  "page_id": "미소-글레이즈-애호박",
+  "_en": {
+   "hash": "e21f3dad53cdcf841a6dcb6878d317eba20aa3f2ec1d18ac6ac487268ffa9a0a",
+   "title": "Miso-Glazed Zucchini",
+   "intro": "20261010 #breakfastdiary 1861, 18°C/clear\nDoenjang for stew, miso for grilling\nDoenjang gets boiled, miso gets brushed on\n\n375kcal Miso-Glazed Zucchini",
+   "ingredients": "- 1 zucchini\n- Dressing (1 tbsp miso, 1 tbsp soy sauce, 1/2 tbsp honey)\n- 100g Greek yogurt\n- 1/2 tbsp tahini\n- 1 tsp sesame seeds\n- Parsley\n- 2 tsp olive oil",
+   "steps": "1. Halve the zucchini lengthwise and cut into rough 2-3cm chunks.\n2. Place the zucchini from step 1 in a roasting pan, toss with 2 tsp olive oil, and roast at 180°C for 15 minutes (first bake).\n3. Meanwhile, mix 1 tbsp miso, 1 tbsp soy sauce, and 1/2 tbsp honey in a mixing bowl to make the dressing.\n4. Add the first-baked zucchini from step 2 to the dressing in step 3, toss well, return to the roasting pan, and bake again at 200°C for 10 minutes.\n5. Mix 100g Greek yogurt with 1/2 tbsp tahini and spread onto a plate.\n6. Top the plate from step 5 with the roasted zucchini from step 4, and finish with sesame seeds and chopped parsley."
+  }
  },
  {
   "date": "2026-10-09",
@@ -12889,7 +12896,14 @@
    "https://images.how-about-breakfast.com/images/1529_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1529.mp4",
-  "page_id": "오트밀로-만든-당근-케이크"
+  "page_id": "오트밀로-만든-당근-케이크",
+  "_en": {
+   "hash": "fbda24813b46bb6045fa92bb9db82bf2c48f1c48ac5842be52b4b3616bb106fb",
+   "title": "Carrot Cake Made with Oats",
+   "intro": "20251011 #breakfastdiary 1529, 18°C/rain\n750kcal Carrot Cake Made with Oats",
+   "ingredients": "- 1 banana\n- 50g oats\n- 1/2 carrot\n- 25g chopped pecans\n- 2 tbsp hemp seeds\n- 1/2 tsp cinnamon\n- 1/2 tsp baking powder\n- 1/4 tsp salt\n- 200ml milk\n- Topping (Greek yogurt, honey, a few pecans)",
+   "steps": "1. In an oven-safe dish, mash 1 banana and mix in 50g oats, 1/2 carrot (julienned), 25g chopped pecans, 2 tbsp hemp seeds, 1/2 tsp cinnamon, 1/2 tsp baking powder, 1/4 tsp salt, and 200ml milk.\n2. Bake at 180°C for 30 minutes.\n3. Remove from the oven and top with Greek yogurt and pecans.\n4. Cut into nice pieces, plate, and drizzle with honey."
+  }
  },
  {
   "date": "2025-10-10",
@@ -25550,7 +25564,14 @@
    "https://images.how-about-breakfast.com/images/1202_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1202.mp4",
-  "page_id": "아스파라거스-2"
+  "page_id": "아스파라거스-2",
+  "_en": {
+   "hash": "be122f80e76e41b6daed24adc2c703a6b98d1b259123e1cf20fbd441b262ce13",
+   "title": "Asparagus Salad",
+   "intro": "20241011 #breakfastdiary 1202, 11°C/clear, 20min/exercise(M)\nGrated macadamia over chopped parsley, with sautéed #asparagus finished in a miso-tahini dressing - a breakfast with a rather long name",
+   "ingredients": "- 10 asparagus spears\n- A handful of Italian parsley\n- 1/2 tbsp miso\n- 1 tbsp tahini\n- 1/2 cup water\n- 1 macadamia nut\n- 1/4 tsp salt\n- 1/4 tsp pepper",
+   "steps": "1. Mix miso, tahini, and water to make the dressing.\n2. Heat olive oil in a pan, season with salt and pepper, and sauté the lightly trimmed asparagus.\n3. Plate the asparagus, pour over the dressing, top with a little chopped parsley, and grate the macadamia on top."
+  }
  },
  {
   "date": "2024-10-10",
@@ -38411,7 +38432,20 @@
   "ingredients": "- 그릭요거트 100g\n- 라즈베리 1T\n- 블랙베리 1T\n- 블루베리 1T\n- 올리브오일 2t\n- 후추 1/4t",
   "steps": "1. 그릭요거트에 생 라즈베리, 블랙베리, 블루베리 담는다. \n2. 1에 올리브오일 2t, 후추 1/4t 뿌린다. ",
   "raw": "20231011, #조식다이어리 867, 12도/이슬비\n\n그릭요거트에 (생) 라즈베리, 블랙베리, 블루베리에 올리브오일과 후추후추 #각종베리그릭요거트\n\n#조식 #레시피 #미라클모닝 ",
-  "page_id": "각종베리그릭요거트"
+  "page_id": "각종베리그릭요거트",
+  "image": "https://images.how-about-breakfast.com/images/878.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/878.jpg",
+   "https://images.how-about-breakfast.com/images/878_2.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/878.mp4",
+  "_en": {
+   "hash": "d60a808a2892d4cbe3f086d33c66932b43109d1a34e0c0bf8abb1706f58f8e80",
+   "title": "Greek Yogurt with Three Kinds of Berries",
+   "intro": "20231011, #breakfastdiary 867, 12°C/drizzle\nGreek yogurt with fresh raspberries, blackberries, and blueberries, finished with olive oil and plenty of pepper. #threeberrygreekyogurt",
+   "ingredients": "- 100g Greek yogurt\n- 1 tbsp raspberries\n- 1 tbsp blackberries\n- 1 tbsp blueberries\n- 2 tsp olive oil\n- 1/4 tsp pepper",
+   "steps": "1. Add the fresh raspberries, blackberries, and blueberries to the Greek yogurt.\n2. Drizzle 2 tsp olive oil and 1/4 tsp pepper over step 1."
+  }
  },
  {
   "date": "2023-10-10",
@@ -68671,7 +68705,14 @@
    "https://images.how-about-breakfast.com/images/236.jpg",
    "https://images.how-about-breakfast.com/images/236_2.jpg"
   ],
-  "page_id": "아보카도오픈샌드위치-리빙포인트-오겜"
+  "page_id": "아보카도오픈샌드위치-리빙포인트-오겜",
+  "_en": {
+   "hash": "eeb801ba22a186195d146c7a3735a80d19795afd5ba2c378ae04b43069ac265e",
+   "title": "Tomato Avocado Toast",
+   "intro": "20211011, #breakfastdiary 236, 14°C/mostly cloudy, 43min/exercise\nWarm the bread on both sides in a pan with olive oil. Top with thinly sliced tomato and a little salt, then diced avocado drizzled with olive oil and lemon juice.\nRoll up the prettiest, most fragrant basil in the world, slice it into thin strips, lay it gently over the avocado, and finish with a generous amount of pepper - once a symbol of wealth in medieval Europe. #avocadoopensandwich\n#livingtip An avocado that's overripe and about to spoil is perfect diced up and used like this.\n\nNet neutrality is the principle that internet service providers (ISPs) should treat all content equally and without discrimination. At its core is the idea that content providers (CPs) who don't own any network infrastructure should still be able to use the network on the same terms. (quoted from a May 2021 Korea Economic Daily article)\nBut the enormous traffic and astronomical revenue generated by global content providers like Google, Facebook, and Netflix will keep raising questions about net neutrality's foundation in equal access to information.\nWhich is to say, a success story like #SquidGame might be exactly what brings the net neutrality issue to a head, bit by bit.",
+   "ingredients": "- 1 slice bread\n- 1/4 tsp + 1 tsp olive oil\n- 1/2 tomato\n- 1/4 tsp salt\n- 1/2 avocado\n- 1/4 tsp lemon juice",
+   "steps": "1. Halve the bread, brush with olive oil, toast both sides until crisp, and plate.\n2. Over the bread from step 1, layer thinly sliced tomato with 1/4 tsp salt, top with diced avocado, and drizzle with 1 tsp olive oil and 1/4 tsp lemon juice."
+  }
  },
  {
   "date": "2021-10-10",
@@ -86287,7 +86328,14 @@
   "image": "https://images.how-about-breakfast.com/images/pre-124.jpg",
   "page_id": "새우메밀국수샐러드-조식-샐러드",
   "essay_candidate": true,
-  "essay_reviewed": true
+  "essay_reviewed": true,
+  "_en": {
+   "hash": "1c21c7e7f00495426b1b4fc0668b0b0abca99f4ffad8cfba926f4c64b890dc7f",
+   "title": "Shrimp Buckwheat Noodle Salad",
+   "intro": "20201011, \"If a task that should take 30 minutes takes 30 years instead, then before long there will come a day when 30 years' worth of work has to be finished in 30 minutes - and that will be a thoroughly miserable business.\" (George Bernard Shaw, as quoted in a chronicle of intellect)\nA line I think of every time, after breakfast, I feel the urge to put off the dishes. Not that it only applies to breakfast, of course.\nBoil buckwheat noodles, rinse in cold water, then toss with a little salt and olive oil. Top with shrimp pan-seared with salt and pepper, pine nuts, a dressing, and the prettiest parsley in the world to finish. #shrimpbuckwheatnoodlesalad #breakfast #salad #miraclemorning #morningroutine #buckwheatnoodles",
+   "ingredients": "- 1/2 serving buckwheat noodles\n- 1/4 tsp + 1/4 tsp salt\n- 1/4 tsp pepper\n- 1 tsp + 2 tsp olive oil\n- 3 shrimp\n- 2 tsp pine nuts\n- 2 tsp parsley",
+   "steps": "1. Boil the buckwheat noodles in water, adding cold water about three times along the way, then rinse in cold water.\n2. Drain the noodles well, toss with 1/4 tsp salt and 1 tsp olive oil, and plate.\n3. Heat 2 tsp olive oil in a pan, season with 1/4 tsp salt and 1/4 tsp pepper, and sear the shrimp.\n4. Top the noodles from step 2 with the seared shrimp from step 3, pine nuts, the dressing, and chopped parsley."
+  }
  },
  {
   "date": "2020-10-10",
