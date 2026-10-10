@@ -25529,7 +25529,7 @@
   "weather": "11도/맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "아스파라거스",
+  "title": "아스파라거스 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25539,8 +25539,8 @@
    "조식다이어리"
   ],
   "intro": "20241011 #조식다이어리 1202, 11도/맑음, 20분/운동(M) \n다진 파슬리 위에 마카다미아 갈아서 얹고, 미소 타히니 드레싱으로 맛을 낸 볶은 #아스파라거스 이라는 다소 긴 이름의 조식",
-  "ingredients": "아스파라거스 적당히\n이탈리안 파슬리 한 줌\n미소 1/2T\n타히니 1T\n물 1/2컵\n마카다미아 1개\n\n👉이렇게\n미소, 타히니, 물 섞어서 드레싱을 만든다. \n달군 팬에 올리브오일 두르고 소금소금 후추후추, 간단하게 손질한 아스파라거스 볶는다\n접시에 아스파라거스 얹고 드레싱은 흥건하고 붓고 다진 파슬리 조금 얹은 뒤 마키다미아 갈아서 얹는다. \n \n#조식 #레시피 #미라클모닝 #아스파라거스",
-  "steps": null,
+  "ingredients": "- 아스파라거스 10개\n- 이탈리안 파슬리 한 줌\n- 미소 1/2T\n- 타히니 1T\n- 물 1/2컵\n- 마카다미아 1개\n- 소금 1/4t\n- 후추 1/4t",
+  "steps": "1. 미소, 타히니, 물 섞어서 드레싱을 만든다. \n2. 달군 팬에 올리브오일 두르고 소금, 후추 넣고 간단하게 손질한 아스파라거스 볶는다\n3. 접시에 아스파라거스 담고 드레싱 붓고 다진 파슬리 조금 얹은 뒤 마키다미아 갈아서 얹는다. ",
   "raw": "20241011 #조식다이어리 1202, 11도/맑음, 20분/운동(M) \n\n다진 파슬리 위에 마카다미아 갈아서 얹고, 미소 타히니 드레싱으로 맛을 낸 볶은 #아스파라거스 이라는 다소 긴 이름의 조식\n\n👉재료는\n아스파라거스 적당히\n이탈리안 파슬리 한 줌\n미소 1/2T\n타히니 1T\n물 1/2컵\n마카다미아 1개\n\n👉이렇게\n미소, 타히니, 물 섞어서 드레싱을 만든다. \n달군 팬에 올리브오일 두르고 소금소금 후추후추, 간단하게 손질한 아스파라거스 볶는다\n접시에 아스파라거스 얹고 드레싱은 흥건하고 붓고 다진 파슬리 조금 얹은 뒤 마키다미아 갈아서 얹는다. \n \n#조식 #레시피 #미라클모닝 #아스파라거스",
   "image": "https://images.how-about-breakfast.com/images/1202.jpg",
   "gallery": [
@@ -25550,13 +25550,6 @@
    "https://images.how-about-breakfast.com/images/1202_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1202.mp4",
-  "_en": {
-   "hash": "5e12509ddcc17b5529dd7445cdffbfde96dad1bae4cd6ca204900033d57a0781",
-   "title": "Asparagus",
-   "intro": "20241011 #breakfastdiary 1202, 11°C/clear, 20 min/exercise(M) \nA rather long-named breakfast: sautéed #asparagus with grated macadamia over chopped parsley, flavored with a miso-tahini dressing",
-   "ingredients": "Asparagus, a good amount\nItalian parsley, a handful\nMiso 1/2T\nTahini 1T\nWater 1/2 cup\nMacadamia nut, 1\n\n👉Like this\nMix miso, tahini, and water together to make the dressing.\nHeat olive oil in a pan, salt and pepper it, and sauté the simply trimmed asparagus.\nPlate the asparagus, pour the dressing generously over it, add a bit of chopped parsley, then grate macadamia nut on top.\n\n#breakfast #recipe #miraclemorning #asparagus",
-   "steps": ""
-  },
   "page_id": "아스파라거스-2"
  },
  {
