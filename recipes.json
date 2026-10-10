@@ -38398,7 +38398,7 @@
   "weather": "12도/이슬비",
   "failed": false,
   "calories": null,
-  "title": "각종베리그릭요거트",
+  "title": "세 가지 베리를 곁들인 그릭요거트",
   "credit": null,
   "hashtags": [
    "각종베리그릭요거트",
@@ -38408,16 +38408,9 @@
    "조식다이어리"
   ],
   "intro": "20231011, #조식다이어리 867, 12도/이슬비\n그릭요거트에 (생) 라즈베리, 블랙베리, 블루베리에 올리브오일과 후추후추 #각종베리그릭요거트",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 그릭요거트 100g\n- 라즈베리 1T\n- 블랙베리 1T\n- 블루베리 1T\n- 올리브오일 2t\n- 후추 1/4t",
+  "steps": "1. 그릭요거트에 생 라즈베리, 블랙베리, 블루베리 담는다. \n2. 1에 올리브오일 2t, 후추 1/4t 뿌린다. ",
   "raw": "20231011, #조식다이어리 867, 12도/이슬비\n\n그릭요거트에 (생) 라즈베리, 블랙베리, 블루베리에 올리브오일과 후추후추 #각종베리그릭요거트\n\n#조식 #레시피 #미라클모닝 ",
-  "_en": {
-   "hash": "9100fb30a6d76f2b5723b929e7246dbfd5df65ffc5731023ed3609e6801784ea",
-   "title": "Mixed Berry Greek Yogurt",
-   "intro": "20231011, #breakfastdiary 867, 12°C/drizzle\nGreek yogurt with fresh raspberries, blackberries, and blueberries, finished with olive oil and plenty of pepper. #mixedberrygreekyogurt",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "각종베리그릭요거트"
  },
  {
