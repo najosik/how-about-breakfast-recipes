@@ -466,19 +466,22 @@ def json_ld(r, url, title, intro=None, ingredients=None, steps=None, lang='ko'):
     intro = r.get('intro') if intro is None else intro
     ingredients = r.get('ingredients') if ingredients is None else ingredients
     steps = r.get('steps') if steps is None else steps
-    if not (ingredients and steps):
+    imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
+    # Google's Recipe structured data requires `image` - emitting the block
+    # without one (e.g. a diary entry with full text but no photo yet) gets
+    # flagged as invalid in Search Console, so skip it entirely until there's
+    # a photo to point to.
+    if not (ingredients and steps and imgs):
         return ''
     ingredient_list = [s.strip() for s in re.split(r',\s*', ingredients) if s.strip()]
     step_list = [re.sub(r'^\d+\.\s*', '', s.strip()) for s in steps.split('\n') if s.strip()]
-    imgs = r.get('gallery') or ([r['image']] if r.get('image') else [])
     data = {
         '@context': 'https://schema.org/',
         '@type': 'Recipe',
         'name': title,
         'url': url,
+        'image': imgs,
     }
-    if imgs:
-        data['image'] = imgs
     data['author'] = {
         '@type': 'Person', 'name': '나조식',
         'sameAs': [
