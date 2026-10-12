@@ -68562,7 +68562,7 @@
   "weather": "13도/맑음",
   "failed": false,
   "calories": null,
-  "title": "당근라페오픈샌드위치 모닝리추얼 모닝루틴",
+  "title": "당근 라페 토스트",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68593,21 +68593,14 @@
    "홈쿡"
   ],
   "intro": "20211013, #조식다이어리 238, 13도/맑음\n당근은 채 치고 파슬리, 후추후추, 비네그레트 드레싱을 뿌려서 라페를 만든 다음 숨이 죽을 때까지 잠시 둔다. \n앞뒤로 데운 빵에 리코타 치즈를 듬뿍 바르고 라페를 올린다. #당근라페오픈샌드위치 \n매번 같은 출근길인데도 버스 창가로 떨어지는 햇살에 눈이 부신 걸 보니, 지난한 일들이 반복되고 있는 가운데도 계절은 저만큼 가있다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 식빵 1장\n- 당근 1개\n- 드레싱(올리브오일 2T, 화이트와인비니거 1T, 홀그레인 머스터드 1t)\n- 리코타치즈 1T",
+  "steps": "1. 식빵은 팬에서 앞뒤로 바삭하게 굽는다. \n2. 당근은 채칼로 썬 뒤 드레싱 붓고 맛있게 버무린 뒤 10분 정도 둔다. \n3. 1의 식빵에 리코타치즈 바르고 2의 당근 라페 얹는다. ",
   "raw": "20211013, #조식다이어리 238, 13도/맑음\n\n당근은 채 치고 파슬리, 후추후추, 비네그레트 드레싱을 뿌려서 라페를 만든 다음 숨이 죽을 때까지 잠시 둔다. \n앞뒤로 데운 빵에 리코타 치즈를 듬뿍 바르고 라페를 올린다. #당근라페오픈샌드위치 \n\n매번 같은 출근길인데도 버스 창가로 떨어지는 햇살에 눈이 부신 걸 보니, 지난한 일들이 반복되고 있는 가운데도 계절은 저만큼 가있다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #당근 #당근라페 #샌드위치 #오픈샌드위치 \n#breakfast #recipe #salad #salad #carrot #vinaigrette #rapees #openfacedsandwich #sandwich #ricottacheese ",
   "image": "https://images.how-about-breakfast.com/images/238.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/238.jpg",
    "https://images.how-about-breakfast.com/images/238_2.jpg"
   ],
-  "_en": {
-   "hash": "b40297eac3b5e3095ebabf5e360c1a1d34607a797333597a0821603bbb605434",
-   "title": "Carrot Rapé Open Sandwich, Morning Ritual, Morning Routine",
-   "intro": "20211013, #breakfastdiary 238, 13°C/clear\nJulienne the carrots and toss with parsley, pepperpepper, and vinaigrette dressing to make the rapé, then let it sit for a while until it wilts down. \nSpread ricotta cheese generously on bread warmed on both sides, then top with the carrot rapé. #carrotrapeopensandwich \nEven though it's the same commute every day, the sunlight falling through the bus window is dazzling enough to remind me that, amid all the repetitive grind, the season has quietly moved on.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "당근라페오픈샌드위치-모닝리추얼-모닝루틴"
  },
  {
