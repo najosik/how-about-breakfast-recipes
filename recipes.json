@@ -68561,7 +68561,7 @@
   "weather": "14도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "루시드폴 너와나 모닝리추얼",
+  "title": "샤인머스캣 보고치니 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68589,8 +68589,8 @@
    "홈쿡"
   ],
   "intro": "20211014, #조식다이어리 239, 14도/대체로흐림\n샤인머스캣, 모짜렐라, 올리브오일, 세상에서 제일 예쁜 후추후추후추후추후추후추후추\n오늘의 BGM #루시드폴 #너와나",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 샤인머스캣 1컵\n- 보코치니 1/2컵\n- 딜 \n- 올리브오일 2t\n- 후추 1/4t",
+  "steps": "1. 흐르는 물에 샤인머스캣을 씻고 반으로 썬다. \n2. 접시에 1의 샤인머스캣과 보코치니(동그란 모짜렐라) 담는다. \n3. 딜 조금, 올리브오일 2t와 후추 1/4t 뿌린다. ",
   "raw": "20211014, #조식다이어리 239, 14도/대체로흐림\n\n샤인머스캣, 모짜렐라, 올리브오일, 세상에서 제일 예쁜 후추후추후추후추후추후추후추\n\n오늘의 BGM #루시드폴 #너와나\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #샤인머스캣 #모짜렐라치즈 #딜  \n#breakfast #recipe #salad #shinemuscat #dill #mozzarella ",
   "image": "https://images.how-about-breakfast.com/images/239.jpg",
   "gallery": [
@@ -68599,13 +68599,6 @@
    "https://images.how-about-breakfast.com/images/239_3.jpg",
    "https://images.how-about-breakfast.com/images/239_4.jpg"
   ],
-  "_en": {
-   "hash": "6ee23efbba8231c34000326d9fb5ead4c961dc59dd14a5ceb2770db63101bea8",
-   "title": "Lucid Fall's You and I, Morning Ritual",
-   "intro": "20211014, #breakfastdiary 239, 14°C/mostly cloudy\nShine muscat grapes, mozzarella, olive oil, and the prettiest pepper in the world — pepperpepperpepperpepperpepperpepperpepper\nToday's BGM #lucidfall #youandi",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "루시드폴-너와나-모닝리추얼"
  },
  {
