@@ -12828,7 +12828,7 @@
   "weather": "15도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": 320,
-  "title": "순두부 계란찜,이랄까?",
+  "title": "순두부 계란찜",
   "credit": "@eatwithhendri",
   "hashtags": [
    "레시피",
@@ -12837,8 +12837,8 @@
    "조식다이어리"
   ],
   "intro": "20251014 #조식다이어리 1532, 15도/흐림, 20분/운동(M)\n계란 2개에 우유를 30ml 정도 섞었는데 섞지 않는 게 좋을 것 같다. 그 탓인지, 얇은 팬 탓인지, 불조절을 제대로 하지 못한 탓인지, 아니면 그 모든 것의 탓인지, 바닥은 살짝 타고 위는 덜 익었다. 럭키비키. 실로 다양한 맛을 즐길 수 있게 됐다. \n약 320kcal 순두부 계란찜,이랄까?",
-  "ingredients": "순두부 1개, 계란 2개, 새우 3마리, 대파 조금, 소금, 후추",
-  "steps": "1. 팬에 순두부 1개 얹은 다음 숭덩숭덩 자른 후 계란 2개 풀어서 붓는다. 새우 얹고 익을 때까지 뚜껑 닫고 잠시 기다린다. \n2. 접시에 담고 칠리 오일과 대파 얹는다.",
+  "ingredients": "- 순두부 1개 \n- 계란 2개 \n- 새우 3마리 \n- 대파 1/4뿌리\n- 소금 1/4t\n- 후추 1/4t",
+  "steps": "1. 팬에 순두부 1개 얹는다. \n3. 다음 숭덩숭덩 자른 후 계란 2개 풀어서 붓는다. 새우 얹고 익을 때까지 뚜껑 닫고 잠시 기다린다. \n2. 접시에 담고 칠리 오일과 대파 얹는다.",
   "raw": "20251014 #조식다이어리 1532, 15도/흐림, 20분/운동(M)\n\n계란 2개에 우유를 30ml 정도 섞었는데 섞지 않는 게 좋을 것 같다. 그 탓인지, 얇은 팬 탓인지, 불조절을 제대로 하지 못한 탓인지, 아니면 그 모든 것의 탓인지, 바닥은 살짝 타고 위는 덜 익었다. 럭키비키. 실로 다양한 맛을 즐길 수 있게 됐다. \n\n약 320kcal 순두부 계란찜,이랄까? \n\n👉 재료(2인분) \n순두부 1개, 계란 2개, 새우 3마리, 대파 조금, 소금, 후추\n\n👉 조리\n1. 팬에 순두부 1개 얹은 다음 숭덩숭덩 자른 후 계란 2개 풀어서 붓는다. 새우 얹고 익을 때까지 뚜껑 닫고 잠시 기다린다. \n2. 접시에 담고 칠리 오일과 대파 얹는다. \n\nInspired by @eatwithhendri\n\n#조식 #레시피 #순두부",
   "image": "https://images.how-about-breakfast.com/images/1532.jpg",
   "gallery": [
@@ -12847,13 +12847,6 @@
    "https://images.how-about-breakfast.com/images/1532_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1532.mp4",
-  "_en": {
-   "hash": "830e60c8f95c10fff25c9df490a469a7cc965c7fdb7439ebfa85cdd2375a4263",
-   "title": "Soft Tofu Steamed Egg, Sort Of?",
-   "intro": "20251014 #breakfastdiary day 1532, 15°C/cloudy, 20min/exercise (M)\nI mixed about 30ml of milk into 2 eggs, but I think it's better not to. Whether because of that, or the thin pan, or not controlling the heat properly, or maybe all of it combined, the bottom got slightly burnt while the top stayed undercooked. Lucky-vicky. I ended up getting to enjoy quite a variety of flavors in one dish.\nApprox. 320kcal soft tofu steamed egg, sort of?",
-   "ingredients": "1 soft tofu (sundubu), 2 eggs, 3 shrimp, a little scallion, salt, pepper",
-   "steps": "1. Place the soft tofu in a pan, cut it up roughly, then pour 2 beaten eggs over it. Add the shrimp, cover with a lid, and wait until cooked.\n2. Plate and top with chili oil and scallion."
-  },
   "page_id": "순두부-계란찜-이랄까"
  },
  {
