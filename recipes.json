@@ -38509,7 +38509,7 @@
   "weather": "9도/맑음, 54분/운동(W, Y)",
   "failed": false,
   "calories": null,
-  "title": "브리치즈사과토스트",
+  "title": "브리치즈 사과 토스트",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38519,17 +38519,10 @@
    "조식다이어리"
   ],
   "intro": "20231016, #조식다이어리 868, 9도/맑음, 54분/운동(W, Y) \n일주일 사이에 아침 기온이 한 자리 숫자로 바뀌었다. 아직은 가을, 겨울의 길목이다. 어서 오라, 겨울! \n달군 팬에 올리브오일 두른 빵을 굽고 브리치즈를 올린다. 오늘은 토치로 브리치즈를 구웠다. (빵이 함께 타버린다는 문제가 있긴 했으나 냉장고에서 갓 꺼낸 브리치즈와는 다른 훨씬 더 풍부한 식감을 맛볼 수 있다.) \n브리치즈와 최고의 궁합, 사과 반 개 잘라서 올리고 꿀, 호두로 마무리~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 사워도우 1장\n- 사과 1/2개\n- 꿀 1t\n- 올리브오일 1t\n- 브리치즈 60g",
+  "steps": "1. 사워도우에 올리브오일 바르고 앞뒤로 바삭하게 굽는다. \n2. 사워도우를 접시에 담고 얇게 썬 브리치즈 얹은 후 토치로 브리치즈를 녹인다. \n3. 얇게 썬 사과, 꿀 1t, 다진 호추 얹는다.  ",
   "raw": "20231016, #조식다이어리 868, 9도/맑음, 54분/운동(W, Y) \n\n일주일 사이에 아침 기온이 한 자리 숫자로 바뀌었다. 아직은 가을, 겨울의 길목이다. 어서 오라, 겨울! \n\n달군 팬에 올리브오일 두른 빵을 굽고 브리치즈를 올린다. 오늘은 토치로 브리치즈를 구웠다. (빵이 함께 타버린다는 문제가 있긴 했으나 냉장고에서 갓 꺼낸 브리치즈와는 다른 훨씬 더 풍부한 식감을 맛볼 수 있다.) \n브리치즈와 최고의 궁합, 사과 반 개 잘라서 올리고 꿀, 호두로 마무리~\n\n#조식 #레시피 #미라클모닝 #브리치즈사과토스트",
   "video": "https://images.how-about-breakfast.com/images/868.mp4",
-  "_en": {
-   "hash": "3fd600ed655882ecdfcd590a68243292efd2b2a6853453c293a65fa9a7490728",
-   "title": "Brie and Apple Toast",
-   "intro": "20231016, #breakfastdiary 868, 9°C/sunny, 54min/exercise(W, Y)\nIn just a week, morning temperatures dropped to single digits. Still autumn, but we're at winter's doorstep now. Come on in, winter!\nToast bread brushed with olive oil in a hot pan, then top with brie. Today I torched the brie. (The bread ended up getting a bit charred in the process, but the texture was so much richer than brie fresh out of the fridge.)\nBrie's best match — half an apple, sliced and layered on top — finished with honey and walnuts~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "브리치즈사과토스트",
   "image": "https://images.how-about-breakfast.com/images/879b.jpg"
  },
