@@ -68544,23 +68544,16 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "갑오징어샐러드",
+  "title": "갑오징어 샐러드",
   "credit": null,
   "hashtags": [
    "갑오징어샐러드"
   ],
   "intro": "끓는 물에 강황을 넣고 삶은 감자, 토마토, 그린올리브, 딜, 올리브오일과 레몬즙, 크래쉬드 페퍼 #갑오징어샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 감자 1개\n- 갑오징어 1/2마리\n- 강황 1t\n- 토마토 1/2개\n- 그린올리브 1T\n- 딜 조금\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 크래시드 페퍼 1/4t",
+  "steps": "1. 감자는 먹기 좋은 크기로 썬다. \n2. 갑오징어는 끓는 물에 살짝 데친 후 먹기 좋은 크기로 썬다. \n3. 끓는 물에 1의 감자와 강황 1t 넣고 삶는다. \n4. 접시에 2의 감자와 토마토, 그린올리브, 딜 담고 드레싱 뿌린다. 크래시드 페퍼로 마무리한다. ",
   "raw": "끓는 물에 강황을 넣고 삶은 감자, 토마토, 그린올리브, 딜, 올리브오일과 레몬즙, 크래쉬드 페퍼 #갑오징어샐러드",
   "image": "https://images.how-about-breakfast.com/images/245.jpg",
-  "_en": {
-   "hash": "863faef92a80be1808210fa824617cf9d6684a5c1937b8e25dc35cbc956e17a6",
-   "title": "Cuttlefish Salad",
-   "intro": "Potatoes boiled in turmeric water, tomatoes, green olives, dill, olive oil and lemon juice, crushed pepper #cuttlefishsalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "갑오징어샐러드"
  },
  {
