@@ -25505,7 +25505,7 @@
   "weather": "14도/대체로 흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "량피",
+  "title": "량피 스타일 두부피 무침",
   "credit": null,
   "hashtags": [
    "량피",
@@ -25515,8 +25515,8 @@
    "조식다이어리"
   ],
   "intro": "20241016 #조식다이어리 1207, 14도/대체로 흐림, 20분/운동(M) \n \n량피(凉皮)는 중국 서북부 지방의 전통 음식으로, 주로 여름철에 즐겨 먹는 차가운 면 요리다. 조리법 중에는 기본 양념에 뜨거운 기름을 부어 양념의 향을 끌어올린 후 면과 함께 비벼 먹는 조리 방법도 있는데 요새 여기저기서 눈에 띄길래, \n오늘 조식은 면 대신 두부피를 사용한 량피 스타일 두부피 무침(이걸 무침이라고 해도 되나 싶지만,)",
-  "ingredients": "두부피, 오일 1컵\n(1단계 소스) 쪽파 많이, 다진 마늘 1, 고추가루 1, 설탕 1, 참깨 1 \n(2단계 소스) 간장 2, 물 2\n*T 테이블 스푼, t 티 스푼 관계 없다. 대층 저 정도 넣으면 된다. \n \n👉이렇게\n두부피는 잠들기 전에 물에 불려 두었다가 끓는 물에 데치고 10cm 크기로 썬다.\n1단계 소스에 펄펄 끓는 오일(약 200도) 부어 향을 있는 힘껏 끌어 올린 다음 골고루 섞는다. 2단계 소스를 붓는다. \n접시에 담고 두부피 담고 소스를 끼얹는다. 버무린다. \n땅콩버터 더해서 먹으면, 맛있다. \n\n#조식 #레시피 #미라클모닝 #량피\n\nTofu skin cooked liangpi(Chinese cold noodle) \n\n맵지 않습니다.",
-  "steps": null,
+  "ingredients": "- 두부피 100g\n- 오일 50ml\n- 1단계 소스(쪽파 많이, 다진 마늘 1t, 고추가루 1t, 설탕 1t, 참깨 1t) \n- 2단계 소스(간장 2t, 물 2t)",
+  "steps": "1. 두부피는 잠들기 전에 물에 불려 두었다가 끓는 물에 데치고 10cm 크기로 썬다.\n2. 1단계 소스에 펄펄 끓는 오일(약 200도) 부어 향을 있는 힘껏 끌어 올린 다음 골고루 섞는다. \n3. 접시에 담고 두부피 담고 2단계 소스를 끼얹는다. 버무린다. \n4. 땅콩버터 더해서 먹으면, 맛있다. ",
   "raw": "20241016 #조식다이어리 1207, 14도/대체로 흐림, 20분/운동(M) \n \n량피(凉皮)는 중국 서북부 지방의 전통 음식으로, 주로 여름철에 즐겨 먹는 차가운 면 요리다. 조리법 중에는 기본 양념에 뜨거운 기름을 부어 양념의 향을 끌어올린 후 면과 함께 비벼 먹는 조리 방법도 있는데 요새 여기저기서 눈에 띄길래, \n\n오늘 조식은 면 대신 두부피를 사용한 량피 스타일 두부피 무침(이걸 무침이라고 해도 되나 싶지만,) \n\n👉재료는\n두부피, 오일 1컵\n(1단계 소스) 쪽파 많이, 다진 마늘 1, 고추가루 1, 설탕 1, 참깨 1 \n(2단계 소스) 간장 2, 물 2\n*T 테이블 스푼, t 티 스푼 관계 없다. 대층 저 정도 넣으면 된다. \n \n👉이렇게\n두부피는 잠들기 전에 물에 불려 두었다가 끓는 물에 데치고 10cm 크기로 썬다.\n1단계 소스에 펄펄 끓는 오일(약 200도) 부어 향을 있는 힘껏 끌어 올린 다음 골고루 섞는다. 2단계 소스를 붓는다. \n접시에 담고 두부피 담고 소스를 끼얹는다. 버무린다. \n땅콩버터 더해서 먹으면, 맛있다. \n\n#조식 #레시피 #미라클모닝 #량피\n\nTofu skin cooked liangpi(Chinese cold noodle) \n\n맵지 않습니다. ",
   "image": "https://images.how-about-breakfast.com/images/1207.jpg",
   "gallery": [
@@ -25527,13 +25527,6 @@
    "https://images.how-about-breakfast.com/images/1207_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1207.mp4",
-  "_en": {
-   "hash": "bbb692c1d97403d6c618662569626ccee6c673726962fad919314c2863d09f2d",
-   "title": "Liangpi",
-   "intro": "20241016 #breakfastdiary 1207, 14°C/mostly cloudy, 20 min/exercise(M) \n \nLiangpi (凉皮) is a traditional dish from northwestern China, a cold noodle dish usually enjoyed in summer. One way of making it is to pour hot oil over the base seasoning to bring out its aroma, then toss it with the noodles — I've been seeing this method everywhere lately, \nso today's breakfast is a liangpi-style tofu skin toss using tofu skin instead of noodles (not sure I should even call this a 'toss,')",
-   "ingredients": "Tofu skin, 1 cup oil\n(Stage 1 sauce) lots of chopped green onion, minced garlic 1, chili powder 1, sugar 1, sesame seeds 1\n(Stage 2 sauce) soy sauce 2, water 2\n*Doesn't matter if it's T (tablespoon) or t (teaspoon). Just add roughly that much.\n\n👉Like this\nSoak the tofu skin in water the night before, then blanch in boiling water and cut into 10cm pieces.\nPour piping-hot oil (about 200°C) over the stage-1 sauce to bring the aroma up as much as possible, then mix thoroughly. Pour in the stage-2 sauce.\nPut the tofu skin on a plate and drizzle with the sauce. Toss.\nAdd peanut butter if you want — it's delicious.\n\n#breakfast #recipe #miraclemorning #liangpi\n\nTofu skin cooked liangpi (Chinese cold noodle)\n\nNot spicy.",
-   "steps": ""
-  },
   "page_id": "량피"
  },
  {
