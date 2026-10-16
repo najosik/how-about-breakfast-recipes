@@ -28,7 +28,14 @@
    "https://images.how-about-breakfast.com/images/1895_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1895.mp4",
-  "page_id": "고구마-초리조-미소-수프"
+  "page_id": "고구마-초리조-미소-수프",
+  "_en": {
+   "hash": "21d4e5ec2c4fb8cd37d4a163c51c6f963cf3827d3890a492044ae17412f3e1d6",
+   "title": "Sweet Potato Chorizo Miso Soup",
+   "intro": "20261015 #breakfastdiary 1866, 9°C/clear\nMorning temperatures have dropped into the single digits. Soup season has arrived.\n320kcal for one serving of Sweet Potato Chorizo Miso Soup",
+   "ingredients": "- 1/2 onion\n- 4 shiitake mushrooms (about 100g)\n- 2 sweet potatoes (about 200g)\n- 30g chorizo\n- 8g unsalted butter\n- 1 tbsp cake flour\n- Broth (200ml water, 1 tbsp miso, 1 tsp chicken stock)\n- 300ml low-fat milk\n- A little chopped parsley",
+   "steps": "1. Thinly slice the onion, and thinly slice the shiitake mushrooms after removing the stems. Thinly slice the chorizo, and cut the sweet potatoes into 1-2cm dice after trimming both ends, then soak in water.\n2. In a pot, render the fat from the chorizo, then add the onion and shiitake mushrooms and sauté for 2-3 minutes until softened.\n3. Add the sweet potato to step 2, stir gently, then turn off the heat. Add the 8g butter and stir as it melts, then add 1 tbsp cake flour and mix until no raw flour remains.\n4. Turn the heat to low and add the water, miso, and chicken stock, in that order. Once it comes to a boil, simmer for another 8-10 minutes until the sweet potato is cooked through.\n5. Add 300ml low-fat milk and warm just until it's about to boil and has thickened, then ladle into a bowl and sprinkle with parsley."
+  }
  },
  {
   "date": "2026-10-14",
@@ -12890,7 +12897,14 @@
    "https://images.how-about-breakfast.com/images/1534_2.jpg",
    "https://images.how-about-breakfast.com/images/1534_3.jpg"
   ],
-  "page_id": "가지수프"
+  "page_id": "가지수프",
+  "_en": {
+   "hash": "c357428b8f56c7c10a85fd3ed5306eefc7d1a55b0c1482944bd19fc595473875",
+   "title": "Eggplant Soup",
+   "intro": "20251016 #breakfastdiary 1534, 17°C/mostly cloudy\nDidn't have the heavy cream the original recipe calls for, so I used milk and half a potato instead for a thicker texture. About 300kcal #eggplantsoup",
+   "ingredients": "- 2 eggplants\n- 1 tsp butter\n- 1/2 potato\n- 1/2 onion\n- 2 cloves garlic\n- 1 piece vegetable stock\n- 100ml milk\n- 300ml water\n- 2-3 perilla leaves\n- 1 tsp pine nuts",
+   "steps": "1. Halve the eggplants, toss with olive oil, salt, and pepper, and roast at 180°C for 30 minutes.\n2. Meanwhile, melt butter in a pot and sauté the diced potato, minced onion, and minced garlic.\n3. Add the roasted eggplant from step 1 and 300ml water to the pot from step 2, add the vegetable stock, simmer a bit longer, then turn off the heat and blend with a hand blender.\n4. Pour in a little milk and mix well. (Taste and season with salt.)\n5. Plate and top the soup with pine nuts and chopped perilla leaves."
+  }
  },
  {
   "date": "2025-10-15",
@@ -25551,7 +25565,14 @@
    "https://images.how-about-breakfast.com/images/1207_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1207.mp4",
-  "page_id": "량피"
+  "page_id": "량피",
+  "_en": {
+   "hash": "1af688f485a637491cc7c017a6d7dd414347e7af1472da0397f93153b796324c",
+   "title": "Liangpi-Style Tofu Skin Salad",
+   "intro": "20241016 #breakfastdiary 1207, 14°C/mostly cloudy, 20min/exercise(M)\n\nLiangpi (凉皮) is a traditional dish from northwestern China, a cold noodle dish mostly enjoyed in summer. One preparation pours hot oil over the base seasoning to bring out its aroma before tossing it with the noodles - I kept seeing this method pop up here and there lately, so\ntoday's breakfast swaps the noodles for tofu skin in this liangpi-style tofu skin salad (not sure \"salad\" is even the right word for it, but)",
+   "ingredients": "- 100g tofu skin\n- 50ml oil\n- Stage 1 sauce (plenty of chopped scallion, 1 tsp minced garlic, 1 tsp gochugaru, 1 tsp sugar, 1 tsp sesame seeds)\n- Stage 2 sauce (2 tsp soy sauce, 2 tsp water)",
+   "steps": "1. Soak the tofu skin in water the night before, then blanch in boiling water and cut into 10cm pieces.\n2. Pour piping hot oil (about 200°C) over the stage 1 sauce to really bring out the aroma, then mix well.\n3. Plate, add the tofu skin, and drizzle with the stage 2 sauce. Toss well.\n4. Add a bit of peanut butter if you like - it's delicious."
+  }
  },
  {
   "date": "2024-10-15",
@@ -38517,7 +38538,8 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "20231017-조식다이어리-869-8도-맑음-21분-운동-Y"
+  "page_id": "20231017-조식다이어리-869-8도-맑음-21분-운동-Y",
+  "image": "https://images.how-about-breakfast.com/images/880b.jpg"
  },
  {
   "date": "2023-10-16",
@@ -38541,7 +38563,14 @@
   "raw": "20231016, #조식다이어리 868, 9도/맑음, 54분/운동(W, Y) \n\n일주일 사이에 아침 기온이 한 자리 숫자로 바뀌었다. 아직은 가을, 겨울의 길목이다. 어서 오라, 겨울! \n\n달군 팬에 올리브오일 두른 빵을 굽고 브리치즈를 올린다. 오늘은 토치로 브리치즈를 구웠다. (빵이 함께 타버린다는 문제가 있긴 했으나 냉장고에서 갓 꺼낸 브리치즈와는 다른 훨씬 더 풍부한 식감을 맛볼 수 있다.) \n브리치즈와 최고의 궁합, 사과 반 개 잘라서 올리고 꿀, 호두로 마무리~\n\n#조식 #레시피 #미라클모닝 #브리치즈사과토스트",
   "video": "https://images.how-about-breakfast.com/images/868.mp4",
   "page_id": "브리치즈사과토스트",
-  "image": "https://images.how-about-breakfast.com/images/879b.jpg"
+  "image": "https://images.how-about-breakfast.com/images/879b.jpg",
+  "_en": {
+   "hash": "ac0e4698a045592a5e655fe7d99807b371223487695743a1925eb6eebc797556",
+   "title": "Brie Cheese Apple Toast",
+   "intro": "20231016, #breakfastdiary 868, 9°C/clear, 54min/exercise(W, Y)\nWithin a week, the morning temperature dropped into the single digits. Still autumn, but right at winter's doorstep. Come on in, winter!\nToast bread in a hot pan with olive oil, then top with brie cheese. Today I torched the brie cheese. (The bread did end up getting a bit charred along with it, but you get a much richer texture than brie straight out of the fridge.)\nBrie's best pairing, apple - cut half an apple and place on top, then finish with honey and walnuts~",
+   "ingredients": "- 1 slice sourdough\n- 1/2 apple\n- 1 tsp honey\n- 1 tsp olive oil\n- 60g brie cheese",
+   "steps": "1. Brush the sourdough with olive oil and toast both sides until crisp.\n2. Plate the sourdough, top with thinly sliced brie cheese, and melt it with a kitchen torch.\n3. Top with thinly sliced apple, 1 tsp honey, and chopped walnuts."
+  }
  },
  {
   "date": "2023-10-15",
@@ -51307,7 +51336,14 @@
    "https://images.how-about-breakfast.com/images/571.jpg",
    "https://images.how-about-breakfast.com/images/571_2.jpg"
   ],
-  "page_id": "욕쟁이할머니-쌍욕라떼-크림스파게티"
+  "page_id": "욕쟁이할머니-쌍욕라떼-크림스파게티",
+  "_en": {
+   "hash": "dbc70a7ce97dde91520ff78854fa71f99845968ae911bcacc858dd53da65d004",
+   "title": "Cream Pasta",
+   "intro": "20221017, #breakfastdiary 571, 6°C/clear, 15min/exercise\nService has to keep evolving, but a paradoxical phenomenon can show up along the way: consumers who've consistently experienced great service keep raising their expectations, to the point where it becomes harder and harder for companies to satisfy them. It's similar to how, if you keep eating delicious food, at some point it stops tasting as delicious, or how getting special treatment often enough makes you forget to be grateful for it.\nFor example, when American Airlines first introduced its mileage program, every customer was thrilled and grateful - but now, people complain loudly over even the smallest inconvenience involving mileage redemption. Today's consumer market is caught in what's sometimes called the \"hedonic treadmill\" or \"satisfaction treadmill\" - the more happiness you feel, the higher the bar rises, until you end up feeling less happy than before.\nMaybe it's something like that same psychology behind customers cheering for a foul-mouthed grandma restaurant owner's insults, or craving a \"profanity latte\" -\nHeat olive oil in a pan and sauté the prettiest garlic and onion in the world. Once the garlic turns nicely golden, pour in the boiled pasta and the béchamel sauce made a few days ago. Transfer to a plate, pepper pepper, a thick #creamspaghetti\nIf the béchamel sauce feels too thick, add a bit of milk to adjust the consistency. A morning where I learned what happens if you don't,",
+   "ingredients": "- 1/2 serving spaghetti\n- 2 cloves garlic\n- 1/2 onion\n- 2 tbsp béchamel sauce\n- 2 tsp olive oil\n- 1/4 tsp pepper\n- Milk (optional)",
+   "steps": "1. Add 2 tsp salt to boiling water and cook the spaghetti.\n2. Heat 2 tsp olive oil in a pan and sauté the thinly sliced garlic and minced onion.\n3. Add 2 tbsp béchamel sauce and the spaghetti from step 1 to step 2 and mix. Adjust the consistency with milk (or pasta water if you don't have any).\n4. Plate and sprinkle with 1/4 tsp pepper."
+  }
  },
  {
   "date": "2022-10-15",
@@ -68560,7 +68596,14 @@
    "https://images.how-about-breakfast.com/images/241_2.jpg",
    "https://images.how-about-breakfast.com/images/241_3.jpg"
   ],
-  "page_id": "레몬치즈딥-모닝리추얼-모닝루틴"
+  "page_id": "레몬치즈딥-모닝리추얼-모닝루틴",
+  "_en": {
+   "hash": "73b6552f88aff8e103c382cfb3ba24704f28c947de7f2bb7d3a9bc0872230466",
+   "title": "Roasted Tomato with Lemon Cheese Dip",
+   "intro": "20211017, #breakfastdiary 241, 5°C/clear\nEat it with baguette, a creamy lemon cheese dip, and oven-roasted tomato on top.\nBlitz feta cheese and ricotta cheese in a food processor, whir whir whir,\nscrub the prettiest lemon in the world clean with coarse salt, grate it for plenty of lemon zest, then add lemon juice, olive oil, pepper pepper pepper pepper, and herbs.\nDrizzle honey over it twice right before eating for a sweet-and-salty #lemoncheesedip\nRoast the tomato with olive oil, salt, herbs, pepper pepper pepper, in a 180°C oven for 20 minutes.\nYou could just eat the baguette plain, or with ricotta cheese and fresh tomato on top, and it'd still be fine.\nGoing to the trouble of blending two kinds of cheese, adding the shape of lemon and pepper and herbs, and even adding the depth of oven-roasted tomato on top - it's all worth that much trouble.\nI think there's always a reason certain things need this much time and process.",
+   "ingredients": "- 5-6 cherry tomatoes\n- 1 tsp olive oil\n- 1/4 tsp salt\n- 1/4 tsp pepper\n- 1/4 tsp herbs\n\n(Lemon cheese dip)\n- 50g feta cheese\n- 50g ricotta cheese\n- 1/2 lemon\n- 1 tsp olive oil\n- 1/4 tsp pepper\n- 1/4 tsp herbs\n- 2 tsp honey",
+   "steps": "1. Halve the cherry tomatoes, place on a baking sheet, sprinkle with 1 tsp olive oil and 1/4 tsp each of salt, pepper, and herbs, and roast at 180°C for 20 minutes.\n2. Spoon the lemon cheese dip into a bowl and top with the tomatoes from step 1.\n\n(Lemon cheese dip)\nBlend 50g feta cheese and 50g ricotta cheese in a food processor. Mix in the zest and juice of 1/2 lemon, 1 tsp olive oil, 1/4 tsp pepper, 1/4 tsp herbs, and 2 tsp honey."
+  }
  },
  {
   "date": "2021-10-16",
@@ -86263,7 +86306,14 @@
   "raw": "20201017, 까마귀 연구자 마이클 웨스터필드의 연구를 보면, 까마귀는 \"인간\" \"고양이\" \"개\"를 의미하는 다른 소리를 낸다. 에버랜드에 사는 코끼리, 코식이는 \"안녕\" \"앉아\" \"누워\" 같은 사람의 말을 익혔다. 성장해서 암컷 코끼리와 살게 되자 코식이는 암컷과 코끼리의 언어로 이야기하고, 사람과는 한국어로 의사소통했다. (출처: 한겨레신문) \n\n인간을 우위에 놓고 동물, 자연을 아래에 두는 위계적인 사고체계의 변화가 필요해지는 이유다. 그들은 이미 이야기를 하고 있고, 이제 그들을 바라보는 인간의 시선이 바뀌기만 하면 된다고. 아마 #기후위기 에 대한 해답도 거기에 있을 것 같다. \n\n간밤에 불려둔 호랑이콩, 검은콩, 병아리콩, 강낭콩 그리고 세상에서 제일 예쁜 #완두콩 에 파프리카, 토마토 약간 #조식 #샐러드",
   "pre_label": "D-118",
   "image": "https://images.how-about-breakfast.com/images/pre-118.jpg",
-  "page_id": "기후위기-완두콩"
+  "page_id": "기후위기-완두콩",
+  "_en": {
+   "hash": "459a3846bb9985be6762f2cfb107fd13ebb9e24a852f028551c11cc936c8dea4",
+   "title": "Mixed Bean Salad",
+   "intro": "20201017, According to crow researcher Michael Westerfield's research, crows make distinct sounds that mean \"human,\" \"cat,\" and \"dog.\" Kosik, an elephant living at Everland, learned human words like \"hello,\" \"sit,\" and \"lie down.\" Once he grew up and started living with a female elephant, Kosik spoke to her in elephant language, while still communicating with humans in Korean. (Source: The Hankyoreh)\nWhich is exactly why we need a shift away from the hierarchical way of thinking that places humans above, and animals and nature below. They're already talking - all that's left is for the way humans look at them to change. Maybe the answer to the #climatecrisis is in there somewhere too.\nTiger beans, black beans, chickpeas, and kidney beans soaked overnight, with the prettiest #greenpeas in the world, a little bell pepper and tomato. #breakfast #salad",
+   "ingredients": "- 2 cups mixed beans\n- 3-4 cherry tomatoes\n- 1/4 bell pepper\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)",
+   "steps": "1. Soak the tiger beans, black beans, chickpeas, kidney beans, and green peas in water for at least 3-4 hours.\n2. Boil the beans from step 1 in boiling water.\n3. Place the boiled beans in a bowl with the cherry tomatoes and bell pepper, cut into bite-sized pieces, and drizzle with the dressing."
+  }
  },
  {
   "date": "2020-10-16",
