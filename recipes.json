@@ -38500,7 +38500,7 @@
   "weather": "8도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "홍시 홍시샐러드",
+  "title": "제철 홍시 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38511,8 +38511,8 @@
    "홍시샐러드"
   ],
   "intro": "20231018, #조식다이어리 870, 8도/대체로흐림\n어제의 건강 검진 결과🐷를 겸허히 받아들이고 좀 더 노력하는 삶을 살기로 했다. \n홍시 철이 왔다. 부라타치즈에 (리코타치즈도 조금,) 잘 익은 #홍시 , 레몬제스트, 소금, 후추, 올리브오일~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 부라타치즈 1/2개\n- 리코타치즈 1T\n- 홍시 1개\n- 레몬 1/2개\n- 소금 1/4t\n- 후추 1/4t\n- 올리브오일 1t",
+  "steps": "1. 접시에 부라타치즈와 리코타치즈 담는다. \n2. 사이사이에 잘 익은 홍시를 얹는다. \n3. 레몬제스트, 소금, 후추, 올리브오일 얹어서 먹는다. ",
   "raw": "20231018, #조식다이어리 870, 8도/대체로흐림\n\n어제의 건강 검진 결과🐷를 겸허히 받아들이고 좀 더 노력하는 삶을 살기로 했다. \n\n홍시 철이 왔다. 부라타치즈에 (리코타치즈도 조금,) 잘 익은 #홍시 , 레몬제스트, 소금, 후추, 올리브오일~\n\n#조식 #레시피 #미라클모닝 #홍시샐러드",
   "image": "https://images.how-about-breakfast.com/images/870.jpg",
   "gallery": [
@@ -38520,13 +38520,6 @@
    "https://images.how-about-breakfast.com/images/870_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/870.mp4",
-  "_en": {
-   "hash": "fe9f3a31fb6e9bf22edd657772fd78cab764c7cbaf3d133754b67cea116238bc",
-   "title": "Persimmon Salad",
-   "intro": "20231018, #breakfastdiary 870, 8°C/mostly cloudy\nI've decided to humbly accept yesterday's health checkup results 🐷 and try to live a little harder.\nPersimmon season has arrived. Burrata cheese (with a bit of ricotta too), ripe #persimmon, lemon zest, salt, pepper, and olive oil~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "홍시-홍시샐러드"
  },
  {
