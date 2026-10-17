@@ -25492,7 +25492,7 @@
   "weather": "17도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "오트밀",
+  "title": "사과 콩피를 곁들인 오트밀",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25502,8 +25502,8 @@
    "조식다이어리"
   ],
   "intro": "20241018 #조식다이어리 1209, 17도/흐림, 20분/운동(M) \n \n이 시간 이후 비 올 확률 60%라는데 우산 없이 나왔다.",
-  "ingredients": "(사과 콩피) 사과 1/2개, 꿀, 시나몬\n(오트밀) 오트밀, 물, 우유 1/2컵, 시나몬\n \n👉이렇게\n미니 다이스(1.2cm) 크기로 썬 사과는 시나몬, 꿀 넣고 조린다. 초초초초간단 콩피다. \n냄비에 물, 우유, 오트밀 넣고 천천히 저어가며 5분 정도 되직하게 끓인다. \n\n#조식 #레시피 #미라클모닝 #오트밀",
-  "steps": null,
+  "ingredients": "(사과 콩피) \n- 사과 1/2개\n- 꿀 1t\n- 시나몬 1/4t\n(오트밀) \n- 오트밀 1컵\n- 물 1/2컵 \n- 우유 1/2컵\n- 시나몬 1/4t",
+  "steps": "1. 미니 다이스(1.2cm) 크기로 썬 사과는 시나몬, 꿀 넣고 조린다. 간단한 사과 콩피다. \n2. 냄비에 물, 우유, 오트밀 넣고 천천히 저어가며 5분 정도 되직하게 끓인다. \n3. 그릇에 오트밀 담고 그 위에 1의 사과 콩피를 얹는다. ",
   "raw": "20241018 #조식다이어리 1209, 17도/흐림, 20분/운동(M) \n \n이 시간 이후 비 올 확률 60%라는데 우산 없이 나왔다. \n\n👉재료는\n(사과 콩피) 사과 1/2개, 꿀, 시나몬\n(오트밀) 오트밀, 물, 우유 1/2컵, 시나몬\n \n👉이렇게\n미니 다이스(1.2cm) 크기로 썬 사과는 시나몬, 꿀 넣고 조린다. 초초초초간단 콩피다. \n냄비에 물, 우유, 오트밀 넣고 천천히 저어가며 5분 정도 되직하게 끓인다. \n\n#조식 #레시피 #미라클모닝 #오트밀",
   "image": "https://images.how-about-breakfast.com/images/1209.jpg",
   "gallery": [
@@ -25513,13 +25513,6 @@
    "https://images.how-about-breakfast.com/images/1209_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1209.mp4",
-  "_en": {
-   "hash": "192257fe8e25934bb3805a2cb8b5728d731fba1e0e94b750f0a3d06c8da94831",
-   "title": "Oatmeal",
-   "intro": "20241018 #breakfastdiary 1209, 17°C/cloudy, 20min/exercise(M)\n \nApparently there's a 60% chance of rain from this hour on, but I came out without an umbrella.",
-   "ingredients": "(apple confit) 1/2 apple, honey, cinnamon\n(oatmeal) oats, water, 1/2 cup milk, cinnamon\n \n👉Like this\nCut the apple into small dice (1.2cm) and braise with cinnamon and honey. A super-duper-simple confit.\nIn a pot, combine water, milk, and oats and simmer slowly, stirring, for about 5 minutes until thick.\n\n#breakfast #recipe #miraclemorning #oatmeal",
-   "steps": ""
-  },
   "page_id": "오트밀"
  },
  {
