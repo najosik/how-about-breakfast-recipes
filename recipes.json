@@ -51270,7 +51270,7 @@
   "weather": "5도/맑음, 10분/운동",
   "failed": false,
   "calories": null,
-  "title": "스테이크 살치살 소고기",
+  "title": "대파 살치살 구이",
   "credit": null,
   "hashtags": [
    "beef",
@@ -51290,9 +51290,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20221018, #조식다이어리 572, 5도/맑음, 10분/운동\n사랑했던 이를 잃으면 가슴이 뻥 뚫린 것처럼 허전하고 마음이 아프다. 그것을 피할수있는 유일한 방법은 아무것도 사랑하지 않는 것뿐이지만, 그러면 항상 텅 빈 것 같은 느낌 속에 살아야 하는데, 그건 더 나쁘지 않겠느냐고, 할아버지는 말씀하셨다.\n출처: 인디언 봇\n‘사랑하는 이’ 대신에 어떤 것을 넣어도 성립되는 이야기, 가령 ‘고기’ \n팬에 버터 한 덩어리를 녹여서 코팅한 다음 살치살을 한 덩어리 올린다. 앞뒤로 한 번씩만 굽고, 건져낸 뒤 소금소금, 후추후추 더해 대파를 굽는다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20221018, #조식다이어리 572, 5도/맑음, 10분/운동\n사랑했던 이를 잃으면 가슴이 뻥 뚫린 것처럼 허전하고 마음이 아프다. 그것을 피할수있는 유일한 방법은 아무것도 사랑하지 않는 것뿐이지만, 그러면 항상 텅 빈 것 같은 느낌 속에 살아야 하는데, 그건 더 나쁘지 않겠느냐고, 할아버지는 말씀하셨다.\n(출처: 인디언 봇)\n‘사랑하는 이’ 대신에 어떤 것을 넣어도 성립되는 이야기, 가령 ‘고기’ \n팬에 버터 한 덩어리를 녹여서 코팅한 다음 살치살을 한 덩어리 올린다. 앞뒤로 한 번씩만 굽고, 건져낸 뒤 소금소금, 후추후추 더해 대파를 굽는다.",
+  "ingredients": "- 살치살 150g\n- 버터 5g\n- 대파(잎집) 1개\n- 소금 1/4t X 2\n- 후추 1/4t X 2\n- 홀그레인 머스터드 1t",
+  "steps": "1. 팬에 버터 5g 녹인 후 살치살 한 덩어리 미디엄 웰던으로 굽는다. 익으면 따로 담아 시어링한다. \n2. 살치살 구운 팬에 대파(잎집) 넣고 소금, 후추 더해 굽는다. \n3. 1의 살치살은 먹기 좋은 크기로 썰고 살치살도 같은 크기로 썬다. \n4. 접시에 대파, 살치살 순서로 담고 홀그레인 머스터드 1t 얹는다.  \n",
   "raw": "20221018, #조식다이어리 572, 5도/맑음, 10분/운동\n\n사랑했던 이를 잃으면 가슴이 뻥 뚫린 것처럼 허전하고 마음이 아프다. 그것을 피할수있는 유일한 방법은 아무것도 사랑하지 않는 것뿐이지만, 그러면 항상 텅 빈 것 같은 느낌 속에 살아야 하는데, 그건 더 나쁘지 않겠느냐고, 할아버지는 말씀하셨다.\n출처: 인디언 봇\n\n‘사랑하는 이’ 대신에 어떤 것을 넣어도 성립되는 이야기, 가령 ‘고기’ \n\n팬에 버터 한 덩어리를 녹여서 코팅한 다음 살치살을 한 덩어리 올린다. 앞뒤로 한 번씩만 굽고, 건져낸 뒤 소금소금, 후추후추 더해 대파를 굽는다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #스테이크 #살치살 #소고기 #대파\n#breakfast #beef #leek #steak ",
   "image": "https://images.how-about-breakfast.com/images/572.jpg",
   "gallery": [
@@ -51301,13 +51301,6 @@
    "https://images.how-about-breakfast.com/images/572_3.jpg",
    "https://images.how-about-breakfast.com/images/572_4.jpg"
   ],
-  "_en": {
-   "hash": "8fe3d29a274c006b1a615c0dcdb0f48535750cce674b456b610f83f6839c7f32",
-   "title": "Chuck Flap Steak",
-   "intro": "20221018 #breakfastdiary 572, 5°C/sunny, 10min exercise\nWhen you lose someone you loved, your heart feels hollowed out and it aches. The only way to avoid that is to love nothing at all — but then you'd have to live with a constant sense of emptiness, and wouldn't that be worse? my grandfather used to say.\nSource: Indian Bot\nYou could swap 'someone you loved' for almost anything and the story would still hold — say, 'meat.'\nMelt a knob of butter in a pan to coat it, then lay down a piece of chuck flap steak. Sear it just once on each side, take it out, season with salt and pepper, and use the same pan to cook the scallions.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "스테이크-살치살-소고기"
  },
  {
