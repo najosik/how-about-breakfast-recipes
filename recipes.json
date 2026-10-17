@@ -12858,7 +12858,14 @@
    "https://images.how-about-breakfast.com/images/1535_2.jpg",
    "https://images.how-about-breakfast.com/images/1535_3.jpg"
   ],
-  "page_id": "오트밀-바나나-팬케이크"
+  "page_id": "오트밀-바나나-팬케이크",
+  "_en": {
+   "hash": "9309795a4e41568412b5416a201d7b324a12092273ecee8cec9e58f1ee91a16e",
+   "title": "Oatmeal Banana Pancakes",
+   "intro": "20251017 #breakfastdiary 1535, 15°C/mostly clear, 20min/exercise(M)\nAbout 584kcal Oatmeal Banana Pancakes with no flour at all",
+   "ingredients": "- 2 bananas\n- 3 eggs\n- 2 tbsp oats\n- 1 tbsp Greek yogurt\n- 2 tsp chocolate coconut chips\n- 1/4 tsp cinnamon\n- 2 tsp olive oil",
+   "steps": "1. Mash 1 banana finely, then mix in the 3 eggs and 2 tbsp oats until well combined.\n2. Heat 2 tsp olive oil in a pan, lay slices of the other banana in, pour in the batter from step 1, and cook both sides.\n3. Plate and top with cinnamon, 1 tbsp Greek yogurt, and coconut chips"
+  }
  },
  {
   "date": "2025-10-16",
@@ -25520,7 +25527,14 @@
    "https://images.how-about-breakfast.com/images/1208_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1208.mp4",
-  "page_id": "연근구이-연근"
+  "page_id": "연근구이-연근",
+  "_en": {
+   "hash": "cf88e2812da6c79297084a12f1d8ff6d82b1b6163c545a99deac0e313e9fd304",
+   "title": "Roasted Lotus Root Chickpea Salad",
+   "intro": "20241017 #breakfastdiary 1208, 12°C/mostly cloudy, 20min/exercise(M)\n\nOriginally planned to roast carrot, but the carrot left in the fridge was so small and precious that I switched the plan to lotus root instead - so today's breakfast is #roastedlotusroot with Greek yogurt and chickpeas",
+   "ingredients": "- 1/2 lotus root\n- 1 cup chickpeas\n- 3 tbsp Greek yogurt\n- Vinaigrette dressing (3 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)\n- A little parsley",
+   "steps": "1. Soak the chickpeas in water for 3-4 hours.\n2. Heat 2 tsp olive oil in a pan and grill the lotus root, sliced 0.5cm thick, on both sides. Sprinkle with 1/4 tsp salt and pepper.\n3. Pour enough water into a pot to cover, add 1 tsp salt, and boil the chickpeas from step 1.\n4. Spoon the Greek yogurt onto a plate and top with the lotus root and chickpeas. Sprinkle with a little chopped parsley."
+  }
  },
  {
   "date": "2024-10-16",
@@ -68482,7 +68496,12 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "석류토마토샐러드-오징어게임-모닝리추얼"
+  "page_id": "석류토마토샐러드-오징어게임-모닝리추얼",
+  "image": "https://images.how-about-breakfast.com/images/248b.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/248b.jpg",
+   "https://images.how-about-breakfast.com/images/248b_2.jpg"
+  ]
  },
  {
   "date": "2021-10-18",
@@ -86255,7 +86274,14 @@
   "image": "https://images.how-about-breakfast.com/images/pre-117.jpg",
   "page_id": "오픈하우스서울-브릭웰-엔다이브",
   "essay_candidate": true,
-  "essay_reviewed": true
+  "essay_reviewed": true,
+  "_en": {
+   "hash": "a7de985d1c5e4f241c0286261f932c17fd24db1f333fbbebcf126c0dae2328a2",
+   "title": "Endive Salad",
+   "intro": "20201018, Every city has its own \"building open day\" festival - France has its \"Heritage Days,\" England has \"Open House London.\" \"Architecture\" sounds a bit stiff, but touring a beautifully designed house or building with the architect themselves guiding you (a lecture straight from the author, so to speak) is a genuinely special experience. Thankfully, Korea has had its own #OpenHouseSeoul every year around this time since 2014. Check @openhouse_seoul for details.\n(It feels wrong to credit COVID-19 for anything, but) this year stands out for new formats like self-guided \"Visit Yourself\" visits, videos, and livestreams. Special04 even includes Seochon's #BrickWell, which lit up Instagram earlier this year.\n*(Based on last year's experience) on-site reservations vanish in an instant unless you click furiously. On-site booking opens 10/19 (Mon) 14:00! (There's a notice splitting slots between under-50 and over-50 to account for those less comfortable online, which is both a little touching and at the same time...)\nWash the prettiest #endive in the world clean, with a few toasted walnuts, and an olive oil, whole grain mustard, white wine vinegar dressing. #breakfast #salad #ofcoursethisisjustanappetizer",
+   "ingredients": "- 1 endive\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)\n- 1 tbsp walnuts",
+   "steps": "1. Wash the endive clean and plate it.\n2. Drizzle with the dressing and top with chopped toasted walnuts."
+  }
  },
  {
   "date": "2020-10-17",
