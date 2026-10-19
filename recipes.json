@@ -51203,7 +51203,7 @@
   "weather": "5도/맑음, 16분/운동",
   "failed": false,
   "calories": null,
-  "title": "말린사과곶감고추장무침 말린사과곶감무침 두부",
+  "title": "곶감 고추장 두부구이",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51231,8 +51231,8 @@
    "홈쿡"
   ],
   "intro": "20221020, #조식다이어리 574, 5도/맑음, 16분/운동\n그 사이 계절이 바뀌었는지 고소하고, 맵고, 달고, 다소 짠 아침 식탁만큼이나 아침 출근길 햇살이 다채롭다.\n들기름으로 구운 두부 위에 말린사과곶감고추장무침을 얹어서, \n#말린사과곶감고추장무침 은 말 그대로 말린 사과, 곶감에 고추장을 넣고 무친다. 참깨도 조금, #말린사과곶감무침",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 두부 1모\n- 들기름 1T\n- 말린사과 1/2개\n- 곶감 1개\n- 고추장 1T\n- 참깨 1t",
+  "steps": "1. 팬에 들기름 두르고 두부를 구운 후 접시에 담는다. \n2. 말린 사과, 다진 곶감에 고추장, 참깨 넣고 무친다. \n3. 1의 들기름으로 구운 두부 위에 2의 사과곶감고추장무침을 얹는다. ",
   "raw": "20221020, #조식다이어리 574, 5도/맑음, 16분/운동\n\n그 사이 계절이 바뀌었는지 고소하고, 맵고, 달고, 다소 짠 아침 식탁만큼이나 아침 출근길 햇살이 다채롭다.\n\n들기름으로 구운 두부 위에 말린사과곶감고추장무침을 얹어서, \n\n#말린사과곶감고추장무침 은 말 그대로 말린 사과, 곶감에 고추장을 넣고 무친다. 참깨도 조금, #말린사과곶감무침 \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #두부 #말린사과 #곶감 #고추장 #참깨\n#breakfast #salad #tofu #dubu #driedpersimmon #gochujang #driedapple ",
   "image": "https://images.how-about-breakfast.com/images/574.jpg",
   "gallery": [
@@ -51240,13 +51240,6 @@
    "https://images.how-about-breakfast.com/images/574_2.jpg",
    "https://images.how-about-breakfast.com/images/574_3.jpg"
   ],
-  "_en": {
-   "hash": "250c86b53bc4785eff4ab41bef95d94f68cd37056325a9cdab1de5ff16bf18a5",
-   "title": "Dried Apple and Persimmon Gochujang Mix with Tofu",
-   "intro": "20221020 #breakfastdiary 574, 5°C/sunny, 16min exercise\nThe seasons must have shifted somewhere along the way — the morning sunlight on my walk to work feels just as varied as this nutty, spicy, sweet, faintly salty breakfast table.\nTofu pan-seared in perilla oil, topped with dried apple and persimmon gochujang mix.\n#driedapplepersimmongochujangmix is exactly what it sounds like — dried apple and dried persimmon tossed with gochujang, plus a little sesame. #driedapplepersimmonmix",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "말린사과곶감고추장무침-말린사과곶감무침-두부"
  },
  {
