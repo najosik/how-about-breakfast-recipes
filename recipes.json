@@ -38475,8 +38475,8 @@
    "조식다이어리"
   ],
   "intro": "20231020, #조식다이어리 872, 9도/맑음\n2019년 대비 2022년 디저트별 전문점의 성장률 가운데 베이글 전문점이 216%로 독보적이다. (참고. 떡.한과 66%, 와플.파이 65%) 게다가 요새도 런던베이글뮤지엄엔 한 시간 이상 줄을 서야 겨우 포장이 가능하다고, 그럴 바엔\n나조식베이글뮤지엄으로 오세요! \n당근 한 개 채 치고 소금 뿌려서 10분 정도 그대로 둔다. \n올리브오일3, 레몬주스1, 와인비니거1, 홀그레인머스타드1/2 넣고 뒤섞뒤섞, #당근라페 를 만든다. \n베이글은 반으로 잘라 180도, 5분, 베이글 데우고 리코타치즈 듬뿍 바른 뒤 당근라페를 올린다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 당근 1개\n- 당근라페 드레싱(올리브오일 3T, 레몬주스 1T, 와인비니거 1T, 홀그레인머스타드1/2t)\n- 베이글 1개\n- 리코타치즈 1T",
+  "steps": "1. 당근 한 개 채 치고 소금 뿌려서 10분 정도 그대로 둔다. \n2. 1의 당근에 올리브오일 3T, 레몬주스 1T, 와인비니거 1T, 홀그레인머스타드1/2t 넣고 섞어서 당근라페 를 만든다. \n3. 베이글은 반으로 잘라 180도 에어프라이어에 5분 데운다. \n4. 리코타치즈를 듬뿍 바르고 2의 당근라페 얹는다. ",
   "raw": "20231020, #조식다이어리 872, 9도/맑음\n\n2019년 대비 2022년 디저트별 전문점의 성장률 가운데 베이글 전문점이 216%로 독보적이다. (참고. 떡.한과 66%, 와플.파이 65%) 게다가 요새도 런던베이글뮤지엄엔 한 시간 이상 줄을 서야 겨우 포장이 가능하다고, 그럴 바엔\n\n나조식베이글뮤지엄으로 오세요! \n\n당근 한 개 채 치고 소금 뿌려서 10분 정도 그대로 둔다. \n올리브오일3, 레몬주스1, 와인비니거1, 홀그레인머스타드1/2 넣고 뒤섞뒤섞, #당근라페 를 만든다. \n베이글은 반으로 잘라 180도, 5분, 베이글 데우고 리코타치즈 듬뿍 바른 뒤 당근라페를 올린다. \n\n#조식 #레시피 #미라클모닝 #당근라페 #베이글",
   "image": "https://images.how-about-breakfast.com/images/872.jpg",
   "gallery": [
@@ -38484,13 +38484,6 @@
    "https://images.how-about-breakfast.com/images/872_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/872.mp4",
-  "_en": {
-   "hash": "ebaf6959918d1f8f55b88ad209fe6d113098ed395f4c67e344ebf21b41c5c166",
-   "title": "Carrot Rapé Bagel",
-   "intro": "20231020, #breakfastdiary 872, 9°C/sunny\nComparing 2019 to 2022, bagel shops led the growth among dessert specialty stores by a landslide, at 216%. (For reference: rice cakes/traditional sweets 66%, waffles/pies 65%.) And apparently you still have to wait in line for over an hour just to get takeout at the London Bagel Museum these days. Well, if that's the case —\nCome to My Breakfast Bagel Museum instead!\nJulienne one carrot, sprinkle with salt, and let it sit for about 10 minutes.\nAdd 3 parts olive oil, 1 part lemon juice, 1 part wine vinegar, and 1/2 part wholegrain mustard, mix well, and make #carrotrape.\nCut the bagel in half, toast at 180°C for 5 minutes, spread generously with ricotta cheese, and top with the carrot rapé.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "당근라페-베이글"
  },
  {
