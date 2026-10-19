@@ -29,7 +29,14 @@
    "https://images.how-about-breakfast.com/images/1899_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1899.mp4",
-  "page_id": "애호박-감자-닭가슴살-수프"
+  "page_id": "애호박-감자-닭가슴살-수프",
+  "_en": {
+   "hash": "c01f9db54af393fcc237731014506ab7c660a56809d496fefe552b7cf31c917b",
+   "title": "Zucchini Potato Chicken Breast Soup",
+   "intro": "20261019 #breakfastdiary 1869, 11°C/partly cloudy\nThe Great Dry Chicken Breast Escape\nPoaching it instead of sous vide gives the chicken breast a moist texture quite different from the usual. Dry chicken breast, made moist.\n305kcal Zucchini Potato Chicken Breast Soup",
+   "ingredients": "- 1/2 zucchini (diced)\n- 1 potato (about 150g, diced)\n- 170g cooked chicken breast (shredded)\n- Broth (950ml water, 1 tsp chicken stock)\n- 2 cups baby spinach (about 60g)\n- A little dill\n- 1 tbsp olive oil\n- A little salt and pepper",
+   "steps": "1. Bring 500ml water to a boil in a pot with 1/4 tsp salt. Once boiling, turn off the heat, add the chicken breast, remove after 20 minutes, and let it rest for 5 minutes. Shred it thinly along the grain.\n2. Heat 1 tbsp olive oil in a pot and sauté the zucchini and potato over medium heat for 4 minutes.\n3. Add 950ml water and 1 tsp chicken stock, and simmer for about 10 minutes until the potato is tender.\n4. Transfer half the vegetables and broth to another pot, turn off the heat, and blend finely with a hand blender, then pour it back into the original pot.\n5. Add the chicken breast and spinach, and warm over low heat for about 3 minutes.\n6. Season with salt and pepper and ladle into a bowl."
+  }
  },
  {
   "date": "2026-10-18",
@@ -60,38 +67,14 @@
    "https://images.how-about-breakfast.com/images/1898_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1898.mp4",
-  "page_id": "두부면으로-만든-니쿠-우동-2"
- },
- {
-  "date": "2026-10-17",
-  "date_raw": "20261017",
-  "diary_no": 1897,
-  "weather": "18도/비",
-  "failed": false,
-  "calories": 410,
-  "title": "두부면으로 만든 니쿠 우동",
-  "credit": null,
-  "hashtags": [
-   "레시피",
-   "소고기",
-   "조식",
-   "조식다이어리"
-  ],
-  "intro": "20261017 #조식다이어리 1868, 18도/비\n니쿠(肉)는 일본어로 고기다. 간사이 지방에서는 고기라고 하면 일반적으로 소고기라서 니쿠 우동에도 달짝지근하게 졸인 소고기를 올린다. 오늘은 우동 대신 두부면을 사용했는데 면과 국물이 따로 논다. 역시 밀가루로 만든 우동면을 대체할 순 없다. \n410kcal 두부면으로 만든 니쿠 우동",
-  "ingredients": "- 두부면 2개\n- 우삼겹 120g\n- 양파 1/2개\n- 대파 1/2대(잎집, 잎몸 조금씩)\n- 국물(물 700ml, 혼다시 1t, 간장 1T, 미림 1T)\n- 고기 양념(간장 1T, 설탕 1T, 미림 1T, 물 3T)",
-  "steps": "1. 양파는 채 썰고, 대파(잎집)는 5cm 길이로 썬다.\n2. 냄비에 물 700ml, 혼다시 1t, 간장 1T, 미림 1T와 1의 대파 넣고 끓여 국물을 만든다.\n3. 우삼겹은 끓는 물에 10초 데쳐서 기름을 뺀다.\n4. 팬에 고기 양념(간장 1T, 설탕 1T, 미림 1T, 물 3T)을 넣고 끓으면 양파를 넣는다. 양파가 투명해지면 우삼겹을 넣고 국물이 자작해질 때까지 졸인다.\n5. 두부면은 끓는 물에 1분 데워 물기를 빼고 그릇에 담는다.\n6. 2의 국물을 붓고 3의 소고기와 양파를 올린 뒤, 대파(잎몸) 조금 얹는다.",
-  "raw": "20261017 #조식다이어리 1868, 18도/비\n\n니쿠(肉)는 일본어로 고기다. 간사이 지방에서는 고기라고 하면 일반적으로 소고기라서 니쿠 우동에도 달짝지근하게 졸인 소고기를 올린다. 오늘은 우동 대신 두부면을 사용했는데 면과 국물이 따로 논다. 역시 밀가루로 만든 우동면을 대체할 순 없다. \n\n410kcal 두부면으로 만든 니쿠 우동\n\n👉재료(2인분)\n- 두부면 2개\n- 우삼겹 120g\n- 양파 1/2개\n- 대파 1/2대(잎집, 잎몸 조금씩)\n- 국물(물 700ml, 혼다시 1t, 간장 1T, 미림 1T)\n- 고기 양념(간장 1T, 설탕 1T, 미림 1T, 물 3T)\n\n👉조리\n1. 양파는 채 썰고, 대파(잎집)는 5cm 길이로 썬다.\n2. 냄비에 물 700ml, 혼다시 1t, 간장 1T, 미림 1T와 1의 대파 넣고 끓여 국물을 만든다.\n3. 우삼겹은 끓는 물에 10초 데쳐서 기름을 뺀다.\n4. 팬에 고기 양념(간장 1T, 설탕 1T, 미림 1T, 물 3T)을 넣고 끓으면 양파를 넣는다. 양파가 투명해지면 우삼겹을 넣고 국물이 자작해질 때까지 졸인다.\n5. 두부면은 끓는 물에 1분 데워 물기를 빼고 그릇에 담는다.\n6. 2의 국물을 붓고 3의 소고기와 양파를 올린 뒤, 대파(잎몸) 조금 얹는다.\n\n#조식 #레시피 #소고기",
-  "permalink": "https://www.instagram.com/p/Deoruqwnc61/",
-  "image": "https://images.how-about-breakfast.com/images/1897.jpg",
-  "gallery": [
-   "https://images.how-about-breakfast.com/images/1897.jpg",
-   "https://images.how-about-breakfast.com/images/1897_2.jpg",
-   "https://images.how-about-breakfast.com/images/1897_3.jpg",
-   "https://images.how-about-breakfast.com/images/1897_4.jpg",
-   "https://images.how-about-breakfast.com/images/1897_5.jpg"
-  ],
-  "video": "https://images.how-about-breakfast.com/images/1897.mp4",
-  "page_id": "두부면으로-만든-니쿠-우동"
+  "page_id": "두부면으로-만든-니쿠-우동",
+  "_en": {
+   "hash": "18c4f596bf220950970dee8e2d322bc486ef5abba7dfc8ea5c1cb10eb704b236",
+   "title": "Niku Udon Made with Tofu Noodles",
+   "intro": "20261018 #breakfastdiary 1868, 18°C/rain\n\"Niku\" (肉) is Japanese for meat. In the Kansai region, \"meat\" by default usually means beef, so niku udon traditionally comes topped with beef simmered sweet and savory. Today I swapped the udon noodles for tofu noodles, but the noodles and broth just don't come together the same way. Tofu noodles really can't replace proper wheat udon noodles after all.\n410kcal Niku Udon Made with Tofu Noodles",
+   "ingredients": "- 2 servings tofu noodles\n- 120g beef short plate (woo-samgyeop)\n- 1/2 onion\n- 1/2 scallion (white and green parts, a little of each)\n- Broth (700ml water, 1 tsp hondashi, 1 tbsp soy sauce, 1 tbsp mirin)\n- Meat seasoning (1 tbsp soy sauce, 1 tbsp sugar, 1 tbsp mirin, 3 tbsp water)",
+   "steps": "1. Julienne the onion, and cut the scallion whites into 5cm lengths.\n2. In a pot, combine 700ml water, 1 tsp hondashi, 1 tbsp soy sauce, 1 tbsp mirin, and the scallion from step 1, and simmer to make the broth.\n3. Blanch the beef in boiling water for 10 seconds to remove excess fat.\n4. In a pan, bring the meat seasoning (1 tbsp soy sauce, 1 tbsp sugar, 1 tbsp mirin, 3 tbsp water) to a boil, then add the onion. Once the onion turns translucent, add the beef and simmer until the liquid reduces down.\n5. Warm the tofu noodles in boiling water for 1 minute, drain well, and place in a bowl.\n6. Pour in the broth from step 2, top with the beef and onion from step 4, and finish with a little scallion green."
+  }
  },
  {
   "date": "2026-10-16",
@@ -12884,7 +12867,14 @@
    "https://images.how-about-breakfast.com/images/1538_3.jpg",
    "https://images.how-about-breakfast.com/images/1538_4.jpg"
   ],
-  "page_id": "토마토-깻잎-비빔면"
+  "page_id": "토마토-깻잎-비빔면",
+  "_en": {
+   "hash": "2669a0de21cd56dc1a77ca4e327028680544b202d32b5dc760fe921507cb87b7",
+   "title": "Tomato Perilla Leaf Bibim Noodles",
+   "intro": "20251020 #breakfastdiary 1538, 6°C/partly cloudy, 20min/exercise(M)\nMeanwhile, it's said that ancient Greeks and Romans ate their meals lying down. Special dining couches were arranged around the table. Each couch, called a triclinium (from the Greek \"kline,\" meaning bed), could fit up to three men. Each reclined with their head toward the table and their left elbow resting on a cushion. The hostess, other guests, or attendants had to use chairs, and slaves had to stand the entire time.\n(Bernd Brunner, The Art of Lying Down)\nJust the theme of \"lying down\" alone turned out to be enough to fill a whole book. For a brief moment I imagined eating breakfast lying down, but it doesn't seem like it would go well.\nMade with soy milk noodles, about 360kcal Tomato Perilla Leaf Bibim Noodles",
+   "ingredients": "- 1 serving soy milk noodles\n- 10 perilla leaves\n- 1 tomato\n- Dressing (5 tbsp tsuyu, 1 tbsp perilla oil, 3 tbsp white wine vinegar, 7 tbsp water (adjust water to taste))",
+   "steps": "1. Rinse the soy milk noodles under running water.\n2. Roll the perilla leaves up and slice thinly. Cut the tomato and bell pepper into rough chunks as well.\n3. Place the soy milk noodles from step 1 in a bowl and arrange the tomato, bell pepper, and perilla leaves around the edge.\n4. Mix 5 tbsp tsuyu, 1 tbsp perilla oil, 3 tbsp white wine vinegar, and 7 tbsp water, and pour over."
+  }
  },
  {
   "date": "2025-10-19",
@@ -12913,7 +12903,14 @@
    "https://images.how-about-breakfast.com/images/1537_3.jpg",
    "https://images.how-about-breakfast.com/images/1537_4.jpg"
   ],
-  "page_id": "콜리플라워-너깃"
+  "page_id": "콜리플라워-너깃",
+  "_en": {
+   "hash": "cea053edcc6a49deaa7a61802b5868c3bf6b7e955f2807425f64f67cf8a52f74",
+   "title": "Cauliflower Nuggets",
+   "intro": "20251019 #breakfastdiary 1537, 14°C/mostly clear, 20min/exercise(M)\n390kcal Cauliflower Nuggets\nI used regular yogurt instead of Greek yogurt, which made the batter too runny, and the end result was basically a cauliflower omelet. Definitely use Greek yogurt.",
+   "ingredients": "- 1/2 cauliflower\n- 1/3 cup yogurt\n- 1 egg\n- 1 tbsp olive oil\n- 1/4 tsp salt\n- 1/4 tsp pepper\n- Paprika powder\n- Dip (2 tbsp yogurt, 2 tbsp lemon juice)",
+   "steps": "1. Cut the cauliflower into bite-sized pieces and rinse under running water.\n2. In a mixing bowl, combine 1/3 cup yogurt, 1 egg, 1 tbsp olive oil, 1/4 tsp salt, 1/4 tsp pepper, 2 tsp paprika powder, and the cauliflower from step 1.\n3. Line a baking sheet with parchment paper, spread the cauliflower mixture from step 2 on it, and bake at 180°C for 20 minutes.\n4. Mix yogurt and lemon juice 1:1 for a dip, and serve alongside for dipping."
+  }
  },
  {
   "date": "2025-10-18",
@@ -25534,7 +25531,14 @@
    "https://images.how-about-breakfast.com/images/1211_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1211.mp4",
-  "page_id": "감자탑-감자구이-감자"
+  "page_id": "감자탑-감자구이-감자",
+  "_en": {
+   "hash": "fb28b50d438ef6f0bbbec61fa797ec1c39491765c033118f016d9c721fc19baa",
+   "title": "Garlic Butter Potato Stack",
+   "intro": "20241020 #breakfastdiary 1211, 17°C/clear, 25min/exercise(S, M)\n\nTranslate \"pyramid\" into Chinese and you get 金字塔 (geum-ja-tap), literally \"gold-character tower\" - because the character 金 (gold) happens to look like a pyramid, giving it the shape-based name \"tower shaped like the character for gold.\"\nToday's breakfast slices potatoes thin, tosses them in a butter-and-garlic sauce, then stacks them neatly - like a #potatotower - and bakes them in the oven for a #roastedpotato with all its layers intact. In modern usage, geumjatap has shifted away from its literal meaning toward \"an outstanding achievement that will be remembered for generations,\" which fits this dish's flavor rather well.\nIn Korea too, up until the 1920s the word referred to the architectural pyramid, but starting in the 1930s it began being used to mean \"an outstanding achievement for posterity,\" and by now the original architectural sense has nearly vanished, leaving only the figurative meaning. There's probably some reason this shift happened so distinctly in Korea, but there's no way to know for sure.",
+   "ingredients": "- 4 small potatoes\n- 2 tsp parsley\n- 2 tbsp butter\n- 2 tsp garlic\n- 1 tbsp olive oil\n- 1/4 tsp salt\n- 1/4 tsp pepper\n- 1 tbsp Parmigiano Reggiano cheese",
+   "steps": "1. In a pan, combine 2 tbsp butter, 2 tsp minced garlic, 2 tsp minced parsley, 1/4 tsp salt, and 1/4 tsp pepper, and simmer slowly over low heat to make the sauce.\n2. Peel the potatoes and slice them on a mandoline, then place in a mixing bowl, pour in the sauce from step 1, and toss well.\n3. Brush a muffin tin with olive oil and stack the potatoes about halfway up. Add grated cheese, then stack more potatoes on top. Drizzle with a little olive oil.\n4. Bake at 210°C for 30 minutes. (Check doneness with a chopstick around the 20-minute mark~)\n5. Plate and top with Maldon salt before eating."
+  }
  },
  {
   "date": "2024-10-19",
@@ -25564,7 +25568,14 @@
    "https://images.how-about-breakfast.com/images/1210_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1210.mp4",
-  "page_id": "감자수프"
+  "page_id": "감자수프",
+  "_en": {
+   "hash": "f85a6246a15e98195186a4cbcdb8317c9a4741fcc86dec883d529bcdbfe202e9",
+   "title": "Soy Sauce Sesame Oil Potato Soup",
+   "intro": "20241019 #breakfastdiary 1210, 17°C/cloudy, 20min/exercise(M)\n\nThe wind's turned chilly morning and night. With my spirits a bit chilly too, a warm bowl of potato soup sounds good.",
+   "ingredients": "- 2 potatoes\n- 2 tsp olive oil\n- 1 tbsp soy sauce\n- 1 tbsp sesame oil\n- 1/4 tsp fried shallots\n- A little parsley",
+   "steps": "1. Peel the potatoes and cut into rough chunks.\n2. Heat olive oil in a pot and sauté the potatoes just enough to coat them.\n3. Add 3 cups of water to step 2 and simmer until the potatoes are cooked, then mash with a potato masher. (No masher? A hand blender works too.)\n4. Add the soy sauce and sesame oil and mix well.\n5. Plate and finish with olive oil, fried shallots, and parsley~"
+  }
  },
  {
   "date": "2024-10-18",
@@ -38533,7 +38544,14 @@
    "https://images.how-about-breakfast.com/images/872_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/872.mp4",
-  "page_id": "당근라페-베이글"
+  "page_id": "당근라페-베이글",
+  "_en": {
+   "hash": "f50d0c957602088ebd5896a3f7e36789d14ed12b09dc923a594124c00a8074fc",
+   "title": "Carrot Rapée Bagel",
+   "intro": "20231020, #breakfastdiary 872, 9°C/clear\nComparing 2022 to 2019, bagel specialty shops posted a standout 216% growth rate among dessert categories (for reference: rice cakes/traditional sweets 66%, waffles/pies 65%). On top of that, apparently you still have to wait in line over an hour at the London Bagel Museum just to get a to-go order these days - so if that's the case,\ncome to the Na-Jo-Sik Bagel Museum instead!\nJulienne one carrot, sprinkle with salt, and let it sit for about 10 minutes.\nAdd 3 parts olive oil, 1 part lemon juice, 1 part wine vinegar, 1/2 part whole grain mustard, toss toss, and make the #carrotrapée.\nHalve the bagel, warm it at 180°C for 5 minutes, spread ricotta cheese generously, then top with the carrot rapée.",
+   "ingredients": "- 1 carrot\n- Carrot rapée dressing (3 tbsp olive oil, 1 tbsp lemon juice, 1 tbsp wine vinegar, 1/2 tsp whole grain mustard)\n- 1 bagel\n- 1 tbsp ricotta cheese",
+   "steps": "1. Julienne the carrot, sprinkle with salt, and let it sit for about 10 minutes.\n2. Mix the carrot from step 1 with 3 tbsp olive oil, 1 tbsp lemon juice, 1 tbsp wine vinegar, and 1/2 tsp whole grain mustard to make the carrot rapée.\n3. Halve the bagel and warm it in an air fryer at 180°C for 5 minutes.\n4. Spread ricotta cheese generously and top with the carrot rapée from step 2."
+  }
  },
  {
   "date": "2023-10-19",
@@ -38565,7 +38583,14 @@
    "https://images.how-about-breakfast.com/images/871_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/871.mp4",
-  "page_id": "창직-퍼스널브랜딩-콜리플라워"
+  "page_id": "창직-퍼스널브랜딩-콜리플라워",
+  "_en": {
+   "hash": "95c550b6c4e8b59c04333ff07f8e60db6b52b35215d6a4e986a27adf5083007e",
+   "title": "Cauliflower Curry Soup",
+   "intro": "20231019, #breakfastdiary 871, 16°C/rain\nYou know that \"50-bird fried chicken\" that broadcaster Lee Yeong-ja advertised and turned into a hit? The one where they only fry 60 chickens a day in fresh oil and never reuse it? I met someone in the fried chicken business a while back, and they said, almost indignant, \"Professor, every fried chicken place can only fry about 60 birds a day anyway - we've never reused drained oil either.\"\nBut here's what actually matters: whoever says it first owns it. It's not that being the first in the industry to fry only 60 birds a day matters - what matters is being the first to make people *recognize* that as the fact.\n(Hong Seong-tae, What It Means to Remain as a Brand)\n\nYou could read the once-trendy term #startingacareer through this same lens. Though these days the broader term #personalbranding seems to have become more common.\n\nDrop in a piece of solid curry roux, pour in 300ml water, and since there's no coconut milk, 150ml milk, and bring it to a vigorous boil. (Next time, I'll add a roux for a thicker texture.)\nAdd the #cauliflower and the #chickpeas soaked overnight and simmer a bit longer. Add spinach, stir lightly, and right before eating, a little red pepper~",
+   "ingredients": "- 300ml water\n- 1 piece solid curry roux\n- 150ml milk\n- 1/4 cauliflower\n- 1/2 cup chickpeas\n- 1 stalk spinach\n- 1/4 tsp red pepper flakes",
+   "steps": "1. In a pot, combine 300ml water, 1 piece of solid curry roux, and 150ml milk, and bring to a boil.\n2. Add the cauliflower, cut into bite-sized pieces, and the soaked chickpeas, and simmer a bit longer.\n3. Cut the spinach into 2-3cm pieces, add it in, and stir.\n4. Ladle into a bowl and add a little red pepper flakes."
+  }
  },
  {
   "date": "2023-10-18",
@@ -51282,7 +51307,14 @@
    "https://images.how-about-breakfast.com/images/574_2.jpg",
    "https://images.how-about-breakfast.com/images/574_3.jpg"
   ],
-  "page_id": "말린사과곶감고추장무침-말린사과곶감무침-두부"
+  "page_id": "말린사과곶감고추장무침-말린사과곶감무침-두부",
+  "_en": {
+   "hash": "9cd7085e3fd2333c71e258de4cecfe811b3235a7a067dc65a6a8fc499bfa1369",
+   "title": "Grilled Tofu with Dried Apple and Dried Persimmon Gochujang Mix",
+   "intro": "20221020, #breakfastdiary 574, 5°C/clear, 16min/exercise\nThe season must have changed while I wasn't looking - the morning commute sunlight feels just as varied as this nutty, spicy, sweet, slightly salty breakfast table.\nTop tofu grilled in perilla oil with the dried apple and dried persimmon gochujang mix,\n#driedapplepersimmongochujangmix is exactly what it sounds like - dried apple and dried persimmon tossed with gochujang. A little sesame too. #driedapplepersimmonmix",
+   "ingredients": "- 1 block tofu\n- 1 tbsp perilla oil\n- 1/2 dried apple\n- 1 dried persimmon\n- 1 tbsp gochujang\n- 1 tsp sesame seeds",
+   "steps": "1. Heat perilla oil in a pan, grill the tofu, and plate it.\n2. Toss the dried apple and chopped dried persimmon with gochujang and sesame seeds.\n3. Top the perilla-oil-grilled tofu from step 1 with the apple-persimmon gochujang mix from step 2."
+  }
  },
  {
   "date": "2022-10-19",
@@ -51321,7 +51353,14 @@
    "https://images.how-about-breakfast.com/images/573_3.jpg",
    "https://images.how-about-breakfast.com/images/573_4.jpg"
   ],
-  "page_id": "와플-브라운치즈-리코타치즈"
+  "page_id": "와플-브라운치즈-리코타치즈",
+  "_en": {
+   "hash": "06dced98643f8f85af06d11a38a98fd4a20005218315fd14b9ca7f2d4ddb934f",
+   "title": "Waffle with Brown Cheese",
+   "intro": "20221019, #breakfastdiary 573, 4°C/clear, 16min/exercise\nWhen a designer dreams, the engineer evaluates that dream with a cold, clear eye. Which is why many dreams end up shattered easily. The engineer is doing their best, but from the designer's point of view, it can look like a refusal to embrace anything new. The answer designer Park found was to trust and hand it over, at least at first.\n\"I realized I couldn't chase down and intervene in every single decision-making process. So I just trust and hand it over. I believe that person is doing their best in their own way, just as I'm doing my best in mine.\nWhen a designer trusts an engineer and hands things over, I learned that the engineer, in turn, tries even harder to realize the designer's intent. And that this has nothing to do with professional expertise or conviction - it's a matter of human connection between people. I think it's a more meaningful experience than anything confined to the scope of 'the job.'\"\n(Designer Park Chan-hwi: A Car Is Born from a Single Sheet of Paper Drawn with Competition and Trust, @longblack.co)\n\nEven on the breakfast table, the collaboration between ricotta cheese - chasing extreme nuttiness - and brown cheese - responsible for sweetness - is simply essential.\nWarm the waffle slightly. Ricotta cheese, then brown cheese, grate grate grate",
+   "ingredients": "- 2 pieces waffle\n- 1 tbsp ricotta cheese\n- 1 tbsp brown cheese (grated)",
+   "steps": "1. Warm the waffle bought on the way home yesterday in the microwave for 30 seconds and plate it.\n2. Top the waffle with ricotta cheese and grate brown cheese over it with a grater."
+  }
  },
  {
   "date": "2022-10-18",
@@ -68467,7 +68506,14 @@
    "https://images.how-about-breakfast.com/images/244.jpg",
    "https://images.how-about-breakfast.com/images/244_2.jpg"
   ],
-  "page_id": "모닝리추얼-모닝루틴-샌드위치-3"
+  "page_id": "모닝리추얼-모닝루틴-샌드위치-3",
+  "_en": {
+   "hash": "3ff29894699d7baad1a2a32c353c0d2751529caea38088d9a0ea8f2df79bad45",
+   "title": "Cherry Pepper Bruschetta",
+   "intro": "20211020, #breakfastdiary 244, 4°C/mostly clear, 32min/exercise\nToast bread on both sides in a pan with olive oil. Spread the lemon cheese dip I made a couple days ago on the bread, then top with that (Alimento cherry peppers with cream cheese), finely chopped. Dill, olive oil, and pepper pepper pepper pepper\n\"When thinking through a situation, I start from the ending. I think about the ideal outcome first and work backward from there. What matters isn't what we'll read in tomorrow's paper, but the result we'll have achieved two years from now.\"\n- Lee Jin-soon, What Would Merkel Have Done?\nThinking about a leader's work, and a leader's words.",
+   "ingredients": "- 2 pieces baguette\n- 1 tbsp lemon cheese dip\n- 2 tbsp cherry pepper cream cheese\n- 1 tsp olive oil\n- A little dill\n- 1/4 tsp pepper",
+   "steps": "1. Brush the baguette with olive oil and toast both sides.\n2. Spread the lemon cheese dip on the baguette and top with chopped cherry pepper cream cheese.\n3. Add 1 tsp olive oil, dill, and sprinkle with pepper."
+  }
  },
  {
   "date": "2021-10-19",
@@ -68513,7 +68559,14 @@
    "https://images.how-about-breakfast.com/images/243.jpg",
    "https://images.how-about-breakfast.com/images/243_2.jpg"
   ],
-  "page_id": "모짜렐라칸탈로프카프레제샐러드-모닝리추얼-모닝루틴"
+  "page_id": "모짜렐라칸탈로프카프레제샐러드-모닝리추얼-모닝루틴",
+  "_en": {
+   "hash": "1eacc2507b2f6c6e922cb51ae0c833e4f8a1e528990ca2187c9837857b5b20d8",
+   "title": "Cantaloupe Melon Salad with Bocconcini",
+   "intro": "20211019, #breakfastdiary 243, 10°C/cloudy, 16min/exercise\nCantaloupe melon and mozzarella cheese, with a little honey, apple mint, olive oil, and wine vinegar #mozzarellacantaloupecapresesalad\nMelon is the general name for the dicot, vine-type annual plant species of the genus Cucumis in the gourd family - in Korea, when people hear \"melon,\" they usually picture the netted musk melon packaging (which actually tastes more like Korean melon/chamoe).",
+   "ingredients": "- 1 cantaloupe melon\n- 120g bocconcini\n- A little apple mint\n- A little dill\n- 2 tsp olive oil\n- 1 tsp white wine vinegar\n- 1 tsp honey\n- 1/4 tsp pepper",
+   "steps": "1. Halve the cantaloupe melon, remove the seeds, scoop out the flesh into balls with a measuring spoon, and plate.\n2. Top with the bocconcini, apple mint, and dill.\n3. Drizzle with 2 tsp olive oil, 1 tsp white wine vinegar, 1 tsp honey, and 1/4 tsp pepper."
+  }
  },
  {
   "date": "2021-10-18",
@@ -86225,7 +86278,14 @@
   "image": "https://images.how-about-breakfast.com/images/pre-115.jpg",
   "page_id": "우리말-국립국어원무리수-브라타치즈",
   "essay_candidate": true,
-  "essay_reviewed": true
+  "essay_reviewed": true,
+  "_en": {
+   "hash": "1716dbfc2ae9f1d0e96ce21738eb6d270baa0fffb1ec6c5d691c6f8efccaf960",
+   "title": "Shine Muscat Salad with Burrata Cheese",
+   "intro": "20201020, \"Smart\" has by now been accepted as a loanword, and even appears in the Korean dictionary, defined as \"neat in bearing and stylish, or having a tidy appearance.\" Since \"smart\" is now widely used to mean far more than that, the dictionary definition probably needs expanding too. (Source: The Hankyoreh)\nToday's article also mentions, regarding terms like \"Smart New Deal\" and \"Green New Deal,\" the question of why the government couldn't find suitable native Korean words even for naming its core policies. Not just language, but everything in the world changes, and we have to adapt alongside it. And that process inevitably comes with plenty of trial and error - including, say, the National Institute of Korean Language's overreach in trying to replace \"vogue-style\" or \"gold miss\" with \"golden single woman,\" or \"follower\" with \"companion-in-tow.\" #ourlanguage #NIKLoverreach\n\n#burratacheese and the prettiest #grapes in the world, with pepper and a bit of good olive oil #shinemuscat #breakfast #salad #breakfastfood\nLooks like it'll be a day where I think about grapes all day,",
+   "ingredients": "- 1/2 bunch shine muscat grapes\n- 1 burrata cheese\n- A handful of baby greens\n- 2 tsp olive oil\n- 1/4 tsp pepper",
+   "steps": "1. Rinse the shine muscat grapes under running water, halve them, and plate.\n2. Place the burrata cheese in the center of the plate and drizzle with 2 tsp olive oil and a little pepper."
+  }
  },
  {
   "date": "2020-10-19",
@@ -86251,7 +86311,14 @@
   "raw": "20201019, “이제 일터를 고정적인 장소가 아니라 필요할 때 함께 일할 수 있고, 혁신에 필요한 상호작용을 할 수 있는 허브로 다시 생각해야 한다.” (출처: 한겨레신문) \n\n코로나19의 탓이 크겠지만, 독일 연방노동부는 최근 노동자의 권리 강화와 일과 사생활의 혼동을 막고자 연간 24일 동안 재택, 원격근무 의무화 법안을 준비 중이다. 인용한 것처럼 인간은 모여서 머리를 맞대고 논의할 때 창의성이 발휘된다는 것을 떠올리면 재택, 원격근무로 인해 인간의 창의성은 어떤 식으로 나아갈지 (혹은 퇴보할지) 우려가 되지만, 우리는 그 안에서 “새로운 길을 찾게 되지 않을까?” 한편으로는 최근 원격교육(수업)을 받은 후의 소회이기도 하다. #재택 #원격근무 \n\n눈을 뜨자마자 냉장고에 넣어둔 연어를 레몬 엑기스에 재워두고, a few moments later, 치커리, 적양파, 토마토, 귤, 올리브, 어제 남은 쿠스쿠스를 약간, 마지막으로 재워둔 연어를 깨워 얹은 뒤 올리브 오일, 후추, 소금 드레싱 #연어세비체 #조식 #아침밥 #샐러드\n\n*(아침에 일어나 조식을 준비하다 보면 가끔 내가 #냉부해 를 촬영 중인 건 아닌지 생각할 때가 있지만, 찾아보니 냉부해는 2019년에 종방, 아무튼,) 세비체(스페인어: cebiche, ceviche)는 페루를 비롯한 라틴아메리카 지역에서 먹는 날생선 샐러드이다. 생선이나 해산물을 회처럼 얇게 떠 레몬 즙이나 라임 즙, 고수, 고추, 양파, 소금 등을 넣고 재워 두었다가 먹는 음식이다. (출처: 위키백과)",
   "pre_label": "D-116",
   "image": "https://images.how-about-breakfast.com/images/pre-116.jpg",
-  "page_id": "재택-원격근무-연어세비체"
+  "page_id": "재택-원격근무-연어세비체",
+  "_en": {
+   "hash": "43458344145005950e1ec2086f9ce19589ad10cca5b6acde46a149cdf7f5de0e",
+   "title": "Salmon Ceviche with Tangerine",
+   "intro": "20201019, \"We now need to rethink the workplace, not as a fixed location, but as a hub where people can come together when needed and have the kind of interaction innovation requires.\"\n(Source: The Hankyoreh)\n\nLargely because of COVID-19, Germany's Federal Ministry of Labour is reportedly preparing legislation to make 24 days a year of remote/work-from-home mandatory, aimed at strengthening workers' rights and preventing work from bleeding into personal life. As the quote suggests, humans are often at their most creative when gathered together, heads bent over a shared problem - so I do worry about how remote work might reshape (or stunt) human creativity. But then again, maybe we'll find \"a new path\" within those constraints? This is also partly a reflection after recently sitting through some remote classes. #workfromhome #remotework\n\nThe moment I open my eyes, I set the salmon I'd left in the fridge to marinate in lemon extract, and a few moments later, I add chicory, red onion, tomato, tangerine, olives, and a bit of leftover couscous from yesterday, then finally wake up the marinated salmon and lay it on top, finished with an olive oil, pepper, and salt dressing. #salmonceviche #breakfast #breakfastfood #salad\n*(Sometimes, making breakfast first thing in the morning, I wonder if I'm secretly filming an episode of #CookingWithoutBorders, but it turns out that show actually ended back in 2019, so anyway,) ceviche (Spanish: cebiche, ceviche) is a raw fish salad eaten throughout Peru and much of Latin America. Fish or seafood is thinly sliced like sashimi, then marinated in lemon or lime juice with cilantro, chili, onion, salt, and more before eating.\n(Source: Wikipedia)",
+   "ingredients": "- 50g salmon\n- 3-4 stalks chicory\n- 3 cherry tomatoes\n- 1/4 red onion\n- 4-5 olives\n- 1 tangerine\n- 50g couscous\n- 2 tsp olive oil\n- 1/4 tsp salt\n- 1/4 tsp pepper",
+   "steps": "1. Place 50g salmon in a mixing bowl, sprinkle with lemon juice, and let it sit for about 10 minutes.\n2. Pour 50g couscous into 200ml boiling water, stir, and simmer on low for 15 minutes.\n3. Finely chop the chicory, red onion, cherry tomatoes, and olives and place on a plate. Peel the tangerine and slice it thinly crosswise.\n4. Onto the plate, add the couscous from step 2 and the sliced salmon from step 1.\n5. Mix 2 tsp olive oil with 1/4 tsp salt and pepper and pour over."
+  }
  },
  {
   "date": "2020-10-18",
