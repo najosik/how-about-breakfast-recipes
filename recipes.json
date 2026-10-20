@@ -68451,10 +68451,10 @@
   "ingredients": null,
   "steps": null,
   "raw": "20211021, #조식다이어리 245, 3도/맑음\n\n끓는 물에 데친 브로콜리에 비네그레트 드레싱, 파마산치즈, 후추후추후추후추\n\n#ESG 에 해당되지 않는 것이 없다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #브로콜리 #파마산치즈\n#breakfast #recipe #salad #broccoli #vinaigrette #parmigianoreggiano ",
-  "image": "https://images.how-about-breakfast.com/images/245.jpg",
+  "image": "https://images.how-about-breakfast.com/images/251b.jpg",
   "gallery": [
-   "https://images.how-about-breakfast.com/images/245.jpg",
-   "https://images.how-about-breakfast.com/images/245_2.jpg"
+   "https://images.how-about-breakfast.com/images/251b.jpg",
+   "https://images.how-about-breakfast.com/images/251b_2.jpg"
   ],
   "_en": {
    "hash": "db360f096e222c3a46780362c9fc8e79f733325d68bce6d330cefbef503f557c",
@@ -86242,7 +86242,14 @@
    "https://images.how-about-breakfast.com/images/pre-114_2.jpg",
    "https://images.how-about-breakfast.com/images/pre-114_3.jpg"
   ],
-  "page_id": "블루베리-클랜베리-라즈베리-2"
+  "page_id": "블루베리-클랜베리-라즈베리-2",
+  "_en": {
+   "hash": "e9ebf4ecd82b4ea93a419f8108b399d68b522e02f73643aaa2c659a6fecb8b99",
+   "title": "Greek Yogurt Radish Salad",
+   "intro": "20201021, The Académie Française, France's official authority on the French language, ruled back in May that \"Covid-19\" should be feminine. The reasoning: since the French word for disease (maladie) is a feminine noun, \"Covid-19\" should take the feminine form too. On the ground, though, people had been calling it \"corona,\" using \"virus,\" a masculine noun, so academia and the media had reportedly been using the masculine form all along.\nNot sure how that debate was ultimately settled, but given that language is both a tool of thought and a reflection of the world, I think it's fair to expect a language to carry the spirit of its times. I watched the show \"Emily in Paris\" over the weekend, and there's a scene where Emily gets furious that the French word for a woman's \"vagina\" takes a masculine article. That's how tilted the playing field has been. #EmilyinParis\nThin slices of #radish - the root of an annual or biennial herb in the mustard family, order Brassicales, class dicotyledon - topped with Greek yogurt, pepper, and a little dill, for a #radishsalad, alongside #natto. #breakfast #salad #breakfastfood #ritual #radish #radishsalad #myFrenchstylesalad",
+   "ingredients": "- 5 radishes\n- 3 tbsp Greek yogurt\n- 1/4 tsp pepper\n- A little dill",
+   "steps": "1. Thinly slice the radishes on a mandoline and place in a bowl.\n2. Top the radishes with Greek yogurt, pepper, and dill."
+  }
  },
  {
   "date": "2020-10-20",
