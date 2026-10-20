@@ -38508,7 +38508,15 @@
   "steps": "1. 끓는 물에 소금 2t 넣고 스파게티를 삶는다. \n2. 시금치는 깨끗하게 씻은 후 올리브오일 2t 두른 팬에 볶는다. \n3. 블렌더에 1의 시금치, 우유 150ml 붓고 곱게 간다. \n4. 팬에 다진 마늘과 다진 양파를 볶다가 양파가 누명해지면 2의 시금치 소스를 붓고 올리브오일 2t 넣는다. \n5. 4에 삶은 스파게티와 면수를 넣고 만테까레한다. 소금으로 간을 한다. ",
   "raw": "20231021, #조식다이어리 873, 10도/대체로맑음\n\n시금치를 깨끗하게 씻어 달군 팬에 올리브유를 두르고 볶는다. 볶은 시금치에 우유150ml 넣고 곱게 갈아서 소스를 만든다. (두유를 사용하면 #비건 )\n팬에 마늘과 양파를 볶다가 양파가 투명해지면 갈아 놓은 시금치를 붓고 올리브오일을 두른다. \n삶아 놓은 파스타를 넣고 소금소금소금 #시금치파스타\n\n#조식 #레시피 #미라클모닝 #시금치 #파스타",
   "video": "https://images.how-about-breakfast.com/images/873.mp4",
-  "page_id": "비건-시금치파스타-시금치"
+  "page_id": "비건-시금치파스타-시금치",
+  "image": "https://images.how-about-breakfast.com/images/884b.jpg",
+  "_en": {
+   "hash": "7b44083c8c99e77a5dd80d2c6d72477b55b540c64a1d0f842b25006766a7e74b",
+   "title": "Spinach Pasta",
+   "intro": "20231021, #breakfastdiary 873, 10°C/mostly clear\nWash the spinach clean and sauté it in a hot pan with olive oil. Add 150ml milk to the sautéed spinach and blend finely to make the sauce. (Use soy milk instead for a #vegan version)\nSauté garlic and onion in a pan, and once the onion turns translucent, pour in the blended spinach and drizzle with olive oil.\nAdd the cooked pasta and salt salt salt #spinachpasta",
+   "ingredients": "- 1 serving spaghetti\n- 3-4 stalks spinach\n- 150ml milk\n- 4 tsp olive oil\n- 1/2 onion\n- 2 cloves garlic\n- 1/4 tsp salt",
+   "steps": "1. Add 2 tsp salt to boiling water and cook the spaghetti.\n2. Wash the spinach clean and sauté it in a pan with 2 tsp olive oil.\n3. Pour the spinach from step 1 and 150ml milk into a blender and blend finely.\n4. Sauté minced garlic and minced onion in a pan, and once the onion turns translucent, pour in the spinach sauce from step 2 and add 2 tsp olive oil.\n5. Add the cooked spaghetti and pasta water to step 4 and toss (mantecare) to emulsify. Season with salt."
+  }
  },
  {
   "date": "2023-10-20",
@@ -51247,7 +51255,14 @@
    "https://images.how-about-breakfast.com/images/575_2.jpg",
    "https://images.how-about-breakfast.com/images/575_3.jpg"
   ],
-  "page_id": "표고버섯샐러드-나는자연인이다-표고버섯"
+  "page_id": "표고버섯샐러드-나는자연인이다-표고버섯",
+  "_en": {
+   "hash": "6567f70ef987d204d1acf2e675a5561ba2bb05ab0418d046b6706cdd7a05b1cf",
+   "title": "Shiitake Mushroom Salad",
+   "intro": "20221021, #breakfastdiary 575, 7°C/cloudy at times, 15min/exercise\nLettuce with shiitake mushroom, a vinaigrette dressing, pepper pepper pepper #shiitakemushroomsalad\nI did briefly debate whether to lightly sear the shiitake mushrooms in a pan, but today it's #ImaNaturalist (raw)",
+   "ingredients": "- 3 shiitake mushrooms\n- 3-4 leaves lettuce\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)\n- 1 tsp pepper",
+   "steps": "1. Rinse the lettuce under running water, cut into bite-sized pieces, and place on a plate.\n2. Dust off the shiitake mushrooms, slice thinly, and place on top of the lettuce.\n3. Drizzle with the dressing and sprinkle with pepper."
+  }
  },
  {
   "date": "2022-10-20",
@@ -68442,7 +68457,14 @@
    "https://images.how-about-breakfast.com/images/251b.jpg",
    "https://images.how-about-breakfast.com/images/251b_2.jpg"
   ],
-  "page_id": "모닝리추얼-모닝루틴-브로콜리-2"
+  "page_id": "모닝리추얼-모닝루틴-브로콜리-2",
+  "_en": {
+   "hash": "19d27a7141e39b285f3e13ef0a1d255af7e82776156a19a9d98837292602bacf",
+   "title": "Broccoli Salad",
+   "intro": "20211021, #breakfastdiary 245, 3°C/clear\nBroccoli blanched in boiling water, with a vinaigrette dressing, parmesan cheese, pepper pepper pepper pepper\nThere's nothing these days that #ESG doesn't touch.",
+   "ingredients": "- 1/2 broccoli\n- 10g parmesan cheese\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)\n- 1/4 tsp pepper",
+   "steps": "1. Cut the broccoli into bite-sized pieces and blanch lightly in boiling water.\n2. Plate the broccoli from step 1, drizzle with the dressing, and shave parmesan cheese on top. Sprinkle with pepper."
+  }
  },
  {
   "date": "2021-10-20",
