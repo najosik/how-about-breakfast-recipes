@@ -51221,7 +51221,7 @@
   "weather": "7도/한때흐림, 15분/운동",
   "failed": false,
   "calories": null,
-  "title": "표고버섯샐러드 나는자연인이다 표고버섯",
+  "title": "표고버섯 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51245,8 +51245,8 @@
    "홈쿡"
   ],
   "intro": "20221021, #조식다이어리 575, 7도/한때흐림, 15분/운동\n상추에 표고버섯, 비네그레트 드레싱, 후추후추후추 #표고버섯샐러드\n표고버섯, 팬에 살짝 데칠 것인가 잠시 갈등했지만 오늘은 #나는자연인이다",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 표고버섯 3개\n- 상추 3~4장\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 후추 1t",
+  "steps": "1. 상추는 흐르는 물에 씻은 뒤 먹기 좋은 크기로 썰어서 접시에 담는다. \n2. 표고버섯은 먼지를 턴 후 얇게 썰어서 상추 위에 얹는다. \n3. 드레싱과 후추 뿌린다. ",
   "raw": "20221021, #조식다이어리 575, 7도/한때흐림, 15분/운동\n\n상추에 표고버섯, 비네그레트 드레싱, 후추후추후추 #표고버섯샐러드\n\n표고버섯, 팬에 살짝 데칠 것인가 잠시 갈등했지만 오늘은 #나는자연인이다 \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #표고버섯 #버섯 #상추\n#breakfast #salad #mushroom #lettuce #vinaigrette ",
   "image": "https://images.how-about-breakfast.com/images/575.jpg",
   "gallery": [
@@ -51254,13 +51254,6 @@
    "https://images.how-about-breakfast.com/images/575_2.jpg",
    "https://images.how-about-breakfast.com/images/575_3.jpg"
   ],
-  "_en": {
-   "hash": "60a562cd6034a70bd38d0cfc873298d2d37faed82045e5da3797d258f4ba8769",
-   "title": "Shiitake Mushroom Salad",
-   "intro": "20221021 #breakfastdiary 575, 7°C/partly cloudy, 15min exercise\nLettuce with shiitake mushrooms, vinaigrette dressing, plenty of pepper. #shiitakemushroomsalad\nI debated for a moment whether to sear the shiitake in a pan first, but today calls for #iamanaturalman — a nod to the old show about living off the land, raw and simple.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "표고버섯샐러드-나는자연인이다-표고버섯"
  },
  {
