@@ -38491,7 +38491,7 @@
   "weather": "10도/대체로맑음",
   "failed": false,
   "calories": null,
-  "title": "비건 시금치파스타 시금치",
+  "title": "시금치 파스타",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38504,17 +38504,10 @@
    "파스타"
   ],
   "intro": "20231021, #조식다이어리 873, 10도/대체로맑음\n시금치를 깨끗하게 씻어 달군 팬에 올리브유를 두르고 볶는다. 볶은 시금치에 우유150ml 넣고 곱게 갈아서 소스를 만든다. (두유를 사용하면 #비건 )\n팬에 마늘과 양파를 볶다가 양파가 투명해지면 갈아 놓은 시금치를 붓고 올리브오일을 두른다. \n삶아 놓은 파스타를 넣고 소금소금소금 #시금치파스타",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 스파게티 1인분\n- 시금치 3~4뿌리\n- 우유 150ml\n- 올리브오일 4t\n- 양파 1/2개\n- 마늘 2쪽\n- 소금 1/4",
+  "steps": "1. 끓는 물에 소금 2t 넣고 스파게티를 삶는다. \n2. 시금치는 깨끗하게 씻은 후 올리브오일 2t 두른 팬에 볶는다. \n3. 블렌더에 1의 시금치, 우유 150ml 붓고 곱게 간다. \n4. 팬에 다진 마늘과 다진 양파를 볶다가 양파가 누명해지면 2의 시금치 소스를 붓고 올리브오일 2t 넣는다. \n5. 4에 삶은 스파게티와 면수를 넣고 만테까레한다. 소금으로 간을 한다. ",
   "raw": "20231021, #조식다이어리 873, 10도/대체로맑음\n\n시금치를 깨끗하게 씻어 달군 팬에 올리브유를 두르고 볶는다. 볶은 시금치에 우유150ml 넣고 곱게 갈아서 소스를 만든다. (두유를 사용하면 #비건 )\n팬에 마늘과 양파를 볶다가 양파가 투명해지면 갈아 놓은 시금치를 붓고 올리브오일을 두른다. \n삶아 놓은 파스타를 넣고 소금소금소금 #시금치파스타\n\n#조식 #레시피 #미라클모닝 #시금치 #파스타",
   "video": "https://images.how-about-breakfast.com/images/873.mp4",
-  "_en": {
-   "hash": "0f8babf322d7612de3b7985a8fbca01f14f9fb40d5b7f23f842d01274b8caaf7",
-   "title": "Vegan Spinach Pasta",
-   "intro": "20231021, #breakfastdiary 873, 10°C/mostly sunny\nWash the spinach well and sauté it in a hot pan with olive oil. Add 150ml milk to the sautéed spinach and blend until smooth to make the sauce. (Use soy milk instead to keep it #vegan)\nIn a pan, sauté garlic and onion, and once the onion turns translucent, pour in the blended spinach and drizzle with olive oil.\nAdd the cooked pasta and season with salt, salt, and more salt. #spinachpasta",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "비건-시금치파스타-시금치"
  },
  {
