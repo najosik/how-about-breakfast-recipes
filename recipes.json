@@ -12760,7 +12760,14 @@
   "ingredients": "- 가지 2개 \n- 소금 2t\n- 전분 2T\n- 드레싱(토마토 1개, 양파 1/4개, 바질 조금, 올리브오일 3T, 화이트와인 비니거 1T, 레몬주스 1T, 홀그레인 머스터드 1T)",
   "steps": "1. 가지 2개 두드려서 손으로 찢은 후 비닐팩에 소금 2t, 전분 2T 넣고 쒜낏 한 후 180도 에프에 10분 굽는다. (굽고 5분 정도 식혀야 좀 더 바삭하게 먹을 수 있다.) \n2. 토마토 1개, 양파 1/4개 다지고 바질 조금 잘라서 믹싱볼에 넣고 올리브오일 3T, 화이트와인 비니거 1T, 레몬주스 1T, 홀그레인 머스터드 1T 넣고 골고루 섞는다.\n3. 접시에 1의 가지 담고 2의 드레싱을 뿌린다.",
   "raw": "20251022 #조식다이어리 1540, 6도/대체로 맑음\n\n전분 입혀서 기름에 튀기면 더 맛있었겠지만, 건강을 생각해서 에프에 굽고 새콤한 토마토 드레싱을 곁들여 먹는 531kcal #구운가지샐러드\n\n👉 재료\n가지 2개, 소금, 전분, (드레싱) 토마토 1개, 양파 1/4개, 바질 조금, 올리브오일 3T, 화이트와인 비니거 1T, 레몬주스 1T, 홀그레인 머스터드 1T\n\n👉 조리\n1. 가지 2개 두드려서 손으로 찢어서 비닐팩에 소금 2t, 전분 2T 넣고 쒜낏 한 후 180도 에프에 10분 굽는다. (굽고 5분 정도 식혀야 좀 더 바삭하게 먹을 수 있다.) \n2. 토마토 1개, 양파 1/4개 다지고 바질 조금 잘라서 믹싱볼에 넣고 올리브오일 3T, 화이트와인 비니거 1T, 레몬주스 1T, 홀그레인 머스터드 1T 넣고 골고루 섞는다.\n3. 접시에 1의 가지 담고 2의 드레싱을 뿌린다.  \n \n#조식 #레시피 #가지",
-  "page_id": "구운가지샐러드"
+  "page_id": "구운가지샐러드",
+  "_en": {
+   "hash": "0355909a05cdc99067d701ca0539390f6a6ad394dc66d186668920556df428d9",
+   "title": "Roasted Eggplant Salad",
+   "intro": "20251022 #breakfastdiary 1540, 6°C/mostly clear\nWould have tasted even better coated in starch and deep-fried, but keeping health in mind, I air-fried it instead and paired it with a tangy tomato dressing - 531kcal #roastedeggplantsalad",
+   "ingredients": "- 2 eggplants\n- 2 tsp salt\n- 2 tbsp starch\n- Dressing (1 tomato, 1/4 onion, a little basil, 3 tbsp olive oil, 1 tbsp white wine vinegar, 1 tbsp lemon juice, 1 tbsp whole grain mustard)",
+   "steps": "1. Bash the 2 eggplants and tear them by hand, then toss in a zip bag with 2 tsp salt and 2 tbsp starch, and air-fry at 180°C for 10 minutes. (Let it cool for about 5 minutes after cooking for a crispier bite.)\n2. Finely chop 1 tomato and 1/4 onion, cut up a little basil, and combine in a mixing bowl with 3 tbsp olive oil, 1 tbsp white wine vinegar, 1 tbsp lemon juice, and 1 tbsp whole grain mustard, and mix well.\n3. Plate the eggplant from step 1 and drizzle with the dressing from step 2."
+  }
  },
  {
   "date": "2025-10-22",
@@ -12824,7 +12831,14 @@
    "https://images.how-about-breakfast.com/images/1539_2.jpg",
    "https://images.how-about-breakfast.com/images/1539_3.jpg"
   ],
-  "page_id": "치즈-프리-블루베리-치즈케이크"
+  "page_id": "치즈-프리-블루베리-치즈케이크",
+  "_en": {
+   "hash": "2506d9ec12640c21c95c9c53717cf8621004419cb1ba66c4468d794f12b87ca4",
+   "title": "Cheese-Free Blueberry Cheesecake",
+   "intro": "20251021 #breakfastdiary 1539, 8°C/mostly cloudy, 20min/exercise(M)\nSince the whole concept is a cheesecake with no actual cheese in it, blending the oats finely for texture might be a good idea.\nBaked 20 minutes at 180°C, then raised to 200°C for another 15 minutes. Probably better to just bake at 200°C for 20 minutes from the start. (Every oven runs differently, so keep an eye on it.)\nMade with Greek yogurt and eggs, about 470kcal Cheese-Free Blueberry Cheesecake",
+   "ingredients": "- 170g Greek yogurt\n- 2 eggs\n- 30g oats\n- 1 tbsp honey\n- 1 tsp vanilla extract\n- A little blueberries",
+   "steps": "1. In a mixing bowl, combine 170g Greek yogurt, 2 eggs, 30g oats, 1 tbsp honey, and 1 tsp vanilla extract, and mix well.\n2. Line an oven-safe dish with parchment paper, pour in the batter from step 1, add the blueberries, and bake at 180°C for 20 minutes. After checking at 20 minutes it still wasn't done, so I raised it to 200°C and baked for another 15 minutes."
+  }
  },
  {
   "date": "2025-10-20",
@@ -25442,7 +25456,14 @@
    "https://images.how-about-breakfast.com/images/1213_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1213.mp4",
-  "page_id": "폭탄계란찜-계란-무화과샌드위치"
+  "page_id": "폭탄계란찜-계란-무화과샌드위치",
+  "_en": {
+   "hash": "93b4dd39f1da57fa509c8a194a091e5e6092a331756376f4b96204feea264a47",
+   "title": "The Bomb Steamed Egg That Didn't Explode",
+   "intro": "20241022 #breakfastdiary 1213, 14°C/cloudy, 20min/exercise(M)\nMade this with the \"bomb steamed egg\" side dish from Korean BBQ places in mind, but it didn't boil over and explode the way I expected - anyway, #bombsteamedegg",
+   "ingredients": "- 4 eggs\n- 1/2 tbsp anchovy fish sauce\n- 1 tbsp scallion\n- 1 tsp basil pesto\n- 1/4 tsp salt",
+   "steps": "1. Bring 150ml water and the anchovy fish sauce to a boil in an earthenware pot. Once boiling, pour in the 4 eggs (beaten with a pinch of salt and mixed well beforehand).\n2. Turn the heat down low and keep stirring in one direction.\n3. Once the eggs turn soft and custardy, cover, turn off the heat, and let it steam for 1 minute.\n4. Top with basil pesto and chopped scallion."
+  }
  },
  {
   "date": "2024-10-21",
@@ -25470,7 +25491,14 @@
    "https://images.how-about-breakfast.com/images/1212_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1212.mp4",
-  "page_id": "양파"
+  "page_id": "양파",
+  "_en": {
+   "hash": "94061d3e90673ac6ffd24318bd93e2f6c6eccb944c64aeb2da42599503a32e15",
+   "title": "Air Fryer Blooming Onion",
+   "intro": "20241021 #breakfastdiary 1212, 11°C/cloudy, 25min/exercise(S, M)\n\nI don't know.\nWhen, and by how much, one should open one's heart.\nSome people left exhausted because I didn't open up enough.\nSome people left startled because I opened up too soon.\nSome people never got to know me because I opened up too little.\nAnd sometimes I wore myself out by opening up too much.\nI still don't really know.\nWhether it's love, or work, or just how well-cooked today's onion turned out, I sometimes think this line from Between Calm and Passion might be some kind of magic formula applicable to almost every situation in the world. It came to mind while eating a slightly undercooked onion. \"I still don't really know when, and by how much, I should cook it.\"\nScore an onion, coat it in frying batter, and deep-fry it, and it transforms into something like a blooming flower. This is called a blooming onion. Since it's breakfast, I didn't go all out and just air-fried a simpler version.",
+   "ingredients": "- 1 onion\n- 1/4 cup scallion\n- Mentaiko mayo (1/2 mentaiko, 2 tbsp mayonnaise, 1/2 tsp lemon juice, 1/4 tsp pepper)\n- 2 tsp olive oil",
+   "steps": "1. Without cutting off the root, trim only about 1cm off the stem end of the onion, then score it vertically.\n2. Brush evenly with olive oil and air-fry at 200°C for 20 minutes.\n3. Plate and drizzle with the mentaiko mayo. Finish with pepper and scallion."
+  }
  },
  {
   "date": "2024-10-20",
@@ -38454,7 +38482,8 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "스콘"
+  "page_id": "스콘",
+  "image": "https://images.how-about-breakfast.com/images/885b.jpg"
  },
  {
   "date": "2023-10-21",
@@ -51178,7 +51207,14 @@
    "https://images.how-about-breakfast.com/images/576_3.jpg",
    "https://images.how-about-breakfast.com/images/576_4.jpg"
   ],
-  "page_id": "고구마에치킨리예뜨-나의로컬푸드샐러드-고구마"
+  "page_id": "고구마에치킨리예뜨-나의로컬푸드샐러드-고구마",
+  "_en": {
+   "hash": "a4df55365825113950ff0be9a29760fa910d515468b746283f27c29b42dfdc51",
+   "title": "Sweet Potato Salad with Chicken Rillettes",
+   "intro": "20221022, #breakfastdiary 576, 14°C/mostly clear, 19min/exercise\nYou make me wait for you, day after day.\nAs the sun sets and the mountain's shadow covers the village houses, I go out beyond the village woods and wait, with a hope that has no promised end.\n(Han Yong-un)\n25 minutes at 220°C preheat, 180°C in the oven apparently wasn't enough. Another 30 minutes - I wait, with a hope that has no promised end, for the sweet potato to finish cooking.\nShred store-bought chicken breast along the grain, toss with mayonnaise, parsley, and pepper pepper pepper, then pile it on top of the sweet potato - #sweetpotatowithchickenrillettes\nThis is my recipe for #myLocalFoodSalad.",
+   "ingredients": "- 2 sweet potatoes\n- 1 chicken breast\n- Chicken rillettes sauce (1 tbsp mayonnaise, 1 tsp parsley powder, 1/4 tsp pepper)",
+   "steps": "1. Wash the sweet potatoes well, brush with 1 tsp olive oil, and bake at 220°C for 30 minutes.\n2. Shred the chicken breast into a bowl, add 1 tbsp mayonnaise, 1 tsp parsley powder, and 1/4 tsp pepper, and mix well.\n3. Plate the sweet potatoes, split them in half, and top with the chicken rillettes from step 2."
+  }
  },
  {
   "date": "2022-10-21",
@@ -68372,7 +68408,14 @@
    "https://images.how-about-breakfast.com/images/246.jpg",
    "https://images.how-about-breakfast.com/images/246_2.jpg"
   ],
-  "page_id": "모닝리추얼-모닝루틴-옥수수-2"
+  "page_id": "모닝리추얼-모닝루틴-옥수수-2",
+  "_en": {
+   "hash": "9da802429ea8525243f1ea6bb11487f5b73b0b7b357faf9aa9a3eddcbef260ee",
+   "title": "Corn Salad",
+   "intro": "20211022, #breakfastdiary 246, 5°C/clear, 25min/exercise\nCut the kernels off the (patented) corn I bought from the truck parked by my place on the way home yesterday. Peas, parsley, a vinaigrette dressing, pepper pepper pepper pepper",
+   "ingredients": "- 1 ear of corn\n- 1/2 cup peas\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)\n- 1/4 tsp pepper\n- A little parsley",
+   "steps": "1. Add enough water to cover the bottom of a pan and boil 1/2 cup peas.\n2. Halve the corn and cut it lengthwise to remove just the kernels, then place on a plate.\n3. Pour the peas and dressing from step 1 over the corn and sprinkle with parsley and pepper."
+  }
  },
  {
   "date": "2021-10-21",
@@ -86160,7 +86203,14 @@
   ],
   "page_id": "블루베리-클랜베리-라즈베리",
   "essay_candidate": true,
-  "essay_reviewed": true
+  "essay_reviewed": true,
+  "_en": {
+   "hash": "f0fcc7191386a4b107c9da69e2b1b7e57e6162d2d348fdba88372a1b0105deee",
+   "title": "Berry Salad with Feta Cheese",
+   "intro": "\"At work, we sometimes end up living as characters that betray our own nature. While carrying out the role we've been given, we somehow grow past the hard edges of our own self. We become bigger and bigger people.\" (Son Yeol-eum, from an interview for \"It's All Unnie If It's Cool\")\nHowever introverted, extroverted, or somewhere in between our natures may be, each of us is out there working hard, betraying - and sometimes hiding - our given personality in our own way. Still, like Son Yeol-eum said, I want to believe that this day-to-day grind is making me into a bigger, broader person.\n20201022, before heading to work, today's #breakfasttable is #blueberries #cranberries #raspberries (frozen berries, for short), with #fetacheese, a little pepper and balsamic - #frozenberrysaladwithfetacheese\nOut of curiosity I bought some #edibleflowers and tried them on an #avocadobowl, but it turned out to be a bit much - reminded me of the patterned baggy pants (aka \"mompe\") hanging in a market stall. Anyway, #breakfast #salad",
+   "ingredients": "- 1/2 cup blueberries\n- 1/2 cup cranberries\n- 1/2 cup raspberries\n- 50g feta cheese\n- 1/4 tsp pepper\n- 1 tsp balsamic vinegar",
+   "steps": "1. Mash the blueberries, cranberries, raspberries, and feta cheese together and plate.\n2. Sprinkle with 1/4 tsp pepper and 1 tsp balsamic vinegar."
+  }
  },
  {
   "date": "2020-10-21",
