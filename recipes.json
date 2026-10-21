@@ -51158,7 +51158,7 @@
   "weather": "14도/대체로맑음, 19분/운동",
   "failed": false,
   "calories": null,
-  "title": "고구마에치킨리예뜨 나의로컬푸드샐러드 고구마",
+  "title": "치킨 리예트를 곁들인 고구마 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51181,9 +51181,9 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20221022, #조식다이어리 576, 14도/대체로맑음, 19분/운동\n당신은 나로 하여금 날마다 날마다 당신을 기다리게 합니다.\n해가 저물어 산 그림자가 촌집을 덮을 때에, 나는 기약없는 기대를 가지고 마을 숲 밖에 가서 기다리고 있습니다.\n한용운\n220도 예열, 180도 오븐에 25분으로는 부족했나 봅니다. 다시 30분 나는 기약없는 기대를 가지고 고구마가 익기를 기다리고 있습니다. \n시판 닭가슴살을 결대로 찢어 마요네즈, 파슬리, 후추후추후추 버무린 뒤 고구마 위에 얹어 #고구마에치킨리예뜨\n#나의로컬푸드샐러드 레시피 입니다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20221022, #조식다이어리 576, 14도/대체로맑음, 19분/운동\n당신은 나로 하여금 날마다 날마다 당신을 기다리게 합니다.\n해가 저물어 산 그림자가 촌집을 덮을 때에, 나는 기약없는 기대를 가지고 마을 숲 밖에 가서 기다리고 있습니다.\n(한용운)\n220도 예열, 180도 오븐에 25분으로는 부족했나 봅니다. 다시 30분 나는 기약없는 기대를 가지고 고구마가 익기를 기다리고 있습니다. \n시판 닭가슴살을 결대로 찢어 마요네즈, 파슬리, 후추후추후추 버무린 뒤 고구마 위에 얹어 #고구마에치킨리예뜨\n#나의로컬푸드샐러드 레시피 입니다.",
+  "ingredients": "- 고구마 2개\n- 닭가슴살 1덩어리\n- 치킨 리예트 소스(마요네즈 1T, 파슬리 파우더 1t, 후추 1/4t)",
+  "steps": "1. 고구마는 깨끗하게 씻은 후 올리브오일 1t 바르고 220도 오븐에 30분 굽는다. \n2. 그릇에 닭가슴살 찢어서 넣고 마요네즈 1T, 파슬리 파우더 1t, 후추 1/4t 넣고 골고루 섞는다. \n3. 고구마는 접시에 담고 반으로 가른 뒤 2의 치킨 리예뜨를 얹는다. ",
   "raw": "20221022, #조식다이어리 576, 14도/대체로맑음, 19분/운동\n\n당신은 나로 하여금 날마다 날마다 당신을 기다리게 합니다.\n해가 저물어 산 그림자가 촌집을 덮을 때에, 나는 기약없는 기대를 가지고 마을 숲 밖에 가서 기다리고 있습니다.\n한용운\n\n220도 예열, 180도 오븐에 25분으로는 부족했나 봅니다. 다시 30분 나는 기약없는 기대를 가지고 고구마가 익기를 기다리고 있습니다. \n\n시판 닭가슴살을 결대로 찢어 마요네즈, 파슬리, 후추후추후추 버무린 뒤 고구마 위에 얹어 #고구마에치킨리예뜨\n\n#나의로컬푸드샐러드 레시피 입니다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #고구마 #치킨 #닭가슴살 #마요네즈 \n#breakfast #salad #sweetpopato #chickenbreast ",
   "image": "https://images.how-about-breakfast.com/images/576.jpg",
   "gallery": [
@@ -51192,13 +51192,6 @@
    "https://images.how-about-breakfast.com/images/576_3.jpg",
    "https://images.how-about-breakfast.com/images/576_4.jpg"
   ],
-  "_en": {
-   "hash": "d8db78d0aace7be67dc88450c7fabeccac9c38aaef9cc10573ea95a3c84105be",
-   "title": "Sweet Potato with Chicken Rillettes",
-   "intro": "20221022 #breakfastdiary 576, 14°C/mostly sunny, 19min exercise\nYou make me wait for you, day after day.\nWhen the sun sets and the mountain's shadow falls over the village houses, I wait outside the village woods, holding onto a hope with no promise of fulfillment.\nHan Yong-un\nPreheating to 220°C and baking at 180°C for 25 minutes apparently wasn't enough. Another 30 minutes — I wait for the sweet potato to finish baking, holding onto that same uncertain hope.\nShred store-bought chicken breast along the grain, toss with mayonnaise, parsley, and plenty of pepper, then pile it on top of the sweet potato. #sweetpotatochickenrillettes\nThis is my #mylocalfoodsalad recipe.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "고구마에치킨리예뜨-나의로컬푸드샐러드-고구마"
  },
  {
