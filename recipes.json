@@ -68359,7 +68359,7 @@
   "weather": "5도/맑음, 25분/운동",
   "failed": false,
   "calories": null,
-  "title": "모닝리추얼 모닝루틴 옥수수",
+  "title": "옥수수 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68385,21 +68385,14 @@
    "홈쿡"
   ],
   "intro": "20211022, #조식다이어리 246, 5도/맑음, 25분/운동\n어제 퇴근길 집앞 트럭에서 산 (특허 받은) 옥수수 알갱이를 칼로 도려낸다. 완두콩, 파슬리, 비네그레트 드레싱에 후추후추후추후추",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 옥수수 1개\n- 완두콩 1/2컵\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 후추 1/4t\n- 파슬리 조금",
+  "steps": "1. 팬에 자작하게 물 붓고 완두콩 1/2컵을 삶는다. \n2. 옥수수는 반으로 썬 다음 세로로 썰어서 알갱이만 발라낸 다음 접시에 담는다. \n2. 1의 완두콩과 드레싱 붓고 파슬리, 후추 뿌린다. ",
   "raw": "20211022, #조식다이어리 246, 5도/맑음, 25분/운동\n\n어제 퇴근길 집앞 트럭에서 산 (특허 받은) 옥수수 알갱이를 칼로 도려낸다. 완두콩, 파슬리, 비네그레트 드레싱에 후추후추후추후추 \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #옥수수 #완두콩 \n#breakfast #recipe #salad #corn #parsley #vinaigrette #pea ",
   "image": "https://images.how-about-breakfast.com/images/246.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/246.jpg",
    "https://images.how-about-breakfast.com/images/246_2.jpg"
   ],
-  "_en": {
-   "hash": "14430e85eac389be8eb30561788ed529109e5d59b40f02571f8bf84ae93d3fd4",
-   "title": "Morning Ritual, Morning Routine, Corn",
-   "intro": "20211022, #breakfastdiary 246, 5°C/clear, 25min/workout\nCut the kernels off the (patented!) corn I bought from a truck parked outside my building on my way home yesterday. Peas, parsley, vinaigrette dressing, and pepper pepper pepper pepper.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "모닝리추얼-모닝루틴-옥수수-2"
  },
  {
