@@ -38506,7 +38506,7 @@
   "weather": "3도/맑음",
   "failed": false,
   "calories": null,
-  "title": "스콘",
+  "title": "플레인 스콘",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38516,17 +38516,10 @@
    "조식다이어리"
   ],
   "intro": "20231022, #조식다이어리 874, 3도/맑음\n마른 기침 때문에 일찍 깼다. 햇살도 좋고 마침 먹어(치워)야 할 클로티드 크림이 있으니 따뜻한 한 입 스콘을 만들어 볼까? \n한 입 스콘 6개 분량 레시피, \n중력분150g, 설탕30g, 베이킹파우더1t, 소금은 약간, 계량해서 섞는다. 버터30g 조각내서 계량한 가루와 섞는다. \n우유50ml, 계란1개 넣고 뒤섞뒤섞, 가루에 부어 반죽을 한다. (우유, 계란 섞은 건 조금 남겨둔다.) 잘 싸서 냉장고에 30분 정도 둔다. \n반죽을 꺼내서 밀대로 밀고 무스틀로 찍어서 플레이트에 올리고 남겨둔 우유, 계란 섞은 걸 바른다. 170도 오븐에 15분 정도. 굽는다. \n반을 잘라 잼, 크림 순서로 바른다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 중력분 150g \n- 설탕 30g \n- 베이킹파우더 1t \n- 소금 1/4t\n- 버터 30g \n- 우유 50ml \n- 계란 1개  \n- 딸기잼 1T\n- 클로티드 크림 1T ",
+  "steps": "1. 중력분 150g, 설탕 30g, 베이킹파우더 1t, 소금 1/4t 계량해서 섞는다. 버터 30g 조각내서 계량한 가루와 섞는다. \n2. 우유 50ml, 계란 1개 넣고 섞는다. (반죽에 바를 2T 덜어둔다.)\n3. 1에 2를 붓고 반죽을 한다. 잘 싸서 냉장고에 30분 정도 휴지시킨다. \n4. 반죽을 꺼내서 밀대로 밀고 무스틀로 찍어서 플레이트에 얹은 다음 덜어둔 계란물을 바른다. 170도 오븐에 15분 정도 굽는다. \n5. 스콘의 반을 잘라 잼, 크림 순서로 바른다.",
   "raw": "20231022, #조식다이어리 874, 3도/맑음\n\n마른 기침 때문에 일찍 깼다. 햇살도 좋고 마침 먹어(치워)야 할 클로티드 크림이 있으니 따뜻한 한 입 스콘을 만들어 볼까? \n\n한 입 스콘 6개 분량 레시피, \n\n중력분150g, 설탕30g, 베이킹파우더1t, 소금은 약간, 계량해서 섞는다. 버터30g 조각내서 계량한 가루와 섞는다. \n우유50ml, 계란1개 넣고 뒤섞뒤섞, 가루에 부어 반죽을 한다. (우유, 계란 섞은 건 조금 남겨둔다.) 잘 싸서 냉장고에 30분 정도 둔다. \n반죽을 꺼내서 밀대로 밀고 무스틀로 찍어서 플레이트에 올리고 남겨둔 우유, 계란 섞은 걸 바른다. 170도 오븐에 15분 정도. 굽는다. \n반을 잘라 잼, 크림 순서로 바른다. \n\n#조식 #레시피 #미라클모닝 #스콘",
   "video": "https://images.how-about-breakfast.com/images/874.mp4",
-  "_en": {
-   "hash": "902d6553161c24b02ad60c77010522e409a507a7370287298dc54a40bea2337b",
-   "title": "Scones",
-   "intro": "20231022, #breakfastdiary 874, 3°C/sunny\nI woke up early because of a dry cough. The sun was out, and I happened to have some clotted cream that needed using up, so why not make some warm bite-sized scones?\nRecipe for 6 bite-sized scones:\nMeasure out 150g all-purpose flour, 30g sugar, 1t baking powder, and a pinch of salt, and mix together. Cut 30g butter into pieces and work it into the measured dry ingredients.\nAdd 50ml milk and 1 egg, mix well, then pour into the dry ingredients and knead into a dough. (Set aside a little of the milk-egg mixture.) Wrap it well and let it rest in the fridge for about 30 minutes.\nTake out the dough, roll it out with a rolling pin, cut rounds with a mousse ring, place them on a tray, and brush with the reserved milk-egg mixture. Bake in a 170°C oven for about 15 minutes.\nCut in half and spread with jam, then cream.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "스콘",
   "image": "https://images.how-about-breakfast.com/images/885b.jpg"
  },
