@@ -25442,7 +25442,7 @@
   "weather": "10도/대체로 흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "참치파스타 참치",
+  "title": "참치 파스타",
   "credit": "@sebscrispyclub",
   "hashtags": [
    "레시피",
@@ -25453,8 +25453,8 @@
    "참치파스타"
   ],
   "intro": "20241023 #조식다이어리 1214, 10도/대체로 흐림, 20분/운동(M) \n서리가 내린다는 상강, 아침 기온이 뚝 떨어졌다.",
-  "ingredients": "스파게티, 계란 1개(노른자만), 레몬 1/2개, 참치캔 1개, 올리브 10개, 파슬리\n\n👉이렇게\n냄비에 물 붓고 소금소금 스파게티를 삶는다. 그동안,\n믹싱볼에 계란 노른자, 파마산치즈, 레몬제스트와 레몬주스를 넣고 골고루 섞는다. \n믹싱볼에 스파게티와 면수 1/2컵, 으깬 올리브와 참치, 다진 파슬리 넣고 섞는다.  \n\nInspired by @sebscrispyclub\n\n#조식 #레시피 #미라클모닝 #참치",
-  "steps": null,
+  "ingredients": "- 스파게티 1인분 \n- 계란 1개(노른자만)\n- 파마산치즈 1T\n- 레몬 1/2개 \n- 참치캔 1개 \n- 올리브 10개 \n- 파슬리 조금",
+  "steps": "1. 냄비에 물 붓고 소금 2t 넣고 스파게티를 삶는다. \n2. 믹싱볼에 계란 노른자 1개, 파마산치즈 1T, (레몬 1/2개 분량) 레몬제스트와 레몬주스를 넣고 골고루 섞는다. \n3. 2의 믹싱볼에 1의 스파게티와 면수 1/2컵, 올리브와 참치, 다진 파슬리 넣고 섞는다.  \n4. 접시에 스파게티 담고 올리브와 참치 얹는다. ",
   "raw": "20241023 #조식다이어리 1214, 10도/대체로 흐림, 20분/운동(M) \n\n서리가 내린다는 상강, 아침 기온이 뚝 떨어졌다. \n\n#참치파스타\n\n👉재료는\n스파게티, 계란 1개(노른자만), 레몬 1/2개, 참치캔 1개, 올리브 10개, 파슬리\n\n👉이렇게\n냄비에 물 붓고 소금소금 스파게티를 삶는다. 그동안,\n믹싱볼에 계란 노른자, 파마산치즈, 레몬제스트와 레몬주스를 넣고 골고루 섞는다. \n믹싱볼에 스파게티와 면수 1/2컵, 으깬 올리브와 참치, 다진 파슬리 넣고 섞는다.  \n\nInspired by @sebscrispyclub\n\n#조식 #레시피 #미라클모닝 #참치\n\n ",
   "image": "https://images.how-about-breakfast.com/images/1214.jpg",
   "gallery": [
@@ -25463,13 +25463,6 @@
    "https://images.how-about-breakfast.com/images/1214_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1214.mp4",
-  "_en": {
-   "hash": "d68afd24f70afef6bf2770eae057f13796b34c387c96233e93a89f017737c107",
-   "title": "Tuna Pasta, Tuna",
-   "intro": "20241023 #breakfastdiary 1214, 10°C/mostly cloudy, 20min/exercise(M)\nSangang, the day frost is said to fall — the morning temperature dropped sharply.",
-   "ingredients": "Spaghetti, 1 egg (yolk only), 1/2 lemon, 1 can tuna, 10 olives, parsley\n\n👉Like this\nBoil the spaghetti in salted boiling water. Meanwhile,\nIn a mixing bowl, combine the egg yolk, parmesan cheese, lemon zest and lemon juice, and mix evenly.\nAdd the spaghetti, 1/2 cup pasta water, mashed olives and tuna, and minced parsley to the mixing bowl and toss together.\n\nInspired by @sebscrispyclub\n\n#breakfast #recipe #miraclemorning #tuna",
-   "steps": ""
-  },
   "page_id": "참치파스타-참치"
  },
  {
