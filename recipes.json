@@ -27,7 +27,14 @@
    "https://images.how-about-breakfast.com/images/1900_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1900.mp4",
-  "page_id": "가지-깻잎-파로토"
+  "page_id": "가지-깻잎-파로토",
+  "_en": {
+   "hash": "85f58c96a8aa965669de72fe08302ca48d76fe2873dc4b88581eacdd27c0a14f",
+   "title": "Eggplant Perilla Leaf Farrotto",
+   "intro": "20261021 #breakfastdiary 1870, 13°C/cloudy\nFarrotto instead of risotto\nRisotto made with farro is called \"farrotto\" in Italy. It has a far more fun, chewy texture than rice.\n350kcal Eggplant Perilla Leaf Farrotto\n\"All'onda\" is Italian for \"like a wave,\" a phrase used to describe the right consistency for a well-made risotto. Plate it, give the bottom a couple of light taps with your palm, and if the risotto slowly ripples outward and settles flat, you've nailed the all'onda consistency - but mine didn't budge an inch, so I think I failed at getting the consistency right today.",
+   "ingredients": "- 300g cooked farro (made in a rice cooker on the multigrain setting)\n- 1 eggplant\n- 5 perilla leaves\n- 1/4 onion\n- 3 cloves garlic\n- 1 tbsp olive oil\n- Broth (250ml water, 1 tsp chicken stock)\n- 20g parmesan cheese\n- 1/4 tsp perilla oil\n- A little pepper",
+   "steps": "1. Cut the eggplant into 1cm dice and sprinkle lightly with salt. Heat 1/2 tbsp olive oil in a pan and sear over medium heat until golden, then set aside.\n2. In the same pan, heat 1/2 tbsp olive oil and sauté the minced onion and garlic until translucent.\n3. Add the farro and pour in the broth in 3-4 additions, stirring and simmering for 5-7 minutes.\n4. Turn off the heat and stir in the parmesan cheese and half the eggplant from step 1.\n5. Spoon into a bowl and top with the remaining eggplant, julienned perilla leaves, and perilla oil."
+  }
  },
  {
   "date": "2026-10-19",
@@ -12797,28 +12804,7 @@
    "intro": "20251022 #breakfastdiary 1540, 6°C/mostly clear\nWould have tasted even better coated in starch and deep-fried, but keeping health in mind, I air-fried it instead and paired it with a tangy tomato dressing - 531kcal #roastedeggplantsalad",
    "ingredients": "- 2 eggplants\n- 2 tsp salt\n- 2 tbsp starch\n- Dressing (1 tomato, 1/4 onion, a little basil, 3 tbsp olive oil, 1 tbsp white wine vinegar, 1 tbsp lemon juice, 1 tbsp whole grain mustard)",
    "steps": "1. Bash the 2 eggplants and tear them by hand, then toss in a zip bag with 2 tsp salt and 2 tbsp starch, and air-fry at 180°C for 10 minutes. (Let it cool for about 5 minutes after cooking for a crispier bite.)\n2. Finely chop 1 tomato and 1/4 onion, cut up a little basil, and combine in a mixing bowl with 3 tbsp olive oil, 1 tbsp white wine vinegar, 1 tbsp lemon juice, and 1 tbsp whole grain mustard, and mix well.\n3. Plate the eggplant from step 1 and drizzle with the dressing from step 2."
-  }
- },
- {
-  "date": "2025-10-22",
-  "date_raw": "20251022",
-  "diary_no": 1551,
-  "weather": "00도/대체로 흐림, 20분/운동(M)",
-  "failed": false,
-  "calories": null,
-  "title": "치크케이크",
-  "credit": null,
-  "hashtags": [
-   "레시피",
-   "조식",
-   "조식다이어리",
-   "치크케이크"
-  ],
-  "intro": "20251022 #조식다이어리 1540, 00도/대체로 흐림, 20분/운동(M)",
-  "ingredients": "그릭요거트 170g, 계란 2개, 오트밀 30g, 꿀 1T, 바닐라 익스트랙트 1t, 블루베리 조금",
-  "steps": "1. 가지 2개 두드려서 손으로 찢어서 팬에 올리브오일 두르고 맛있게 굽는다. \n2. 토마토 1개, 양파 1/4개 다지고 바질 조금 잘라서 믹싱볼에 넣고 올리브오일 3T, 화이트와인 비니거 1T, 레몬주스 1T, 홀그레인 머스터드 1T, 햄프시드 1T 넣고 골고루 섞는다.\n3. 접시에 1의 가지 담고 2의 드레싱을 뿌린다.",
-  "raw": "20251022 #조식다이어리 1540, 00도/대체로 흐림, 20분/운동(M)\n\n👉 재료\n그릭요거트 170g, 계란 2개, 오트밀 30g, 꿀 1T, 바닐라 익스트랙트 1t, 블루베리 조금\n\n👉 조리\n1. 가지 2개 두드려서 손으로 찢어서 팬에 올리브오일 두르고 맛있게 굽는다. \n2. 토마토 1개, 양파 1/4개 다지고 바질 조금 잘라서 믹싱볼에 넣고 올리브오일 3T, 화이트와인 비니거 1T, 레몬주스 1T, 홀그레인 머스터드 1T, 햄프시드 1T 넣고 골고루 섞는다.\n3. 접시에 1의 가지 담고 2의 드레싱을 뿌린다.  \n \n#조식 #레시피 #치크케이크",
-  "video": "https://images.how-about-breakfast.com/images/1540.mp4",
+  },
   "image": "https://images.how-about-breakfast.com/images/1540.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/1540.jpg",
@@ -12826,14 +12812,7 @@
    "https://images.how-about-breakfast.com/images/1540_3.jpg",
    "https://images.how-about-breakfast.com/images/1540_4.jpg"
   ],
-  "_en": {
-   "hash": "f71d120e9c5c257629d3deb98a9e7f2fc3ee3e1b8a6a0a69e0f58aaa33d46179",
-   "title": "Cheesecake",
-   "intro": "20251022 #breakfastdiary day 1540, 0°C/mostly cloudy, 20min/exercise (M)",
-   "ingredients": "170g Greek yogurt, 2 eggs, 30g oatmeal, 1T honey, 1t vanilla extract, a little blueberries",
-   "steps": "1. Pound 2 eggplants, tear by hand, and pan-fry in olive oil until nicely browned.\n2. Chop 1 tomato and 1/4 onion, cut up a little basil, put in a mixing bowl, add 3T olive oil, 1T white wine vinegar, 1T lemon juice, 1T whole grain mustard, and 1T hemp seeds, and mix thoroughly.\n3. Plate the eggplant from step 1 and drizzle with the dressing from step 2."
-  },
-  "page_id": "치크케이크"
+  "video": "https://images.how-about-breakfast.com/images/1540.mp4"
  },
  {
   "date": "2025-10-21",
