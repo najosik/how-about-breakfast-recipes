@@ -38474,7 +38474,7 @@
   "weather": "11도/부분적으로흐림, 21분/운동(Y)",
   "failed": false,
   "calories": null,
-  "title": "소브레메사 토마토밥",
+  "title": "토마토 밥",
   "credit": null,
   "hashtags": [
    "Sobremesa",
@@ -38485,18 +38485,11 @@
    "조식다이어리",
    "토마토밥"
   ],
-  "intro": "20231023, #조식다이어리 875, 11도/부분적으로흐림, 21분/운동(Y) \n#소브레메사 #Sobremesa 영어에는 적합한 단어가 없지만 그 개념은 간단하다. 식사를 마친 후 당신이 테이블에서 보내는 시간을 뜻한다. 보통 웃음소리가 포함되고 거의 항상 편안하고 명랑한 대화가 오간다. (출처: BBC) \n혼자, 햄버거나 샐러드처럼 컴팩트하고 효율적인 식사가 대부분인 요즘 사람들에게 이런 얘기는 참으로 생경하기 짝이 없다. \n토마토에 칼집을 내고 끓는 물에 데친 후 찬 물에 담가 껍질을 벗긴다. \n따뜻한 밥 위에 토마토를 얹고 올리브 조금, 소금, 올리브오일을 넣고 적당히 섞는다. \n입맛 없을 때, 시간 없을 때, 귀찮을 때 간단하지만 풍요로운 조식이다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20231023, #조식다이어리 875, 11도/부분적으로흐림, 21분/운동(Y) \n#소브레메사 #Sobremesa 영어에는 적합한 단어가 없지만 그 개념은 간단하다. 식사를 마친 후 당신이 테이블에서 보내는 시간을 뜻한다. 보통 웃음소리가 포함되고 거의 항상 편안하고 명랑한 대화가 오간다. (출처: BBC) \n혼자, 햄버거나 샐러드처럼 컴팩트하고 효율적인 식사가 대부분인 요즘 사람들에게 이런 얘기는 참으로 생경하기 짝이 없다. \n\n토마토에 칼집을 내고 끓는 물에 데친 후 찬 물에 담가 껍질을 벗긴다. \n따뜻한 밥 위에 토마토를 얹고 올리브 조금, 소금, 올리브오일을 넣고 적당히 섞는다. \n입맛 없을 때, 시간 없을 때, 귀찮을 때 간단하지만 풍요로운 조식이다.",
+  "ingredients": "- 토마토 1개\n- 올리브 1T\n- 소금 1/4t\n- 올리브오일 2t",
+  "steps": "1. 토마토에 칼집을 내고 끓는 물에 데친 후 찬물에 담가 껍질을 벗긴다. \n2. 따뜻한 밥 위에 토마토를 얹고 올리브 1T, 소금 1/4t, 올리브오일 2t 넣고 적당히 섞는다. ",
   "raw": "20231023, #조식다이어리 875, 11도/부분적으로흐림, 21분/운동(Y) \n\n#소브레메사 #Sobremesa 영어에는 적합한 단어가 없지만 그 개념은 간단하다. 식사를 마친 후 당신이 테이블에서 보내는 시간을 뜻한다. 보통 웃음소리가 포함되고 거의 항상 편안하고 명랑한 대화가 오간다. (출처: BBC) \n\n혼자, 햄버거나 샐러드처럼 컴팩트하고 효율적인 식사가 대부분인 요즘 사람들에게 이런 얘기는 참으로 생경하기 짝이 없다. \n\n토마토에 칼집을 내고 끓는 물에 데친 후 찬 물에 담가 껍질을 벗긴다. \n따뜻한 밥 위에 토마토를 얹고 올리브 조금, 소금, 올리브오일을 넣고 적당히 섞는다. \n\n입맛 없을 때, 시간 없을 때, 귀찮을 때 간단하지만 풍요로운 조식이다. \n\n#조식 #레시피 #미라클모닝 #토마토밥",
   "video": "https://images.how-about-breakfast.com/images/875.mp4",
-  "_en": {
-   "hash": "c6684fbff4ff018a5cc258e27869cda17e6ff3baef8937bf28789cfcb597d1c4",
-   "title": "Sobremesa Tomato Rice",
-   "intro": "20231023, #breakfastdiary 875, 11°C/partly cloudy, 21min/exercise(Y)\n#Sobremesa — there's no perfect word for it in English, but the concept is simple: it's the time you spend at the table after finishing a meal. It usually involves laughter, and almost always a relaxed, cheerful conversation. (Source: BBC)\nFor most of us today, eating alone and favoring compact, efficient meals like burgers or salads, this idea feels almost foreign.\nScore a tomato, blanch it in boiling water, then dip it in cold water and peel off the skin.\nPlace the tomato over warm rice, add a few olives, salt, and olive oil, and mix gently.\nWhen you have no appetite, no time, or just can't be bothered — this is a simple yet rich breakfast.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "소브레메사-토마토밥"
  },
  {
