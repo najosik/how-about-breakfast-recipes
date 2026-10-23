@@ -25430,7 +25430,7 @@
   "weather": "7도/맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "프리타타 계란",
+  "title": "시금치 토마토 프리타타",
   "credit": null,
   "hashtags": [
    "계란",
@@ -25441,8 +25441,8 @@
    "프리타타"
   ],
   "intro": "20241024 #조식다이어리 1215, 7도/맑음, 20분/운동(M)",
-  "ingredients": "계란 4개, 시금치 듬뿍, 방울토마토 10개, 애호박 1/3개, 가지 1/3개\n\n👉이렇게\n달군 팬에 올리브오일 두르고 소금소금, 후츄후츄, 허브허브 잘게 썬 애호박과 가지를 볶는다. \n팬에 볶은 채소와 시금치와 방울토마토 넣고 소금소금 계란 풀어서 붓는다. \n약불에 굽다가 팬 위에 접시를 얹은 다음 뒤집어서 접시에 프리타타를 담고 다시 팬에 얹어서 반대편을 익힌다.  \n접시에 담고 파슬리와 파마산치즈~\n\n#조식 #레시피 #미라클모닝 #계란",
-  "steps": null,
+  "ingredients": "- 계란 4개\n- 시금치 4~5뿌리\n- 방울토마토 10개\n- 애호박 1/3개\n- 가지 1/3개\n- 올리브오일 2t\n- 소금 1/4t\n- 후추 1/4t\n- 파슬리 조금\n- 파마산치즈 1/2t",
+  "steps": "1. 팬에 올리브오일 2t 두르고 소금, 후추, 허브 넣고 잘게 썬 애호박과 가지를 볶는다. \n2. 1에 시금치와 방울토마토 넣고 계란 풀어서 붓는다. \n3. 약불에 굽다가 팬 위에 접시를 얹은 다음 뒤집어서 접시에 담고 다시 팬에 얹어서 반대편을 익힌다.  \n4. 접시에 담고 파슬리와 파마산치즈 뿌린다. ",
   "raw": "20241024 #조식다이어리 1215, 7도/맑음, 20분/운동(M) \n\n#프리타타\n\n👉재료는\n계란 4개, 시금치 듬뿍, 방울토마토 10개, 애호박 1/3개, 가지 1/3개\n\n👉이렇게\n달군 팬에 올리브오일 두르고 소금소금, 후츄후츄, 허브허브 잘게 썬 애호박과 가지를 볶는다. \n팬에 볶은 채소와 시금치와 방울토마토 넣고 소금소금 계란 풀어서 붓는다. \n약불에 굽다가 팬 위에 접시를 얹은 다음 뒤집어서 접시에 프리타타를 담고 다시 팬에 얹어서 반대편을 익힌다.  \n접시에 담고 파슬리와 파마산치즈~\n\n#조식 #레시피 #미라클모닝 #계란\n\n ",
   "image": "https://images.how-about-breakfast.com/images/1215.jpg",
   "gallery": [
@@ -25450,13 +25450,6 @@
    "https://images.how-about-breakfast.com/images/1215_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1215.mp4",
-  "_en": {
-   "hash": "2556ac190b663b742d84dd941b2c02ffcdcedf7a1c829dd6a2279138b3ced5de",
-   "title": "Frittata, Egg",
-   "intro": "20241024 #breakfastdiary 1215, 7°C/clear, 20min/exercise(M)",
-   "ingredients": "4 eggs, plenty of spinach, 10 cherry tomatoes, 1/3 zucchini, 1/3 eggplant\n\n👉Like this\nHeat a pan with olive oil and sauté finely chopped zucchini and eggplant with salt salt, pepper pepper, herbs herbs.\nAdd the sautéed vegetables, spinach and cherry tomatoes to the pan, season with salt salt, and pour in beaten eggs.\nCook on low heat, then place a plate over the pan, flip it so the frittata lands on the plate, then slide it back into the pan to cook the other side.\nPlate it and top with parsley and parmesan cheese~\n\n#breakfast #recipe #miraclemorning #egg",
-   "steps": ""
-  },
   "page_id": "프리타타-계란"
  },
  {
