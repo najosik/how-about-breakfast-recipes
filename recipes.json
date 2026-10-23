@@ -1,5 +1,36 @@
 [
  {
+  "date": "2026-10-23",
+  "date_raw": "20261023",
+  "diary_no": 1902,
+  "weather": "7도/흐림",
+  "failed": false,
+  "calories": 260,
+  "title": "토마토 정어리 토스트",
+  "credit": null,
+  "hashtags": [
+   "레시피",
+   "정어리스프레드",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20261023 #조식다이어리 1872, 7도/흐림\n비상식\n통조림\n오늘은\n브런치\n정어리(sardine)라는 이름은 이탈리아 사르데냐 섬에서 왔다는 설이 있다. 작지만 오메가3와 칼슘이 꽉 찬 생선. 프랑스에선 정어리 통조림을 와인처럼 숙성시켜 연도별로 판다는데, 오늘 조식에 사용한 정어리 캔은 숙성될 틈도 없이 순식간에 사라졌다.\n260kcal 토마토 정어리 토스트",
+  "ingredients": "- 사워도우 2장(약 120g)\n- 사르디나드(정어리 올리브 스프레드) 1캔(약 60g)\n- 방울토마토 5개\n- 바질 약간\n- 레몬주스 약간 \n- 후추 약간\n- 마늘 1쪽",
+  "steps": "1. 사르디나드는 먹기 10분 전에 꺼내 실온에 둔다.\n2. 사워도우를 팬에 바삭하게 굽는다. 마늘을 반으로 잘라 단면을 빵에 문지른다.\n3. 방울토마토는 4등분하고, 파슬리는 손으로 뜯는다.\n4. 사워도우에 사르디나드를 바르고 방울토마토를 올린 뒤, 레몬즙을 몇 방울 뿌리고 파슬리 얹고 후추를 뿌린다.",
+  "raw": "20261023 #조식다이어리 1872, 7도/흐림\n\n비상식\n통조림\n오늘은\n브런치\n\n정어리(sardine)라는 이름은 이탈리아 사르데냐 섬에서 왔다는 설이 있다. 작지만 오메가3와 칼슘이 꽉 찬 생선. 프랑스에선 정어리 통조림을 와인처럼 숙성시켜 연도별로 판다는데, 오늘 조식에 사용한 정어리 캔은 숙성될 틈도 없이 순식간에 사라졌다.\n\n260kcal 토마토 정어리 토스트\n\n👉재료(2인분)\n- 사워도우 2장(약 120g)\n- 사르디나드(정어리 올리브 스프레드) 1캔(약 60g)\n- 방울토마토 5개\n- 바질 약간\n- 레몬주스 약간 \n- 후추 약간\n- 마늘 1쪽\n\n👉조리\n1. 사르디나드는 먹기 10분 전에 꺼내 실온에 둔다.\n2. 사워도우를 팬에 바삭하게 굽는다. 마늘을 반으로 잘라 단면을 빵에 문지른다.\n3. 방울토마토는 4등분하고, 파슬리는 손으로 뜯는다.\n4. 사워도우에 사르디나드를 바르고 방울토마토를 올린 뒤, 레몬즙을 몇 방울 뿌리고 파슬리 얹고 후추를 뿌린다.\n\n#조식 #레시피 #정어리스프레드",
+  "permalink": "https://www.instagram.com/p/De1x3qdHTS6/",
+  "image": "https://images.how-about-breakfast.com/images/1902.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1902.jpg",
+   "https://images.how-about-breakfast.com/images/1902_2.jpg",
+   "https://images.how-about-breakfast.com/images/1902_3.jpg",
+   "https://images.how-about-breakfast.com/images/1902_4.jpg",
+   "https://images.how-about-breakfast.com/images/1902_5.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1902.mp4",
+  "page_id": "토마토-정어리-토스트"
+ },
+ {
   "date": "2026-10-22",
   "date_raw": "20261022",
   "diary_no": 1901,
