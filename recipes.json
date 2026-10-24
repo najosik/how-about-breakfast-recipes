@@ -51125,7 +51125,7 @@
   "weather": "4도/맑음",
   "failed": false,
   "calories": null,
-  "title": "가지부라타치즈샐러드 부라티치즈 가지",
+  "title": "가지 부라타치즈 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51150,8 +51150,8 @@
    "홈쿡"
   ],
   "intro": "20221025, #조식다이어리 579, 4도/맑음\n달군 팬에 올리브오일, (식감을 위해) 두툼하게 썬 가지를 소금소금, 후추후추 앞뒤로 굽는다. \n청상추, 부라타치즈, 비네그레트 드레싱, 호두 #가지부라타치즈샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 가지 1개\n- 청상추 3~4장\n- 부라타치즈 1개\n- 호두 1T\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 올리브오일 2t\n- 소금 1/4t\n- 후추 1/4t",
+  "steps": "1. 팬에 올리브오일 두르고 두툼하게 썬 가지를 소금, 후추 뿌려서 굽는다. \n2. 청상추는 먹기 좋은 크기로 썰어서 접시에 담는다. \n3. 2의 접시에 1의 가지와 부라타치즈 얹고 드레싱 뿌린 뒤 다진 호두 얹는다. ",
   "raw": "20221025, #조식다이어리 579, 4도/맑음\n\n달군 팬에 올리브오일, (식감을 위해) 두툼하게 썬 가지를 소금소금, 후추후추 앞뒤로 굽는다. \n청상추, 부라타치즈, 비네그레트 드레싱, 호두 #가지부라타치즈샐러드 \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #샐러드 #부라티치즈 #가지 #청상추 #호두\n#breakfast #salad #walnut #lettuce #burratacheese #eggplant  ",
   "image": "https://images.how-about-breakfast.com/images/579.jpg",
   "gallery": [
@@ -51159,13 +51159,6 @@
    "https://images.how-about-breakfast.com/images/579_2.jpg",
    "https://images.how-about-breakfast.com/images/579_3.jpg"
   ],
-  "_en": {
-   "hash": "26613e156afef2bac4b7acdd8bb73cf2221c3e2e066eb46bf2a8f22480fee2f8",
-   "title": "Eggplant Burrata Salad",
-   "intro": "20221025 #breakfastdiary 579, 4°C/sunny\nIn a heated pan with olive oil, sear thickly sliced eggplant (for the texture) on both sides with salt and pepper.\nGreen lettuce, burrata cheese, vinaigrette dressing, walnuts. #eggplantburratasalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "가지부라타치즈샐러드-부라티치즈-가지"
  },
  {
