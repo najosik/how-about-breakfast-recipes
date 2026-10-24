@@ -68313,7 +68313,7 @@
   "weather": "5도/맑음, 30분/운동",
   "failed": false,
   "calories": null,
-  "title": "소금집델리 소시지샐러드 잠봉뵈르",
+  "title": "소시지를 곁들인 채소 샐러드",
   "credit": null,
   "hashtags": [
    "asparagus",
@@ -68343,22 +68343,15 @@
    "혼밥",
    "홈쿡"
   ],
-  "intro": "20211025, #조식다이어리 249, 5도/맑음, 30분/운동\n#소금집델리 이탈리안 소시지를 구워, 브로콜리, 방울토마토 등의 가니시와 함께 #소시지샐러드 \n\"소금은 재료가 상하지 않도록 해주지만 동시에 원재료 맛을 수면 위로 끌어올려주고 적절하게 숙성하도록 도와주는 기능을 합니다.\" \n조지 더럼(소금집델리 공동 대표) \n첼리스트인 조지 더럼이 어머니의 나라인 한국을 찾아왔다가 작곡을 하며 음악 활동을 하던 장대원 대표와 만나 의기투합해서 밴드를 결성했고, 이런 인연이 이어져 소금집 델리를 운영하게 됐다고. 어쩐지 #잠봉뵈르 에서 리듬과 멜로디가 들리더라니 :)",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20211025, #조식다이어리 249, 5도/맑음, 30분/운동\n#소금집델리 이탈리안 소시지를 구워, 브로콜리, 방울토마토 등의 가니시와 함께 #소시지샐러드 \n\"소금은 재료가 상하지 않도록 해주지만 동시에 원재료 맛을 수면 위로 끌어올려주고 적절하게 숙성하도록 도와주는 기능을 합니다.\" \n조지 더럼(소금집델리 공동 대표) \n\n첼리스트인 조지 더럼이 어머니의 나라인 한국을 찾아왔다가 작곡을 하며 음악 활동을 하던 장대원 대표와 만나 의기투합해서 밴드를 결성했고, 이런 인연이 이어져 소금집 델리를 운영하게 됐다고. 어쩐지 #잠봉뵈르 에서 리듬과 멜로디가 들리더라니 :)",
+  "ingredients": "- 소시지 1개\n- 브로콜리 3~4개\n- 아스파라거스 2~3개\n- 방울토마토 3~4개\n- 올리브오일 1t\n- 후추 1/4t\n- 홀그레인 머스터드 1t",
+  "steps": "1. 소시지에 칼집 낸 다음 팬에 올리브오일 1t 넣고 후추 1/4t 뿌려서 굽는다. \n2. 삶은 브로콜리, 손질한 아스파라거스, 방울토마토도 굽는다. \n3. 1, 2를 접시에 담고 홀그레인 머스터드 곁들인다. ",
   "raw": "20211025, #조식다이어리 249, 5도/맑음, 30분/운동\n\n#소금집델리 이탈리안 소시지를 구워, 브로콜리, 방울토마토 등의 가니시와 함께 #소시지샐러드 \n\n\"소금은 재료가 상하지 않도록 해주지만 동시에 원재료 맛을 수면 위로 끌어올려주고 적절하게 숙성하도록 도와주는 기능을 합니다.\" \n조지 더럼(소금집델리 공동 대표) \n\n첼리스트인 조지 더럼이 어머니의 나라인 한국을 찾아왔다가 작곡을 하며 음악 활동을 하던 장대원 대표와 만나 의기투합해서 밴드를 결성했고, 이런 인연이 이어져 소금집 델리를 운영하게 됐다고. 어쩐지 #잠봉뵈르 에서 리듬과 멜로디가 들리더라니 :) \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #브로콜리 #방울토마토 #아스파라거스 #소시지 \n#breakfast #recipe #salad #broccoli #tomato #asparagus #sausage ",
   "image": "https://images.how-about-breakfast.com/images/249.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/249.jpg",
    "https://images.how-about-breakfast.com/images/249_2.jpg"
   ],
-  "_en": {
-   "hash": "c00d00c20c16898057691add9577619ca96bfc5459e4f3bf898bf8a785c97f00",
-   "title": "Sogeumjip Deli Sausage Salad, Jambon-Beurre",
-   "intro": "20211025, #breakfastdiary 249, 5°C/clear, 30min/workout\nGrilled #SogeumjipDeli Italian sausage with a garnish of broccoli and cherry tomatoes. #SausageSalad\n\"Salt keeps ingredients from spoiling, but at the same time it brings the flavor of the raw ingredient to the surface and helps it age just right.\"\nGeorge Durham (co-founder, Sogeumjip Deli)\nCellist George Durham came to Korea, his mother's home country, and met Jang Dae-won, who was composing and performing music at the time — the two hit it off and formed a band, and that connection eventually led them to running Sogeumjip Deli together. No wonder I could hear rhythm and melody in their #JambonBeurre :)",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "소금집델리-소시지샐러드-잠봉뵈르"
  },
  {
