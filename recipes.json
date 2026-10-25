@@ -86204,7 +86204,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "다시마 새우 새우다시마샐러드",
+  "title": "새우 다시마 샐러드",
   "credit": null,
   "hashtags": [
    "나의프랑스식샐러드",
@@ -86217,18 +86217,11 @@
    "조식"
   ],
   "intro": "20201026, 노동력을 만들어 수십년 뒤 쓸 생각에 앞서, 살아 있는 노동력이 더 오래도록 충분히 제구실을 하도록 하는 것이 인구 선순환의 시작이다. 인공지능, 로봇 같은 4차 산업혁명 기술의 진정한 쓰임새도 여기에 있다. 고령자와 여성의 삶이 보람되고 편안해지면 출산율도 서서히 기지개를 켤 것이다. 저출산 해소는 인구 문제의 첫 단추가 아니라, 종착지에 있어야 한다. 앞뒤가 바뀌었다. (곽노필, 자식 없는 노인 시대 어떻게 맞을까)\n통계청에 따르면 2021년, 내년부터는 우리 나라 인구가 감소할 것이라고. 하지만 세계적으로 출산율 감소의 원인이 빈곤퇴치와 양성평등, 디지털화라는 점을 고려하고, 기후변화와 식량문제에는 긍정적이라는 점을 떠올리면 무작정 낙담할 일만도 아닌 것이다. 저출산, 고령화가 어쩔 수 없는 것이라면 오직 출산 장려에만 매달리지 말고 시선을 바꿔보자. \n깨끗하게 씻은 #다시마 에 어젯 밤에 손질해 둔 #새우 를 팬에 구워 얹은 뒤 올리브 오일, 화이트 와인 비니거, 홀그레인 머스타드 드레싱, 딜, 후추, 레몬즙 약간 #새우다시마샐러드 #조식 #아침밥상 #샐러드 #다시마샐러드 #나의프랑스식샐러드 \n(방백) 싸늘하다. 입안 가득 짠 다시마가 날아와 꽂힌다. \n하지만 걱정하지 마라. 공기밥은 짠맛을 덮어주니까.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 새우 3마리\n- 소금 1/4t\n- 후추 1/4t\n- 다시마 한 줌\n- 드레싱(올리브오일 2T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)\n- 딜 조금\n- 레몬주스 1t",
+  "steps": "1. 냉동 새우는 해동하고 가볍게 씻은 후 물기를 제거하고 소금, 후추 뿌려서 팬에 굽는다. \n2. 다시마는 흐르는 물에 씻고 물기를 털어낸 후 접시에 담는다. \n3. 1의 새우를 다시마 위에 얹고 드레싱, 딜과 후추, 레몬주스 조금 얹는다. ",
   "raw": "20201026, 노동력을 만들어 수십년 뒤 쓸 생각에 앞서, 살아 있는 노동력이 더 오래도록 충분히 제구실을 하도록 하는 것이 인구 선순환의 시작이다. 인공지능, 로봇 같은 4차 산업혁명 기술의 진정한 쓰임새도 여기에 있다. 고령자와 여성의 삶이 보람되고 편안해지면 출산율도 서서히 기지개를 켤 것이다. 저출산 해소는 인구 문제의 첫 단추가 아니라, 종착지에 있어야 한다. 앞뒤가 바뀌었다. (곽노필, 자식 없는 노인 시대 어떻게 맞을까)\n\n통계청에 따르면 2021년, 내년부터는 우리 나라 인구가 감소할 것이라고. 하지만 세계적으로 출산율 감소의 원인이 빈곤퇴치와 양성평등, 디지털화라는 점을 고려하고, 기후변화와 식량문제에는 긍정적이라는 점을 떠올리면 무작정 낙담할 일만도 아닌 것이다. 저출산, 고령화가 어쩔 수 없는 것이라면 오직 출산 장려에만 매달리지 말고 시선을 바꿔보자. \n\n깨끗하게 씻은 #다시마 에 어젯 밤에 손질해 둔 #새우 를 팬에 구워 얹은 뒤 올리브 오일, 화이트 와인 비니거, 홀그레인 머스타드 드레싱, 딜, 후추, 레몬즙 약간 #새우다시마샐러드 #조식 #아침밥상 #샐러드 #다시마샐러드 #나의프랑스식샐러드 \n\n(방백) 싸늘하다. 입안 가득 짠 다시마가 날아와 꽂힌다. \n하지만 걱정하지 마라. 공기밥은 짠맛을 덮어주니까.",
   "pre_label": "D-109",
   "image": "https://images.how-about-breakfast.com/images/pre-109.jpg",
-  "_en": {
-   "hash": "3e52f83d0a1347e1a4b9c6229f8ad8d97cc6c0f047034cd4ddf7576c5396ba0d",
-   "title": "Kelp, Shrimp, and a Salty Morning",
-   "intro": "20201026, rather than raising a workforce to use decades down the line, making sure the workforce already alive can keep functioning well for longer is where a healthy population cycle actually begins. That's also where the real use of Fourth Industrial Revolution technologies like AI and robots lies. If the lives of the elderly and of women become more fulfilling and comfortable, the birth rate will gradually start to stir. Fixing low birth rates shouldn't be the first button to button on the population problem — it should be the last. We've got it backwards. (Kwak No-pil, How Should We Face an Era of Childless Elders)\nAccording to Statistics Korea, our population is set to start declining as early as next year, 2021. But considering that globally, falling birth rates are driven by things like poverty reduction, gender equality, and digitalization — and that they're actually a plus for climate change and food security — there's no need to be entirely discouraged. If low birth rates and an aging population are simply unavoidable, let's stop clinging only to birth-rate incentives and change our perspective instead. \nPan-sear the #shrimp I prepped last night and lay it over well-washed #kelp, then finish with a dressing of olive oil, white wine vinegar, and whole-grain mustard, plus a little dill, pepper, and lemon juice. #shrimpkelpsalad #breakfast #breakfasttable #salad #kelpsalad #myfrenchstylesalad \n(Aside) It's brutal. A mouthful of overly salty kelp hits me square in the face. \nBut don't worry — a bowl of rice will cover up the saltiness.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "다시마-새우-새우다시마샐러드"
  },
  {
