@@ -86202,7 +86202,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "다수결 숙의 토마토",
+  "title": "카프레제 샐러드",
   "credit": null,
   "hashtags": [
    "다수결",
@@ -86216,18 +86216,11 @@
    "토마토"
   ],
   "intro": "20201027, 두 의견이 있다. 가안은 100명의 구성원 중 51명이 지지하고, 나안은 49명이 지지하고 있다. 이럴 때 표결로 51명이 지지하는 안을 의결하는 것이 다수결의 요체일까? 아니다. 두 안을 놓고 토론하는 과정에서 가안을 수정한 가′안에 대한 지지가 61명이 될 수도 있고, 나안을 수정한 나′에 대한 지지가 70명일 수도 있다. 이처럼 토론과 협의를 통해 원안보다 더 많은 구성원이 동의할 수 있는 수정안·대안을 만들어가는 ‘숙의’(deliberation) 과정이 다수결 원리에 내장되어 있다. (이철희, 다수결에 대한 오해) #다수결 #숙의\n오늘은 종일 워크숍이 있는 날, 과연 다수결의 본래 뜻에 맞게 토론과 협의의 과정을 거쳐, 좀 더 많은 다수가 공감할 수 있는 바람직한 방안들이 나올 것인가? \n#토마토 와 #모짜렐라 의 포를 떠서 플레이팅하고 바질과 올리브, 그 위에 풍미가 좋은 올리브 오일과 발사믹, 후추 약간, 이탈리아의 남부, ‘카프리의 샐러드’란 뜻을 가진, #카프레제샐러드 #조식 #아침밥상 #샐러드 \n이걸 그대로 피자 위에 올리면, #마르게리따 피자다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 토마토 1/2개\n- 모짜렐라치즈 200g\n- 올리브오일 1t\n- 발사믹 1t\n- 후추 1/4t",
+  "steps": "1. 토마토와 모짜렐라는 0.5cm 정도로 얇게 썰어서 접시에 담는다. \n2. 바질 얹고 올리브오일과 발사믹, 후추 조금 뿌린다. ",
   "raw": "20201027, 두 의견이 있다. 가안은 100명의 구성원 중 51명이 지지하고, 나안은 49명이 지지하고 있다. 이럴 때 표결로 51명이 지지하는 안을 의결하는 것이 다수결의 요체일까? 아니다. 두 안을 놓고 토론하는 과정에서 가안을 수정한 가′안에 대한 지지가 61명이 될 수도 있고, 나안을 수정한 나′에 대한 지지가 70명일 수도 있다. 이처럼 토론과 협의를 통해 원안보다 더 많은 구성원이 동의할 수 있는 수정안·대안을 만들어가는 ‘숙의’(deliberation) 과정이 다수결 원리에 내장되어 있다. (이철희, 다수결에 대한 오해) #다수결 #숙의\n\n오늘은 종일 워크숍이 있는 날, 과연 다수결의 본래 뜻에 맞게 토론과 협의의 과정을 거쳐, 좀 더 많은 다수가 공감할 수 있는 바람직한 방안들이 나올 것인가? \n\n#토마토 와 #모짜렐라 의 포를 떠서 플레이팅하고 바질과 올리브, 그 위에 풍미가 좋은 올리브 오일과 발사믹, 후추 약간, 이탈리아의 남부, ‘카프리의 샐러드’란 뜻을 가진, #카프레제샐러드 #조식 #아침밥상 #샐러드 \n\n이걸 그대로 피자 위에 올리면, #마르게리따 피자다.",
   "pre_label": "D-108",
   "image": "https://images.how-about-breakfast.com/images/pre-108.jpg",
-  "_en": {
-   "hash": "8b4c9285bff1624fa1a05089c7b047fc2523805629338ed41a1d91c2966de8f4",
-   "title": "Majority Rule, Deliberation, and a Caprese Moment",
-   "intro": "20201027, say there are two proposals. Proposal A has the support of 51 out of 100 members, and Proposal B has 49. Is the heart of majority rule simply putting it to a vote and passing whichever one gets 51? No. Through the process of debating both proposals, support for a revised A′ might climb to 61, or support for a revised B′ might reach 70. Built into the principle of majority rule is this process of 'deliberation' — using discussion and negotiation to shape a revised proposal or alternative that more members can agree on than either original. (Lee Chul-hee, Misunderstandings About Majority Rule) #majorityrule #deliberation\nToday's an all-day workshop day. I wonder — true to the real meaning of majority rule, will discussion and negotiation actually produce better proposals that a wider majority can get behind? \nThinly slice #tomato and #mozzarella and plate them, add basil and olives, then finish with good olive oil, balsamic, and a little pepper — #caprese, which literally means 'salad of Capri,' from southern Italy. #breakfast #breakfasttable #salad \nPut this straight on top of a pizza, and you've got a #margherita pizza.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "다수결-숙의-토마토",
   "essay_candidate": true,
   "essay_reviewed": true
