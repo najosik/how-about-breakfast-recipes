@@ -1,5 +1,37 @@
 [
  {
+  "date": "2026-10-26",
+  "date_raw": "20261026",
+  "diary_no": 1905,
+  "weather": "14도/대체로 흐림",
+  "failed": false,
+  "calories": 580,
+  "title": "참치 레몬 파스타 샐러드",
+  "credit": null,
+  "hashtags": [
+   "레시피",
+   "빵가루",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20261026 #조식다이어리 1875, 14도/대체로 흐림\n가난한\n이들의\n파마산\n남부 이탈리아에선 볶은 빵가루를 가난한 이들의 파마산 Parmigiano dei poveri 라 부른다. 예전 시칠리아 같은 이탈리아 남부 지방에서는 비싼 치즈 대신, 먹고 남은 딱딱한 빵을 갈아 노릇하게 볶아 파스타 위에 뿌려서 먹었다고. 고소함과 바삭한 식감으로 그렇게 치즈의 빈자리를 채웠을 것이다. 오늘 조식의 파스타 샐러드에도 남은 빵 한 조각이 치즈가 됐다.\n약 580kcal 참치 레몬 파스타 샐러드",
+  "ingredients": "- 숏파스타 140g\n- 참치 1캔(기름 빼고 건더기만 약 100g)\n- 양배추 50g\n- 깻잎 3장\n- 사워도우 1장(빵가루 2T)\n- 드레싱(올리브오일 2t, 레몬즙 1/2T, 레몬 제스트 약간, 간 마늘 1/2쪽, 소금과 후추 약간)\n- 파스타 삶는 물 1L, 소금 1/2T",
+  "steps": "1. 냄비에 물 1L를 끓이고 소금 1/2T를 넣은 다음 숏파스타를 삶고 찬물에 헹궈 물기를 뺀다.\n2. 참치는 체에 밭쳐 기름을 꼭 짠다. 양배추와 깻잎은 가늘게 채 썬다.\n3. 사워도우를 간 뒤 마른 팬에 넣고 약불에서 노릇하게 볶아 덜어 둔다.\n4. 볼에 파스타, 양배추, 참치, 드레싱 붓고 섞는다.\n5. 그릇에 담고 깻잎채, 볶은 빵가루, 레몬 제스트를 올린다.",
+  "raw": "20261026 #조식다이어리 1875, 14도/대체로 흐림\n\n가난한\n이들의\n파마산\n\n남부 이탈리아에선 볶은 빵가루를 가난한 이들의 파마산 Parmigiano dei poveri 라 부른다. 예전 시칠리아 같은 이탈리아 남부 지방에서는 비싼 치즈 대신, 먹고 남은 딱딱한 빵을 갈아 노릇하게 볶아 파스타 위에 뿌려서 먹었다고. 고소함과 바삭한 식감으로 그렇게 치즈의 빈자리를 채웠을 것이다. 오늘 조식의 파스타 샐러드에도 남은 빵 한 조각이 치즈가 됐다.\n\n약 580kcal 참치 레몬 파스타 샐러드\n\n👉재료\n- 숏파스타 140g\n- 참치 1캔(기름 빼고 건더기만 약 100g)\n- 양배추 50g\n- 깻잎 3장\n- 사워도우 1장(빵가루 2T)\n- 드레싱(올리브오일 2t, 레몬즙 1/2T, 레몬 제스트 약간, 간 마늘 1/2쪽, 소금과 후추 약간)\n- 파스타 삶는 물 1L, 소금 1/2T\n\n👉조리\n1. 냄비에 물 1L를 끓이고 소금 1/2T를 넣은 다음 숏파스타를 삶고 찬물에 헹궈 물기를 뺀다.\n2. 참치는 체에 밭쳐 기름을 꼭 짠다. 양배추와 깻잎은 가늘게 채 썬다.\n3. 사워도우를 간 뒤 마른 팬에 넣고 약불에서 노릇하게 볶아 덜어 둔다.\n4. 볼에 파스타, 양배추, 참치, 드레싱 붓고 섞는다.\n5. 그릇에 담고 깻잎채, 볶은 빵가루, 레몬 제스트를 올린다.\n\n#조식 #레시피 #빵가루",
+  "permalink": "https://www.instagram.com/p/De753uJEx9Z/",
+  "image": "https://images.how-about-breakfast.com/images/1905.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1905.jpg",
+   "https://images.how-about-breakfast.com/images/1905_2.jpg",
+   "https://images.how-about-breakfast.com/images/1905_3.jpg",
+   "https://images.how-about-breakfast.com/images/1905_4.jpg",
+   "https://images.how-about-breakfast.com/images/1905_5.jpg",
+   "https://images.how-about-breakfast.com/images/1905_6.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1905.mp4",
+  "page_id": "참치-레몬-파스타-샐러드"
+ },
+ {
   "date": "2026-10-25",
   "date_raw": "20261025",
   "diary_no": 1904,
