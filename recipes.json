@@ -38495,7 +38495,7 @@
   "weather": "11도/부분적으로흐림, 21분/운동(Y)",
   "failed": false,
   "calories": null,
-  "title": "구운사과 젤다의전설 야숨",
+  "title": "그릭요거트를 곁들인 구운사과 샐러드",
   "credit": null,
   "hashtags": [
    "구운사과",
@@ -38508,9 +38508,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20231027, #조식다이어리 879, 11도/부분적으로흐림, 21분/운동(Y) \n새 신부 쥬노는 리토의 마을이 따분하다며 새 신랑이 이혼당하고 싶지 않으면 #구운사과 정도는 갖다 바쳐야 하는 것 아니냐며 투덜거린다. \n(저 분노의 원인에 대한 개연성 여부를 따지기 전에) 사과는 구워서 익힐수록 항산화 및 팩틴 성분의 함유량이 증가해 인슐린 분비를 완만하게 하는데, 이는 지방이 쌓이는 것을 방지해준다. 특히, 껍질을 벗기지 않고 굽는다면 두 배 이상의 영양효과를 볼 수 있다.\n그래, 사과는 껍질 채 구워먹는 과일이었어, \n사과 한 개 잘라서 달군 팬에 올리고 시나몬 솔솔솔 뿌려서 앞뒤로 굽는다. 볼에 그릭요거트, 시나몬, 구운 사과를 넣고 호두를 곁들인다.\n*시간과 체중 관리에 대한 부담이 덜하시다면, 호두는 팬에 한 번 굽고 먹기 전에 메이플 시럽을 더하실 것\n—\n구운사과 제조법을 아시나요? \n게임에서는 모닥불 옆에 두면 되지만 현실에서는 팬에 구워야 한다.\n젤다의 전설에서 구운 사과를 먹으면 체력이 +0.75이 회복된다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20231027, #조식다이어리 879, 11도/부분적으로흐림, 21분/운동(Y) \n새 신부 쥬노는 리토의 마을이 따분하다며 새 신랑이 이혼당하고 싶지 않으면 #구운사과 정도는 갖다 바쳐야 하는 것 아니냐며 투덜거린다. \n(젤다의 전설 중)\n\n사과는 구워서 익힐수록 항산화 및 팩틴 성분의 함유량이 증가해 인슐린 분비를 완만하게 하는데, 이는 지방이 쌓이는 것을 방지해준다. 특히, 껍질을 벗기지 않고 굽는다면 두 배 이상의 영양효과를 볼 수 있다.\n그래, 사과는 껍질 채 구워먹는 과일이었어, \n사과 한 개 잘라서 달군 팬에 올리고 시나몬 솔솔솔 뿌려서 앞뒤로 굽는다. 볼에 그릭요거트, 시나몬, 구운 사과를 넣고 호두를 곁들인다.\n*시간과 체중 관리에 대한 부담이 덜하시다면, 호두는 팬에 한 번 굽고 먹기 전에 메이플 시럽을 더하실 것\n\n구운사과 제조법을 아시나요? \n게임에서는 모닥불 옆에 두면 되지만 현실에서는 팬에 구워야 한다.\n젤다의 전설에서 구운 사과를 먹으면 체력이 +0.75이 회복된다.",
+  "ingredients": "- 사과 1개\n- 그릭요거트 3T\n- 시나몬 1t\n- 호두 1/2T",
+  "steps": "1. 사과는 껍질째 웻지모양으로 썬 뒤 시나몬 뿌리고 팬에서 굽는다. \n2. 그릇에 그릭요거트 3T와 시나몬 1t 넣고 섞은 다음 1의 사과와 호두 다져서 얹는다. ",
   "raw": "20231027, #조식다이어리 879, 11도/부분적으로흐림, 21분/운동(Y) \n\n새 신부 쥬노는 리토의 마을이 따분하다며 새 신랑이 이혼당하고 싶지 않으면 #구운사과 정도는 갖다 바쳐야 하는 것 아니냐며 투덜거린다. \n#젤다의전설 #야숨 #새신부는꽃보다사과 \n\n(저 분노의 원인에 대한 개연성 여부를 따지기 전에) 사과는 구워서 익힐수록 항산화 및 팩틴 성분의 함유량이 증가해 인슐린 분비를 완만하게 하는데, 이는 지방이 쌓이는 것을 방지해준다. 특히, 껍질을 벗기지 않고 굽는다면 두 배 이상의 영양효과를 볼 수 있다.\n\n그래, 사과는 껍질 채 구워먹는 과일이었어, \n\n사과 한 개 잘라서 달군 팬에 올리고 시나몬 솔솔솔 뿌려서 앞뒤로 굽는다. 볼에 그릭요거트, 시나몬, 구운 사과를 넣고 호두를 곁들인다.\n*시간과 체중 관리에 대한 부담이 덜하시다면, 호두는 팬에 한 번 굽고 먹기 전에 메이플 시럽을 더하실 것\n\n#조식 #레시피 #미라클모닝 #시나몬애플요거트볼\n\n—\n\n구운사과 제조법을 아시나요? \n\n게임에서는 모닥불 옆에 두면 되지만 현실에서는 팬에 구워야 한다.\n\n젤다의 전설에서 구운 사과를 먹으면 체력이 +0.75이 회복된다. ",
   "image": "https://images.how-about-breakfast.com/images/879.jpg",
   "gallery": [
@@ -38518,13 +38518,6 @@
    "https://images.how-about-breakfast.com/images/879_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/879.mp4",
-  "_en": {
-   "hash": "a3c4d69900c850689fa3822c17d7f56ac7a6e7f446545ec79df5ac78f3c70da0",
-   "title": "Baked Apple",
-   "intro": "20231027, #breakfastdiary 879, 11°C/partly cloudy, 21min/exercise(Y)\nThe newlywed Juno grumbles that Rito Village is boring, and that her new husband had better bring back at least a #bakedapple if he doesn't want to get divorced.\n(Before questioning whether that's really grounds for such anger,) the more you bake an apple, the more its antioxidants and pectin content increase, which slows insulin release and helps prevent fat from building up. Especially if you bake it without peeling, you get more than double the nutritional benefit.\nSo it turns out apples were meant to be baked with the skin on all along.\nCut an apple in half, place it in a hot pan, sprinkle on cinnamon, and grill both sides. In a bowl, combine Greek yogurt, cinnamon, and the baked apple, and top with walnuts.\n*If you're not too worried about time or watching your weight, toast the walnuts in the pan once and add maple syrup right before eating.\n—\nDo you know how to make a baked apple?\nIn the game, you just leave it by a campfire, but in real life you have to cook it in a pan.\nIn The Legend of Zelda, eating a baked apple restores +0.75 hearts.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "구운사과-젤다의전설-야숨"
  },
  {
