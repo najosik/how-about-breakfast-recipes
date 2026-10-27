@@ -27,7 +27,14 @@
    "https://images.how-about-breakfast.com/images/1906_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1906.mp4",
-  "page_id": "파바빈-아스파라거스-파로-샐러드"
+  "page_id": "파바빈-아스파라거스-파로-샐러드",
+  "_en": {
+   "hash": "8fe4a0336527e6532aaaddf1866a1c2a487387c3b7726580ab40a22f187dfc9f",
+   "title": "Fava Bean Asparagus Farro Salad",
+   "intro": "20261027 #breakfastdiary 1876, 9°C/mostly clear\nAn Italian\nsalad\nthat\nfills you up\nIn Italian it's \"insalata di farro\" - farro salad. The ingredients I happened to have at home lined up perfectly with the traditional Tuscan farro salad recipe.\n420kcal Fava Bean Asparagus Farro Salad",
+   "ingredients": "- 200g cooked farro (made in a rice cooker on the multigrain setting)\n- 100g fava beans (shelled)\n- 6 stalks asparagus\n- 10 cherry tomatoes\n- 1/4 red onion\n- 1 tbsp red wine vinegar\n- Dressing (1 tbsp olive oil, 1/4 tsp salt and pepper)\n- A little mint",
+   "steps": "1. Thinly slice the red onion and marinate in red wine vinegar for 10 minutes.\n2. Add 1 tsp salt to boiling water and blanch the fava beans for 2-3 minutes. In the same water, blanch the asparagus (trimmed into 3cm pieces) for 2 minutes, then cool in cold water.\n3. Halve the cherry tomatoes.\n4. In a bowl, combine the farro, fava beans, asparagus, cherry tomatoes, and the marinated red onion with its vinegar, then add olive oil, salt, and pepper, and toss well.\n5. Plate and tear mint on top."
+  }
  },
  {
   "date": "2026-10-26",
@@ -59,7 +66,14 @@
    "https://images.how-about-breakfast.com/images/1905_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1905.mp4",
-  "page_id": "참치-레몬-파스타-샐러드"
+  "page_id": "참치-레몬-파스타-샐러드",
+  "_en": {
+   "hash": "d88e53437a40add8e981f629ff9d538ae35c4878d42d84b4c19c662efb63c4a9",
+   "title": "Tuna Lemon Pasta Salad",
+   "intro": "20261026 #breakfastdiary 1875, 14°C/mostly cloudy\nThe poor man's\nparmesan\nIn southern Italy, toasted breadcrumbs are called \"Parmigiano dei poveri\" - the poor man's parmesan. In southern Italian regions like Sicily, instead of expensive cheese, they'd grind up leftover stale bread, toast it golden, and sprinkle it over pasta. Its nuttiness and crunch would have stood in for cheese's absence. In today's breakfast pasta salad, a leftover piece of bread became the cheese too.\nAbout 580kcal Tuna Lemon Pasta Salad",
+   "ingredients": "- 140g short pasta\n- 1 can tuna (drained, about 100g)\n- 50g cabbage\n- 3 perilla leaves\n- 1 slice sourdough (2 tbsp breadcrumbs)\n- Dressing (2 tsp olive oil, 1/2 tbsp lemon juice, a little lemon zest, 1/2 clove grated garlic, a little salt and pepper)\n- 1L water for pasta, 1/2 tbsp salt",
+   "steps": "1. Bring 1L water to a boil in a pot, add 1/2 tbsp salt, cook the short pasta, rinse in cold water, and drain.\n2. Drain the tuna thoroughly in a sieve. Julienne the cabbage and perilla leaves finely.\n3. Grate the sourdough, toast it in a dry pan over low heat until golden, and set aside.\n4. In a bowl, combine the pasta, cabbage, tuna, and dressing, and mix.\n5. Plate and top with the julienned perilla leaf, toasted breadcrumbs, and lemon zest."
+  }
  },
  {
   "date": "2026-10-25",
@@ -90,7 +104,14 @@
    "https://images.how-about-breakfast.com/images/1904_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1904.mp4",
-  "page_id": "밤-양송이-트러플-토스트"
+  "page_id": "밤-양송이-트러플-토스트",
+  "_en": {
+   "hash": "1f9ec0ebdeb625c9c8e9369f759bf4b51b95e698d378c4b4191f7274b82cc5b3",
+   "title": "Chestnut Button Mushroom Truffle Toast",
+   "intro": "20261025 #breakfastdiary 1874, 18°C/cloudy\nChestnuts and mushrooms\na perfect match\n360kcal Chestnut Button Mushroom Truffle Toast, where truffle ties together the earthiness of the mushroom and chestnut with a woody aroma",
+   "ingredients": "- 1 slice sourdough (about 60g)\n- 4 brown button mushrooms\n- 5 cooked chestnuts\n- 30g ricotta cheese\n- 1 tsp olive oil\n- 3-4 drops truffle oil\n- A pinch of truffle salt\n- A little pepper",
+   "steps": "1. Slice the mushrooms, stems on, about 0.5cm thick. Halve the chestnuts and scoop out the flesh with a spoon.\n2. Heat a pan well, add 1 tsp olive oil, spread the mushrooms in a single layer, and let them sit undisturbed for 1-2 minutes. Once golden, flip and cook the other side.\n3. Add the chestnuts, lightly mash with a spatula, sauté together for about 1 minute, and season with pepper.\n4. Toast the sourdough until crisp and spread with ricotta. (Mixing in a little milk makes the ricotta even creamier.)\n5. Top with the mixture from step 3, drizzle with a few drops of truffle oil, and finish with truffle salt."
+  }
  },
  {
   "date": "2026-10-24",
@@ -119,7 +140,14 @@
    "https://images.how-about-breakfast.com/images/1903_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1903.mp4",
-  "page_id": "들깨-고구마-그라탕"
+  "page_id": "들깨-고구마-그라탕",
+  "_en": {
+   "hash": "26a3cc6e27bfdb7161f298f562e95e9be5038de85e18c1883e654252a7caeca0",
+   "title": "Perilla Seed Sweet Potato Gratin",
+   "intro": "20261024 #breakfastdiary 1873, 14°C/cloudy\nWith perilla seeds\na gratin\nGratin comes from the French word \"gratter\" (to scrape), and originally referred to the browned bit stuck to the edge of a dish. So yes, France has its own version of scorched-rice crust too.\n310kcal Perilla Seed Sweet Potato Gratin",
+   "ingredients": "- 1 sweet potato (about 150g)\n- 1 tbsp ground perilla seeds\n- 1/2 tsp perilla oil\n- 1/2 tbsp cake flour\n- 125ml low-fat milk\n- 1/2 clove garlic\n- A pinch of salt\n- 20g shredded mozzarella\n- A little pepper",
+   "steps": "1. Slice the sweet potato 0.5cm thick. Sprinkle with 1/2 tbsp water, cover with plastic wrap, and microwave for 3 minutes to half-cook it.\n2. Heat perilla oil in a pan and sauté the minced garlic and cake flour over low heat for 1 minute.\n3. Pour in the milk in 2-3 additions, stirring to avoid lumps, and simmer until thickened. Stir in the ground perilla seeds, salt, and pepper.\n4. Layer the sweet potato in an oven-safe dish and pour over the sauce from step 3. Top with mozzarella.\n5. Bake at 200°C for 12-15 minutes, until the top is golden."
+  }
  },
  {
   "date": "2026-10-23",
@@ -12880,7 +12908,14 @@
    "https://images.how-about-breakfast.com/images/1544_2.jpg",
    "https://images.how-about-breakfast.com/images/1544_3.jpg"
   ],
-  "page_id": "샤오롱바오"
+  "page_id": "샤오롱바오",
+  "_en": {
+   "hash": "b41d386ca73aa94d6a2657b9ce1419c33d118cf9def5c0af3af00eab58ca2a74",
+   "title": "Giant Xiaolongbao",
+   "intro": "20251028 #breakfastdiary day 1544, 2°C/clear, 20min/exercise (M)\nXiaolongbao (小笼包) means, in Chinese, a bao (bun/dumpling) steamed in a xiaolong ('small bamboo steamer'). Unlike regular dumplings, its defining feature is the hot broth/juice inside the filling. It's also a signature Shanghai dish. With xiaolongbao this large, the standard etiquette is to slurp the broth out with a straw first — hence the nickname '#StrawDumplings' at major tourist spots in Shanghai.\nInstead of pork, I used shiitake mushroom, which somehow has a pork-like texture — though thinking about it, since I made the vegetable-stock jelly with gelatin (which is made from pork), it technically ends up being made with pork after all. Approx. 247kcal #xiaolongbao",
+   "ingredients": "- 5 shiitake mushrooms\n- 1/2 onion\n- 1/2 scallion\n- 1t soy sauce\n- 1T cooking wine\n- 1T oyster sauce\n- 1t garlic\n- 1t ginger\n- Vegetable stock jelly (1/2 vegetable stock cube (Star Dado), 3 sheets leaf gelatin)",
+   "steps": "1. Dissolve 1/2 vegetable stock cube in 200g boiling water. Add the leaf gelatin, pre-soaked for about 3 minutes, mix thoroughly, and set in the fridge overnight to firm up.\n2. Chop 5 shiitake mushrooms, 1/2 onion, and 1/2 scallion, add 1t soy sauce, 1T cooking wine, 1T oyster sauce, 1t garlic, 1t ginger, and the vegetable-stock jelly (which will provide the broth), and mix thoroughly.\n3. Fill the dumpling wrappers with the xiaolongbao filling from step 2, seal completely, and steam for 10 minutes.\n4. Take out of the steamer, poke in a straw to sip out the broth, then eat the dumpling."
+  }
  },
  {
   "date": "2025-10-27",
@@ -12909,7 +12944,14 @@
    "https://images.how-about-breakfast.com/images/1543_2.jpg",
    "https://images.how-about-breakfast.com/images/1543_3.jpg"
   ],
-  "page_id": "땅콩호박샐러드"
+  "page_id": "땅콩호박샐러드",
+  "_en": {
+   "hash": "3bb9ed421224d7db7ebaf8d908916a8779e51a92b83c9d7292595d89a6f04e96",
+   "title": "Butternut Squash Salad",
+   "intro": "20251027 #breakfastdiary 1543, 8°C/crystal clear\nThe butternut squash had been sitting on my desk as a decorative piece for about two weeks.\nAbout 390kcal #butternutsquashsalad served with pecans and ricotta cheese",
+   "ingredients": "- 1/2 butternut squash\n- 2 tbsp pecans\n- 1 tbsp raisins\n- 2 tbsp ricotta cheese\n- 2 tbsp olive oil\n- 1/4 tsp salt\n- 1/4 tsp pepper\n- 1/4 tsp cinnamon\n- 1 tbsp honey",
+   "steps": "1. Cut the butternut squash into bite-sized pieces.\n2. Place on a baking sheet, toss with 2 tbsp olive oil, salt, pepper, and cinnamon, and roast at 180°C for 15 minutes. Crush the pecans by hand, add them in, and roast for another 5 minutes.\n3. Add the raisins and toss well, then plate and top with ricotta cheese. Finish with honey before eating."
+  }
  },
  {
   "date": "2025-10-26",
@@ -12938,7 +12980,14 @@
    "https://images.how-about-breakfast.com/images/1542_3.jpg",
    "https://images.how-about-breakfast.com/images/1542_4.jpg"
   ],
-  "page_id": "에그누들을-곁들인-걸쭉한-토마토-계란탕"
+  "page_id": "에그누들을-곁들인-걸쭉한-토마토-계란탕",
+  "_en": {
+   "hash": "055224fdcb1d2178ad85a1c5669b1b71d5692fbd7f933c95fe5e0fcfe8b74116",
+   "title": "Thick Tomato Egg Soup with Egg Noodles",
+   "intro": "20251026 #breakfastdiary 1542, 12°C/mostly cloudy\nThe breakfast video from my business trip on 10/23 vanished entirely, so I had to skip that day - this is 10/26.\nI'm back~🛬\nThe final episode of my ongoing #breakfasteverday series, working title \"Not Exactly Jealous of Rembrandt Lighting,\" is getting delayed. The ending is proving hard to wrap up.\n481kcal Thick Tomato Egg Soup with Egg Noodles",
+   "ingredients": "- 1/3 scallion\n- 2 tomatoes\n- 1 tbsp fish sauce\n- 1/2 vegetable stock cube\n- 3 eggs\n- 25g egg noodles\n- 1 tbsp sesame oil",
+   "steps": "1. Heat oil in a pot, cut and sauté 1/3 scallion, then add the chopped tomatoes and sauté a bit more.\n2. Add 600ml water, 1 tbsp fish sauce, and 1/2 vegetable stock cube, and simmer a bit longer.\n3. Turn off the heat, beat in 3 eggs, and pour in 1 tbsp starch mixed with water.\n4. Ladle the thick tomato egg soup from step 3 into a bowl, boil 25g egg noodles and place on top. Finish with 1 tbsp sesame oil."
+  }
  },
  {
   "date": "2025-10-25",
@@ -25545,7 +25594,14 @@
    "https://images.how-about-breakfast.com/images/1217_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1217.mp4",
-  "page_id": "땅콩호박구이-땅콩호박"
+  "page_id": "땅콩호박구이-땅콩호박",
+  "_en": {
+   "hash": "9dcceba63eb28327ef023fc09c51a563c52eeab8a2c3c75d99db373cf94db377",
+   "title": "Roasted Butternut Squash",
+   "intro": "20241026 #breakfastdiary 1217, 14°C/clear, 20min/exercise(M)\n#Roastedbutternutsquash served with Greek yogurt and toasted walnuts",
+   "ingredients": "- 1/2 butternut squash\n- 1 cup walnuts\n- 2 tbsp Greek yogurt\n- A little parsley\n- 5g butter\n- 1 tsp olive oil\n- 1/4 tsp salt\n- 1/4 tsp herbs",
+   "steps": "1. Wash the butternut squash well and halve it. Scoop out the seeds and peel with a vegetable peeler. Score it 0.5cm deep, sprinkle with salt and herbs, brush with butter, and roast at 180°C for 60 minutes.\n2. Heat olive oil in a pan, add 1/4 tsp salt, toast the walnuts, then place in a bowl and mix in chopped parsley.\n3. Spoon Greek yogurt onto a plate and top with the squash from step 1 and the walnut mixture from step 2."
+  }
  },
  {
   "date": "2024-10-25",
@@ -25575,7 +25631,14 @@
    "https://images.how-about-breakfast.com/images/1216_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1216.mp4",
-  "page_id": "중국당면"
+  "page_id": "중국당면",
+  "_en": {
+   "hash": "ee0918517efc272bc59d8cce8d3bca87ce50535a20933a252452a6f95ed8a825",
+   "title": "Bibim Japchae Made with Chinese Vermicelli",
+   "intro": "20241025 #breakfastdiary 1216, 8°C/mostly clear, 20min/exercise(M)\nLooks remarkably like japchae, but there's wide #Chinesevermicelli underneath it all - noodles, anyway",
+   "ingredients": "- 1/2 serving Chinese vermicelli\n- 2 tbsp wood ear mushroom\n- 1/2 carrot\n- 3 stalks spinach\n- Dressing (3 tbsp soy sauce, 1 tbsp sugar, 1 tbsp sesame seeds, 1 tsp sesame oil)",
+   "steps": "1. Soak the vermicelli and wood ear mushroom in water the night before, then blanch briefly in boiling water.\n2. Mix soy sauce, sugar, sesame seeds, and sesame oil to make the dressing.\n3. Heat oil in a pan and sauté the julienned carrot, mushroom, and spinach.\n4. In a bowl, add the dressing, the vermicelli, and the prepared carrot, mushroom, and spinach, take a photo, then toss and eat."
+  }
  },
  {
   "date": "2024-10-24",
@@ -38534,7 +38597,14 @@
    "https://images.how-about-breakfast.com/images/879_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/879.mp4",
-  "page_id": "구운사과-젤다의전설-야숨"
+  "page_id": "구운사과-젤다의전설-야숨",
+  "_en": {
+   "hash": "1ff3a902c5d47d28b34c6ed57414643ebb57c6117a9210262ac8a60954dfcad8",
+   "title": "Roasted Apple Salad with Greek Yogurt",
+   "intro": "20231027, #breakfastdiary 879, 11°C/partly cloudy, 21min/exercise(Y)\nThe new bride Zuno complains that Rito Village is boring and that her new husband had better at least bring her a #roastedapple if he doesn't want to get divorced.\n(From The Legend of Zelda)\nThe more an apple is roasted, the more its antioxidants and pectin content rise, which slows insulin release - and that helps prevent fat storage. Roasting it unpeeled doubles the nutritional benefit.\nRight, apples were always meant to be roasted skin-on.\nCut an apple, place it in a hot pan, sprinkle generously with cinnamon, and grill on both sides. In a bowl, combine Greek yogurt, cinnamon, and the roasted apple, and top with walnuts.\n*If you're less worried about time and weight management, toast the walnuts once in a pan and drizzle maple syrup on top before eating.\nDo you know how to make a roasted apple?\nIn the game, you just leave it by a campfire, but in real life you have to cook it in a pan.\nIn The Legend of Zelda, eating a roasted apple restores +0.75 hearts.",
+   "ingredients": "- 1 apple\n- 3 tbsp Greek yogurt\n- 1 tsp cinnamon\n- 1/2 tbsp walnuts",
+   "steps": "1. Cut the apple into wedges, skin on, sprinkle with cinnamon, and grill in a pan.\n2. In a bowl, mix 3 tbsp Greek yogurt with 1 tsp cinnamon, then top with the apple from step 1 and chopped walnuts."
+  }
  },
  {
   "date": "2023-10-26",
@@ -38562,7 +38632,14 @@
    "https://images.how-about-breakfast.com/images/878_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/878.mp4",
-  "page_id": "마리네이드토마토를곁들인호밀크래커"
+  "page_id": "마리네이드토마토를곁들인호밀크래커",
+  "_en": {
+   "hash": "19408a4b132ced69245cc378a62d72476e217905f723d11c7ccd4561c9d9adef",
+   "title": "Rye Crackers with Marinated Tomato",
+   "intro": "20231026, #breakfastdiary 878, 14°C/cloudy, 21min/exercise(Y)\nStill shaken from last week's health checkup, I've decided to watch my diet for a week.\nInstead of bread, spread basil pesto on guilt-easing rye crackers, then top with burrata cheese and chopped perilla leaf.\nFinely chop a tomato, toss it with olive oil and pepper pepper, and gently place it on top of the perilla leaf. Finishing with more pepper is simply the unwritten rule.",
+   "ingredients": "- 2 rye crackers\n- 1 tbsp basil pesto\n- 1 burrata cheese\n- 3 perilla leaves\n- 1 tomato\n- 1 tsp olive oil\n- 1 tsp white wine vinegar\n- 1/4 tsp pepper",
+   "steps": "1. Finely chop the tomato, place in a mixing bowl, add 1 tsp olive oil, 1 tsp white wine vinegar, and 1/4 tsp pepper, and mix well.\n2. Spread basil pesto on the rye crackers, then top with burrata cheese and chopped perilla leaf.\n3. Top step 2 with the tomato marinade from step 1 and sprinkle with 1/4 tsp pepper."
+  }
  },
  {
   "date": "2023-10-25",
@@ -51155,7 +51232,14 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "무교동북어국집-남이차려준조식-남조식"
+  "page_id": "무교동북어국집-남이차려준조식-남조식",
+  "image": "https://images.how-about-breakfast.com/images/581.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/581.jpg",
+   "https://images.how-about-breakfast.com/images/581_2.jpg",
+   "https://images.how-about-breakfast.com/images/581_3.jpg"
+  ],
+  "video": null
  },
  {
   "date": "2022-10-28",
@@ -51173,12 +51257,8 @@
   "ingredients": null,
   "steps": null,
   "raw": "20221028, #조식다이어리 581, 7도/맑음, 16분/운동 \n\n건강검진으로 조식 쉬는 날, ",
-  "image": "https://images.how-about-breakfast.com/images/581.jpg",
-  "gallery": [
-   "https://images.how-about-breakfast.com/images/581.jpg",
-   "https://images.how-about-breakfast.com/images/581_2.jpg",
-   "https://images.how-about-breakfast.com/images/581_3.jpg"
-  ],
+  "image": null,
+  "gallery": null,
   "_en": {
    "hash": "3813998246ff7232aa8109c9839350216cbf98329c00bc79edf924688cc2a697",
    "title": "20221028 #breakfastdiary 581, 7°C/sunny, 16min exercise",
@@ -51186,7 +51266,8 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "20221028-조식다이어리-581-7도-맑음-16분-운동"
+  "page_id": "20221028-조식다이어리-581-7도-맑음-16분-운동",
+  "video": null
  },
  {
   "date": "2022-10-27",
@@ -51225,7 +51306,14 @@
    "https://images.how-about-breakfast.com/images/580_2.jpg",
    "https://images.how-about-breakfast.com/images/580_3.jpg"
   ],
-  "page_id": "들기름파스타-파스타-명란"
+  "page_id": "들기름파스타-파스타-명란",
+  "_en": {
+   "hash": "63aaf7ec62aab17bdc932bf2e385426e9a9e0e29fc9032e149bd841c0bbf7562",
+   "title": "Mentaiko Perilla Oil Cold Pasta",
+   "intro": "20221027, #breakfastdiary 580, 5°C/cloudy at times, 16min/exercise\nBold text draws the eye within a sentence, so it's conventionally used to mark and emphasize titles, subtitles, and list items - though there's no hard rule about it. Italics have somewhat clearer conventions. Like bold, it's sometimes used for emphasis, but it's mainly reserved for marking titles of books, films, newspapers, magazines, periodicals, albums, TV programs, and works of art. On top of that, there's a long-standing convention of italicizing foreign words that appear within English text.\n(Robert Fouser, Italics in English and Linguistic Inclusivity)\nBeyond that long-standing rule, there's apparently a recent argument that, since it's getting harder to draw a clean line between foreign words and loanwords, English should stop distinguishing bold from italics altogether.\nThat's a reasonably persuasive argument from the standpoint of linguistic inclusivity, of course.\nBut on the breakfast table, bold is non-negotiable.\nBoil the pasta in water (there's a soy-based dressing coming, so no real need to add salt), then rinse in cold water.\nTop with a mountain of finely chopped perilla leaf and mentaiko (today's bold text on the table), with the roe picked clean out of its skin.\nSoy sauce and tsuyu 1:1 with a perilla oil dressing - #perillaoilpasta\nThis is @house.bonjour's recipe.",
+   "ingredients": "- 1 serving spaghetti\n- 5 perilla leaves\n- 1 mentaiko\n- Dressing (1 tbsp soy sauce, 1 tbsp tsuyu, 1 tbsp perilla oil)",
+   "steps": "1. Boil the spaghetti in water, rinse in cold water, and drain well.\n2. Julienne the perilla leaves.\n3. Pick the mentaiko roe out of its skin and shape it into a round.\n4. Plate the spaghetti from step 1, top with the perilla leaf and mentaiko, and pour over the dressing. Toss well before eating."
+  }
  },
  {
   "date": "2022-10-25",
@@ -68334,7 +68422,14 @@
    "https://images.how-about-breakfast.com/images/251.jpg",
    "https://images.how-about-breakfast.com/images/251_2.jpg"
   ],
-  "page_id": "새우아보카도샌드위치-모닝리추얼-모닝루틴"
+  "page_id": "새우아보카도샌드위치-모닝리추얼-모닝루틴",
+  "_en": {
+   "hash": "5fe38f31b0bd71a8c392e505487fa4cac8426d1e2d208abcd6e072cac0544340",
+   "title": "Shrimp Avocado Toast",
+   "intro": "20211028, #breakfastdiary 251, 3°C/clear\nBrush bread with olive oil, toast both sides. Spread store-bought guacamole (today's seasoning duty) on the bread, then top with avocado.\nOlive oil, salt, pepper pepper pepper, parsley, and shrimp blanched to finish - #shrimpavocadosandwich\n\n1. FJ\nFJs tend to be fairly calm and don't feel much emotion when alone, at least not until some external factor or problem stirs it up. Because of this, FJs might think of themselves as \"empty\" or \"indifferent.\"\nThey rarely make value judgments unless something dramatic happens out in the world.\nFJs tend to believe their own emotions are quite \"objective.\" They observe people's feelings closely, work hard to read subtle moods, and are strongly motivated to resolve conflict in relationships.\nOf course, whether they do that \"well\" depends on the individual FJ's maturity, but since they at least try hard and genuinely enjoy doing it, they're likely to be good at it. So generally, FJs tend to read people more accurately than TPs and understand the subtle dynamics of relationships better.",
+   "ingredients": "- 2 slices bread\n- 1 avocado\n- 4 shrimp\n- 2 tsp olive oil\n- 1/2 tsp salt\n- 1/2 tsp pepper\n- 1/4 tsp parsley",
+   "steps": "1. Brush the bread with olive oil and toast until crisp in a pan.\n2. In the still-warm pan, add 1 tsp olive oil, salt, pepper, and 1/4 tsp parsley, and sear the shrimp.\n3. Spread guacamole on the bread, then top with thinly sliced avocado and the shrimp from step 2.\n4. Drizzle with 1 tsp olive oil and sprinkle with 1/4 tsp salt and 1/4 tsp pepper."
+  }
  },
  {
   "date": "2021-10-27",
@@ -68406,7 +68501,14 @@
    "https://images.how-about-breakfast.com/images/250.jpg",
    "https://images.how-about-breakfast.com/images/250_2.jpg"
   ],
-  "page_id": "토마토모짜렐라샐러드-모닝리추얼-모닝루틴"
+  "page_id": "토마토모짜렐라샐러드-모닝리추얼-모닝루틴",
+  "_en": {
+   "hash": "1a2877b0dd07489b67f8e1c1e61843c8e42fb0f3c36a725750d29dbc9886cdd7",
+   "title": "Tomato Mozzarella Salad",
+   "intro": "20211026, #breakfastdiary 250, 6°C/foggy, 25min/exercise\nLarge tomato, cherry tomatoes, mozzarella cheese, pecans, and apple mint with a vinaigrette dressing #tomatomozzarellasalad\n\nEvery language localizes. Even within a single language, heterogeneity is mixed in. So of course, once a word crosses into another language, there's no way it stays exactly as it started. A word doesn't suffer once it leaves home - it transforms. English becomes Singlish in Singapore, Spanglish in Spain, Franglais in France, Konglish in Korea. The most visible changes are in vocabulary: \"handphone,\" \"car center,\" \"morning call,\" \"one shot,\" \"back mirror\" (rearview mirror), \"remocon\" (remote control), \"autobike\" (motorcycle), \"sign\" (autograph). Even \"skinship\" and \"fighting,\" which made it into the Oxford Dictionary, are Konglish.\n(Kim Jin-hae, With Corona)\nWhat was expressed abroad as \"live with COVID\" settled into Korean as \"with corona.\" The government decided to call it \"gradual return to daily life\" instead, as much as possible, since \"with corona\" could give the impression of no longer caring about case numbers and abandoning social distancing altogether.\nSetting aside the question of localization and Konglish, when you think about how to properly convey a term's actual implication, sometimes it's better not to simply follow the majority. For instance, the \"Kim Young-ran Act\" only really conveys its meaning when called the \"Anti-Graft Act\" instead. So personally, I'd rather call it \"gradual return to daily life\" than \"with corona.\"",
+   "ingredients": "- 1/2 tomato\n- 5 cherry tomatoes\n- 5 shine muscat grapes\n- 5 bocconcini\n- 1 tbsp pecans\n- A little apple mint\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)",
+   "steps": "1. Slice the tomato lengthwise and plate.\n2. Top with the cherry tomatoes, bocconcini, shine muscat grapes, pecans, and apple mint, and drizzle with the dressing."
+  }
  },
  {
   "date": "2021-10-25",
@@ -86181,7 +86283,14 @@
   ],
   "page_id": "삼성-이건희-아보카도",
   "essay_candidate": true,
-  "essay_reviewed": true
+  "essay_reviewed": true,
+  "_en": {
+   "hash": "90b0962dd5542d6091833c5c1bc19cc83ce8519c0f0309495953ce395c495b76",
+   "title": "Avocado Crostini",
+   "intro": "20201028, The way Chairman Lee overcame failure and hardship in managing his company shows, more precisely, the meaning and lesson behind the achievements that followed. It's in that very process that the next generation of Samsung's - and by extension Korean business's - leaders should draw real lessons from. What could anyone possibly learn from a god-like figure hoisted up as infallible, high above everyone else? That kind of figure can only be admired and worshipped, nothing more. (Kim Young-bae, Why the Emperor Stayed in Hiding) #Samsung #LeeKunHee\nBehind the triumphs of semiconductors, home appliances, and smartphones that came to define Samsung Electronics lie the failures of automobiles (Renault Samsung) and retail (Homeplus). Some argue that it was precisely that catastrophic failure, which pushed the company to the edge of a cliff, that forced the focus and selection that eventually built today's Samsung. And alongside his \"merits,\" it's worth not forgetting the many \"faults\" that also exist - collusion between politics and business, illegal management succession, and anti-union management practices.\nBefore the #avocado goes overripe, #avocadocrostini\n1. Heat olive oil in a pan and lightly toast the bread.\n2. Cut the tomato and marinate it briefly in an olive oil, wine vinegar, and whole grain mustard dressing.\n3. Onto the toasted bread, place the marinated tomato from step 2 (gently woken up), sprinkle with a little salt, arrange the sliced avocado neatly on top, and drizzle with olive oil, pepper, and lemon juice. Finish with lemon zest. (Didn't have any, so used tangerine instead.)",
+   "ingredients": "- 1 slice bread\n- 1/2 avocado\n- Tomato dressing (1 tbsp olive oil, 1 tbsp wine vinegar, 1 tsp whole grain mustard)\n- 1/4 tsp salt\n- 1 tsp olive oil\n- 1/4 tsp pepper\n- 1/4 lemon (for juice and zest)",
+   "steps": "1. Brush the bread with olive oil and toast lightly on both sides.\n2. Cut the tomato and marinate briefly in the olive oil, wine vinegar, and whole grain mustard dressing.\n3. Top the toasted bread from step 1 with the marinated tomato from step 2 and sprinkle with salt. Arrange the sliced avocado neatly on top, and drizzle with olive oil, pepper, and lemon juice. Finish with lemon zest."
+  }
  },
  {
   "date": "2020-10-27",
@@ -86211,7 +86320,14 @@
   "image": "https://images.how-about-breakfast.com/images/pre-108.jpg",
   "page_id": "다수결-숙의-토마토",
   "essay_candidate": true,
-  "essay_reviewed": true
+  "essay_reviewed": true,
+  "_en": {
+   "hash": "e792da8423f4d728c57d18d7b96ef50f26c09ba3d2d67a4e9626db1d88b4243c",
+   "title": "Caprese Salad",
+   "intro": "20201027, Suppose there are two proposals. Proposal A has the support of 51 out of 100 members, Proposal B has 49. Is the essence of majority rule simply to vote and pass whichever option 51 people already support? No. Through a process of debate over the two proposals, a revised Proposal A' might end up with 61 supporters, or a revised Proposal B' might end up with 70. This process of \"deliberation\" - using discussion and negotiation to craft a revised proposal or alternative that more members can agree to than the original - is built into the principle of majority rule. (Lee Chul-hee, Misunderstandings About Majority Rule) #majorityrule #deliberation\nToday is an all-day workshop. Will it actually live up to the true meaning of majority rule, going through real discussion and negotiation to land on desirable plans that a larger majority can get behind?\nSlice #tomato and #mozzarella thin and plate them, with basil and olives, finished with good olive oil, balsamic, and a little pepper - from southern Italy, meaning \"salad of Capri,\" #capresesalad #breakfast #breakfastfood #salad\nPut this straight on top of a pizza and you'd have a #Margherita.",
+   "ingredients": "- 1/2 tomato\n- 200g mozzarella cheese\n- 1 tsp olive oil\n- 1 tsp balsamic\n- 1/4 tsp pepper",
+   "steps": "1. Slice the tomato and mozzarella about 0.5cm thick and plate.\n2. Top with basil and drizzle with olive oil, balsamic, and a little pepper."
+  }
  },
  {
   "date": "2020-10-26",
@@ -86238,7 +86354,14 @@
   "raw": "20201026, 노동력을 만들어 수십년 뒤 쓸 생각에 앞서, 살아 있는 노동력이 더 오래도록 충분히 제구실을 하도록 하는 것이 인구 선순환의 시작이다. 인공지능, 로봇 같은 4차 산업혁명 기술의 진정한 쓰임새도 여기에 있다. 고령자와 여성의 삶이 보람되고 편안해지면 출산율도 서서히 기지개를 켤 것이다. 저출산 해소는 인구 문제의 첫 단추가 아니라, 종착지에 있어야 한다. 앞뒤가 바뀌었다. (곽노필, 자식 없는 노인 시대 어떻게 맞을까)\n\n통계청에 따르면 2021년, 내년부터는 우리 나라 인구가 감소할 것이라고. 하지만 세계적으로 출산율 감소의 원인이 빈곤퇴치와 양성평등, 디지털화라는 점을 고려하고, 기후변화와 식량문제에는 긍정적이라는 점을 떠올리면 무작정 낙담할 일만도 아닌 것이다. 저출산, 고령화가 어쩔 수 없는 것이라면 오직 출산 장려에만 매달리지 말고 시선을 바꿔보자. \n\n깨끗하게 씻은 #다시마 에 어젯 밤에 손질해 둔 #새우 를 팬에 구워 얹은 뒤 올리브 오일, 화이트 와인 비니거, 홀그레인 머스타드 드레싱, 딜, 후추, 레몬즙 약간 #새우다시마샐러드 #조식 #아침밥상 #샐러드 #다시마샐러드 #나의프랑스식샐러드 \n\n(방백) 싸늘하다. 입안 가득 짠 다시마가 날아와 꽂힌다. \n하지만 걱정하지 마라. 공기밥은 짠맛을 덮어주니까.",
   "pre_label": "D-109",
   "image": "https://images.how-about-breakfast.com/images/pre-109.jpg",
-  "page_id": "다시마-새우-새우다시마샐러드"
+  "page_id": "다시마-새우-새우다시마샐러드",
+  "_en": {
+   "hash": "63fb3c76c010fb1d855a23542c6f5da75fec98efe0cf9a36fefb7b1580ad2793",
+   "title": "Shrimp Kelp Salad",
+   "intro": "20201026, Rather than first building up a labor force to spend decades down the line, the real starting point of a virtuous population cycle is making sure the labor force already alive gets to keep functioning well for much longer. That's also where the true use of Fourth Industrial Revolution technologies like AI and robotics lies. If life becomes more rewarding and comfortable for the elderly and for women, the birth rate will slowly stir back to life. Solving low birth rates shouldn't be the first button to fix the population problem - it should be the destination. We've got it backward. (Kwak No-pil, How Do We Meet an Era of Elderly Without Children?)\nAccording to Statistics Korea, starting next year (2021), Korea's population will begin to decline. But considering that globally, falling birth rates are linked to poverty reduction, gender equality, and digitalization - and that it's actually a positive for climate change and food supply - there's no need to despair outright. If low birth rate and an aging population are simply unavoidable, maybe it's time to stop fixating solely on birth-rate incentives and shift our perspective instead.\nTop freshly washed #kelp with #shrimp (prepped the night before) seared in a pan, then finish with an olive oil, white wine vinegar, whole grain mustard dressing, dill, pepper, and a little lemon juice. #shrimpkelpsalad #breakfast #breakfastfood #salad #kelpsalad #myFrenchstylesalad\n(Aside) It's a cold one. A mouthful of salty kelp hits me square. But don't worry - a bowl of rice covers the saltiness right up.",
+   "ingredients": "- 3 shrimp\n- 1/4 tsp salt\n- 1/4 tsp pepper\n- A handful of kelp\n- Dressing (2 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard)\n- A little dill\n- 1 tsp lemon juice",
+   "steps": "1. Thaw the frozen shrimp, rinse lightly, pat dry, season with salt and pepper, and sear in a pan.\n2. Rinse the kelp under running water, shake off the excess, and plate.\n3. Top the kelp with the shrimp from step 1, and finish with the dressing, dill, pepper, and a little lemon juice."
+  }
  },
  {
   "date": "2020-10-25",
