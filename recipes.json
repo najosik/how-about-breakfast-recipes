@@ -38512,7 +38512,7 @@
   "weather": "8도/맑음, 55분/운동(W, Y)",
   "failed": false,
   "calories": null,
-  "title": "가지 가지피자",
+  "title": "깻잎으로 향을 낸 가지 피자",
   "credit": null,
   "hashtags": [
    "가지",
@@ -38523,17 +38523,10 @@
    "조식다이어리"
   ],
   "intro": "20231029, #조식다이어리 881, 8도/맑음, 55분/운동(W, Y) \n가지가 탐스러워 보이길래 집 앞에 있는 채소 가게에서 이천 원 주고 가지를 세 개 샀다. 따지고 보면 가지만큼 밋난 채소도 드물다. \n가지를 깨끗하게 씻어 0.5cm 두께로 자른다. 달군 팬에 올리브오일 두르고 앞뒤로 가지를 굽는다. 허브도 조금 더한다. \n또띠아에 토마토소스를 바르고 구운 가지, 모짜렐라치즈를 올린 뒤 190도 오븐에 15분 굽는다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 또띠아 1장\n- 가지 1개\n- 모짜렐라치즈 1T\n- 올리브오일 1t\n- 허브 1t\n- 토마토소스 1T\n- 깻잎 3장",
+  "steps": "1. 가지를 깨끗하게 씻어 0.5cm 두께로 자른다. \n2. 팬에 올리브오일 1t 두르고 허브 뿌려서 앞뒤로 가지를 굽는다. \n3. 또띠아에 토마토소스를 바르고 2의 구운 가지, 모짜렐라치즈를 올린 뒤 190도 오븐에 15분 굽는다.\n4. 접시에 담고 채썬 깻잎 얹는다. ",
   "raw": "20231029, #조식다이어리 881, 8도/맑음, 55분/운동(W, Y) \n\n가지가 탐스러워 보이길래 집 앞에 있는 채소 가게에서 이천 원 주고 가지를 세 개 샀다. 따지고 보면 가지만큼 밋난 채소도 드물다. \n가지를 깨끗하게 씻어 0.5cm 두께로 자른다. 달군 팬에 올리브오일 두르고 앞뒤로 가지를 굽는다. 허브도 조금 더한다. \n또띠아에 토마토소스를 바르고 구운 가지, 모짜렐라치즈를 올린 뒤 190도 오븐에 15분 굽는다. \n\n#조식 #레시피 #미라클모닝 #가지 #가지피자",
   "video": "https://images.how-about-breakfast.com/images/881.mp4",
-  "_en": {
-   "hash": "a92cb79ef2f7e6064a444f41ccbdf648e602f34d80510c1fbb419d758bf0b431",
-   "title": "Eggplant Pizza",
-   "intro": "20231029, #breakfastdiary 881, 8°C/sunny, 55min/exercise(W, Y)\nThe eggplants looked so tempting that I bought three from the vegetable shop near my house for two thousand won. Come to think of it, few vegetables look as unglamorous as eggplant.\nWash the eggplant well and slice it 0.5cm thick. Heat a pan with olive oil and grill the eggplant on both sides, adding a bit of herbs.\nSpread tomato sauce on a tortilla, top with the grilled eggplant and mozzarella cheese, and bake in a 190°C oven for 15 minutes.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "가지-가지피자"
  },
  {
