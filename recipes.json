@@ -38543,7 +38543,7 @@
   "weather": "13도/맑음",
   "failed": false,
   "calories": null,
-  "title": "고추장맥앤치즈 맥엔치즈",
+  "title": "고추장 맥 앤 치즈",
   "credit": null,
   "hashtags": [
    "고추장맥앤치즈",
@@ -38554,17 +38554,10 @@
    "조식다이어리"
   ],
   "intro": "20231028, #조식다이어리 880, 13도/맑음\n고소짭짤한 맥앤치즈 + 매콤한 고추장의 랑데뷔 😃\n달군 팬에 버터 한 덩어리, 다진 마늘 조금 넣고 SSG SSG, 밀가루1, 고추장1/2 넣고 SSG SSG, \n적당히 섞이면, 약불로 줄이고 우유 3컵을 조금씩 부어가며 골고루 푼다. 모짜렐라 치즈 반 컵을 넣고 녹인다. (맛을 보고 소금으로 간을 한다.) 삶은 마카로니를 넣고 골고루 섞는다. #고추장맥앤치즈\n*맥엔치즈는 걸쭉한 텍스처와 고소짭쪼롬한 맛이 생명이다. 농도는 우유로, 간은 소금으로 조절한다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 마카로니 1컵\n- 버터 10g \n- 다진 마늘 1t \n- 밀가루 1T \n- 고추장 1/2T\n- 모짜렐라치즈 1/2컵\n- 우유 3컵",
+  "steps": "1. 팬에 버터 10g, 다진 마늘 1t, 밀가루 1T, 고추장 1/2T 넣고 섞는다. \n2. 1에 우유 3컵 부어가며 섞는다.\n3. 모짜렐라치즈 1/2컵 넣고 천천히 녹인다. \n4. 삶은 마카로니 넣고 골고루 섞는다. ",
   "raw": "20231028, #조식다이어리 880, 13도/맑음\n\n고소짭짤한 맥앤치즈 + 매콤한 고추장의 랑데뷔 😃\n\n달군 팬에 버터 한 덩어리, 다진 마늘 조금 넣고 SSG SSG, 밀가루1, 고추장1/2 넣고 SSG SSG, \n적당히 섞이면, 약불로 줄이고 우유 3컵을 조금씩 부어가며 골고루 푼다. 모짜렐라 치즈 반 컵을 넣고 녹인다. (맛을 보고 소금으로 간을 한다.) 삶은 마카로니를 넣고 골고루 섞는다. #고추장맥앤치즈\n*맥엔치즈는 걸쭉한 텍스처와 고소짭쪼롬한 맛이 생명이다. 농도는 우유로, 간은 소금으로 조절한다. \n\n#조식 #레시피 #미라클모닝 #맥엔치즈",
   "video": "https://images.how-about-breakfast.com/images/880.mp4",
-  "_en": {
-   "hash": "59ecf17658d885923f3c1d2a766535bca7532475158bb1ecc27412e0b1e61914",
-   "title": "Gochujang Mac and Cheese",
-   "intro": "20231028, #breakfastdiary 880, 13°C/sunny\nA rendezvous between nutty, salty mac and cheese and spicy gochujang 😃\nIn a hot pan, melt a knob of butter with a little minced garlic, sizzle-sizzle, then add a spoonful of flour and half a spoonful of gochujang, sizzle-sizzle again.\nOnce it's mixed well, lower the heat and pour in 3 cups of milk a little at a time, whisking until smooth. Add 1/2 cup mozzarella cheese and melt it in. (Taste and season with salt.) Add the boiled macaroni and mix well. #gochujangmacandcheese\n*The key to mac and cheese is a thick texture and a nutty, savory-salty flavor. Adjust the consistency with milk and the seasoning with salt.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "고추장맥앤치즈-맥엔치즈",
   "image": "https://images.how-about-breakfast.com/images/891b.jpg",
   "gallery": [
