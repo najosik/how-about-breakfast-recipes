@@ -38565,7 +38565,12 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "고추장맥앤치즈-맥엔치즈"
+  "page_id": "고추장맥앤치즈-맥엔치즈",
+  "image": "https://images.how-about-breakfast.com/images/891b.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/891b.jpg",
+   "https://images.how-about-breakfast.com/images/891b_2.jpg"
+  ]
  },
  {
   "date": "2023-10-27",
