@@ -12860,7 +12860,7 @@
   "weather": "2도/맑음, 20분/운동(M)",
   "failed": false,
   "calories": 247,
-  "title": "#샤오롱바오",
+  "title": "초대형 샤오롱바오",
   "credit": "@othingsss",
   "hashtags": [
    "레시피",
@@ -12870,7 +12870,7 @@
    "조식다이어리"
   ],
   "intro": "20251028 #조식다이어리 1544, 2도/맑음, 20분/운동(M)\n샤오롱바오 小笼包 는 중국어로 ‘작은 대나무 찜통(샤오롱)’에 ‘만두(바오)’를 찐 음식이라는 뜻이다. 일반 만두와는 달리, 만두소 안에 뜨거운 육즙(국물)이 들어 있는 게 특징이다. 대표적인 상해 음식이기도 하다. 이렇게 큰 사오롱바오는 먼저 국물을 빨대로 흡입하는 게 국룰이다. 그래서 상해 주요 관광지에선 #빨대만두 라는 별칭으로 불리기도 한다. \n돼지고기 대신에 왠지 돼지고기 같은 식감이 날 것 같은 표고버섯을 사용했는데, 생각해 보니 채수 젤리를 만들면서 (돼지고기로 만든) 젤라틴을 사용했으니 결국은 돼지고기로 만들게 된, 약 247kcal #샤오롱바오",
-  "ingredients": "표고버섯 5개, 양파 1/2개, 대파 1/2개 다지고 간장 1t, 맛술 1T, 굴소스 1T, 마늘 1t, 생강 1t, (채수젤리) 야채스톡(스타 다도) 1/2개, 판 젤라틴 3장",
+  "ingredients": "- 표고버섯 5개\n- 양파 1/2개 \n- 대파 1/2개 \n- 간장 1t \n- 맛술 1T \n- 굴소스 1T \n- 마늘 1t \n- 생강 1t \n- 채수젤리(야채스톡(스타 다도) 1/2개, 판 젤라틴 3장)",
   "steps": "1. 끓는 물 200g에 야채스톡 1/2개를 녹인다. 3분 정도 불려둔 판 젤라틴을 넣고 골고루 섞은 뒤 냉장고에 넣어 하룻밤 굳힌다. \n2. 표고버섯 5개, 양파 1/2개, 대파 1/2개 다지고 간장 1t, 맛술 1T, 굴소스 1T, 마늘 1t, 생강 1t와 육즙을 담당할 채수젤리 넣고 골고루 섞는다. \n3. 2의 샤오롱바오 소를 그릇에 담고 만두피로 빈틈없이 덮어 찜기에 10분 찐다. \n4. 찜기에서 꺼낸 후 빨대를 꽂아서 국물을 흡입한 후 만두를 먹는다.",
   "raw": "20251028 #조식다이어리 1544, 2도/맑음, 20분/운동(M)\n\n샤오롱바오 小笼包 는 중국어로 ‘작은 대나무 찜통(샤오롱)’에 ‘만두(바오)’를 찐 음식이라는 뜻이다. 일반 만두와는 달리, 만두소 안에 뜨거운 육즙(국물)이 들어 있는 게 특징이다. 대표적인 상해 음식이기도 하다. 이렇게 큰 사오롱바오는 먼저 국물을 빨대로 흡입하는 게 국룰이다. 그래서 상해 주요 관광지에선 #빨대만두 라는 별칭으로 불리기도 한다. \n\n돼지고기 대신에 왠지 돼지고기 같은 식감이 날 것 같은 표고버섯을 사용했는데, 생각해 보니 채수 젤리를 만들면서 (돼지고기로 만든) 젤라틴을 사용했으니 결국은 돼지고기로 만들게 된, 약 247kcal #샤오롱바오\n\n👉 재료\n표고버섯 5개, 양파 1/2개, 대파 1/2개 다지고 간장 1t, 맛술 1T, 굴소스 1T, 마늘 1t, 생강 1t, (채수젤리) 야채스톡(스타 다도) 1/2개, 판 젤라틴 3장\n\n👉 조리\n1. 끓는 물 200g에 야채스톡 1/2개를 녹인다. 3분 정도 불려둔 판 젤라틴을 넣고 골고루 섞은 뒤 냉장고에 넣어 하룻밤 굳힌다. \n2. 표고버섯 5개, 양파 1/2개, 대파 1/2개 다지고 간장 1t, 맛술 1T, 굴소스 1T, 마늘 1t, 생강 1t와 육즙을 담당할 채수젤리 넣고 골고루 섞는다. \n3. 2의 샤오롱바오 소를 그릇에 담고 만두피로 빈틈없이 덮어 찜기에 10분 찐다. \n4. 찜기에서 꺼낸 후 빨대를 꽂아서 국물을 흡입한 후 만두를 먹는다. \n\nInspired by @othingsss\n\n#조식 #레시피 #샤오롱바오",
   "video": "https://images.how-about-breakfast.com/images/1544.mp4",
@@ -12880,13 +12880,6 @@
    "https://images.how-about-breakfast.com/images/1544_2.jpg",
    "https://images.how-about-breakfast.com/images/1544_3.jpg"
   ],
-  "_en": {
-   "hash": "a5bab2b82a47d6f177326ba9f3992f2ee577819097d15437079cc19417527281",
-   "title": "#Xiaolongbao",
-   "intro": "20251028 #breakfastdiary day 1544, 2°C/clear, 20min/exercise (M)\nXiaolongbao (小笼包) means, in Chinese, a bao (bun/dumpling) steamed in a xiaolong ('small bamboo steamer'). Unlike regular dumplings, its defining feature is the hot broth/juice inside the filling. It's also a signature Shanghai dish. With xiaolongbao this large, the standard etiquette is to slurp the broth out with a straw first — hence the nickname '#StrawDumplings' at major tourist spots in Shanghai.\nInstead of pork, I used shiitake mushroom, which somehow has a pork-like texture — though thinking about it, since I made the vegetable-stock jelly with gelatin (which is made from pork), it technically ends up being made with pork after all. Approx. 247kcal #xiaolongbao",
-   "ingredients": "5 shiitake mushrooms, 1/2 onion, 1/2 scallion (chopped), 1t soy sauce, 1T cooking wine, 1T oyster sauce, 1t garlic, 1t ginger, (vegetable stock jelly) 1/2 vegetable stock cube (Star Dado), 3 sheets leaf gelatin",
-   "steps": "1. Dissolve 1/2 vegetable stock cube in 200g boiling water. Add the leaf gelatin, pre-soaked for about 3 minutes, mix thoroughly, and set in the fridge overnight to firm up.\n2. Chop 5 shiitake mushrooms, 1/2 onion, and 1/2 scallion, add 1t soy sauce, 1T cooking wine, 1T oyster sauce, 1t garlic, 1t ginger, and the vegetable-stock jelly (which will provide the 'broth'), and mix thoroughly.\n3. Fill the dumpling wrappers with the xiaolongbao filling from step 2, seal completely, and steam for 10 minutes.\n4. Take out of the steamer, poke in a straw to sip out the broth, then eat the dumpling."
-  },
   "page_id": "샤오롱바오"
  },
  {
