@@ -1,5 +1,37 @@
 [
  {
+  "date": "2026-10-29",
+  "date_raw": "20261029",
+  "diary_no": 1908,
+  "weather": "6도/흐림",
+  "failed": false,
+  "calories": 435,
+  "title": "아보카도 토스트",
+  "credit": null,
+  "hashtags": [
+   "레시피",
+   "아보카도",
+   "조식",
+   "조식다이어리"
+  ],
+  "intro": "20261029 #조식다이어리 1878, 6도/흐림\n아보카도 골든타임이랄까?\n아보카도와 며칠 째 눈치 싸움 끝에 승리, 잘 후숙된 435kcal 아보카도 토스트",
+  "ingredients": "- 사워도우 1장\n- 리코타치즈 2T\n- 우유 2T\n- 잘 익은 아보카도 1개\n- 계란 3개\n- 소금, 후추 약간\n- 레드 페퍼 플레이크 약간",
+  "steps": "1. 리코타 치즈 2T에 우유 2T를 넣고 저어 부드럽고 촉촉하게 만든다. \n2. 계란 3개에 소금과 후추를 넣고 곱게 푼다.\n3. 팬에 약불에서 달걀물을 부어, 천천히 저으며 촉촉하게 스크램블한다.\n4. 사워도우는 바삭하게 굽는다.\n5. 아보카도는 반으로 갈라 씨를 빼고 껍질을 벗긴 뒤 얇게 썬다.\n6. 사워도우에 1의 휘핑한 리코타치즈를 바르고, 스크램블 에그와 아보카도를 차례로 올린 뒤 레드 페퍼 플레이크를 뿌린다.",
+  "raw": "20261029 #조식다이어리 1878, 6도/흐림\n\n아보카도 골든타임이랄까?\n\n아보카도와 며칠 째 눈치 싸움 끝에 승리, 잘 후숙된 435kcal 아보카도 토스트\n\n👉재료(2인분)\n- 사워도우 1장\n- 리코타치즈 2T\n- 우유 2T\n- 잘 익은 아보카도 1개\n- 계란 3개\n- 소금, 후추 약간\n- 레드 페퍼 플레이크 약간\n\n👉조리\n1. 리코타 치즈 2T에 우유 2T를 넣고 저어 부드럽고 촉촉하게 만든다. \n2. 계란 3개에 소금과 후추를 넣고 곱게 푼다.\n3. 팬에 약불에서 달걀물을 부어, 천천히 저으며 촉촉하게 스크램블한다.\n4. 사워도우는 바삭하게 굽는다.\n5. 아보카도는 반으로 갈라 씨를 빼고 껍질을 벗긴 뒤 얇게 썬다.\n6. 사워도우에 1의 휘핑한 리코타치즈를 바르고, 스크램블 에그와 아보카도를 차례로 올린 뒤 레드 페퍼 플레이크를 뿌린다.\n\n#조식 #레시피 #아보카도",
+  "permalink": "https://www.instagram.com/p/DfFUDBoHfj_/",
+  "image": "https://images.how-about-breakfast.com/images/1908.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1908.jpg",
+   "https://images.how-about-breakfast.com/images/1908_2.jpg",
+   "https://images.how-about-breakfast.com/images/1908_3.jpg",
+   "https://images.how-about-breakfast.com/images/1908_4.jpg",
+   "https://images.how-about-breakfast.com/images/1908_5.jpg",
+   "https://images.how-about-breakfast.com/images/1908_6.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1908.mp4",
+  "page_id": "아보카도-토스트"
+ },
+ {
   "date": "2026-10-28",
   "date_raw": "20261028",
   "diary_no": 1907,
