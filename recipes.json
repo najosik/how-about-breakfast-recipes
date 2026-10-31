@@ -12843,7 +12843,7 @@
   "weather": "10도/대체로 흐림",
   "failed": false,
   "calories": 631,
-  "title": "렌틸 커리 그리고 난",
+  "title": "렌틸 커리와 난",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -12852,7 +12852,7 @@
    "커리"
   ],
   "intro": "20251031 #조식다이어리 1547, 10도/대체로 흐림\n전 세계 약 60% 정도의 사람들이 무언가를 먹을 때 젓가락이나 숟가락 혹은 포크, 나이프 같은 도구를 사용한다. 인도를 비롯한 서남아시아, 중동, 아프리카와 동남아시아 일부 지역처럼 수식 문화를 가진 전 세계 40% 인구는 손이 곧 도구를 대신한다. 생각보다 많다. 아무튼 무언가를 먹을 때 사용하는 도구의 기원을 따져보면 아마도 취향과 선호보다는 효용과 효율이 더 많은 비중을 차지하고 있을 것 같다. 음식을 먹기 좋게 썰어서 담고 때로는 찌르고 집어서 어쨌거나 입까지 얼마나 효율적으로 나를 수 있는지가 가장 큰 목적이었다는 얘기다. \n(나조식, 날마다 조식 중 식사도구의 문화사)\n커리는 손으로 먹어야 제맛이다. 양파와 토마토로 맛을 낸 631kcal 렌틸 커리 그리고 난",
-  "ingredients": "렌틸 5T, 양파 1/2개, 마늘 2개, 방울토마토 10개, 커리 블록 1개, 발사믹 비니거 1T 그리고 난",
+  "ingredients": "- 렌틸 5T\n- 양파 1/2개\n- 마늘 2개 \n- 방울토마토 10개 \n- 커리 블록 1개\n- 발사믹 비니거 1T\n- 난 1장",
   "steps": "1. 뜨거운 물에 렌틸 넣고 30분쯤 불린다. \n2. 양파 1/2개, 마늘 2개 다진다. 방울토마토도 꼭지 따서 준비한다. \n3. 냄비에 올리브오일 두르고 1의 마늘, 양파 순으로 볶는다. 토마토 넣고 좀 더 볶는다. \n4. 물 600ml 붓고 물이 끓으면 커리 블록 1개 넣고 2~3분 끓이다가 1의 렌틸 넣고 2~3분 더 끓인다. 불 끄고 오늘의 킥, 발사믹 비니거 1T 넣고 골고루 섞는다.",
   "raw": "20251031 #조식다이어리 1547, 10도/대체로 흐림\n\n전 세계 약 60% 정도의 사람들이 무언가를 먹을 때 젓가락이나 숟가락 혹은 포크, 나이프 같은 도구를 사용한다. 인도를 비롯한 서남아시아, 중동, 아프리카와 동남아시아 일부 지역처럼 수식 문화를 가진 전 세계 40% 인구는 손이 곧 도구를 대신한다. 생각보다 많다. 아무튼 무언가를 먹을 때 사용하는 도구의 기원을 따져보면 아마도 취향과 선호보다는 효용과 효율이 더 많은 비중을 차지하고 있을 것 같다. 음식을 먹기 좋게 썰어서 담고 때로는 찌르고 집어서 어쨌거나 입까지 얼마나 효율적으로 나를 수 있는지가 가장 큰 목적이었다는 얘기다. \n(나조식, 날마다 조식 중 식사도구의 문화사)\n\n커리는 손으로 먹어야 제맛이다. 양파와 토마토로 맛을 낸 631kcal 렌틸 커리 그리고 난\n\n👉 재료\n렌틸 5T, 양파 1/2개, 마늘 2개, 방울토마토 10개, 커리 블록 1개, 발사믹 비니거 1T 그리고 난\n\n👉 조리\n1. 뜨거운 물에 렌틸 넣고 30분쯤 불린다. \n2. 양파 1/2개, 마늘 2개 다진다. 방울토마토도 꼭지 따서 준비한다. \n3. 냄비에 올리브오일 두르고 1의 마늘, 양파 순으로 볶는다. 토마토 넣고 좀 더 볶는다. \n4. 물 600ml 붓고 물이 끓으면 커리 블록 1개 넣고 2~3분 끓이다가 1의 렌틸 넣고 2~3분 더 끓인다. 불 끄고 오늘의 킥, 발사믹 비니거 1T 넣고 골고루 섞는다. \n\n#조식 #레시피 #커리",
   "video": "https://images.how-about-breakfast.com/images/1547.mp4",
@@ -12864,13 +12864,6 @@
    "https://images.how-about-breakfast.com/images/1547_4.jpg",
    "https://images.how-about-breakfast.com/images/1547_5.jpg"
   ],
-  "_en": {
-   "hash": "c36a122f2b1473b6b93b67f9de632213b56bda9d0d740d8d77a06aaf59c045ea",
-   "title": "Lentil Curry and Naan",
-   "intro": "20251031 #breakfastdiary day 1547, 10°C/mostly cloudy\nAbout 60% of the world's population uses tools like chopsticks, spoons, forks, and knives to eat. The remaining 40%, in a hand-eating culture found across India, other parts of South Asia, the Middle East, Africa, and some of Southeast Asia, use their hands instead of tools. That's more than you'd think. Anyway, if you trace the origin of the tools people use to eat, it's probably efficiency and utility that mattered more than taste or preference. Cutting food into manageable pieces, sometimes stabbing or picking it up — the main goal, one way or another, was getting food to the mouth as efficiently as possible.\n(Najoshik, 'A Cultural History of Eating Utensils' from Everyday Breakfast)\nCurry tastes best eaten by hand. A 631kcal lentil curry and naan, flavored with onion and tomato",
-   "ingredients": "5T lentils, 1/2 onion, 2 cloves garlic, 10 cherry tomatoes, 1 curry block, 1T balsamic vinegar, and naan",
-   "steps": "1. Soak the lentils in hot water for about 30 minutes.\n2. Chop 1/2 onion and 2 cloves garlic. Prep the cherry tomatoes, removing the stems too.\n3. Heat olive oil in a pot and sauté the garlic from step 1, then the onion. Add the tomatoes and sauté a bit more.\n4. Pour in 600ml water, and once boiling, add 1 curry block and simmer for 2-3 minutes, then add the lentils from step 1 and simmer 2-3 minutes more. Turn off the heat, add today's twist — 1T balsamic vinegar — and mix thoroughly."
-  },
   "page_id": "렌틸-커리-그리고-난"
  },
  {
