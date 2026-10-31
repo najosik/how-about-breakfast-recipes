@@ -51218,7 +51218,7 @@
   "weather": "9도/한때흐림, 17분/운동",
   "failed": false,
   "calories": null,
-  "title": "그릭요거트파스타 파스타 그릭요거트",
+  "title": "그릭요거트 페코리노 파스타",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51238,21 +51238,14 @@
    "혼밥"
   ],
   "intro": "20221031, #조식다이어리 582, 9도/한때흐림, 17분/운동 \nPanic 패닉의 어원은 그리스 신화에 나오는 목양신 Pan 판에게서 기원한다. \n파스타에 넣은 페코리노 치즈 때문인지 아니면 엊그제 일어난 안타까운 사건 때문인지 알싸하게 신 맛이다. 패닉이란 감정에도 맛이 있다면 이런 게 아닐까, \n끓는 물에 소금소금, 파스타면을 삶는다. \n팬에 버터 한 덩어리, 마늘마늘, 페코리노 치즈를 갈아 넣고 데우다가 그릭요거트 한 덩어리를 넣는다. \n삶은 파스타면 위에 그릭요거트 소스를 붓고 후추후추후추, #그릭요거트파스타",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 파스타면 80g\n- 버터 10g\n- 마늘 2쪽\n- 페코리노 치즈 20g\n- 그릭요거트 3T(약 45g)\n- 소금(면 삶는 물용), 후추 넉넉히\n- 면수 3~4T",
+  "steps": "1. 끓는 물 1L에 소금 1/2T를 넣고 파스타면을 포장지 시간대로 삶는다. 건지기 전에 면수 4T를 덜어 둔다.\n2. 마늘은 편으로 썰거나 다진다. 페코리노는 곱게 간다.\n3. 팬에 버터를 녹이고 마늘을 약불에서 향이 날 때까지 1분 볶는다.\n4. 면수 2T와 페코리노를 넣고 치즈가 녹을 때까지 저으며 데운다.\n5. 불을 끄고 1분 식힌 뒤 그릭요거트를 넣어 매끄럽게 섞는다. 뻑뻑하면 덜어 둔 면수로 농도를 맞춘다.\n6. 삶은 파스타면 위에 5의 소스를 붓고 후추를 넉넉히 갈아 올린다.",
   "raw": "20221031, #조식다이어리 582, 9도/한때흐림, 17분/운동 \n\nPanic 패닉의 어원은 그리스 신화에 나오는 목양신 Pan 판에게서 기원한다. \n파스타에 넣은 페코리노 치즈 때문인지 아니면 엊그제 일어난 안타까운 사건 때문인지 알싸하게 신 맛이다. 패닉이란 감정에도 맛이 있다면 이런 게 아닐까, \n\n끓는 물에 소금소금, 파스타면을 삶는다. \n팬에 버터 한 덩어리, 마늘마늘, 페코리노 치즈를 갈아 넣고 데우다가 그릭요거트 한 덩어리를 넣는다. \n삶은 파스타면 위에 그릭요거트 소스를 붓고 후추후추후추, #그릭요거트파스타 \n\n#직장인 #조식 #아침밥 #아침밥상 #혼밥 #파스타 #그릭요거트 #페코리노\n#breakfast #pasta #greekyogurt #yogurt #pecorino ",
   "image": "https://images.how-about-breakfast.com/images/582.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/582.jpg",
    "https://images.how-about-breakfast.com/images/582_2.jpg"
   ],
-  "_en": {
-   "hash": "16adacbb822838aba08d1bfb4f7a5fe225985ed70c75dd4938031bcdadf046a7",
-   "title": "Greek Yogurt Pasta",
-   "intro": "20221031 #breakfastdiary 582, 9°C/partly cloudy, 17min exercise\nThe word 'panic' comes from Pan, the Greek god of shepherds and flocks in Greek mythology.\nWhether it's the pecorino cheese in the pasta or the sad news from a couple of days ago, there's a sharp, sour edge to this morning. If panic had a flavor, maybe this is what it would taste like.\nBoil the pasta in salted water.\nIn a pan, melt a knob of butter, add plenty of garlic, grate in pecorino cheese, warm it through, then add a scoop of Greek yogurt.\nPour the Greek yogurt sauce over the cooked pasta and finish with plenty of pepper. #greekyogurtpasta",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "그릭요거트파스타-파스타-그릭요거트"
  },
  {
