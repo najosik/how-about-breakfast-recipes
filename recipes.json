@@ -25598,7 +25598,7 @@
   "weather": "10도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "당근구이 당근",
+  "title": "그릭요거트를 곁들인 당근구이",
   "credit": "@essen_paradies",
   "hashtags": [
    "당근",
@@ -25609,8 +25609,8 @@
    "조식다이어리"
   ],
   "intro": "20241101 #조식다이어리 1219, 10도/흐림, 20분/운동(M) \n당근으로 구웠지만 고구마로 구워도 맛있었을 것 같은, 고추장, 꿀을 넣어 매콤하고 달큰하게 졸인 #당근구이",
-  "ingredients": "작은 당근 5개, 고추장 1t, 레드페퍼 2t, 버터 1T\n딥은 그릭요거트 3T, 다진 마늘 1t, 레드페퍼 1t, 레몬주스 1t, 꿀 1t 섞어서\n \n👉이렇게\n1. 그릭요거트에  다진 마늘, 레드페퍼, 레몬주스, 꿀, 딜 넣고 섞어서 딥을 만든다. (귀찮으면 그릭요거트만,) \n2. 달군 팬에 올리브오일, 레드페퍼 넣고 당근을 굽는다. 버터와 고추장, 꿀 조금 넣고 졸인다. \n3. 접시에 딥을 담고 당근 얹고 딜로 마무리, \n \nInspired by @essen_paradies\n\n#조식 #레시피 #미라클모닝 #당근\n\n-\n\n👉Ingredients.\n5 Small carrots, Gochujang 1T, Red pepper 2T, Butter 1T\n(For the dip) Greek yogurt 3T, Minced garlic 1t, Red pepper 1T, Lemon juice 1T and Honey 1T\n\n👉Like this\n1. Make the dip by mixing the Greek yogurt with the minced garlic, red pepper, lemon juice, honey, and dill (or just the Greek yogurt)\n2. Roast the carrots in a hot pan with olive oil and red pepper. Add butter, gochujang, and a drizzle of honey. \n3. Spoon the dip onto a plate, top with carrots, and garnish with dill",
-  "steps": null,
+  "ingredients": "- 작은 당근 5개\n- 고추장 1t \n- 레드페퍼 2t \n- 버터 1T\n- 그릭요거트 딥(그릭요거트 3T, 다진 마늘 1t, 레드페퍼 1t, 레몬주스 1t, 꿀 1t)",
+  "steps": "1. 그릭요거트에  다진 마늘, 레드페퍼, 레몬주스, 꿀, 딜 넣고 섞어서 딥을 만든다. (귀찮으면 그릭요거트만) \n2. 달군 팬에 올리브오일, 레드페퍼 넣고 당근을 굽는다. 버터와 고추장, 꿀 조금 넣고 졸인다. \n3. 접시에 딥을 담고 당근 얹고 딜로 마무리한다. ",
   "raw": "20241101 #조식다이어리 1219, 10도/흐림, 20분/운동(M) \n\n당근으로 구웠지만 고구마로 구워도 맛있었을 것 같은, 고추장, 꿀을 넣어 매콤하고 달큰하게 졸인 #당근구이\n\n👉재료는\n작은 당근 5개, 고추장 1t, 레드페퍼 2t, 버터 1T\n딥은 그릭요거트 3T, 다진 마늘 1t, 레드페퍼 1t, 레몬주스 1t, 꿀 1t 섞어서\n \n👉이렇게\n1. 그릭요거트에  다진 마늘, 레드페퍼, 레몬주스, 꿀, 딜 넣고 섞어서 딥을 만든다. (귀찮으면 그릭요거트만,) \n2. 달군 팬에 올리브오일, 레드페퍼 넣고 당근을 굽는다. 버터와 고추장, 꿀 조금 넣고 졸인다. \n3. 접시에 딥을 담고 당근 얹고 딜로 마무리, \n \nInspired by @essen_paradies\n\n#조식 #레시피 #미라클모닝 #당근\n\n-\n\n👉Ingredients.\n5 Small carrots, Gochujang 1T, Red pepper 2T, Butter 1T\n(For the dip) Greek yogurt 3T, Minced garlic 1t, Red pepper 1T, Lemon juice 1T and Honey 1T\n\n👉Like this\n1. Make the dip by mixing the Greek yogurt with the minced garlic, red pepper, lemon juice, honey, and dill (or just the Greek yogurt)\n2. Roast the carrots in a hot pan with olive oil and red pepper. Add butter, gochujang, and a drizzle of honey. \n3. Spoon the dip onto a plate, top with carrots, and garnish with dill\n\n ",
   "image": "https://images.how-about-breakfast.com/images/1219.jpg",
   "gallery": [
@@ -25619,13 +25619,6 @@
    "https://images.how-about-breakfast.com/images/1219_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1219.mp4",
-  "_en": {
-   "hash": "3f4e2314c93919c37c0fa5ea253a28b71a34651bcae6c20d4d85d2da9659964f",
-   "title": "Grilled Carrots, Carrot",
-   "intro": "20241101 #breakfastdiary 1219, 10°C/cloudy, 20min/exercise(M)\n#grilledcarrots braised spicy-sweet with gochujang and honey — I made it with carrots but I bet it'd be just as good with sweet potato",
-   "ingredients": "5 small carrots, 1t gochujang, 2t red pepper flakes, 1T butter\nFor the dip, mix 3T Greek yogurt, 1t minced garlic, 1t red pepper flakes, 1t lemon juice, 1t honey\n\n👉Like this\n1. Mix the Greek yogurt with minced garlic, red pepper flakes, lemon juice, honey, and dill to make the dip. (If you're feeling lazy, just Greek yogurt works too,)\n2. Heat a pan with olive oil and red pepper flakes, and grill the carrots. Add butter, gochujang, and a bit of honey and braise down.\n3. Plate the dip, top with the carrots, and finish with dill,\n\nInspired by @essen_paradies\n\n#breakfast #recipe #miraclemorning #carrot\n\n-\n\n👉Ingredients.\n5 Small carrots, Gochujang 1T, Red pepper 2T, Butter 1T\n(For the dip) Greek yogurt 3T, Minced garlic 1t, Red pepper 1T, Lemon juice 1T and Honey 1T\n\n👉Like this\n1. Make the dip by mixing the Greek yogurt with the minced garlic, red pepper, lemon juice, honey, and dill (or just the Greek yogurt)\n2. Roast the carrots in a hot pan with olive oil and red pepper. Add butter, gochujang, and a drizzle of honey. \n3. Spoon the dip onto a plate, top with carrots, and garnish with dill",
-   "steps": ""
-  },
   "page_id": "당근구이-당근-2"
  },
  {
