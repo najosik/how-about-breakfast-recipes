@@ -51244,7 +51244,7 @@
   "weather": "8도/한때흐림",
   "failed": false,
   "calories": null,
-  "title": "말린사과곶감고추장무침 말린사과곶감무침 밥",
+  "title": "말린사과 곶감 고추장무침",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51263,8 +51263,8 @@
    "혼밥"
   ],
   "intro": "20221101, #조식다이어리 583, 8도/한때흐림\n진정 타인의 슬픔과 고통에 연대하고자 한다면 그 슬픔과 고통의 주체를 함부로 나와 동일시해서는 안 된다. \n이라영, 애도의 윤리\n밥 반 공기에 #말린사과곶감고추장무침 얹어서, 참기름, 참깨, \n말린사과곶감고추장무침은 말린 사과, 곶감에 고추장을 넣고 무쳐서 만든다. #말린사과곶감무침",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 밥 100g(반 공기)\n- 말린 사과 20g\n- 곶감 1/2개(약 30g)\n- 고추장 1/2T\n- 참기름 1t\n- 참깨 1/2t",
+  "steps": "1. 말린 사과는 잘게 썰고, 곶감은 씨와 꼭지를 떼어 다진다.\n2. 볼에 1과 고추장 1/2T를 넣고 고루 무쳐 말린사과곶감고추장무침을 만든다.\n3. 그릇에 밥을 담고 2를 올린다.\n4. 참기름 1t와 참깨를 뿌린다.",
   "raw": "20221101, #조식다이어리 583, 8도/한때흐림\n\n진정 타인의 슬픔과 고통에 연대하고자 한다면 그 슬픔과 고통의 주체를 함부로 나와 동일시해서는 안 된다. \n이라영, 애도의 윤리\n\n밥 반 공기에 #말린사과곶감고추장무침 얹어서, 참기름, 참깨, \n\n말린사과곶감고추장무침은 말린 사과, 곶감에 고추장을 넣고 무쳐서 만든다. #말린사과곶감무침 \n\n#직장인 #조식 #아침밥 #아침밥상 #혼밥 #밥 #곶감 #말린사과\n#breakfast #driedapple #driedpersimmon ",
   "image": "https://images.how-about-breakfast.com/images/583.jpg",
   "gallery": [
@@ -51272,13 +51272,6 @@
    "https://images.how-about-breakfast.com/images/583_2.jpg",
    "https://images.how-about-breakfast.com/images/583_3.jpg"
   ],
-  "_en": {
-   "hash": "efae8bb5889fb5fc70980297e3c01af4ea97e37268f7c7ea6b11642b6cebe059",
-   "title": "Dried Apple and Persimmon Gochujang Mix",
-   "intro": "20221101 #breakfastdiary 583, 8°C/partly cloudy\nIf you truly want to stand in solidarity with another person's grief and pain, you must not casually equate yourself with the one who is suffering.\nLee Ra-young, The Ethics of Mourning\nHalf a bowl of rice topped with #driedapplepersimmongochujangmix, a drizzle of sesame oil, and sesame seeds.\nDried apple and persimmon gochujang mix is made by tossing dried apple and dried persimmon with gochujang. #driedapplepersimmonmix",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "말린사과곶감고추장무침-말린사과곶감무침-밥"
  },
  {
