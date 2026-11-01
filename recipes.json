@@ -51183,7 +51183,7 @@
   "weather": "1도/맑음, 14분/운동",
   "failed": false,
   "calories": null,
-  "title": "소라콘킬리에 나의로컬푸드샐러드 콘킬리에",
+  "title": "소라 콘킬리에 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51205,8 +51205,8 @@
    "혼밥"
   ],
   "intro": "20221102, #조식다이어리 584, 1도/맑음, 14분/운동 \n서늘한 아침이다. \n끓는 물에 완두콩을 데치고 콘킬리에를 삶는다. 건져 낸 콘킬리에는 올리브오일 약간 뒤섞뒤섞, \n소라를 끓는 물에 살짝 데치고 먹기 좋은 크기로 썬다. \n달군 팬에 소금소금, 후추후추 표고버섯, 대파를 굽는다. \n준비된 재료를 플레이팅하고 후추후추, 비네그레트 드레싱, #소라콘킬리에\n#나의로컬푸드샐러드 레시피 입니다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 콘킬리에 60g\n- 완두콩 50g\n- 소라 살 80g\n- 표고버섯 2개\n- 대파 흰 부분 1/3대\n- 올리브오일 1t(콘킬리에 버무림용)\n- 드레싱(올리브오일 1T, 화이트와인 비니거 1T, 홀그레인 머스터드 1/2t)\n- 소금, 후추 약간",
+  "steps": "1. 끓는 소금물에 완두콩을 1~2분 데쳐 건진다. 같은 물에 콘킬리에를 포장지 시간대로 삶는다.\n2. 건진 콘킬리에는 올리브오일 1t를 넣고 뒤섞어 달라붙지 않게 한다.\n3. 소라는 끓는 물에 살짝 데친 뒤 먹기 좋은 크기로 얇게 썬다.\n4. 표고버섯은 얇게 썰고 대파는 어슷하게 썬다. 달군 팬에 소금, 후추를 뿌려 노릇하게 굽는다.\n5. 드레싱 재료를 모두 섞는다.\n6. 접시에 콘킬리에, 완두콩, 소라, 구운 표고와 대파를 담고 비네그레트를 뿌린 뒤 후추를 갈아 올린다.",
   "raw": "20221102, #조식다이어리 584, 1도/맑음, 14분/운동 \n\n서늘한 아침이다. \n\n끓는 물에 완두콩을 데치고 콘킬리에를 삶는다. 건져 낸 콘킬리에는 올리브오일 약간 뒤섞뒤섞, \n소라를 끓는 물에 살짝 데치고 먹기 좋은 크기로 썬다. \n달군 팬에 소금소금, 후추후추 표고버섯, 대파를 굽는다. \n준비된 재료를 플레이팅하고 후추후추, 비네그레트 드레싱, #소라콘킬리에\n#나의로컬푸드샐러드 레시피 입니다. \n\n#직장인 #조식 #아침밥 #아침밥상 #혼밥 #샐러드 #콘킬리에 #완두콩 #소라 \n#breakfast #pasta #conchiglie #peas #conch",
   "image": "https://images.how-about-breakfast.com/images/584.jpg",
   "gallery": [
@@ -51214,13 +51214,6 @@
    "https://images.how-about-breakfast.com/images/584_2.jpg",
    "https://images.how-about-breakfast.com/images/584_3.jpg"
   ],
-  "_en": {
-   "hash": "6250c7a9de76d03db8eb9eda40af3cf44e2611e812f1e55bfa43f3f4f557d2b2",
-   "title": "Whelk Conchiglie Salad",
-   "intro": "20221102 #breakfastdiary 584, 1°C/sunny, 14min exercise\nA chilly morning.\nBlanch green peas in boiling water and boil the conchiglie pasta. Drain the conchiglie and toss with a little olive oil.\nBlanch the whelk briefly in boiling water and slice into bite-sized pieces.\nIn a heated pan, sear the shiitake mushrooms and scallions with salt and pepper.\nPlate everything, finish with pepper and vinaigrette dressing. #whelkconchiglie\nThis is my #mylocalfoodsalad recipe.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "소라콘킬리에-나의로컬푸드샐러드-콘킬리에"
  },
  {
