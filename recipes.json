@@ -25552,7 +25552,7 @@
   "weather": "10도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "두부꼬치구이 두부구이 두부",
+  "title": "꼬치 없는 두부꼬치구이",
   "credit": null,
   "hashtags": [
    "두부",
@@ -25564,8 +25564,8 @@
    "조식다이어리"
   ],
   "intro": "20241102 #조식다이어리 1220, 10도/흐림, 20분/운동(M) \n오늘의 조식은 #두부꼬치구이 하지만 두부에 뿌린 전분 때문에 팬에 들러 붙어서 두부가 부서진다. 잠깐 당황했으나 꼬치에서 두부를 빼고 오늘의 조식을 #두부구이 로 변경한다. 인생이 늘 계획대로 되는 건 아니다.",
-  "ingredients": "두부 1모 (드레싱) 미소 1/2T, 타히니 1T, 메이플시럽 1T, 라임주스 1T, 물 5T\n그밖에 레드페퍼, 참깨, 파슬리 조금\n\n👉이렇게\n1. 두부는 전자렌지에 2분 데워서 수분을 제거한다. 큐브모양으로 썰고 꼬치에 끼운 다음 전분을 뿌린다.  \n2. 달군 팬에 오일 붓고 꼬치 얹었는데 두부가 부서진다. (안되겠다.) 꼬치에서 빼고 골고루 굽는다.  \n3. 미소와 타히니, 메이플시럽, 라임주스 섞어서 드레싱을 만들어 붓고 조금 졸인다. \n4. 접시에 담고 남은 드레싱 마저 붓고 레드페퍼, 참깨, 다진 파슬리 얹는다. \n \n#조식 #레시피 #미라클모닝 #두부",
-  "steps": null,
+  "ingredients": "- 단단한 두부 150g\n- 감자전분 1T\n- 식용유 1t\n- 드레싱(미소 1/2T, 타히니 1T, 메이플시럽 1T, 라임주스 1T, 물 5T)\n- 소금, 후추 약간",
+  "steps": "1. 두부는 전자레인지에 2분 데워서 물기를 제거한 후 먹기 좋은 크기로 썬다.\n2. 두부에 소금, 후추를 뿌리고 감자전분을 얇게 묻힌 뒤, 여분은 톡톡 털어 낸다.\n3. 코팅 팬을 충분히 달군 뒤 식용유를 두르고 중불로 줄인다.\n4. 두부를 올리고 한쪽 면이 노릇해져서 저절로 떨어질 때까지 건드리지 않고 굽는다. \n5. 미소와 타히니, 메이플시럽, 라임주스 섞어서 드레싱을 만들어 붓고 조금 졸인다. \n6. 접시에 담고 남은 드레싱 마저 붓고 레드페퍼, 참깨, 다진 파슬리 얹는다. ",
   "raw": "20241102 #조식다이어리 1220, 10도/흐림, 20분/운동(M) \n\n오늘의 조식은 #두부꼬치구이 하지만 두부에 뿌린 전분 때문에 팬에 들러 붙어서 두부가 부서진다. 잠깐 당황했으나 꼬치에서 두부를 빼고 오늘의 조식을 #두부구이 로 변경한다. 인생이 늘 계획대로 되는 건 아니다. \n\n👉재료는\n두부 1모 (드레싱) 미소 1/2T, 타히니 1T, 메이플시럽 1T, 라임주스 1T, 물 5T\n그밖에 레드페퍼, 참깨, 파슬리 조금\n\n👉이렇게\n1. 두부는 전자렌지에 2분 데워서 수분을 제거한다. 큐브모양으로 썰고 꼬치에 끼운 다음 전분을 뿌린다.  \n2. 달군 팬에 오일 붓고 꼬치 얹었는데 두부가 부서진다. (안되겠다.) 꼬치에서 빼고 골고루 굽는다.  \n3. 미소와 타히니, 메이플시럽, 라임주스 섞어서 드레싱을 만들어 붓고 조금 졸인다. \n4. 접시에 담고 남은 드레싱 마저 붓고 레드페퍼, 참깨, 다진 파슬리 얹는다. \n \n#조식 #레시피 #미라클모닝 #두부\n\n ",
   "image": "https://images.how-about-breakfast.com/images/1220.jpg",
   "gallery": [
@@ -25575,13 +25575,6 @@
    "https://images.how-about-breakfast.com/images/1220_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1220.mp4",
-  "_en": {
-   "hash": "bb62c48a976c2fce613b2a6fe1ffe060ea86e90e381d6be8e3fa21b0c57b17d2",
-   "title": "Grilled Tofu Skewers, Grilled Tofu, Tofu",
-   "intro": "20241102 #breakfastdiary 1220, 10°C/cloudy, 20min/exercise(M)\nToday's breakfast was supposed to be #grilledtofuskewers, but the starch dusted on the tofu stuck to the pan and the tofu fell apart. I was flustered for a moment, but I pulled the tofu off the skewers and changed today's breakfast to #grilledtofu instead. Life doesn't always go as planned.",
-   "ingredients": "1 block tofu (dressing) 1/2T miso, 1T tahini, 1T maple syrup, 1T lime juice, 5T water\nplus red pepper flakes, sesame seeds, a bit of parsley\n\n👉Like this\n1. Microwave the tofu for 2 minutes to remove moisture. Cut into cubes, skewer, and dust with starch.\n2. Heat a pan with oil, place the skewers in — the tofu falls apart. (This isn't going to work.) Remove from the skewers and grill evenly.\n3. Mix the miso, tahini, maple syrup, and lime juice to make a dressing, pour it in, and reduce slightly.\n4. Plate it, pour over the remaining dressing, and top with red pepper flakes, sesame seeds, and minced parsley.\n\n#breakfast #recipe #miraclemorning #tofu",
-   "steps": ""
-  },
   "page_id": "두부꼬치구이-두부구이-두부"
  },
  {
