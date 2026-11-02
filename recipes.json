@@ -12847,7 +12847,7 @@
   "weather": "4도/대체로 청명함",
   "failed": false,
   "calories": 250,
-  "title": "오차즈케",
+  "title": "당유자연어소보로 오차즈케",
   "credit": null,
   "hashtags": [
    "당유자연어소보로",
@@ -12856,7 +12856,7 @@
    "조식다이어리"
   ],
   "intro": "20251104 #조식다이어리 1551, 4도/대체로 청명함\n회사 일로 이른 아침 집을 나서야 하는 날이다. 오늘의 조식 오차즈케를 위해 어젯밤 잠들기 전에 다시마와 가쓰오부시를 우려서 감칠맛 폭발하는 국물을 만들려고 했는데, 다시마가 없다. 위기를 기회로. 냉동실을 뒤져 ‘육수의 전설 메가리’를 찾아내 국물을 냈다. 물론 쯔유만으로도 간편하게 만들 수 있지만 오늘은 조금 제대로 먹고 싶었다. 이유 없이 그렇게 하고 싶은 날이 있지 않은가 말이다. \n메가리로 낸 국물에 주말에 산, 인시즌 @inseason_today #당유자연어소보로 를 얹어, 약 250kcal 오차즈케",
-  "ingredients": "오미밥 1개, 밥이랑(후리가케) 1/2봉지, 당유자연어소보로 1T, 쪽파 조금, (오차즈케 국물) 메가리 5마리, 가쓰오부시 2T, 쯔유 2T, 말차 1/4t",
+  "ingredients": "- 오미밥 1개 \n- 밥이랑(후리가케) 1/2봉지 \n- 당유자연어소보로 1T\n- 쪽파 조금 \n- 오차즈케 국물(메가리 5마리, 가쓰오부시 2T, 쯔유 2T, 말차 1/4t)",
   "steps": "1. 잠들기 전에 냄비에 물 500ml, 메가리 5마리 넣고 10분 정도 끓인 후 건진다. 가쓰오부시 2T 넣고 1~2분 끓이다가 불을 끄고 5분 정도 그대로 두었다가 국물만 걸러낸다. \n2. 아침에 일어나 1의 국물에 쯔유 2T, 말차 1/4t 넣고 골고루 섞는다. 맛있는 국물이 완성됐다. \n3. 믹싱볼에 오미밥 담고 밥이랑(후리가케) 1/2봉지 넣고 골고루 섞는다. \n4. 그룻에 3의 밥 담고 2의 국물 부은 다음 당유자연어소보로와 잘게 썬 대파 얹는다.",
   "raw": "20251104 #조식다이어리 1551, 4도/대체로 청명함\n\n회사 일로 이른 아침 집을 나서야 하는 날이다. 오늘의 조식 오차즈케를 위해 어젯밤 잠들기 전에 다시마와 가쓰오부시를 우려서 감칠맛 폭발하는 국물을 만들려고 했는데, 다시마가 없다. 위기를 기회로. 냉동실을 뒤져 ‘육수의 전설 메가리’를 찾아내 국물을 냈다. 물론 쯔유만으로도 간편하게 만들 수 있지만 오늘은 조금 제대로 먹고 싶었다. 이유 없이 그렇게 하고 싶은 날이 있지 않은가 말이다. \n\n메가리로 낸 국물에 주말에 산, 인시즌 @inseason_today #당유자연어소보로 를 얹어, 약 250kcal 오차즈케\n\n👉 재료\n오미밥 1개, 밥이랑(후리가케) 1/2봉지, 당유자연어소보로 1T, 쪽파 조금, (오차즈케 국물) 메가리 5마리, 가쓰오부시 2T, 쯔유 2T, 말차 1/4t\n\n👉 조리\n1. 잠들기 전에 냄비에 물 500ml, 메가리 5마리 넣고 10분 정도 끓인 후 건진다. 가쓰오부시 2T 넣고 1~2분 끓이다가 불을 끄고 5분 정도 그대로 두었다가 국물만 걸러낸다. \n2. 아침에 일어나 1의 국물에 쯔유 2T, 말차 1/4t 넣고 골고루 섞는다. 맛있는 국물이 완성됐다. \n3. 믹싱볼에 오미밥 담고 밥이랑(후리가케) 1/2봉지 넣고 골고루 섞는다. \n4. 그룻에 3의 밥 담고 2의 국물 부은 다음 당유자연어소보로와 잘게 썬 대파 얹는다. \n    \n#조식 #레시피 #당유자연어소보로",
   "video": "https://images.how-about-breakfast.com/images/1551.mp4",
@@ -12868,13 +12868,6 @@
    "https://images.how-about-breakfast.com/images/1551_4.jpg",
    "https://images.how-about-breakfast.com/images/1551_5.jpg"
   ],
-  "_en": {
-   "hash": "81f0750e7bffce35b4ce40cc7b41969eea0e2e5de09b98c0e5b3e7c1f9b49016",
-   "title": "Ochazuke",
-   "intro": "20251104 #breakfastdiary day 1551, 4°C/mostly clear\nA day when I have to leave the house early for work. For today's ochazuke breakfast, I meant to steep kelp and bonito flakes last night before bed to make an umami-packed broth, but there was no kelp. Turning crisis into opportunity — I dug through the freezer and found 'the legendary megari broth-maker' and used that instead. Sure, tsuyu alone would be an easy shortcut, but today I wanted to do it a bit properly. Don't you have days like that, for no particular reason?\nOver the megari broth, I added the yuzu-and-salmon soboro I bought over the weekend from @inseason_today #당유자연어소보로, making an approx. 250kcal ochazuke",
-   "ingredients": "1 pack omi rice, 1/2 pack furikake (bap-irang), 1T citron-salmon soboro, a little chives, (ochazuke broth) 5 megari, 2T bonito flakes, 2T tsuyu, 1/4t matcha",
-   "steps": "1. Before bed, add 500ml water and 5 megari to a pot and simmer for about 10 minutes, then remove the fish. Add 2T bonito flakes, boil for 1-2 minutes, turn off the heat, let sit for 5 minutes, then strain out only the broth.\n2. In the morning, add 2T tsuyu and 1/4t matcha to the broth from step 1 and mix thoroughly. A delicious broth is complete.\n3. In a mixing bowl, add the omi rice and 1/2 pack furikake and mix thoroughly.\n4. Put the rice from step 3 in a bowl, pour over the broth from step 2, and top with the citron-salmon soboro and finely chopped scallion."
-  },
   "page_id": "오차즈케"
  },
  {
