@@ -51160,7 +51160,7 @@
   "weather": "0도/맑음, 16분/운동",
   "failed": false,
   "calories": null,
-  "title": "가지샐러드 가지 호두",
+  "title": "구운 가지 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51178,9 +51178,9 @@
    "호두",
    "혼밥"
   ],
-  "intro": "20221104, #조식다이어리 586, 0도/맑음, 16분/운동 \n소중한 나날이 사라져가는 것을 우리는 기꺼이 본다. 그것은 더욱 소중한 것이 익어가는 것을 보기 위함이니, 마치 우리가 뜰에 기르는 진귀한 식물, 가르치는 어린 아이, 쓰고 있는 작은 책처럼\n헤르만 헤세, \n하지만 진짜 소중한 건 사라지지 않고 한 겹, 그 위에 또 한 겹 더해질 뿐이지, \n가지를 반으로 잘라 달군 팬 위에 올리브오일을 두르고 자르 면부터 앞뒤로 굽는다. (가지는 오일을 많이 먹는다.) \n어젯 밤에 토마토 절임하고 남은 양파 드레싱을 가지 위에 충분히 적셔, 그릭요거트, 올리브오일, 호두, 후추후추후추 #가지샐러드",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20221104, #조식다이어리 586, 0도/맑음, 16분/운동 \n소중한 나날이 사라져가는 것을 우리는 기꺼이 본다. 그것은 더욱 소중한 것이 익어가는 것을 보기 위함이니, 마치 우리가 뜰에 기르는 진귀한 식물, 가르치는 어린 아이, 쓰고 있는 작은 책처럼\n헤르만 헤세, \n하지만 진짜 소중한 건 사라지지 않고 한 겹, 그 위에 또 한 겹 더해질 뿐이지, \n\n가지를 반으로 잘라 달군 팬 위에 올리브오일을 두르고 자르 면부터 앞뒤로 굽는다. (가지는 오일을 많이 먹는다.) \n어젯 밤에 토마토 절임하고 남은 양파 드레싱을 가지 위에 충분히 적셔, 그릭요거트, 올리브오일, 호두, 후추후추후추 #가지샐러드",
+  "ingredients": "- 가지 1개(약 200g)\n- 올리브오일 1T(굽기용)\n- 양파 드레싱 2T(토마토 절임하고 남은 것, 양파 포함)\n- 그릭요거트 3T(약 45g)\n- 올리브오일 1t(마무리용)\n- 호두 10g\n- 후추 넉넉히",
+  "steps": "1. 가지는 꼭지를 떼고 반으로 자른다.\n2. 달군 팬에 올리브오일을 두르고 가지를 자른 면부터 올려 앞뒤로 노릇하게 굽는다. 속까지 부드러워질 때까지 뚜껑을 덮고 굽는다.\n3. 구운 가지의 자른 면이 위로 오게 접시에 담고, 양파 드레싱을 충분히 끼얹어 적신다.\n4. 그릭요거트를 올리고 올리브오일을 두른 뒤, 호두를 부숴 얹고 후추를 넉넉히 갈아 올린다.",
   "raw": "20221104, #조식다이어리 586, 0도/맑음, 16분/운동 \n\n소중한 나날이 사라져가는 것을 우리는 기꺼이 본다. 그것은 더욱 소중한 것이 익어가는 것을 보기 위함이니, 마치 우리가 뜰에 기르는 진귀한 식물, 가르치는 어린 아이, 쓰고 있는 작은 책처럼\n헤르만 헤세, \n\n하지만 진짜 소중한 건 사라지지 않고 한 겹, 그 위에 또 한 겹 더해질 뿐이지, \n\n가지를 반으로 잘라 달군 팬 위에 올리브오일을 두르고 자르 면부터 앞뒤로 굽는다. (가지는 오일을 많이 먹는다.) \n어젯 밤에 토마토 절임하고 남은 양파 드레싱을 가지 위에 충분히 적셔, 그릭요거트, 올리브오일, 호두, 후추후추후추 #가지샐러드 \n\n#직장인 #조식 #아침밥 #아침밥상 #혼밥 #샐러드 #가지 #호두 \n#breakfast #eggplant #walnut #greekyogurt ",
   "image": "https://images.how-about-breakfast.com/images/586.jpg",
   "gallery": [
@@ -51189,13 +51189,6 @@
    "https://images.how-about-breakfast.com/images/586_3.jpg",
    "https://images.how-about-breakfast.com/images/586_4.jpg"
   ],
-  "_en": {
-   "hash": "4ea3c9c75ed1d19e3d9e44ace0b2953aa756ecf60e096fc14417e7280f43d104",
-   "title": "Eggplant Walnut Salad",
-   "intro": "20221104 #breakfastdiary 586, 0°C/sunny, 16min exercise\nWe watch precious days slip away willingly, because that's how we get to watch something even more precious ripen — like a rare plant we tend in the garden, a child we're raising, a small book we're writing.\nHermann Hesse\nBut what's truly precious never really disappears, it just gets layered, one coat over another.\nSlice the eggplant in half, drizzle olive oil into a heated pan, and pan-fry starting cut-side down, flipping both sides. (Eggplant soaks up a lot of oil.)\nSoak the eggplant generously in the leftover onion dressing from last night's tomato pickling, then top with Greek yogurt, olive oil, walnuts, and plenty of pepper. #eggplantsalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "가지샐러드-가지-호두"
  },
  {
