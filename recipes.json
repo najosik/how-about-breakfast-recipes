@@ -68258,7 +68258,7 @@
   "weather": "4도/안개",
   "failed": false,
   "calories": null,
-  "title": "영귤쇼유코우지 로메인샐러드 모닝리추얼",
+  "title": "영귤쇼유코우지로 맛을 낸 로메인 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68286,21 +68286,14 @@
    "홈쿡"
   ],
   "intro": "20211103, #조식다이어리 257, 4도/안개\n흐르는 물이 로메인를 깨끗이 씻고 물기를 털어낸다. 튀긴 샬롯과 파마산치즈를 잘라 넣고 #영귤쇼유코우지 와 올리브오일을 1:2로 쉐낏 드레싱을 곁들인다. #로메인샐러드",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 로메인 100g\n- 튀긴 샬롯 10g\n- 파마산치즈 15g\n- 드레싱(영귤쇼유코우지 1t, 올리브오일 2t)",
+  "steps": "1. 로메인은 흐르는 물에 깨끗이 씻어 물기를 털어 낸다. \n2. 영귤쇼유코우지와 올리브오일을 1:2 비율로 섞어 드레싱을 만든다.\n3. 접시에 로메인을 담고 파마산치즈를 얇게 잘라 올린다.\n4. 튀긴 샬롯을 뿌리고 드레싱을 곁들인다.",
   "raw": "20211103, #조식다이어리 257, 4도/안개\n\n흐르는 물이 로메인를 깨끗이 씻고 물기를 털어낸다. 튀긴 샬롯과 파마산치즈를 잘라 넣고 #영귤쇼유코우지 와 올리브오일을 1:2로 쉐낏 드레싱을 곁들인다. #로메인샐러드\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #로메인 #샬롯 #파마산치즈\n#breakfast #recipe #salad #romaine #friedshallot #parmigianoreggiano ",
   "image": "https://images.how-about-breakfast.com/images/257.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/257.jpg",
    "https://images.how-about-breakfast.com/images/257_2.jpg"
   ],
-  "_en": {
-   "hash": "ee68d7604e4501a75be1a1a173d6b792086750437b0b6c452b63531e4c11326c",
-   "title": "Citrus Shoyu Koji Romaine Salad, Morning Ritual",
-   "intro": "20211103, #breakfastdiary 257, 4°C/foggy\nWash romaine clean under running water and shake off the excess moisture. Toss in fried shallots and chopped parmesan, then finish with a dressing shaken together from #CitrusShoyuKoji and olive oil in a 1:2 ratio. #RomaineSalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "영귤쇼유코우지-로메인샐러드-모닝리추얼"
  },
  {
