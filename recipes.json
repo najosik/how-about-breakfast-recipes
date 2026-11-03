@@ -68148,7 +68148,7 @@
   "weather": "6도/한때흐림",
   "failed": false,
   "calories": null,
-  "title": "대파찜샐러드 나의로컬푸드샐러드 모닝리추얼",
+  "title": "대파찜 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68176,21 +68176,14 @@
    "홈쿡"
   ],
   "intro": "20211105, #조식다이어리 259, 6도/한때흐림\n대파를 적당한 길이로 잘라서 찐 후 플레이팅한다. 삶은 계란은 깍둑썰기, 레몬 마요네즈(레몬주스, 마요네즈, 홀그레인 머스타드 쉐낏)를 더하고 비네그레트 드레싱, 후추후추후추 #대파찜샐러드\n#나의로컬푸드샐러드 레시피",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 대파 2대(약 150g)\n- 계란 2개\n- 레몬 마요네즈(마요네즈 1T, 레몬주스 1t, 홀그레인 머스터드 1/2t)\n- 비네그레트(올리브오일 2t, 화이트와인 비니거 1t)\n- 후추 넉넉히",
+  "steps": "1, 대파는 뿌리를 다듬고 8~10cm 길이로 자른다.\n2. 김이 오른 찜기에 대파를 넣고 5~6분 쪄서 숨을 죽인다. \n3. 계란은 끓는 물에 10분 삶아 찬물에 식힌 뒤 껍질을 벗기고 깍둑썰기한다. \n4. 마요네즈, 레몬주스, 홀그레인 머스터드를 섞어 레몬 마요네즈를 만든다. 올리브오일과 화이트와인 비니거는 따로 섞어 비네그레트를 만든다.\n5. 접시에 찐 대파를 가지런히 담고 깍둑썰기한 계란을 올린다.\n6. 레몬 마요네즈를 얹고 비네그레트를 두른 뒤 후추를 넉넉히 갈아 올린다.",
   "raw": "20211105, #조식다이어리 259, 6도/한때흐림\n\n대파를 적당한 길이로 잘라서 찐 후 플레이팅한다. 삶은 계란은 깍둑썰기, 레몬 마요네즈(레몬주스, 마요네즈, 홀그레인 머스타드 쉐낏)를 더하고 비네그레트 드레싱, 후추후추후추 #대파찜샐러드\n#나의로컬푸드샐러드 레시피\n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #대파 #계란 #레몬마요네즈\n#breakfast #recipe #salad #greenonion #poireau #leek",
   "image": "https://images.how-about-breakfast.com/images/259.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/259.jpg",
    "https://images.how-about-breakfast.com/images/259_2.jpg"
   ],
-  "_en": {
-   "hash": "16a2790e7005e4d6d7a65b88ae8884266a25243adf6ed8c5d4c72dd852fe6cb5",
-   "title": "Steamed Scallion Salad, My Local-Food Salad, Morning Ritual",
-   "intro": "20211105, #breakfastdiary 259, 6°C/partly cloudy\nCut scallions into manageable lengths, steam them, and plate. Add diced boiled egg and lemon mayonnaise (lemon juice, mayonnaise, and whole-grain mustard, shaken together), plus vinaigrette dressing and pepper pepper pepper. #SteamedScallionSalad\n#MyLocalFoodSalad recipe",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "대파찜샐러드-나의로컬푸드샐러드-모닝리추얼"
  },
  {
