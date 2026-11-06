@@ -38602,7 +38602,7 @@
   "weather": "3도/부분적으로흐림",
   "failed": false,
   "calories": null,
-  "title": "메밀면샐러드 메밀면",
+  "title": "구운 새우를 곁들인 메밀면 샐러드",
   "credit": null,
   "hashtags": [
    "나의프랑스식샐러드",
@@ -38614,17 +38614,10 @@
    "조식다이어리"
   ],
   "intro": "20231107, #조식다이어리 885, 3도/부분적으로흐림\n(좀 뜬금 없긴한데,) 드보르작의 첼로 협주곡 104번에는 우리나라 가곡(사공의 노래)이 연상되는 대목이 있다. \n달군 팬에 올리브오일, 물기를 닦아 낸 새우를 소금, 허브, 후추 넣고 데친다. \n물을 끓이고 세 번 정도 찬물을 부어가며 메밀면을 삶은 뒤 찬물에 잘 헹군다. \n그릇에 메밀면을 가지런히 담고 새우, 비네그레트 드레싱, 다진 깻잎과 호두를 올린다. #메밀면샐러드\n#나의프랑스식샐러드 레시피를 응용했습니다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 메밀면(건면) 80g\n- 새우 80g(껍질과 내장을 제거한 것)\n- 올리브오일 1t\n- 소금 한 꼬집, 허브 약간, 후추 약간\n- 비네그레트(올리브오일 2t, 화이트와인 비니거 1T, 홀그레인 머스터드 1/2t)\n- 깻잎 3장\n- 호두 10g",
+  "steps": "1. 새우는 키친타월로 물기를 꼼꼼히 닦는다.\n2. 달군 팬에 올리브오일을 두르고 새우를 넣어 소금, 허브, 후추를 뿌린다. 앞뒤로 1분 반씩, 속까지 불투명하게 익힌 뒤 덜어 식힌다.\n3. 냄비에 물을 끓이고 메밀면을 넣는다. 물이 끓어오르면 찬물을 부어 가며 세 번 정도 삶은 뒤, 찬물에 비벼 헹기고 물기를 뺀다.\n4. 비네그레트 재료를 섞는다. 깻잎은 돌돌 말아 곱게 다지고, 호두는 마른 팬에 1분 볶아 부순다.\n5. 그릇에 메밀면을 가지런히 담고 새우를 올린다.\n6. 비네그레트를 두르고 다진 깻잎과 호두를 올린다.",
   "raw": "20231107, #조식다이어리 885, 3도/부분적으로흐림\n\n(좀 뜬금 없긴한데,) 드보르작의 첼로 협주곡 104번에는 우리나라 가곡(사공의 노래)이 연상되는 대목이 있다. \n\n달군 팬에 올리브오일, 물기를 닦아 낸 새우를 소금, 허브, 후추 넣고 데친다. \n물을 끓이고 세 번 정도 찬물을 부어가며 메밀면을 삶은 뒤 찬물에 잘 헹군다. \n그릇에 메밀면을 가지런히 담고 새우, 비네그레트 드레싱, 다진 깻잎과 호두를 올린다. #메밀면샐러드\n#나의프랑스식샐러드 레시피를 응용했습니다. \n\n#조식 #레시피 #미라클모닝 #메밀면",
   "video": "https://images.how-about-breakfast.com/images/885.mp4",
-  "_en": {
-   "hash": "ffc238c89a21119e5494e014118f8cbbb99ca9d29405f8d3f6ccd662eef3f5a2",
-   "title": "Buckwheat Noodle Salad",
-   "intro": "20231107, #breakfastdiary 885, 3°C/partly cloudy\n(A bit out of nowhere, but) there's a passage in Dvořák's Cello Concerto (Op. 104) that reminds me of a Korean folk song, \"The Boatman's Song.\"\nIn a hot pan with olive oil, cook shrimp — patted dry — with salt, herbs, and pepper.\nBoil water and cook the buckwheat noodles, adding cold water about three times, then rinse well in cold water.\nArrange the buckwheat noodles neatly in a bowl and top with the shrimp, vinaigrette dressing, chopped perilla leaves, and walnuts. #buckwheatnoodlesalad\nAdapted from my #myfrenchstylesalad recipe.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "메밀면샐러드-메밀면"
  },
  {
