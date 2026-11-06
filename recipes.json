@@ -51065,7 +51065,7 @@
   "weather": "4도/대체로흐림, 17분/운동",
   "failed": false,
   "calories": null,
-  "title": "입동 양상추 템페",
+  "title": "구운 템페와 새송이, 병아리콩 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51090,8 +51090,8 @@
    "혼밥"
   ],
   "intro": "20221107, #조식다이어리 589, 4도/대체로흐림, 17분/운동 \n#입동 맞이, 조식 한상 차림\n올리브오일, 소금, 후추에 구운 템페와 새송이 버섯, 토마토절임과 기타 등등",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 템페 80g\n- 새송이버섯 2개(약 100g)\n- 올리브오일 2t\n- 소금, 후추 약간\n- 토마토 절임 방울토마토 6~8개(약 80g)\n- 양상추 80g\n- 삶은 병아리콩 80g(약 1/2컵)",
+  "steps": "1. 템페는 1cm 두께로 썰어 끓는 물에 5~10분 삶아 쓴맛을 빼고, 키친타월로 물기를 닦는다.\n2. 새송이버섯은 0.7cm 두께로 썬다.\n3. 달군 팬에 올리브오일 2t를 두르고 템페와 새송이를 펼쳐 앞뒤로 노릇하게 굽는다. 마지막에 소금, 후추를 뿌린다.\n4. 양상추는 먹기 좋게 찢고, (삶은) 병아리콩은 물기를 뺀다.\n5. 접시에 양상추, 병아리콩, 토마토 절임을 담고 구운 템페와 새송이를 올린다.",
   "raw": "20221107, #조식다이어리 589, 4도/대체로흐림, 17분/운동 \n\n#입동 맞이, 조식 한상 차림\n\n올리브오일, 소금, 후추에 구운 템페와 새송이 버섯, 토마토절임과 기타 등등\n\n#직장인 #조식 #아침밥 #아침밥상 #혼밥 #샐러드 #양상추 #템페 #소라 #병아리콩 #토마토절임 #새송이버섯\n#breakfast #chickpea #mushroom #temph #marinatedtomato #conch",
   "image": "https://images.how-about-breakfast.com/images/589.jpg",
   "gallery": [
@@ -51100,13 +51100,6 @@
    "https://images.how-about-breakfast.com/images/589_3.jpg",
    "https://images.how-about-breakfast.com/images/589_4.jpg"
   ],
-  "_en": {
-   "hash": "52a59a2fa6949d77bf89118c0dcaca1e83911c8c83c2cea4bf151acc8edee38e",
-   "title": "Ipdong (Start of Winter) Lettuce Tempeh",
-   "intro": "20221107 #breakfastdiary 589, 4°C/mostly cloudy, 17 min/workout \nMarking #ipdong, the start of winter, with a full breakfast spread: \nTempeh and king oyster mushrooms seared with olive oil, salt and pepper, marinated tomatoes, and various other bits and pieces.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "입동-양상추-템페"
  },
  {
