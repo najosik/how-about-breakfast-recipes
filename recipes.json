@@ -51141,7 +51141,7 @@
   "weather": "8도/한때흐림, 17분/운동",
   "failed": false,
   "calories": null,
-  "title": "온드미디어 끼망베르오픈샌드위치 샌드위치",
+  "title": "호두 까망베르 토스트",
   "credit": null,
   "hashtags": [
    "BTL",
@@ -51169,8 +51169,8 @@
    "혼밥"
   ],
   "intro": "20221108, #조식다이어리 590, 8도/한때흐림, 17분/운동 \n브랜드의 #온드미디어 #Ownedmedia 라이브 방송(그리고 그곳에서 발생하는 인터랙션이)이 #BTL 활동이라는 걸 깨닫는 건 샌드위치 위에 올라간 까망베르치즈와 브리치즈를 구분하는 것 만큼이나 어려운 일이다. \n달군 팬에 올리브오일, 빵을 앞뒤로 굽는다. 빵위에 그릭요거트, 프로슈토, 까망베르치즈에 으깬 호두와 꿀, #끼망베르오픈샌드위치",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 사워도우 1장(약 60g)\n- 올리브오일 1t\n- 그릭요거트 2T(약 30g)\n- 프로슈토 2장(약 20g)\n- 까망베르 치즈 30g\n- 호두 10g\n- 꿀 1t",
+  "steps": "1. 호두는 마른 팬에 1분 볶아 굵게 으깬다. 까망베르는 얇게 썬다.\n2. 달군 팬에 올리브오일을 두르고 빵을 앞뒤로 노릇하게 굽는다.\n3. 구운 빵에 그릭요거트를 펴 바른다.\n4. 프로슈토를 얹고 까망베르를 올린다.\n5. 으깬 호두를 뿌리고 꿀을 두른다.",
   "raw": "20221108, #조식다이어리 590, 8도/한때흐림, 17분/운동 \n\n브랜드의 #온드미디어 #Ownedmedia 라이브 방송(그리고 그곳에서 발생하는 인터랙션이)이 #BTL 활동이라는 걸 깨닫는 건 샌드위치 위에 올라간 까망베르치즈와 브리치즈를 구분하는 것 만큼이나 어려운 일이다. \n\n달군 팬에 올리브오일, 빵을 앞뒤로 굽는다. 빵위에 그릭요거트, 프로슈토, 까망베르치즈에 으깬 호두와 꿀, #끼망베르오픈샌드위치 \n\n#직장인 #조식 #아침밥 #아침밥상 #혼밥 #샌드위치 #프로슈토 #까망베르 #호두 #꿀 #그릭요거트\n#breakfast #openfacedsandwich #prosciutto #greekyogurt #walnut #honey #camembert ",
   "image": "https://images.how-about-breakfast.com/images/590.jpg",
   "gallery": [
@@ -51179,13 +51179,6 @@
    "https://images.how-about-breakfast.com/images/590_3.jpg",
    "https://images.how-about-breakfast.com/images/590_4.jpg"
   ],
-  "_en": {
-   "hash": "5b8e7c9266e0c5a2a9a8c87a24af71eaab71d70ff33078e7750cf068ad54df05",
-   "title": "Owned Media Camembert Open Sandwich Sandwich",
-   "intro": "20221108 #breakfastdiary 590, 8°C/occasionally cloudy, 17 min/workout \nRealizing that a brand's #ownedmedia live broadcast (and the interactions that happen there) counts as a #btl activity is about as hard as telling apart camembert and brie on top of a sandwich. \nToast the bread on both sides in a hot pan with olive oil. Top it with Greek yogurt, prosciutto, camembert cheese, crushed walnuts and honey. #camembertopensandwich",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "온드미디어-끼망베르오픈샌드위치-샌드위치"
  },
  {
