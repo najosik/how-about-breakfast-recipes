@@ -25568,7 +25568,7 @@
   "weather": "0도/대체로 맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "대만가정식양상추볶음 양상추",
+  "title": "대만 가정식 양상추볶음",
   "credit": null,
   "hashtags": [
    "대만가정식양상추볶음",
@@ -25579,8 +25579,8 @@
    "조식다이어리"
   ],
   "intro": "20241108 #조식다이어리 1226, 0도/대체로 맑음, 20분/운동(M) \n#대만가정식양상추볶음, 양상추는 살짝 볶아야 아삭하게 먹을 수 있다.",
-  "ingredients": "갈색만가닥버섯 적당히, 양상추 1/2개, (소스)물 100ml, 설탕 1T, 굴소스 2T, 미림 5T, 참치 액젓 1T, 간장 1T\n그밖에 전분 1/2T\n\n👉이렇게\n1. 팬에 소스 재료를 넣고 88 끓인다. 그동안,\n2. 양상추 뿌리 떼어내고 큼지막하게 숭덩숭덩 썬다.  \n3. 버섯을 소스가 있는 팬에 넣고 살짝 데친다. 버섯 건져내고\n4. 양상추 팬에 넣고 숨이 죽을 때까지 살짝 데친다. \n5. 전분과 물을 1:1 비율로 섞어서 팬에 남은 소스에 붓고 걸쭉한 소스를 만든다. \n6. 접시에 양상추, 버섯 소복하게 담고 전분 소스 얹는다. \n\nInspired by 이연복의 복주머니\n\n#조식 #레시피 #미라클모닝 #양상추",
-  "steps": null,
+  "ingredients": "- 갈색만가닥버섯 적당히\n- 양상추 1/2개\n- 소스(물 100ml, 설탕 1T, 굴소스 2T, 미림 5T, 참치 액젓 1T, 간장 1T, 전분 1/2T)",
+  "steps": "1. 팬에 소스 재료를 넣고 88 끓인다. 그동안,\n2. 양상추 뿌리 떼어내고 큼지막하게 숭덩숭덩 썬다.  \n3. 버섯을 소스가 있는 팬에 넣고 살짝 데친다. 버섯 건져낸다. \n4. 양상추 팬에 넣고 숨이 죽을 때까지 살짝 데친다. \n5. 전분과 물을 1:1 비율로 섞어서 팬에 남은 소스에 붓고 걸쭉한 소스를 만든다. \n6. 접시에 양상추, 버섯 소복하게 담고 전분 소스 얹는다. ",
   "raw": "20241108 #조식다이어리 1226, 0도/대체로 맑음, 20분/운동(M) \n\n#대만가정식양상추볶음, 양상추는 살짝 볶아야 아삭하게 먹을 수 있다. \n\n👉재료는\n갈색만가닥버섯 적당히, 양상추 1/2개, (소스)물 100ml, 설탕 1T, 굴소스 2T, 미림 5T, 참치 액젓 1T, 간장 1T\n그밖에 전분 1/2T\n\n👉이렇게\n1. 팬에 소스 재료를 넣고 88 끓인다. 그동안,\n2. 양상추 뿌리 떼어내고 큼지막하게 숭덩숭덩 썬다.  \n3. 버섯을 소스가 있는 팬에 넣고 살짝 데친다. 버섯 건져내고\n4. 양상추 팬에 넣고 숨이 죽을 때까지 살짝 데친다. \n5. 전분과 물을 1:1 비율로 섞어서 팬에 남은 소스에 붓고 걸쭉한 소스를 만든다. \n6. 접시에 양상추, 버섯 소복하게 담고 전분 소스 얹는다. \n\nInspired by 이연복의 복주머니\n\n#조식 #레시피 #미라클모닝 #양상추",
   "image": "https://images.how-about-breakfast.com/images/1226.jpg",
   "gallery": [
@@ -25591,13 +25591,6 @@
    "https://images.how-about-breakfast.com/images/1226_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1226.mp4",
-  "_en": {
-   "hash": "61cc6ea3f6c937ef9680f27c04b336c5bb2ffcde1ac74838d30258364d17c6e1",
-   "title": "Taiwanese Home-style Stir-fried Lettuce, Lettuce",
-   "intro": "20241108 #breakfastdiary 1226, 0°C/mostly clear, 20min/exercise(M)\n#Taiwanesehomestylestirfriedlettuce — you need to stir-fry the lettuce just briefly to keep it crisp.",
-   "ingredients": "A good amount of brown beech mushrooms, 1/2 head iceberg lettuce, (sauce) 100ml water, 1T sugar, 2T oyster sauce, 5T mirin, 1T tuna fish sauce, 1T soy sauce\nplus 1/2T starch\n\n👉Like this\n1. Add the sauce ingredients to a pan and bring to a boil. Meanwhile,\n2. Remove the root end of the lettuce and cut into big chunks.\n3. Add the mushrooms to the pan with the sauce and blanch briefly. Remove the mushrooms and\n4. Add the lettuce to the pan and blanch briefly until just wilted.\n5. Mix starch and water 1:1 and pour into the remaining sauce in the pan to make a thickened sauce.\n6. Pile the lettuce and mushrooms on a plate and top with the starch sauce.\n\nInspired by Lee Yeon-bok's Bokjumeoni\n\n#breakfast #recipe #miraclemorning #lettuce",
-   "steps": ""
-  },
   "page_id": "대만가정식양상추볶음-양상추"
  },
  {
