@@ -25553,7 +25553,7 @@
   "weather": "12도/대체로 맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "미니멀산라탕 라이프수프 표고버섯",
+  "title": "간단 산라탕",
   "credit": "#라이프수프",
   "hashtags": [
    "라이프수프",
@@ -25565,8 +25565,8 @@
    "표고버섯"
   ],
   "intro": "20241109 #조식다이어리 1227, 12도/대체로 맑음, 20분/운동(M) \n오리지널 산라탕은 시고 매운 맛이지만 조식이니까 마일드하게 #미니멀산라탕\n맛있어서 두 그릇을 먹었다. 계란은 풀지 말고 써니사이드업으로 구워서 먹어도 좋다.",
-  "ingredients": "표고버섯 2개, 소금 1/2t, 간장 1t, 식초 2t, 그밖에 전분 1/2T\n\n👉이렇게\n1. 물 500ml에 표고버섯 얇게 썰어 끓인다. \n2. 소금, 간장, 식초 넣고 전분물(전분과 물은 1:1 비율로) 넣고 가볍게 섞는다. \n3. 계란 1개 풀어서 붓고 불 끄고 참기름 살짝\n4. 접시에 담고 후추후후추후추후추~\n \nInspired by #라이프수프\n\n#조식 #레시피 #미라클모닝 #표고버섯",
-  "steps": null,
+  "ingredients": "- 표고버섯 2개 \n- 소금 1/2t\n- 간장 1t\n- 식초 2t \n- 그밖에 전분 1/2T",
+  "steps": "1. 물 500ml에 표고버섯 얇게 썰어 끓인다. \n2. 소금, 간장, 식초 넣고 전분물(전분과 물은 1:1 비율로) 넣고 가볍게 섞는다. \n3. 계란 1개 풀어서 붓고 불 끄고 참기름 살짝\n4. 접시에 담고 후추후후추후추후추~",
   "raw": "20241109 #조식다이어리 1227, 12도/대체로 맑음, 20분/운동(M) \n\n오리지널 산라탕은 시고 매운 맛이지만 조식이니까 마일드하게 #미니멀산라탕\n맛있어서 두 그릇을 먹었다. 계란은 풀지 말고 써니사이드업으로 구워서 먹어도 좋다. \n\n👉재료는\n표고버섯 2개, 소금 1/2t, 간장 1t, 식초 2t, 그밖에 전분 1/2T\n\n👉이렇게\n1. 물 500ml에 표고버섯 얇게 썰어 끓인다. \n2. 소금, 간장, 식초 넣고 전분물(전분과 물은 1:1 비율로) 넣고 가볍게 섞는다. \n3. 계란 1개 풀어서 붓고 불 끄고 참기름 살짝\n4. 접시에 담고 후추후후추후추후추~\n \nInspired by #라이프수프\n\n#조식 #레시피 #미라클모닝 #표고버섯",
   "image": "https://images.how-about-breakfast.com/images/1227.jpg",
   "gallery": [
@@ -25576,13 +25576,6 @@
    "https://images.how-about-breakfast.com/images/1227_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1227.mp4",
-  "_en": {
-   "hash": "75aaef1f09283854255f49346b0cad70a3f1cf20808ff8899c9ae18876548afc",
-   "title": "Minimal Suan-la-tang, Life Soup, Shiitake Mushroom",
-   "intro": "20241109 #breakfastdiary 1227, 12°C/mostly clear, 20min/exercise(M)\nThe original suan-la-tang is sour and spicy, but since it's breakfast, I kept it mild — #minimalsuanlatang\nIt was so good I ate two bowls. You could also skip beating the egg and fry it sunny-side-up instead.",
-   "ingredients": "2 shiitake mushrooms, 1/2t salt, 1t soy sauce, 2t vinegar, plus 1/2T starch\n\n👉Like this\n1. Slice the shiitake mushrooms thin and boil in 500ml water.\n2. Add salt, soy sauce, and vinegar, then pour in starch water (starch and water in a 1:1 ratio) and mix gently.\n3. Beat one egg, pour it in, turn off the heat, and add a touch of sesame oil\n4. Plate it and finish with pepper pepper pepper pepper~\n\nInspired by #lifesoup\n\n#breakfast #recipe #miraclemorning #shiitakemushroom",
-   "steps": ""
-  },
   "page_id": "미니멀산라탕-라이프수프-표고버섯"
  },
  {
