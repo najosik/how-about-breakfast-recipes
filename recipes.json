@@ -38874,7 +38874,11 @@
    "ingredients": "",
    "steps": ""
   },
-  "page_id": "또우장-요우띠아오"
+  "page_id": "또우장-요우띠아오",
+  "image": "https://images.how-about-breakfast.com/images/895b.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/895b.jpg"
+  ]
  },
  {
   "date": "2023-10-31",
