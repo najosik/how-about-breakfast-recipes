@@ -38716,7 +38716,7 @@
   "weather": "0도/대체로맑음, 21분/운동(Y)",
   "failed": false,
   "calories": null,
-  "title": "모짜렐라치즈 완두콩",
+  "title": "마요 고추장 무 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38727,8 +38727,8 @@
    "조식다이어리"
   ],
   "intro": "20231110, #조식다이어리 888, 0도/대체로맑음, 21분/운동(Y) \n얼마 전에 예쁘게 생긴 무를 보고 한 눈에 반했는데, 적당한 레시피가 눈에 띄어서 응용해 보기로\n무는 2cm 두께로 썰고 두껍게 껍질을 잘라낸 뒤 앞뒤로 칼집을 낸다. 끓는 물에 충분히 삶는다. \n마요네즈, 고추장, 계란 노른자 섞어서 소스를 만든다. \n무가 충분히 익었는지 살펴보고 건진 뒤 오븐 팬 위에 놓은 뒤 소스를 올려서 180도 오븐에 10분 굽는다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 무 200g(2cm 두께로 2~3쪽)\n- 마요네즈 1T\n- 고추장 1t\n- 계란노른자 1개",
+  "steps": "1. 무는 2cm 두께로 썰고 껍질을 잘라낸다. 앞뒤로 칼집을 낸다.\n2. 끓는 물에 무를 넣고 젓가락이 쑥 들어갈 때까지 충분히 삶는다(약 15~20분).\n3. 볼에 마요네즈, 고추장, 계란노른자를 넣고 고루 섞어 소스를 만든다.\n4. 무가 충분히 익었는지 확인한 뒤 건져 물기를 닦는다. 오븐 팬에 올린다.\n5. 무 위에 소스를 올리고 180도 오븐에서 10분, 소스가 노릇해질 때까지 굽는다.",
   "raw": "20231110, #조식다이어리 888, 0도/대체로맑음, 21분/운동(Y) \n\n얼마 전에 예쁘게 생긴 무를 보고 한 눈에 반했는데, 적당한 레시피가 눈에 띄어서 응용해 보기로\n\n무는 2cm 두께로 썰고 두껍게 껍질을 잘라낸 뒤 앞뒤로 칼집을 낸다. 끓는 물에 충분히 삶는다. \n마요네즈, 고추장, 계란 노른자 섞어서 소스를 만든다. \n무가 충분히 익었는지 살펴보고 건진 뒤 오븐 팬 위에 놓은 뒤 소스를 올려서 180도 오븐에 10분 굽는다. \n\n#조식 #레시피 #미라클모닝 #모짜렐라치즈 #완두콩",
   "image": "https://images.how-about-breakfast.com/images/888.jpg",
   "gallery": [
@@ -38740,13 +38740,6 @@
    "https://images.how-about-breakfast.com/images/888_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/888.mp4",
-  "_en": {
-   "hash": "c7102a1d8229010f08fb9beb2c9b6cf5232265eb4b811db3f69beda5e09fc7cc",
-   "title": "Mozzarella and Green Peas",
-   "intro": "20231110, #breakfastdiary 888, 0°C/mostly clear, 21min/workout(Y) \nA little while back I spotted a good-looking radish and fell for it at first sight, so when a fitting recipe caught my eye, I decided to give it a try. \nSlice the radish into 2cm-thick rounds, trim off a thick layer of skin, and score both sides. Boil thoroughly in boiling water. \nMix mayo, gochujang, and egg yolk to make the sauce. \nCheck that the radish is cooked through, drain, place on a baking tray, spoon the sauce on top, and bake in a 180°C oven for 10 minutes.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "모짜렐라치즈-완두콩"
  },
  {
