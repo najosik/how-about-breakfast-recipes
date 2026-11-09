@@ -51154,7 +51154,7 @@
   "weather": "7도/한때흐림, 11분/운동",
   "failed": false,
   "calories": null,
-  "title": "아보카도크로스티니 아보카도 마리네이드토마토",
+  "title": "아보카도 크로스티니",
   "credit": null,
   "hashtags": [
    "avocado",
@@ -51173,8 +51173,8 @@
    "혼밥"
   ],
   "intro": "20221111, #조식다이어리 592, 7도/한때흐림, 11분/운동 \n아보카도가 잘 익었다. \n올리브오일을 빵에 바르고 앞뒤로 굽는다. 트러플 스프레드를 바르고, 마리네이드 토마토, 가지런히 썬 아보카도에 후추후추후추 #아보카도크로스티니",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 바게트 또는 사워도우 2장\n- 올리브오일 1t\n- 트러플 스프레드 1T\n- 마리네이드 토마토 방울토마토 6~8개(약 80g, 오일과 식초에 절인 것)\n- 아보카도 1/2개(약 100g)\n- 후추 넉넉히",
+  "steps": "1. 빵에 올리브오일을 바르고 달군 팬에서 앞뒤로 노릇하게 굽는다.\n2. 아보카도는 반으로 갈라 씨를 빼고 껍질을 벗긴 뒤 가지런히 얇게 썬다.\n3. 마리네이드 토마토는 건져서 물기를 가볍게 뺀다.\n4. 구운 빵이 한 김 식으면 트러플 스프레드를 바른다.\n5. 아보카도를 가지런히 올리고 마리네이드 토마토를 얹는다.\n6. 후추를 넉넉히 갈아 올린다.",
   "raw": "20221111, #조식다이어리 592, 7도/한때흐림, 11분/운동 \n\n아보카도가 잘 익었다. \n\n올리브오일을 빵에 바르고 앞뒤로 굽는다. 트러플 스프레드를 바르고, 마리네이드 토마토, 가지런히 썬 아보카도에 후추후추후추 #아보카도크로스티니 \n\n#직장인 #조식 #아침밥 #아침밥상 #혼밥 #아보카도 #마리네이드토마토 #크로스티니  \n#breakfast #avocado #avocadocrostini #marinatedtomato ",
   "image": "https://images.how-about-breakfast.com/images/592.jpg",
   "gallery": [
@@ -51182,13 +51182,6 @@
    "https://images.how-about-breakfast.com/images/592_2.jpg",
    "https://images.how-about-breakfast.com/images/592_3.jpg"
   ],
-  "_en": {
-   "hash": "7bfff693dddea0598227d6a22af01d6c7896f8f60d47ab3a50a1eb2d7a4993ea",
-   "title": "Avocado Crostini Avocado Marinated Tomato",
-   "intro": "20221111 #breakfastdiary 592, 7°C/occasionally cloudy, 11 min/workout \nThe avocado is perfectly ripe. \nBrush the bread with olive oil and toast both sides. Spread on truffle spread, add marinated tomato and neatly sliced avocado, then finish with pepper, pepper, pepper. #avocadocrostini",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "아보카도크로스티니-아보카도-마리네이드토마토"
  },
  {
