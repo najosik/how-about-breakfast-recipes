@@ -1,5 +1,37 @@
 [
  {
+  "date": "2026-11-09",
+  "date_raw": "20261109",
+  "diary_no": 1919,
+  "weather": "0도/흐림",
+  "failed": false,
+  "calories": 730,
+  "title": "필 크런치 치킨 계란 덮밥",
+  "credit": null,
+  "hashtags": [
+   "레시피",
+   "조식",
+   "조식다이어리",
+   "치킨"
+  ],
+  "intro": "20261109 #조식다이어리 1889, 0도/흐림\n어제의 치킨\n오늘의 덮밥\n어제 먹고 남은 bbq 필 크런치를 재활용한다. 필 크런치 순살은 소스에 간장과 단맛이 이미 있어서, 육수의 설탕을 빼고 간장은 1t로 줄인다. \n730kcal 필 크런치 치킨 계란 덮밥",
+  "ingredients": "- 현미밥 150g\n- 필 크런치 순살 100g(5~6조각)\n- 계란 2개\n- 양파 1/4개\n- 육수(물 100ml, 간장 1t, 미림 1T)\n- 대파 잎몸 약간\n- 후추 약간",
+  "steps": "1. 양파는 채 썰고, 대파 잎몸은 송송 썬다. 계란은 가볍게 풀어 둔다.\n2. 작은 팬에 물, 간장, 미림을 끓이고 양파를 넣어 투명해질 때까지 2~3분 끓인다.\n3. 푼 계란을 둘러 붓고 뚜껑을 덮어 30초~1분, 반숙으로 익힌 뒤 불을 끈다.\n4. 치킨은 에어프라이어 180도에서 3~4분, 속까지 뜨겁게 데운다.\n5. 현미밥 위에 3을 올리고 치킨을 얹은 뒤, 대파와 후추를 뿌린다.",
+  "raw": "20261109 #조식다이어리 1889, 0도/흐림\n\n어제의 치킨\n오늘의 덮밥\n\n어제 먹고 남은 bbq 필 크런치를 재활용한다. 필 크런치 순살은 소스에 간장과 단맛이 이미 있어서, 육수의 설탕을 빼고 간장은 1t로 줄인다. \n\n730kcal 필 크런치 치킨 계란 덮밥 \n\n👉재료(1인분)\n- 현미밥 150g\n- 필 크런치 순살 100g(5~6조각)\n- 계란 2개\n- 양파 1/4개\n- 육수(물 100ml, 간장 1t, 미림 1T)\n- 대파 잎몸 약간\n- 후추 약간\n\n👉조리\n1. 양파는 채 썰고, 대파 잎몸은 송송 썬다. 계란은 가볍게 풀어 둔다.\n2. 작은 팬에 물, 간장, 미림을 끓이고 양파를 넣어 투명해질 때까지 2~3분 끓인다.\n3. 푼 계란을 둘러 붓고 뚜껑을 덮어 30초~1분, 반숙으로 익힌 뒤 불을 끈다.\n4. 치킨은 에어프라이어 180도에서 3~4분, 속까지 뜨겁게 데운다.\n5. 현미밥 위에 3을 올리고 치킨을 얹은 뒤, 대파와 후추를 뿌린다.\n\n#조식 #레시피 #치킨",
+  "permalink": "https://www.instagram.com/p/Dff8ZRvk4ik/",
+  "image": "https://images.how-about-breakfast.com/images/1919.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/1919.jpg",
+   "https://images.how-about-breakfast.com/images/1919_2.jpg",
+   "https://images.how-about-breakfast.com/images/1919_3.jpg",
+   "https://images.how-about-breakfast.com/images/1919_4.jpg",
+   "https://images.how-about-breakfast.com/images/1919_5.jpg",
+   "https://images.how-about-breakfast.com/images/1919_6.jpg"
+  ],
+  "video": "https://images.how-about-breakfast.com/images/1919.mp4",
+  "page_id": "필-크런치-치킨-계란-덮밥"
+ },
+ {
   "date": "2026-11-08",
   "date_raw": "20261108",
   "diary_no": 1918,
