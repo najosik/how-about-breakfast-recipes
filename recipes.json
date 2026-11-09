@@ -25598,7 +25598,7 @@
   "weather": "11도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "필로페스트리",
+  "title": "필로 에그 페스트리",
   "credit": "@tictacyummy",
   "hashtags": [
    "레시피",
@@ -25608,8 +25608,8 @@
    "필로페스트리"
   ],
   "intro": "20241110 #조식다이어리 1228, 11도/흐림, 20분/운동(M) \n필로는 종이처럼 얇은 면으로 중동 디저트인 바클라바(Baklava)나 그리스식 페타치즈파이 같은 데 많이 사용되는 식재료다. 구워 놓으면 식감이 정말 재밌다.",
-  "ingredients": "(1개 분량) 필로 페스트리 2장, 바질페스토, 페타치즈, 모짜렐라치즈, 파슬리, 올리브오일, 후추\n\n👉이렇게\n1. 필로 1장에 올리브오일 바른다. \n2. 그 위에 1장 더 얹고 바질페스토, 페타치즈, 모짜렐라치즈 얹고 필로를 동그랗게 모은 뒤 계란 1개 얹는다. \n3. 180도 오븐에 15분 굽고 다진 파슬리와 레드페퍼~\n\nInspired by @tictacyummy\n\n#조식 #레시피 #미라클모닝 #필로페스트리",
-  "steps": null,
+  "ingredients": "- 필로 반죽 2장\n- 올리브오일 1t\n- 바질 페스토 1T\n- 페타 치즈 20g\n- 슈레드 모차렐라 20g\n- 계란 1개\n- 다진 파슬리 약간\n- 레드페퍼 플레이크 약간",
+  "steps": "1. 필로 1장에 올리브오일 바른다. \n2. 그 위에 1장 더 얹고 바질페스토, 페타치즈, 모짜렐라치즈 얹고 필로를 동그랗게 모은 뒤 계란 1개 얹는다. \n3. 180도 오븐에 15분 굽고 다진 파슬리와 레드페퍼~",
   "raw": "20241110 #조식다이어리 1228, 11도/흐림, 20분/운동(M) \n\n필로는 종이처럼 얇은 면으로 중동 디저트인 바클라바(Baklava)나 그리스식 페타치즈파이 같은 데 많이 사용되는 식재료다. 구워 놓으면 식감이 정말 재밌다. \n\n👉재료는\n(1개 분량) 필로 페스트리 2장, 바질페스토, 페타치즈, 모짜렐라치즈, 파슬리, 올리브오일, 후추\n\n👉이렇게\n1. 필로 1장에 올리브오일 바른다. \n2. 그 위에 1장 더 얹고 바질페스토, 페타치즈, 모짜렐라치즈 얹고 필로를 동그랗게 모은 뒤 계란 1개 얹는다. \n3. 180도 오븐에 15분 굽고 다진 파슬리와 레드페퍼~\n\nInspired by @tictacyummy\n\n#조식 #레시피 #미라클모닝 #필로페스트리",
   "image": "https://images.how-about-breakfast.com/images/1228.jpg",
   "gallery": [
@@ -25620,13 +25620,6 @@
    "https://images.how-about-breakfast.com/images/1228_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1228.mp4",
-  "_en": {
-   "hash": "d47eba0b77542734f3bb57d3b176b04eed04b41102e1b9bb29510ae1fbd723a6",
-   "title": "Phyllo Pastry",
-   "intro": "20241110 #breakfastdiary 1228, 11°C/cloudy, 20min/exercise(M)\nPhyllo is a paper-thin dough used a lot in things like the Middle Eastern dessert baklava, or Greek-style feta cheese pies. When you bake it, the texture is really fun.",
-   "ingredients": "(makes 1 serving) 2 sheets phyllo pastry, basil pesto, feta cheese, mozzarella cheese, parsley, olive oil, pepper\n\n👉Like this\n1. Brush olive oil on one sheet of phyllo.\n2. Lay another sheet on top, add basil pesto, feta cheese, and mozzarella cheese, gather the phyllo into a round bundle, and place one egg on top.\n3. Bake in a 180°C oven for 15 minutes, then top with minced parsley and red pepper flakes~\n\nInspired by @tictacyummy\n\n#breakfast #recipe #miraclemorning #phyllopastry",
-   "steps": ""
-  },
   "page_id": "필로페스트리"
  },
  {
