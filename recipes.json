@@ -68180,7 +68180,7 @@
   "weather": "2도/흐림",
   "failed": false,
   "calories": null,
-  "title": "사과오픈샌드위치 모닝리추얼 모닝루틴",
+  "title": "사과 토스트",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -68206,21 +68206,14 @@
    "홈쿡"
   ],
   "intro": "20211110, #조식다이어리 264, 2도/흐림\n버터 두른 팬에 빵을 굽고 리코타치즈 듬뿍, 어린잎채소와 사과를 올린다. 피칸 조금, 먹기 전에 꿀도 듬뿍 #사과오픈샌드위치 \n시나노골드(사과) 아주 맛나다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 사워도우 1장(약 60g)\n- 버터 5g\n- 리코타 치즈 50g\n- 어린잎채소 한 줌(약 15g, 루꼴라와 겨자잎이 없는 것)\n- 사과 1/3개(약 100g, 시나노골드)\n- 피칸 8g\n- 꿀 1T",
+  "steps": "1. 시나노골드 사과는 씻어 껍질째 얇게 썬다. 피칸은 마른 팬에 1분 볶아 굵게 부순다.\n2. 달군 팬에 버터를 녹이고 빵을 앞뒤로 노릇하게 굽는다.\n3. 구운 빵이 한 김 식으면 리코타를 듬뿍 바른다.\n4. 어린잎채소를 올리고 사과를 겹쳐 얹는다.\n5. 피칸을 뿌린다. 먹기 직전에 꿀을 두른다.",
   "raw": "20211110, #조식다이어리 264, 2도/흐림\n\n버터 두른 팬에 빵을 굽고 리코타치즈 듬뿍, 어린잎채소와 사과를 올린다. 피칸 조금, 먹기 전에 꿀도 듬뿍 #사과오픈샌드위치 \n\n시나노골드(사과) 아주 맛나다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샌드위치 #리코타치즈 #피칸 \n#breakfast #recipe #salad #openfacedsandwich #pecan #ricottacheese ",
   "image": "https://images.how-about-breakfast.com/images/264.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/264.jpg",
    "https://images.how-about-breakfast.com/images/264_2.jpg"
   ],
-  "_en": {
-   "hash": "3de56f915a7a196597fcaf72e4639b76dd4941756a5ed72367d20e4f4a428963",
-   "title": "Apple Open Sandwich, Morning Ritual, Morning Routine",
-   "intro": "20211110, #breakfastdiary 264, 2°C/cloudy\nToast bread in a buttered pan, pile on plenty of ricotta cheese, then top with baby greens and apple. A few pecans, and a generous drizzle of honey right before eating. #AppleOpenSandwich\nShinano Gold apples are seriously delicious.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "사과오픈샌드위치-모닝리추얼-모닝루틴"
  },
  {
