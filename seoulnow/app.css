@@ -131,6 +131,9 @@ body { top: 0 !important; }
 .status.closing { background: var(--color-danger); border-color: var(--color-danger); color: var(--color-on-danger); }
 .status.ended { color: var(--color-text-sub); }
 .card-body { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.card-top { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1) var(--space-2); }
+.pick-badge { font: var(--font-label); padding: 1px var(--space-2); border-radius: var(--radius-pill); border: 1px solid var(--color-primary); color: var(--color-primary); background: var(--color-bg); white-space: nowrap; }
+.pick-badge.s2 { background: var(--color-primary); color: var(--color-on-primary); }
 .genre { margin: 0; font: var(--font-label); color: var(--color-text-sub); }
 .title { margin: 0; font: var(--font-card-title); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
 .meta { margin: 0; font: var(--font-caption); color: var(--color-text-sub); font-variant-numeric: tabular-nums; }

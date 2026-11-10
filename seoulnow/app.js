@@ -1,9 +1,9 @@
 // Seoul Now 프론트엔드. 백엔드(../seoul-now/data/*.json)를 읽어 목록·필터·상세를 그린다.
 // 보안: 외부 데이터는 textContent로만 출력(innerHTML 미사용), 링크는 http/https만, 쿼리 값은 허용 목록 검증(lib.parseQuery).
 // 개인정보: 수집·저장 없음. 브라우저 저장소에는 번역 동의(sessionStorage)만.
-import * as L from "./lib.js?v=20261110b";
-import { T } from "./i18n.js?v=20261110b";
-import { initTranslate } from "./translate.js?v=20261110b";
+import * as L from "./lib.js?v=20261110c";
+import { T } from "./i18n.js?v=20261110c";
+import { initTranslate } from "./translate.js?v=20261110c";
 
 const DATA = "../seoul-now/data/";
 const $ = (id) => document.getElementById(id);
@@ -205,6 +205,14 @@ function renderApplied() {
   $("applied").replaceChildren(...chips);
 }
 
+/** 선별 통과 배지: 2차 통과는 '외국인 추천'(1차도 통과한 상태), 1차만 통과는 '관광 추천' */
+function pickBadge(ev) {
+  const lv = stages ? stages.get(ev.id) || 0 : 0;
+  if (!lv) return null;
+  const k = lv >= 2 ? "s2" : "s1";
+  return el("span", { class: `pick-badge ${k}`, title: t().pickNote[k], text: t().picks[k] });
+}
+
 function card(ev) {
   const s = t();
   const st = L.statusOf(ev, today);
@@ -222,7 +230,7 @@ function card(ev) {
   return el("li", {}, el("a", { class: "card", href, onclick: (e) => { if (e.metaKey || e.ctrlKey || e.shiftKey) return; e.preventDefault(); goDetail(ev.id); } },
     thumb,
     el("span", { class: "card-body" },
-      el("span", { class: "genre", text: genreName(L.genreOf(ev.category)) }),
+      el("span", { class: "card-top" }, el("span", { class: "genre", text: genreName(L.genreOf(ev.category)) }), pickBadge(ev)),
       el("span", { class: "title", text: ev.title }),
       el("span", { class: "meta", text: L.formatRange(ev.start, ev.end, state.lang) }),
       el("span", { class: "meta place", text: [guLabel(ev.district), ev.place].filter(Boolean).join(" · ") }),
@@ -379,8 +387,9 @@ function renderDetail() {
     el("a", { class: "back", href: L.toQuery({ ...state, event: null }) || "./", onclick: (e) => { e.preventDefault(); backToList(); } }, icon("back"), s.back),
     hero,
     el("div", { class: "d-meta" }, el("span", { class: "genre", text: genreName(L.genreOf(ev.category)) }),
-      el("span", { class: `status ${st.key}`, text: st.key === "dday" ? s.badge.dday(st.days) : s.badge[st.key] })),
+      el("span", { class: `status ${st.key}`, text: st.key === "dday" ? s.badge.dday(st.days) : s.badge[st.key] }), pickBadge(ev)),
     el("h1", { text: ev.title }),
+    stages && stages.get(ev.id) ? el("p", { class: "pick-note", text: s.pickNote[stages.get(ev.id) >= 2 ? "s2" : "s1"] }) : null,
     el("dl", { class: "facts" },
       fact(s.period, L.formatRange(ev.start, ev.end, state.lang)),
       fact(s.hours, s.hoursNote),
