@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <!-- 외부 스크립트는 사용자가 동의한 뒤의 Google 번역만. 그 스크립트가 넣는 인라인 스크립트 1개는 해시로만 허용 -->
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self' 'sha256-R6kjt5FwTd5vAw94Q08NLDZsSaGTzg4NsdIfKtECSp0=' https://translate.google.com https://translate.googleapis.com https://translate-pa.googleapis.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://www.gstatic.com https://translate.googleapis.com; img-src 'self' https: data: blob:; connect-src 'self' https://translate.googleapis.com https://translate-pa.googleapis.com; frame-src 'self' https://translate.google.com https://translate.googleapis.com; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="color-scheme" content="light dark">
+  <title>Seoul Now</title>
+  <meta name="description" content="서울의 공연·전시·축제 등 문화행사를 오늘·이번 주말·이번 달 단위로 찾아보세요.">
+  <link rel="icon" href="../seoul-now/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="fonts/pretendard/pretendardvariable-dynamic-subset.css?v=1">
+  <link rel="stylesheet" href="app.css?v=20261110a">
+</head>
+<body>
+  <a class="skip" id="skip" href="#main">본문 바로가기</a>
+
+  <header class="hdr">
+    <div class="wrap hdr-in">
+      <a class="logo notranslate" id="logo" href="./">Seoul Now</a>
+      <nav class="hdr-actions" aria-label="사이트">
+        <a class="hdr-btn" id="cal-link" href="../seoul-now/calendar/">
+          <svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+          <span class="hdr-lbl" id="cal-lbl">축제 캘린더</span>
+        </a>
+        <div class="seg" role="group" id="lang-group" aria-label="언어">
+          <button type="button" data-lang="ko">KO</button><button type="button" data-lang="en">EN</button>
+        </div>
+        <button class="hdr-btn" id="tr-btn" type="button" aria-haspopup="dialog" aria-expanded="false">
+          <svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5c2.5 2.7 2.5 14.3 0 17M12 3.5c-2.5 2.7-2.5 14.3 0 17"/></svg>
+          <span class="hdr-lbl" id="tr-lbl">번역</span>
+        </button>
+      </nav>
+    </div>
+    <div class="tr-bar" id="tr-bar" hidden>
+      <div class="wrap tr-bar-in">
+        <span id="tr-pick" class="tr-pick"></span>
+        <div id="google_translate_element"></div>
+        <button type="button" class="btn-text" id="tr-original" hidden></button>
+      </div>
+    </div>
+  </header>
+
+  <p class="offline" id="offline" role="status" hidden></p>
+
+  <main id="main" tabindex="-1">
+    <section id="list-view" aria-labelledby="page-h">
+      <div class="wrap">
+        <h1 id="page-h" class="sr-only">Seoul Now</h1>
+        <nav class="tabs" id="tabs" aria-label="기간"></nav>
+        <p class="tab-sub" id="tab-sub" hidden></p>
+      </div>
+      <div class="filterbar" id="filterbar">
+        <div class="wrap">
+          <div class="fb-row">
+            <button class="sel" id="month-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="month-panel">
+              <svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/></svg>
+              <span class="sel-text"><span class="sel-lbl" id="month-lbl"></span><span class="sel-val" id="month-val"></span></span>
+              <svg class="ico chev" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <button class="sel" id="gu-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="gu-sheet">
+              <svg class="ico" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 21s-6.5-6.2-6.5-11.2a6.5 6.5 0 0 1 13 0C18.5 14.8 12 21 12 21z"/><circle cx="12" cy="9.8" r="2.3"/></svg>
+              <span class="sel-text"><span class="sel-lbl" id="gu-lbl"></span><span class="sel-val" id="gu-val"></span></span>
+              <svg class="ico chev" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+          </div>
+          <div class="genres-wrap"><div class="genres" id="genres" role="group"></div></div>
+        </div>
+      </div>
+      <div class="wrap">
+        <div class="result-bar">
+          <p class="count" id="count" aria-live="polite"></p>
+          <div class="applied" id="applied"></div>
+          <div class="tools">
+            <label class="sort"><span id="sort-lbl" class="sr-only"></span><select id="sort"></select></label>
+            <label class="toggle"><input type="checkbox" id="ended"><span id="ended-lbl"></span></label>
+          </div>
+          <p class="stamp" id="stamp"></p>
+        </div>
+        <div id="state"></div>
+        <ul class="cards" id="list"></ul>
+        <div class="more-wrap"><button class="btn" id="more" type="button" hidden></button></div>
+      </div>
+    </section>
+
+    <article class="wrap detail" id="detail-view" hidden></article>
+  </main>
+
+  <footer class="ftr">
+    <div class="wrap">
+      <p id="foot-source"></p>
+      <p id="foot-stamp"></p>
+      <p id="foot-contact"></p>
+      <p id="foot-tr" class="foot-tr"></p>
+    </div>
+  </footer>
+
+  <div class="scrim" id="scrim" hidden></div>
+  <div class="sheet" id="month-panel" role="dialog" aria-modal="true" aria-labelledby="month-title" hidden></div>
+  <div class="sheet" id="gu-sheet" role="dialog" aria-modal="true" aria-labelledby="gu-title" hidden></div>
+  <div class="sheet small" id="tr-sheet" role="dialog" aria-modal="true" aria-labelledby="tr-title" hidden></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script type="module" src="app.js?v=20261110a"></script>
+</body>
+</html>

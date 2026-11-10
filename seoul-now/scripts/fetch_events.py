@@ -136,6 +136,7 @@ def normalize(row: dict) -> dict | None:
         "link": clean_url(row.get("ORG_LINK")),
         "homepage": clean_url(row.get("HMPG_ADDR")),
         "image": clean_url(row.get("MAIN_IMG"), force_https=True),
+        "registered": parse_date(row.get("RGSTDATE")),   # 등록일(최신 등록순 정렬용)
         "lat": lat,
         "lng": lng,
     }
