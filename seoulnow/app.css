@@ -95,7 +95,12 @@ body { top: 0 !important; }
   border: 1px solid var(--color-border); background: var(--color-bg); font: var(--font-label); cursor: pointer; white-space: nowrap; }
 .chip[aria-pressed="true"] { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-on-primary); }
 .chip .ico { width: 16px; height: 16px; }
-@media (max-width: 599px) { .filterbar.compact .genres-wrap { display: none; } }
+.picks { margin-top: var(--space-2); }
+.picks-row { display: flex; flex-wrap: wrap; gap: var(--space-2); align-items: center; }
+.picks-lbl { font: var(--font-label); color: var(--color-text-sub); margin-right: var(--space-1); }
+.chip-n { font: var(--font-caption); opacity: .8; }
+.pick-note { margin: 0; font: var(--font-caption); color: var(--color-text-sub); }
+@media (max-width: 599px) { .filterbar.compact .genres-wrap, .filterbar.compact .picks { display: none; } }
 
 /* 결과 줄 */
 .result-bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); margin: var(--space-4) 0 var(--space-3); }

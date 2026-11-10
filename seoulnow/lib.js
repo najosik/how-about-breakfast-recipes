@@ -96,6 +96,7 @@ export function parseQuery(search, today) {
     genre: list("genre", new Set(GENRES.map((g) => g.code))),
     sort: SORTS.includes(p.get("sort")) ? p.get("sort") : "date",
     ended: p.get("ended") === "1",
+    pick: PICKS.includes(p.get("pick")) ? p.get("pick") : "all",
     event: ev && /^[0-9a-f]{6,40}$/.test(ev) ? ev : null,
   };
 }
@@ -116,6 +117,7 @@ export function toQuery(s, { includeEvent = true } = {}) {
   if (s.genre.length) p.set("genre", s.genre.join(","));
   if (s.sort !== "date") p.set("sort", s.sort);
   if (s.ended) p.set("ended", "1");
+  if (s.pick && s.pick !== "all") p.set("pick", s.pick);
   const q = p.toString();
   return q ? `?${q}` : "";
 }
@@ -137,13 +139,46 @@ export function activeRange(s, today) {
   return r;
 }
 
-/** 필터. omit에 적힌 조건은 빼고 계산(탭·패널·시트의 건수용) */
-export function filterEvents(events, s, today, omit = []) {
+/** 선별 단계: all(전체), s1(1차 관광 선별), s2(2차 외국인 선별 = 1차 통과 중 외국인 적합) */
+export const PICKS = ["all", "s1", "s2"];
+const idSet = (list) => new Set((Array.isArray(list) ? list : []).map((x) => (typeof x === "string" ? x : x && x.id)).filter((x) => typeof x === "string"));
+const own = (o, k) => !!o && typeof o === "object" && Object.hasOwn(o, k);
+
+/**
+ * 백엔드 선별 결과로 행사별 단계(0: 미통과, 1: 1차 통과, 2: 2차 통과)를 계산. 기존 /seoul-now/와 같은 규칙.
+ * 1차: tourism_select.json의 pass(담당자 고정·제외는 백엔드에서 이미 반영).
+ * 2차: 1차 통과 + 담당자 제외 아님 + (담당자 추천 또는 언어 장벽 낮음·참여 제한 없음·국내 본인인증 예약 아님).
+ * 선별 데이터가 없으면 null(필터를 쓰지 않음).
+ */
+export function buildStages(events, select, tags, overrides) {
+  if (!select || typeof select !== "object" || !select.select || typeof select.select !== "object") return null;
+  const pin = idSet(overrides && overrides.pin), exc = idSet(overrides && overrides.exclude);
+  const tg = tags && typeof tags === "object" ? tags : {};
+  const out = new Map();
+  for (const ev of events) {
+    const r = own(select.select, ev.id) ? select.select[ev.id] : null;
+    if (!r || r.pass !== true) { out.set(ev.id, 0); continue; }
+    let s2;
+    if (exc.has(ev.id)) s2 = false;
+    else if (pin.has(ev.id)) s2 = true;
+    else {
+      const x = own(tg, ev.id) ? tg[ev.id] : null;
+      s2 = !!x && typeof x === "object" && x.language_barrier === "low" && x.audience_restricted !== true && x.reservation_barrier !== "kr_auth_required";
+    }
+    out.set(ev.id, s2 ? 2 : 1);
+  }
+  return out;
+}
+
+/** 필터. omit에 적힌 조건은 빼고 계산(탭·패널·시트의 건수용). stages: buildStages 결과(없으면 선별 조건 무시) */
+export function filterEvents(events, s, today, omit = [], stages = null) {
   const skip = new Set(omit);
   const range = skip.has("range") ? null : activeRange(s, today);
   const gus = !skip.has("gu") && s.gu.length ? new Set(s.gu.map((c) => GU.get(c)?.ko).filter(Boolean)) : null;
   const genres = !skip.has("genre") && s.genre.length ? new Set(s.genre) : null;
+  const need = !skip.has("pick") && stages && s.pick === "s2" ? 2 : !skip.has("pick") && stages && s.pick === "s1" ? 1 : 0;
   return events.filter((ev) => {
+    if (need && (stages.get(ev.id) || 0) < need) return false;
     if (!s.ended && ev.end < today) return false;
     if (range && !overlaps(ev, range)) return false;
     if (gus && !gus.has(ev.district)) return false;

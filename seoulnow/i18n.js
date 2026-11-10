@@ -7,6 +7,11 @@ export const T = {
     monthName: (ym) => `${Number(ym.slice(5, 7))}월`, monthFull: (ym) => `${ym.slice(0, 4)}년 ${Number(ym.slice(5, 7))}월`,
     monthBtnName: (v) => `월, ${v} 선택됨`, guBtnName: (v) => `자치구, ${v} 선택됨`,
     guMore: (first, n) => `${first} 외 ${n}`, nCount: (n) => `${n}건`,
+    pickGroup: "추천 선별", pickLbl: "추천", picks: { s1: "관광 추천", s2: "외국인 추천" }, emptyAllPick: "추천 선별 해제",
+    pickNote: {
+      s1: "1차 관광 선별: 관광 가치(관광객이 많은 자치구·축제·매년 열림) 1개 이상을 포함해 시민 수요(무료·누구나·30일 이상)와 합쳐 2개 이상 충족한 행사입니다. 예시 기준이며 담당자 지정이 우선합니다.",
+      s2: "2차 외국인 선별: 관광 추천 행사 중 한국어를 몰라도 즐기기 쉽고, 참여 대상 제한이나 국내 본인인증 예약이 없는 행사입니다. 담당자 지정이 우선합니다.",
+    },
     genreGroup: "장르", count: (n) => `행사 ${n.toLocaleString("ko")}건`,
     sort: "정렬", sorts: { date: "날짜순", ending: "마감 임박순", recent: "최신 등록순" },
     ended: "종료된 행사 포함", resetAll: "전체 초기화", remove: (x) => `${x} 필터 해제`,
@@ -41,6 +46,11 @@ export const T = {
     monthFull: (ym) => `${["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"][Number(ym.slice(5, 7)) - 1]} ${ym.slice(0, 4)}`,
     monthBtnName: (v) => `Month, ${v} selected`, guBtnName: (v) => `District, ${v} selected`,
     guMore: (first, n) => `${first} +${n}`, nCount: (n) => `${n}`,
+    pickGroup: "Recommended picks", pickLbl: "Picks", picks: { s1: "Tourist picks", s2: "Foreigner-friendly" }, emptyAllPick: "Clear picks",
+    pickNote: {
+      s1: "Tourist picks (stage 1): events meeting at least 2 criteria, including at least 1 tourism value (busy tourist district, festival, held every year) plus citizen demand (free, open to all, 30+ days). Example rules; staff picks take precedence.",
+      s2: "Foreigner-friendly (stage 2): tourist picks that are easy to enjoy without Korean and have no audience restrictions or Korean ID booking. Staff picks take precedence.",
+    },
     genreGroup: "Genre", count: (n) => `${n.toLocaleString("en")} event${n === 1 ? "" : "s"}`,
     sort: "Sort", sorts: { date: "By date", ending: "Ending soon", recent: "Newest" },
     ended: "Include ended events", resetAll: "Clear all", remove: (x) => `Remove ${x}`,

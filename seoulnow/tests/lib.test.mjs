@@ -29,7 +29,7 @@ test("월 목록: 오늘부터 12개월, 연도 넘김", () => {
 
 test("주소 검증: 허용 목록 밖 값은 버리고 기본값", () => {
   const s = L.parseQuery("?lang=xx&period=<script>&month=2030-01&gu=mapo,evil,mapo&genre=perf,x&sort=pop&event=../../etc", TODAY);
-  assert.deepEqual(s, { lang: "ko", period: "month", month: null, gu: ["mapo"], genre: ["perf"], sort: "date", ended: false, event: null });
+  assert.deepEqual(s, { lang: "ko", period: "month", month: null, gu: ["mapo"], genre: ["perf"], sort: "date", ended: false, pick: "all", event: null });
   const m = L.parseQuery("?month=2027-01&period=today", TODAY);
   assert.equal(m.month, "2027-01");
   assert.equal(m.period, "all");   // 월을 고르면 기간 탭은 전체
@@ -96,4 +96,21 @@ test(".ics: 종일 일정, 이스케이프", () => {
 test("링크는 http·https만", () => {
   assert.equal(L.safeUrl("javascript:alert(1)"), "");
   assert.equal(L.safeUrl("https://a.b/c"), "https://a.b/c");
+});
+
+test("선별 단계: 1차 pass, 2차는 외국인 적합·담당자 지정 우선", () => {
+  const evs = ["a", "b", "c", "d", "e", "f"].map((id) => ev({ id }));
+  const select = { select: { a: { pass: true }, b: { pass: true }, c: { pass: true }, d: { pass: false }, e: { pass: true } } };
+  const low = { language_barrier: "low", audience_restricted: false, reservation_barrier: "none" };
+  const tags = { a: low, b: { ...low, reservation_barrier: "kr_auth_required" }, c: { ...low, language_barrier: "high" }, d: low, e: low };
+  const st = L.buildStages(evs, select, tags, { pin: [{ id: "c" }], exclude: ["e"] });
+  assert.deepEqual(Object.fromEntries(st), { a: 2, b: 1, c: 2, d: 0, e: 1, f: 0 });
+  assert.equal(L.buildStages(evs, null, tags, {}), null);
+  const s = L.parseQuery("?pick=s2&period=all", TODAY);
+  assert.deepEqual(L.filterEvents(evs, s, TODAY, [], st).map((e) => e.id), ["a", "c"]);
+  assert.equal(L.filterEvents(evs, { ...s, pick: "s1" }, TODAY, [], st).length, 4);
+  assert.equal(L.filterEvents(evs, s, TODAY, ["pick"], st).length, 6);
+  assert.equal(L.filterEvents(evs, s, TODAY).length, 6);   // 선별 데이터 없으면 무시
+  assert.equal(L.parseQuery("?pick=<x>", TODAY).pick, "all");
+  assert.equal(L.toQuery({ ...s, event: null }), "?period=all&pick=s2");
 });

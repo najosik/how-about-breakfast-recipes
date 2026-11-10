@@ -1,9 +1,9 @@
 // Seoul Now 프론트엔드. 백엔드(../seoul-now/data/*.json)를 읽어 목록·필터·상세를 그린다.
 // 보안: 외부 데이터는 textContent로만 출력(innerHTML 미사용), 링크는 http/https만, 쿼리 값은 허용 목록 검증(lib.parseQuery).
 // 개인정보: 수집·저장 없음. 브라우저 저장소에는 번역 동의(sessionStorage)만.
-import * as L from "./lib.js";
-import { T } from "./i18n.js";
-import { initTranslate } from "./translate.js";
+import * as L from "./lib.js?v=20261110b";
+import { T } from "./i18n.js?v=20261110b";
+import { initTranslate } from "./translate.js?v=20261110b";
 
 const DATA = "../seoul-now/data/";
 const $ = (id) => document.getElementById(id);
@@ -11,9 +11,11 @@ let today = L.kstToday();
 let state = L.parseQuery(location.search, today);
 let events = [];
 let tags = {};
+let stages = null;   // 행사 id → 0/1/2(선별 단계). 선별 데이터를 못 받으면 null
 let meta = { updatedAt: "", loadedAt: null };
 let shown = L.PAGE_SIZE;
 const t = () => T[state.lang];
+const filt = (s, omit = []) => L.filterEvents(events, s, today, omit, stages);
 
 // ---------- DOM 도우미 ----------
 function el(tag, props = {}, ...kids) {
@@ -142,7 +144,7 @@ function renderChrome() {
 function renderTabs() {
   const s = t();
   $("tabs").replaceChildren(...L.PERIODS.map((p) => {
-    const n = L.filterEvents(events, { ...state, period: p, month: null }, today).length;
+    const n = filt({ ...state, period: p, month: null }).length;
     const on = !state.month && state.period === p;
     return el("a", { href: L.toQuery({ ...state, period: p, month: null, event: null }) || "./", "aria-current": on ? "page" : null,
       onclick: (e) => { e.preventDefault(); setState({ period: p, month: null }); } },
@@ -164,11 +166,31 @@ function renderFilterButtons() {
   $("gu-val").textContent = gVal;
   $("gu-btn").classList.toggle("on", state.gu.length > 0);
   $("gu-btn").setAttribute("aria-label", s.guBtnName(gVal));
+  renderPicks();
   $("genres").replaceChildren(...L.GENRES.map((g) => {
     const on = state.genre.includes(g.code);
     return el("button", { type: "button", class: "chip", "aria-pressed": String(on),
       onclick: () => setState({ genre: on ? state.genre.filter((x) => x !== g.code) : [...state.genre, g.code] }) }, on ? icon("check") : null, g[state.lang]);
   }));
+}
+
+/** 선별 단계 필터(1차 관광 선별·2차 외국인 선별). 둘 중 하나만 고르는 토글. 건수는 다른 조건을 적용한 결과 */
+function renderPicks() {
+  const s = t();
+  const box = $("picks");
+  box.hidden = !stages;
+  if (!stages) return;
+  box.setAttribute("aria-label", s.pickGroup);
+  $("picks-row").replaceChildren(el("span", { class: "picks-lbl", "aria-hidden": "true", text: s.pickLbl }), ...["s1", "s2"].map((k) => {
+    const on = state.pick === k;
+    const n = filt({ ...state, pick: k }).length;
+    return el("button", { type: "button", class: "chip", "aria-pressed": String(on),
+      onclick: () => setState({ pick: on ? "all" : k }) },
+      on ? icon("check") : null, s.picks[k], el("span", { class: "chip-n", text: String(n) }));
+  }));
+  const note = $("pick-note");
+  note.hidden = state.pick === "all";
+  note.textContent = note.hidden ? "" : s.pickNote[state.pick];
 }
 
 function renderApplied() {
@@ -178,7 +200,8 @@ function renderApplied() {
   if (state.month) chips.push(chip(s.monthFull(state.month), () => setState({ month: null, period: "month" })));
   for (const g of state.gu) chips.push(chip(guName(g), () => setState({ gu: state.gu.filter((x) => x !== g) })));
   for (const g of state.genre) chips.push(chip(genreName(g), () => setState({ genre: state.genre.filter((x) => x !== g) })));
-  if (chips.length) chips.push(el("button", { type: "button", class: "btn-text", text: s.resetAll, onclick: () => setState({ month: null, period: "month", gu: [], genre: [] }) }));
+  if (stages && state.pick !== "all") chips.push(chip(s.picks[state.pick], () => setState({ pick: "all" })));
+  if (chips.length) chips.push(el("button", { type: "button", class: "btn-text", text: s.resetAll, onclick: () => setState({ month: null, period: "month", gu: [], genre: [], pick: "all" }) }));
   $("applied").replaceChildren(...chips);
 }
 
@@ -217,7 +240,7 @@ function renderList() {
   $("sort").replaceChildren(...L.SORTS.filter((k) => k !== "recent" || hasReg).map((k) => el("option", { value: k, text: s.sorts[k] })));
   $("sort").value = state.sort === "recent" && !hasReg ? "date" : state.sort;
   $("ended").checked = state.ended;
-  const list = L.sortEvents(L.filterEvents(events, state, today), state.sort, today);
+  const list = L.sortEvents(filt(state), state.sort, today);
   $("count").textContent = s.count(list.length);
   $("stamp").textContent = meta.updatedAt ? s.updated(stampText(meta.updatedAt)) : "";
   $("list").replaceChildren(...list.slice(0, shown).map(card));
@@ -230,13 +253,14 @@ function renderList() {
 function emptyState() {
   const s = t();
   const acts = [];
-  if (state.gu.length && L.filterEvents(events, state, today, ["gu"]).length) acts.push(el("button", { type: "button", class: "btn", text: s.emptyAllGu, onclick: () => setState({ gu: [] }) }));
+  if (state.gu.length && filt(state, ["gu"]).length) acts.push(el("button", { type: "button", class: "btn", text: s.emptyAllGu, onclick: () => setState({ gu: [] }) }));
+  if (stages && state.pick !== "all" && filt(state, ["pick"]).length) acts.push(el("button", { type: "button", class: "btn", text: s.emptyAllPick, onclick: () => setState({ pick: "all" }) }));
   const months = L.monthsAhead(today, 12);
   const cur = state.month || (state.period === "month" ? L.monthOf(today) : null);
   const next = cur ? months[months.indexOf(cur) + 1] : null;
-  if (next && L.filterEvents(events, { ...state, period: "all", month: next }, today).length) acts.push(el("button", { type: "button", class: "btn", text: s.emptyNext, onclick: () => setState({ period: "all", month: next }) }));
-  acts.push(el("button", { type: "button", class: "btn primary", text: s.emptyReset, onclick: () => setState({ month: null, period: "month", gu: [], genre: [] }) }));
-  const summary = [$("month-val").textContent, $("gu-val").textContent, ...state.genre.map(genreName)].join(" · ");
+  if (next && filt({ ...state, period: "all", month: next }).length) acts.push(el("button", { type: "button", class: "btn", text: s.emptyNext, onclick: () => setState({ period: "all", month: next }) }));
+  acts.push(el("button", { type: "button", class: "btn primary", text: s.emptyReset, onclick: () => setState({ month: null, period: "month", gu: [], genre: [], pick: "all" }) }));
+  const summary = [$("month-val").textContent, $("gu-val").textContent, ...state.genre.map(genreName), ...(stages && state.pick !== "all" ? [s.picks[state.pick]] : [])].join(" · ");
   return el("div", { class: "notice" }, el("h2", { text: s.empty }), el("p", { text: summary }), el("div", { class: "acts" }, ...acts));
 }
 
@@ -246,14 +270,14 @@ function openMonthPanel() {
   const p = $("month-panel");
   const cells = [];
   const pick = (patch) => { setState(patch); close(); };
-  const allN = L.filterEvents(events, { ...state, period: "all", month: null }, today).length;
+  const allN = filt({ ...state, period: "all", month: null }).length;
   cells.push(el("button", { type: "button", class: "mcell wide", "aria-pressed": String(!state.month && state.period === "all"),
     onclick: () => pick({ period: "all", month: null }) }, el("b", { text: s.allPeriod }), el("span", { class: "n", text: s.nCount(allN) })));
   let year = today.slice(0, 4);
   for (const ym of L.monthsAhead(today, 12)) {
     if (ym.slice(0, 4) !== year) { year = ym.slice(0, 4); cells.push(el("p", { class: "year", text: year })); }
     const isThis = ym === L.monthOf(today);
-    const n = L.filterEvents(events, { ...state, period: "all", month: isThis ? null : ym, ...(isThis ? { period: "month" } : {}) }, today).length;
+    const n = filt({ ...state, period: "all", month: isThis ? null : ym, ...(isThis ? { period: "month" } : {}) }).length;
     const on = isThis ? (!state.month && state.period === "month") : state.month === ym;
     cells.push(el("button", { type: "button", class: "mcell", "aria-pressed": String(on), "aria-label": `${s.monthFull(ym)} ${s.nCount(n)}`,
       onclick: () => pick(isThis ? { period: "month", month: null } : { period: "all", month: ym }) },
@@ -269,8 +293,8 @@ function openGuSheet() {
   const p = $("gu-sheet");
   let pickd = new Set(state.gu);
   const counts = new Map();
-  for (const ev of L.filterEvents(events, state, today, ["gu"])) counts.set(ev.district, (counts.get(ev.district) || 0) + 1);
-  const total = () => L.filterEvents(events, { ...state, gu: [...pickd] }, today).length;
+  for (const ev of filt(state, ["gu"])) counts.set(ev.district, (counts.get(ev.district) || 0) + 1);
+  const total = () => filt({ ...state, gu: [...pickd] }).length;
   const apply = el("button", { type: "button", class: "btn primary", onclick: () => { setState({ gu: [...pickd] }); close(); } });
   const body = el("div", { class: "sheet-body" });
   const draw = () => {
@@ -411,8 +435,13 @@ async function load() {
     clearTimeout(skeletonTimer);
     $("state").replaceChildren();
     render();
-    fetch(`${DATA}festival_tags.json`, { cache: "no-cache", credentials: "omit" })   // 예매 필요 여부(부가 정보)
-      .then((r) => (r.ok ? r.json() : null)).then((j) => { if (j && j.tags && typeof j.tags === "object") { tags = j.tags; if (state.event) renderDetail(); } }).catch(() => {});
+    // 선별 결과(1·2차)와 분류 태그(예매 필요 여부). 실패해도 목록은 그대로(선별 필터만 숨김)
+    const get = (f) => fetch(`${DATA}${f}`, { cache: "no-cache", credentials: "omit" }).then((r) => (r.ok ? r.json() : null)).catch(() => null);
+    Promise.all([get("tourism_select.json"), get("festival_tags.json"), get("festival_overrides.json")]).then(([sel, tg, ov]) => {
+      if (tg && tg.tags && typeof tg.tags === "object") tags = tg.tags;
+      stages = L.buildStages(events, sel, tags, ov);
+      render();
+    });
   } catch {
     clearTimeout(skeletonTimer);
     const s = t();

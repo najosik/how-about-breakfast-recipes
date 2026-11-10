@@ -13,7 +13,7 @@
   <meta name="description" content="서울의 공연·전시·축제 등 문화행사를 오늘·이번 주말·이번 달 단위로 찾아보세요.">
   <link rel="icon" href="../seoul-now/assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="fonts/pretendard/pretendardvariable-dynamic-subset.css?v=1">
-  <link rel="stylesheet" href="app.css?v=20261110a">
+  <link rel="stylesheet" href="app.css?v=20261110b">
 </head>
 <body>
   <a class="skip" id="skip" href="#main">본문 바로가기</a>
@@ -67,12 +67,14 @@
               <svg class="ico chev" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
             </button>
           </div>
+          <div class="picks" id="picks" role="group" hidden><div class="picks-row" id="picks-row"></div></div>
           <div class="genres-wrap"><div class="genres" id="genres" role="group"></div></div>
         </div>
       </div>
       <div class="wrap">
         <div class="result-bar">
           <p class="count" id="count" aria-live="polite"></p>
+          <p class="pick-note" id="pick-note" hidden></p>
           <div class="applied" id="applied"></div>
           <div class="tools">
             <label class="sort"><span id="sort-lbl" class="sr-only"></span><select id="sort"></select></label>
@@ -104,6 +106,6 @@
   <div class="sheet small" id="tr-sheet" role="dialog" aria-modal="true" aria-labelledby="tr-title" hidden></div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script type="module" src="app.js?v=20261110a"></script>
+  <script type="module" src="app.js?v=20261110b"></script>
 </body>
 </html>
