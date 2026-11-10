@@ -1,0 +1,1 @@
+Pretendard 1.3.9 (npm pretendard@1.3.9, integrity sha512-PaQAADyLY5v4kYFwkpSJHbSSYIkiriY/1xXw75TKoZ9UQQqeU+tvP05yTdZAWibiIYoo8ZKtRv8PM7w0IaywSw==), SIL Open Font License 1.1. 가변 글꼴 동적 서브셋(unicode-range)만 포함.
