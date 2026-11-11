@@ -51119,7 +51119,7 @@
   "weather": "8도/맑음",
   "failed": false,
   "calories": null,
-  "title": "비건샐러드 토마토 양상추",
+  "title": "템페 두부봉 샐러드",
   "credit": null,
   "hashtags": [
    "A24",
@@ -51140,9 +51140,9 @@
    "토마토",
    "혼밥"
   ],
-  "intro": "20221111, #조식다이어리 593, 8도/맑음\n인디 영화 스튜디오 #A24 에 대해서 탐구 중\n양상추, 방울토마토, 해물쏙두부봉, 그린올리브, 소금소금 후추후추 구운 템페에 비네그레트 드레싱, #비건샐러드",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20221111, #조식다이어리 593, 8도/맑음\n인디 영화 스튜디오 #A24 에 대해서 탐구 중\n양상추, 방울토마토, 해물쏙두부봉, 그린올리브, 소금소금 후추후추 구운 템페에 비네그레트 드레싱 뿌린다.  ",
+  "ingredients": "- 템페 80g\n- 올리브오일 1t(굽기용)\n- 해물쏙두부봉 90g(약 2개분)\n- 양상추 80g\n- 방울토마토 8개(약 80g)\n- 그린올리브 6알\n- 비네그레트(올리브오일 2t, 화이트와인 비니거 2t, 홀그레인 머스터드 1/2t)\n- 소금 한 꼬집, 후추 넉넉히",
+  "steps": "1. 템페는 1cm 두께로 썰어 끓는 물에 5~10분 삶아 쓴맛을 빼고, 키친타월로 물기를 닦는다.\n2. 달군 팬에 올리브오일 1t를 두르고 템페를 앞뒤로 노릇하게 굽는다. 소금과 후추를 뿌린다.\n3. 두부봉은 한입 크기로 썰어 같은 팬에서 앞뒤로 노릇하게 데운다.\n4. 양상추는 먹기 좋게 찢고, 방울토마토는 반으로 자른다. 올리브는 반으로 자른다.\n5. 올리브오일, 화이트와인 비니거, 홀그레인 머스터드를 섞어 비네그레트를 만든다.\n6. 접시에 양상추, 토마토, 올리브를 담고 구운 템페와 두부봉을 올린 뒤 비네그레트를 두르고 후추를 뿌린다.",
   "raw": "20221111, #조식다이어리 593, 8도/맑음\n\n인디 영화 스튜디오 #A24 에 대해서 탐구 중\n\n양상추, 방울토마토, 해물쏙두부봉, 그린올리브, 소금소금 후추후추 구운 템페에 비네그레트 드레싱, #비건샐러드 \n\n#직장인 #조식 #아침밥 #아침밥상 #혼밥 #토마토 #양상추 #그린올리브 #템페  \n#breakfast #tomato #greenolive #tempeh #lettuce ",
   "image": "https://images.how-about-breakfast.com/images/593.jpg",
   "gallery": [
@@ -51150,13 +51150,6 @@
    "https://images.how-about-breakfast.com/images/593_2.jpg",
    "https://images.how-about-breakfast.com/images/593_3.jpg"
   ],
-  "_en": {
-   "hash": "8d1dbea1cb9fece6ce66bec265f0cdd30c2f2fe94738376e9a23f0776aad0f32",
-   "title": "Vegan Salad Tomato Lettuce",
-   "intro": "20221111 #breakfastdiary 593, 8°C/clear\nCurrently deep-diving into indie film studio #a24. \nLettuce, cherry tomatoes, seafood-flavored soft tofu sticks, green olives, and tempeh seared with salt and pepper, all with a vinaigrette dressing. #vegansalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "비건샐러드-토마토-양상추"
  },
  {
