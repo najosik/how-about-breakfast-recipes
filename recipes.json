@@ -38676,7 +38676,7 @@
   "weather": "0도/흐림, 26분/운동(L)  - 오랜만의 Lower Body, 다리가 빠질 것 같다.",
   "failed": false,
   "calories": null,
-  "title": "야채수프",
+  "title": "후추 듬뿍 야채 수프",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38686,17 +38686,10 @@
    "조식다이어리"
   ],
   "intro": "20231111, #조식다이어리 889, 0도/흐림, 26분/운동(L)  - 오랜만의 Lower Body, 다리가 빠질 것 같다. \n누구나 손쉽게 냉장고 속 재료들로 만들 수 있는, 후추 많이 야채 수프\n냄비에 대파, 양배추, 양파, 소시지 숭덩숭덩 잘라 넣고 물 750ml 넣고 끓이다가 채수가 우러나면 치킨스톡 1T (혹은 취향껏) 넣고 후추 듬뿍 넣고 좀 더 끓인다. \n그릇에 담고 먹기 전에 후추후추후추후추~",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 양배추 150g\n- 양파 1/2개\n- 대파 1대\n- 소시지 3개(약 90g)\n- 물 750ml\n- 치킨스톡 1T\n- 후추 듬뿍",
+  "steps": "1. 양배추, 양파, 대파, 소시지는 숭덩숭덩 먹기 좋은 크기로 썬다.\n2. 냄비에 썬 재료를 모두 넣고 물 750ml를 부어 끓인다.\n3. 채수가 우러나면 치킨스톡 1T(취향껏)와 후추를 듬뿍 넣고 양배추가 부드러워질 때까지 10~15분 더 끓인다.\n4. 그릇에 담고 먹기 직전에 후추를 한 번 더 갈아 올린다.",
   "raw": "20231111, #조식다이어리 889, 0도/흐림, 26분/운동(L)  - 오랜만의 Lower Body, 다리가 빠질 것 같다. \n\n누구나 손쉽게 냉장고 속 재료들로 만들 수 있는, 후추 많이 야채 수프\n\n냄비에 대파, 양배추, 양파, 소시지 숭덩숭덩 잘라 넣고 물 750ml 넣고 끓이다가 채수가 우러나면 치킨스톡 1T (혹은 취향껏) 넣고 후추 듬뿍 넣고 좀 더 끓인다. \n그릇에 담고 먹기 전에 후추후추후추후추~ \n\n#조식 #레시피 #미라클모닝 #야채수프",
   "video": "https://images.how-about-breakfast.com/images/889.mp4",
-  "_en": {
-   "hash": "7acdb0eec3bb96d05b04dd56b87341d59c029fa78f7bea3b2bbb307954b35c1b",
-   "title": "Vegetable Soup",
-   "intro": "20231111, #breakfastdiary 889, 0°C/cloudy, 26min/workout(L) - Lower body day after a long while, my legs feel like they're about to fall off. \nA heavily peppered vegetable soup anyone can throw together from whatever's in the fridge\nRoughly chop scallions, cabbage, onion, and sausage into a pot, add 750ml water, and bring to a boil. Once the vegetable stock develops, add 1T chicken stock (or to taste) and plenty of pepper, then simmer a bit longer. \nLadle into a bowl and finish with pepper, pepper, pepper, pepper before eating~",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "야채수프"
  },
  {
