@@ -30,7 +30,14 @@
    "https://images.how-about-breakfast.com/images/1920_7.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1920.mp4",
-  "page_id": "라디키오-느타리-카자레체"
+  "page_id": "라디키오-느타리-카자레체",
+  "_en": {
+   "hash": "f85e2614c65d19eed9555f7620721d7b81ec36539fe449523f45de4e4c1f0d28",
+   "title": "Radicchio Oyster Mushroom Casarecce",
+   "intro": "20261110 #breakfastdiary 1890, 0°C/partly cloudy\nBitter\ngrown-up flavor\nRadicchio — pronounced ra-di-kee-oh. In Italy, meals often start with something bitter to wake up the palate, like an aperitivo before-dinner drink. Radicchio gets eaten as salad for that same reason.\nAfter a day that felt a lot like radicchio yesterday, about 400kcal radicchio oyster mushroom casarecce.",
+   "ingredients": "- 70g casarecce\n- 80g oyster mushrooms\n- 1/2 small head radicchio (about 80g)\n- 1 clove garlic\n- 2 tsp olive oil\n- 1/2 tsp soy sauce\n- 15g parmesan cheese\n- 1/2 tsp fresh thyme leaves\n- A little pepper\n- 3 tbsp pasta water",
+   "steps": "1. Cook the casarecce in salted boiling water according to the package time, reserving 3 tbsp of pasta water before draining.\n2. Finely chop the radicchio. Tear the oyster mushrooms into bite-sized pieces and mince the garlic.\n3. Heat a pan and spread the mushrooms in a single layer with no oil, sautéing for 3-4 minutes to drive off the moisture. Once the edges turn golden, add 1 tsp olive oil and sauté 1 minute more until crisp.\n4. Add the minced garlic and soy sauce and sauté for 30 seconds, then add 1 tsp olive oil and the radicchio and sauté for 4 minutes.\n5. Add the cooked pasta, pasta water, parmesan, and thyme, and toss until the sauce turns creamy and clings to the pasta.\n6. Sprinkle with pepper and plate. Top with sliced radicchio and a little more parmesan."
+  }
  },
  {
   "date": "2026-11-09",
@@ -62,7 +69,14 @@
    "https://images.how-about-breakfast.com/images/1919_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1919.mp4",
-  "page_id": "필-크런치-치킨-계란-덮밥"
+  "page_id": "필-크런치-치킨-계란-덮밥",
+  "_en": {
+   "hash": "ed0eea6bc562b13472b75d613e2403c775aa9af0b5dfd5e974c96d34670e10bd",
+   "title": "Fil Crunch Chicken and Egg Rice Bowl",
+   "intro": "20261109 #breakfastdiary 1889, 0°C/cloudy\nYesterday's chicken\ntoday's rice bowl\nRecycling the leftover BBQ Fil Crunch from yesterday. Since the Fil Crunch boneless chicken's sauce already has soy sauce and sweetness built in, I skip the sugar in the broth and cut the soy sauce down to 1 tsp.\n730kcal Fil Crunch chicken and egg rice bowl.",
+   "ingredients": "- 150g brown rice\n- 100g Fil Crunch boneless chicken (5-6 pieces)\n- 2 eggs\n- 1/4 onion\n- Broth (100ml water, 1 tsp soy sauce, 1 tbsp mirin)\n- A little leek greens\n- A little pepper",
+   "steps": "1. Julienne the onion and finely slice the leek greens. Beat the eggs lightly.\n2. Bring the water, soy sauce, and mirin to a boil in a small pan, add the onion, and simmer for 2-3 minutes until translucent.\n3. Pour in the beaten egg, cover, and cook for 30 seconds to 1 minute until soft-set, then turn off the heat.\n4. Reheat the chicken in an air fryer at 180°C for 3-4 minutes, until hot all the way through.\n5. Top the brown rice with the mixture from step 3, add the chicken, and sprinkle with leek greens and pepper."
+  }
  },
  {
   "date": "2026-11-08",
@@ -12900,7 +12914,14 @@
    "https://images.how-about-breakfast.com/images/1558_2.jpg",
    "https://images.how-about-breakfast.com/images/1558_3.jpg"
   ],
-  "page_id": "가지스테이크-사실-대부분의-칼로리는-드레싱이-차지한다"
+  "page_id": "가지스테이크-사실-대부분의-칼로리는-드레싱이-차지한다",
+  "_en": {
+   "hash": "5da7ee32c8ae6c2ba241c260b81a2d681d95c213c27f129882ac6404adbf62bf",
+   "title": "Lots-of-Garlic Eggplant Steak",
+   "intro": "20251111 #breakfastdiary 1558, 4°C/partly cloudy, 20min/exercise(M)\n770kcal #EggplantSteak given a kick with fried garlic that's as creamy-smooth and honey-thick as it gets — though honestly, most of the calories come from the dressing.",
+   "ingredients": "- 1 eggplant\n- 10 cloves garlic\n- 2 tbsp olive oil\n- Dressing (3 tbsp olive oil, 1 tbsp white wine vinegar, 1 tsp whole grain mustard, with hemp seeds and a little parmesan cheese)",
+   "steps": "1. Cut the eggplant in half, score it in a crosshatch pattern, sprinkle with salt, and let sit for 15 minutes.\n2. Meanwhile, cut 10 wilting garlic cloves from the fridge into sixths each, and fry them in olive oil like deep-frying. This makes fried garlic and garlic oil.\n3. Pat the eggplant dry and grill it in the garlic oil from step 2.\n4. Plate the well-grilled eggplant, top with the fried garlic, then parmesan cheese and the vinaigrette dressing. After a moment of hesitation over balancing the flavor, finish with chopped scallion."
+  }
  },
  {
   "date": "2025-11-10",
@@ -12929,7 +12950,14 @@
    "https://images.how-about-breakfast.com/images/1557_2.jpg",
    "https://images.how-about-breakfast.com/images/1557_3.jpg"
   ],
-  "page_id": "단감배샐러드"
+  "page_id": "단감배샐러드",
+  "_en": {
+   "hash": "691670c0ae550a06b09d1b16835610793462fc7e4e95c5520bc62254089376df",
+   "title": "Sweet Persimmon Pear Salad",
+   "intro": "20251110 #breakfastdiary 1557, 4°C/clear, 20min/exercise(M)\nAfter a dopamine-soaked weekend of nothing but indulgent food, it's a repentant Monday. I made the original recipe a bit healthier by adding hemp seeds and walnuts. Pear and persimmon skins have 3-4 times the nutrients of the flesh, so wash them well and eat the skin on, chewing it properly.\nA deliciously healthy sweet-and-salty 340kcal #SweetPersimmonPearSalad.",
+   "ingredients": "- 1 sweet persimmon\n- 1/2 pear\n- 1 tbsp hemp seeds\n- 1 tbsp walnuts\n- Dressing (1 tsp lemon juice, 2 tsp shio kombu (salted kelp), 1 tbsp olive oil)",
+   "steps": "1. Cut the persimmon and the pear into wedges.\n2. Place in a mixing bowl with the hemp seeds, walnuts, lemon juice, shio kombu, and olive oil, and toss gently."
+  }
  },
  {
   "date": "2025-11-09",
@@ -12958,7 +12986,14 @@
    "https://images.how-about-breakfast.com/images/1556_2.jpg",
    "https://images.how-about-breakfast.com/images/1556_3.jpg"
   ],
-  "page_id": "굴국"
+  "page_id": "굴국",
+  "_en": {
+   "hash": "baec821045a089186ec32acfd059cb0fa7491f68290df36f76581bc7eb0a74f4",
+   "title": "First Oyster Soup of Late 2025",
+   "intro": "20251109 #breakfastdiary 1556, 10°C/clear\nThe first oysters of the second half of the year. 390kcal #OysterSoup",
+   "ingredients": "- 1 bag oysters\n- 2 eggs\n- 1 tsp sesame oil\n- A little sesame seeds and chopped scallion\n- Broth (600ml water, megari anchovies (or any kelp-like umami ingredient), 1 tsp sugar, 2 tsp mirin, 2 tbsp tsuyu, 2 tbsp starch)",
+   "steps": "1. Add 600ml water and 5 megari anchovies to a pot, boil, then remove the anchovies to make the broth.\n2. Add 1 tsp sugar, 2 tsp mirin, and 2 tbsp tsuyu, bring to a boil, then add the thoroughly washed oysters.\n3. Lower the heat and pour in 2 tbsp starch mixed with 2 tbsp water.\n4. Turn off the heat, beat the 2 eggs, and pour them in.\n5. Ladle into a bowl and top with sesame oil, sesame seeds, and chopped scallion."
+  }
  },
  {
   "date": "2025-11-08",
@@ -25601,7 +25636,14 @@
    "https://images.how-about-breakfast.com/images/1229_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1229.mp4",
-  "page_id": "고구마보트-고구마-가지"
+  "page_id": "고구마보트-고구마-가지",
+  "_en": {
+   "hash": "a015b5245f9fe3d98049e0c3ece8de1c8dd5abfb9b76d01b06364af80e452002",
+   "title": "Mentaiko Tuna Sweet Potato Boat",
+   "intro": "20241111 #breakfastdiary 1229, 8°C/clear, 20min/exercise(M)\nIt's Monday. Let's row hard!\n#SweetPotatoBoat topped with avocado and tuna tossed in mentaiko mayo.",
+   "ingredients": "- 1 sweet potato (about 200g)\n- 1 tsp olive oil\n- A pinch of salt\n- 1/2 avocado (about 100g)\n- 1/2 can canned tuna (drained, about 75g)\n- Mentaiko mayo (15g mentaiko, 1 tbsp mayonnaise)\n- A little scallion\n- 1 tbsp chopped pickles\n- 1 tbsp fried shallots (about 5g)\n- Pepper, generously",
+   "steps": "1. Wash the sweet potato, brush with olive oil, and sprinkle with salt. Air-fry at 200°C for 10 minutes, then flip and air-fry the other side for 10 minutes.\n2. While the sweet potato cooks, remove the pit from the avocado, peel, and mash with a fork.\n3. Drain the tuna in a sieve and squeeze out the oil thoroughly. Peel the mentaiko and scrape out just the roe, mix with the mayonnaise, then add the tuna and chopped scallion and mix well.\n4. Place the roasted sweet potato on a plate and split it in half. Top with the mashed avocado, then the tuna mixture from step 3.\n5. Top with the chopped pickles and fried shallots, and finish with a grind of pepper."
+  }
  },
  {
   "date": "2024-11-10",
@@ -25632,7 +25674,14 @@
    "https://images.how-about-breakfast.com/images/1228_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1228.mp4",
-  "page_id": "필로페스트리"
+  "page_id": "필로페스트리",
+  "_en": {
+   "hash": "c76374347f2d635dcff6a5f45c04171bf4f333dbb19a54d97568234391fef23b",
+   "title": "Phyllo Egg Pastry",
+   "intro": "20241110 #breakfastdiary 1228, 11°C/cloudy, 20min/exercise(M)\nPhyllo is a paper-thin dough widely used in Middle Eastern desserts like baklava or Greek feta pies. Baked, it has a genuinely fun texture.",
+   "ingredients": "- 2 sheets phyllo dough\n- 1 tsp olive oil\n- 1 tbsp basil pesto\n- 20g feta cheese\n- 20g shredded mozzarella\n- 1 egg\n- A little chopped parsley\n- A little red pepper flakes",
+   "steps": "1. Brush olive oil on one sheet of phyllo.\n2. Layer another sheet on top, add the basil pesto, feta, and mozzarella, gather the phyllo up into a round pocket, and crack 1 egg into the center.\n3. Bake at 180°C for 15 minutes, then finish with chopped parsley and red pepper flakes~"
+  }
  },
  {
   "date": "2024-11-09",
@@ -25664,7 +25713,14 @@
    "https://images.how-about-breakfast.com/images/1227_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1227.mp4",
-  "page_id": "미니멀산라탕-라이프수프-표고버섯"
+  "page_id": "미니멀산라탕-라이프수프-표고버섯",
+  "_en": {
+   "hash": "04f8afabd80220359b41e2d1ec8308c6045de27cf9014e7a391e693359c5faa7",
+   "title": "Super Simple Suanla Soup",
+   "intro": "20241109 #breakfastdiary 1227, 12°C/mostly clear, 20min/exercise(M)\nThe original suanla soup is sour and spicy, but since this is breakfast, let's keep it mild — #MinimalSuanlaSoup\nIt was so good I had two bowls. You could also skip beating the egg and fry it sunny-side up instead.",
+   "ingredients": "- 2 shiitake mushrooms\n- 1/2 tsp salt\n- 1 tsp soy sauce\n- 2 tsp vinegar\n- 1/2 tbsp starch",
+   "steps": "1. Thinly slice the shiitake mushrooms and simmer in 500ml water.\n2. Add the salt, soy sauce, and vinegar, then stir in a starch slurry (starch and water in a 1:1 ratio) to thicken lightly.\n3. Beat 1 egg and pour it in, turn off the heat, and finish with a touch of sesame oil.\n4. Plate and sprinkle with pepper."
+  }
  },
  {
   "date": "2024-11-08",
@@ -38676,7 +38732,20 @@
   "steps": "1. 양배추, 양파, 대파, 소시지는 숭덩숭덩 먹기 좋은 크기로 썬다.\n2. 냄비에 썬 재료를 모두 넣고 물 750ml를 부어 끓인다.\n3. 채수가 우러나면 치킨스톡 1T(취향껏)와 후추를 듬뿍 넣고 양배추가 부드러워질 때까지 10~15분 더 끓인다.\n4. 그릇에 담고 먹기 직전에 후추를 한 번 더 갈아 올린다.",
   "raw": "20231111, #조식다이어리 889, 0도/흐림, 26분/운동(L)  - 오랜만의 Lower Body, 다리가 빠질 것 같다. \n\n누구나 손쉽게 냉장고 속 재료들로 만들 수 있는, 후추 많이 야채 수프\n\n냄비에 대파, 양배추, 양파, 소시지 숭덩숭덩 잘라 넣고 물 750ml 넣고 끓이다가 채수가 우러나면 치킨스톡 1T (혹은 취향껏) 넣고 후추 듬뿍 넣고 좀 더 끓인다. \n그릇에 담고 먹기 전에 후추후추후추후추~ \n\n#조식 #레시피 #미라클모닝 #야채수프",
   "video": "https://images.how-about-breakfast.com/images/889.mp4",
-  "page_id": "야채수프"
+  "page_id": "야채수프",
+  "image": "https://images.how-about-breakfast.com/images/900b.jpg",
+  "gallery": [
+   "https://images.how-about-breakfast.com/images/900b.jpg",
+   "https://images.how-about-breakfast.com/images/900b_2.jpg",
+   "https://images.how-about-breakfast.com/images/900b_3.jpg"
+  ],
+  "_en": {
+   "hash": "7d53fd8bb460ffcc758eabec2bdaffbc7222d74fa0405d7160c8ef4554cea7f1",
+   "title": "Peppery Vegetable Soup",
+   "intro": "20231111, #breakfastdiary 889, 0°C/cloudy, 26min/exercise(L) — Lower Body day after a while, my legs feel like they're about to fall off.\nA peppery vegetable soup anyone can easily throw together from whatever's in the fridge.\nIn a pot, roughly chop scallion, cabbage, onion, and sausage, add 750ml water, and simmer. Once the vegetable broth develops, add 1 tbsp chicken stock (or to taste) and a generous amount of pepper, and simmer a bit more.\nLadle into a bowl and finish with pepper pepper pepper pepper before eating~",
+   "ingredients": "- 150g cabbage\n- 1/2 onion\n- 1 leek\n- 3 sausages (about 90g)\n- 750ml water\n- 1 tbsp chicken stock\n- Pepper, generously",
+   "steps": "1. Roughly chop the cabbage, onion, leek, and sausage into bite-sized pieces.\n2. Add all the chopped ingredients to a pot, pour in 750ml water, and bring to a boil.\n3. Once the vegetable broth develops, add 1 tbsp chicken stock (to taste) and a generous amount of pepper, and simmer 10-15 minutes more, until the cabbage softens.\n4. Ladle into a bowl and grind over a little more pepper right before eating."
+  }
  },
  {
   "date": "2023-11-11",
@@ -38738,7 +38807,14 @@
    "https://images.how-about-breakfast.com/images/888_6.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/888.mp4",
-  "page_id": "모짜렐라치즈-완두콩"
+  "page_id": "모짜렐라치즈-완두콩",
+  "_en": {
+   "hash": "7b19353c0a3f5b36493665f6bfa8932b093b5c25dd1acc63d777e9e97c022517",
+   "title": "Mayo Gochujang Radish",
+   "intro": "20231110, #breakfastdiary 888, 0°C/mostly clear, 21min/exercise(Y)\nA little while back I spotted a good-looking radish and fell for it at first sight, and a fitting recipe caught my eye, so I decided to give it a try.\nSlice the radish into 2cm-thick rounds, trim off a thick layer of skin, and score both sides. Boil thoroughly in boiling water.\nMix mayo, gochujang, and egg yolk to make the sauce.\nCheck that the radish is cooked through, drain, place on a baking tray, spoon the sauce on top, and bake in a 180°C oven for 10 minutes.",
+   "ingredients": "- 200g radish (2-3 pieces, 2cm thick)\n- 1 tbsp mayonnaise\n- 1 tsp gochujang\n- 1 egg yolk",
+   "steps": "1. Slice the radish 2cm thick and trim off the skin. Score both sides.\n2. Add the radish to boiling water and boil thoroughly until a chopstick slides in easily (about 15-20 minutes).\n3. In a bowl, mix the mayonnaise, gochujang, and egg yolk to make the sauce.\n4. Check that the radish is cooked through, drain, and pat dry. Place on a baking tray.\n5. Spoon the sauce over the radish and bake at 180°C for 10 minutes, until the sauce turns golden."
+  }
  },
  {
   "date": "2023-11-09",
@@ -38768,7 +38844,14 @@
    "https://images.how-about-breakfast.com/images/887_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/887.mp4",
-  "page_id": "완두콩을곁들인모짜렐라치즈구이-모짜렐라치즈-완두콩"
+  "page_id": "완두콩을곁들인모짜렐라치즈구이-모짜렐라치즈-완두콩",
+  "_en": {
+   "hash": "961f4770f3584b55ce7fb6948db2dc5980c2286109fad0d8437e28cabae9af79",
+   "title": "Mozzarella Cheese Crisp with Peas",
+   "intro": "20231109, #breakfastdiary 887, 7°C/mostly clear, 21min/exercise(Y)\nGrill mozzarella cheese thin in a pan and it turns crisp, even making a sound like stepping on dry fallen leaves. Somehow, it suits this season perfectly for breakfast.\nIn a hot pan, top mozzarella cheese with peas and grill, then plate and finish with parmesan cheese and pepper pepper pepper",
+   "ingredients": "- 40g shredded mozzarella\n- 50g peas\n- 10g parmesan cheese\n- Pepper, generously",
+   "steps": "1. Thaw the frozen peas, blanch in boiling water for 2 minutes, and drain.\n2. Heat a nonstick pan over medium-low heat with no oil.\n3. Spread the shredded mozzarella thin and evenly, then top with the peas.\n4. Grill for 3-4 minutes, until the edges turn golden and the bottom is firm, then turn off the heat and let cool for 1 minute.\n5. Transfer to a plate, grate parmesan over it, and finish with a generous grind of pepper."
+  }
  },
  {
   "date": "2023-11-08",
@@ -51129,7 +51212,14 @@
    "https://images.how-about-breakfast.com/images/593_2.jpg",
    "https://images.how-about-breakfast.com/images/593_3.jpg"
   ],
-  "page_id": "비건샐러드-토마토-양상추"
+  "page_id": "비건샐러드-토마토-양상추",
+  "_en": {
+   "hash": "72b2ba9fdb8fc121993f7e77fdb5425d8f9b7878cfcff46fabc24a4b8c1721ad",
+   "title": "Tempeh Tofu Stick Salad",
+   "intro": "20221111, #breakfastdiary 593, 8°C/clear\nResearching the indie film studio #A24\nLettuce, cherry tomatoes, seafood-stuffed tofu sticks, green olives, salt salt pepper pepper, grilled tempeh, drizzled with a vinaigrette dressing.",
+   "ingredients": "- 80g tempeh\n- 1 tsp olive oil (for grilling)\n- 90g seafood-stuffed tofu sticks (about 2 pieces)\n- 80g lettuce\n- 8 cherry tomatoes (about 80g)\n- 6 green olives\n- Vinaigrette (2 tsp olive oil, 2 tsp white wine vinegar, 1/2 tsp whole grain mustard)\n- A pinch of salt, pepper, generously",
+   "steps": "1. Slice the tempeh 1cm thick, boil for 5-10 minutes to remove its bitterness, and pat dry with a paper towel.\n2. Heat a pan with 1 tsp olive oil and grill the tempeh until golden on both sides. Sprinkle with salt and pepper.\n3. Cut the tofu sticks into bite-sized pieces and warm them in the same pan until golden on both sides.\n4. Tear the lettuce into bite-sized pieces, halve the cherry tomatoes, and halve the olives.\n5. Mix the olive oil, white wine vinegar, and whole grain mustard to make the vinaigrette.\n6. Plate the lettuce, tomatoes, and olives, top with the grilled tempeh and tofu sticks, drizzle with the vinaigrette, and sprinkle with pepper."
+  }
  },
  {
   "date": "2022-11-10",
@@ -51166,7 +51256,14 @@
    "https://images.how-about-breakfast.com/images/592_2.jpg",
    "https://images.how-about-breakfast.com/images/592_3.jpg"
   ],
-  "page_id": "아보카도크로스티니-아보카도-마리네이드토마토"
+  "page_id": "아보카도크로스티니-아보카도-마리네이드토마토",
+  "_en": {
+   "hash": "7b2a452631c106472b742dbc30c8f58e20d26f3c8590f6d903e7ec91115a4f97",
+   "title": "Avocado Crostini",
+   "intro": "20221111, #breakfastdiary 592, 7°C/occasionally cloudy, 11min/exercise\nThe avocado ripened nicely.\nBrush olive oil on the bread and grill both sides. Spread truffle spread, add marinated tomato, and top with neatly sliced avocado and pepper pepper pepper #AvocadoCrostini",
+   "ingredients": "- 2 slices baguette or sourdough\n- 1 tsp olive oil\n- 1 tbsp truffle spread\n- Marinated tomato: 6-8 cherry tomatoes (about 80g, pickled in oil and vinegar)\n- 1/2 avocado (about 100g)\n- Pepper, generously",
+   "steps": "1. Brush the bread with olive oil and grill until golden on both sides in a hot pan.\n2. Halve the avocado, remove the pit, peel, and slice it neatly thin.\n3. Drain the marinated tomatoes and pat off the excess liquid.\n4. Once the toasted bread has cooled slightly, spread the truffle spread.\n5. Arrange the avocado neatly on top and add the marinated tomatoes.\n6. Finish with a generous grind of pepper."
+  }
  },
  {
   "date": "2022-11-09",
@@ -68141,7 +68238,14 @@
    "https://images.how-about-breakfast.com/images/265_3.jpg",
    "https://images.how-about-breakfast.com/images/265_4.jpg"
   ],
-  "page_id": "나의로컬푸드샐러드-건축학개론-모닝리추얼"
+  "page_id": "나의로컬푸드샐러드-건축학개론-모닝리추얼",
+  "_en": {
+   "hash": "32e4ceae50033515002e0ba4bd69f940e32101219bf9fc6f2a3c3499f2b7c1b1",
+   "title": "Zucchini Salad",
+   "intro": "20211111, #breakfastdiary 265, 1°C/occasionally cloudy\nHalve the prettiest zucchini in the world and grill it in an olive-oiled pan.\nFill the zucchini with boiled lentils, quinoa, and tomato tossed in a vinaigrette dressing with salt and pepper pepper pepper. I got a bit greedy and overfilled it.\nA #MyLocalFoodSalad recipe.\nOn a walk a little while back, I stopped by the spot from #Architecture101 where Nabdeuk explains to Seungmin (Lee Je-hoon) 'what a kiss really is.' November 11th — coincidentally, today is the birthday of the film's Seo-yeon (Lee Su-kyung), in the story.\nIn the 17th general election, the Democratic Labor Party did well, winning 13% of the party vote. At a public lecture right after he'd just pinned on his assemblyman badge, No Hoe-chan was asked by a student: 'The Grand National Party says the future will be a two-party race between itself and the Democratic Labor Party, while the Uri Party says it'll be a two-party race between itself and the Democratic Labor Party. What do you think, Assemblyman?' No Hoe-chan answered: 'The future isn't something you can predict rashly. But putting both sides' opinions together, it does seem certain that it'll end up a two-party race between the Democratic Labor Party and X.' These were the words of a rookie assemblyman from a minor party that had just, for the first time in history, entered the National Assembly. The room erupted in laughter. Probably supporters of both the Grand National Party and the Uri Party laughed along too.\n(Son Ah-ram, A Politician's Joke)\nEven in a tough situation, #DontLoseYourSenseOfHumor",
+   "ingredients": "- 1 zucchini\n- 1 tsp olive oil (for grilling)\n- 60g boiled lentils\n- 60g boiled quinoa\n- 1/2 tomato (or 5 cherry tomatoes)\n- Vinaigrette (2 tsp olive oil, 2 tsp white wine vinegar)\n- A pinch of salt, pepper, generously",
+   "steps": "1. Wash the zucchini and cut lengthwise in half. Scoop out the seeds with a spoon to create a hollow.\n2. Heat a pan with 1 tsp olive oil and place the zucchini cut-side down, grilling over low heat for 3-4 minutes. Flip, cover, and cook 2-3 minutes more. Don't let the inside get too soft.\n3. Finely chop the tomato. Mix the olive oil, white wine vinegar, salt, and pepper to make the vinaigrette.\n4. In a bowl, combine the boiled lentils, quinoa, and tomato, and toss with the vinaigrette.\n5. Fill the grilled zucchini with the mixture from step 4 and finish with a grind of pepper."
+  }
  },
  {
   "date": "2021-11-10",
@@ -68184,7 +68288,14 @@
    "https://images.how-about-breakfast.com/images/264.jpg",
    "https://images.how-about-breakfast.com/images/264_2.jpg"
   ],
-  "page_id": "사과오픈샌드위치-모닝리추얼-모닝루틴"
+  "page_id": "사과오픈샌드위치-모닝리추얼-모닝루틴",
+  "_en": {
+   "hash": "f2a0c2c5628f6f280b6d145ef32b36705cb6825f72fb4e2149716059abfcdae8",
+   "title": "Apple Toast",
+   "intro": "20211110, #breakfastdiary 264, 2°C/cloudy\nGrill the bread in a buttered pan, then top generously with ricotta cheese, microgreens, and apple. A few pecans, and a generous drizzle of honey right before eating. #AppleOpenSandwich\nShinano Gold (apple variety) is really delicious.",
+   "ingredients": "- 1 slice sourdough (about 60g)\n- 5g butter\n- 50g ricotta cheese\n- A handful of microgreens (about 15g, without arugula or mustard greens)\n- 1/3 apple (about 100g, Shinano Gold)\n- 8g pecans\n- 1 tbsp honey",
+   "steps": "1. Wash the Shinano Gold apple and slice thin, skin on. Toast the pecans in a dry pan for 1 minute, then crush coarsely.\n2. Melt the butter in a hot pan and grill the bread until golden on both sides.\n3. Once the toasted bread has cooled slightly, spread a generous layer of ricotta.\n4. Top with the microgreens and layer the apple slices on top.\n5. Sprinkle with the pecans. Drizzle with honey right before eating."
+  }
  },
  {
   "date": "2021-11-09",
@@ -68229,7 +68340,14 @@
    "https://images.how-about-breakfast.com/images/263.jpg",
    "https://images.how-about-breakfast.com/images/263_2.jpg"
   ],
-  "page_id": "구운파프리카샐러드-나의로컬푸드샐러드-모닝리추얼"
+  "page_id": "구운파프리카샐러드-나의로컬푸드샐러드-모닝리추얼",
+  "_en": {
+   "hash": "3638a263e92eb07fcd55151479a11cb1ae560b8efc1e0a078171003d0c4f011e",
+   "title": "Grilled Paprika Salad",
+   "intro": "20211109, #breakfastdiary 263, 2°C/cloudy, 33min/exercise\n\nAn even number of items on a plate really does look awkward, every single time.",
+   "ingredients": "- 1 paprika (large, about 200g)\n- 1 tsp olive oil (for grilling)\n- 40g ricotta cheese\n- 10g pecans\n- 1 tsp white balsamic\n- 1 tsp olive oil (to finish)",
+   "steps": "1. Rinse the paprika under running water, pat dry, cut into quarters, and remove the seeds and white pith.\n2. Heat a pan with 1 tsp olive oil and place the paprika cut-side down first, then grill both sides. Cover and cook over low heat until soft inside and golden at the edges.\n3. Toast the pecans in a dry pan for 1 minute, then crush coarsely.\n4. Transfer the grilled paprika to a plate and spoon the ricotta over it.\n5. Sprinkle with the pecans and drizzle with white balsamic and 1 tsp olive oil."
+  }
  },
  {
   "date": "2021-11-08",
@@ -86124,7 +86242,14 @@
   "raw": "20201111, \"강낭콩이에요. 집에 가면 흙에 심어봐요. 싹이 날 테니까.\" \n아저씨는 웃었지만, 나는 웃을 수 없었다. 흙에 심으면 싹이 난다. 그런 식으로 생각한 적은 없었다. 이 콩은 살아 있는 것이다. 씨앗이기도 하고 생명이기도 한 살아 있는 콩. 그것을 먹는 게 갑자기 무서워졌다. (미야시타 나츠, #바다거북수프를끓이자 )\n\n우리가 먹는 거의 모든 식재료에 생명이 깃들어 있다는 사실을 쉽게 잊곤 한다. 오늘 아침엔 강낭콩, 병아리콩, 호랑이콩, 완두콩, 검은콩, 이렇게나 많은 #씨앗 이자 #생명 이 내 주린 배를 채워줬다. \n\n어젯 밤에 불려 놓은 #콩 을 삶아 오이, 토마토, 그린빈, 브로콜리를 곁들이고 올리브 오일, 화이트와인 비니거, 홀그레인 머스타드 드레싱을 살짝\n\n#조식 #아침밥 #샐러드 #breakfast #salad #bean #beansalad",
   "pre_label": "D-93",
   "image": "https://images.how-about-breakfast.com/images/pre-93.jpg",
-  "page_id": "바다거북수프를끓이자-씨앗-생명"
+  "page_id": "바다거북수프를끓이자-씨앗-생명",
+  "_en": {
+   "hash": "fde9ad932653ea0ea72691257cbe578c24040f2ea8766db65b494a423e16a934",
+   "title": "Mediterranean Bean Salad",
+   "intro": "20201111, \"They're kidney beans. Plant them in soil when you get home — they'll sprout.\"\nThe old man laughed, but I couldn't laugh along. Plant it in soil and it sprouts. I'd never thought of it that way before. This bean is alive. A living bean that is both a seed and a life. Suddenly, eating it felt frightening. (Miyashita Natsu, Let's Make Turtle Soup)\nIt's easy to forget that almost every ingredient we eat carries life within it. This morning, kidney beans, chickpeas, tiger beans, peas, black beans — so many #seeds and #lives filled my hungry stomach.\nBoil the #beans soaked overnight, add cucumber, tomato, green beans, and broccoli, and finish with a light drizzle of olive oil, white wine vinegar, and whole grain mustard dressing.",
+   "ingredients": "- 120g soaked beans (about 50g dried beans, soaked overnight)\n- 1/3 cucumber (about 60g)\n- 1/2 tomato (or 5 cherry tomatoes)\n- 60g green beans\n- 80g broccoli\n- Dressing (2 tsp olive oil, 2 tsp white wine vinegar, 1/2 tsp whole grain mustard)\n- A pinch of salt, a little pepper",
+   "steps": "1. Drain the soaking water from the beans, rinse, and add to fresh water. Bring to a boil in a pot, then simmer over medium-low heat until tender. Add a pinch of salt at the end, then drain and cool.\n2. Trim the green beans and cut to size. Tear the broccoli into bite-sized pieces. Blanch both in salted boiling water for 2 minutes, rinse in cold water, and drain.\n3. Cut the cucumber and tomato into bite-sized pieces.\n4. Mix the olive oil, white wine vinegar, and whole grain mustard to make the dressing.\n5. Plate the beans and vegetables, drizzle lightly with the dressing, and finish with pepper."
+  }
  },
  {
   "date": "2020-11-10",
@@ -86153,7 +86278,14 @@
   "raw": "20201110, 융합의 반대말 중 하나는 거대 담론(grand theory)이다. 거대 담론적 자아는, 모든 것을 설명할 수 있다고 주장한다. 그러나 스트라이크 존에 들어선 타자가 알아야 할 것은 ‘세계프로야구사’가 아니라 상대 투수의 투구 패턴, 표정, 그가 직전에 던진 공이다. 이 같은 작은 단위들의 연속이 인생이다. 비슷한 말로 “신은 디테일에 있다”, “오늘을 산다”, “상황”, “맥락” 등이 있다. (정희진, 인간의 세계는 작다, 스트라이크 존) #정희진 #융합\n\n#Carpe_diem 그 본래의 뜻이 ‘노력’의 의미보다 그 상황을 ‘즐겨라’는 것에 가깝다는 걸 생각하면, 그리고 현재의 인내와 희생이 결코 장미빛 미래를 보장해주지 못한다면, 거시적인 과거와 미래의 나 에 매달리기 보다, 순간 순간 작은 단위의 ‘현재의 나’에 노력을 기울이는 것이 좋겠다. (사실 그러고 있다.) 결국 과거의 나와 미래(에 대한 전망을 품은)의 나의 총합이 ‘현재의 나’ 아닐까 하는 생각. \n\n큰 토마토를 깔고, 작은 토마토를 얹는다. 올리브 오일과 발사믹 약간, 색다른 풍미를 더해줄 파슬리와 후추 약간 #토마토샐러드 #조식 #아침밥 #샐러드 #breakfast #salad #tomatosalad",
   "pre_label": "D-94",
   "image": "https://images.how-about-breakfast.com/images/pre-94.jpg",
-  "page_id": "정희진-융합-토마토샐러드"
+  "page_id": "정희진-융합-토마토샐러드",
+  "_en": {
+   "hash": "e8f55121265d00262e0a32c95d4e2c893010524b2d2cd50bffd538900dc48b21",
+   "title": "Tomato Salad",
+   "intro": "20201110, One opposite of convergence is 'grand theory.' A self built on grand theory claims it can explain everything. But what a batter standing in the strike zone actually needs to know isn't 'the history of world professional baseball' — it's the opposing pitcher's pitching patterns, his expression, the pitch he just threw. Life is a continuous sequence of small units like that. Similar phrases include 'God is in the details,' 'live in the present,' 'situation,' and 'context.' (Jung Hee-jin, The Human World Is Small: The Strike Zone) #JungHeeJin #convergence\nConsidering that carpe diem originally leans closer to 'enjoy the moment' than 'make an effort,' and that today's patience and sacrifice never actually guarantee a rosy future, it seems better to put effort into the small, moment-by-moment 'present self' rather than clinging to some grand past-and-future self. (In fact, that's exactly what I'm doing.) In the end, maybe the 'present self' is simply the sum of the past self and the future self (carrying its outlook within it).\nLay down the large tomato slices, then top with the small ones. A little olive oil and balsamic, with parsley and pepper adding a different kind of flavor. #TomatoSalad #breakfast #morningmeal #salad #tomatosalad",
+   "ingredients": "- 1 large tomato\n- 6 cherry tomatoes\n- 1 tsp olive oil\n- 1 tsp balsamic vinegar\n- A little chopped parsley\n- A little pepper",
+   "steps": "1. Trim the stem off the large tomato, slice into 0.7-1cm-thick rounds, and arrange overlapping on a plate.\n2. Halve the cherry tomatoes and place on top of the large tomato slices.\n3. Drizzle with olive oil and balsamic vinegar.\n4. Sprinkle with chopped parsley and finish with a grind of pepper."
+  }
  },
  {
   "date": "2020-11-09",
@@ -86182,7 +86314,14 @@
   "raw": "20201109, \n가사리: 새끼 돌고래\n개호주: 새끼 호랑이\n고도리: 새끼 고등어\n굴뚝청어: 새끼 청어\n노가리: 새끼 명태\n능소니: 새끼 곰\n모쟁이: 새끼 숭어\n연어사리: 새끼 연어\n전어사리: 새끼 전어\n초고리: 새끼 매\n팽팽이: 새끼 열목어\n풀치: 새끼 갈치\n\nQ. 그렇다면 새끼 삼치는 무엇이라고 부를까? \nA. 정답 #고시\n\n#삼치 는 크기가 1m에 달하는, 생각보다 대형 어종이라 우리가 먹는 삼치는 대부분 새끼 삼치라고. \n\n올리브 오일을 두른 팬에 손질한 삼치를 올리고 강황, 소금, 후추를 뿌려서 굽는다. 접시에 #아보카도 와 삼치를 번갈아가며 올리고 케이퍼, 파슬리, 파프리카 가루를 뿌린다. 비린내를 잡기 위해 레몬즙을 약간. 먹기 전에 올리브 오일, 화이트 와인 비니거, 홀그레인 머스타드 드레싱 #아보카도삼치샐러드 #조식 #아침밥 #샐러드 #breakfast #salad #mackerels \n\n10월~2월, 삼치가 가장 맛있는 계절",
   "pre_label": "D-95",
   "image": "https://images.how-about-breakfast.com/images/pre-95.jpg",
-  "page_id": "고시-삼치-아보카도"
+  "page_id": "고시-삼치-아보카도",
+  "_en": {
+   "hash": "a1cb2429ba7f22273e6c93c95cbe17aada888a9b415147811292fc995a63c603",
+   "title": "Mackerel Avocado Salad",
+   "intro": "20201109,\nGasari: baby dolphin\nGaehoju: baby tiger\nGodori: baby mackerel\nGulttukcheongeo: baby herring\nNogari: baby pollack\nNeungsoni: baby bear\nMojaengi: baby mullet\nYeoneosari: baby salmon\nJeoneosari: baby gizzard shad\nChogori: baby falcon\nPaengpaengi: baby lenok (a kind of trout)\nPulchi: baby hairtail\nQ. So then, what do you call a baby Spanish mackerel?\nA. The answer: #Gosi\n#SpanishMackerel actually grows up to 1 meter long — a surprisingly large species — so most of what we eat as 'Spanish mackerel' is actually the juvenile fish.\nPlace the cleaned mackerel in an olive-oiled pan, sprinkle with turmeric, salt, and pepper, and grill. Alternate slices of #avocado and mackerel on a plate, and sprinkle with capers, parsley, and paprika powder. A little lemon juice to cut the fishy smell. Right before eating, a dressing of olive oil, white wine vinegar, and whole grain mustard #AvocadoMackerelSalad #breakfast #morningmeal #salad #breakfast #salad #mackerels\nOctober through February is when Spanish mackerel tastes best.",
+   "ingredients": "- 100g Spanish mackerel\n- 1/2 avocado (about 100g)\n- 1 tsp olive oil (for grilling)\n- 1/4 tsp turmeric powder, a pinch of salt, a little pepper\n- 1 tsp capers\n- 1 tsp chopped parsley\n- A pinch of paprika powder\n- 1 tsp lemon juice\n- Dressing (2 tsp olive oil, 1 tbsp white wine vinegar, 1/2 tsp whole grain mustard)",
+   "steps": "1. Pat the mackerel thoroughly dry with a paper towel. Sprinkle evenly with turmeric, salt, and pepper.\n2. Heat a pan with 1 tsp olive oil and grill for 2-3 minutes per side, until golden and cooked through.\n3. Halve the avocado, remove the pit, peel, and slice 1cm thick.\n4. Mix 2 tsp olive oil, white wine vinegar, and whole grain mustard to make the dressing.\n5. Alternate the avocado and mackerel on a plate.\n6. Sprinkle with capers, parsley, and paprika powder, and drizzle with lemon juice. Add the dressing right before eating."
+  }
  },
  {
   "date": "2020-11-08",
