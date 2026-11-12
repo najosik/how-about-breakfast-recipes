@@ -170,6 +170,20 @@ class MapOutputTest(unittest.TestCase):
             self.assertTrue((Path(d) / "routes" / "0123456789ab.json").exists())
 
 
+class RetryTest(unittest.TestCase):
+    def test_invalid_json_retried_then_ok(self):
+        api = bf.SeoulApi("a" * 30)
+        ok = b'{"SVC": {"list_total_count": 1, "row": [{"x": 1}]}}'
+        with mock.patch.object(bf, "RETRY_WAIT", 0), mock.patch.object(bf, "http_get", side_effect=[b"<html>", ok]):
+            self.assertEqual(api.page("SVC", 1, 1), (1, [{"x": 1}]))
+
+    def test_invalid_json_gives_up(self):
+        api = bf.SeoulApi("a" * 30)
+        with mock.patch.object(bf, "RETRY_WAIT", 0), mock.patch.object(bf, "http_get", return_value=b"<html>"):
+            with self.assertRaises(bf.FetchError):
+                api.page("SVC", 1, 1)
+
+
 class SecurityTest(unittest.TestCase):
     def test_bad_key_rejected(self):
         with self.assertRaises(bf.FetchError):

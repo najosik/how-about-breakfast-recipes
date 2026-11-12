@@ -43,6 +43,7 @@ OUT_PATH = OUT_DIR / "bus-foreigner.json"
 ROUTES_DIR = OUT_DIR / "routes"
 DONGS_PATH = OUT_DIR / "dongs.geojson"
 HOURLY_PATH = OUT_DIR / "dong-hourly.json"
+RETRY_WAIT = 3   # 초. 테스트에서 0으로 바꿈
 HOT_STOPS = 300            # 지도에 표시할 외국인 추정 이용 상위 정류장 수
 SIMPLIFY_TOL = 0.00015     # 행정동 경계 단순화 허용 오차(도, 약 15m)
 MIN_ROUTE_USE = 30000      # 비중 지수 순위에 넣을 노선의 최소 월 승하차(소규모 노선 잡음 방지)
@@ -80,12 +81,17 @@ class SeoulApi:
 
     def page(self, service: str, start: int, end: int, *args: str) -> tuple[int, list[dict]]:
         parts = [self._key, "json", service, str(start), str(end), *args]
-        raw = http_get(f"{API_BASE}/{'/'.join(parts)}/", 30 * 1024 * 1024, f"{service} {start}-{end}")
-        self.calls += 1
-        try:
-            data = json.loads(raw.decode("utf-8"))
-        except (json.JSONDecodeError, UnicodeDecodeError):
-            raise FetchError(f"{service}: invalid JSON") from None
+        data = None
+        for attempt in range(3):   # 서버가 가끔 깨진 응답(HTML 오류 페이지·잘린 본문)을 줌 → 짧게 재시도
+            raw = http_get(f"{API_BASE}/{'/'.join(parts)}/", 30 * 1024 * 1024, f"{service} {start}-{end}")
+            self.calls += 1
+            try:
+                data = json.loads(raw.decode("utf-8"))
+                break
+            except (json.JSONDecodeError, UnicodeDecodeError):
+                time.sleep(RETRY_WAIT * (attempt + 1))
+        if not isinstance(data, dict):
+            raise FetchError(f"{service}: invalid JSON")
         body = data.get(service)
         if not isinstance(body, dict):
             code = str((data.get("RESULT") or {}).get("CODE", "UNKNOWN"))[:20]
