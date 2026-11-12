@@ -42,6 +42,7 @@ OUT_DIR = ROOT / "bus" / "data"
 OUT_PATH = OUT_DIR / "bus-foreigner.json"
 ROUTES_DIR = OUT_DIR / "routes"
 DONGS_PATH = OUT_DIR / "dongs.geojson"
+HOURLY_PATH = OUT_DIR / "dong-hourly.json"
 HOT_STOPS = 300            # 지도에 표시할 외국인 추정 이용 상위 정류장 수
 SIMPLIFY_TOL = 0.00015     # 행정동 경계 단순화 허용 오차(도, 약 15m)
 MIN_ROUTE_USE = 30000      # 비중 지수 순위에 넣을 노선의 최소 월 승하차(소규모 노선 잡음 방지)
@@ -258,22 +259,38 @@ def pick_month(api: SeoulApi, today: date, override: str = "") -> str:
     raise FetchError("no month with both bus and living-population data in the last 6 months")
 
 
-def living_population(api: SeoulApi, ym: str):
-    """행정동×시간대 일평균: 단기체류 외국인(전체/중국/기타), 내국인."""
+def living_population(api: SeoulApi, ym: str, weekend_out: dict | None = None):
+    """행정동×시간대 일평균: 단기체류 외국인(전체/중국/기타), 내국인.
+    weekend_out을 주면 토·일만의 일평균을 같은 형태로 채우고 '_days'에 일수를 넣는다(야간·주말 권역 분석용)."""
     sums = defaultdict(lambda: [0.0, 0.0, 0.0, 0.0])  # (dong, hour) -> [forn, china, etc, local]
-    days_seen = set()
+    we_sums = defaultdict(lambda: [0.0, 0.0, 0.0, 0.0])
+    days_seen, we_seen = set(), set()
     for day in month_days(ym):
+        today = defaultdict(lambda: [0.0, 0.0, 0.0, 0.0])
         n = 0
         for r in api.all_rows("SPOP_FORN_TEMP_RESD_DONG", day):
             k = (str(r.get("ADSTRD_CODE_SE", ""))[:8], int(num(r.get("TMZON_PD_SE"))))
-            s = sums[k]
+            s = today[k]
             s[0] += num(r.get("TOT_LVPOP_CO")); s[1] += num(r.get("CHINA_STAYPOP_CO")); s[2] += num(r.get("ETC_STAYPOP_CO"))
             n += 1
         for r in api.all_rows("SPOP_LOCAL_RESD_DONG", day):
             k = (str(r.get("ADSTRD_CODE_SE", ""))[:8], int(num(r.get("TMZON_PD_SE"))))
-            sums[k][3] += num(r.get("TOT_LVPOP_CO"))
+            today[k][3] += num(r.get("TOT_LVPOP_CO"))
+        weekend = date(int(day[:4]), int(day[4:6]), int(day[6:8])).weekday() >= 5
+        for k, v in today.items():
+            for target in ((sums, we_sums) if weekend else (sums,)):
+                t = target[k]
+                for i in range(4):
+                    t[i] += v[i]
         if n:
             days_seen.add(day)
+            if weekend:
+                we_seen.add(day)
+    if weekend_out is not None:
+        nw = max(1, len(we_seen))
+        weekend_out.clear()
+        weekend_out.update({k: [v / nw for v in vals] for k, vals in we_sums.items()})
+        weekend_out["_days"] = len(we_seen)
     nd = max(1, len(days_seen))
     return {k: [v / nd for v in vals] for k, vals in sums.items()}, len(days_seen)
 
@@ -453,6 +470,23 @@ def write_routes_dir(files: dict[str, dict]) -> None:
         raise
 
 
+def dong_hourly(dong_index, pop, pop_weekend, ym: str, days: int) -> dict:
+    """행정동별 24시간 일평균(단기체류 외국인 f, 내국인 l). all: 전체 일, weekend: 토·일. 정수 반올림."""
+    we_days = int(pop_weekend.get("_days", 0)) if pop_weekend else 0
+    out = {}
+    for *_bbox, code, name, _polys in dong_index.items:
+        row = {"name": name}
+        for key, src in (("all", pop), ("weekend", pop_weekend if we_days else None)):
+            if src is None:
+                continue
+            row[key] = {"f": [round(src.get((code, h), (0, 0, 0, 0))[0]) for h in range(24)],
+                        "l": [round(src.get((code, h), (0, 0, 0, 0))[3]) for h in range(24)]}
+        out[code] = row
+    return {"month": ym, "days": days, "weekendDays": we_days,
+            "note": "행정동×시간대 일평균 생활인구(추정). f=단기체류 외국인, l=내국인. 서울 열린데이터광장 SPOP_FORN_TEMP_RESD_DONG·SPOP_LOCAL_RESD_DONG",
+            "dongs": out}
+
+
 def write_atomic(path: Path, data: dict) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     fd, tmp = tempfile.mkstemp(dir=path.parent, prefix=".bus-", suffix=".json")
@@ -487,7 +521,8 @@ def main() -> int:
         print(f"Stops with coordinates: {len(stop_xy)}")
         bus_rows = list(api.all_rows("CardBusTimeNew", ym))
         print(f"Bus rows: {len(bus_rows)}")
-        pop, days = living_population(api, ym)
+        pop_we: dict = {}
+        pop, days = living_population(api, ym, pop_we)
         print(f"Population: {len(pop)} dong-hours over {days} days")
         if not bus_rows or days < 20:
             raise FetchError("insufficient data for the target month")
@@ -501,6 +536,7 @@ def main() -> int:
         return 1
     write_routes_dir(route_files(routes))
     write_atomic(DONGS_PATH, dong_geojson(dongs, pop))
+    write_atomic(HOURLY_PATH, dong_hourly(dongs, pop, pop_we, ym, days))
     write_atomic(OUT_PATH, result)
     print(f"Saved {result['stats']['routes']} routes; match rate {result['stats']['matchRate']:.1%}; "
           f"city index {result['cityIndex']:.4f}")

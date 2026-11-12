@@ -125,6 +125,30 @@ class MapOutputTest(unittest.TestCase):
         self.assertAlmostEqual(props["11110001"]["share"], 0.1)
         self.assertIsNone(props["11140002"]["share"])
 
+    def test_living_population_weekend_split(self):
+        # 2026-08: 1일(토)·2일(일)이 주말. 평일 f=10, 주말 f=40, 내국인 l=100 고정
+        def rows(name, day):
+            we = day in ("20260801", "20260802", "20260808", "20260809", "20260815", "20260816",
+                         "20260822", "20260823", "20260829", "20260830")
+            if name == "SPOP_FORN_TEMP_RESD_DONG":
+                return [{"ADSTRD_CODE_SE": "11110001", "TMZON_PD_SE": "20", "TOT_LVPOP_CO": 40 if we else 10,
+                         "CHINA_STAYPOP_CO": 0, "ETC_STAYPOP_CO": 0}]
+            return [{"ADSTRD_CODE_SE": "11110001", "TMZON_PD_SE": "20", "TOT_LVPOP_CO": 100}]
+        api = mock.Mock(); api.all_rows.side_effect = rows
+        we = {}
+        pop, days = bf.living_population(api, "202608", we)
+        self.assertEqual(days, 31)
+        self.assertEqual(we["_days"], 10)
+        self.assertAlmostEqual(we[("11110001", 20)][0], 40.0)
+        self.assertAlmostEqual(pop[("11110001", 20)][0], (21 * 10 + 10 * 40) / 31)
+        out = bf.dong_hourly(DONGS, pop, we, "202608", days)
+        row = out["dongs"]["11110001"]
+        self.assertEqual(row["weekend"]["f"][20], 40)
+        self.assertEqual(row["all"]["l"][20], 100)
+        self.assertEqual(len(row["all"]["f"]), 24)
+        self.assertNotIn("26000000", out["dongs"])   # 서울 밖 제외
+        self.assertEqual(out["weekendDays"], 10)
+
     def test_hot_stops(self):
         pop = {("11110001", 10): [20.0, 5.0, 15.0, 80.0]}
         rows = [bus_row("100", "sA", 10, 60, 40), bus_row("200", "sA", 10, 10, 0)]
