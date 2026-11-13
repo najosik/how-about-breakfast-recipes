@@ -12862,9 +12862,9 @@
    "조식",
    "조식다이어리"
   ],
-  "intro": "20251114 #조식다이어리 1561, 1도/맑음, 20분/운동(M)\n알레르기 반응의 정의는 우리의 ‘면역 체계가 정상적이고 무해한 물질에 부적절하게 반응하는 것’이다. 정상적이고 무해한 물질이 남들과는 달리 내게서만 부적절하게 반응하는 것이니 어쩌면 그 물질의 탓만 할 수는 없을지도 모르겠다. \n‘위생 가설’이란 용어가 있다. 어릴 때부터 다양한 환경에 노출될 경우 주변 물질에 대한 면역이 생기지만, 다양한 균들을 접할 기회가 없어서 면역이 성숙되지 못하면 알레르기가 발생할 가능성이 높아진다는 것이다. 루꼴라 알레르기의 원인이 결국 나의 미성숙함이라고 생각하고 보니 갑자기 숙연해진다. 얼마나 더 시간이 지나야 성숙함에 이를 수 있을까? 아무튼 그전까지 루꼴라는 정중히 사양한다. \n(나조식, 루꼴라는 사양합니다) \n마의 껍질에 있는 옥산살칼슘은 피부에 미세한 상처를 내거나 자극을 줘서 가려움증을 유발할 수 있다. 어떤 사람들은 알레르기 반응을 보일 수도 있으니 조심해야 한다. \n약 470kcal 마 아보카도 샐러드",
-  "ingredients": "마 1개, 아보카도 1개, 적양파 1/4개, 참깨와 김 조금, (드레싱) 쯔유 2T, 참기름 1T, 참깨 1t",
-  "steps": "1. 직경 3cm, 길이 20cm 마를 껍질 벗기고 한 입 크기로 썬다. 이 공정은 가능하면 비닐장갑 끼고 하는 것을 추천한다. \n2. 아보카도도 껍질 벗기고 한 입 크기로 썬다. \n3. 적양파 1/4개 잘게 다진다. 그나마 적양파는 아린 맛이 덜한 편인데 못 참겠다면 5분 정도 물에 담가뒀다가 썬다. \n4. 믹싱볼에 손질한 아보카도와 마, 적양파 넣고 쯔유 2T, 참기름 1T, 참깨 1t 붓고 골고루 섞는다. \n5. 접시에 담고 참깨, 김 조금 얹는다.",
+  "intro": "20251114 #조식다이어리 1561, 1도/맑음, 20분/운동(M)\n알레르기 반응의 정의는 우리의 ‘면역 체계가 정상적이고 무해한 물질에 부적절하게 반응하는 것’이다. 정상적이고 무해한 물질이 남들과는 달리 내게서만 부적절하게 반응하는 것이니 어쩌면 그 물질의 탓만 할 수는 없을지도 모르겠다. \n‘위생 가설’이란 용어가 있다. 어릴 때부터 다양한 환경에 노출될 경우 주변 물질에 대한 면역이 생기지만, 다양한 균들을 접할 기회가 없어서 면역이 성숙되지 못하면 알레르기가 발생할 가능성이 높아진다는 것이다. 루꼴라 알레르기의 원인이 결국 나의 미성숙함이라고 생각하고 보니 갑자기 숙연해진다. 얼마나 더 시간이 지나야 성숙함에 이를 수 있을까? 아무튼 그전까지 루꼴라는 정중히 사양한다. \n(나조식, 루꼴라는 사양합니다) \n\n마의 껍질에 있는 옥산살칼슘은 피부에 미세한 상처를 내거나 자극을 줘서 가려움증을 유발할 수 있다. 어떤 사람들은 알레르기 반응을 보일 수도 있으니 조심해야 한다. \n약 470kcal 마 아보카도 샐러드",
+  "ingredients": "- 마 150g\n- 아보카도 1개\n- 적양파 1/4개\n- 쯔유 2T\n- 참기름 1T\n- 참깨 1t(버무림용) + 토핑용 약간\n- 김 약간",
+  "steps": "1. 마는 껍질을 벗기고 한입 크기로 썬다. 이 과정은 비닐장갑을 끼고 하는 것을 추천한다.\n2. 아보카도는 껍질을 벗기고 한입 크기로 썬다.\n3. 적양파는 잘게 다진다. 아린 맛이 걱정되면 5분 정도 물에 담갔다가 물기를 빼서 쓴다.\n4. 믹싱볼에 손질한 아보카도, 마, 적양파를 넣고 쯔유 2T, 참기름 1T, 참깨 1t를 부어 골고루 섞는다.\n5. 접시에 담고 참깨와 김을 올린다.",
   "raw": "20251114 #조식다이어리 1561, 1도/맑음, 20분/운동(M)\n\n알레르기 반응의 정의는 우리의 ‘면역 체계가 정상적이고 무해한 물질에 부적절하게 반응하는 것’이다. 정상적이고 무해한 물질이 남들과는 달리 내게서만 부적절하게 반응하는 것이니 어쩌면 그 물질의 탓만 할 수는 없을지도 모르겠다. \n‘위생 가설’이란 용어가 있다. 어릴 때부터 다양한 환경에 노출될 경우 주변 물질에 대한 면역이 생기지만, 다양한 균들을 접할 기회가 없어서 면역이 성숙되지 못하면 알레르기가 발생할 가능성이 높아진다는 것이다. 루꼴라 알레르기의 원인이 결국 나의 미성숙함이라고 생각하고 보니 갑자기 숙연해진다. 얼마나 더 시간이 지나야 성숙함에 이를 수 있을까? 아무튼 그전까지 루꼴라는 정중히 사양한다. \n(나조식, 루꼴라는 사양합니다) \n\n마의 껍질에 있는 옥산살칼슘은 피부에 미세한 상처를 내거나 자극을 줘서 가려움증을 유발할 수 있다. 어떤 사람들은 알레르기 반응을 보일 수도 있으니 조심해야 한다. \n\n약 470kcal 마 아보카도 샐러드\n\n👉 재료\n마 1개, 아보카도 1개, 적양파 1/4개, 참깨와 김 조금, (드레싱) 쯔유 2T, 참기름 1T, 참깨 1t \n\n👉 조리\n1. 직경 3cm, 길이 20cm 마를 껍질 벗기고 한 입 크기로 썬다. 이 공정은 가능하면 비닐장갑 끼고 하는 것을 추천한다. \n2. 아보카도도 껍질 벗기고 한 입 크기로 썬다. \n3. 적양파 1/4개 잘게 다진다. 그나마 적양파는 아린 맛이 덜한 편인데 못 참겠다면 5분 정도 물에 담가뒀다가 썬다. \n4. 믹싱볼에 손질한 아보카도와 마, 적양파 넣고 쯔유 2T, 참기름 1T, 참깨 1t 붓고 골고루 섞는다. \n5. 접시에 담고 참깨, 김 조금 얹는다. \n\n#조식 #레시피 #마",
   "video": "https://images.how-about-breakfast.com/images/1561.mp4",
   "image": "https://images.how-about-breakfast.com/images/1561.jpg",
@@ -12874,13 +12874,6 @@
    "https://images.how-about-breakfast.com/images/1561_3.jpg",
    "https://images.how-about-breakfast.com/images/1561_4.jpg"
   ],
-  "_en": {
-   "hash": "3212cb55f269fc23a74054f43b67bf6506e445af9f65820fa243841fb6429850",
-   "title": "Yam Avocado Salad",
-   "intro": "20251114 #breakfastdiary day 1561, 1°C/clear, 20 min/exercise (M)\nThe definition of an allergic reaction is your 'immune system inappropriately reacting to a normal, harmless substance.' Since it's a normal, harmless substance that reacts inappropriately only in me, unlike everyone else, maybe I can't entirely blame the substance itself.\nThere's a term called the 'hygiene hypothesis' — the idea that being exposed to a variety of environments from a young age builds immunity to surrounding substances, but without enough exposure to various microbes, the immune system fails to mature properly, raising the likelihood of developing allergies. Realizing that my rocket (arugula) allergy ultimately comes down to my own immaturity suddenly makes me feel rather humbled. How much more time will it take to reach maturity? Anyway, until then, I'll be politely declining rocket.\n(Najosik, 'I'll Pass on the Rocket, Thanks')\nThe calcium oxalate in yam's skin can cause tiny irritations or scratches on the skin, leading to itchiness. Some people may even have an allergic reaction, so caution is needed.\nApprox. 470kcal Yam Avocado Salad",
-   "ingredients": "1 Korean yam, 1 avocado, 1/4 red onion, sesame seeds and seaweed, a little, (dressing) 2T tsuyu, 1T sesame oil, 1t sesame seeds",
-   "steps": "1. Peel a yam about 3cm in diameter and 20cm long, and cut into bite-sized pieces. I'd recommend wearing plastic gloves for this step if possible.\n2. Peel the avocado too and cut into bite-sized pieces.\n3. Finely chop 1/4 red onion. Red onion tends to have a milder bite, but if you still can't stand it, soak it in water for about 5 minutes before cutting.\n4. In a mixing bowl, combine the prepped avocado, yam, and red onion, pour in 2T tsuyu, 1T sesame oil, and 1t sesame seeds, and mix well.\n5. Plate it and top with sesame seeds and a little seaweed."
-  },
   "page_id": "마-아보카도-샐러드"
  },
  {
