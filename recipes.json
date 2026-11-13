@@ -25562,7 +25562,7 @@
   "weather": "14도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "문어",
+  "title": "아보카도 소스와 구운 문어",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25572,8 +25572,8 @@
    "조식다이어리"
   ],
   "intro": "20241114 #조식다이어리 1232, 14도/흐림, 20분/운동(M)  \n아보카도는 딥처럼 좀 더 크리미한 질감을 생각했는데 실패, 과카몰리가 되고 말았다. 핸드블렌더를 사용하는 게 좋을 것 같다.",
-  "ingredients": "문어 다리 2개, 양파 1/4개, 마늘 1개, 그린올리브 3개, 올리브오일, 레몬주스 1/2컵, 소금, 후추\n\n👉이렇게\n1. 블렌더에 아보카도, 다진 양파와 마늘, 레몬주스, 소금, 후추 넣고 아보카도 소스를 만든다.\n2. 달군 팬에 올리브오일 두르고 문어를 굽는다. 소금소금, 후추후추, \n3. 접시에 아보카도 소스 담고 문어와 그린율리브 얹고 딜로 마무리한다. \n\n#조식 #레시피 #미라클모닝 #문어\n\nSautéed octopus with avocado sauce",
-  "steps": null,
+  "ingredients": "- 삶은 문어(문어숙회) 120g\n- 올리브오일 1t(굽기용)\n- 소금 한 꼬집, 후추 약간\n- 아보카도 소스(아보카도 1개(약 200g), 다진 양파 1T, 다진 마늘 1/2쪽, 레몬즙 1T, 소금 한 꼬집, 후추 약간)\n- 그린올리브 6알\n- 딜 약간",
+  "steps": "1. 블렌더에 아보카도, 다진 양파, 다진 마늘, 레몬즙, 소금, 후추를 넣고 곱게 갈아 아보카도 소스를 만든다. 뻑뻑하면 물이나 올리브오일을 1t씩 넣어 농도를 맞춘다.\n2. 문어는 키친타월로 물기를 꼼꼼히 닦고 먹기 좋은 크기로 썬다.\n3. 달군 팬에 올리브오일 1t를 두르고 문어를 센 불에서 앞뒤로 1~2분씩 굽는다. 소금과 후추를 뿌린다.\n4. 접시에 아보카도 소스를 펴 담는다.\n5. 문어와 그린올리브를 얹고 딜로 마무리한다.",
   "raw": "20241114 #조식다이어리 1232, 14도/흐림, 20분/운동(M)  \n\n아보카도는 딥처럼 좀 더 크리미한 질감을 생각했는데 실패, 과카몰리가 되고 말았다. 핸드블렌더를 사용하는 게 좋을 것 같다.\n\n👉재료는\n문어 다리 2개, 양파 1/4개, 마늘 1개, 그린올리브 3개, 올리브오일, 레몬주스 1/2컵, 소금, 후추\n\n👉이렇게\n1. 블렌더에 아보카도, 다진 양파와 마늘, 레몬주스, 소금, 후추 넣고 아보카도 소스를 만든다.\n2. 달군 팬에 올리브오일 두르고 문어를 굽는다. 소금소금, 후추후추, \n3. 접시에 아보카도 소스 담고 문어와 그린율리브 얹고 딜로 마무리한다. \n\n#조식 #레시피 #미라클모닝 #문어\n\nSautéed octopus with avocado sauce",
   "image": "https://images.how-about-breakfast.com/images/1232.jpg",
   "gallery": [
@@ -25584,13 +25584,6 @@
    "https://images.how-about-breakfast.com/images/1232_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1232.mp4",
-  "_en": {
-   "hash": "8b04d3e9b8638d63bdae085b77e2bec06535c495b78015440ead6b99a10f648c",
-   "title": "Octopus",
-   "intro": "20241114 #breakfastdiary 1232, 14°C/cloudy, 20min/exercise(M)\nI was going for a creamier, dip-like texture with the avocado but it failed — it turned into guacamole instead. I think using a hand blender would work better.",
-   "ingredients": "2 octopus legs, 1/4 onion, 1 clove garlic, 3 green olives, olive oil, 1/2 cup lemon juice, salt, pepper\n\n👉Like this\n1. In a blender, combine avocado, minced onion and garlic, lemon juice, salt, and pepper to make the avocado sauce.\n2. Heat a pan with olive oil and grill the octopus. Salt salt, pepper pepper,\n3. Plate the avocado sauce, top with the octopus and green olives, and finish with dill.\n\n#breakfast #recipe #miraclemorning #octopus\n\nSautéed octopus with avocado sauce",
-   "steps": ""
-  },
   "page_id": "문어"
  },
  {
