@@ -38646,7 +38646,7 @@
   "weather": "1도/대체로 맑음",
   "failed": false,
   "calories": null,
-  "title": "스리라차 고구마",
+  "title": "매콤 닭가슴살 군고구마",
   "credit": null,
   "hashtags": [
    "고구마",
@@ -38657,8 +38657,8 @@
    "조식다이어리"
   ],
   "intro": "20231115, #조식다이어리 893, 1도/대체로 맑음\n오늘의 조식, 피눈물 흘리는 고구마\n고구마를 깨끗하게 씻어 칼집을 낸 뒤 찜기에 넣고 20분 가량 찐다. 시판 매콤 양념 닭가슴살을 전자렌지에 2분 가량 데운 후 결대로 찢어서 준비한다. \n고구마를 접시에 담고 칼집 낸 자리에 준비한 닭가슴살을 채워 넣는다. #스리라차 소스로 마무리한다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 고구마 1개(약 200g)\n- 시판 매콤 양념 닭가슴살 100g(1팩)\n- 스리라차 소스 1t",
+  "steps": "1. 고구마는 깨끗하게 씻어 가운데에 길게 칼집을 낸다.\n2. 찜기에 넣고 김이 오른 뒤 20분 가량, 젓가락이 쑥 들어갈 때까지 찐다.\n3. 시판 닭가슴살은 전자레인지에 2분 가량 데워 속까지 뜨겁게 하고 결대로 찢는다.\n4. 접시에 고구마를 담고 칼집 낸 자리를 살짝 벌려 닭가슴살을 채운다.\n5. 스리라차를 위에 뿌려 마무리한다.",
   "raw": "20231115, #조식다이어리 893, 1도/대체로 맑음\n\n오늘의 조식, 피눈물 흘리는 고구마\n\n고구마를 깨끗하게 씻어 칼집을 낸 뒤 찜기에 넣고 20분 가량 찐다. 시판 매콤 양념 닭가슴살을 전자렌지에 2분 가량 데운 후 결대로 찢어서 준비한다. \n고구마를 접시에 담고 칼집 낸 자리에 준비한 닭가슴살을 채워 넣는다. #스리라차 소스로 마무리한다. \n\n#조식 #레시피 #미라클모닝 #고구마 ",
   "image": "https://images.how-about-breakfast.com/images/893.jpg",
   "gallery": [
@@ -38667,13 +38667,6 @@
    "https://images.how-about-breakfast.com/images/893_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/893.mp4",
-  "_en": {
-   "hash": "9a7a3b5500db2b0a4c64fe613ef156f898cab23f44ee9994ca86d3788fb82350",
-   "title": "Sriracha Sweet Potato",
-   "intro": "20231115, #breakfastdiary 893, 1°C/mostly clear\nToday's breakfast: sweet potato crying tears of blood\nWash the sweet potato thoroughly, score it, then steam for about 20 minutes. Warm store-bought spicy seasoned chicken breast in the microwave for about 2 minutes and shred it along the grain. \nPlate the sweet potato and stuff the shredded chicken breast into the scored slits. Finish with #sriracha sauce.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "스리라차-고구마"
  },
  {
