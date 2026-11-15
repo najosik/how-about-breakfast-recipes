@@ -38625,7 +38625,7 @@
   "weather": "4도/흐림, 26분/운동(L)",
   "failed": false,
   "calories": null,
-  "title": "대파계란덮밥 대파",
+  "title": "대파 계란 덮밥",
   "credit": null,
   "hashtags": [
    "대파",
@@ -38636,8 +38636,8 @@
    "조식다이어리"
   ],
   "intro": "20231116, #조식다이어리 894, 4도/흐림, 26분/운동(L) \n도무지 난리 날 일이 없어 보이는데, 인스타에서 난리 났다는 #대파계란덮밥\n달군 팬에 옥희방앗간 @okhee_mill 들기름, 다진 대파를 볶는다. 콩기름에 대파를 볶으면 중국집 볶음밥의 향이 나는데 들기름은 확실히 다르다. 향긋하다. \n대파가 어느 정도 익으면 계란이 도망가지 못하도록 결계를 친 뒤 계란을 두 개 넣고 계란이 익을 때까지 잠시 둔다. \n따뜻한 밥 위에 대파 + 계란을 조심스럽게 얹고 간장 한 숟가락, 들기름 조금, 참깨로 마무리한다. \n일 때문에 평소 루틴보다 한 시간 반 정도 일찍 시작하는 하루,",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 따뜻한 밥 150g\n- 대파 40g(잎집)\n- 계란 2개\n- 들기름 1T(볶기용)\n- 들기름 1t(마무리용)\n- 간장 1T\n- 참깨 약간",
+  "steps": "1. 대파는 잎집(흰 부분) 위주로 곱게 다진다.\n2. 달군 팬에 들기름 1T를 두르고 다진 대파를 약불에서 2~3분, 향이 올라오고 노릇해질 때까지 볶는다.\n3. 대파를 팬 가장자리로 둥글게 모아 가운데를 비워 '결계'를 친다. 가운데에 계란 2개를 깨 넣고, 노른자가 원하는 정도로 익을 때까지 잠시 둔다.\n4. 따뜻한 밥 위에 대파와 계란을 조심스럽게 얹는다.\n5. 간장 1T를 두르고 들기름 1t와 참깨로 마무리한다.",
   "raw": "20231116, #조식다이어리 894, 4도/흐림, 26분/운동(L) \n\n도무지 난리 날 일이 없어 보이는데, 인스타에서 난리 났다는 #대파계란덮밥\n\n달군 팬에 옥희방앗간 @okhee_mill 들기름, 다진 대파를 볶는다. 콩기름에 대파를 볶으면 중국집 볶음밥의 향이 나는데 들기름은 확실히 다르다. 향긋하다. \n대파가 어느 정도 익으면 계란이 도망가지 못하도록 결계를 친 뒤 계란을 두 개 넣고 계란이 익을 때까지 잠시 둔다. \n따뜻한 밥 위에 대파 + 계란을 조심스럽게 얹고 간장 한 숟가락, 들기름 조금, 참깨로 마무리한다. \n\n일 때문에 평소 루틴보다 한 시간 반 정도 일찍 시작하는 하루, \n\n#조식 #레시피 #미라클모닝 #대파 ",
   "image": "https://images.how-about-breakfast.com/images/894.jpg",
   "gallery": [
@@ -38645,13 +38645,6 @@
    "https://images.how-about-breakfast.com/images/894_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/894.mp4",
-  "_en": {
-   "hash": "d623f59cb21a67933a5f7a8cca1c0fed71e4ab0f60af5daa920f064d2ec528ec",
-   "title": "Scallion and Egg Rice Bowl",
-   "intro": "20231116, #breakfastdiary 894, 4°C/cloudy, 26min/workout(L) \nIt doesn't look like anything that should cause a stir, and yet apparently #scallioneggricebowl blew up on Instagram\nHeat Okhee Mill @okhee_mill perilla oil in a pan and stir-fry chopped scallions. Frying scallions in soybean oil gives off that Chinese-restaurant fried-rice smell, but perilla oil is a completely different, fragrant thing. \nOnce the scallions are cooked through, build a little barrier so the eggs can't escape, crack in two eggs, and let them sit until set. \nCarefully spoon the scallion-and-egg mixture over warm rice, then finish with a spoonful of soy sauce, a little perilla oil, and sesame seeds. \nA day that starts an hour and a half earlier than usual because of work,",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "대파계란덮밥-대파"
  },
  {
