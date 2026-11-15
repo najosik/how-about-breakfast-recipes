@@ -25532,7 +25532,7 @@
   "weather": "17도/대체로 흐림",
   "failed": false,
   "calories": null,
-  "title": "호박샐러드 호박",
+  "title": "단호박 크림치즈 샐러드",
   "credit": "@omotenashi_dining_15",
   "hashtags": [
    "레시피",
@@ -25543,8 +25543,8 @@
    "호박샐러드"
   ],
   "intro": "20241116 #조식다이어리 1234, 17도/대체로 흐림\n커다란 호박을 잘라서 만든 #호박샐러드",
-  "ingredients": "호박, (토핑) 크림치즈 2T 마요네즈 2T, 우유 2T, 식초 1/2T, 설탕 1T\n\n👉이렇게\n1. 호박 잘라서 껍질 벗기고 숭덩숭덩 썰어서 볼에 담고 소금소금 전자렌지에 5분 익힌다. (익힐 때는 뚜껑을 덮는다.) \n2. 그동안 크림치즈, 마요네즈, 우유 섞어서 토핑 만든다.  \n3. 호박 으깨고 우유, 설탕, 식초 넣고 섞는다. \n4. 접시에 호박 담고, 크림치즈 토핑 얹고 견과류 솔솔\n\n#조식 #레시피 #미라클모닝 #호박\n\nInspired by @omotenashi_dining_15",
-  "steps": null,
+  "ingredients": "- 단호박 1/4개(껍질 벗긴 과육 약 150g)\n- 소금 한 꼬집\n- 으깨는 양념(우유 2T, 설탕 1t, 식초 1t)\n- 크림치즈 토핑(크림치즈 30g, 마요네즈 1t, 우유 1T)\n- 견과류 10g(호두나 아몬드)",
+  "steps": "1. 단호박은 씨를 파내고 잘라 껍질을 벗긴 뒤 숭덩숭덩 썰어 볼에 담는다. 소금을 뿌리고 뚜껑을 덮어 전자레인지에 5분 익힌다.\n2. 그동안 크림치즈, 마요네즈, 우유 1T를 섞어 크림치즈 토핑을 만든다.\n3. 익은 단호박을 포크로 으깨고 우유 2T, 설탕, 식초를 넣어 섞는다.\n4. 접시에 으깬 단호박을 담고 크림치즈 토핑을 얹은 뒤 견과류를 뿌린다.",
   "raw": "20241116 #조식다이어리 1234, 17도/대체로 흐림\n\n커다란 호박을 잘라서 만든 #호박샐러드\n\n👉재료는\n호박, (토핑) 크림치즈 2T 마요네즈 2T, 우유 2T, 식초 1/2T, 설탕 1T\n\n👉이렇게\n1. 호박 잘라서 껍질 벗기고 숭덩숭덩 썰어서 볼에 담고 소금소금 전자렌지에 5분 익힌다. (익힐 때는 뚜껑을 덮는다.) \n2. 그동안 크림치즈, 마요네즈, 우유 섞어서 토핑 만든다.  \n3. 호박 으깨고 우유, 설탕, 식초 넣고 섞는다. \n4. 접시에 호박 담고, 크림치즈 토핑 얹고 견과류 솔솔\n\n#조식 #레시피 #미라클모닝 #호박\n\nInspired by @omotenashi_dining_15",
   "image": "https://images.how-about-breakfast.com/images/1234.jpg",
   "gallery": [
@@ -25554,13 +25554,6 @@
    "https://images.how-about-breakfast.com/images/1234_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1234.mp4",
-  "_en": {
-   "hash": "8bd821314f1a83ccaf4cdd7f62fbe95156eaabc32e2cb7ed06e951a9a8b1fa92",
-   "title": "Pumpkin Salad, Pumpkin",
-   "intro": "20241116 #breakfastdiary 1234, 17°C/mostly cloudy\n#pumpkinsalad made from a big pumpkin, cut up",
-   "ingredients": "Pumpkin, (topping) 2T cream cheese, 2T mayonnaise, 2T milk, 1/2T vinegar, 1T sugar\n\n👉Like this\n1. Cut the pumpkin, peel it, cut into big chunks, put in a bowl with a bit of salt, and microwave for 5 minutes. (Cover while microwaving.)\n2. Meanwhile, mix the cream cheese, mayonnaise, and milk to make the topping.\n3. Mash the pumpkin, add milk, sugar, and vinegar, and mix.\n4. Plate the pumpkin, top with the cream cheese topping, and sprinkle nuts on top\n\n#breakfast #recipe #miraclemorning #pumpkin\n\nInspired by @omotenashi_dining_15",
-   "steps": ""
-  },
   "page_id": "호박샐러드-호박"
  },
  {
