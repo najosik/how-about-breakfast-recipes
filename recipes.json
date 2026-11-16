@@ -38606,7 +38606,7 @@
   "weather": "-1도/대체로 맑음, 21분/운동(Y)",
   "failed": false,
   "calories": null,
-  "title": "피넛버터드레싱메밀국수 피넛버터 메밀국수",
+  "title": "피넛버터 메밀면",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38617,9 +38617,9 @@
    "피넛버터",
    "피넛버터드레싱메밀국수"
   ],
-  "intro": "20231117, #조식다이어리 895, -1도/대체로 맑음, 21분/운동(Y) \n땅콩버터는 단백질, 단일불포화지방, 비타민E, 나이아신, 마그네슘 등이 함유돼 있지만 칼로리가 높아 하루 2스푼 이내로 먹어야 한다고 강재헌 강북삼성병원 가정의학과 교수님이 말씀하셨다. \n의사 선생님의 하루 권장량은 2t(스푼)인데 이미 꾹꾹 눌러담아 2T를 먹었다. 오늘 오전에 예정된 일 외에 북악산을 올라야 할 이유가 하나 더 생겼다. 🧗\n피넛버터 2T, 다진 마늘 1/2t, 간장 2T, 식초 2T, 참기름 1T를 섞어 드레싱을 만든다. 취향에 따라 매실청, 유차청을 1T 더한다. 대파를 다진다. \n끓는 물에 세 번 정도 찬물을 부어가며 메밀면을 삶는다. \n그릇에 메밀면을 담고 피넛버터 드레싱, 대파 얹어 잘 비벼서 먹는다.",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20231117, #조식다이어리 895, -1도/대체로 맑음, 21분/운동(Y) \n땅콩버터는 단백질, 단일불포화지방, 비타민E, 나이아신, 마그네슘 등이 함유돼 있지만 칼로리가 높아 하루 2스푼 이내로 먹어야 한다고 강재헌 강북삼성병원 가정의학과 교수님이 말씀하셨다. \n의사 선생님의 하루 권장량은 2t(스푼)인데 이미 꾹꾹 눌러담아 2T를 먹었다. 오늘 오전에 예정된 일 외에 북악산을 올라야 할 이유가 하나 더 생겼다. 🧗\n\n피넛버터 2T, 다진 마늘 1/2t, 간장 2T, 식초 2T, 참기름 1T를 섞어 드레싱을 만든다. 취향에 따라 매실청, 유차청을 1T 더한다. 대파를 다진다. \n끓는 물에 세 번 정도 찬물을 부어가며 메밀면을 삶는다. \n그릇에 메밀면을 담고 피넛버터 드레싱, 대파 얹어 잘 비벼서 먹는다.",
+  "ingredients": "- 메밀면200g\n- 피넛버터 2T\n- 간장 2T\n- 식초 2T\n- 참기름 1T\n- 다진 마늘 1/2t\n- 매실청 또는 유자청 1T(선택)\n- 대파 40g(다진 것)",
+  "steps": "1. 볼에 피넛버터, 다진 마늘, 간장, 식초, 참기름을 넣고 섞어서 드레싱을 만든다. 취향에 따라 매실청이나 유자청 1T를 더한다.\n2. 대파는 곱게 다진다.\n3. 끓는 물에 메밀면을 넣고, 끓어오르면 찬물을 세 번쯤 부어가며 삶는다. 면을 건져 찬물에 비벼 헹구고 물기를 꼼꼼히 뺀다.\n4. 그릇에 면을 담고 피넛버터 드레싱과 대파를 얹어 잘 비빈다.",
   "raw": "20231117, #조식다이어리 895, -1도/대체로 맑음, 21분/운동(Y) \n\n땅콩버터는 단백질, 단일불포화지방, 비타민E, 나이아신, 마그네슘 등이 함유돼 있지만 칼로리가 높아 하루 2스푼 이내로 먹어야 한다고 강재헌 강북삼성병원 가정의학과 교수님이 말씀하셨다. \n\n의사 선생님의 하루 권장량은 2t(스푼)인데 이미 꾹꾹 눌러담아 2T를 먹었다. 오늘 오전에 예정된 일 외에 북악산을 올라야 할 이유가 하나 더 생겼다. 🧗\n\n#피넛버터드레싱메밀국수\n\n피넛버터 2T, 다진 마늘 1/2t, 간장 2T, 식초 2T, 참기름 1T를 섞어 드레싱을 만든다. 취향에 따라 매실청, 유차청을 1T 더한다. 대파를 다진다. \n끓는 물에 세 번 정도 찬물을 부어가며 메밀면을 삶는다. \n그릇에 메밀면을 담고 피넛버터 드레싱, 대파 얹어 잘 비벼서 먹는다. \n\n#조식 #레시피 #미라클모닝 #피넛버터 #메밀국수",
   "image": "https://images.how-about-breakfast.com/images/895.jpg",
   "gallery": [
@@ -38627,13 +38627,6 @@
    "https://images.how-about-breakfast.com/images/895_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/895.mp4",
-  "_en": {
-   "hash": "5555f8030e57596ea5ec97a774f092ca9d8e14800b041ee12e2c39f130d264e5",
-   "title": "Buckwheat Noodles with Peanut Butter Dressing",
-   "intro": "20231117, #breakfastdiary 895, -1°C/mostly clear, 21min/workout(Y) \nPeanut butter contains protein, monounsaturated fat, vitamin E, niacin, and magnesium, but it's also high in calories, so Dr. Kang Jae-heon, a family medicine professor at Kangbuk Samsung Hospital, says you should keep it under 2 spoonfuls a day. \nThe doctor's recommended daily amount is 2t (spoons), but I'd already packed in a heaping 2T. Now, on top of my plans for this morning, I have one more reason to go hike Bugaksan. 🧗\nMix 2T peanut butter, 1/2t minced garlic, 2T soy sauce, 2T vinegar, and 1T sesame oil to make the dressing. Add 1T plum syrup or yuja syrup if you like. Chop the scallions. \nBoil the buckwheat noodles, pouring in cold water a few times to cool the pot as you go. \nPlate the noodles, top with the peanut butter dressing and scallions, and mix well before eating.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "피넛버터드레싱메밀국수-피넛버터-메밀국수"
  },
  {
