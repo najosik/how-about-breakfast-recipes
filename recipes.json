@@ -67861,7 +67861,7 @@
   "weather": "13도/대체로흐림, 25분/운동",
   "failed": false,
   "calories": null,
-  "title": "아보카도샌드위치 모닝리추얼 모닝루틴",
+  "title": "아보카도 오픈토스트",
   "credit": null,
   "hashtags": [
    "avocado",
@@ -67890,21 +67890,14 @@
    "홈쿡"
   ],
   "intro": "20211118, #조식다이어리 272, 13도/대체로흐림, 25분/운동\n올리브오일 두른 팬에 빵을 굽고, 으깬 아보카도, 이탈리안 파슬리, 반숙 계란, 소금소금, 후추후추후추후추 #아보카도샌드위치\n인간이 쾌락을 느끼는 정도를 계량화했다는 짤을 봤는데, 적당한 취기=1, 당 섭취=3, 팀워크=10, 일상의 작은 친절=12, 위로=20이다. \n다만 위로와 감동 앞에는 ‘진심어린’이 더해져야 하지 않을까?",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 사워도우 2장\n- 올리브오일 1t(굽기용)\n- 아보카도 1/2개(약 100g)\n- 계란 1개(반숙)\n- 이탈리안 파슬리 약간\n- 소금 한 꼬집, 후추 넉넉히",
+  "steps": "1. 계란은 끓는 물에 7분 삶아 찬물에 식힌 뒤 껍질을 벗기고 반으로 자른다.\n2. 달군 팬에 올리브오일을 두르고 빵을 앞뒤로 노릇하게 굽는다.\n3. 아보카도는 씨를 빼고 포크로 으깬 뒤 소금 한 꼬집을 섞는다.\n4. 구운 빵이 한 김 식으면 으깬 아보카도를 펴 바른다.\n5. 반숙 계란을 올리고 다진 이탈리안 파슬리를 뿌린 뒤, 후추를 넉넉히 갈아 올린다.",
   "raw": "20211118, #조식다이어리 272, 13도/대체로흐림, 25분/운동\n\n올리브오일 두른 팬에 빵을 굽고, 으깬 아보카도, 이탈리안 파슬리, 반숙 계란, 소금소금, 후추후추후추후추 #아보카도샌드위치\n\n인간이 쾌락을 느끼는 정도를 계량화했다는 짤을 봤는데, 적당한 취기=1, 당 섭취=3, 팀워크=10, 일상의 작은 친절=12, 위로=20이다. \n다만 위로와 감동 앞에는 ‘진심어린’이 더해져야 하지 않을까? \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샌드위치 #오픈샌드위치 #아보카도 #계란 #이탈리안파슬리 \n#breakfast #recipe #sandwich #openfacedsandwich #avocado #parsley #egg ",
   "image": "https://images.how-about-breakfast.com/images/272.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/272.jpg",
    "https://images.how-about-breakfast.com/images/272_2.jpg"
   ],
-  "_en": {
-   "hash": "9e11b194c4afa13b4096927185af1cc227ecc3912b97301751bb750abf2f1bcf",
-   "title": "Avocado Sandwich",
-   "intro": "20211118 #breakfastdiary 272, 13°C/mostly cloudy, 25min/workout\nToast bread in a pan with olive oil, then top with mashed avocado, Italian parsley, a soft-boiled egg, salt, salt, and pepper, pepper, pepper, pepper. #avocadosandwich\nI saw a meme that supposedly quantified how much pleasure humans feel from different things: a pleasant buzz = 1, sugar = 3, teamwork = 10, small everyday kindnesses = 12, comfort = 20. \nThough shouldn't 'heartfelt' be added in front of both comfort and being moved?",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "아보카도샌드위치-모닝리추얼-모닝루틴"
  },
  {
