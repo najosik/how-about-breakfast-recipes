@@ -25498,7 +25498,7 @@
   "weather": "-2도/대체로 맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "알배추샐러드 알배추",
+  "title": "알배추 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25509,8 +25509,8 @@
    "조식다이어리"
   ],
   "intro": "20241118 #조식다이어리 1236, -2도/대체로 맑음, 20분/운동(M) \n기온이 영하로 떨어졌다. 아침부터 기름기 줄줄 흐르는 태국식 굴전이 생각난다. \n얼마 전에 태국식 굴전 호이텃이나 어쑤언에 스리라차 소스와 스위트칠리 소스를 반씩 섞어서 사용하면 좋다고 들었는데 알배추구이에 사용해 봤다. \n한국산 알배추에 태국산 스리라차 & 스위트칠리 소스, 고수를 듬뿍 얹은 태국 스타일 #알배추샐러드",
-  "ingredients": "알배추 1/2개, 고수, 프라이드 샬롯\n(드레싱) 스리라차 소스 1T, 스위트 칠리 소스 1T\n\n👉이렇게\n1. 알배추는 겉잎을 떼어낸 후 반으로 자르고 달군 팬에 올리브오일 두르고 골고루 굽는다. (생각보다 색이 니오지 않아서 토치를 사용했다.) \n2. 접시에 알배추 담고 드레싱 뿌리고 고수, 프라이드 샬롯 얹는다. \n\n#조식 #레시피 #미라클모닝 #알배추",
-  "steps": null,
+  "ingredients": "- 알배추 1/2개\n- 고수 조금\n- 프라이드 샬롯 2t\n- 드레싱(스리라차 소스 1T, 스위트 칠리 소스 1T)",
+  "steps": "1. 알배추는 겉잎을 떼어낸 후 반으로 자르고 달군 팬에 올리브오일 두르고 골고루 굽는다. (생각보다 색이 니오지 않아서 토치를 사용했다.) \n2. 접시에 알배추 담고 드레싱 뿌리고 고수, 프라이드 샬롯 얹는다. ",
   "raw": "20241118 #조식다이어리 1236, -2도/대체로 맑음, 20분/운동(M) \n\n기온이 영하로 떨어졌다. 아침부터 기름기 줄줄 흐르는 태국식 굴전이 생각난다. \n얼마 전에 태국식 굴전 호이텃이나 어쑤언에 스리라차 소스와 스위트칠리 소스를 반씩 섞어서 사용하면 좋다고 들었는데 알배추구이에 사용해 봤다. \n한국산 알배추에 태국산 스리라차 & 스위트칠리 소스, 고수를 듬뿍 얹은 태국 스타일 #알배추샐러드\n\n👉재료는\n알배추 1/2개, 고수, 프라이드 샬롯\n(드레싱) 스리라차 소스 1T, 스위트 칠리 소스 1T\n\n👉이렇게\n1. 알배추는 겉잎을 떼어낸 후 반으로 자르고 달군 팬에 올리브오일 두르고 골고루 굽는다. (생각보다 색이 니오지 않아서 토치를 사용했다.) \n2. 접시에 알배추 담고 드레싱 뿌리고 고수, 프라이드 샬롯 얹는다. \n\n#조식 #레시피 #미라클모닝 #알배추",
   "image": "https://images.how-about-breakfast.com/images/1236.jpg",
   "gallery": [
@@ -25521,13 +25521,6 @@
    "https://images.how-about-breakfast.com/images/1236_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1236.mp4",
-  "_en": {
-   "hash": "9b5b91fba494cad348fbdf26ad88e3911ca9b8e33bf70a3785afa33d9296579c",
-   "title": "Napa Cabbage Heart Salad, Napa Cabbage Heart",
-   "intro": "20241118 #breakfastdiary 1236, -2°C/mostly clear, 20min/exercise(M)\nThe temperature dropped below freezing. From the morning I've been craving a greasy, oil-dripping Thai-style oyster omelet. \nI heard recently that when making Thai oyster omelets like hoy tod or or suan, mixing sriracha and sweet chili sauce half and half works great, so I tried it on grilled napa cabbage heart. \nKorean napa cabbage heart topped generously with Thai sriracha & sweet chili sauce and cilantro, Thai-style #napacabbagehearsalad",
-   "ingredients": "1/2 napa cabbage heart, cilantro, fried shallots\n(dressing) 1T sriracha sauce, 1T sweet chili sauce\n\n👉Like this\n1. Remove the outer leaves of the cabbage heart, cut in half, heat a pan with olive oil, and grill evenly all over. (It didn't brown as much as I expected, so I used a torch.)\n2. Plate the cabbage heart, drizzle the dressing, and top with cilantro and fried shallots.\n\n#breakfast #recipe #miraclemorning #napacabbageheart",
-   "steps": ""
-  },
   "page_id": "알배추샐러드-알배추"
  },
  {
