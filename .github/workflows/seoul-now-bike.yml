@@ -48,7 +48,7 @@ jobs:
             echo "::warning::SEOUL_API_KEY secret is not set - skipping."
             exit 0
           fi
-          python3 analysis/bike_foreigner.py
+          python3 -u analysis/bike_foreigner.py
 
       - name: Commit and push if changed
         run: |

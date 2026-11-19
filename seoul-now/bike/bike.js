@@ -32,7 +32,7 @@
       method: (d) => [
         `대여소별 ${fmtYm(d.month)} 월 대여 건수(이용권·성별·연령 집계를 대여소별로 합산)에, 대여소가 속한 행정동의 단기체류 외국인 비율을 곱해 외국인 추정 이용으로 봤습니다. 나머지는 내국인 추정 이용입니다.`,
         `외국인 비율 = 단기체류 외국인 생활인구 ÷ (내국인 + 단기체류 외국인 생활인구), ${fmtYm(d.popMonth)} 전체 일 ${d.shareHours[0]}~${d.shareHours[1]}시 평균.`,
-        "일일권 비율은 정기권이 아닌 일일권(비회원 포함) 대여의 비중으로, 관광·단기 이용 성격을 보조로 보여줍니다.",
+        "일일권 비율은 정기권이 아닌 일일권(비회원 포함) 대여의 비중으로, 관광·단기 이용 성격을 보조로 보여줍니다." + (d.dayPass ? "" : " 이번 기준월은 원천 응답이 느려 일일권 비율을 생략했습니다."),
       ],
       limitsH: "한계",
       limits: [
@@ -66,7 +66,7 @@
       method: (d) => [
         `Monthly rentals per station (${fmtYm(d.month)}, summed across pass type, gender and age) are multiplied by the short-stay foreigner share of the station's neighbourhood. The rest is counted as resident use.`,
         `Foreigner share = short-stay foreign living population ÷ (resident + short-stay foreign), ${fmtYm(d.popMonth)}, all days, ${d.shareHours[0]}:00–${d.shareHours[1]}:59 average.`,
-        "Day-pass share is the share of rentals on day passes (incl. non-member), a rough hint of visitor-style use.",
+        "Day-pass share is the share of rentals on day passes (incl. non-member), a rough hint of visitor-style use." + (d.dayPass ? "" : " It was skipped this month because the source responded too slowly."),
       ],
       limitsH: "Limitations",
       limits: [
@@ -117,7 +117,7 @@
     return el("div", { class: "map-tip" }, el("strong", { text: s.name }), el("span", { class: "tip-row", text: `${s.gu} · ${s.dong}` }),
       el("span", { class: "tip-row", text: `${t("tipUse")} ${nf(s.use)}${t("unit")}` }),
       el("span", { class: "tip-row", text: `${t("tipForeign")} ${nf(s.foreign)}${t("unit")} · ${t("tipLocal")} ${nf(s.local)}${t("unit")}` }),
-      el("span", { class: "tip-row", text: `${t("tipShare")} ${pct(s.share)} · ${t("tipDay")} ${pct(s.dayPass)}` }));
+      el("span", { class: "tip-row", text: `${t("tipShare")} ${pct(s.share)}` + (Number.isFinite(s.dayPass) ? ` · ${t("tipDay")} ${pct(s.dayPass)}` : "") }));
   }
 
   // ---------- 정적 문구 ----------
@@ -145,7 +145,7 @@
     $("kpis").replaceChildren(
       kpi(t("kStations"), nf(s.stations)), kpi(t("kUse"), nf(s.totalUse), fmtYm(d.month)),
       kpi(t("kForeign"), nf(s.foreign), pct(s.foreign / (s.foreign + s.local))),
-      kpi(t("kDay"), pct(d.stations.reduce((a, x) => a + x.dayPass * x.use, 0) / Math.max(1, d.stations.reduce((a, x) => a + x.use, 0)))));
+      kpi(t("kDay"), dayPassAll(d)));
     $("metric-chips").replaceChildren(...METRICS.map((m) => el("button", {
       type: "button", class: "chip" + (state.metric === m ? " active" : ""), "aria-pressed": String(state.metric === m),
       text: t("metric")[m], onclick: () => { state.metric = m; writeUrl(); renderData(); drawStations(); },
@@ -158,6 +158,12 @@
     const when = new Date(d.generatedAt);
     $("updated").textContent = t("updated")(isNaN(when) ? "-" : when.toLocaleString(state.lang === "ko" ? "ko-KR" : "en-US", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST");
     $("sources").replaceChildren(...d.sources.map((x) => el("li", { text: x })));
+  }
+  // 일일권 비율: 수집 시간 초과로 없을 수 있음(null) → '-'
+  function dayPassAll(d) {
+    const xs = d.stations.filter((x) => Number.isFinite(x.dayPass));
+    if (!d.dayPass || !xs.length) return "-";
+    return pct(xs.reduce((a, x) => a + x.dayPass * x.use, 0) / Math.max(1, xs.reduce((a, x) => a + x.use, 0)));
   }
   function kpi(label, value, sub) {
     return el("div", { class: "kpi" }, el("p", { class: "k-label", text: label }), el("p", { class: "k-value", text: value }), sub ? el("p", { class: "k-sub", text: sub }) : null);
