@@ -4,7 +4,9 @@
   "use strict";
   const $ = (id) => document.getElementById(id);
   const METRICS = ["foreign", "local", "diff", "share"];
-  const LQ_BREAKS = [0.5, 0.8, 1.25, 2];   // 외국인 상대 비중(서울 평균 = 1) 구간
+  const LQ_BREAKS = [0.5, 0.8, 1.25, 2];
+  const SORT_KEYS = ["use", "foreign", "local", "share", "lq"];
+  const DEFAULT_SORT = { foreign: "foreign", local: "local", share: "share", diff: "lq" };   // 외국인 상대 비중(서울 평균 = 1) 구간
   const SHARE_BREAKS = [0.01, 0.03, 0.06, 0.1];
   const SHARE_COLORS = ["#eef3fb", "#c6d7ef", "#8fb0de", "#4a7cc2", "#1d4f9a"];
   // 외국인·내국인 색은 CSS 토큰(--c-for, --c-loc: 라이트·다크 각각 검증)에서 읽는다
@@ -48,8 +50,9 @@
         diff: "색 = 대여소 이용 중 외국인 추정 비중이 서울 평균보다 높으면 주황, 낮으면 파랑. 원 크기 = 월 대여 건수.",
       },
       rankH: { foreign: "외국인 추정 이용 상위 대여소", local: "내국인 추정 이용 상위 대여소", share: "외국인 비율 높은 대여소", diff: "외국인 비중이 서울 평균보다 높은 대여소" },
-      rankDesc: (n) => `상위 ${TOP}곳. 이름을 누르면 지도에서 위치를 보여줍니다.` + (n ? ` 비율 순위는 월 대여 ${n}건 이상만.` : ""),
-      th: { no: "순위", name: "대여소", dong: "행정동", use: "월 대여", foreign: "외국인 추정", base: "보정 전", local: "내국인 추정", share: "동 외국인 비율", day: "비회원 추정" },
+      rankDesc: (n, c) => `대상 ${c.toLocaleString("ko-KR")}곳 중 ${TOP}곳. 열 제목(월 대여·외국인 추정·내국인 추정·외국인 비율)을 누르면 내림차순↔오름차순으로 정렬됩니다. 이름을 누르면 지도에서 위치를 보여줍니다.` + (n ? ` 월 대여 ${n}건 이상만.` : ""),
+      sortDesc: "내림차순 정렬됨", sortAsc: "오름차순 정렬됨", sortNone: "눌러서 정렬",
+      th: { no: "순위", name: "대여소", dong: "행정동", use: "월 대여", foreign: "외국인 추정", base: "보정 전", local: "내국인 추정", share: "동 외국인 비율", day: "비회원 추정", lq: "서울 평균 대비" },
       dongH: "외국인 추정 이용이 많은 행정동", dongDesc: "대여소를 행정동별로 합친 값입니다.",
       thDong: { dong: "행정동", stations: "대여소", use: "월 대여", foreign: "외국인 추정", share: "외국인 비율" },
       legendSize: "원 크기: 추정 건수", legendShare: "외국인 비율",
@@ -103,8 +106,9 @@
         diff: "Colour = orange where the estimated foreign share of rentals is above the Seoul average, blue where it is below. Size = monthly rentals.",
       },
       rankH: { foreign: "Top stations by estimated foreign use", local: "Top stations by estimated resident use", share: "Stations with the highest foreigner share", diff: "Stations most above the Seoul foreign share" },
-      rankDesc: (n) => `Top ${TOP}. Tap a name to locate it on the map.` + (n ? ` Share ranking only includes stations with ${n}+ rentals a month.` : ""),
-      th: { no: "#", name: "Station", dong: "Neighbourhood", use: "Rentals", foreign: "Est. foreign", base: "Before adj.", local: "Est. resident", share: "Area foreign share", day: "Likely non-member" },
+      rankDesc: (n, c) => `${TOP} of ${c.toLocaleString("en-US")} stations. Tap a column heading (rentals, est. foreign, est. resident, share) to sort descending ↔ ascending. Tap a name to locate it on the map.` + (n ? ` Only stations with ${n}+ rentals a month.` : ""),
+      sortDesc: "sorted descending", sortAsc: "sorted ascending", sortNone: "activate to sort",
+      th: { no: "#", name: "Station", dong: "Neighbourhood", use: "Rentals", foreign: "Est. foreign", base: "Before adj.", local: "Est. resident", share: "Area foreign share", day: "Likely non-member", lq: "vs Seoul avg" },
       dongH: "Neighbourhoods with the most estimated foreign use", dongDesc: "Stations summed by neighbourhood (dong).",
       thDong: { dong: "Neighbourhood", stations: "Stations", use: "Rentals", foreign: "Est. foreign", share: "Foreign share" },
       legendSize: "Circle size: estimated rentals", legendShare: "Foreigner share",
@@ -134,6 +138,9 @@
     metric: METRICS.includes(q.get("m")) ? q.get("m") : "foreign",
     dongs: q.get("dongs") === "1",
   };
+  // 순위 표 정렬: 주소의 s(열)·d(asc)를 허용 목록으로 검증. 없으면 보기(metric)별 기본 열 내림차순
+  state.sortKey = SORT_KEYS.includes(q.get("s")) && (q.get("s") !== "lq" || state.metric === "diff") ? q.get("s") : DEFAULT_SORT[state.metric];
+  state.sortDir = q.get("d") === "asc" ? "asc" : "desc";
   let data = null, map = null, stationLayer = null, dongLayer = null, dongGeo = null;
   const markers = new Map();
   const t = (k) => I18N[state.lang][k];
@@ -182,6 +189,8 @@
     if (state.lang === "en") p.set("lang", "en");
     if (state.metric !== "foreign") p.set("m", state.metric);
     if (state.dongs) p.set("dongs", "1");
+    if (state.sortKey !== DEFAULT_SORT[state.metric]) p.set("s", state.sortKey);
+    if (state.sortDir === "asc") p.set("d", "asc");
     history.replaceState(null, "", location.pathname + (p.toString() ? `?${p}` : ""));
   }
   function tipEl(s) {
@@ -225,7 +234,7 @@
     renderHow(d);
     $("metric-chips").replaceChildren(...METRICS.map((m) => el("button", {
       type: "button", class: "chip" + (state.metric === m ? " active" : ""), "aria-pressed": String(state.metric === m),
-      text: t("metric")[m], onclick: () => { state.metric = m; writeUrl(); renderData(); drawStations(); },
+      text: t("metric")[m], onclick: () => { state.metric = m; state.sortKey = DEFAULT_SORT[m]; state.sortDir = "desc"; writeUrl(); renderData(); drawStations(); },
     })));
     $("map-desc").textContent = t("mapDesc")[state.metric];
     renderLegend();
@@ -249,23 +258,47 @@
     return el("div", { class: "kpi" }, el("p", { class: "k-label", text: label }), el("p", { class: "k-value", text: value }), sub ? el("p", { class: "k-sub", text: sub }) : null);
   }
 
-  function ranked() {
+  const sortVal = (s, k) => (k === "lq" ? lqOf(s) : s[k]);
+  // 보기별 대상: 외국인 비율은 월 대여 minUse건 이상, 차이 보기는 월 300건 이상이면서 서울 평균보다 외국인 비중이 높은 대여소
+  function candidates() {
     const m = state.metric;
-    if (m === "share") return data.stations.filter((x) => x.use >= data.minUse).sort((a, b) => b.share - a.share || b.use - a.use).slice(0, TOP);
-    if (m === "diff") return data.stations.filter((x) => x.use >= 300).sort((a, b) => lqOf(b) - lqOf(a) || b.use - a.use).slice(0, TOP);
-    return [...data.stations].sort((a, b) => b[m] - a[m]).slice(0, TOP);
+    if (m === "share") return data.stations.filter((x) => x.use >= data.minUse);
+    if (m === "diff") return data.stations.filter((x) => x.use >= 300 && lqOf(x) > 1);
+    return data.stations;
+  }
+  function ranked() {
+    const k = state.sortKey, dir = state.sortDir === "asc" ? 1 : -1;
+    return [...candidates()].sort((a, b) => dir * (sortVal(a, k) - sortVal(b, k)) || b.use - a.use).slice(0, TOP);
+  }
+  function setSort(k) {
+    if (state.sortKey === k) state.sortDir = state.sortDir === "desc" ? "asc" : "desc";
+    else { state.sortKey = k; state.sortDir = "desc"; }
+    writeUrl(); renderRank();
+    const b = $("rank").querySelector(`button[data-sort="${k}"]`);   // 다시 그린 뒤 같은 머리글로 포커스 복귀
+    if (b) b.focus();
   }
   function renderRank() {
     const th = t("th");
     $("rank-h").textContent = t("rankH")[state.metric];
-    $("rank-desc").textContent = t("rankDesc")(state.metric === "share" ? data.minUse : state.metric === "diff" ? 300 : 0);
+    $("rank-desc").textContent = t("rankDesc")(state.metric === "share" ? data.minUse : state.metric === "diff" ? 300 : 0, candidates().length);
     const rows = ranked();
-    const key = state.metric === "share" || state.metric === "diff" ? "use" : state.metric;
-    const adj = !!data.adjust;
-    const max = Math.max(1, ...rows.map((r) => r[key]));
+    const key = state.sortKey;
+    const adj = !!data.adjust, diff = state.metric === "diff";
+    const max = Math.max(1e-9, ...rows.map((r) => sortVal(r, key)));
+    // [머리글, 정렬 열 키(없으면 정렬 불가), 숫자 열 여부]
+    const cols = [[th.no, null, true], [th.name, null, false], [th.dong, null, false], [th.use, "use", true], [th.foreign, "foreign", true],
+      adj ? [th.base, null, true] : null, [th.local, "local", true], adj ? [th.day, null, true] : null, [th.share, "share", true],
+      diff ? [th.lq, "lq", true] : null].filter(Boolean);
+    const head = cols.map(([h, k, num]) => {
+      if (!k) return el("th", { class: num ? "num" : null, scope: "col", text: h });
+      const on = state.sortKey === k;
+      const dirTxt = on ? (state.sortDir === "desc" ? t("sortDesc") : t("sortAsc")) : t("sortNone");
+      return el("th", { class: "num sortable" + (on ? " on" : ""), scope: "col", "aria-sort": on ? (state.sortDir === "desc" ? "descending" : "ascending") : "none" },
+        el("button", { type: "button", class: "sort-btn", "data-sort": k, "aria-label": `${h}, ${dirTxt}`, onclick: () => setSort(k) },
+          h, el("span", { class: "sort-ico", "aria-hidden": "true", text: on ? (state.sortDir === "desc" ? "▼" : "▲") : "↕" })));
+    });
     $("rank").replaceChildren(
-      el("thead", {}, el("tr", {}, ...[th.no, th.name, th.dong, th.use, th.foreign, adj ? th.base : null, th.local, adj ? th.day : null, th.share]
-        .filter(Boolean).map((h, i) => el("th", { class: i >= 3 ? "num" : null, text: h })))),
+      el("thead", {}, el("tr", {}, ...head)),
       el("tbody", {}, ...rows.map((r, i) => el("tr", {},
         el("td", { class: "num", text: String(i + 1) }),
         el("td", { class: "rank-name" }, el("button", { type: "button", class: "link", text: r.name, onclick: () => focusStation(r.no) }),
@@ -276,9 +309,10 @@
         adj ? el("td", { class: "num", text: Number.isFinite(r.foreignBase) ? nf(r.foreignBase) : "-" }) : null,
         el("td", { class: "num", text: nf(r.local) }),
         adj ? el("td", { class: "num", text: Number.isFinite(r.visitorRatio) ? pct(r.visitorRatio) : "-" }) : null,
-        el("td", { class: "num", text: pct(r.share) })))));
+        el("td", { class: "num", text: pct(r.share) }),
+        diff ? el("td", { class: "num", text: `×${lqOf(r).toFixed(2)}` }) : null))));
     // 막대 너비는 CSSOM으로(인라인 style 속성 없이: CSP style-src 'self')
-    $("rank").querySelectorAll(".mini-bar > span").forEach((b, i) => { b.style.width = `${(rows[i][key] / max) * 100}%`; });
+    $("rank").querySelectorAll(".mini-bar > span").forEach((b, i) => { b.style.width = `${Math.max(0, sortVal(rows[i], key) / max) * 100}%`; });
   }
   // ---------- 외국인 vs 내국인 비교 ----------
   function renderCompare() {

@@ -48,3 +48,12 @@
 .cmp-list button.link:hover, .cmp-list button.link:focus-visible { text-decoration-color: currentColor; }
 .tag { font-size: .72rem; padding: 0 6px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
 @media (max-width: 560px) { .cmp-row { grid-template-columns: 4.5rem 1fr 5.5rem; } }
+
+/* 순위 표 정렬 머리글 */
+.data-table th.sortable { padding: 0; }
+.sort-btn { display: inline-flex; align-items: center; justify-content: flex-end; gap: 4px; width: 100%; min-height: 36px; padding: 8px 10px; border: 0; background: none; color: inherit; font: inherit; cursor: pointer; white-space: nowrap; }
+.sort-btn:hover { color: var(--text); }
+.sort-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 6px; }
+.sort-ico { font-size: .7rem; opacity: .55; }
+th.sortable.on { color: var(--text); }
+th.sortable.on .sort-ico { opacity: 1; }
