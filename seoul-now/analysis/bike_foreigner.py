@@ -36,7 +36,8 @@ MIN_USE = 30                    # 비율 순위에 넣을 최소 월 대여 건�
 TOP = 30
 NO_RE = re.compile(r"^\d{1,6}$")
 NAME_NO_RE = re.compile(r"^\s*(\d{1,6})\s*\.")   # '108. 서교동 사거리' → 108
-DAYPASS_BUDGET = 600            # 초. 일일권 비율 수집 시간 상한
+BEHAVIOR_BUDGET = 4200         # 초. 이용권 집계(약 11만 행, 응답이 느림) 수집 시간 상한. 환경변수로 바꿀 수 있음
+SMOOTH_K = 50                   # 평활: 대여 50건만큼 서울 평균을 섞음
 
 
 def dong_index_from_geojson(gj: dict) -> bf.DongIndex:
@@ -83,37 +84,78 @@ def station_use(rows) -> dict[str, float]:
     return dict(out)
 
 
-def day_pass_ratio(api, ym: str, budget: float = DAYPASS_BUDGET) -> dict[str, float] | None:
-    """일일권 비율(대여소별). 시간 예산을 넘기면 None(지표 생략)."""
+def behavior(api, ym: str, budget: float | None = None) -> dict | None:
+    """대여소별 이용권 집계(tbCycleRentUseMonthInfo). 시간 예산을 넘기면 None.
+    visitor 신호: 이용권 이름에 '비회원'이 있으면 그것, 없으면 '일일'(일일권 전체).
+    성별·연령은 서울 전체 합계만 남기고(투명성 확인용) 대여소 단위로는 남기지 않는다."""
+    budget = float(os.environ.get("BEHAVIOR_BUDGET", BEHAVIOR_BUDGET)) if budget is None else budget
     deadline = time.monotonic() + budget
-    rows = []
+    st = defaultdict(lambda: [0.0, 0.0, 0.0])   # no -> [use, 비회원, 일일]
+    types, ages = defaultdict(float), defaultdict(float)
     for i, r in enumerate(api.all_rows("tbCycleRentUseMonthInfo", ym, root="cycleRentUseMonthInfo")):
-        rows.append(r)
         if i % 10000 == 9999:
-            print(f"  day-pass rows: {i + 1}", flush=True)
+            print(f"  behavior rows: {i + 1}", flush=True)
             if time.monotonic() > deadline:
-                print("  day-pass budget exceeded; skipping", flush=True)
+                print("  behavior budget exceeded; skipping", flush=True)
                 return None
-    agg = aggregate_use(rows)
-    return {no: v["day"] / v["use"] for no, v in agg.items() if v["use"] > 0}
-
-
-def aggregate_use(rows) -> dict[str, dict]:
-    """대여소별 월 대여 합계와 일일권 건수. 성별·연령은 합산만 하고 남기지 않는다."""
-    use = defaultdict(lambda: {"use": 0.0, "day": 0.0})
-    for r in rows:
         no = station_no(r.get("STATION_NO"))
+        n = bf.num(r.get("USE_CNT"))
+        typ = bf.clean(r.get("RENT_TYPE"), 20) or "(없음)"
+        types[typ] += n
+        ages[bf.clean(r.get("AGE_TYPE"), 10) or "(없음)"] += n
         if not no:
             continue
-        n = bf.num(r.get("USE_CNT"))
-        use[no]["use"] += n
-        if "일일" in str(r.get("RENT_TYPE", "")):
-            use[no]["day"] += n
-    return use
+        x = st[no]
+        x[0] += n
+        if "비회원" in typ:
+            x[1] += n
+        if "일일" in typ:
+            x[2] += n
+    signal = "비회원" if any("비회원" in t for t in types) else "일일"
+    idx = 1 if signal == "비회원" else 2
+    return {"signal": signal,
+            "stations": {no: {"use": v[0], "visitor": v[idx], "day": v[2]} for no, v in st.items() if v[0] > 0},
+            "rentTypes": {k: round(v) for k, v in sorted(types.items(), key=lambda kv: -kv[1])},
+            "ageTypes": {k: round(v) for k, v in sorted(ages.items(), key=lambda kv: -kv[1])}}
 
 
-def compute(stations: list[dict], use: dict, dong_index, shares: dict, day: dict | None = None) -> tuple[list[dict], dict]:
-    """use: 대여소 번호 → 월 대여 건수. day: 대여소 번호 → 일일권 비율(없으면 null)."""
+def adjust(rows: list[dict], beh: dict | None, k: float = SMOOTH_K, lo: float = 0.2, hi: float = 5.0) -> dict | None:
+    """행태 보정: 대여소의 관광형 이용권 비율이 서울 평균보다 높으면 외국인 추정을 올리고, 낮으면 내린다.
+    - 작은 대여소는 서울 평균 쪽으로 당겨(평활 k건) 우연한 값에 휘둘리지 않게 한다.
+    - 배수는 lo~hi로 제한하고, 서울 전체 외국인 추정 합계는 보정 전과 같게 맞춘다(배분만 바꿈).
+    rows를 제자리에서 고치고 요약을 돌려준다. beh가 없으면 아무것도 하지 않는다."""
+    if not beh or not beh.get("stations"):
+        return None
+    bs = beh["stations"]
+    tu = sum(v["use"] for v in bs.values())
+    vbar = sum(v["visitor"] for v in bs.values()) / tu if tu else 0
+    if vbar <= 0:
+        return None
+    base_total, raw = 0.0, []
+    for r in rows:
+        b = bs.get(r["no"])
+        if b:
+            v = (b["visitor"] + k * vbar) / (b["use"] + k)
+            m = min(hi, max(lo, v / vbar))
+            r["visitorRatio"] = round(b["visitor"] / b["use"], 4)
+            r["dayPass"] = round(b["day"] / b["use"], 4)
+        else:
+            m = 1.0
+            r["visitorRatio"] = None
+        r["mult"] = round(m, 3)
+        base_total += r["foreignBase"]
+        raw.append(r["foreignBase"] * m)
+    scale = base_total / sum(raw) if sum(raw) else 1.0
+    for r, x in zip(rows, raw):
+        f = min(x * scale, r["use"] * 0.95)
+        r["foreign"], r["local"] = round(f, 1), round(r["use"] - f, 1)
+    rows.sort(key=lambda x: x["foreign"], reverse=True)
+    return {"signal": beh["signal"], "cityVisitorRatio": round(vbar, 5), "smoothK": k, "clamp": [lo, hi],
+            "rentTypes": beh["rentTypes"], "ageTypes": beh["ageTypes"]}
+
+
+def compute(stations: list[dict], use: dict, dong_index, shares: dict) -> tuple[list[dict], dict]:
+    """1단계(동네 비율): use(대여소 번호 → 월 대여) × 행정동 외국인 비율. 행태 보정은 adjust()에서."""
     out, unmatched_use, total = [], 0.0, 0.0
     for s in stations:
         u = use.get(s["no"]) or 0.0
@@ -126,10 +168,9 @@ def compute(stations: list[dict], use: dict, dong_index, shares: dict, day: dict
             unmatched_use += u
             continue
         f = u * share
-        dp = day.get(s["no"]) if day else None
         out.append({"no": s["no"], "name": s["name"], "gu": s["gu"], "dong": name, "lat": s["lat"], "lng": s["lng"],
-                    "use": round(u), "dayPass": round(dp, 4) if dp is not None else None,
-                    "share": round(share, 4), "foreign": round(f, 1), "local": round(u - f, 1)})
+                    "use": round(u), "dayPass": None, "visitorRatio": None, "mult": 1.0,
+                    "share": round(share, 4), "foreignBase": round(f, 1), "foreign": round(f, 1), "local": round(u - f, 1)})
     out.sort(key=lambda x: x["foreign"], reverse=True)
     stats = {"stations": len(out), "totalUse": round(total),
              "matchRate": round(1 - unmatched_use / total, 4) if total else 0,
@@ -151,11 +192,12 @@ def parse_stations(rows) -> list[dict]:
 
 def dong_table(rows: list[dict]) -> list[dict]:
     """행정동별 합계(따릉이 외국인 추정 이용 상위)."""
-    d = defaultdict(lambda: {"use": 0.0, "foreign": 0.0, "stations": 0, "share": 0.0})
+    d = defaultdict(lambda: {"use": 0.0, "foreign": 0.0, "base": 0.0, "stations": 0, "share": 0.0})
     for r in rows:
         x = d[r["dong"]]
-        x["use"] += r["use"]; x["foreign"] += r["foreign"]; x["stations"] += 1; x["share"] = r["share"]
-    res = [{"dong": k, "use": round(v["use"]), "foreign": round(v["foreign"], 1), "stations": v["stations"], "share": v["share"]}
+        x["use"] += r["use"]; x["foreign"] += r["foreign"]; x["base"] += r["foreignBase"]; x["stations"] += 1; x["share"] = r["share"]
+    res = [{"dong": k, "use": round(v["use"]), "foreign": round(v["foreign"], 1), "foreignBase": round(v["base"], 1),
+            "stations": v["stations"], "share": v["share"]}
            for k, v in d.items()]
     res.sort(key=lambda x: x["foreign"], reverse=True)
     return res[:TOP]
@@ -186,23 +228,28 @@ def main() -> int:
         print(f"Fetch failed: {e}", file=sys.stderr)
         return 1
     try:
-        day = day_pass_ratio(api, ym)
-    except bf.FetchError as e:   # 보조 지표라 실패해도 계속
-        print(f"Day-pass ratio skipped: {e}", flush=True)
-        day = None
+        beh = behavior(api, ym)
+    except bf.FetchError as e:   # 보정용이라 실패해도 1단계 결과는 저장
+        print(f"Behavior data skipped: {e}", flush=True)
+        beh = None
     dong_index = dong_index_from_geojson(json.loads((BUS_DATA / "dongs.geojson").read_text("utf-8")))
     shares = dong_shares(hourly)
-    rows, stats = compute(stations, use, dong_index, shares, day)
+    rows, stats = compute(stations, use, dong_index, shares)
+    adj = adjust(rows, beh)
+    stats["foreign"] = round(sum(x["foreign"] for x in rows))
+    stats["local"] = round(sum(x["local"] for x in rows))
     if stats["matchRate"] < 0.8:
         print(f"Match rate too low ({stats['matchRate']:.1%}); not saving.", file=sys.stderr)
         return 1
     city = stats["foreign"] / (stats["foreign"] + stats["local"]) if rows else 0
     result = {
         "month": ym, "popMonth": pop_ym, "generatedAt": datetime.now(bf.KST).isoformat(timespec="seconds"),
-        "method": "foreign = monthly rentals x short-stay foreigner share of the station's dong (07-22h, all days)",
+        "method": ("base = monthly rentals x short-stay foreigner share of the station's dong (07-22h); "
+                   "foreign = base x clamp(smoothed station visitor-pass ratio / city ratio), rescaled to the city base total"),
         "shareHours": [SHARE_HOURS.start, SHARE_HOURS.stop - 1], "minUse": MIN_USE, "cityShare": round(city, 5),
         "stats": {**stats, "apiCalls": api.calls},
-        "dayPass": day is not None,
+        "dayPass": adj is not None,
+        "adjust": adj,
         "sources": ["서울 열린데이터광장: 서울시 공공자전거 대여소 정보 (tbCycleStationInfo)",
                     "서울 열린데이터광장: 서울시 공공자전거 대여소별 이용정보(월별) (tbCycleStationUseMonthInfo)",
                     "서울 열린데이터광장: 서울시 공공자전거 이용정보(월별) (tbCycleRentUseMonthInfo, 일일권 비율)",
