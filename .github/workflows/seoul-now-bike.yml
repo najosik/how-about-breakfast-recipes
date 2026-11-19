@@ -29,7 +29,7 @@ concurrency:
 jobs:
   analyze:
     runs-on: ubuntu-latest
-    timeout-minutes: 300
+    timeout-minutes: 60
     defaults:
       run:
         working-directory: seoul-now
