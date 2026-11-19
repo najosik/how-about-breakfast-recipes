@@ -57,3 +57,15 @@
 .sort-ico { font-size: .7rem; opacity: .55; }
 th.sortable.on { color: var(--text); }
 th.sortable.on .sort-ico { opacity: 1; }
+
+/* 지도 보기 설명 */
+.metric-help-wrap { margin-top: 12px; }
+.metric-help-wrap summary { cursor: pointer; font-size: .88rem; font-weight: 600; width: max-content; }
+.metric-help { display: grid; gap: 8px; margin: 8px 0 0; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .metric-help { grid-template-columns: repeat(2, 1fr); } }
+.mh-item { padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+.mh-item.on { border-color: var(--accent); box-shadow: inset 3px 0 0 var(--accent); }
+.mh-item dt { margin: 0 0 4px; }
+.mh-item dd { margin: 0; font-size: .84rem; line-height: 1.55; }
+.mh-btn { border: 0; background: none; padding: 0; font: inherit; font-weight: 700; color: var(--text); cursor: pointer; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+.mh-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
