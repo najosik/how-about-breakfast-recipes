@@ -6,7 +6,9 @@
   const METRICS = ["foreign", "local", "diff", "share"];
   const LQ_BREAKS = [0.5, 0.8, 1.25, 2];
   const SORT_KEYS = ["use", "foreign", "local", "share", "lq"];
-  const DEFAULT_SORT = { foreign: "foreign", local: "local", share: "share", diff: "lq" };   // 외국인 상대 비중(서울 평균 = 1) 구간
+  const DEFAULT_SORT = { foreign: "foreign", local: "local", share: "share", diff: "lq" };
+  const DONG_SORT_KEYS = ["stations", "use", "foreign", "share"];
+  const DONG_ROWS = 20;   // 외국인 상대 비중(서울 평균 = 1) 구간
   const SHARE_BREAKS = [0.01, 0.03, 0.06, 0.1];
   const SHARE_COLORS = ["#eef3fb", "#c6d7ef", "#8fb0de", "#4a7cc2", "#1d4f9a"];
   // 외국인·내국인 색은 CSS 토큰(--c-for, --c-loc: 라이트·다크 각각 검증)에서 읽는다
@@ -60,7 +62,8 @@
       rankDesc: (n, c) => `대상 ${c.toLocaleString("ko-KR")}곳 중 ${TOP}곳. 열 제목(월 대여·외국인 추정·내국인 추정·외국인 비율)을 누르면 내림차순↔오름차순으로 정렬됩니다. 이름을 누르면 지도에서 위치를 보여줍니다.` + (n ? ` 월 대여 ${n}건 이상만.` : ""),
       sortDesc: "내림차순 정렬됨", sortAsc: "오름차순 정렬됨", sortNone: "눌러서 정렬",
       th: { no: "순위", name: "대여소", dong: "행정동", use: "월 대여", foreign: "외국인 추정", base: "보정 전", local: "내국인 추정", share: "동 외국인 비율", day: "비회원 추정", lq: "서울 평균 대비" },
-      dongH: "외국인 추정 이용이 많은 행정동", dongDesc: "대여소를 행정동별로 합친 값입니다.",
+      dongH: "행정동별 따릉이 이용", dongDesc: "대여소를 행정동별로 합친 값입니다.",
+      dongDesc2: (n, k) => `대여소를 행정동별로 합친 값입니다. 행정동 ${n.toLocaleString("ko-KR")}곳 중 ${k}곳. 열 제목(대여소·월 대여·외국인 추정·외국인 비율)을 누르면 내림차순↔오름차순으로 정렬됩니다.`,
       thDong: { dong: "행정동", stations: "대여소", use: "월 대여", foreign: "외국인 추정", share: "외국인 비율" },
       legendSize: "원 크기: 추정 건수", legendShare: "외국인 비율",
       methodH: "추정 방법",
@@ -123,7 +126,8 @@
       rankDesc: (n, c) => `${TOP} of ${c.toLocaleString("en-US")} stations. Tap a column heading (rentals, est. foreign, est. resident, share) to sort descending ↔ ascending. Tap a name to locate it on the map.` + (n ? ` Only stations with ${n}+ rentals a month.` : ""),
       sortDesc: "sorted descending", sortAsc: "sorted ascending", sortNone: "activate to sort",
       th: { no: "#", name: "Station", dong: "Neighbourhood", use: "Rentals", foreign: "Est. foreign", base: "Before adj.", local: "Est. resident", share: "Area foreign share", day: "Likely non-member", lq: "vs Seoul avg" },
-      dongH: "Neighbourhoods with the most estimated foreign use", dongDesc: "Stations summed by neighbourhood (dong).",
+      dongH: "Seoul Bike use by neighbourhood", dongDesc: "Stations summed by neighbourhood (dong).",
+      dongDesc2: (n, k) => `Stations summed by neighbourhood (dong). ${k} of ${n.toLocaleString("en-US")} neighbourhoods. Tap a column heading (stations, rentals, est. foreign, share) to sort descending ↔ ascending.`,
       thDong: { dong: "Neighbourhood", stations: "Stations", use: "Rentals", foreign: "Est. foreign", share: "Foreign share" },
       legendSize: "Circle size: estimated rentals", legendShare: "Foreigner share",
       methodH: "Method",
@@ -155,6 +159,9 @@
   // 순위 표 정렬: 주소의 s(열)·d(asc)를 허용 목록으로 검증. 없으면 보기(metric)별 기본 열 내림차순
   state.sortKey = SORT_KEYS.includes(q.get("s")) && (q.get("s") !== "lq" || state.metric === "diff") ? q.get("s") : DEFAULT_SORT[state.metric];
   state.sortDir = q.get("d") === "asc" ? "asc" : "desc";
+  // 행정동 표 정렬(ds·dd)
+  state.dSortKey = DONG_SORT_KEYS.includes(q.get("ds")) ? q.get("ds") : "foreign";
+  state.dSortDir = q.get("dd") === "asc" ? "asc" : "desc";
   let data = null, map = null, stationLayer = null, dongLayer = null, dongGeo = null;
   const markers = new Map();
   const t = (k) => I18N[state.lang][k];
@@ -205,6 +212,8 @@
     if (state.dongs) p.set("dongs", "1");
     if (state.sortKey !== DEFAULT_SORT[state.metric]) p.set("s", state.sortKey);
     if (state.sortDir === "asc") p.set("d", "asc");
+    if (state.dSortKey !== "foreign") p.set("ds", state.dSortKey);
+    if (state.dSortDir === "asc") p.set("dd", "asc");
     history.replaceState(null, "", location.pathname + (p.toString() ? `?${p}` : ""));
   }
   function tipEl(s) {
@@ -285,6 +294,17 @@
     const k = state.sortKey, dir = state.sortDir === "asc" ? 1 : -1;
     return [...candidates()].sort((a, b) => dir * (sortVal(a, k) - sortVal(b, k)) || b.use - a.use).slice(0, TOP);
   }
+  // 정렬 머리글: cols = [[제목, 정렬 키|null, 숫자 열 여부]], cur = {key, dir}
+  function sortHeader(cols, cur, onSort) {
+    return cols.map(([h, k, num]) => {
+      if (!k) return el("th", { class: num ? "num" : null, scope: "col", text: h });
+      const on = cur.key === k;
+      const dirTxt = on ? (cur.dir === "desc" ? t("sortDesc") : t("sortAsc")) : t("sortNone");
+      return el("th", { class: (num ? "num " : "") + "sortable" + (on ? " on" : ""), scope: "col", "aria-sort": on ? (cur.dir === "desc" ? "descending" : "ascending") : "none" },
+        el("button", { type: "button", class: "sort-btn" + (num ? "" : " left"), "data-sort": k, "aria-label": `${h}, ${dirTxt}`, onclick: () => onSort(k) },
+          h, el("span", { class: "sort-ico", "aria-hidden": "true", text: on ? (cur.dir === "desc" ? "▼" : "▲") : "↕" })));
+    });
+  }
   function setSort(k) {
     if (state.sortKey === k) state.sortDir = state.sortDir === "desc" ? "asc" : "desc";
     else { state.sortKey = k; state.sortDir = "desc"; }
@@ -304,14 +324,7 @@
     const cols = [[th.no, null, true], [th.name, null, false], [th.dong, null, false], [th.use, "use", true], [th.foreign, "foreign", true],
       adj ? [th.base, null, true] : null, [th.local, "local", true], adj ? [th.day, null, true] : null, [th.share, "share", true],
       diff ? [th.lq, "lq", true] : null].filter(Boolean);
-    const head = cols.map(([h, k, num]) => {
-      if (!k) return el("th", { class: num ? "num" : null, scope: "col", text: h });
-      const on = state.sortKey === k;
-      const dirTxt = on ? (state.sortDir === "desc" ? t("sortDesc") : t("sortAsc")) : t("sortNone");
-      return el("th", { class: "num sortable" + (on ? " on" : ""), scope: "col", "aria-sort": on ? (state.sortDir === "desc" ? "descending" : "ascending") : "none" },
-        el("button", { type: "button", class: "sort-btn", "data-sort": k, "aria-label": `${h}, ${dirTxt}`, onclick: () => setSort(k) },
-          h, el("span", { class: "sort-ico", "aria-hidden": "true", text: on ? (state.sortDir === "desc" ? "▼" : "▲") : "↕" })));
-    });
+    const head = sortHeader(cols, { key: state.sortKey, dir: state.sortDir }, setSort);
     $("rank").replaceChildren(
       el("thead", {}, el("tr", {}, ...head)),
       el("tbody", {}, ...rows.map((r, i) => el("tr", {},
@@ -375,11 +388,34 @@
     $("cmp-overlap").textContent = t("cmpOverlap")(both.size);
   }
 
+  // 행정동별 합계: 전체 대여소에서 계산(분석 파일의 상위 30곳만이 아니라 모든 동을 정렬 대상으로)
+  let dongCache = null;
+  function dongRows() {
+    if (dongCache && dongCache.src === data) return dongCache.rows;
+    const m = new Map();
+    for (const s of data.stations) {
+      const x = m.get(s.dong) || { dong: s.dong, stations: 0, use: 0, foreign: 0, share: s.share };
+      x.stations += 1; x.use += s.use; x.foreign += s.foreign; m.set(s.dong, x);
+    }
+    dongCache = { src: data, rows: [...m.values()] };
+    return dongCache.rows;
+  }
+  function setDongSort(k) {
+    if (state.dSortKey === k) state.dSortDir = state.dSortDir === "desc" ? "asc" : "desc";
+    else { state.dSortKey = k; state.dSortDir = "desc"; }
+    writeUrl(); renderDongs();
+    const b = $("dongs").querySelector(`button[data-sort="${k}"]`);
+    if (b) b.focus();
+  }
   function renderDongs() {
     const th = t("thDong");
+    const all = dongRows(), k = state.dSortKey, dir = state.dSortDir === "asc" ? 1 : -1;
+    const rows = [...all].sort((a, b) => dir * (a[k] - b[k]) || b.use - a.use).slice(0, DONG_ROWS);
+    $("dong-desc").textContent = t("dongDesc2")(all.length, DONG_ROWS);
     $("dongs").replaceChildren(
-      el("thead", {}, el("tr", {}, ...[th.dong, th.stations, th.use, th.foreign, th.share].map((h, i) => el("th", { class: i ? "num" : null, text: h })))),
-      el("tbody", {}, ...data.dongs.slice(0, 20).map((r) => el("tr", {},
+      el("thead", {}, el("tr", {}, ...sortHeader([[th.dong, null, false], [th.stations, "stations", true], [th.use, "use", true], [th.foreign, "foreign", true], [th.share, "share", true]],
+        { key: state.dSortKey, dir: state.dSortDir }, setDongSort))),
+      el("tbody", {}, ...rows.map((r) => el("tr", {},
         el("td", { text: r.dong }), el("td", { class: "num", text: nf(r.stations) }), el("td", { class: "num", text: nf(r.use) }),
         el("td", { class: "num", text: nf(r.foreign) }), el("td", { class: "num", text: pct(r.share) })))));
   }
