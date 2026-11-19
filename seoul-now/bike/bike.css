@@ -18,3 +18,33 @@
 .how-steps li.off { opacity: .5; }
 .how .note { margin-top: 12px; }
 @media (min-width: 900px) { .how-steps { grid-template-columns: repeat(3, 1fr); gap: 16px; } }
+
+/* 외국인·내국인 색 (validate_palette.js 통과: 라이트 #e8590c/#1d4f9a, 다크 #e8662a/#4a78c8) */
+:root { --c-for: #e8590c; --c-loc: #1d4f9a; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --c-for: #e8662a; --c-loc: #4a78c8; } }
+:root[data-theme="dark"] { --c-for: #e8662a; --c-loc: #4a78c8; }
+
+/* 외국인 vs 내국인 비교 */
+.cmp-insight { margin: 12px 0 0; font-weight: 600; line-height: 1.6; }
+.cmp-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px; margin-top: 16px; }
+.cmp-head h3 { margin: 0; font-size: .95rem; }
+.cmp-head .map-legend { margin-top: 0; }
+.cmp-gu { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.cmp-row { display: grid; grid-template-columns: 5.5rem 1fr 6.5rem; align-items: center; gap: 10px; padding: 2px 4px; border-radius: 6px; }
+.cmp-row:hover, .cmp-row:focus { background: var(--bg); outline: none; }
+.cmp-name { font-size: .88rem; }
+.cmp-bars { display: grid; gap: 2px; }
+.cbar { display: block; height: 8px; border-radius: 0 4px 4px 0; min-width: 2px; }
+.cmp-val { display: flex; gap: 8px; justify-content: flex-end; font-size: .82rem; font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+.cmp-lists { display: grid; gap: 16px; margin-top: 20px; grid-template-columns: 1fr; }
+@media (min-width: 760px) { .cmp-lists { grid-template-columns: 1fr 1fr; } }
+.cmp-lists h3 { margin: 0 0 6px; font-size: .95rem; }
+.cmp-list { margin: 0; padding-left: 1.4rem; display: grid; gap: 4px; font-size: .88rem; }
+.cmp-list li { display: grid; grid-template-columns: 12px minmax(0, 1fr) auto; align-items: center; gap: 6px; }
+.cmp-list .cmp-who { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.cmp-list .cmp-num { font-variant-numeric: tabular-nums; }
+.cmp-list button.link { border: 0; background: none; padding: 0; color: var(--text); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; cursor: pointer; font: inherit; }
+.cmp-list button.link:hover, .cmp-list button.link:focus-visible { text-decoration-color: currentColor; }
+.tag { font-size: .72rem; padding: 0 6px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+@media (max-width: 560px) { .cmp-row { grid-template-columns: 4.5rem 1fr 5.5rem; } }
