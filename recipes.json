@@ -25601,8 +25601,8 @@
   "weather": "0도/대체로 맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "대파수프 라이프수프 대파",
-  "credit": "#라이프수프",
+  "title": "대파 크림 수프",
+  "credit": "라이프수프",
   "hashtags": [
    "대파",
    "대파수프",
@@ -25613,8 +25613,8 @@
    "조식다이어리"
   ],
   "intro": "20241119 #조식다이어리 1237, 0도/대체로 맑음, 20분/운동(M) \n형이상학 1학기 첫 강의에서 교수님이 얘기하셨다. ‘눈에 보이지 않는다고 그것이 없다고 할 수 있는가?’ 보이지 않지만 대파가 들어간 #대파수프 를 변호할 때 사용하라고 알려주신 것 같다.",
-  "ingredients": "대파 1개(흰 부분만 사용), 밀가루 2T, 버터 20g, 우유 100ml, 물 300ml, 소금 1t\n\n👉이렇게\n1. 대파는 씻고 손질해서 4cm 크기로 썬 뒤 전자렌지에 3분 익힌다. \n2. 팬에 버터 넣고 녹인 뒤 밀가루 넣고 휘휘 젓다가 물 붓고 소금 넣고 농도가 걸쭉해질 때까지 끓인다.\n3. 대파 넣고 5분 정도 끓인다. \n4. 우유 넣고 좀 더 끓인다. 우유로 농도를 조절한다. 후추후추후추, \n\n나는 후추를 사랑하니까 접시에 담고 후추후추후추~\n\nInspired by #라이프수프\n\n#조식 #레시피 #미라클모닝 #대파",
-  "steps": null,
+  "ingredients": "- 대파 2대(흰 부분 위주, 약 100g)\n- 버터 10g\n- 밀가루 1T(약 8g)\n- 물 150ml\n- 우유 200ml\n- 소금 한 꼬집\n- 후추 넉넉히",
+  "steps": "1. 대파는 씻고 손질해서 4cm 크기로 썬 뒤, 내열 용기에 담아 뚜껑을 덮고 전자레인지에 3분 익힌다.\n2. 팬에 버터를 넣고 녹인 뒤 밀가루를 넣고 휘휘 저으며 1분 볶는다. 물을 조금씩 부으며 덩어리 없이 풀고, 소금을 넣어 걸쭉해질 때까지 끓인다.\n3. 1의 대파를 넣고 5분 정도 끓인다.\n4. 우유를 넣고 좀 더 끓인다. 우유로 농도를 조절한다. 후추를 듬뿍 뿌린다.",
   "raw": "20241119 #조식다이어리 1237, 0도/대체로 맑음, 20분/운동(M) \n\n형이상학 1학기 첫 강의에서 교수님이 얘기하셨다. ‘눈에 보이지 않는다고 그것이 없다고 할 수 있는가?’ 보이지 않지만 대파가 들어간 #대파수프 를 변호할 때 사용하라고 알려주신 것 같다. \n\n👉재료는\n대파 1개(흰 부분만 사용), 밀가루 2T, 버터 20g, 우유 100ml, 물 300ml, 소금 1t\n\n👉이렇게\n1. 대파는 씻고 손질해서 4cm 크기로 썬 뒤 전자렌지에 3분 익힌다. \n2. 팬에 버터 넣고 녹인 뒤 밀가루 넣고 휘휘 젓다가 물 붓고 소금 넣고 농도가 걸쭉해질 때까지 끓인다.\n3. 대파 넣고 5분 정도 끓인다. \n4. 우유 넣고 좀 더 끓인다. 우유로 농도를 조절한다. 후추후추후추, \n\n나는 후추를 사랑하니까 접시에 담고 후추후추후추~\n\nInspired by #라이프수프\n\n#조식 #레시피 #미라클모닝 #대파",
   "image": "https://images.how-about-breakfast.com/images/1237.jpg",
   "gallery": [
@@ -25622,13 +25622,6 @@
    "https://images.how-about-breakfast.com/images/1237_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1237.mp4",
-  "_en": {
-   "hash": "0ba6526bfbbc5a3e0ee7ebb44c6fc85ce236a0b4f14a1d4a3be60ea66d144801",
-   "title": "Leek Soup, Life Soup, Leek",
-   "intro": "20241119 #breakfastdiary 1237, 0°C/mostly clear, 20min/exercise(M)\nIn the very first metaphysics lecture of the semester, the professor said, 'Just because something is invisible, does that mean it doesn't exist?' I feel like that was meant to prepare me to defend #leeksoup — invisible, yet full of leeks.",
-   "ingredients": "1 leek (white part only), 2T flour, 20g butter, 100ml milk, 300ml water, 1t salt\n\n👉Like this\n1. Wash and trim the leek, cut into 4cm pieces, and microwave for 3 minutes.\n2. Melt the butter in a pan, add the flour and stir constantly, then pour in the water, add salt, and simmer until it thickens.\n3. Add the leek and simmer for about 5 minutes.\n4. Add the milk and simmer a bit more. Adjust the consistency with the milk. Pepper pepper pepper, \n\nSince I love pepper, plate it and pepper pepper pepper~\n\nInspired by #lifesoup\n\n#breakfast #recipe #miraclemorning #leek",
-   "steps": ""
-  },
   "page_id": "대파수프-라이프수프-대파"
  },
  {
