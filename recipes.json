@@ -51063,7 +51063,7 @@
   "weather": "10도/대체로흐림",
   "failed": false,
   "calories": null,
-  "title": "어른의맛 가지덮밥 모닝루틴",
+  "title": "어른의 맛 가지덮밥",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -51085,21 +51085,14 @@
    "홈쿡"
   ],
   "intro": "20221119, #조식다이어리 600, 10도/대체로흐림\n가지의 맛을 깨닫는 순간에 어른이 되는 건 아닐까? 아이들은 모르는 #어른의맛\n간장, 설탕, 맛술, 물과 연두를 같은 비율로 섞는다. 대파도 조금, \n가지에 칼집을 내서 펼친 뒤 만들어 둔 드레싱을 골고루 바르면서 굽는다. \n밥 위에 얹고 참기름, 참깨와 깻잎, #가지덮밥",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 가지 1개\n- 식용유 1t(굽기용)\n- 양념(간장, 설탕, 맛술, 물, 연두 각 1T)\n- 대파 10g(다진 것)\n- 밥 150g\n- 참기름 1t\n- 참깨 약간\n- 깻잎 3장(채 썬 것)",
+  "steps": "1. 간장, 설탕, 맛술, 물, 연두를 같은 비율(각 1T)로 섞고, 다진 대파를 넣어 양념을 만든다.\n2. 가지는 길게 반으로 갈라 껍질 쪽에 칼집을 격자로 내어 펼친다.\n3. 달군 팬에 식용유를 두르고 가지를 칼집 낸 면부터 올려 중약불에서 굽는다.\n4. 가지가 부드러워지면 뒤집어 양념을 숟가락으로 골고루 바르면서, 양념이 졸아 윤기가 날 때까지 앞뒤로 굽는다.\n5. 그릇에 밥을 담고 구운 가지를 얹은 뒤 팬에 남은 양념을 끼얹는다.\n6. 참기름을 두르고 참깨를 뿌린 뒤 깻잎을 올린다.",
   "raw": "20221119, #조식다이어리 600, 10도/대체로흐림\n\n가지의 맛을 깨닫는 순간에 어른이 되는 건 아닐까? 아이들은 모르는 #어른의맛\n\n간장, 설탕, 맛술, 물과 연두를 같은 비율로 섞는다. 대파도 조금, \n가지에 칼집을 내서 펼친 뒤 만들어 둔 드레싱을 골고루 바르면서 굽는다. \n밥 위에 얹고 참기름, 참깨와 깻잎, #가지덮밥 \n\n#직장인 #조식 #아침밥 #아침밥상 #먹스타그램 #홈쿡 #집밥 #혼밥 #모닝루틴 #미라클모닝 #덮밥 #가지 \n#breakfast #eggplant ",
   "image": "https://images.how-about-breakfast.com/images/600.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/600.jpg",
    "https://images.how-about-breakfast.com/images/600_2.jpg"
   ],
-  "_en": {
-   "hash": "78de96451a4a947aedddbfc55f544808552538526c60ac097bf71a1bfbb790f9",
-   "title": "The Taste of Adulthood Eggplant Rice Bowl Morning Routine",
-   "intro": "20221119 #breakfastdiary 600, 10°C/mostly cloudy\nMaybe the moment you learn to appreciate the taste of eggplant is the moment you actually become an adult? #tasteofadulthood, something kids just don't get. \nMix soy sauce, sugar, cooking wine, water and Yondu (a Korean seasoning sauce) in equal parts. Add a little scallion too. \nScore the eggplant and open it up, then grill it while brushing on the sauce evenly. \nLay it over rice and finish with sesame oil, sesame seeds and perilla leaves. #eggplantricebowl",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "어른의맛-가지덮밥-모닝루틴"
  },
  {
