@@ -1,0 +1,8 @@
+/* 따릉이 지도 전용 — 공통 패널·표·지도 스타일은 ../bus/bus.css */
+.layer-toggles { margin-top: 10px; }
+.map-tip .tip-row { display: block; }
+.rank-name { white-space: normal; min-width: 10rem; }
+.bar-cell { min-width: 6rem; }
+.mini-bar { display: block; height: 8px; border-radius: 4px; background: var(--line); overflow: hidden; }
+.mini-bar > span { display: block; height: 100%; background: var(--accent); }
+.data-table button.link { border: 0; background: none; padding: 0; color: var(--on); text-decoration: underline; cursor: pointer; font: inherit; text-align: left; }
