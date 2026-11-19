@@ -17,7 +17,7 @@
 
   const I18N = {
     ko: {
-      title: "따릉이 외국인·내국인 이용 추정 지도", sub: "대여소별 월 대여 × 동네 단기체류 외국인 비율 × 대여소 이용 행태 보정",
+      title: "따릉이 외국인·내국인 이용 추정 지도", sub: "대여소별 월 대여 × 동네 단기체류 외국인 비율 (공항 지역 보정)",
       lang: "English", note: "추정치입니다. 따릉이는 이용자 국적을 공개하지 않아 공개 집계 자료로 추정했습니다. 방법은 바로 아래에 있습니다.",
       loading: "불러오는 중…", error: "데이터를 불러오지 못했어요.",
       kStations: "분석 대여소", kUse: "월 대여 건수", kForeign: "외국인 추정 이용", kShare: "서울 평균 비율", kDay: "비회원 추정 이용 비율",
@@ -25,10 +25,11 @@
       howSteps: (d) => [
         ["대여소별 월 대여 건수", `서울시가 공개한 따릉이 대여소별 ${fmtYm(d.month)} 대여 건수(집계 자료)에서 시작합니다.`],
         ["× 동네 외국인 비율", `대여소가 있는 행정동의 단기체류 외국인 비율(생활인구, ${fmtYm(d.popMonth)} ${d.shareHours[0]}~${d.shareHours[1]}시 평균)을 곱해 1차 추정을 냅니다.`],
-        ["× 대여소 이용 행태 보정", `그 대여소의 ${sigName(d)} 비율이 서울 평균보다 높으면 올리고 낮으면 내립니다(0.2~5배). 대여가 적은 대여소는 평균 쪽으로 당겨 우연한 값에 휘둘리지 않게 하고, 서울 전체 합계는 1차 추정과 같게 맞춥니다.`],
+        d.adjust ? ["× 대여소 이용 행태 보정", `그 대여소의 ${sigName(d)} 비율이 서울 평균보다 높으면 올리고 낮으면 내립니다(0.2~5배). 대여가 적은 대여소는 평균 쪽으로 당겨 우연한 값에 휘둘리지 않게 하고, 서울 전체 합계는 1차 추정과 같게 맞춥니다.`]
+          : ["공항 지역 보정", airportText(d, "ko")],
       ],
       howWhy: "외국인 체류는 많아도 관광 이동이 적은 곳(예: 김포공항 인근 주거·업무지)은 정기권 이용이 대부분이라 보정 단계에서 낮아집니다.",
-      howOff: "이번 기준월은 이용권 자료 응답이 늦어 3단계 보정을 적용하지 못했습니다. 1차 추정(동네 비율)만 표시합니다.",
+      howOff: "대여소별 이용 행태(일일권 비율, 연령 미상 비율)로 보정하는 방법도 시험했지만, 일일권은 한강 나들이를, 연령 미상은 주거지·학교 이용을 주로 잡아 외국인 관광객 신호가 되지 못했습니다. 그래서 적용하지 않았습니다.",
       mapH: "대여소 지도", dongLayer: "행정동 외국인 비율 색칠",
       metric: { foreign: "외국인 많이", local: "내국인 많이", diff: "외국인·내국인 차이", share: "외국인 비율" },
       cmpH: "외국인 vs 내국인, 어디서 다를까",
@@ -57,12 +58,12 @@
         `1차 추정: 대여소별 ${fmtYm(d.month)} 월 대여 건수 × 대여소가 속한 행정동의 단기체류 외국인 비율. 나머지는 내국인 추정 이용입니다.`,
         `외국인 비율 = 단기체류 외국인 생활인구 ÷ (내국인 + 단기체류 외국인 생활인구), ${fmtYm(d.popMonth)} 전체 일 ${d.shareHours[0]}~${d.shareHours[1]}시 평균.`,
         d.adjust ? `행태 보정: 배수 = (대여소 ${sigName(d)} 건수 + 50 × 서울 평균 비율) ÷ (대여소 대여 + 50) ÷ 서울 평균 비율(${pct(d.adjust.cityVisitorRatio)}), 0.2~5배로 제한. 보정 후 서울 전체 외국인 추정 합계가 1차 추정과 같도록 비례 조정합니다. 국내 휴대폰 본인인증이 필요한 회원 가입이 어려운 외국인 관광객은 비회원으로 빌리는 경우가 많고, 비회원은 생년 정보가 없어 연령이 '기타'로 집계된다는 점을 근거로 합니다. 일일권 전체 비율은 한강 나들이 등 내국인 여가 이용까지 섞여 쓰지 않았습니다.`
-          : "행태 보정: 이번 기준월은 이용권 자료 응답이 늦어 적용하지 못했습니다.",
+          : `공항 지역 보정: ${airportText(d, "ko")} 대여소별 이용 행태 보정은 시험 결과 외국인 신호가 되지 못해 적용하지 않았습니다(2026년 7월 검증: 이용권은 정기권·일일권뿐이고, 일일권 비율은 한강 나들이, 연령 미상 비율은 주거지·학교에서 높음).`,
       ],
       limitsH: "한계",
       limits: [
         "실제 외국인 이용 건수가 아닙니다. 따릉이는 이용자 국적을 공개하지 않습니다.",
-        "비회원 일일권은 외국인만 쓰는 것이 아닙니다(가끔 타는 내국인 포함). 그래서 동네 외국인 비율을 출발점으로 두고, 이용권 비율은 대여소 간 배분을 조정하는 데만 씁니다.",
+        "같은 행정동 안의 대여소는 외국인 비율이 같게 계산됩니다. 따릉이 공개 자료에는 대여소별로 외국인을 가려낼 값이 없기 때문입니다.",
         "대여(빌린 곳)만 집계합니다. 반납 장소와 시간대별 이용은 반영하지 않습니다.",
         "외국인 비율은 낮·저녁(07~22시) 평균이라 심야 이용 특성은 반영되지 않습니다.",
         "개인 단위 대여 이력은 쓰지 않고, 서울시가 공개한 집계 자료만 사용합니다.",
@@ -71,7 +72,7 @@
       unit: "건", noData: "아직 분석 결과가 없어요.",
     },
     en: {
-      title: "Seoul Bike (Ttareungyi): visitor vs resident use", sub: "Monthly rentals × neighbourhood foreigner share × station behaviour adjustment",
+      title: "Seoul Bike (Ttareungyi): visitor vs resident use", sub: "Monthly rentals × neighbourhood foreigner share (airport areas corrected)",
       lang: "한국어", note: "These are estimates. Seoul does not publish riders' nationality, so we estimate from public aggregated data. The method is right below.",
       loading: "Loading…", error: "Couldn't load the data.",
       kStations: "Stations", kUse: "Monthly rentals", kForeign: "Est. foreign rentals", kShare: "Seoul average share", kDay: "Likely non-member share",
@@ -79,10 +80,11 @@
       howSteps: (d) => [
         ["Monthly rentals per station", `Start from Seoul's published rentals per bike station for ${fmtYm(d.month)} (aggregated data).`],
         ["× neighbourhood foreigner share", `Multiply by the short-stay foreigner share of the station's neighbourhood (living population, ${fmtYm(d.popMonth)}, ${d.shareHours[0]}:00–${d.shareHours[1]}:59 average).`],
-        ["× station behaviour adjustment", `Raise or lower each station by how its ${sigName(d)} share compares with the Seoul average (0.2–5×). Small stations are pulled toward the average, and the Seoul total stays equal to step 2.`],
+        d.adjust ? ["× station behaviour adjustment", `Raise or lower each station by how its ${sigName(d)} share compares with the Seoul average (0.2–5×). Small stations are pulled toward the average, and the Seoul total stays equal to step 2.`]
+          : ["Airport-area correction", airportText(d, "en")],
       ],
       howWhy: "Places where many foreigners stay but few tour around (e.g. homes and offices near Gimpo Airport) are mostly season-pass riders, so the adjustment lowers them.",
-      howOff: "The pass-type data was too slow this month, so step 3 was not applied. Showing the step-2 estimate only.",
+      howOff: "We also tested per-station adjustments using day-pass and unknown-age shares, but day passes mostly reflect residents' Han River leisure rides and unknown ages mostly reflect homes and schools, so neither tracks foreign visitors. They are not applied.",
       mapH: "Station map", dongLayer: "Shade neighbourhoods by foreigner share",
       metric: { foreign: "Most foreign use", local: "Most resident use", diff: "Foreign vs resident", share: "Foreigner share" },
       cmpH: "Foreign vs resident: where do they differ?",
@@ -111,12 +113,12 @@
         `Step 2 estimate: monthly rentals per station (${fmtYm(d.month)}) × short-stay foreigner share of the station's neighbourhood. The rest is counted as resident use.`,
         `Foreigner share = short-stay foreign living population ÷ (resident + short-stay foreign), ${fmtYm(d.popMonth)}, all days, ${d.shareHours[0]}:00–${d.shareHours[1]}:59 average.`,
         d.adjust ? `Adjustment: multiplier = (station ${sigName(d)} rentals + 50 × Seoul ratio) ÷ (station rentals + 50) ÷ Seoul ratio (${pct(d.adjust.cityVisitorRatio)}), capped to 0.2–5×, then rescaled so the Seoul total matches step 2. Visitors can rarely complete Korean phone verification for membership, so they often ride as non-members, whose age is recorded as 'other'. The overall day-pass share was not used because it also captures residents' leisure rides (e.g. along the Han River).`
-          : "Adjustment: not applied this month because the pass-type data was too slow.",
+          : `Airport correction: ${airportText(d, "en")} Per-station behaviour adjustments were tested but not applied (July 2026: passes are only season/day; day-pass share peaks at Han River parks and unknown-age share at homes and schools).`,
       ],
       limitsH: "Limitations",
       limits: [
         "Not actual foreign rider counts: Seoul does not publish riders' nationality.",
-        "Non-member day passes are not used only by foreigners, so the neighbourhood share stays the starting point and the pass ratio only shifts the split between stations.",
+        "Stations in the same neighbourhood share the same foreigner ratio, because the public bike data has no per-station way to tell visitors apart.",
         "Only rentals (pick-ups) are counted; returns and hour-by-hour use are not.",
         "The foreigner share is a 7am–10pm average, so late-night patterns are not reflected.",
         "Only aggregated public data is used; no individual trip records.",
@@ -144,6 +146,15 @@
     일일: { ko: "일일권", en: "day-pass" },
   };
   const sigName = (d) => (SIG[d.adjust && d.adjust.signal] || SIG.비회원)[state.lang];
+  // 공항 지역 보정 문구: airportFix = {동 이름: {before, after}}
+  function airportText(d, lang) {
+    const fx = Object.entries(d.airportFix || {});
+    if (!fx.length) return lang === "ko" ? "해당 없음." : "None.";
+    const list = fx.map(([n, v]) => `${n} ${pct(v.before)} → ${pct(v.after)}`).join(lang === "ko" ? ", " : "; ");
+    return lang === "ko"
+      ? `김포공항이 있는 동은 공항에 머무는 외국인 때문에 비율이 부풀어 있어, 같은 구 나머지 동을 합친 비율로 바꿨습니다(${list}).`
+      : `Neighbourhoods containing Gimpo Airport are inflated by travellers waiting at the airport, so they use the pooled share of the rest of the district (${list}).`;
+  }
   const cityRatio = () => data.stats.foreign / Math.max(1, data.stats.foreign + data.stats.local);
   const lqOf = (s) => (s.use > 0 ? s.foreign / s.use / Math.max(1e-9, cityRatio()) : 1);
   const lqBin = (v) => LQ_BREAKS.filter((b) => v >= b).length;   // 0..4
@@ -177,6 +188,7 @@
     return el("div", { class: "map-tip" }, el("strong", { text: s.name }), el("span", { class: "tip-row", text: `${s.gu} · ${s.dong}` }),
       el("span", { class: "tip-row", text: `${t("tipUse")} ${nf(s.use)}${t("unit")}` }),
       el("span", { class: "tip-row", text: `${t("tipForeign")} ${nf(s.foreign)}${t("unit")} · ${t("tipLocal")} ${nf(s.local)}${t("unit")}` }),
+      data.airportFix && data.airportFix[s.dong] ? el("span", { class: "tip-row", text: (state.lang === "ko" ? "공항 지역 보정 " : "Airport correction ") + `${pct(data.airportFix[s.dong].before)} → ${pct(data.airportFix[s.dong].after)}` }) : null,
       state.metric === "diff" ? el("span", { class: "tip-row", text: `${t("legendLq")}: ×${lqOf(s).toFixed(2)} (${t("lqLabels")[lqBin(lqOf(s))]})` }) : null,
       Number.isFinite(s.foreignBase) && data.adjust ? el("span", { class: "tip-row", text: `${t("tipBase")} ${nf(s.foreignBase)}${t("unit")} → ${nf(s.foreign)}${t("unit")} (×${s.mult})` }) : null,
       el("span", { class: "tip-row", text: `${t("tipShare")} ${pct(s.share)}` + (Number.isFinite(s.visitorRatio) ? ` · ${t("tipDay")} ${pct(s.visitorRatio)}` : "") }));
@@ -207,7 +219,9 @@
     $("kpis").replaceChildren(
       kpi(t("kStations"), nf(s.stations)), kpi(t("kUse"), nf(s.totalUse), fmtYm(d.month)),
       kpi(t("kForeign"), nf(s.foreign), pct(s.foreign / (s.foreign + s.local))),
-      kpi(t("kDay"), d.adjust ? pct(d.adjust.cityVisitorRatio) : "-", d.adjust ? sigName(d) : null));
+      d.adjust ? kpi(t("kDay"), pct(d.adjust.cityVisitorRatio), sigName(d))
+        : kpi(state.lang === "ko" ? "공항 지역 보정" : "Airport correction", state.lang === "ko" ? `${Object.keys(d.airportFix || {}).length}개 동` : `${Object.keys(d.airportFix || {}).length} areas`,
+          Object.keys(d.airportFix || {}).map((n) => n.split(" ").pop()).join(" · ") || null));
     renderHow(d);
     $("metric-chips").replaceChildren(...METRICS.map((m) => el("button", {
       type: "button", class: "chip" + (state.metric === m ? " active" : ""), "aria-pressed": String(state.metric === m),
@@ -226,7 +240,7 @@
   // 상단 '이렇게 추정했어요' 상자
   function renderHow(d) {
     $("how-h").textContent = t("howH");
-    $("how-steps").replaceChildren(...t("howSteps")(d).map(([h, p], i) => el("li", { class: i === 2 && !d.adjust ? "off" : null },
+    $("how-steps").replaceChildren(...t("howSteps")(d).map(([h, p], i) => el("li", {},
       el("strong", { text: h }), el("span", { text: p }))));
     $("how-note").textContent = d.adjust ? t("howWhy") : t("howOff");
     $("how").hidden = false;
@@ -247,9 +261,11 @@
     $("rank-desc").textContent = t("rankDesc")(state.metric === "share" ? data.minUse : state.metric === "diff" ? 300 : 0);
     const rows = ranked();
     const key = state.metric === "share" || state.metric === "diff" ? "use" : state.metric;
+    const adj = !!data.adjust;
     const max = Math.max(1, ...rows.map((r) => r[key]));
     $("rank").replaceChildren(
-      el("thead", {}, el("tr", {}, ...[th.no, th.name, th.dong, th.use, th.foreign, th.base, th.local, th.day, th.share].map((h, i) => el("th", { class: i >= 3 ? "num" : null, text: h })))),
+      el("thead", {}, el("tr", {}, ...[th.no, th.name, th.dong, th.use, th.foreign, adj ? th.base : null, th.local, adj ? th.day : null, th.share]
+        .filter(Boolean).map((h, i) => el("th", { class: i >= 3 ? "num" : null, text: h })))),
       el("tbody", {}, ...rows.map((r, i) => el("tr", {},
         el("td", { class: "num", text: String(i + 1) }),
         el("td", { class: "rank-name" }, el("button", { type: "button", class: "link", text: r.name, onclick: () => focusStation(r.no) }),
@@ -257,9 +273,9 @@
         el("td", { text: r.dong }),
         el("td", { class: "num", text: nf(r.use) }),
         el("td", { class: "num", text: nf(r.foreign) }),
-        el("td", { class: "num", text: Number.isFinite(r.foreignBase) ? nf(r.foreignBase) : "-" }),
+        adj ? el("td", { class: "num", text: Number.isFinite(r.foreignBase) ? nf(r.foreignBase) : "-" }) : null,
         el("td", { class: "num", text: nf(r.local) }),
-        el("td", { class: "num", text: Number.isFinite(r.visitorRatio) ? pct(r.visitorRatio) : "-" }),
+        adj ? el("td", { class: "num", text: Number.isFinite(r.visitorRatio) ? pct(r.visitorRatio) : "-" }) : null,
         el("td", { class: "num", text: pct(r.share) })))));
     // 막대 너비는 CSSOM으로(인라인 style 속성 없이: CSP style-src 'self')
     $("rank").querySelectorAll(".mini-bar > span").forEach((b, i) => { b.style.width = `${(rows[i][key] / max) * 100}%`; });

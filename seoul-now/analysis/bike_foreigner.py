@@ -68,6 +68,34 @@ def dong_shares(hourly: dict, hours=SHARE_HOURS) -> dict[str, float]:
     return out
 
 
+# 김포공항 터미널이 있는 동: 공항 체류·환승 외국인이 생활인구에 잡혀 비율이 부풀어 있다(방화2동 12.6%, 서울 427개 동 상위권).
+# 따릉이 이용과는 무관하므로 같은 구의 나머지 동을 합친 비율로 바꾼다.
+AIRPORT_DONGS = {"11500620": "강서구 공항동", "11500640": "강서구 방화2동"}
+
+
+def airport_fix(hourly: dict, shares: dict, airport=AIRPORT_DONGS, hours=SHARE_HOURS) -> tuple[dict, dict]:
+    """공항 동의 비율을 같은 구(코드 앞 5자리) 나머지 동의 합산 비율로 바꾼 새 dict와 변경 내역."""
+    fixed, info = dict(shares), {}
+    for code, name in airport.items():
+        if code not in shares:
+            continue
+        gu = code[:5]
+        f = t = 0.0
+        for c, row in (hourly.get("dongs") or {}).items():
+            if c[:5] != gu or c in airport:
+                continue
+            a = row.get("all") or {}
+            fs, ls = a.get("f") or [], a.get("l") or []
+            if len(fs) == 24 and len(ls) == 24:
+                ff = sum(bf.num(fs[h]) for h in hours)
+                f += ff
+                t += ff + sum(bf.num(ls[h]) for h in hours)
+        if t > 0:
+            fixed[code] = f / t
+            info[name] = {"before": round(shares[code], 4), "after": round(f / t, 4)}
+    return fixed, info
+
+
 def station_no(v) -> str:
     """대여소 번호 정규화: '00108' / '108' → '108'."""
     s = str(v or "").strip()
@@ -236,13 +264,17 @@ def main() -> int:
     except bf.FetchError as e:
         print(f"Fetch failed: {e}", file=sys.stderr)
         return 1
-    try:
-        beh = behavior(api, ym)
-    except bf.FetchError as e:   # 보정용이라 실패해도 1단계 결과는 저장
-        print(f"Behavior data skipped: {e}", flush=True)
-        beh = None
+    # 이용 행태 보정은 기본으로 끈다(2026-07 검증: 일일권 비율은 한강 나들이, 연령 '기타'는 주거지·학교를
+    # 잡아 외국인 관광객 신호가 되지 못함). 다시 검토할 때만 BIKE_BEHAVIOR=1.
+    beh = None
+    if os.environ.get("BIKE_BEHAVIOR") == "1":
+        try:
+            beh = behavior(api, ym)
+        except bf.FetchError as e:
+            print(f"Behavior data skipped: {e}", flush=True)
     dong_index = dong_index_from_geojson(json.loads((BUS_DATA / "dongs.geojson").read_text("utf-8")))
-    shares = dong_shares(hourly)
+    shares, airport = airport_fix(hourly, dong_shares(hourly))
+    print(f"Airport fix: {airport}", flush=True)
     rows, stats = compute(stations, use, dong_index, shares)
     adj = adjust(rows, beh)
     stats["foreign"] = round(sum(x["foreign"] for x in rows))
@@ -253,15 +285,15 @@ def main() -> int:
     city = stats["foreign"] / (stats["foreign"] + stats["local"]) if rows else 0
     result = {
         "month": ym, "popMonth": pop_ym, "generatedAt": datetime.now(bf.KST).isoformat(timespec="seconds"),
-        "method": ("base = monthly rentals x short-stay foreigner share of the station's dong (07-22h); "
-                   "foreign = base x clamp(smoothed station visitor-pass ratio / city ratio), rescaled to the city base total"),
+        "method": ("foreign = monthly rentals x short-stay foreigner share of the station's dong (07-22h); "
+                   "airport dongs use the pooled share of the rest of their district"),
         "shareHours": [SHARE_HOURS.start, SHARE_HOURS.stop - 1], "minUse": MIN_USE, "cityShare": round(city, 5),
         "stats": {**stats, "apiCalls": api.calls},
         "dayPass": adj is not None,
         "adjust": adj,
+        "airportFix": airport,
         "sources": ["서울 열린데이터광장: 서울시 공공자전거 대여소 정보 (tbCycleStationInfo)",
                     "서울 열린데이터광장: 서울시 공공자전거 대여소별 이용정보(월별) (tbCycleStationUseMonthInfo)",
-                    "서울 열린데이터광장: 서울시 공공자전거 이용정보(월별) (tbCycleRentUseMonthInfo, 일일권 비율)",
                     "서울 열린데이터광장: 행정동 단위 서울 생활인구(단기체류 외국인·내국인)",
                     f"행정동 경계: {bf.BOUNDARY_VERSION} (github.com/vuski/admdongkor)"],
         "dongs": dong_table(rows),

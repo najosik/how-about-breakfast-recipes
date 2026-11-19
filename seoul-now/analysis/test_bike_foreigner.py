@@ -112,6 +112,19 @@ class BikeTest(unittest.TestCase):
         self.assertEqual(info["signal"], "비회원")
         self.assertIsNone(bk.adjust(rows, None))
 
+    def test_airport_fix_uses_rest_of_district(self):
+        hourly = {"dongs": {
+            "11500620": {"all": {"f": [50] * 24, "l": [50] * 24}},    # 공항: 50%
+            "11500510": {"all": {"f": [1] * 24, "l": [99] * 24}},     # 같은 구 1%
+            "11500520": {"all": {"f": [3] * 24, "l": [97] * 24}},     # 같은 구 3%
+            "11140550": {"all": {"f": [20] * 24, "l": [80] * 24}}}}   # 다른 구(제외)
+        sh = bk.dong_shares(hourly)
+        fixed, info = bk.airport_fix(hourly, sh, {"11500620": "강서구 공항동"})
+        self.assertAlmostEqual(fixed["11500620"], 0.02)
+        self.assertAlmostEqual(fixed["11140550"], 0.2)          # 다른 동은 그대로
+        self.assertEqual(info["강서구 공항동"], {"before": 0.5, "after": 0.02})
+        self.assertAlmostEqual(sh["11500620"], 0.5)              # 원본은 바꾸지 않음
+
     def test_real_boundary_locates_myeongdong(self):
         if not (DATA / "dongs.geojson").exists():
             self.skipTest("no data")
