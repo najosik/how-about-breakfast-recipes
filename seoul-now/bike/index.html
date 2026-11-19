@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../vendor/leaflet-1.9.4/leaflet.css">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../bus/bus.css">
-  <link rel="stylesheet" href="bike.css?v=20261119h">
+  <link rel="stylesheet" href="bike.css?v=20261119i">
 </head>
 <body>
   <header class="site-header">
@@ -43,7 +43,11 @@
         <h2 id="map-h"></h2>
         <div id="metric-chips" class="chips" role="group"></div>
       </div>
-      <p id="map-desc" class="note"></p>
+      <details class="metric-help-wrap" open>
+        <summary id="metric-help-h"></summary>
+        <dl id="metric-help" class="metric-help"></dl>
+      </details>
+      <p id="map-desc" class="note" hidden></p>
       <div class="layer-toggles"><label><input type="checkbox" id="dong-toggle"> <span id="dong-toggle-lbl"></span></label></div>
       <div id="map" class="map" role="region"></div>
       <div id="map-legend" class="map-legend"></div>
@@ -87,6 +91,6 @@
   </footer>
 
   <script src="../vendor/leaflet-1.9.4/leaflet.js"></script>
-  <script src="bike.js?v=20261119h"></script>
+  <script src="bike.js?v=20261119i"></script>
 </body>
 </html>

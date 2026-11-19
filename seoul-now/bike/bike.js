@@ -43,6 +43,13 @@
       both: "공통",
       lqLabels: ["내국인 위주", "내국인 쪽", "서울 평균 수준", "외국인 쪽", "외국인 위주"],
       legendLq: "외국인 상대 비중 (서울 평균 대비)", legendUse: "원 크기: 월 대여",
+      helpH: "보기 설명",
+      metricHelp: (avg) => ({
+        foreign: ["대여소별 외국인 추정 월 대여 건수입니다(월 대여 × 동네 외국인 비율).", "원이 클수록 외국인이 많이 빌린 곳입니다. 대여 자체가 많은 대여소도 크게 나옵니다."],
+        local: ["대여소별 내국인 추정 월 대여 건수입니다(월 대여 − 외국인 추정).", "원이 클수록 내국인이 많이 빌린 곳으로, 출퇴근·생활권 수요가 드러납니다."],
+        diff: [`대여소 이용 중 외국인 비중을 서울 평균(${avg})과 비교합니다.`, "주황 = 평균보다 외국인 쪽, 파랑 = 내국인 쪽, 회색 = 평균 수준입니다. 이용 규모와 상관없이 어느 쪽 성격이 강한지 봅니다. 원 크기는 월 대여 건수입니다."],
+        share: ["대여소가 있는 행정동의 단기체류 외국인 비율(생활인구, 7~22시)입니다.", "추정의 바탕이 되는 동네 값입니다. 같은 동의 대여소는 같은 색으로 나옵니다."],
+      }),
       mapDesc: {
         foreign: "원 크기 = 외국인 추정 월 대여 건수. 상위 대여소일수록 큽니다.",
         local: "원 크기 = 내국인 추정 월 대여 건수.",
@@ -99,6 +106,13 @@
       both: "both",
       lqLabels: ["Mostly residents", "Resident-leaning", "Seoul average", "Foreign-leaning", "Mostly foreign"],
       legendLq: "Foreign share vs Seoul average", legendUse: "Circle size: rentals",
+      helpH: "About these views",
+      metricHelp: (avg) => ({
+        foreign: ["Estimated monthly rentals by foreigners per station (rentals × neighbourhood foreigner share).", "Bigger circles mean more foreign rentals. Very busy stations also look big."],
+        local: ["Estimated monthly rentals by residents per station (rentals − estimated foreign).", "Bigger circles mean more resident rentals, showing commuting and everyday trips."],
+        diff: [`Compares each station's foreign share of rentals with the Seoul average (${avg}).`, "Orange = more foreign than average, blue = more resident, grey = about average. Shows character regardless of size; circle size = monthly rentals."],
+        share: ["Short-stay foreigner share of the station's neighbourhood (living population, 7am–10pm).", "The neighbourhood value the estimate starts from. Stations in the same neighbourhood share one colour."],
+      }),
       mapDesc: {
         foreign: "Circle size = estimated monthly rentals by foreigners.",
         local: "Circle size = estimated monthly rentals by residents.",
@@ -237,6 +251,7 @@
       text: t("metric")[m], onclick: () => { state.metric = m; state.sortKey = DEFAULT_SORT[m]; state.sortDir = "desc"; writeUrl(); renderData(); drawStations(); },
     })));
     $("map-desc").textContent = t("mapDesc")[state.metric];
+    renderMetricHelp();
     renderLegend();
     renderRank();
     renderDongs();
@@ -367,6 +382,15 @@
       el("tbody", {}, ...data.dongs.slice(0, 20).map((r) => el("tr", {},
         el("td", { text: r.dong }), el("td", { class: "num", text: nf(r.stations) }), el("td", { class: "num", text: nf(r.use) }),
         el("td", { class: "num", text: nf(r.foreign) }), el("td", { class: "num", text: pct(r.share) })))));
+  }
+  // 지도 보기 4가지 설명(현재 보기는 강조, 이름을 누르면 그 보기로 전환)
+  function renderMetricHelp() {
+    const help = t("metricHelp")(pct(cityRatio()));
+    $("metric-help-h").textContent = t("helpH");
+    $("metric-help").replaceChildren(...METRICS.map((m) => el("div", { class: "mh-item" + (state.metric === m ? " on" : "") },
+      el("dt", {}, el("button", { type: "button", class: "mh-btn", "aria-pressed": String(state.metric === m), text: t("metric")[m],
+        onclick: () => { state.metric = m; state.sortKey = DEFAULT_SORT[m]; state.sortDir = "desc"; writeUrl(); renderData(); drawStations(); } })),
+      el("dd", {}, el("span", { text: help[m][0] }), " ", el("span", { class: "muted", text: help[m][1] })))));
   }
   function renderLegend() {
     const items = [];
