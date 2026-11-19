@@ -3,10 +3,16 @@
 (() => {
   "use strict";
   const $ = (id) => document.getElementById(id);
-  const METRICS = ["foreign", "local", "share"];
+  const METRICS = ["foreign", "local", "diff", "share"];
+  const LQ_BREAKS = [0.5, 0.8, 1.25, 2];   // 외국인 상대 비중(서울 평균 = 1) 구간
   const SHARE_BREAKS = [0.01, 0.03, 0.06, 0.1];
   const SHARE_COLORS = ["#eef3fb", "#c6d7ef", "#8fb0de", "#4a7cc2", "#1d4f9a"];
-  const COLOR = { foreign: "#e8590c", local: "#1d4f9a" };
+  // 외국인·내국인 색은 CSS 토큰(--c-for, --c-loc: 라이트·다크 각각 검증)에서 읽는다
+  const cssVar = (n, fb) => (getComputedStyle(document.documentElement).getPropertyValue(n).trim() || fb);
+  const COLOR = {
+    get foreign() { return cssVar("--c-for", "#e8590c"); },
+    get local() { return cssVar("--c-loc", "#1d4f9a"); },
+  };
   const TOP = 30;
 
   const I18N = {
@@ -24,13 +30,23 @@
       howWhy: "외국인 체류는 많아도 관광 이동이 적은 곳(예: 김포공항 인근 주거·업무지)은 정기권 이용이 대부분이라 보정 단계에서 낮아집니다.",
       howOff: "이번 기준월은 이용권 자료 응답이 늦어 3단계 보정을 적용하지 못했습니다. 1차 추정(동네 비율)만 표시합니다.",
       mapH: "대여소 지도", dongLayer: "행정동 외국인 비율 색칠",
-      metric: { foreign: "외국인 많이", local: "내국인 많이", share: "외국인 비율" },
+      metric: { foreign: "외국인 많이", local: "내국인 많이", diff: "외국인·내국인 차이", share: "외국인 비율" },
+      cmpH: "외국인 vs 내국인, 어디서 다를까",
+      cmpDesc: "같은 따릉이라도 외국인과 내국인이 많이 타는 곳은 다릅니다. 자치구별로 서울 전체 이용 중 몇 %가 그 구에서 나왔는지 비교했습니다.",
+      cmpInsight: (top, f, l) => `외국인 추정 이용의 ${f}가 ${top} 세 구에서 나오지만, 내국인 이용은 같은 세 구에서 ${l}만 나옵니다.`,
+      cmpFor: "외국인 추정", cmpLoc: "내국인 추정", cmpGuH: "자치구별 이용 비중 (서울 전체 = 100%)",
+      cmpListF: "외국인 많이 TOP 10", cmpListL: "내국인 많이 TOP 10",
+      cmpOverlap: (n) => (n ? `두 목록에 모두 든 대여소: ${n}곳` : "두 목록에 겹치는 대여소가 없습니다. 외국인과 내국인이 많이 타는 곳이 완전히 다릅니다."),
+      both: "공통",
+      lqLabels: ["내국인 위주", "내국인 쪽", "서울 평균 수준", "외국인 쪽", "외국인 위주"],
+      legendLq: "외국인 상대 비중 (서울 평균 대비)", legendUse: "원 크기: 월 대여",
       mapDesc: {
         foreign: "원 크기 = 외국인 추정 월 대여 건수. 상위 대여소일수록 큽니다.",
         local: "원 크기 = 내국인 추정 월 대여 건수.",
         share: "색 = 대여소가 있는 동의 단기체류 외국인 비율(07~22시). 진할수록 외국인 비율이 높습니다.",
+        diff: "색 = 대여소 이용 중 외국인 추정 비중이 서울 평균보다 높으면 주황, 낮으면 파랑. 원 크기 = 월 대여 건수.",
       },
-      rankH: { foreign: "외국인 추정 이용 상위 대여소", local: "내국인 추정 이용 상위 대여소", share: "외국인 비율 높은 대여소" },
+      rankH: { foreign: "외국인 추정 이용 상위 대여소", local: "내국인 추정 이용 상위 대여소", share: "외국인 비율 높은 대여소", diff: "외국인 비중이 서울 평균보다 높은 대여소" },
       rankDesc: (n) => `상위 ${TOP}곳. 이름을 누르면 지도에서 위치를 보여줍니다.` + (n ? ` 비율 순위는 월 대여 ${n}건 이상만.` : ""),
       th: { no: "순위", name: "대여소", dong: "행정동", use: "월 대여", foreign: "외국인 추정", base: "보정 전", local: "내국인 추정", share: "동 외국인 비율", day: "비회원 추정" },
       dongH: "외국인 추정 이용이 많은 행정동", dongDesc: "대여소를 행정동별로 합친 값입니다.",
@@ -68,13 +84,23 @@
       howWhy: "Places where many foreigners stay but few tour around (e.g. homes and offices near Gimpo Airport) are mostly season-pass riders, so the adjustment lowers them.",
       howOff: "The pass-type data was too slow this month, so step 3 was not applied. Showing the step-2 estimate only.",
       mapH: "Station map", dongLayer: "Shade neighbourhoods by foreigner share",
-      metric: { foreign: "Most foreign use", local: "Most resident use", share: "Foreigner share" },
+      metric: { foreign: "Most foreign use", local: "Most resident use", diff: "Foreign vs resident", share: "Foreigner share" },
+      cmpH: "Foreign vs resident: where do they differ?",
+      cmpDesc: "Visitors and residents ride Seoul Bike in different places. Each district's share of all Seoul rentals is compared for both groups.",
+      cmpInsight: (top, f, l) => `${f} of estimated foreign rentals come from ${top}, but only ${l} of resident rentals do.`,
+      cmpFor: "Est. foreign", cmpLoc: "Est. resident", cmpGuH: "Share of rentals by district (Seoul = 100%)",
+      cmpListF: "Top 10 by foreign use", cmpListL: "Top 10 by resident use",
+      cmpOverlap: (n) => (n ? `Stations in both lists: ${n}` : "No station is in both lists: visitors and residents ride in completely different places."),
+      both: "both",
+      lqLabels: ["Mostly residents", "Resident-leaning", "Seoul average", "Foreign-leaning", "Mostly foreign"],
+      legendLq: "Foreign share vs Seoul average", legendUse: "Circle size: rentals",
       mapDesc: {
         foreign: "Circle size = estimated monthly rentals by foreigners.",
         local: "Circle size = estimated monthly rentals by residents.",
         share: "Colour = short-stay foreigner share of the station's neighbourhood (7am–10pm). Darker = higher.",
+        diff: "Colour = orange where the estimated foreign share of rentals is above the Seoul average, blue where it is below. Size = monthly rentals.",
       },
-      rankH: { foreign: "Top stations by estimated foreign use", local: "Top stations by estimated resident use", share: "Stations with the highest foreigner share" },
+      rankH: { foreign: "Top stations by estimated foreign use", local: "Top stations by estimated resident use", share: "Stations with the highest foreigner share", diff: "Stations most above the Seoul foreign share" },
       rankDesc: (n) => `Top ${TOP}. Tap a name to locate it on the map.` + (n ? ` Share ranking only includes stations with ${n}+ rentals a month.` : ""),
       th: { no: "#", name: "Station", dong: "Neighbourhood", use: "Rentals", foreign: "Est. foreign", base: "Before adj.", local: "Est. resident", share: "Area foreign share", day: "Likely non-member" },
       dongH: "Neighbourhoods with the most estimated foreign use", dongDesc: "Stations summed by neighbourhood (dong).",
@@ -118,6 +144,14 @@
     일일: { ko: "일일권", en: "day-pass" },
   };
   const sigName = (d) => (SIG[d.adjust && d.adjust.signal] || SIG.비회원)[state.lang];
+  const cityRatio = () => data.stats.foreign / Math.max(1, data.stats.foreign + data.stats.local);
+  const lqOf = (s) => (s.use > 0 ? s.foreign / s.use / Math.max(1e-9, cityRatio()) : 1);
+  const lqBin = (v) => LQ_BREAKS.filter((b) => v >= b).length;   // 0..4
+  function lqStyle(bin) {
+    if (bin === 2) return { fillColor: "#a8a29a", fillOpacity: 0.55 };
+    const c = bin > 2 ? COLOR.foreign : COLOR.local;
+    return { fillColor: c, fillOpacity: bin === 0 || bin === 4 ? 0.9 : 0.45 };
+  }
   const shareColor = (v) => SHARE_COLORS[SHARE_BREAKS.filter((b) => v >= b).length];
 
   function el(tag, props = {}, ...kids) {
@@ -143,6 +177,7 @@
     return el("div", { class: "map-tip" }, el("strong", { text: s.name }), el("span", { class: "tip-row", text: `${s.gu} · ${s.dong}` }),
       el("span", { class: "tip-row", text: `${t("tipUse")} ${nf(s.use)}${t("unit")}` }),
       el("span", { class: "tip-row", text: `${t("tipForeign")} ${nf(s.foreign)}${t("unit")} · ${t("tipLocal")} ${nf(s.local)}${t("unit")}` }),
+      state.metric === "diff" ? el("span", { class: "tip-row", text: `${t("legendLq")}: ×${lqOf(s).toFixed(2)} (${t("lqLabels")[lqBin(lqOf(s))]})` }) : null,
       Number.isFinite(s.foreignBase) && data.adjust ? el("span", { class: "tip-row", text: `${t("tipBase")} ${nf(s.foreignBase)}${t("unit")} → ${nf(s.foreign)}${t("unit")} (×${s.mult})` }) : null,
       el("span", { class: "tip-row", text: `${t("tipShare")} ${pct(s.share)}` + (Number.isFinite(s.visitorRatio) ? ` · ${t("tipDay")} ${pct(s.visitorRatio)}` : "") }));
   }
@@ -182,6 +217,7 @@
     renderLegend();
     renderRank();
     renderDongs();
+    renderCompare();
     $("method").replaceChildren(...t("method")(d).map((x) => el("p", { text: x })));
     const when = new Date(d.generatedAt);
     $("updated").textContent = t("updated")(isNaN(when) ? "-" : when.toLocaleString(state.lang === "ko" ? "ko-KR" : "en-US", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST");
@@ -202,14 +238,15 @@
   function ranked() {
     const m = state.metric;
     if (m === "share") return data.stations.filter((x) => x.use >= data.minUse).sort((a, b) => b.share - a.share || b.use - a.use).slice(0, TOP);
+    if (m === "diff") return data.stations.filter((x) => x.use >= 300).sort((a, b) => lqOf(b) - lqOf(a) || b.use - a.use).slice(0, TOP);
     return [...data.stations].sort((a, b) => b[m] - a[m]).slice(0, TOP);
   }
   function renderRank() {
     const th = t("th");
     $("rank-h").textContent = t("rankH")[state.metric];
-    $("rank-desc").textContent = t("rankDesc")(state.metric === "share" ? data.minUse : 0);
+    $("rank-desc").textContent = t("rankDesc")(state.metric === "share" ? data.minUse : state.metric === "diff" ? 300 : 0);
     const rows = ranked();
-    const key = state.metric === "share" ? "use" : state.metric;
+    const key = state.metric === "share" || state.metric === "diff" ? "use" : state.metric;
     const max = Math.max(1, ...rows.map((r) => r[key]));
     $("rank").replaceChildren(
       el("thead", {}, el("tr", {}, ...[th.no, th.name, th.dong, th.use, th.foreign, th.base, th.local, th.day, th.share].map((h, i) => el("th", { class: i >= 3 ? "num" : null, text: h })))),
@@ -227,6 +264,52 @@
     // 막대 너비는 CSSOM으로(인라인 style 속성 없이: CSP style-src 'self')
     $("rank").querySelectorAll(".mini-bar > span").forEach((b, i) => { b.style.width = `${(rows[i][key] / max) * 100}%`; });
   }
+  // ---------- 외국인 vs 내국인 비교 ----------
+  function renderCompare() {
+    const gu = new Map();
+    for (const s of data.stations) {
+      const g = gu.get(s.gu) || { f: 0, l: 0 };
+      g.f += s.foreign; g.l += s.local; gu.set(s.gu, g);
+    }
+    const F = data.stats.foreign || 1, Lc = data.stats.local || 1;
+    const rows = [...gu].map(([name, v]) => ({ name, f: v.f / F, l: v.l / Lc })).sort((a, b) => b.f - a.f);
+    const top3 = rows.slice(0, 3);
+    const sep = state.lang === "ko" ? "·" : ", ";
+    $("cmp-h").textContent = t("cmpH");
+    $("cmp-desc").textContent = t("cmpDesc");
+    $("cmp-insight").textContent = t("cmpInsight")(top3.map((r) => r.name).join(sep), pct(top3.reduce((a, r) => a + r.f, 0)), pct(top3.reduce((a, r) => a + r.l, 0)));
+    $("cmp-gu-h").textContent = t("cmpGuH");
+    const dot = (c) => { const d = el("span", { class: "legend-dot" }); d.style.width = d.style.height = "10px"; d.style.background = c; return d; };
+    $("cmp-legend").replaceChildren(el("span", {}, dot(COLOR.foreign), ` ${t("cmpFor")}`), el("span", {}, dot(COLOR.local), ` ${t("cmpLoc")}`));
+    const shown = rows.slice(0, 10);
+    const max = Math.max(...shown.map((r) => Math.max(r.f, r.l)), 0.01);
+    $("cmp-gu").replaceChildren(...shown.map((r) => {
+      const bf = el("span", { class: "cbar for" }), bl = el("span", { class: "cbar loc" });
+      bf.style.width = `${(r.f / max) * 100}%`; bl.style.width = `${(r.l / max) * 100}%`;
+      bf.style.background = COLOR.foreign; bl.style.background = COLOR.local;
+      const tip = `${r.name} — ${t("cmpFor")} ${pct(r.f)} · ${t("cmpLoc")} ${pct(r.l)}`;
+      return el("li", { class: "cmp-row", title: tip, tabindex: "0", "aria-label": tip },
+        el("span", { class: "cmp-name", text: r.name }),
+        el("span", { class: "cmp-bars", "aria-hidden": "true" }, bf, bl),
+        el("span", { class: "cmp-val", "aria-hidden": "true" }, el("span", { text: pct(r.f) }), el("span", { class: "muted", text: pct(r.l) })));
+    }));
+    // TOP 10 두 목록과 겹침
+    const tf = [...data.stations].sort((a, b) => b.foreign - a.foreign).slice(0, 10);
+    const tl = [...data.stations].sort((a, b) => b.local - a.local).slice(0, 10);
+    const both = new Set(tf.filter((x) => tl.some((y) => y.no === x.no)).map((x) => x.no));
+    const list = (arr, key, c) => el("ol", { class: "cmp-list" }, ...arr.map((s) => {
+      const d = dot(c);
+      return el("li", {}, d,
+        el("span", { class: "cmp-who" }, el("button", { type: "button", class: "link", text: s.name, onclick: () => focusStation(s.no) }),
+          el("span", { class: "muted", text: ` ${s.gu}` }), both.has(s.no) ? el("span", { class: "tag", text: ` ${t("both")}` }) : null),
+        el("span", { class: "cmp-num", text: nf(s[key]) }));
+    }));
+    $("cmp-lists").replaceChildren(
+      el("div", {}, el("h3", { text: t("cmpListF") }), list(tf, "foreign", COLOR.foreign)),
+      el("div", {}, el("h3", { text: t("cmpListL") }), list(tl, "local", COLOR.local)));
+    $("cmp-overlap").textContent = t("cmpOverlap")(both.size);
+  }
+
   function renderDongs() {
     const th = t("thDong");
     $("dongs").replaceChildren(
@@ -245,7 +328,16 @@
           return el("span", {}, sw, ` ${Math.round(lo * 100)}${hi ? `–${Math.round(hi * 100)}` : "+"}%`);
         })));
     }
-    if (state.metric !== "share") {
+    if (state.metric === "diff") {
+      items.push(el("span", { class: "legend-group" }, el("span", { class: "legend-title", text: t("legendLq") }),
+        ...t("lqLabels").map((lbl, i) => {
+          const st = lqStyle(i);
+          const dot = el("span", { class: "legend-dot" }); dot.style.width = dot.style.height = "12px";
+          dot.style.background = st.fillColor; dot.style.opacity = String(Math.max(0.55, st.fillOpacity));
+          return el("span", {}, dot, ` ${lbl}`);
+        })));
+      items.push(el("span", { class: "legend-group", text: t("legendUse") }));
+    } else if (state.metric !== "share") {
       const dot = el("span", { class: "legend-dot" }); dot.style.width = dot.style.height = "12px"; dot.style.background = COLOR[state.metric];
       items.push(el("span", { class: "legend-group" }, dot, ` ${t("legendSize")}`));
     }
@@ -270,12 +362,15 @@
     if (stationLayer) stationLayer.remove();
     markers.clear();
     const m = state.metric;
-    const max = Math.max(1, ...data.stations.map((s) => (m === "share" ? 0 : s[m])));
-    const list = m === "share" ? data.stations : [...data.stations].sort((a, b) => a[m] - b[m]);   // 큰 원이 위로
+    const key = m === "diff" ? "use" : m;
+    const max = Math.max(1, ...data.stations.map((s) => (m === "share" ? 0 : s[key])));
+    const list = m === "share" ? data.stations : [...data.stations].sort((a, b) => a[key] - b[key]);   // 큰 원이 위로
     stationLayer = L.layerGroup(list.map((s) => {
       const style = m === "share"
         ? { radius: 4, color: "#ffffff", weight: 0.8, fillColor: shareColor(s.share), fillOpacity: 0.95 }
-        : { radius: 2 + 16 * Math.sqrt(s[m] / max), color: "#ffffff", weight: 0.8, fillColor: COLOR[m], fillOpacity: 0.7 };
+        : m === "diff"
+          ? { radius: 2 + 12 * Math.sqrt(s.use / max), color: "#ffffff", weight: 0.8, ...lqStyle(lqBin(lqOf(s))) }
+          : { radius: 2 + 16 * Math.sqrt(s[m] / max), color: "#ffffff", weight: 0.8, fillColor: COLOR[m], fillOpacity: 0.7 };
       const c = L.circleMarker([s.lat, s.lng], style);
       c.bindTooltip(() => tipEl(s), { direction: "top", offset: [0, -6] });
       markers.set(s.no, c);
