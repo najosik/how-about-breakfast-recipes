@@ -11,10 +11,18 @@
 
   const I18N = {
     ko: {
-      title: "따릉이 외국인·내국인 이용 추정 지도", sub: "대여소별 월 대여 건수 × 그 동네 단기체류 외국인 비율",
-      lang: "English", note: "추정치입니다. 따릉이는 이용자 국적을 공개하지 않아, 대여소가 있는 행정동의 외국인 비율로 나눠 추정했습니다.",
+      title: "따릉이 외국인·내국인 이용 추정 지도", sub: "대여소별 월 대여 × 동네 단기체류 외국인 비율 × 대여소 이용 행태 보정",
+      lang: "English", note: "추정치입니다. 따릉이는 이용자 국적을 공개하지 않아 공개 집계 자료로 추정했습니다. 방법은 바로 아래에 있습니다.",
       loading: "불러오는 중…", error: "데이터를 불러오지 못했어요.",
-      kStations: "분석 대여소", kUse: "월 대여 건수", kForeign: "외국인 추정 이용", kShare: "서울 평균 비율", kDay: "일일권 비율",
+      kStations: "분석 대여소", kUse: "월 대여 건수", kForeign: "외국인 추정 이용", kShare: "서울 평균 비율", kDay: "관광형 이용권 비율",
+      howH: "이렇게 추정했어요",
+      howSteps: (d) => [
+        ["대여소별 월 대여 건수", `서울시가 공개한 따릉이 대여소별 ${fmtYm(d.month)} 대여 건수(집계 자료)에서 시작합니다.`],
+        ["× 동네 외국인 비율", `대여소가 있는 행정동의 단기체류 외국인 비율(생활인구, ${fmtYm(d.popMonth)} ${d.shareHours[0]}~${d.shareHours[1]}시 평균)을 곱해 1차 추정을 냅니다.`],
+        ["× 대여소 이용 행태 보정", `그 대여소의 ${sigName(d)} 비율이 서울 평균보다 높으면 올리고 낮으면 내립니다(0.2~5배). 대여가 적은 대여소는 평균 쪽으로 당겨 우연한 값에 휘둘리지 않게 하고, 서울 전체 합계는 1차 추정과 같게 맞춥니다.`],
+      ],
+      howWhy: "외국인 체류는 많아도 관광 이동이 적은 곳(예: 김포공항 인근 주거·업무지)은 정기권 이용이 대부분이라 보정 단계에서 낮아집니다.",
+      howOff: "이번 기준월은 이용권 자료 응답이 늦어 3단계 보정을 적용하지 못했습니다. 1차 추정(동네 비율)만 표시합니다.",
       mapH: "대여소 지도", dongLayer: "행정동 외국인 비율 색칠",
       metric: { foreign: "외국인 많이", local: "내국인 많이", share: "외국인 비율" },
       mapDesc: {
@@ -24,31 +32,41 @@
       },
       rankH: { foreign: "외국인 추정 이용 상위 대여소", local: "내국인 추정 이용 상위 대여소", share: "외국인 비율 높은 대여소" },
       rankDesc: (n) => `상위 ${TOP}곳. 이름을 누르면 지도에서 위치를 보여줍니다.` + (n ? ` 비율 순위는 월 대여 ${n}건 이상만.` : ""),
-      th: { no: "순위", name: "대여소", dong: "행정동", use: "월 대여", foreign: "외국인 추정", local: "내국인 추정", share: "외국인 비율", day: "일일권" },
+      th: { no: "순위", name: "대여소", dong: "행정동", use: "월 대여", foreign: "외국인 추정", base: "보정 전", local: "내국인 추정", share: "동 외국인 비율", day: "관광형 이용권" },
       dongH: "외국인 추정 이용이 많은 행정동", dongDesc: "대여소를 행정동별로 합친 값입니다.",
       thDong: { dong: "행정동", stations: "대여소", use: "월 대여", foreign: "외국인 추정", share: "외국인 비율" },
       legendSize: "원 크기: 추정 건수", legendShare: "외국인 비율",
       methodH: "추정 방법",
       method: (d) => [
-        `대여소별 ${fmtYm(d.month)} 월 대여 건수(이용권·성별·연령 집계를 대여소별로 합산)에, 대여소가 속한 행정동의 단기체류 외국인 비율을 곱해 외국인 추정 이용으로 봤습니다. 나머지는 내국인 추정 이용입니다.`,
+        `1차 추정: 대여소별 ${fmtYm(d.month)} 월 대여 건수 × 대여소가 속한 행정동의 단기체류 외국인 비율. 나머지는 내국인 추정 이용입니다.`,
         `외국인 비율 = 단기체류 외국인 생활인구 ÷ (내국인 + 단기체류 외국인 생활인구), ${fmtYm(d.popMonth)} 전체 일 ${d.shareHours[0]}~${d.shareHours[1]}시 평균.`,
-        "일일권 비율은 정기권이 아닌 일일권(비회원 포함) 대여의 비중으로, 관광·단기 이용 성격을 보조로 보여줍니다." + (d.dayPass ? "" : " 이번 기준월은 원천 응답이 느려 일일권 비율을 생략했습니다."),
+        d.adjust ? `행태 보정: 배수 = (대여소 ${sigName(d)} 건수 + 50 × 서울 평균 비율) ÷ (대여소 대여 + 50) ÷ 서울 평균 비율(${pct(d.adjust.cityVisitorRatio)}), 0.2~5배로 제한. 보정 후 서울 전체 외국인 추정 합계가 1차 추정과 같도록 비례 조정합니다. 국내 휴대폰 본인인증이 필요한 회원 가입이 어려운 외국인 관광객은 비회원 일일권을 주로 쓴다는 점을 근거로 합니다.`
+          : "행태 보정: 이번 기준월은 이용권 자료 응답이 늦어 적용하지 못했습니다.",
       ],
       limitsH: "한계",
       limits: [
-        "실제 외국인 이용 건수가 아닙니다. 동네에 외국인이 많으면 그 동 대여소의 이용도 같은 비율로 외국인이 했다고 가정합니다.",
+        "실제 외국인 이용 건수가 아닙니다. 따릉이는 이용자 국적을 공개하지 않습니다.",
+        "비회원 일일권은 외국인만 쓰는 것이 아닙니다(가끔 타는 내국인 포함). 그래서 동네 외국인 비율을 출발점으로 두고, 이용권 비율은 대여소 간 배분을 조정하는 데만 씁니다.",
         "대여(빌린 곳)만 집계합니다. 반납 장소와 시간대별 이용은 반영하지 않습니다.",
         "외국인 비율은 낮·저녁(07~22시) 평균이라 심야 이용 특성은 반영되지 않습니다.",
         "개인 단위 대여 이력은 쓰지 않고, 서울시가 공개한 집계 자료만 사용합니다.",
       ],
-      updated: (t) => `업데이트 ${t}`, tipUse: "월 대여", tipForeign: "외국인 추정", tipLocal: "내국인 추정", tipShare: "동 외국인 비율", tipDay: "일일권",
+      updated: (t) => `업데이트 ${t}`, tipUse: "월 대여", tipForeign: "외국인 추정", tipLocal: "내국인 추정", tipShare: "동 외국인 비율", tipDay: "관광형 이용권", tipBase: "보정 전",
       unit: "건", noData: "아직 분석 결과가 없어요.",
     },
     en: {
-      title: "Seoul Bike (Ttareungyi): visitor vs resident use", sub: "Monthly rentals per station × short-stay foreigner share of its neighbourhood",
-      lang: "한국어", note: "These are estimates. Seoul does not publish riders' nationality, so rentals are split by the foreigner share of each station's neighbourhood.",
+      title: "Seoul Bike (Ttareungyi): visitor vs resident use", sub: "Monthly rentals × neighbourhood foreigner share × station behaviour adjustment",
+      lang: "한국어", note: "These are estimates. Seoul does not publish riders' nationality, so we estimate from public aggregated data. The method is right below.",
       loading: "Loading…", error: "Couldn't load the data.",
-      kStations: "Stations", kUse: "Monthly rentals", kForeign: "Est. foreign rentals", kShare: "Seoul average share", kDay: "Day-pass share",
+      kStations: "Stations", kUse: "Monthly rentals", kForeign: "Est. foreign rentals", kShare: "Seoul average share", kDay: "Visitor-pass share",
+      howH: "How we estimate",
+      howSteps: (d) => [
+        ["Monthly rentals per station", `Start from Seoul's published rentals per bike station for ${fmtYm(d.month)} (aggregated data).`],
+        ["× neighbourhood foreigner share", `Multiply by the short-stay foreigner share of the station's neighbourhood (living population, ${fmtYm(d.popMonth)}, ${d.shareHours[0]}:00–${d.shareHours[1]}:59 average).`],
+        ["× station behaviour adjustment", `Raise or lower each station by how its ${sigName(d)} share compares with the Seoul average (0.2–5×). Small stations are pulled toward the average, and the Seoul total stays equal to step 2.`],
+      ],
+      howWhy: "Places where many foreigners stay but few tour around (e.g. homes and offices near Gimpo Airport) are mostly season-pass riders, so the adjustment lowers them.",
+      howOff: "The pass-type data was too slow this month, so step 3 was not applied. Showing the step-2 estimate only.",
       mapH: "Station map", dongLayer: "Shade neighbourhoods by foreigner share",
       metric: { foreign: "Most foreign use", local: "Most resident use", share: "Foreigner share" },
       mapDesc: {
@@ -58,24 +76,26 @@
       },
       rankH: { foreign: "Top stations by estimated foreign use", local: "Top stations by estimated resident use", share: "Stations with the highest foreigner share" },
       rankDesc: (n) => `Top ${TOP}. Tap a name to locate it on the map.` + (n ? ` Share ranking only includes stations with ${n}+ rentals a month.` : ""),
-      th: { no: "#", name: "Station", dong: "Neighbourhood", use: "Rentals", foreign: "Est. foreign", local: "Est. resident", share: "Foreign share", day: "Day pass" },
+      th: { no: "#", name: "Station", dong: "Neighbourhood", use: "Rentals", foreign: "Est. foreign", base: "Before adj.", local: "Est. resident", share: "Area foreign share", day: "Visitor pass" },
       dongH: "Neighbourhoods with the most estimated foreign use", dongDesc: "Stations summed by neighbourhood (dong).",
       thDong: { dong: "Neighbourhood", stations: "Stations", use: "Rentals", foreign: "Est. foreign", share: "Foreign share" },
       legendSize: "Circle size: estimated rentals", legendShare: "Foreigner share",
       methodH: "Method",
       method: (d) => [
-        `Monthly rentals per station (${fmtYm(d.month)}, summed across pass type, gender and age) are multiplied by the short-stay foreigner share of the station's neighbourhood. The rest is counted as resident use.`,
+        `Step 2 estimate: monthly rentals per station (${fmtYm(d.month)}) × short-stay foreigner share of the station's neighbourhood. The rest is counted as resident use.`,
         `Foreigner share = short-stay foreign living population ÷ (resident + short-stay foreign), ${fmtYm(d.popMonth)}, all days, ${d.shareHours[0]}:00–${d.shareHours[1]}:59 average.`,
-        "Day-pass share is the share of rentals on day passes (incl. non-member), a rough hint of visitor-style use." + (d.dayPass ? "" : " It was skipped this month because the source responded too slowly."),
+        d.adjust ? `Adjustment: multiplier = (station ${sigName(d)} rentals + 50 × Seoul ratio) ÷ (station rentals + 50) ÷ Seoul ratio (${pct(d.adjust.cityVisitorRatio)}), capped to 0.2–5×, then rescaled so the Seoul total matches step 2. Visitors can rarely complete Korean phone verification for membership, so they mostly use non-member day passes.`
+          : "Adjustment: not applied this month because the pass-type data was too slow.",
       ],
       limitsH: "Limitations",
       limits: [
-        "Not actual foreign rider counts: each station is assumed to have the same foreigner share as its neighbourhood.",
+        "Not actual foreign rider counts: Seoul does not publish riders' nationality.",
+        "Non-member day passes are not used only by foreigners, so the neighbourhood share stays the starting point and the pass ratio only shifts the split between stations.",
         "Only rentals (pick-ups) are counted; returns and hour-by-hour use are not.",
         "The foreigner share is a 7am–10pm average, so late-night patterns are not reflected.",
         "Only aggregated public data is used; no individual trip records.",
       ],
-      updated: (t) => `Updated ${t}`, tipUse: "Rentals", tipForeign: "Est. foreign", tipLocal: "Est. resident", tipShare: "Area foreign share", tipDay: "Day pass",
+      updated: (t) => `Updated ${t}`, tipUse: "Rentals", tipForeign: "Est. foreign", tipLocal: "Est. resident", tipShare: "Area foreign share", tipDay: "Visitor pass", tipBase: "Before adj.",
       unit: "", noData: "No analysis yet.",
     },
   };
@@ -92,6 +112,7 @@
   const nf = (n, d = 0) => Number(n).toLocaleString(state.lang === "ko" ? "ko-KR" : "en-US", { maximumFractionDigits: d });
   const pct = (v) => (v == null ? "-" : `${(v * 100).toFixed(1)}%`);
   function fmtYm(ym) { const s = String(ym || ""); return /^\d{6}$/.test(s) ? (state.lang === "ko" ? `${s.slice(0, 4)}년 ${Number(s.slice(4))}월` : `${s.slice(0, 4)}-${s.slice(4)}`) : "-"; }
+  const sigName = (d) => (d.adjust && d.adjust.signal === "일일" ? (state.lang === "ko" ? "일일권" : "day-pass") : (state.lang === "ko" ? "비회원 일일권" : "non-member day-pass"));
   const shareColor = (v) => SHARE_COLORS[SHARE_BREAKS.filter((b) => v >= b).length];
 
   function el(tag, props = {}, ...kids) {
@@ -117,7 +138,8 @@
     return el("div", { class: "map-tip" }, el("strong", { text: s.name }), el("span", { class: "tip-row", text: `${s.gu} · ${s.dong}` }),
       el("span", { class: "tip-row", text: `${t("tipUse")} ${nf(s.use)}${t("unit")}` }),
       el("span", { class: "tip-row", text: `${t("tipForeign")} ${nf(s.foreign)}${t("unit")} · ${t("tipLocal")} ${nf(s.local)}${t("unit")}` }),
-      el("span", { class: "tip-row", text: `${t("tipShare")} ${pct(s.share)}` + (Number.isFinite(s.dayPass) ? ` · ${t("tipDay")} ${pct(s.dayPass)}` : "") }));
+      Number.isFinite(s.foreignBase) && data.adjust ? el("span", { class: "tip-row", text: `${t("tipBase")} ${nf(s.foreignBase)}${t("unit")} → ${nf(s.foreign)}${t("unit")} (×${s.mult})` }) : null,
+      el("span", { class: "tip-row", text: `${t("tipShare")} ${pct(s.share)}` + (Number.isFinite(s.visitorRatio) ? ` · ${t("tipDay")} ${pct(s.visitorRatio)}` : "") }));
   }
 
   // ---------- 정적 문구 ----------
@@ -145,7 +167,8 @@
     $("kpis").replaceChildren(
       kpi(t("kStations"), nf(s.stations)), kpi(t("kUse"), nf(s.totalUse), fmtYm(d.month)),
       kpi(t("kForeign"), nf(s.foreign), pct(s.foreign / (s.foreign + s.local))),
-      kpi(t("kDay"), dayPassAll(d)));
+      kpi(t("kDay"), d.adjust ? pct(d.adjust.cityVisitorRatio) : "-", d.adjust ? sigName(d) : null));
+    renderHow(d);
     $("metric-chips").replaceChildren(...METRICS.map((m) => el("button", {
       type: "button", class: "chip" + (state.metric === m ? " active" : ""), "aria-pressed": String(state.metric === m),
       text: t("metric")[m], onclick: () => { state.metric = m; writeUrl(); renderData(); drawStations(); },
@@ -159,11 +182,13 @@
     $("updated").textContent = t("updated")(isNaN(when) ? "-" : when.toLocaleString(state.lang === "ko" ? "ko-KR" : "en-US", { timeZone: "Asia/Seoul", dateStyle: "medium", timeStyle: "short" }) + " KST");
     $("sources").replaceChildren(...d.sources.map((x) => el("li", { text: x })));
   }
-  // 일일권 비율: 수집 시간 초과로 없을 수 있음(null) → '-'
-  function dayPassAll(d) {
-    const xs = d.stations.filter((x) => Number.isFinite(x.dayPass));
-    if (!d.dayPass || !xs.length) return "-";
-    return pct(xs.reduce((a, x) => a + x.dayPass * x.use, 0) / Math.max(1, xs.reduce((a, x) => a + x.use, 0)));
+  // 상단 '이렇게 추정했어요' 상자
+  function renderHow(d) {
+    $("how-h").textContent = t("howH");
+    $("how-steps").replaceChildren(...t("howSteps")(d).map(([h, p], i) => el("li", { class: i === 2 && !d.adjust ? "off" : null },
+      el("strong", { text: h }), el("span", { text: p }))));
+    $("how-note").textContent = d.adjust ? t("howWhy") : t("howOff");
+    $("how").hidden = false;
   }
   function kpi(label, value, sub) {
     return el("div", { class: "kpi" }, el("p", { class: "k-label", text: label }), el("p", { class: "k-value", text: value }), sub ? el("p", { class: "k-sub", text: sub }) : null);
@@ -182,7 +207,7 @@
     const key = state.metric === "share" ? "use" : state.metric;
     const max = Math.max(1, ...rows.map((r) => r[key]));
     $("rank").replaceChildren(
-      el("thead", {}, el("tr", {}, ...[th.no, th.name, th.dong, th.use, th.foreign, th.local, th.share, th.day].map((h, i) => el("th", { class: i >= 3 ? "num" : null, text: h })))),
+      el("thead", {}, el("tr", {}, ...[th.no, th.name, th.dong, th.use, th.foreign, th.base, th.local, th.day, th.share].map((h, i) => el("th", { class: i >= 3 ? "num" : null, text: h })))),
       el("tbody", {}, ...rows.map((r, i) => el("tr", {},
         el("td", { class: "num", text: String(i + 1) }),
         el("td", { class: "rank-name" }, el("button", { type: "button", class: "link", text: r.name, onclick: () => focusStation(r.no) }),
@@ -190,9 +215,10 @@
         el("td", { text: r.dong }),
         el("td", { class: "num", text: nf(r.use) }),
         el("td", { class: "num", text: nf(r.foreign) }),
+        el("td", { class: "num", text: Number.isFinite(r.foreignBase) ? nf(r.foreignBase) : "-" }),
         el("td", { class: "num", text: nf(r.local) }),
-        el("td", { class: "num", text: pct(r.share) }),
-        el("td", { class: "num", text: pct(r.dayPass) })))));
+        el("td", { class: "num", text: Number.isFinite(r.visitorRatio) ? pct(r.visitorRatio) : "-" }),
+        el("td", { class: "num", text: pct(r.share) })))));
     // 막대 너비는 CSSOM으로(인라인 style 속성 없이: CSP style-src 'self')
     $("rank").querySelectorAll(".mini-bar > span").forEach((b, i) => { b.style.width = `${(rows[i][key] / max) * 100}%`; });
   }

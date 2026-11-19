@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="../vendor/leaflet-1.9.4/leaflet.css">
   <link rel="stylesheet" href="../styles.css">
   <link rel="stylesheet" href="../bus/bus.css">
-  <link rel="stylesheet" href="bike.css?v=20261119a">
+  <link rel="stylesheet" href="bike.css?v=20261119c">
 </head>
 <body>
   <header class="site-header">
@@ -29,6 +29,11 @@
 
   <main class="wrap">
     <p id="estimate-note" class="banner"></p>
+    <section id="how" class="how" aria-labelledby="how-h" hidden>
+      <h2 id="how-h"></h2>
+      <ol id="how-steps" class="how-steps"></ol>
+      <p id="how-note" class="note"></p>
+    </section>
     <p id="status" class="empty" hidden></p>
 
     <section id="kpis" class="kpis" aria-label="Summary"></section>
@@ -72,6 +77,6 @@
   </footer>
 
   <script src="../vendor/leaflet-1.9.4/leaflet.js"></script>
-  <script src="bike.js?v=20261119a"></script>
+  <script src="bike.js?v=20261119c"></script>
 </body>
 </html>
