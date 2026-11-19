@@ -38722,7 +38722,7 @@
   "weather": "7도/부분적으로 흐림, 20분/운동(Y)",
   "failed": false,
   "calories": null,
-  "title": "당근",
+  "title": "깻잎과 부라타치즈를 곁들인 당근구이",
   "credit": null,
   "hashtags": [
    "당근",
@@ -38732,8 +38732,8 @@
    "조식다이어리"
   ],
   "intro": "20231119, #조식다이어리 897, 7도/부분적으로 흐림, 20분/운동(Y)\n깻잎과 부라타치즈를 곁들인 당근구이\n당근 한 개 (쌈장에 찍어 먹는 크기로) 썰고 올리브오일, 소금소금 해서 180도 오븐에 30분 굽는다. \n(30분 동안 요가를 한다,🧘‍♂️)\n꿀, 스리라차, 레몬주스 넣어 드레싱을 만들어 구운 당근에 붓고 골고루 섞은 뒤 180도 오븐에, 이번엔 5분 굽는다. 이맘때쯤 풍기는 당근 향이 일품이다.\n접시에 구운 당근, 다진 깻잎, 부라타 치즈, 구운 호박씨를 차례대로 담는다. \n호박씨는 팬에 구우면 고소함이 폭발한다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 당근 1개\n- 올리브오일 1t\n- 소금 한 꼬집\n- 드레싱(꿀 1t, 스리라차 1t, 레몬즙 1t)\n- 깻잎 3장(다진 것)\n- 부라타 치즈 50g\n- 호박씨 5g(마른 팬에 구운 것)",
+  "steps": "1. 오븐을 180도로 예열한다. 당근은 껍질을 벗기거나 깨끗이 씻어 쌈장에 찍어 먹는 스틱 크기로 썬다.\n2. 당근에 올리브오일과 소금을 버무려 오븐 팬에 한 겹으로 펼치고, 180도 오븐에서 30분 굽는다. \n3. 볼에 꿀, 스리라차, 레몬즙을 섞어 드레싱을 만든다.\n4. 구운 당근을 꺼내 드레싱을 붓고 골고루 섞은 뒤, 180도 오븐에 5분 더 굽는다.\n5. 호박씨는 마른 팬에서 중약불로 1~2분, 톡톡 튀며 고소한 향이 날 때까지 볶는다. 깻잎은 곱게 다진다.\n6. 접시에 구운 당근, 다진 깻잎, 부라타 치즈, 구운 호박씨를 차례대로 담는다.",
   "raw": "20231119, #조식다이어리 897, 7도/부분적으로 흐림, 20분/운동(Y)\n\n깻잎과 부라타치즈를 곁들인 당근구이\n\n당근 한 개 (쌈장에 찍어 먹는 크기로) 썰고 올리브오일, 소금소금 해서 180도 오븐에 30분 굽는다. \n\n(30분 동안 요가를 한다,🧘‍♂️)\n\n꿀, 스리라차, 레몬주스 넣어 드레싱을 만들어 구운 당근에 붓고 골고루 섞은 뒤 180도 오븐에, 이번엔 5분 굽는다. 이맘때쯤 풍기는 당근 향이 일품이다.\n접시에 구운 당근, 다진 깻잎, 부라타 치즈, 구운 호박씨를 차례대로 담는다. \n\n호박씨는 팬에 구우면 고소함이 폭발한다. \n\n#조식 #레시피 #미라클모닝 #당근 ",
   "image": "https://images.how-about-breakfast.com/images/897.jpg",
   "gallery": [
@@ -38742,13 +38742,6 @@
    "https://images.how-about-breakfast.com/images/897_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/897.mp4",
-  "_en": {
-   "hash": "b455effe514d14a35848bb94be5a3d9fc076b3f6ea349179ad142ef9afebd5dd",
-   "title": "Roasted Carrots with Burrata",
-   "intro": "20231119, #breakfastdiary 897, 7°C/partly cloudy, 20min/workout(Y)\nRoasted Carrots with Perilla Leaves and Burrata\nCut a carrot into pieces (about ssamjang-dipping size), toss with olive oil and plenty of salt, and roast in a 180°C oven for 30 minutes. \n(I do yoga for those 30 minutes, 🧘‍♂️)\nMix honey, sriracha, and lemon juice to make a dressing, pour it over the roasted carrots, toss evenly, and roast again in the 180°C oven, this time for 5 minutes. The carrot aroma at this point is out of this world. \nOn a plate, layer the roasted carrots, chopped perilla leaves, burrata, and toasted pumpkin seeds. \nToasting the pumpkin seeds in a pan makes them explosively nutty.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "당근-2"
  },
  {
