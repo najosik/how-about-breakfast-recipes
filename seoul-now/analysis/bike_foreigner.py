@@ -2,12 +2,14 @@
 """따릉이 대여소별 '외국인·내국인 이용 추정' → seoul-now/bike/data/bike-foreigner.json
 
 방법(추정):
-  대여소 월 대여 건수(tbCycleRentUseMonthInfo, 대여소×이용권×성별×연령 집계를 대여소별로 합산)
+  대여소 월 대여 건수(tbCycleStationUseMonthInfo, 대여소별 월 집계)
   × 대여소가 속한 행정동의 단기체류 외국인 비율(버스 분석이 저장한 dong-hourly.json, 07~22시 일평균)
   = 외국인 추정 이용, 나머지 = 내국인 추정 이용.
   보조 지표: 일일권(비회원 포함) 비율 — 정기권보다 관광·단기 이용 성격이 강함.
+           tbCycleRentUseMonthInfo(약 11만 행, 응답이 느림)에서 시간 예산 안에서만 수집하고, 넘기면 생략한다.
 
-데이터: 서울 열린데이터광장 tbCycleStationInfo(대여소 위치), tbCycleRentUseMonthInfo(대여소별 월 이용 집계)
+데이터: 서울 열린데이터광장 tbCycleStationInfo(대여소 위치), tbCycleStationUseMonthInfo(대여소별 월 대여),
+        tbCycleRentUseMonthInfo(이용권별 월 이용 집계, 일일권 비율용)
         + seoul-now/bus/data/dongs.geojson(행정동 경계) + dong-hourly.json(행정동×시간대 생활인구).
 개인정보: 집계 데이터만 사용한다(개인 단위 대여이력 tbCycleRentData는 쓰지 않음). 성별·연령 항목은 합산 후 버린다.
 보안: API 키는 환경변수로만 받고 로그·결과물에 남기지 않음(bus_foreigner.SeoulApi 재사용: 재시도·키 비노출).
@@ -18,6 +20,7 @@ import json
 import os
 import re
 import sys
+import time
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
@@ -32,6 +35,8 @@ SHARE_HOURS = range(7, 23)      # 따릉이 이용이 몰리는 07~22시
 MIN_USE = 30                    # 비율 순위에 넣을 최소 월 대여 건수(소규모 대여소 잡음 방지)
 TOP = 30
 NO_RE = re.compile(r"^\d{1,6}$")
+NAME_NO_RE = re.compile(r"^\s*(\d{1,6})\s*\.")   # '108. 서교동 사거리' → 108
+DAYPASS_BUDGET = 600            # 초. 일일권 비율 수집 시간 상한
 
 
 def dong_index_from_geojson(gj: dict) -> bf.DongIndex:
@@ -68,6 +73,31 @@ def station_no(v) -> str:
     return str(int(s)) if NO_RE.match(s) else ""
 
 
+def station_use(rows) -> dict[str, float]:
+    """tbCycleStationUseMonthInfo: 대여소 이름 앞 번호로 대여소를 찾아 월 대여 건수 합산."""
+    out = defaultdict(float)
+    for r in rows:
+        m = NAME_NO_RE.match(str(r.get("stationName", "")))
+        if m:
+            out[str(int(m.group(1)))] += bf.num(r.get("rentCnt"))
+    return dict(out)
+
+
+def day_pass_ratio(api, ym: str, budget: float = DAYPASS_BUDGET) -> dict[str, float] | None:
+    """일일권 비율(대여소별). 시간 예산을 넘기면 None(지표 생략)."""
+    deadline = time.monotonic() + budget
+    rows = []
+    for i, r in enumerate(api.all_rows("tbCycleRentUseMonthInfo", ym, root="cycleRentUseMonthInfo")):
+        rows.append(r)
+        if i % 10000 == 9999:
+            print(f"  day-pass rows: {i + 1}", flush=True)
+            if time.monotonic() > deadline:
+                print("  day-pass budget exceeded; skipping", flush=True)
+                return None
+    agg = aggregate_use(rows)
+    return {no: v["day"] / v["use"] for no, v in agg.items() if v["use"] > 0}
+
+
 def aggregate_use(rows) -> dict[str, dict]:
     """대여소별 월 대여 합계와 일일권 건수. 성별·연령은 합산만 하고 남기지 않는다."""
     use = defaultdict(lambda: {"use": 0.0, "day": 0.0})
@@ -82,22 +112,24 @@ def aggregate_use(rows) -> dict[str, dict]:
     return use
 
 
-def compute(stations: list[dict], use: dict, dong_index, shares: dict) -> tuple[list[dict], dict]:
+def compute(stations: list[dict], use: dict, dong_index, shares: dict, day: dict | None = None) -> tuple[list[dict], dict]:
+    """use: 대여소 번호 → 월 대여 건수. day: 대여소 번호 → 일일권 비율(없으면 null)."""
     out, unmatched_use, total = [], 0.0, 0.0
     for s in stations:
-        u = use.get(s["no"])
-        if not u or u["use"] <= 0:
+        u = use.get(s["no"]) or 0.0
+        if u <= 0:
             continue
-        total += u["use"]
+        total += u
         code, name = dong_index.locate(s["lng"], s["lat"])
         share = shares.get(code) if code else None
         if share is None:
-            unmatched_use += u["use"]
+            unmatched_use += u
             continue
-        f = u["use"] * share
+        f = u * share
+        dp = day.get(s["no"]) if day else None
         out.append({"no": s["no"], "name": s["name"], "gu": s["gu"], "dong": name, "lat": s["lat"], "lng": s["lng"],
-                    "use": round(u["use"]), "dayPass": round(u["day"] / u["use"], 4),
-                    "share": round(share, 4), "foreign": round(f, 1), "local": round(u["use"] - f, 1)})
+                    "use": round(u), "dayPass": round(dp, 4) if dp is not None else None,
+                    "share": round(share, 4), "foreign": round(f, 1), "local": round(u - f, 1)})
     out.sort(key=lambda x: x["foreign"], reverse=True)
     stats = {"stations": len(out), "totalUse": round(total),
              "matchRate": round(1 - unmatched_use / total, 4) if total else 0,
@@ -147,15 +179,20 @@ def main() -> int:
     try:
         api = bf.SeoulApi(os.environ.get("SEOUL_API_KEY", "").strip())
         stations = parse_stations(api.all_rows("tbCycleStationInfo", root="stationInfo"))
-        print(f"Stations with coordinates: {len(stations)}")
-        use = aggregate_use(api.all_rows("tbCycleRentUseMonthInfo", ym, root="cycleRentUseMonthInfo"))
-        print(f"Stations with use in {ym}: {len(use)}")
+        print(f"Stations with coordinates: {len(stations)}", flush=True)
+        use = station_use(api.all_rows("tbCycleStationUseMonthInfo", ym, root="stationUseMonthInfo"))
+        print(f"Stations with use in {ym}: {len(use)}", flush=True)
     except bf.FetchError as e:
         print(f"Fetch failed: {e}", file=sys.stderr)
         return 1
+    try:
+        day = day_pass_ratio(api, ym)
+    except bf.FetchError as e:   # 보조 지표라 실패해도 계속
+        print(f"Day-pass ratio skipped: {e}", flush=True)
+        day = None
     dong_index = dong_index_from_geojson(json.loads((BUS_DATA / "dongs.geojson").read_text("utf-8")))
     shares = dong_shares(hourly)
-    rows, stats = compute(stations, use, dong_index, shares)
+    rows, stats = compute(stations, use, dong_index, shares, day)
     if stats["matchRate"] < 0.8:
         print(f"Match rate too low ({stats['matchRate']:.1%}); not saving.", file=sys.stderr)
         return 1
@@ -165,8 +202,10 @@ def main() -> int:
         "method": "foreign = monthly rentals x short-stay foreigner share of the station's dong (07-22h, all days)",
         "shareHours": [SHARE_HOURS.start, SHARE_HOURS.stop - 1], "minUse": MIN_USE, "cityShare": round(city, 5),
         "stats": {**stats, "apiCalls": api.calls},
+        "dayPass": day is not None,
         "sources": ["서울 열린데이터광장: 서울시 공공자전거 대여소 정보 (tbCycleStationInfo)",
-                    "서울 열린데이터광장: 서울시 공공자전거 이용정보(월별) (tbCycleRentUseMonthInfo)",
+                    "서울 열린데이터광장: 서울시 공공자전거 대여소별 이용정보(월별) (tbCycleStationUseMonthInfo)",
+                    "서울 열린데이터광장: 서울시 공공자전거 이용정보(월별) (tbCycleRentUseMonthInfo, 일일권 비율)",
                     "서울 열린데이터광장: 행정동 단위 서울 생활인구(단기체류 외국인·내국인)",
                     f"행정동 경계: {bf.BOUNDARY_VERSION} (github.com/vuski/admdongkor)"],
         "dongs": dong_table(rows),

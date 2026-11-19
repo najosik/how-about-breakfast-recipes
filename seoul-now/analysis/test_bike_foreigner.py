@@ -52,14 +52,31 @@ class BikeTest(unittest.TestCase):
             {"RENT_NO": "00003", "RENT_NM": "밖", "STA_LOC": "?", "STA_LAT": "35.1", "STA_LONG": "129.0"}])
         self.assertEqual([s["no"] for s in st], ["1", "2"])
         self.assertNotIn("<", st[0]["name"])
-        use = {"1": {"use": 100.0, "day": 20.0}, "2": {"use": 50.0, "day": 0.0}}
-        rows, stats = bk.compute(st, use, idx, bk.dong_shares(HOURLY))
+        use = {"1": 100.0, "2": 50.0}
+        rows, stats = bk.compute(st, use, idx, bk.dong_shares(HOURLY), {"1": 0.2})
         self.assertEqual(rows[0]["no"], "1")
         self.assertAlmostEqual(rows[0]["foreign"], 10.0)
         self.assertAlmostEqual(rows[0]["local"], 90.0)
         self.assertEqual(rows[0]["dayPass"], 0.2)
+        self.assertIsNone(rows[1]["dayPass"])
         self.assertEqual(stats["matchRate"], 1.0)
         self.assertEqual(stats["foreign"], 10)
+        rows2, _ = bk.compute(st, use, idx, bk.dong_shares(HOURLY))
+        self.assertIsNone(rows2[0]["dayPass"])
+
+    def test_station_use_by_name_number(self):
+        u = bk.station_use([{"stationName": "108. 서교동 사거리", "rentCnt": "1216"},
+                            {"stationName": "00108. 중복", "rentCnt": "4"},
+                            {"stationName": "번호없음", "rentCnt": "9"}])
+        self.assertEqual(u, {"108": 1220.0})
+
+    def test_day_pass_budget(self):
+        class Api:
+            def all_rows(self, *a, **k):
+                for i in range(20000):
+                    yield {"STATION_NO": "1", "RENT_TYPE": "일일권", "USE_CNT": "1"}
+        self.assertIsNone(bk.day_pass_ratio(Api(), "202607", budget=-1))
+        self.assertEqual(bk.day_pass_ratio(Api(), "202607", budget=60), {"1": 1.0})
 
     def test_real_boundary_locates_myeongdong(self):
         if not (DATA / "dongs.geojson").exists():
