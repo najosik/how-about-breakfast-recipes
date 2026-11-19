@@ -92,9 +92,10 @@ def behavior(api, ym: str, budget: float | None = None) -> dict | None:
     deadline = time.monotonic() + budget
     st = defaultdict(lambda: [0.0, 0.0, 0.0])   # no -> [use, 비회원, 일일]
     types, ages = defaultdict(float), defaultdict(float)
+    start = time.monotonic()
     for i, r in enumerate(api.all_rows("tbCycleRentUseMonthInfo", ym, root="cycleRentUseMonthInfo")):
-        if i % 10000 == 9999:
-            print(f"  behavior rows: {i + 1}", flush=True)
+        if i % 1000 == 999:
+            print(f"  behavior rows: {i + 1} ({time.monotonic() - start:.0f}s)", flush=True)
             if time.monotonic() > deadline:
                 print("  behavior budget exceeded; skipping", flush=True)
                 return None

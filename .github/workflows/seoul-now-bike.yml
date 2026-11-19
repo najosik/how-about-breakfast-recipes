@@ -19,15 +19,17 @@ on:
 permissions:
   contents: write
 
-# Shared with every other workflow that commits to main - see add-post.yml
+# 이용권 집계 원천 응답이 페이지당 1분 이상 걸려 수 시간 걸릴 수 있다.
+# 공용 잠금(main-branch-writer)을 오래 잡으면 다른 수집이 밀리므로 별도 그룹을 쓰고,
+# bike/data만 커밋하며 push가 거절되면 rebase 후 재시도한다.
 concurrency:
-  group: main-branch-writer
+  group: seoul-now-bike
   cancel-in-progress: false
 
 jobs:
   analyze:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 300
     defaults:
       run:
         working-directory: seoul-now
@@ -43,6 +45,8 @@ jobs:
           SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
           TARGET_YM: ${{ inputs.target_ym }}
           FORCE: ${{ inputs.force && '1' || '' }}
+          SEOUL_HTTP_TIMEOUT: '150'
+          BEHAVIOR_BUDGET: '16200'
         run: |
           if [ -z "$SEOUL_API_KEY" ]; then
             echo "::warning::SEOUL_API_KEY secret is not set - skipping."

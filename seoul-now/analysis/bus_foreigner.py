@@ -28,7 +28,15 @@ from pathlib import Path
 
 API_BASE = "http://openapi.seoul.go.kr:8088"   # 서울 열린데이터광장은 HTTP만 지원
 PAGE = 1000
-TIMEOUT = 40
+def _timeout() -> int:
+    """요청 1건 시간 상한(초). 응답이 아주 느린 데이터셋은 환경변수로 늘린다(10~300)."""
+    try:
+        return min(300, max(10, int(os.environ.get("SEOUL_HTTP_TIMEOUT", "40"))))
+    except ValueError:
+        return 40
+
+
+TIMEOUT = _timeout()
 KST = timezone(timedelta(hours=9))
 KEY_RE = re.compile(r"^[A-Za-z0-9]{10,100}$")
 
