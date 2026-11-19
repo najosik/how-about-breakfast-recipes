@@ -25575,7 +25575,7 @@
   "weather": "1도/흐림, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "차요테사과샐러드 차요테",
+  "title": "차요테 사과 쏨땀 샐러드",
   "credit": "#hotthaikitchen",
   "hashtags": [
    "hotthaikitchen",
@@ -25587,8 +25587,8 @@
    "차요테사과샐러드"
   ],
   "intro": "20241120 #조식다이어리 1238, 1도/흐림, 20분/운동(M) \n#차요테사과샐러드 라고 했으나 실은 그린파파야 대신에 차요테를 넣은 쏨땀에 가깝다. \n태국어로는 Tum fakmeaw라고 한다. Tum이 빻다, fakmeaw가 차요테를 뜻하니 아주 정직한 이름이다. \n조식이라서 마일드하게~",
-  "ingredients": "차요테 1개, 사과 1개, 토마토 1개, 당근 1/4개, 캐슈넛 조금 (드레싱) 마늘 1개, 페페론치노 2개, 팜슈가 1T, 캐슈넛 1T, 라임주스 2T, 피시소스 1T\n\n👉이렇게\n1. 사과 1/2개 얇게 썰어 물에 담가 놓는다. \n2. 절구에 마늘, 페페론치노 넣고 빻는다. (절구가 작아서 여기까지만) 믹싱볼로 옮겨서 팜슈가, 캐슈넛 넣고 라임주스, 피시소스 붓고 토마토 잘라서 넣고 꾹꾹 눌러 으깬다. \n3. 차요테와 사과 채썬 다음 볼에 넣고 드레싱 붓고 골고루 섞는다. \n4. 접시에 물에 담가 놓았던 사과를 깔고 그 위에 드레싱에 버무린 차요테와 사과, 채 썬 당근, 캐슈넛 담는다. \n\nInspired by #hotthaikitchen\n\n#조식 #레시피 #미라클모닝 #차요테",
-  "steps": null,
+  "ingredients": "- 사과 1/2개(약 90g, 슬라이스용, 얇게 썰어 물에 담가 둠)\n- 사과 1/4개(약 45g, 채 썬 것)\n- 차요테 1/2개(약 100g, 껍질을 벗겨 채 썬 것)\n- 당근 30g(채 썬 것)\n- 방울토마토 4~5개(반으로 자른 것)\n- 마늘 1쪽\n- 페페론치노 1~2개\n- 팜슈가 1t\n- 캐슈넛 10g(굵게 부순 것)\n- 라임즙 1T\n- 피시소스 2t",
+  "steps": "1. 사과 1/2개는 얇게 썰어 물에 담가 둔다.\n2. 절구에 마늘과 페페론치노를 넣고 빻는다. \n3. 믹싱볼로 옮겨 팜슈가, 캐슈넛 반(5g)을 넣고 라임즙, 피시소스를 붓는다. 방울토마토를 넣고 숟가락으로 꾹꾹 눌러 으깨 드레싱을 만든다.\n4. 차요테와 남은 사과 1/4개, 당근은 채 썰어 3의 볼에 넣고 골고루 섞는다.\n5. 접시에 물에 담가 둔 사과 슬라이스를 물기를 닦아 깐다.\n6. 그 위에 드레싱에 버무린 차요테, 사과, 당근을 올리고 남은 캐슈넛 5g을 뿌린다.",
   "raw": "20241120 #조식다이어리 1238, 1도/흐림, 20분/운동(M) \n\n#차요테사과샐러드 라고 했으나 실은 그린파파야 대신에 차요테를 넣은 쏨땀에 가깝다. \n태국어로는 Tum fakmeaw라고 한다. Tum이 빻다, fakmeaw가 차요테를 뜻하니 아주 정직한 이름이다. \n조식이라서 마일드하게~\n\n👉재료는\n차요테 1개, 사과 1개, 토마토 1개, 당근 1/4개, 캐슈넛 조금 (드레싱) 마늘 1개, 페페론치노 2개, 팜슈가 1T, 캐슈넛 1T, 라임주스 2T, 피시소스 1T\n\n👉이렇게\n1. 사과 1/2개 얇게 썰어 물에 담가 놓는다. \n2. 절구에 마늘, 페페론치노 넣고 빻는다. (절구가 작아서 여기까지만) 믹싱볼로 옮겨서 팜슈가, 캐슈넛 넣고 라임주스, 피시소스 붓고 토마토 잘라서 넣고 꾹꾹 눌러 으깬다. \n3. 차요테와 사과 채썬 다음 볼에 넣고 드레싱 붓고 골고루 섞는다. \n4. 접시에 물에 담가 놓았던 사과를 깔고 그 위에 드레싱에 버무린 차요테와 사과, 채 썬 당근, 캐슈넛 담는다. \n\nInspired by #hotthaikitchen\n\n#조식 #레시피 #미라클모닝 #차요테",
   "image": "https://images.how-about-breakfast.com/images/1238.jpg",
   "gallery": [
@@ -25599,13 +25599,6 @@
    "https://images.how-about-breakfast.com/images/1238_5.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1238.mp4",
-  "_en": {
-   "hash": "010923176c07c545179e0dc55e1cf04c4def60bf3fff3ee30e3e9a78f0cb8398",
-   "title": "Chayote Apple Salad, Chayote",
-   "intro": "20241120 #breakfastdiary 1238, 1°C/cloudy, 20min/exercise(M)\nI called it #chayoteapplesalad but really it's closer to a som tam made with chayote instead of green papaya. \nIn Thai it's called Tum fakmeaw. Tum means to pound, fakmeaw means chayote, so it's a very literal name. \nSince it's breakfast, I kept it mild~",
-   "ingredients": "1 chayote, 1 apple, 1 tomato, 1/4 carrot, a bit of cashews (dressing) 1 clove garlic, 2 peperoncino, 1T palm sugar, 1T cashews, 2T lime juice, 1T fish sauce\n\n👉Like this\n1. Slice 1/2 apple thin and soak in water.\n2. Pound the garlic and peperoncino in a mortar. (My mortar was small so I stopped here) Transfer to a mixing bowl, add palm sugar, cashews, pour in lime juice and fish sauce, add cut tomato, and press and mash it all together.\n3. Julienne the chayote and apple, add to the bowl, pour the dressing over and mix evenly.\n4. Lay the soaked apple slices on a plate, and top with the dressed chayote and apple, julienned carrot, and cashews.\n\nInspired by #hotthaikitchen\n\n#breakfast #recipe #miraclemorning #chayote",
-   "steps": ""
-  },
   "page_id": "차요테사과샐러드-차요테"
  },
  {
