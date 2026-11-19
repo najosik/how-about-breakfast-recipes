@@ -76,10 +76,18 @@ class BikeTest(unittest.TestCase):
         self.assertEqual(b["stations"]["2"]["visitor"], 0.0)
         self.assertEqual(b["rentTypes"]["정기권"], 90)
         self.assertNotIn("GENDER_CD", json.dumps(b, ensure_ascii=False))
-        # 비회원 이용권이 없으면 일일권 전체로 대체
-        b2 = bk.behavior(self.behavior_api(rows[:1] + rows[2:]), "202607", budget=60)
-        self.assertEqual(b2["signal"], "일일")
-        self.assertEqual(b2["stations"]["2"]["visitor"], 5.0)
+        # 비회원 이용권이 없으면 연령 '기타'(비회원 추정)
+        rows2 = [{"STATION_NO": "1", "RENT_TYPE": "정기권", "AGE_TYPE": "20대", "USE_CNT": "90"},
+                 {"STATION_NO": "1", "RENT_TYPE": "일일권", "AGE_TYPE": "기타", "USE_CNT": "4"},
+                 {"STATION_NO": "2", "RENT_TYPE": "일일권", "AGE_TYPE": "30대", "USE_CNT": "5"}]
+        b2 = bk.behavior(self.behavior_api(rows2), "202607", budget=60)
+        self.assertEqual(b2["signal"], "기타")
+        self.assertEqual(b2["stations"]["1"]["visitor"], 4.0)
+        self.assertEqual(b2["stations"]["2"]["visitor"], 0.0)
+        # 둘 다 없으면 일일권 전체
+        b3 = bk.behavior(self.behavior_api([rows2[0], rows2[2]]), "202607", budget=60)
+        self.assertEqual(b3["signal"], "일일")
+        self.assertEqual(b3["stations"]["2"]["visitor"], 5.0)
 
     def test_behavior_budget(self):
         rows = [{"STATION_NO": "1", "RENT_TYPE": "일일권", "USE_CNT": "1"}] * 20000

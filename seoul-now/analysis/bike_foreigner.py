@@ -86,11 +86,12 @@ def station_use(rows) -> dict[str, float]:
 
 def behavior(api, ym: str, budget: float | None = None) -> dict | None:
     """대여소별 이용권 집계(tbCycleRentUseMonthInfo). 시간 예산을 넘기면 None.
-    visitor 신호: 이용권 이름에 '비회원'이 있으면 그것, 없으면 '일일'(일일권 전체).
+    visitor 신호(우선순위): 이용권 이름에 '비회원' > 연령 '기타'(생년 정보 없음 = 비회원으로 추정) > '일일'(일일권 전체).
+    2026-07 실측: 이용권은 정기권·일일권뿐이고, 일일권 전체는 한강 나들이(내국인)까지 섞여 과대 보정됨.
     성별·연령은 서울 전체 합계만 남기고(투명성 확인용) 대여소 단위로는 남기지 않는다."""
     budget = float(os.environ.get("BEHAVIOR_BUDGET", BEHAVIOR_BUDGET)) if budget is None else budget
     deadline = time.monotonic() + budget
-    st = defaultdict(lambda: [0.0, 0.0, 0.0])   # no -> [use, 비회원, 일일]
+    st = defaultdict(lambda: [0.0, 0.0, 0.0, 0.0])   # no -> [use, 비회원, 일일, 연령 기타]
     types, ages = defaultdict(float), defaultdict(float)
     start = time.monotonic()
     for i, r in enumerate(api.all_rows("tbCycleRentUseMonthInfo", ym, root="cycleRentUseMonthInfo")):
@@ -102,8 +103,9 @@ def behavior(api, ym: str, budget: float | None = None) -> dict | None:
         no = station_no(r.get("STATION_NO"))
         n = bf.num(r.get("USE_CNT"))
         typ = bf.clean(r.get("RENT_TYPE"), 20) or "(없음)"
+        age = bf.clean(r.get("AGE_TYPE"), 10) or "(없음)"
         types[typ] += n
-        ages[bf.clean(r.get("AGE_TYPE"), 10) or "(없음)"] += n
+        ages[age] += n
         if not no:
             continue
         x = st[no]
@@ -112,8 +114,14 @@ def behavior(api, ym: str, budget: float | None = None) -> dict | None:
             x[1] += n
         if "일일" in typ:
             x[2] += n
-    signal = "비회원" if any("비회원" in t for t in types) else "일일"
-    idx = 1 if signal == "비회원" else 2
+        if age == "기타":
+            x[3] += n
+    if any("비회원" in t for t in types):
+        signal, idx = "비회원", 1
+    elif ages.get("기타", 0) > 0:
+        signal, idx = "기타", 3
+    else:
+        signal, idx = "일일", 2
     return {"signal": signal,
             "stations": {no: {"use": v[0], "visitor": v[idx], "day": v[2]} for no, v in st.items() if v[0] > 0},
             "rentTypes": {k: round(v) for k, v in sorted(types.items(), key=lambda kv: -kv[1])},
