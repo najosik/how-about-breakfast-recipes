@@ -79,7 +79,8 @@ class SeoulApi:
         self._key = key
         self.calls = 0
 
-    def page(self, service: str, start: int, end: int, *args: str) -> tuple[int, list[dict]]:
+    def page(self, service: str, start: int, end: int, *args: str, root: str | None = None) -> tuple[int, list[dict]]:
+        """root: 응답 본문 키가 서비스명과 다를 때(예: tbCycleStationInfo → stationInfo)."""
         parts = [self._key, "json", service, str(start), str(end), *args]
         data = None
         for attempt in range(3):   # 서버가 가끔 깨진 응답(HTML 오류 페이지·잘린 본문)을 줌 → 짧게 재시도
@@ -92,7 +93,7 @@ class SeoulApi:
                 time.sleep(RETRY_WAIT * (attempt + 1))
         if not isinstance(data, dict):
             raise FetchError(f"{service}: invalid JSON")
-        body = data.get(service)
+        body = data.get(root or service)
         if not isinstance(body, dict):
             code = str((data.get("RESULT") or {}).get("CODE", "UNKNOWN"))[:20]
             if code == "INFO-200":          # 해당 데이터 없음
@@ -101,13 +102,13 @@ class SeoulApi:
         rows = [r for r in (body.get("row") or []) if isinstance(r, dict)]
         return int(body.get("list_total_count") or 0), rows
 
-    def all_rows(self, service: str, *args: str, max_pages: int = 200):
-        total, rows = self.page(service, 1, PAGE, *args)
+    def all_rows(self, service: str, *args: str, max_pages: int = 200, root: str | None = None):
+        total, rows = self.page(service, 1, PAGE, *args, root=root)
         yield from rows
         pages = min(max_pages, (total + PAGE - 1) // PAGE)
         for p in range(2, pages + 1):
             s = (p - 1) * PAGE + 1
-            _, rows = self.page(service, s, s + PAGE - 1, *args)
+            _, rows = self.page(service, s, s + PAGE - 1, *args, root=root)
             yield from rows
             time.sleep(0.05)
 

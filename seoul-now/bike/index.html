@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: https://tile.openstreetmap.org; connect-src 'self'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <!-- 테스트 기간: 검색엔진 색인 제외. 정식 공개 시 삭제 -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>따릉이 외국인·내국인 이용 추정 · Seoul Bike Use by Visitors</title>
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../vendor/leaflet-1.9.4/leaflet.css">
+  <link rel="stylesheet" href="../styles.css">
+  <link rel="stylesheet" href="../bus/bus.css">
+  <link rel="stylesheet" href="bike.css?v=20261119a">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <div>
+        <p class="crumb"><a id="back" href="../">← Seoul Now</a></p>
+        <h1 id="title"></h1>
+        <p id="sub" class="sub"></p>
+      </div>
+      <button id="lang-toggle" class="lang-btn" type="button"></button>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <p id="estimate-note" class="banner"></p>
+    <p id="status" class="empty" hidden></p>
+
+    <section id="kpis" class="kpis" aria-label="Summary"></section>
+
+    <section class="panel" aria-labelledby="map-h">
+      <div class="panel-head">
+        <h2 id="map-h"></h2>
+        <div id="metric-chips" class="chips" role="group"></div>
+      </div>
+      <p id="map-desc" class="note"></p>
+      <div class="layer-toggles"><label><input type="checkbox" id="dong-toggle"> <span id="dong-toggle-lbl"></span></label></div>
+      <div id="map" class="map" role="region"></div>
+      <div id="map-legend" class="map-legend"></div>
+    </section>
+
+    <section class="panel" aria-labelledby="rank-h">
+      <h2 id="rank-h"></h2>
+      <p id="rank-desc" class="note"></p>
+      <div class="table-wrap"><table id="rank" class="data-table"></table></div>
+    </section>
+
+    <section class="panel" aria-labelledby="dong-h">
+      <h2 id="dong-h"></h2>
+      <p id="dong-desc" class="note"></p>
+      <div class="table-wrap"><table id="dongs" class="data-table"></table></div>
+    </section>
+
+    <section class="panel method" aria-labelledby="method-h">
+      <h2 id="method-h"></h2>
+      <div id="method"></div>
+      <h3 id="limits-h"></h3>
+      <ul id="limits"></ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p id="updated"></p>
+      <ul id="sources" class="sources"></ul>
+    </div>
+  </footer>
+
+  <script src="../vendor/leaflet-1.9.4/leaflet.js"></script>
+  <script src="bike.js?v=20261119a"></script>
+</body>
+</html>
