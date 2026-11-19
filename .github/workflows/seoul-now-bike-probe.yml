@@ -1,0 +1,24 @@
+name: Seoul Now - bike data probe (one-off)
+
+# 1회 탐색: 따릉이 데이터셋 이름·건수·항목명만 Summary에 출력. 저장소에 쓰지 않는다.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: seoul-now
+    steps:
+      # 공급망 공격 방지를 위해 커밋 SHA로 고정 (actions/checkout v4.2.2)
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Probe
+        env:
+          SEOUL_BIKE_KEY: ${{ secrets.SEOUL_BIKE_KEY }}
+          SEOUL_API_KEY: ${{ secrets.SEOUL_API_KEY }}
+        run: python3 analysis/bike_probe.py
