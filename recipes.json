@@ -25529,7 +25529,7 @@
   "weather": "2도/대체로 맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "토마토",
+  "title": "토마토 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25539,8 +25539,8 @@
    "토마토"
   ],
   "intro": "20241122 #조식다이어리 1240, 2도/대체로 맑음, 20분/운동(M) \n인생에도 간결함이 필요하다. \n말돈소금 찍어먹는 #토마토",
-  "ingredients": "토마토(원하는 만큼), 말돈소금 1/2t\n\n👉이렇게\n1. 토마토는 깨끗하게 씻어서 꼭지를 잘라내고 두툼하게 썬다. \n2. 접시에 담고 말돈소금 곁들인다. \n\n#조식 #레시피 #미라클모닝 #토마토",
-  "steps": null,
+  "ingredients": "- 토마토 1개\n- 말돈소금 1/2t",
+  "steps": "1. 토마토는 깨끗하게 씻어서 꼭지를 잘라내고 두툼하게 썬다. \n2. 접시에 담고 말돈소금 곁들인다. ",
   "raw": "20241122 #조식다이어리 1240, 2도/대체로 맑음, 20분/운동(M) \n\n인생에도 간결함이 필요하다. \n\n말돈소금 찍어먹는 #토마토\n\n👉재료는\n토마토(원하는 만큼), 말돈소금 1/2t\n\n👉이렇게\n1. 토마토는 깨끗하게 씻어서 꼭지를 잘라내고 두툼하게 썬다. \n2. 접시에 담고 말돈소금 곁들인다. \n\n#조식 #레시피 #미라클모닝 #토마토",
   "image": "https://images.how-about-breakfast.com/images/1240.jpg",
   "gallery": [
@@ -25550,13 +25550,6 @@
    "https://images.how-about-breakfast.com/images/1240_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1240.mp4",
-  "_en": {
-   "hash": "9fe7eb02cc29cec01d55e54e1bf7200da27622fcadbd800d933a9b38476603d2",
-   "title": "Tomato",
-   "intro": "20241122 #breakfastdiary 1240, 2°C/mostly clear, 20min/exercise(M)\nLife needs simplicity too. \n#tomato dipped in Maldon salt",
-   "ingredients": "Tomatoes (as much as you want), 1/2t Maldon salt\n\n👉Like this\n1. Wash the tomatoes thoroughly, cut off the stems, and slice thick.\n2. Plate and serve with Maldon salt on the side.\n\n#breakfast #recipe #miraclemorning #tomato",
-   "steps": ""
-  },
   "page_id": "토마토-3"
  },
  {
