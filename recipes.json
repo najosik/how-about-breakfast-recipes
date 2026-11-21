@@ -38684,7 +38684,7 @@
   "weather": "1도/맑음",
   "failed": false,
   "calories": null,
-  "title": "비트",
+  "title": "그릭요거트를 곁들인 비트 샐러드",
   "credit": null,
   "hashtags": [
    "나의프랑스식샐러드",
@@ -38696,8 +38696,8 @@
    "조식다이어리"
   ],
   "intro": "20231121, #조식다이어리 899, 1도/맑음\n이거 반 개 먹고 아침 식사가 되는지 묻는 분들이 있는데 비트는 뿌리 채소라서 고구마나 감자 같은 포만감이 있다. \n단맛이 도는 비트에 그릭 요거트도 좋고 리코타 치즈 조합도 좋다. 민트 곁들여 먹으면 재밌는 맛이 난다. \n그릭 요거트 비트 샐러드\n비트 한 개 껍질채 물에 씻어 반으로 가르고 1시간 정도 푹 삶는다. \n가운데를 숟가락으로 파내고 그릭 요거트를 담는다. 올리브오일, 후추후추, 민트잎을 올린다. \n#나의프랑스식샐러드 레시피 입니다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 비트 1개\n- 그릭요거트 80g(약 5T)\n- 올리브오일 1t\n- 후추 넉넉히\n- 민트잎 4~5장\n- 소금 한 꼬집(삶는 물용, 선택)",
+  "steps": "1. 비트는 껍질째 물에 씻어 흙을 닦는다. 반으로 가른다.\n2. 냄비에 비트와 물을 넣고 1시간 정도, 젓가락이 쑥 들어갈 때까지 푹 삶는다. 물이 졸면 중간에 더한다.\n3. 삶은 비트를 건져 한 김 식힌다. 가운데를 숟가락으로 파내 홈을 만든다.\n4. 홈에 그릭요거트를 담는다.\n5. 올리브오일을 두르고 후추를 갈아 올린 뒤, 민트잎을 올린다.",
   "raw": "20231121, #조식다이어리 899, 1도/맑음\n\n이거 반 개 먹고 아침 식사가 되는지 묻는 분들이 있는데 비트는 뿌리 채소라서 고구마나 감자 같은 포만감이 있다. \n단맛이 도는 비트에 그릭 요거트도 좋고 리코타 치즈 조합도 좋다. 민트 곁들여 먹으면 재밌는 맛이 난다. \n\n그릭 요거트 비트 샐러드\n\n비트 한 개 껍질채 물에 씻어 반으로 가르고 1시간 정도 푹 삶는다. \n가운데를 숟가락으로 파내고 그릭 요거트를 담는다. 올리브오일, 후추후추, 민트잎을 올린다. \n\n#나의프랑스식샐러드 레시피 입니다. \n\n#조식 #레시피 #미라클모닝 #비트 #샐러드",
   "image": "https://images.how-about-breakfast.com/images/899.jpg",
   "gallery": [
@@ -38706,13 +38706,6 @@
    "https://images.how-about-breakfast.com/images/899_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/899.mp4",
-  "_en": {
-   "hash": "7e73b42bc67be7370c903530df4559c724fe25b3547a636fa7f45b535312d5e2",
-   "title": "Greek Yogurt Beet Salad",
-   "intro": "20231121, #breakfastdiary 899, 1°C/clear\nSome people ask whether half a beet is really enough to count as breakfast, but beets are root vegetables, so they're filling in the same way sweet potatoes or potatoes are. \nThat naturally sweet beet pairs beautifully with Greek yogurt, and just as well with ricotta. Adding mint makes for a fun twist on the flavor. \nGreek Yogurt Beet Salad\nWash a whole beet with the skin on, cut it in half, and boil until tender, about an hour. \nScoop out the center with a spoon and fill with Greek yogurt. Top with olive oil, plenty of pepper, and mint leaves. \nFrom the #myfrenchstylesalad recipe.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "비트-2"
  },
  {
