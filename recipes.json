@@ -67964,7 +67964,7 @@
   "weather": "2도/한때흐림, 34분/운동",
   "failed": false,
   "calories": null,
-  "title": "파프리카구이 나의로컬푸드샐러드 모닝리추얼",
+  "title": "리코타치즈를 곁들인 파프리카 구이",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -67992,8 +67992,8 @@
    "홈쿡"
   ],
   "intro": "20211122, #조식다이어리 275, 2도/한때흐림, 34분/운동\n며칠 째 냉장고를 열 때마다 쓰고 남은 파프리카가 눈에 밟힌다. 반으로 갈라 올리브오일 두른 팬에 굽는다. \n접시로 옮기고 발사믹 조금, 리코타치즈, 피칸을 올린다. #파프리카구이\n#나의로컬푸드샐러드 레시피입니다. \n파프리카를 구우면 단맛이 올라온다. 발사믹 역시 단맛이 나지만 파프리카의 단맛과 충돌하지는 않는다. \n접시 위의 파프리카는 뒤집어서 오목한 부분에 리코타치즈 한 덩어리와 피칸을 올려서 먹으면 딱이다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 파프리카 1개\n- 올리브오일 1t\n- 발사믹 1t(비니거나 글레이즈)\n- 리코타 치즈 40g\n- 피칸 10g\n- 소금 한 꼬집, 후추 약간(선택)",
+  "steps": "1. 파프리카는 씻어 물기를 닦고 반으로 갈라 씨와 하얀 속을 파낸다.\n2. 달군 팬에 올리브오일을 두르고 파프리카를 자른 면이 아래로 가게 올린다. 뚜껑을 덮고 약불에서 앞뒤로 4~5분씩, 속이 말랑해지고 가장자리가 노릇해질 때까지 굽는다.\n3. 피칸은 마른 팬에 1분 볶아 굵게 부순다.\n4. 구운 파프리카를 접시로 옮기고 속에 리코타를 나눠 담는다.\n5. 발사믹을 두르고 피칸을 올린다. 소금과 후추는 맛을 보고 뿌린다.",
   "raw": "20211122, #조식다이어리 275, 2도/한때흐림, 34분/운동\n\n며칠 째 냉장고를 열 때마다 쓰고 남은 파프리카가 눈에 밟힌다. 반으로 갈라 올리브오일 두른 팬에 굽는다. \n접시로 옮기고 발사믹 조금, 리코타치즈, 피칸을 올린다. #파프리카구이\n#나의로컬푸드샐러드 레시피입니다. \n\n파프리카를 구우면 단맛이 올라온다. 발사믹 역시 단맛이 나지만 파프리카의 단맛과 충돌하지는 않는다. \n접시 위의 파프리카는 뒤집어서 오목한 부분에 리코타치즈 한 덩어리와 피칸을 올려서 먹으면 딱이다. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #파프리카 #리코타치즈 #피칸\n#breakfast #recipe #salad #pecan #ricottacheese #paprika ",
   "image": "https://images.how-about-breakfast.com/images/275.jpg",
   "gallery": [
@@ -68001,13 +68001,6 @@
    "https://images.how-about-breakfast.com/images/275_2.jpg",
    "https://images.how-about-breakfast.com/images/275_3.jpg"
   ],
-  "_en": {
-   "hash": "26949c754a1804dad320f4a6cdffa2744531577332df2239df3cc1fa73bf41fc",
-   "title": "Grilled Bell Peppers",
-   "intro": "20211122 #breakfastdiary 275, 2°C/partly cloudy, 34min/workout\nFor days now, every time I open the fridge, the leftover bell peppers have been nagging at me. So I halve them and roast them in a pan with olive oil. \nTransfer to a plate, add a little balsamic, ricotta cheese, and pecans. #grilledbellpeppers\nA #mylocalfoodsalad recipe. \nRoasting bell peppers brings out their sweetness. Balsamic is sweet too, but it doesn't clash with the pepper's natural sweetness. \nThe best way to eat it is to flip the pepper over on the plate and pile a scoop of ricotta and some pecans right into its hollow.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "파프리카구이-나의로컬푸드샐러드-모닝리추얼"
  },
  {
