@@ -38639,7 +38639,7 @@
   "weather": "3도/맑음, 21분/운동(U)",
   "failed": false,
   "calories": null,
-  "title": "펜네",
+  "title": "펜네 바질 페스토",
   "credit": null,
   "hashtags": [
    "나의프랑스식샐러드",
@@ -38651,8 +38651,8 @@
    "펜네"
   ],
   "intro": "20231122, #조식다이어리 900, 3도/맑음, 21분/운동(U)\n면과 페스토를 넣고 만테까레 과정을 거친 게 아니니 이건 파스타가 아니라 페스토 비빔 샐러드다. \n바질 페스토 펜네 샐러드\n끓는 물에 소금 조금, 펜네를 삶고 건져서 들러붙지 않도록 올리브 오일을 뿌려둔다. \n애호박은 반달 모양으로 썰고 방울 토마토는 네 조각으로 썬 다음 달군 팬에 올리브 오일 두르고 소금소금, 후추후추 굽는다. \n펜네에 구운 애호박과 토마토, 바질 페스토 넣어서 골고루 섞는다. 파마산 치즈를 갈아 넣는다. \n#나의프랑스식샐러드 레시피를 응용했습니다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 펜네 70g\n- 올리브오일 1t(펜네 버무림용)\n- 애호박 100g(약 1/3개)\n- 방울토마토 6개(4등분)\n- 올리브오일 1t(굽기용)\n- 소금 한 꼬집, 후추 약간\n- 바질 페스토 1T\n- 파마산 치즈 10g",
+  "steps": "1. 끓는 물에 소금을 조금 넣고 펜네를 포장지 시간대로 삶는다. 건지기 전에 면수 2T를 덜어 둔다.\n2. 삶은 펜네를 건져 들러붙지 않도록 올리브오일 1t를 뿌려 버무려 둔다.\n3. 애호박은 반달 모양으로 썰고, 방울토마토는 4등분한다.\n4. 달군 팬에 올리브오일 1t를 두르고 애호박을 먼저 넣어 중불에서 2~3분 굽다가, 방울토마토를 넣고 소금, 후추를 뿌려 2분 더 굽는다.\n5. 볼에 펜네, 구운 애호박과 방울토마토, 바질 페스토, 면수를 넣고 골고루 섞는다.\n6. 접시에 담고 파마산 치즈를 갈아 올린다.",
   "raw": "20231122, #조식다이어리 900, 3도/맑음, 21분/운동(U)\n\n면과 페스토를 넣고 만테까레 과정을 거친 게 아니니 이건 파스타가 아니라 페스토 비빔 샐러드다. \n\n바질 페스토 펜네 샐러드\n\n끓는 물에 소금 조금, 펜네를 삶고 건져서 들러붙지 않도록 올리브 오일을 뿌려둔다. \n애호박은 반달 모양으로 썰고 방울 토마토는 네 조각으로 썬 다음 달군 팬에 올리브 오일 두르고 소금소금, 후추후추 굽는다. \n펜네에 구운 애호박과 토마토, 바질 페스토 넣어서 골고루 섞는다. 파마산 치즈를 갈아 넣는다. \n\n#나의프랑스식샐러드 레시피를 응용했습니다. \n\n#조식 #레시피 #미라클모닝 #샐러드 #펜네",
   "image": "https://images.how-about-breakfast.com/images/900.jpg",
   "gallery": [
@@ -38661,13 +38661,6 @@
    "https://images.how-about-breakfast.com/images/900_3.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/900.mp4",
-  "_en": {
-   "hash": "4afc48034fbba82fc49af0ffbedfd566a1eff63f679859b21146681f18777803",
-   "title": "Basil Pesto Penne Salad",
-   "intro": "20231122, #breakfastdiary 900, 3°C/clear, 21min/workout(U)\nSince I didn't run the noodles and pesto through a proper mantecare, this isn't really pasta — it's more of a pesto-tossed salad. \nBasil Pesto Penne Salad\nBoil the penne in salted water, drain, and toss with a little olive oil so it doesn't stick together. \nCut the zucchini into half-moons and the cherry tomatoes into quarters, then sear both in a hot pan with olive oil, plenty of salt, and pepper. \nToss the penne with the seared zucchini and tomatoes and the basil pesto until evenly combined. Grate in some parmesan. \nAdapted from the #myfrenchstylesalad recipe.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "펜네"
  },
  {
