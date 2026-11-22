@@ -50951,7 +50951,7 @@
   "weather": "7도/대체로흐림, 17분/운동",
   "failed": false,
   "calories": null,
-  "title": "홍시샐러드 모닝루틴 홍시",
+  "title": "모짜렐라 단감 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -50977,9 +50977,9 @@
    "홍시",
    "홍시샐러드"
   ],
-  "intro": "20221123, #조식다이어리 604, 7도/대체로흐림, 17분/운동\n감을 두 개나 먹었으니 감이 오겠지, \n홍시를 깨끗하게 씻어 모짜렐라 치즈, 호두와 올리브오일 #홍시샐러드",
-  "ingredients": null,
-  "steps": null,
+  "intro": "20221123, #조식다이어리 604, 7도/대체로흐림, 17분/운동\n감을 두 개나 먹었으니 감이 오겠지, \n단감을 깨끗하게 씻어 모짜렐라 치즈, 호두와 올리브오일 #단감샐러드\n",
+  "ingredients": "- 단감 1개(약 150g)\n- 생모차렐라 60g\n- 호두 10g\n- 올리브오일 1t",
+  "steps": "1. 단감은 꼭지를 떼고 찬물에 살짝 씻어 키친타월로 물기를 가볍게 눌러 닦는다. \n2. 호두는 마른 팬에 1분 볶아 굵게 부순다.\n3. 모차렐라는 키친타월로 물기를 닦고 손으로 먹기 좋게 찢는다.\n4. 접시에 단감을 웻지 모양으로 썰어서 담고, 모차렐라를 올린다.\n5. 호두를 얹고 올리브오일을 두른다. ",
   "raw": "20221123, #조식다이어리 604, 7도/대체로흐림, 17분/운동\n\n감을 두 개나 먹었으니 감이 오겠지, \n\n홍시를 깨끗하게 씻어 모짜렐라 치즈, 호두와 올리브오일 #홍시샐러드 \n\n#직장인 #조식 #아침밥 #아침밥상 #먹스타그램 #홈쿡 #집밥 #혼밥 #모닝루틴 #미라클모닝 #샐러드 #홍시 #감 #호두 #모짜렐라 \n#breakfast #persimmon #softpersimmon #walnut #mozzarella ",
   "image": "https://images.how-about-breakfast.com/images/604.jpg",
   "gallery": [
@@ -50987,13 +50987,6 @@
    "https://images.how-about-breakfast.com/images/604_2.jpg",
    "https://images.how-about-breakfast.com/images/604_3.jpg"
   ],
-  "_en": {
-   "hash": "e6f933aa6419c880f8e8652bce67c0599f0ac4d6234b0c74a1faf521e80c1335",
-   "title": "Persimmon Salad Morning Routine Persimmon",
-   "intro": "20221123 #breakfastdiary 604, 7°C/mostly cloudy, 17 min/workout\nI ate two whole persimmons, so surely a good feeling ('gam') is coming my way. \nWash a ripe persimmon well and pair it with mozzarella cheese, walnuts and olive oil. #persimmonsalad",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "홍시샐러드-모닝루틴-홍시"
  },
  {
