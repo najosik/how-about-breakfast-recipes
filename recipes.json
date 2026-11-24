@@ -38661,7 +38661,7 @@
   "weather": "-3도/맑음",
   "failed": false,
   "calories": null,
-  "title": "팔라펠",
+  "title": "레몬 마요네즈를 곁들인 팔라펠",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -38672,8 +38672,8 @@
    "팔라펠"
   ],
   "intro": "20231125, #조식다이어리 903, -3도/맑음\n병아리콩, 고수, 커민, 양파 등을 갈아서 다진 후 기름에 튀긴 팔라펠은 중동을 대표하는 비건 요리이기도 하다. ‘녹두 빈대떡 가장자리만 모아 놓은 맛’이라고, 누군지 모르겠지만 그 맛을 잘 묘사했다. \n엊그제 아시안 마트에서 산 팔라펠 반죽(?)을 동글린 다음 기름에 튀긴다. \n마요네즈, 레몬주스, 홀그레인 머스타드를 2:1:.0.5 비율로 섞어 레몬 마요네즈를 만들어 찍어 먹는다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 팔라펠 반죽\n- 튀김용 기름 적당량(깊이 1.5~2cm 정도, 약 100ml)\n- 레몬 마요네즈(마요네즈 2t, 레몬즙 1t, 홀그레인 머스터드 1/2t)",
+  "steps": "1. 팔라펠 반죽은 동그랗게 만들어 기름에 튀긴다.\n2. 마요네즈, 레몬즙, 홀그레인 머스터드를 2:1:0.5 비율(2t : 1t : 1/2t)로 섞어 레몬 마요네즈를 만든다.\n3. 팔라펠을 접시에 담고 레몬 마요네즈에 찍어 먹는다.",
   "raw": "20231125, #조식다이어리 903, -3도/맑음\n\n병아리콩, 고수, 커민, 양파 등을 갈아서 다진 후 기름에 튀긴 팔라펠은 중동을 대표하는 비건 요리이기도 하다. ‘녹두 빈대떡 가장자리만 모아 놓은 맛’이라고, 누군지 모르겠지만 그 맛을 잘 묘사했다. \n\n엊그제 아시안 마트에서 산 팔라펠 반죽(?)을 동글린 다음 기름에 튀긴다. \n마요네즈, 레몬주스, 홀그레인 머스타드를 2:1:.0.5 비율로 섞어 레몬 마요네즈를 만들어 찍어 먹는다. \n\n#조식 #레시피 #미라클모닝 #샐러드 #팔라펠 ",
   "image": "https://images.how-about-breakfast.com/images/903.jpg",
   "gallery": [
@@ -38683,13 +38683,6 @@
    "https://images.how-about-breakfast.com/images/903_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/903.mp4",
-  "_en": {
-   "hash": "02d08c24279c58415f7feac5dfefbbe896d7164c2b4b2f9aa513342646177064",
-   "title": "Falafel",
-   "intro": "20231125, #breakfastdiary 903, -3°C/clear\nMade from ground chickpeas, cilantro, cumin, onion, and more, then deep-fried, falafel is one of the Middle East's signature vegan dishes. Someone once described its taste as 'like gathering up only the crispy edges of mung bean pancakes,' and I couldn't put it better myself. \nI roll the falafel 'dough' (?) I bought at the Asian market the other day into balls and deep-fry them. \nMix mayo, lemon juice, and whole grain mustard in a 2:1:0.5 ratio to make a lemon mayo for dipping.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "팔라펠"
  },
  {
