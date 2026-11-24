@@ -25581,7 +25581,7 @@
   "weather": "1도/대체로 맑음, 20분/운동(M)",
   "failed": false,
   "calories": null,
-  "title": "푸실리가든샐러드",
+  "title": "푸실리 가든 샐러드",
   "credit": null,
   "hashtags": [
    "레시피",
@@ -25592,8 +25592,8 @@
    "푸실리가든샐러드"
   ],
   "intro": "20241125 #조식다이어리 1243, 1도/대체로 맑음, 20분/운동(M) \n#푸실리가든샐러드 라고 했지만 푸실리에 냉장고 속 자투리 채소를 넣은 알뜰한 샐러드",
-  "ingredients": "푸실리 1컵, 로메인, 토마토, 차요테, 올리브, 민트, (드레싱) 올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스타드 1t\n\n👉이렇게\n1. 푸실리는 끓는 물에 소금소금 삶는다. \n2. 채소는 숭덩숭덩 썰어서 그릇에 담는다. 푸실리도 담는다. 드레싱 두르고 건빵의 별사탕 같은 민트, 치즈 갈아서 얹는다. \n\n#조식 #레시피 #미라클모닝 #샐러드",
-  "steps": null,
+  "ingredients": "- 푸실리 1컵\n- 로메인 3장\n- 토마토 1개\n- 차요테 1/2개\n- 올리브 5개\n- 민트 조금\n- 파마산치즈 10g\n- 드레싱(올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스타드 1t)",
+  "steps": "1. 푸실리는 끓는 물에 소금 넣고 삶는다. \n2. 채소는 숭덩숭덩 썰어서 그릇에 담는다. 푸실리도 담는다. 드레싱 두르고 건빵의 별사탕 같은 민트, 치즈 갈아서 얹는다.",
   "raw": "20241125 #조식다이어리 1243, 1도/대체로 맑음, 20분/운동(M) \n\n#푸실리가든샐러드 라고 했지만 푸실리에 냉장고 속 자투리 채소를 넣은 알뜰한 샐러드\n\n👉재료는\n푸실리 1컵, 로메인, 토마토, 차요테, 올리브, 민트, (드레싱) 올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스타드 1t\n\n👉이렇게\n1. 푸실리는 끓는 물에 소금소금 삶는다. \n2. 채소는 숭덩숭덩 썰어서 그릇에 담는다. 푸실리도 담는다. 드레싱 두르고 건빵의 별사탕 같은 민트, 치즈 갈아서 얹는다. \n\n#조식 #레시피 #미라클모닝 #샐러드",
   "image": "https://images.how-about-breakfast.com/images/1243.jpg",
   "gallery": [
@@ -25603,13 +25603,6 @@
    "https://images.how-about-breakfast.com/images/1243_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1243.mp4",
-  "_en": {
-   "hash": "224bbcd99ff40637f72d7d20a98d8212e46a01cf22cba89456fc142f3d3f3caa",
-   "title": "Fusilli Garden Salad",
-   "intro": "20241125 #breakfastdiary 1243, 1°C/mostly clear, 20min/exercise(M)\nI called it #fusiligardensalad but really it's just a thrifty salad made with fusilli and whatever leftover vegetable scraps were in the fridge",
-   "ingredients": "1 cup fusilli, romaine lettuce, tomato, chayote, olives, mint, (dressing) 3T olive oil, 1T white wine vinegar, 1t whole grain mustard\n\n👉Like this\n1. Boil the fusilli in salted boiling water.\n2. Cut the vegetables into big chunks and put them in a bowl. Add the fusilli too. Drizzle the dressing, and top with mint (like the little star candies in a gonppang snack pack) and grated cheese.\n\n#breakfast #recipe #miraclemorning #salad",
-   "steps": ""
-  },
   "page_id": "푸실리가든샐러드"
  },
  {
