@@ -25565,7 +25565,7 @@
   "weather": "8도/흐림",
   "failed": false,
   "calories": null,
-  "title": "꽃상추 엔다이브샐러드 엔다이브",
+  "title": "꽃상추 엔다이브 샐러드",
   "credit": "#나의프랑스식샐러드",
   "hashtags": [
    "꽃상추",
@@ -25578,8 +25578,8 @@
    "조식다이어리"
   ],
   "intro": "20241126 #조식다이어리 1244, 8도/흐림\n엔다이브 우리말로는 #꽃상추 다. 은근한 불에 한참 구워야 속까지 익힐 수 있다. 뭐, 대충 익혀서 그냥 먹어도 된다. #엔다이브샐러드",
-  "ingredients": "엔다이브 3개, (콩으로 만든) 슬라이스 햄, 마늘 다수, 후추, 올리브오일, (드레싱) 올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스타드 1t\n\n👉이렇게\n1. 엔다이브 깨끗하게 씻어 반으로 자르고 달군 팬에 올리브오일 두르고 굽는다. 곁에서 마늘도 같이 굽는다. (마늘이 작아서 통으로 구웠으니 썰어서 굽는 것을 추천,) 덜어두고,\n2. 잔열에 슬라이스 햄 굽는다. \n3. 접시에 엔다이브 담고, 슬라이스 햄과 마늘 얹고 드레싱, 후추후추후추\n\nInspired by #나의프랑스식샐러드\n\n#조식 #레시피 #미라클모닝 #엔다이브",
-  "steps": null,
+  "ingredients": "- 엔다이브 3개\n- 콩으로 만든 슬라이스 햄\n- 마늘 3개\n- 후추 조금\n- 올리브오일, \n- 드레싱(올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스터드 1t)",
+  "steps": "1. 엔다이브 깨끗하게 씻어 반으로 자르고 달군 팬에 올리브오일 두르고 굽는다. 마늘도 같이 굽는다. (마늘이 작아서 통으로 구웠으니 썰어서 굽는 것을 추천한다.)\n2. 잔열에 슬라이스 햄 굽는다. \n3. 접시에 엔다이브 담고, 슬라이스 햄과 마늘 얹고 드레싱, 후추후추후추",
   "raw": "20241126 #조식다이어리 1244, 8도/흐림\n\n엔다이브 우리말로는 #꽃상추 다. 은근한 불에 한참 구워야 속까지 익힐 수 있다. 뭐, 대충 익혀서 그냥 먹어도 된다. #엔다이브샐러드\n\n👉재료는\n엔다이브 3개, (콩으로 만든) 슬라이스 햄, 마늘 다수, 후추, 올리브오일, (드레싱) 올리브오일 3T, 화이트와인 비니거 1T, 홀그레인 머스타드 1t\n\n👉이렇게\n1. 엔다이브 깨끗하게 씻어 반으로 자르고 달군 팬에 올리브오일 두르고 굽는다. 곁에서 마늘도 같이 굽는다. (마늘이 작아서 통으로 구웠으니 썰어서 굽는 것을 추천,) 덜어두고,\n2. 잔열에 슬라이스 햄 굽는다. \n3. 접시에 엔다이브 담고, 슬라이스 햄과 마늘 얹고 드레싱, 후추후추후추\n\nInspired by #나의프랑스식샐러드\n\n#조식 #레시피 #미라클모닝 #엔다이브",
   "image": "https://images.how-about-breakfast.com/images/1244.jpg",
   "gallery": [
@@ -25589,13 +25589,6 @@
    "https://images.how-about-breakfast.com/images/1244_4.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/1244.mp4",
-  "_en": {
-   "hash": "061ef08f03321f8ed12cdb9d4e00374985aec22f09e2f7215f434d114e49cf90",
-   "title": "Kkotsangchu Endive Salad, Endive",
-   "intro": "20241126 #breakfastdiary 1244, 8°C/cloudy\nEndive is called #kkotsangchu (flower lettuce) in Korean. You need to grill it a good while over gentle heat to cook it through to the core. Or, honestly, you can just eat it barely cooked. #endivesalad",
-   "ingredients": "3 endives, sliced ham (made from soy), plenty of garlic, pepper, olive oil, (dressing) 3T olive oil, 1T white wine vinegar, 1t whole grain mustard\n\n👉Like this\n1. Wash the endive thoroughly, cut in half, heat a pan with olive oil, and grill. Grill the garlic alongside it too. (The garlic cloves were small so I grilled them whole — I'd recommend slicing them first.) Set aside,\n2. Grill the sliced ham using the residual heat.\n3. Plate the endive, top with the sliced ham and garlic, and add the dressing, pepper pepper pepper\n\nInspired by #myfrenchsaladbook\n\n#breakfast #recipe #miraclemorning #endive",
-   "steps": ""
-  },
   "page_id": "꽃상추-엔다이브샐러드-엔다이브"
  },
  {
