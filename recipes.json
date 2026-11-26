@@ -85940,7 +85940,7 @@
   "weather": null,
   "failed": false,
   "calories": null,
-  "title": "초안 브런치",
+  "title": "계란 오믈렛",
   "credit": null,
   "hashtags": [
    "brunch",
@@ -85952,8 +85952,8 @@
    "초안"
   ],
   "intro": "20201127, “초안입니다.”라고 머뭇거리며 내미는 계획서를 받는다. 어떤 글이나 계획서를 정식으로 작성하기에 앞서 처음으로 써본 것을 보통 초안이라고 한다. 처음 쓴 것이니 당연히 초안의 초가 처음 초(初)일 것이라고 생각하는데, 의외로 풀 초(草)다. 그러니까 초안은 풀처럼 흔들리는 안이라는 뜻. #초안\n기억하자. 나와 너, 우리 모두는 한때 바람에 이리저리 흔들리는 풀과 같은 때가 있었다. 그래서. 진심으로 응원한다. \n어제 새벽 퇴근으로 #조식 이 아니라, #브런치 가 되어 버렸다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 계란 3개(대란)\n- 우유 1T\n- 소금 한 꼬집, 후추 약간\n- 버터 5g(팬에 두르는 용)",
+  "steps": "1. 볼에 계란, 우유, 소금, 후추를 넣고 포크나 거품기로 흰자와 노른자가 섞일 정도만 푼다. \n2. 팬을 달구고 버터를 넣어 녹인다. \n3. 가장자리가 굳기 시작하면 주걱이나 젓가락으로 가장자리를 가운데로 밀면서 팬을 기울여 익은 부분을 모은다. \n4. 겉이 살짝 익고 속이 촉촉하게 남았을 때 불을 끈다. \n5. 럭비공 모양으로 접어 접시에 담는다. ",
   "raw": "20201127, “초안입니다.”라고 머뭇거리며 내미는 계획서를 받는다. 어떤 글이나 계획서를 정식으로 작성하기에 앞서 처음으로 써본 것을 보통 초안이라고 한다. 처음 쓴 것이니 당연히 초안의 초가 처음 초(初)일 것이라고 생각하는데, 의외로 풀 초(草)다. 그러니까 초안은 풀처럼 흔들리는 안이라는 뜻. #초안\n\n기억하자. 나와 너, 우리 모두는 한때 바람에 이리저리 흔들리는 풀과 같은 때가 있었다. 그래서. 진심으로 응원한다. \n\n어제 새벽 퇴근으로 #조식 이 아니라, #브런치 가 되어 버렸다. \n#브런치 #brunch #계란오믈렛 #오믈렛 #개명할까",
   "pre_label": "D-77",
   "image": "https://images.how-about-breakfast.com/images/pre-77.jpg",
@@ -85961,13 +85961,6 @@
    "https://images.how-about-breakfast.com/images/pre-77.jpg",
    "https://images.how-about-breakfast.com/images/pre-77_2.jpg"
   ],
-  "_en": {
-   "hash": "dac1a1042ab02f5af78efcfe5f47f01588ad01731067f888afee57c908dd00b8",
-   "title": "First Draft Brunch",
-   "intro": "20201127, Someone hands me a proposal, hesitating: “It's just a draft.” A draft, usually, is the first attempt at writing something before it's made official. Since it's the first version, you'd assume the Chinese character in the word for 'draft' means 'first' — but surprisingly, it's actually the character for 'grass.' So a draft, literally, is a plan that sways like grass. #draft\nLet's remember that — you, me, all of us — we've all had moments of swaying in the wind like grass. So, truly, I'm rooting for you. \nGetting off work at dawn yesterday turned this from #breakfast into #brunch.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "초안-브런치"
  },
  {
