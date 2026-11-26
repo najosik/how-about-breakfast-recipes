@@ -38588,7 +38588,7 @@
   "weather": "5도/이슬비",
   "failed": false,
   "calories": null,
-  "title": "이슬아 고등어덮밥",
+  "title": "고등어덮밥",
   "credit": null,
   "hashtags": [
    "고등어덮밥",
@@ -38599,8 +38599,8 @@
    "조식다이어리"
   ],
   "intro": "20231127, #조식다이어리 905, 5도/이슬비\n무언가를 멈추는 일이 장마철에 빗방울을 피하는 것만큼이나 어렵게 느껴지는 세상이다. 빠르고 잦은 소비를 부추기는 방향으로 설계된 이 시대에서 착취에 덜 가담하려면 의지와 기쁨이 필요하다. 죄책감만으로 바뀌는 데에는 한계가 있지 않던가. 마음을 틀어서 새로운 쾌락을 연습해야 할 때다.\n#이슬아 작가의 말, (전문은 ‘덜 사는 기쁨을 찾아서’, 경향신문)\n간장2, 맛술2, 설탕1, 다진마늘0.5, 물 반 컵 섞어서 소스를 만든다. \n팬에 고등어 올리고 소스 뿌려서 앞뒤로 굽고, 생선 비린내를 집아줄 실파를 다진다. (소스는 조금 남겨둔다.) \n그릇에 실파를 수북하게 담고 고등어 올리고 만들어 둔 소스를 드레싱처럼 고등어 위에 붓고 야무지게 다지고 골고루 비벼서 먹는다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 밥 1/2공기\n- 고등어 1토막\n- 실파 30g\n- 소스(간장 2T, 맛술 2T, 설탕 1T, 다진 마늘 1/2T, 물 1/2컵)",
+  "steps": "1. 볼에 간장 2T, 맛술 2T, 설탕 1T, 다진 마늘 1/2T, 물 1/2컵(약 100ml)을 섞어 소스를 만든다.\n2. 달군 팬에 고등어를 올리고 소스를 뿌려 중불에서 앞뒤로 굽는다. 소스는 조금(약 2~3T) 남겨 둔다.\n3. 소스가 졸아 윤기가 나고 고등어 속까지 익으면 불을 끈다.\n4. 그릇에 밥과 다진 실파를 수북이 담고 고등어를 올린다.\n5. 남겨 둔 소스를 드레싱처럼 고등어 위에 붓는다. 고등어를 야무지게 으깨 실파와 골고루 비벼 먹는다.",
   "raw": "20231127, #조식다이어리 905, 5도/이슬비\n\n무언가를 멈추는 일이 장마철에 빗방울을 피하는 것만큼이나 어렵게 느껴지는 세상이다. 빠르고 잦은 소비를 부추기는 방향으로 설계된 이 시대에서 착취에 덜 가담하려면 의지와 기쁨이 필요하다. 죄책감만으로 바뀌는 데에는 한계가 있지 않던가. 마음을 틀어서 새로운 쾌락을 연습해야 할 때다.\n#이슬아 작가의 말, (전문은 ‘덜 사는 기쁨을 찾아서’, 경향신문)\n\n간장2, 맛술2, 설탕1, 다진마늘0.5, 물 반 컵 섞어서 소스를 만든다. \n팬에 고등어 올리고 소스 뿌려서 앞뒤로 굽고, 생선 비린내를 집아줄 실파를 다진다. (소스는 조금 남겨둔다.) \n그릇에 실파를 수북하게 담고 고등어 올리고 만들어 둔 소스를 드레싱처럼 고등어 위에 붓고 야무지게 다지고 골고루 비벼서 먹는다. \n\n#조식 #레시피 #미라클모닝 #고등어덮밥",
   "image": "https://images.how-about-breakfast.com/images/905.jpg",
   "gallery": [
@@ -38608,13 +38608,6 @@
    "https://images.how-about-breakfast.com/images/905_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/905.mp4",
-  "_en": {
-   "hash": "4d0c61bc66cb07f9ab45080eb17cf02d74b9bd46b548720d44914f5165d8e8de",
-   "title": "Mackerel Rice Bowl",
-   "intro": "20231127, #breakfastdiary 905, 5°C/drizzle\nIt's a world where stopping yourself feels as hard as dodging raindrops in the monsoon season. In an era designed to push fast, constant consumption, taking part in less exploitation takes both will and joy. Guilt alone can only carry you so far. It's time to redirect the mind and practice a new kind of pleasure.\nWords from the writer #leeseula (full piece: 'In Search of the Joy of Buying Less,' The Kyunghyang Shinmun)\nMix 2 soy sauce, 2 cooking wine, 1 sugar, 0.5 minced garlic, and 1/2 cup water to make the sauce. \nLay the mackerel in a pan, pour over the sauce, and sear both sides, then chop scallions to tame the fishy smell. (Save a little of the sauce.) \nPile the scallions generously into a bowl, place the mackerel on top, pour the reserved sauce over it like a dressing, chop everything together thoroughly, and mix well before eating.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "이슬아-고등어덮밥"
  },
  {
