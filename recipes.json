@@ -12934,7 +12934,7 @@
   "weather": "6도/흐림",
   "failed": false,
   "calories": 130,
-  "title": "#두부국수",
+  "title": "두부국수",
   "credit": null,
   "hashtags": [
    "두부국수",
@@ -12944,7 +12944,7 @@
    "조식다이어리"
   ],
   "intro": "20251127 #조식다이어리 1571, 6도/흐림\n5분도 안 걸리는, 보기와 달리 깊은 국물맛의 미나리 듬뿍 130kcal #두부국수\n이 정도라면 오늘을 버티기에 충분하겠지,",
-  "ingredients": "두부면 1개, 다진 대파 1/2개, 쯔유 1T, 참치액 1T, 미나리 듬뿍",
+  "ingredients": "- 두부면 1개\n- 다진 대파 1/2개 \n- 쯔유 1T \n- 참치액 1T \n- 미나리 듬뿍",
   "steps": "1. 그릇에 두부면, 다진 대파 1/2개, 쯔유 1T, 참치액 1T, 끓는 물 2컵 붓고 잔자레인지에 2분 데운다. \n2. 미나리 숭덩숭덩 잘라서 줄기 빼고 잎만 얹는다.",
   "raw": "20251127 #조식다이어리 1571, 6도/흐림\n\n5분도 안 걸리는, 보기와 달리 깊은 국물맛의 미나리 듬뿍 130kcal #두부국수\n\n이 정도라면 오늘을 버티기에 충분하겠지,\n\n👉 재료\n두부면 1개, 다진 대파 1/2개, 쯔유 1T, 참치액 1T, 미나리 듬뿍\n\n👉 조리\n1. 그릇에 두부면, 다진 대파 1/2개, 쯔유 1T, 참치액 1T, 끓는 물 2컵 붓고 잔자레인지에 2분 데운다. \n2. 미나리 숭덩숭덩 잘라서 줄기 빼고 잎만 얹는다. \n\n#조식 #레시피 #미나리",
   "video": "https://images.how-about-breakfast.com/images/1571.mp4",
@@ -12954,13 +12954,6 @@
    "https://images.how-about-breakfast.com/images/1571_2.jpg",
    "https://images.how-about-breakfast.com/images/1571_3.jpg"
   ],
-  "_en": {
-   "hash": "9f93a6d054eebca725b52e24e19610412d4124dbd9185c73fdc1a77fa2a81774",
-   "title": "#TofuNoodles",
-   "intro": "20251127 #breakfastdiary day 1571, 6°C/cloudy\nTakes less than 5 minutes, but the broth tastes surprisingly deep — 130kcal #TofuNoodles loaded with minari.\nThis should be enough to get me through today,",
-   "ingredients": "1 tofu noodle, 1/2 chopped scallion, 1T tsuyu, 1T tuna extract, plenty of minari",
-   "steps": "1. In a bowl, combine the tofu noodles, 1/2 chopped scallion, 1T tsuyu, 1T tuna extract, and 2 cups boiling water, and microwave for 2 minutes.\n2. Roughly cut the minari, discard the stems, and top with just the leaves."
-  },
   "page_id": "두부국수"
  },
  {
