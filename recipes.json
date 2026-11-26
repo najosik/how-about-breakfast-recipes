@@ -67870,7 +67870,7 @@
   "weather": "5도/맑음",
   "failed": false,
   "calories": null,
-  "title": "멜론샐러드 모닝리추얼 모닝루틴",
+  "title": "멜론 샐러드",
   "credit": null,
   "hashtags": [
    "breakfast",
@@ -67898,21 +67898,14 @@
    "홈쿡"
   ],
   "intro": "20211127, #조식다이어리 279, 5도/맑음\n세상에서 제일 예쁜 멜론에 이탈리안 파슬리, 다진 피칸 #멜론샐러드 \n조식 포스팅을 하고 났더니 점심 시간이 되었구나, 맛있게 점심을 먹어보자.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 멜론 200g\n- 이탈리안 파슬리 1t\n- 피칸 10g\n- 올리브오일 1t\n- 후추 약간, 소금 한 꼬집",
+  "steps": "1. 멜론은 껍질째 깨끗이 씻어 물기를 닦은 뒤 반으로 갈라 씨를 파내고, 숟가락으로 동그랗게 떠내도 좋다.\n2. 피칸은 마른 팬에서 중약불로 1분 볶아 식힌 뒤 칼로 굵게 다진다.\n3. 접시에 멜론을 담고 다진 파슬리를 올린다.\n4. 피칸을 흩뿌리고, 쓴다면 올리브오일 몇 방울과 소금, 후추를 올린다.",
   "raw": "20211127, #조식다이어리 279, 5도/맑음\n\n세상에서 제일 예쁜 멜론에 이탈리안 파슬리, 다진 피칸 #멜론샐러드 \n\n조식 포스팅을 하고 났더니 점심 시간이 되었구나, 맛있게 점심을 먹어보자. \n\n#직장인 #조식 #아침밥 #아침밥상 #홈쿡 #집밥 #혼밥 #모닝리추얼 #모닝루틴 #미라클모닝 #샐러드 #피칸 #멜론 #칸달로프멜론 #파슬리 \n#breakfast #recipe #salad #parsley #melon #pecan ",
   "image": "https://images.how-about-breakfast.com/images/279.jpg",
   "gallery": [
    "https://images.how-about-breakfast.com/images/279.jpg",
    "https://images.how-about-breakfast.com/images/279_2.jpg"
   ],
-  "_en": {
-   "hash": "7fff06d9906af4d497f35dd399fbe856ee81853360c3a7ab4c97d5418280fce4",
-   "title": "Melon Salad",
-   "intro": "20211127 #breakfastdiary 279, 5°C/clear\nThe prettiest melon in the world with Italian parsley and chopped pecans. #melonsalad \nFinished writing up breakfast and, well, it's already lunchtime — let's go have a good lunch.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "멜론샐러드-모닝리추얼-모닝루틴"
  },
  {
