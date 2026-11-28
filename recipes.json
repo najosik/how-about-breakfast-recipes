@@ -38612,8 +38612,8 @@
    "콩"
   ],
   "intro": "20231128, #조식다이어리 906, -4도/맑음, 21분/운동(U) \n엊그제 망원시장에서 천 원 주고 (주인장의 큐레이션 취향이 엿보이는) 모듬콩을 샀다. 최근에 구입식재료 가운데 가심비로는 최고다. \n모듬콩을 냄비에 넣고 20분 정도 삶는다. (완두콩은 금방 익기 때문에 나중에 넣는 것이 좋은데, 골라 낼 시간이 없어서 그냥 삶았다.)\n접시에 담고 비네그레트 드레싱(올리브오일3, 와인비니거1, 홀그레인 머스타드0.5) , 후추후추, 민트나 고수, 파슬리가 있다면 곁들인다. 그들은 마치 건빵에 들어가는 별사탕 같은 존재들이다.",
-  "ingredients": null,
-  "steps": null,
+  "ingredients": "- 모듬콩 60g\n- 물 넉넉히\n- 비네그레트(올리브오일 3t, 와인비니거 1t, 홀그레인 머스터드 1/2t)\n- 방울토마토 3개\n- 오이 1/4개\n- 소금 한 꼬집(선택)\n- 후추 넉넉히\n- 민트, 고수, 파슬리 중 있는 것 약간(곱게 다지거나 잎을 찢은 것)",
+  "steps": "1. 모듬콩을 흐르는 물에 헹궈 냄비에 넣고 콩이 잠길 만큼 물을 부어 20분 정도 삶는다. 완두콩은 금방 익으니, 가능하면 15분쯤에 나중에 넣는다. 이번에는 같이 삶았다.\n2. 콩이 부드러워지면 체에 밭쳐 물기를 뺀다. 콩이 식기 전에 소금 한 꼬집을 뿌려도 된다.\n3. 올리브오일, 와인비니거, 홀그레인 머스터드를 섞어 비네그레트를 만든다.\n4. 접시에 콩을 담고 오이, 방울토마토 넣고 비네그레트를 두른다.\n5. 후추를 넉넉히 갈아 올리고, 있는 허브를 곁들인다.",
   "raw": "20231128, #조식다이어리 906, -4도/맑음, 21분/운동(U) \n\n엊그제 망원시장에서 천 원 주고 (주인장의 큐레이션 취향이 엿보이는) 모듬콩을 샀다. 최근에 구입식재료 가운데 가심비로는 최고다. \n\n#모듬콩샐러드\n\n모듬콩을 냄비에 넣고 20분 정도 삶는다. (완두콩은 금방 익기 때문에 나중에 넣는 것이 좋은데, 골라 낼 시간이 없어서 그냥 삶았다.)\n접시에 담고 비네그레트 드레싱(올리브오일3, 와인비니거1, 홀그레인 머스타드0.5) , 후추후추, 민트나 고수, 파슬리가 있다면 곁들인다. 그들은 마치 건빵에 들어가는 별사탕 같은 존재들이다. \n\n#조식 #레시피 #미라클모닝 #콩 #샐러드",
   "image": "https://images.how-about-breakfast.com/images/906.jpg",
   "gallery": [
@@ -38621,13 +38621,6 @@
    "https://images.how-about-breakfast.com/images/906_2.jpg"
   ],
   "video": "https://images.how-about-breakfast.com/images/906.mp4",
-  "_en": {
-   "hash": "53f889a78665fb1e1ae4207e7af52b9179460ca7417abee25c035d09fe9c19de",
-   "title": "Mixed Bean Salad",
-   "intro": "20231128, #breakfastdiary 906, -4°C/clear, 21min/workout(U) \nA couple of days ago I picked up a bag of mixed beans for a thousand won at Mangwon Market — you could tell the shopkeeper had a real eye for curation. Lately it's been the best value-for-happiness ingredient I've bought. \nPut the mixed beans in a pot and boil for about 20 minutes. (Green peas cook fast, so ideally you'd add them later, but I didn't have time to sort them out, so I just boiled everything together.)\nPlate it up and add vinaigrette (3 olive oil, 1 wine vinegar, 0.5 whole grain mustard), lots of pepper, and mint, cilantro, or parsley if you have any. They're like the little star candies tucked into a pack of hardtack biscuits.",
-   "ingredients": "",
-   "steps": ""
-  },
   "page_id": "모듬콩샐러드-콩"
  },
  {
